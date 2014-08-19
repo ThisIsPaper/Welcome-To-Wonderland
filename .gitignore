@@ -5,3 +5,6 @@
 Wonderland.Logic/obj/
 Wonderland.Logic/bin/
 /packages
+Wonderland.Web/App_Data/Logs/
+Wonderland.Web/App_Data/TEMP/
+Wonderland.Web/App_Data/umbraco.config
