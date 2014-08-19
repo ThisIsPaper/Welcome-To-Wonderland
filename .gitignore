@@ -4,3 +4,4 @@
 *.pdb
 Wonderland.Logic/obj/
 Wonderland.Logic/bin/
+/packages
