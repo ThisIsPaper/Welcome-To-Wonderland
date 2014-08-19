@@ -2,3 +2,5 @@
 /Wonderland.Web/obj
 /Wonderland.Web/Wonderland.Web.csproj.user
 *.pdb
+Wonderland.Logic/obj/
+Wonderland.Logic/bin/
