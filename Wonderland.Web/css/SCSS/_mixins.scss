@@ -1,0 +1,108 @@
+// Sass mixin for creating media query breakpoints on-the-fly - from https://gist.github.com/jwebcat/5127440
+$br-xsmall: 320px;
+$br-small: 480px;
+$br-med: 780px;
+$br-large: 1024px;
+$br-wide: 1180px;
+
+ @mixin respond-to($media) {
+   @if $media == xsmall {  //i put a space in between the @ and all the variables so the code wouldn't get borked
+     @media all and (min-width: $br-xsmall) and (max-width: $br-small - .1) { @content; }
+  }
+   @else if $media == small {
+     @media all and (min-width: $br-small) and (max-width: $br-med - .1) { @content; }
+  }
+   @else if $media == med {
+     @media all and (min-width: $br-med) and (max-width: $br-large - .1) { @content; }
+  }
+   @else if $media == large {
+     @media all and (min-width: $br-large) and (max-width: $br-wide - .1) { @content; }
+  }
+   @else if $media == wide {
+     @media all and (min-width: $br-wide) { @content; }
+  }
+}
+
+// Create REM values with PX fall back
+//
+// Generate a REM with PX fallback from 
+// $baseFontSize. Enter the desired size based
+// on pixels in numerical form. Supports shorthand.
+//
+// Forked from: http://codepen.io/thejameskyle/pen/JmBjc
+//
+// @author Greg Rickaby
+// @since 1.0
+//
+// Usage: @include rem($property, $values);
+// Example Usage:
+//    @include rem(font-size, 16px);
+//    @include rem(margin, 0 24px 0 12px);
+//
+// Outputs:
+//    font-size: 16px;
+//    font-size: 1.6rem;
+//    margin: 0 24px 0 12px;
+//    margin: 0 2.4rem 0 1.2rem;
+// ----------------------------------
+$baseFontSize: 10; // Based on HTML reset html { font-size: 62.5%; }
+ 
+@function parseInt($n) {
+  @return $n / ($n * 0 + 1);
+}
+ 
+@mixin rem($property, $values) {
+    $px : (); 
+    $rem: ();
+    
+    $root: $baseFontSize;
+    
+    @each $value in $values {
+        @if $value == 0 or $value == auto {
+            $px : append($px , $value);
+            $rem: append($rem, $value);
+        }
+        
+        @else if type-of($value) == number { 
+            $unit: unit($value);
+            $val: parseInt($value);
+            
+            @if $unit == "px" {
+                $px : append($px,  $value);
+                $rem: append($rem, ($val / $root + rem));
+            }
+            
+            @if $unit == "rem" {
+                $px : append($px,  ($val * $root + px));
+                $rem: append($rem, $value);
+            }
+        }
+        
+        @else {
+            $px : append($px,  $value);
+            $rem: append($rem, $value);
+        }
+    }
+    
+    @if $px == $rem {
+        #{$property}: $px;
+    } @else {
+        #{$property}: $px;
+        #{$property}: $rem;
+    } 
+}
+ 
+@function rem($value) {
+    $root: $baseFontSize;
+    $val: parseInt($value);
+    $return: ();
+    
+    @if unit($value) == "px" {
+        $return: append($return, ($val / $root + rem));
+    } @else {
+        $return: append($return, ($val * $root + px));
+    }
+    
+    @return $return;
+}
+// end of REM mixin 

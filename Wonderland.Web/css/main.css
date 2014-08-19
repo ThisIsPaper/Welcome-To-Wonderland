@@ -1,0 +1,21 @@
+@-ms-viewport {
+  width: extend-to-zoom;
+  zoom: 1; }
+
+/* Apply a natural box layout model to all elements */
+/* line 21, C:\xampp\htdocs\Welcome-To-Wonderland\Wonderland.Web\css\SCSS\main.scss */
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+/* line 25, C:\xampp\htdocs\Welcome-To-Wonderland\Wonderland.Web\css\SCSS\main.scss */
+html {
+  font-size: 62.5%; }
+
+/* line 27, C:\xampp\htdocs\Welcome-To-Wonderland\Wonderland.Web\css\SCSS\main.scss */
+a {
+  text-decoration: none; }
+  /* line 29, C:\xampp\htdocs\Welcome-To-Wonderland\Wonderland.Web\css\SCSS\main.scss */
+  a:hover {
+    text-decoration: underline; }

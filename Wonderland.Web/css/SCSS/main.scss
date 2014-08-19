@@ -1,0 +1,30 @@
+@import "mixins";
+
+// Vars
+
+// Responsive Breakpoints
+$br-xsmall: 320px;  //xsmall
+$br-small: 480px;   //small
+$br-med: 760px;     //med
+$br-large: 1024px;  //large
+$br-wide: 1180px;   //wide
+
+// End of vars
+
+// See: http://www.mobilexweb.com/blog/windows-8-surface-ie10-html5 
+@-ms-viewport {
+    width: extend-to-zoom;
+    zoom: 1.0;
+}
+
+/* Apply a natural box layout model to all elements */
+*, *:before, *:after {
+    -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
+}
+
+html { font-size: 62.5% }
+
+a {
+    text-decoration: none;
+    &:hover { text-decoration: underline; }
+}
