@@ -17,7 +17,7 @@
     "type": "simple",
     "useCompass": false,
     "simpleModePartnerServer": "wonderland.local",
-    "simpleModeFileTypes": null,
+    "simpleModeFileTypes": [".cshtml", ".css"],
     "modelSource": null,
     "domain": null,
     "convertHtml": {
@@ -38,7 +38,16 @@
         "node_modules"
     ],
     "customTodos": null,
-    "autoPrefixer": null,
+    "autoPrefixer": {
+      "active": true,
+      "sourceMap": false,
+      "browsers": [
+        "last 1 version", 
+        "> 1%", 
+        "ie 8", 
+        "ie 7"
+      ]
+    },
     "sass": {
       "outputStyle": "nested",
       "sourceMap": false,
