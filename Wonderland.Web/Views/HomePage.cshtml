@@ -1,5 +1,17 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
 @{
-    Layout = "SitePage.cshtml";
+  Layout = "SitePage.cshtml";
 }
-<h1>Home Page</h1>
+<main id="content" role="main">
+  <section id="heroGraphic">
+    <img src="img/hero-ph.jpg" />        
+  </section>
+  <section id="homeBanner">
+    <img src="img/home-banner-ph.png" />       
+  </section>
+  <section id="promoLinks">
+  @for( var i = 0; i < 6; i++ ) {
+    <img src="img/home-tile-ph.png">
+  }
+  </section>
+</main>

@@ -19,3 +19,11 @@ a {
   /* line 29, C:\xampp\htdocs\Welcome-To-Wonderland\Wonderland.Web\css\SCSS\main.scss */
   a:hover {
     text-decoration: underline; }
+
+/* line 32, C:\xampp\htdocs\Welcome-To-Wonderland\Wonderland.Web\css\SCSS\main.scss */
+#homeBanner, #promoLinks {
+  margin-left: 15rem; }
+
+/* line 38, C:\xampp\htdocs\Welcome-To-Wonderland\Wonderland.Web\css\SCSS\main.scss */
+#promoLinks > img {
+  margin: 1rem; }
