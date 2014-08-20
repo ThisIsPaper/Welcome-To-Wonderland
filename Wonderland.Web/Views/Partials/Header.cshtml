@@ -1,2 +1,12 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
-<h1>Header</h1>
+<header id="siteHeader">
+  <a class="btn primary">Host a party ></a>
+  <nav>
+      <ul>
+      @for( var i = 0; i < 4; i++ ) {
+        <li><a href="#">Nav link</a></li>
+      }
+      </ul>
+  </nav>
+  <a class="btn secondary">Log in</a>
+</header>

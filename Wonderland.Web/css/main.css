@@ -2,28 +2,28 @@
   width: extend-to-zoom;
   zoom: 1; }
 
-/* Apply a natural box layout model to all elements */
-/* line 21, C:\xampp\htdocs\Welcome-To-Wonderland\Wonderland.Web\css\SCSS\main.scss */
-*, *:before, *:after {
-  -moz-box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box; }
-
-/* line 25, C:\xampp\htdocs\Welcome-To-Wonderland\Wonderland.Web\css\SCSS\main.scss */
+/* line 24, C:\xampp\htdocs\Welcome-To-Wonderland\Wonderland.Web\css\SCSS\main.scss */
 html {
   font-size: 62.5%; }
 
-/* line 27, C:\xampp\htdocs\Welcome-To-Wonderland\Wonderland.Web\css\SCSS\main.scss */
+/* line 26, C:\xampp\htdocs\Welcome-To-Wonderland\Wonderland.Web\css\SCSS\main.scss */
 a {
   text-decoration: none; }
-  /* line 29, C:\xampp\htdocs\Welcome-To-Wonderland\Wonderland.Web\css\SCSS\main.scss */
+  /* line 28, C:\xampp\htdocs\Welcome-To-Wonderland\Wonderland.Web\css\SCSS\main.scss */
   a:hover {
     text-decoration: underline; }
 
-/* line 32, C:\xampp\htdocs\Welcome-To-Wonderland\Wonderland.Web\css\SCSS\main.scss */
+/* line 34, C:\xampp\htdocs\Welcome-To-Wonderland\Wonderland.Web\css\SCSS\main.scss */
+#siteHeader nav, #siteHeader li, #siteHeader a:first-child {
+  float: left; }
+/* line 35, C:\xampp\htdocs\Welcome-To-Wonderland\Wonderland.Web\css\SCSS\main.scss */
+#siteHeader a:last-child {
+  float: right; }
+
+/* line 38, C:\xampp\htdocs\Welcome-To-Wonderland\Wonderland.Web\css\SCSS\main.scss */
 #homeBanner, #promoLinks {
   margin-left: 15rem; }
 
-/* line 38, C:\xampp\htdocs\Welcome-To-Wonderland\Wonderland.Web\css\SCSS\main.scss */
+/* line 44, C:\xampp\htdocs\Welcome-To-Wonderland\Wonderland.Web\css\SCSS\main.scss */
 #promoLinks > img {
   margin: 1rem; }

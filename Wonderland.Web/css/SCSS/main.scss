@@ -1,6 +1,10 @@
 @import "mixins";
 
-// Vars
+//-- Vars --//
+
+// Site Colours
+$blue: #007eac;
+$purple: #682c88;
 
 // Responsive Breakpoints
 $br-xsmall: 320px;  //xsmall
@@ -9,7 +13,7 @@ $br-med: 760px;     //med
 $br-large: 1024px;  //large
 $br-wide: 1180px;   //wide
 
-// End of vars
+//-- End of vars --//
 
 // See: http://www.mobilexweb.com/blog/windows-8-surface-ie10-html5 
 @-ms-viewport {
@@ -17,25 +21,27 @@ $br-wide: 1180px;   //wide
     zoom: 1.0;
 }
 
-/* Apply a natural box layout model to all elements */
-*, *:before, *:after {
-    -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box;
-}
-
 html { font-size: 62.5% }
 
 a {
-    text-decoration: none;
-    &:hover { text-decoration: underline; }
+  text-decoration: none;
+  &:hover { text-decoration: underline; }
+}
+
+#siteHeader {
+  nav,
+  li,
+  a:first-child { float: left }
+  a:last-child { float: right }
 }
 
 #homeBanner {
-    margin-left: 15rem;
+  margin-left: 15rem;
 }
 
 #promoLinks {
-    @extend #homeBanner;
-    > img {
-        margin: 1rem;
-    }
+  @extend #homeBanner;
+  > img {
+      margin: 1rem;
+  }
 }
