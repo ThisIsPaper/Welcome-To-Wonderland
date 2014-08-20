@@ -17,7 +17,7 @@
     "type": "simple",
     "useCompass": false,
     "simpleModePartnerServer": "wonderland.local",
-    "simpleModeFileTypes": [".cshtml", ".css"],
+    "simpleModeFileTypes": [".cshtml", ".scss", ".js"],
     "modelSource": null,
     "domain": null,
     "convertHtml": {
@@ -35,7 +35,10 @@
     "optimiseImages": true,
     "password": null,
     "ignoreDir": [
-        "node_modules"
+        "node_modules",
+        "bower_components",
+        "umbraco",
+        "umbraco_client"
     ],
     "customTodos": null,
     "autoPrefixer": {
