@@ -1,0 +1,21 @@
+{
+  "name": "scripts",
+  "version": "0.0.0",
+  "homepage": "https://github.com/ThisIsPaper/Welcome-To-Wonderland",
+  "authors": [
+    "Sam Latif <mail@samlatif.co.uk>"
+  ],
+  "description": "Wonderland Project",
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "html5shiv": "~3.7.2"
+  }
+}
