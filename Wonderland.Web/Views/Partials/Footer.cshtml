@@ -1,2 +1,32 @@
 ﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
-<h1>Footer</h1>
+<footer>
+  <section class="footer-primary">
+    <nav>
+      <ul>
+      @for( var i = 0; i < 4; i++ ) {
+        <li><a href="#">Nav link</a></li>
+      }
+      </ul>
+    </nav>
+    <div class="share-container">
+      <ul>
+        <li><a href="#">Facebook</a></li>
+        <li><a href="#">Twitter</a></li>
+        <li><a href="#">Google+</a></li>
+      </ul>
+    </div>
+    <img class="footer-logo" src="" />
+  </section>
+  <section class="footer-secondary">
+    <div class="legal-copy">
+      Lorem ipsum Incididunt laborum sit velit in officia anim ut nulla adipisicing tempor ea veniam sit sed non cillum eiusmod deserunt labore exercitation in voluptate cillum in qui laborum eiusmod officia dolore velit pariatur.
+    </div>
+    <nav>
+      <ul>
+      @for( var i = 0; i < 4; i++ ) {
+        <li><a href="#">Nav link</a></li>
+      }
+      </ul>
+    </nav>
+  </section>
+</footer>
