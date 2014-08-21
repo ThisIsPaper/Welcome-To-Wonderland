@@ -1,4 +1,4 @@
-angular.module("umbraco").controller("Imulus.ArchetypeController", function ($scope, $http, assetsService, angularHelper, notificationsService, $timeout) {
+angular.module("umbraco").controller("Imulus.ArchetypeController", function ($scope, $http, assetsService, angularHelper, notificationsService, $timeout, entityResource) {
 
     //$scope.model.value = "";
     $scope.model.hideLabel = $scope.model.config.hideLabel == 1;
@@ -17,6 +17,11 @@ angular.module("umbraco").controller("Imulus.ArchetypeController", function ($sc
 
     init();
 
+    //hold references to helper resources
+    $scope.resources = {
+        entityResource: entityResource
+    }
+
     //helper to get $eval the labelTemplate
     $scope.getFieldsetTitle = function(fieldsetConfigModel, fieldsetIndex) {
         if(!fieldsetConfigModel)
@@ -33,13 +38,43 @@ angular.module("umbraco").controller("Imulus.ArchetypeController", function ($sc
         var parsedTemplate = template;
 
         while ((results = rgx.exec(template)) !== null) {
-            var propertyAlias = results[1];
-            var propertyValue = $scope.getPropertyValueByAlias(fieldset, propertyAlias);
-            parsedTemplate = parsedTemplate.replace(results[0], propertyValue);
+            var propertyAlias = "";
+
+            //test for function
+            var beginIndexOf = results[1].indexOf("(");
+            var endIndexOf = results[1].indexOf(")");
+
+            if(beginIndexOf != -1 && endIndexOf != -1)
+            {
+                var functionName = results[1].substring(0, beginIndexOf);
+                propertyAlias = results[1].substring(beginIndexOf + 1, endIndexOf);
+                parsedTemplate = parsedTemplate.replace(results[0], executeFunctionByName(functionName, window, $scope, $scope.getPropertyValueByAlias(fieldset, propertyAlias)));
+            }
+            else {
+                propertyAlias = results[1];
+                parsedTemplate = parsedTemplate.replace(results[0], $scope.getPropertyValueByAlias(fieldset, propertyAlias));
+            }
         }
 
         return parsedTemplate;
     };
+
+    function executeFunctionByName(functionName, context) {
+        var args = Array.prototype.slice.call(arguments).splice(2);
+
+        var namespaces = functionName.split(".");
+        var func = namespaces.pop();
+
+        for(var i = 0; i < namespaces.length; i++) {
+            context = context[namespaces[i]];
+        }
+
+        if(context && context[func]) {
+            return context[func].apply(this, args);
+        }
+
+        return "";
+    }
 
     //sort config
     $scope.sortableOptions = {
@@ -329,7 +364,7 @@ angular.module("umbraco").controller("Imulus.ArchetypeConfigController", functio
     //define empty items
     var newPropertyModel = '{"alias": "", "remove": false, "collapse": false, "label": "", "helpText": "", "dataTypeGuid": "0cc0eba1-9960-42c9-bf9b-60e150b429ae", "value": ""}';
     var newFieldsetModel = '{"alias": "", "remove": false, "collapse": false, "labelTemplate": "", "icon": "", "label": "", "properties": [' + newPropertyModel + ']}';
-    var defaultFieldsetConfigModel = JSON.parse('{"showAdvancedOptions": false, "startWithAddButton": false, "hideFieldsetToolbar": false, "enableMultipleFieldsets": false, "hideFieldsetControls": false, "hidePropertyLabel": false, "maxFieldsets": null, "enableCollapsing": true, "enableDisabling": true, "fieldsets": [' + newFieldsetModel + ']}');
+    var defaultFieldsetConfigModel = JSON.parse('{"showAdvancedOptions": false, "startWithAddButton": false, "hideFieldsetToolbar": false, "enableMultipleFieldsets": false, "hideFieldsetControls": false, "hidePropertyLabel": false, "maxFieldsets": null, "enableCollapsing": true, "enableDisabling": true, "enableDeepDatatypeRequests": true, "fieldsets": [' + newFieldsetModel + ']}');
 
     //ini the model
     $scope.model.value = $scope.model.value || defaultFieldsetConfigModel;
@@ -675,16 +710,12 @@ angular.module("umbraco.directives").directive('archetypeProperty', function ($c
         var defaultValue = configFieldsetModel.properties[scope.propertyConfigIndex].value;
         var propertyAlias = getUniquePropertyAlias(scope);
         propertyAliasParts = [];
-        // initialize container for invalid fieldset property identifiers (store on ngModelCtrl to separate Archetype validations, e.g. when there two Archetype properties on the same document)
-        if(ngModelCtrl.invalidProperties == null) {
-            ngModelCtrl.invalidProperties = [];
-        }
 
         //try to convert the defaultValue to a JS object
         defaultValue = jsonOrString(defaultValue, scope.archetypeConfig.developerMode, "defaultValue");
 
         //grab info for the selected datatype, prepare for view
-        archetypePropertyEditorResource.getDataType(dataTypeGuid, editorState.current.contentTypeAlias, scope.propertyEditorAlias, alias, editorState.current.id).then(function (data) {
+        archetypePropertyEditorResource.getDataType(dataTypeGuid, scope.archetypeConfig.enableDeepDatatypeRequests, editorState.current.contentTypeAlias, scope.propertyEditorAlias, alias, editorState.current.id).then(function (data) {
             //transform preValues array into object expected by propertyeditor views
             var configObj = {};
             _.each(data.preValues, function(p) {
@@ -704,71 +735,60 @@ angular.module("umbraco.directives").directive('archetypeProperty', function ($c
 
                 var mergedConfig = _.extend(defaultConfigObj, config);
 
-                loadView(pathToView, mergedConfig, defaultValue, alias, propertyAlias, scope, element, ngModelCtrl, validateProperty);
+                loadView(pathToView, mergedConfig, defaultValue, alias, propertyAlias, scope, element, ngModelCtrl, propertyValueChanged);
             });
         });
 
         scope.$on("formSubmitting", function (ev, args) {
-            // "hard" validate to highlight any erroneous entries
+            // validate all fieldset properties
             _.each(scope.fieldset.properties, function (property) {
-                validateProperty(scope.fieldset, property, true);
+                validateProperty(scope.fieldset, property);
             });
+
+            // set invalid state if the fieldset contains invalid properties
+            // we need an unique validation key per fieldset in this ngModelCtrl scope, which leaves us with a potential problem: 
+            // if the user invalidates the last fieldset, attempts (and fails) to save and and subsequently deletes the invalid fieldset, 
+            // the validation key will persist on ngModelCtrl and thus the form will not submit.
+            // to fix this problem, the controller probably needs to raise an event (in removeRow) that can be intercepted here to
+            // clear the validation key.
+            var validationKey = "validation-f" + scope.fieldsetIndex;
+            ngModelCtrl.$setValidity(validationKey, scope.fieldset.isValid);
         });
 
-        scope.$on("formSubmitted", function (ev, args) {
-            // reset the nested fieldset validation state after submit
-            ngModelCtrl.invalidProperties = [];
-        });
-
-        // need to pass the property fieldset here to clear any invalid state of the fieldset when validating a single fieldset property
-        // - it's the Umbraco way to hide the invalid state when altering an invalid property, even if the new value isn't valid either
-        function validateProperty(fieldset, property, markAsInvalid) {
-            var valid = true;
-            fieldset.isValid = true;
+        // called when the value of any property in a fieldset changes
+        function propertyValueChanged(fieldset, property) {
+            // it's the Umbraco way to hide the invalid state when altering an invalid property, even if the new value isn't valid either
             property.isValid = true;
+            setFieldsetValidity(fieldset);
+        }
+
+        // validate a property in a fieldset
+        function validateProperty(fieldset, property) {
             var propertyConfig = getPropertyByAlias(configFieldsetModel, property.alias);
             if (propertyConfig) {
                 // use property.value !== property.value to check for NaN values on numeric inputs
                 if (propertyConfig.required && (property.value == null || property.value === "" || property.value !== property.value)) {
-                    valid = false;
+                    property.isValid = false;
                 }
                 // issue 116: RegEx validate property value
                 // Only validate the property value if anything has been entered - RegEx is considered a supplement to "required".
-                if (valid == true && propertyConfig.regEx && property.value) {
+                if (property.isValid == true && propertyConfig.regEx && property.value) {
                     var regEx = new RegExp(propertyConfig.regEx);
                     if (regEx.test(property.value) == false) {
-                        valid = false;
+                        property.isValid = false;
                     }
                 }
-                // only mark the property as invalid when doing a "hard" validation
-                if (valid == false && markAsInvalid == true) {
-                    property.isValid = false;
-                }
             }
 
-            // handle nested fieldset validation by storing the identifier of all invalid fieldset properties 
-            var propertyAliasIndex = ngModelCtrl.invalidProperties.indexOf(propertyAlias);
-            if (valid == false) {
-                if (propertyAliasIndex == -1) {
-                    ngModelCtrl.invalidProperties.push(propertyAlias);
-                }
-            }
-            else {
-                if (propertyAliasIndex != -1) {
-                    ngModelCtrl.invalidProperties.splice(propertyAliasIndex, 1);
-                }
-            }
-            
-            if (markAsInvalid) {
-                // mark the entire fieldset as invalid if there are any invalid properties in the fieldset, otherwise mark it as valid
-                fieldset.isValid =
-                    _.find(fieldset.properties, function (property) {
-                        return property.isValid == false
-                    }) == null;
-            }
+            setFieldsetValidity(fieldset);
+        }
 
-            // set invalid state if one or more fieldsets contain invalid properties
-            ngModelCtrl.$setValidity('validation', ngModelCtrl.invalidProperties.length == 0);
+        function setFieldsetValidity(fieldset) {
+            // mark the entire fieldset as invalid if there are any invalid properties in the fieldset, otherwise mark it as valid
+            fieldset.isValid =
+                _.find(fieldset.properties, function (property) {
+                    return property.isValid == false
+                }) == null;
         }
     }
 
@@ -791,11 +811,10 @@ angular.module("umbraco.directives").directive('archetypeProperty', function ($c
         return _.unique(propertyAliasParts).reverse().join("-");
     };
 
-
-    function loadView(view, config, defaultValue, alias, propertyAlias, scope, element, ngModelCtrl, validateProperty) {
+    function loadView(view, config, defaultValue, alias, propertyAlias, scope, element, ngModelCtrl, propertyValueChanged) {
         if (view)
         {
-            $http.get(view).success(function (data) {
+            $http.get(view, { cache: true }).success(function (data) {
                 if (data) {
                     if (scope.archetypeConfig.developerMode == '1')
                     {
@@ -844,9 +863,8 @@ angular.module("umbraco.directives").directive('archetypeProperty', function ($c
                     scope.$watch('model.value', function (newValue, oldValue) {
                         scope.archetypeRenderModel.fieldsets[scope.fieldsetIndex].properties[renderModelPropertyIndex].value = newValue;
 
-                        // call validation method for the property when the value changes 
-                        // use "soft" validation to mimic the default umbraco validation style (show error highlights on submit, not while entering data)
-                        validateProperty(scope.archetypeRenderModel.fieldsets[scope.fieldsetIndex], scope.archetypeRenderModel.fieldsets[scope.fieldsetIndex].properties[renderModelPropertyIndex], false);
+                        // notify the linker that the property value changed
+                        propertyValueChanged(scope.archetypeRenderModel.fieldsets[scope.fieldsetIndex], scope.archetypeRenderModel.fieldsets[scope.fieldsetIndex].properties[renderModelPropertyIndex]);
                     });
 
                     element.html(data).show();
@@ -889,7 +907,7 @@ angular.module("umbraco.directives").directive('archetypeCustomView', function (
             view = config.customViewPath;
         }
 
-        $http.get(view).then(function(data) {
+        $http.get(view, { cache: true }).then(function(data) {
 
             element.html(data.data).show();
 
@@ -917,7 +935,7 @@ angular.module("umbraco.directives").directive('archetypeLocalize', function (ar
 
 	return {
 	    restrict: "E",
-	    rep1ace: true,
+	    replace: true,
 	    link: linker,
 	    scope: {
 	    	key: '@'
@@ -950,7 +968,7 @@ angular.module('umbraco.services').factory('archetypeLocalizationService', funct
         initLocalizedResources:function () {
             var deferred = $q.defer();
             userService.getCurrentUser().then(function(user){
-                $http.get("/App_plugins/Archetype/langs/" + user.locale + ".js") 
+                $http.get("/App_plugins/Archetype/langs/" + user.locale + ".js", { cache: true }) 
                     .then(function(response){
                         service.resourceFileLoaded = true;
                         service.dictionary = response.data;
@@ -966,22 +984,70 @@ angular.module('umbraco.services').factory('archetypeLocalizationService', funct
 
     return service;
 });
+var ArchetypeLabels = (function() {
+
+    var isEntityLookupLoading = false;
+    var entityNameLookupCache = [];
+
+    function getEntityById(scope, id, type) {
+
+        for (var i in entityNameLookupCache) {
+            if (entityNameLookupCache[i].id == id) {
+                return entityNameLookupCache[i].value;
+            }
+        }
+
+        if (!isEntityLookupLoading) {
+            isEntityLookupLoading = true;
+
+            scope.resources.entityResource.getById(id, type).then(function(entity) {
+                entityNameLookupCache.push({id: id, value: entity.name});
+
+                isEntityLookupLoading = false;
+                return entity.name;
+            });
+        }
+
+        return "";
+    }
+
+    return {
+        GetFirstDocumentEntityName: function ($scope, value) {
+            if (value) {
+                var id = value.split(",")[0];
+
+                if (id) {
+                    return getEntityById($scope, id, "Document");
+                }
+            }
+
+            return "";
+        }
+    }
+})();
 angular.module('umbraco.resources').factory('archetypePropertyEditorResource', function($q, $http, umbRequestHelper){
     return { 
         getAllDataTypes: function() {
             // Hack - grab DataTypes from Tree API, as `dataTypeService.getAll()` isn't implemented yet
             return umbRequestHelper.resourcePromise(
-                $http.get("/umbraco/backoffice/ArchetypeApi/ArchetypeDataType/GetAll"), 'Failed to retrieve datatypes from tree service'
+                $http.get("/umbraco/backoffice/ArchetypeApi/ArchetypeDataType/GetAll", { cache: true }), 'Failed to retrieve datatypes from tree service'
             );
         },
-        getDataType: function (guid, contentTypeAlias, propertyTypeAlias, archetypeAlias, nodeId) {
-        	return umbRequestHelper.resourcePromise(
-        		$http.get("/umbraco/backoffice/ArchetypeApi/ArchetypeDataType/GetByGuid?guid=" + guid + "&contentTypeAlias=" + contentTypeAlias + "&propertyTypeAlias=" + propertyTypeAlias + "&archetypeAlias=" + archetypeAlias + "&nodeId=" + nodeId), 'Failed to retrieve datatype'
-    		);
+        getDataType: function (guid, useDeepDatatypeLookup, contentTypeAlias, propertyTypeAlias, archetypeAlias, nodeId) {
+            if(useDeepDatatypeLookup) {
+            	return umbRequestHelper.resourcePromise(
+            		$http.get("/umbraco/backoffice/ArchetypeApi/ArchetypeDataType/GetByGuid?guid=" + guid + "&contentTypeAlias=" + contentTypeAlias + "&propertyTypeAlias=" + propertyTypeAlias + "&archetypeAlias=" + archetypeAlias + "&nodeId=" + nodeId), 'Failed to retrieve datatype'
+        		);
+            }
+            else {
+                return umbRequestHelper.resourcePromise(
+                    $http.get("/umbraco/backoffice/ArchetypeApi/ArchetypeDataType/GetByGuid?guid=" + guid , { cache: true }), 'Failed to retrieve datatype'
+                );
+            }
         },
         getPropertyEditorMapping: function(alias) {
             return umbRequestHelper.resourcePromise(
-                $http.get("/umbraco/backoffice/ArchetypeApi/ArchetypeDataType/GetAllPropertyEditors"), 'Failed to retrieve datatype mappings'
+                $http.get("/umbraco/backoffice/ArchetypeApi/ArchetypeDataType/GetAllPropertyEditors", { cache: true }), 'Failed to retrieve datatype mappings'
             ).then(function (data) {
                 var result = _.find(data, function(d) {
                     return d.alias === alias;
