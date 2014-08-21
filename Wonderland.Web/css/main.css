@@ -2873,7 +2873,7 @@ Media query variables
 /* =============================================================================
 Mobile main media query
 ========================================================================== */
-@media screen, (max-width: 767px) {
+@media screen and (max-width: 767px) {
   /* Ensure no increased font sizes */
   /* line 80, sass/partials/_media-queries.scss */
   body {
@@ -3114,4 +3114,25 @@ images
 img, object, embed {
   max-width: 100%;
   border: none;
+}
+
+/* line 63, sass/main.scss */
+#siteHeader nav,
+#siteHeader li,
+#siteHeader a:first-child {
+  float: left;
+}
+/* line 64, sass/main.scss */
+#siteHeader a:last-child {
+  float: right;
+}
+
+/* line 67, sass/main.scss */
+#homeBanner, #promoLinks {
+  margin-left: 15rem;
+}
+
+/* line 73, sass/main.scss */
+#promoLinks > img {
+  margin: 1rem;
 }

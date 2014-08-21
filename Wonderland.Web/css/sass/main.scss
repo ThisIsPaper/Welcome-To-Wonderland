@@ -56,3 +56,21 @@ img, object, embed {
     max-width: $wonderlandRowWidth; //prevent images from going beyond the viewport
     border: none;
 }
+
+#siteHeader {
+  nav,
+  li,
+  a:first-child { float: left }
+  a:last-child { float: right }
+}
+
+#homeBanner {
+  margin-left: 15rem;
+}
+
+#promoLinks {
+  @extend #homeBanner;
+  > img {
+      margin: 1rem;
+  }
+}
