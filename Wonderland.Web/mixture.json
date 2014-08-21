@@ -2,7 +2,7 @@
     "debug": false,
     "lintScripts": false,
     "preprocessorLocations": [
-        "css/SCSS"
+        "css/sass"
     ],
     "preprocessorScriptOutput": "scripts",
     "preprocessorStyleOutput": "css",
@@ -15,18 +15,12 @@
     "templateDefaultLayout": null,
     "templateDefaultPage": null,
     "type": "simple",
-    "useCompass": false,
+    "useCompass": true,
     "simpleModePartnerServer": "wonderland.local",
-    "simpleModeFileTypes": [".cshtml", ".scss", ".js"],
+    "simpleModeFileTypes": [".cshtml", ".scss", ".css", ".js"],
     "modelSource": null,
     "domain": null,
-    "convertHtml": {
-        "path": null,
-        "extension": ".html",
-        "ignoreUrls": null,
-        "relativePaths": false,
-        "default": null
-    },
+    "convertHtml": null,
     "followLeader": true,
     "routes": null,
     "customRuby": false,
@@ -41,22 +35,8 @@
         "umbraco_client"
     ],
     "customTodos": null,
-    "autoPrefixer": {
-      "active": true,
-      "sourceMap": false,
-      "browsers": [
-        "last 1 version", 
-        "> 1%", 
-        "ie 8", 
-        "ie 7"
-      ]
-    },
-    "sass": {
-      "outputStyle": "nested",
-      "sourceMap": false,
-      "lineNumbers": true,
-      "useLibSass": true
-    },
+    "autoPrefixer": null,
+    "sass": null,
     "sitemap": false,
     "less": null,
     "optimiseSVG": true,

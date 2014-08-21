@@ -1,0 +1,42 @@
+/*------------------------------------------------------------------------------------------------------------------------
+ @package: Macmillan - Wonderland (app)
+
+ @author: Sam Latif
+ @www: http://www.samlatif.co.uk
+ @github: samlatif
+
+ @twitter: samlatifuk
+
+ @copyright: COPYRIGHT 8-21-2014 On behalf of Paper Partnerships Ltd
+ =============================================================================
+ Filename: _type.scss
+ =============================================================================
+ This file is responsible for typographic elements on the Macmillan - Wonderland app.  Styles should be compiled using compass and sass.
+ --------------------------------------------------------------------------------------------------------------------- */
+
+@import url($wonderlandFontURL);
+
+/* Type */
+#{headings(all)} {
+	font-weight: $wonderlandHeadingFontWeight;
+}
+
+@for $i from 1 through 6 {
+	#{$i} {
+		font-size: (($wonderlandEm * $wonderlandMultiplierLarge) - (($i * (($wonderlandEm * $wonderlandMultiplierLarge) / 6 )))) + ($wonderlandEm * $wonderlandMultiplier);
+	}
+}
+
+a {
+	@extend %transition-all;
+	color: $wonderlandInverseTextColour;
+	&:visited {
+		color: darken($wonderlandTextColour, 30);
+	}
+	text-decoration: none;
+}
+
+ul, ol, dl {
+	padding-left: ($wonderlandPaddingLarge * $wonderlandMultiplier);
+	@extend %normal-margin-top-bottom;
+}

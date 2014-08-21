@@ -1,0 +1,58 @@
+/*------------------------------------------------------------------------------------------------------------------------
+ @package: Macmillan - Wonderland (app)
+
+ @author: Sam Latif
+ @www: http://www.samlatif.co.uk
+ @github: samlatif
+
+ @twitter: samlatifuk
+
+ @copyright: COPYRIGHT 8-21-2014 On behalf of Paper Partnerships Ltd
+ =============================================================================
+ Filename: main.scss
+ =============================================================================
+ This file is responsible for all styles on the Macmillan - Wonderland app.  Styles should be compiled using compass and sass.
+ --------------------------------------------------------------------------------------------------------------------- */
+
+/* =============================================================================
+Imports
+========================================================================== */
+/* Base imports */
+@import "compass/utilities";
+@import "partials/_variables.scss";
+@import "partials/_helpers.scss";
+@import "compass/reset";
+@import "compass/css3/pie";
+@import "compass/css3";
+@import "partials/_variables.scss";
+@import "partials/_grids.scss";
+@import "partials/icomoon/_icomoon.scss";
+@import "partials/_mixins.scss";
+
+/* Optional imports */
+@import "partials/_type.scss";
+@import "partials/_forms.scss";
+@import "partials/_nav.scss";
+@import "partials/_base.scss";
+@import "partials/_media-queries";
+
+/* =============================================================================
+Main Styles
+========================================================================== */
+body {
+    color: $wonderlandTextColour;
+    background:  #000;
+    line-height: $wonderlandLineHeight;
+    font-family: $wonderlandFontURL;
+    font-size: $wonderlandBaseFontSize;
+    margin: 0;
+}
+
+
+/* =============================================================================
+images
+========================================================================== */
+img, object, embed {
+    max-width: $wonderlandRowWidth; //prevent images from going beyond the viewport
+    border: none;
+}

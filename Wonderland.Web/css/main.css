@@ -1,29 +1,3117 @@
-@-ms-viewport {
-  width: extend-to-zoom;
-  zoom: 1; }
+/*------------------------------------------------------------------------------------------------------------------------
+ @package: Macmillan - Wonderland (app)
 
-/* line 24, C:\xampp\htdocs\Welcome-To-Wonderland\Wonderland.Web\css\SCSS\main.scss */
+ @author: Sam Latif
+ @www: http://www.samlatif.co.uk
+ @github: samlatif
+
+ @twitter: samlatifuk
+
+ @copyright: COPYRIGHT 8-21-2014 On behalf of Paper Partnerships Ltd
+ =============================================================================
+ Filename: main.scss
+ =============================================================================
+ This file is responsible for all styles on the Macmillan - Wonderland app.  Styles should be compiled using compass and sass.
+ --------------------------------------------------------------------------------------------------------------------- */
+/* =============================================================================
+Imports
+========================================================================== */
+/* Base imports */
+/*------------------------------------------------------------------------------------------------------------------------
+ @package: Macmillan - Wonderland (app)
+
+ @author: Sam Latif
+ @www: http://www.samlatif.co.uk
+ @github: samlatif
+
+ @twitter: samlatifuk
+
+ @copyright: COPYRIGHT 8-21-2014 On behalf of Paper Partnerships Ltd
+ =============================================================================
+ Filename: _variables.scss
+ =============================================================================
+ This file is responsible for all variables in the Macmillan - Wonderland app.  Styles should be compiled using compass and sass.
+ --------------------------------------------------------------------------------------------------------------------- */
+/* =============================================================================
+CSS3 PIE
+========================================================================== */
+/* =============================================================================
+Sizes and Spacing
+========================================================================== */
+/* Padding */
+/* Margin */
+/* =============================================================================
+Grid
+========================================================================== */
+/* =============================================================================
+Type
+========================================================================== */
+/* Transitions*/
+/* =============================================================================
+Colours
+========================================================================== */
+/* Links */
+/* =============================================================================
+Borders
+========================================================================== */
+/* =============================================================================
+Media query variables
+========================================================================== */
+/*------------------------------------------------------------------------------------------------------------------------
+ @package: Macmillan - Wonderland (app)
+
+ @author: Sam Latif
+ @www: http://www.samlatif.co.uk
+ @github: samlatif
+
+ @twitter: samlatifuk
+
+ @copyright: COPYRIGHT 8-21-2014 On behalf of Paper Partnerships Ltd
+ =============================================================================
+ Filename: _helpers.scss
+ =============================================================================
+ This file contains all useful helpers (usually used through @extends) in the Macmillan - Wonderland app.  Styles should be compiled using compass and sass (make sure SUSY is installed).
+ --------------------------------------------------------------------------------------------------------------------- */
+/**
+ * Non-semantic helper classes: please define your styles before this section
+ */
+/* =============================================================================
+Visibility Helpers
+========================================================================== */
+/* For image replacement */
+@import url("http://fonts.googleapis.com/css?family=Open+Sans:400,300");
+/* Hide for both screenreaders and browsers:
+   css-discuss.incutio.com/wiki/Screenreader_Visibility */
+/* line 42, sass/partials/_helpers.scss */
+.responsive-grid {
+  display: none;
+}
+
+/* Hide only visually, but have it available for screenreaders: by Jon Neal.
+  www.webaim.org/techniques/css/invisiblecontent/  &  j.mp/visuallyhidden */
+/* Hide visually and from screenreaders, but maintain layout */
+/* line 72, sass/partials/_helpers.scss */
+.nav ul ul {
+  visibility: hidden;
+}
+
+/* line 76, sass/partials/_helpers.scss */
+.nav ul ul li:hover > ul, .nav ul li:hover > ul {
+  visibility: visible;
+}
+
+/* The Magnificent Clearfix: Updated to prevent margin-collapsing on child elements in most situations.
+   nicolasgallagher.com/micro-clearfix-hack/ */
+/* line 82, sass/partials/_helpers.scss */
+.nav {
+  zoom: 1;
+}
+/* line 84, sass/partials/_helpers.scss */
+.nav:before, .nav:after {
+  content: "";
+  display: table;
+}
+/* line 88, sass/partials/_helpers.scss */
+.nav:after {
+  clear: both;
+}
+
+/* line 93, sass/partials/_helpers.scss */
+.form-actions, .btn-group, .toolbar {
+  text-align: center;
+}
+
+/* =============================================================================
+CSS3 PIE
+========================================================================== */
+/* =============================================================================
+Overflow
+========================================================================== */
+/* line 125, sass/partials/_helpers.scss */
+.nav {
+  overflow: visible;
+}
+
+/* =============================================================================
+Margins
+========================================================================== */
+/* Normal margin */
+/* line 138, sass/partials/_helpers.scss */
+.box {
+  margin: 1em;
+}
+
+/* line 142, sass/partials/_helpers.scss */
+.nav, .nav ul, .nav ul ul li:hover > ul, .nav ul li:hover > ul, .responsive-grid, nav ul, nav li ul, .toolbar ul, .toolbar li ul, .btn-group ul {
+  margin: 0;
+}
+
+/* line 146, sass/partials/_helpers.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, p, h1, h2, h3, h4, h5, h6, blockquote, pre, address, cite, code, del, dfn, img, q, dl, ul, fieldset, form, legend, table, caption, summary, audio, video {
+  margin-bottom: 1em;
+}
+
+/* line 154, sass/partials/_helpers.scss */
+.nav ul ul {
+  margin-left: 1em;
+}
+
+/* Normal margin combinations */
+/* line 163, sass/partials/_helpers.scss */
+ul, ol, dl {
+  margin: 1em 0;
+}
+
+/* Large Margin */
+/* Small Margin */
+/* Mini Margin */
+/* =============================================================================
+Padding
+========================================================================== */
+/* Normal padding */
+/* line 254, sass/partials/_helpers.scss */
+.form-actions, .btn-group, .toolbar, .box {
+  padding: 1em;
+}
+
+/* line 258, sass/partials/_helpers.scss */
+.nav, .nav ul, nav ul, nav li ul, .toolbar ul, .toolbar li ul, .btn-group ul {
+  padding: 0;
+}
+
+/* line 262, sass/partials/_helpers.scss */
+.form-actions, .btn-group, .toolbar {
+  padding: 1em 0;
+}
+
+/* line 266, sass/partials/_helpers.scss */
+input:not([type]), input[type="color"], input[type="email"], input[type="number"], input[type="password"], input[type="tel"], input[type="url"], input[type="text"] {
+  padding: 0 1em;
+}
+
+/* Large Padding */
+/* Small Padding */
+/* line 314, sass/partials/_helpers.scss */
+input:not([type]), input[type="color"], input[type="email"], input[type="number"], input[type="password"], input[type="tel"], input[type="url"], input[type="text"] {
+  padding: 0.76923em 0;
+}
+
+/* Mini Padding */
+/* =============================================================================
+Border radius
+========================================================================== */
+/* Normal border radii */
+/* line 373, sass/partials/_helpers.scss */
+.box, nav, button, .responsive-grid, .btn, pre, code, aside, menu {
+  -webkit-border-radius: 0.3663em;
+  -moz-border-radius: 0.3663em;
+  -ms-border-radius: 0.3663em;
+  -o-border-radius: 0.3663em;
+  border-radius: 0.3663em;
+}
+
+/* line 377, sass/partials/_helpers.scss */
+.form-actions input:first-child, .form-actions .btn:first-child, .form-actions button:first-child, .form-actions .responsive-grid:first-child, .btn-group input:first-child, .btn-group .btn:first-child, .btn-group button:first-child, .btn-group .responsive-grid:first-child, .toolbar input:first-child, .toolbar .btn:first-child, .toolbar button:first-child, .toolbar .responsive-grid:first-child {
+  -moz-border-radius-topleft: 0.3663em;
+  -webkit-border-top-left-radius: 0.3663em;
+  border-top-left-radius: 0.3663em;
+  -moz-border-radius-bottomleft: 0.3663em;
+  -webkit-border-bottom-left-radius: 0.3663em;
+  border-bottom-left-radius: 0.3663em;
+}
+
+/* line 382, sass/partials/_helpers.scss */
+.form-actions input:last-child, .form-actions .btn:last-child, .form-actions button:last-child, .form-actions .responsive-grid:last-child, .btn-group input:last-child, .btn-group .btn:last-child, .btn-group button:last-child, .btn-group .responsive-grid:last-child, .toolbar input:last-child, .toolbar .btn:last-child, .toolbar button:last-child, .toolbar .responsive-grid:last-child {
+  -moz-border-radius-topright: 0.3663em;
+  -webkit-border-top-right-radius: 0.3663em;
+  border-top-right-radius: 0.3663em;
+  -moz-border-radius-bottomright: 0.3663em;
+  -webkit-border-bottom-right-radius: 0.3663em;
+  border-bottom-right-radius: 0.3663em;
+}
+
+/* line 387, sass/partials/_helpers.scss */
+.nav ul ul li:first-child a {
+  -moz-border-radius-topleft: 0.3663em;
+  -webkit-border-top-left-radius: 0.3663em;
+  border-top-left-radius: 0.3663em;
+  -moz-border-radius-topright: 0.3663em;
+  -webkit-border-top-right-radius: 0.3663em;
+  border-top-right-radius: 0.3663em;
+}
+
+/* Large border radii */
+/* line 404, sass/partials/_helpers.scss */
+button, .responsive-grid, .btn, input[type="submit"], input[type="search"], input[type="password"][type="search"], isindex[type="search"] {
+  -webkit-border-radius: 1.0em;
+  -moz-border-radius: 1.0em;
+  -ms-border-radius: 1.0em;
+  -o-border-radius: 1.0em;
+  border-radius: 1.0em;
+}
+
+/* No rounded radii (useful for overriding other elements with radii) */
+/* line 430, sass/partials/_helpers.scss */
+.form-actions input, .form-actions .btn, .form-actions button, .form-actions .responsive-grid, .btn-group input, .btn-group .btn, .btn-group button, .btn-group .responsive-grid, .toolbar input, .toolbar .btn, .toolbar button, .toolbar .responsive-grid {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+  border-radius: 0;
+}
+
+/* line 455, sass/partials/_helpers.scss */
+.container, button, .responsive-grid, .btn, input[type="submit"], input:not([type]), input[type="color"], input[type="email"], input[type="number"], input[type="password"], input[type="tel"], input[type="url"], input[type="text"], .box {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 463, sass/partials/_helpers.scss */
+a, button, .responsive-grid, .btn, input[type="submit"], .box {
+  -webkit-transition: 0.5s all ease;
+  -moz-transition: 0.5s all ease;
+  -o-transition: 0.5s all ease;
+  transition: 0.5s all ease;
+}
+
+/* =============================================================================
+Font Sizes
+========================================================================== */
+/* line 474, sass/partials/_helpers.scss */
+button, .responsive-grid, .btn, input[type="submit"], .nav ul a {
+  font-size: 130%;
+}
+
+/* =============================================================================
+Opacity/visibility
+========================================================================== */
+/* line 489, sass/partials/_helpers.scss */
+.nav ul ul {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+}
+
+/* line 497, sass/partials/_helpers.scss */
+.nav ul ul li:hover > ul, .nav ul li:hover > ul {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+}
+
+/* =============================================================================
+Borders
+========================================================================== */
+/* line 504, sass/partials/_helpers.scss */
+button, .responsive-grid, .btn, input[type="submit"], .box {
+  border: 1px solid rgba(204, 204, 204, 0.5);
+}
+
+/* line 516, sass/partials/_helpers.scss */
+.form-actions, .btn-group, .toolbar, header, footer, article, section {
+  border-top: 1px solid rgba(204, 204, 204, 0.5);
+}
+
+/* line 520, sass/partials/_helpers.scss */
+header, footer, article, section {
+  border-bottom: 1px solid rgba(204, 204, 204, 0.5);
+}
+
+/* =============================================================================
+Floats
+========================================================================== */
+/* =============================================================================
+Positions
+========================================================================== */
+/* line 541, sass/partials/_helpers.scss */
+.nav ul ul, .nav ul ul li:first-child a:after {
+  position: absolute;
+}
+
+/* line 549, sass/partials/_helpers.scss */
+.nav ul li {
+  position: relative;
+}
+
+/* =============================================================================
+Display modes
+========================================================================== */
+/* line 560, sass/partials/_helpers.scss */
+.nav ul li:hover > ul {
+  display: block;
+}
+
+/* line 564, sass/partials/_helpers.scss */
+.nav ul a, .nav ul li, nav, nav li, .toolbar, .toolbar li, .btn-group, nav input, nav li input, .toolbar input, .toolbar li input, .btn-group input {
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
+}
+
+/* =============================================================================
+Lists
+========================================================================== */
+/* line 571, sass/partials/_helpers.scss */
+.nav, .nav ul, .nav ul ul {
+  list-style: none;
+}
+
+/* =============================================================================
+Links
+========================================================================== */
+/* =============================================================================
+Widths
+========================================================================== */
+/* line 585, sass/partials/_helpers.scss */
+.nav {
+  width: 100%;
+}
+
+/* line 17, ../../../../../Users/Sam/AppData/Roaming/Mixture/Tools/Ruby/lib/ruby/gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../../Users/Sam/AppData/Roaming/Mixture/Tools/Ruby/lib/ruby/gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html {
-  font-size: 62.5%; }
+  line-height: 1;
+}
 
-/* line 26, C:\xampp\htdocs\Welcome-To-Wonderland\Wonderland.Web\css\SCSS\main.scss */
+/* line 24, ../../../../../Users/Sam/AppData/Roaming/Mixture/Tools/Ruby/lib/ruby/gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../../Users/Sam/AppData/Roaming/Mixture/Tools/Ruby/lib/ruby/gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../../Users/Sam/AppData/Roaming/Mixture/Tools/Ruby/lib/ruby/gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../../Users/Sam/AppData/Roaming/Mixture/Tools/Ruby/lib/ruby/gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../../Users/Sam/AppData/Roaming/Mixture/Tools/Ruby/lib/ruby/gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../../Users/Sam/AppData/Roaming/Mixture/Tools/Ruby/lib/ruby/gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../../Users/Sam/AppData/Roaming/Mixture/Tools/Ruby/lib/ruby/gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+/*------------------------------------------------------------------------------------------------------------------------
+ @package: Macmillan - Wonderland (app)
+
+ @author: Sam Latif
+ @www: http://www.samlatif.co.uk
+ @github: samlatif
+
+ @twitter: samlatifuk
+
+ @copyright: COPYRIGHT 8-21-2014 On behalf of Paper Partnerships Ltd
+ =============================================================================
+ Filename: _variables.scss
+ =============================================================================
+ This file is responsible for all variables in the Macmillan - Wonderland app.  Styles should be compiled using compass and sass.
+ --------------------------------------------------------------------------------------------------------------------- */
+/* =============================================================================
+CSS3 PIE
+========================================================================== */
+/* =============================================================================
+Sizes and Spacing
+========================================================================== */
+/* Padding */
+/* Margin */
+/* =============================================================================
+Grid
+========================================================================== */
+/* =============================================================================
+Type
+========================================================================== */
+/* Transitions*/
+/* =============================================================================
+Colours
+========================================================================== */
+/* Links */
+/* =============================================================================
+Borders
+========================================================================== */
+/* =============================================================================
+Media query variables
+========================================================================== */
+/*------------------------------------------------------------------------------------------------------------------------
+ @package: Macmillan - Wonderland (app)
+
+ @author: Sam Latif
+ @www: http://www.samlatif.co.uk
+ @github: samlatif
+
+ @twitter: samlatifuk
+
+ @copyright: COPYRIGHT 8-21-2014 On behalf of Paper Partnerships Ltd
+ =============================================================================
+ Filename: _grids.scss
+ =============================================================================
+ This file is responsible for all grid logic in the Macmillan - Wonderland app.  Styles should be compiled using compass and sass (make sure SUSY is installed).
+ --------------------------------------------------------------------------------------------------------------------- */
+/*------------------------------------------------------------------------------------------------------------------------
+ @package: Macmillan - Wonderland (app)
+
+ @author: Sam Latif
+ @www: http://www.samlatif.co.uk
+ @github: samlatif
+
+ @twitter: samlatifuk
+
+ @copyright: COPYRIGHT 8-21-2014 On behalf of Paper Partnerships Ltd
+ =============================================================================
+ Filename: _variables.scss
+ =============================================================================
+ This file is responsible for all variables in the Macmillan - Wonderland app.  Styles should be compiled using compass and sass.
+ --------------------------------------------------------------------------------------------------------------------- */
+/* =============================================================================
+CSS3 PIE
+========================================================================== */
+/* =============================================================================
+Sizes and Spacing
+========================================================================== */
+/* Padding */
+/* Margin */
+/* =============================================================================
+Grid
+========================================================================== */
+/* =============================================================================
+Type
+========================================================================== */
+/* Transitions*/
+/* =============================================================================
+Colours
+========================================================================== */
+/* Links */
+/* =============================================================================
+Borders
+========================================================================== */
+/* =============================================================================
+Media query variables
+========================================================================== */
+/* line 107, sass/partials/_grids.scss */
+.container {
+  *zoom: 1;
+  max-width: 59em;
+  _width: 59em;
+  padding-left: 1em;
+  padding-right: 1em;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* line 38, ../../../../../Users/Sam/AppData/Roaming/Mixture/Tools/Ruby/lib/ruby/gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+.container:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/*------------------------------------------------------------------------------------------------------------------------
+ @author: Sam Latif
+ @www: http://www.samlatif.co.uk
+ @github: samlatif
+
+ @twitter: samlatifuk
+
+ @copyright: COPYRIGHT 8-21-2014 On behalf of Paper Partnerships Ltd
+ =============================================================================
+ Filename: _icomoon.scss
+ =============================================================================
+ This file is responsible for all custom vector icons (via icomoon) in the Macmillan - Wonderland app.
+ --------------------------------------------------------------------------------------------------------------------- */
+/* =============================================================================
+Helpers
+========================================================================== */
+@font-face {
+  font-family: "icomoon";
+  src: url("../fonts/icomoon/icomoon.eot");
+  src: url("../fonts/icomoon/icomoon.eot?#iefix") format("embedded-opentype"), url("../fonts/icomoon/icomoon.woff") format("woff"), url("../fonts/icomoon/icomoon.ttf") format("truetype"), url("../fonts/icomoon/icomoon.svg#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* line 26, sass/partials/icomoon/_icomoon.scss */
+.icon-glass:before, .icon-music:before, .icon-search:before, .icon-envelope:before, .icon-heart:before, .icon-star:before, .icon-star-empty:before, .icon-user:before, .icon-film:before, .icon-th-large:before, .icon-th:before, .icon-th-list:before, .icon-remove:before, .icon-zoom-in:before, .icon-zoom-out:before, .icon-off:before, .icon-signal:before, .icon-cog:before, .icon-trash:before, .icon-home:before, .icon-file:before, .icon-time:before, .icon-road:before, .icon-download-alt:before, .icon-download:before, .icon-upload:before, .icon-repeat:before, .icon-refresh:before, .icon-list-alt:before, .icon-lock:before, .icon-flag:before, .icon-headphones:before, .icon-volume-off:before, .icon-volume-down:before, .icon-volume-up:before, .icon-qrcode:before, .icon-tag:before, .icon-tags:before, .icon-book:before, .icon-bookmark:before, .icon-print:before, .icon-camera:before, .icon-font:before, .icon-bold:before, .icon-italic:before, .icon-text-height:before, .icon-text-width:before, .icon-align-left:before, .icon-align-center:before, .icon-align-right:before, .icon-align-justify:before, .icon-list:before, .icon-indent-left:before, .icon-indent-right:before, .icon-picture:before, .icon-pencil:before, .icon-map-marker:before, .icon-adjust:before, .icon-edit:before, .icon-share:before, .icon-move:before, .icon-step-backward:before, .icon-fast-backward:before, .icon-backward:before, .icon-play:before, .icon-pause:before, .icon-stop:before, .icon-forward:before, .icon-fast-forward:before, .icon-step-forward:before, .icon-eject:before, .icon-chevron-left:before, .icon-chevron-right:before, .icon-plus-sign:before, .icon-minus-sign:before, .icon-remove-sign:before, .icon-question-sign:before, .icon-info-sign:before, .icon-screenshot:before, .icon-arrow-left:before, .icon-arrow-right:before, .icon-arrow-up:before, .icon-arrow-down:before, .icon-share-alt:before, .icon-resize-full:before, .icon-resize-small:before, .icon-plus:before, .icon-minus:before, .icon-gift:before, .icon-leaf:before, .icon-fire:before, .icon-eye-open:before, .icon-eye-close:before, .icon-warning-sign:before, .icon-plane:before, .icon-random:before, .icon-comment:before, .icon-magnet:before, .icon-chevron-up:before, .icon-chevron-down:before, .icon-retweet:before, .icon-folder-close:before, .icon-resize-vertical:before, .icon-resize-horizontal:before, .icon-twitter-sign:before, .icon-facebook-sign:before, .icon-key:before, .icon-cogs:before, .icon-comments:before, .icon-thumbs-up:before, .icon-thumbs-down:before, .icon-heart-empty:before, .icon-signout:before, .icon-linkedin-sign:before, .icon-pushpin:before, .icon-external-link:before, .icon-signin:before, .icon-trophy:before, .icon-github-sign:before, .icon-upload-alt:before, .icon-lemon:before, .icon-phone:before, .icon-bookmark-empty:before, .icon-phone-sign:before, .icon-twitter:before, .icon-facebook:before, .icon-github:before, .icon-unlock:before, .icon-credit:before, .icon-rss:before, .icon-hdd:before, .icon-bullhorn:before, .icon-bell:before, .icon-certificate:before, .icon-hand-right:before, .icon-hand-left:before, .icon-hand-up:before, .icon-hand-down:before, .icon-circle-arrow-left:before, .icon-circle-arrow-right:before, .icon-circle-arrow-up:before, .icon-circle-arrow-down:before, .icon-globe:before, .icon-wrench:before, .icon-tasks:before, .icon-filter:before, .icon-briefcase:before, .icon-fullscreen:before, .icon-group:before, .icon-link:before, .icon-cloud:before, .icon-beaker:before, .icon-cut:before, .icon-copy:before, .icon-paper-clip:before, .icon-save:before, .icon-sign-blank:before, .icon-reorder:before, .icon-list-ul:before, .icon-list-ol:before, .icon-strikethrough:before, .icon-underline:before, .icon-table:before, .icon-magic:before, .icon-truck:before, .icon-pinterest:before, .icon-google-plus-sign:before, .icon-google-plus:before, .icon-money:before, .icon-caret-down:before, .icon-caret-up:before, .icon-caret-left:before, .icon-caret-right:before, .icon-columns:before, .icon-sort:before, .icon-sort-down:before, .icon-sort-up:before, .icon-envelope-alt:before, .icon-linkedin:before, .icon-undo:before, .icon-legal:before, .icon-dashboard:before, .icon-comment-alt:before, .icon-comments-alt:before, .icon-bolt:before, .icon-sitemap:before, .icon-umbrella:before, .icon-paste:before, .icon-stethoscope:before, .icon-suitcase:before, .icon-bell-alt:before, .icon-coffee:before, .icon-food:before, .icon-file-alt:before, .icon-building:before, .icon-hospital:before, .icon-ambulance:before, .icon-medkit:before, .icon-angle-up:before, .icon-angle-down:before, .icon-desktop:before, .icon-laptop:before, .icon-tablet:before, .icon-mobile:before, .icon-circle-blank:before, .icon-quote-left:before, .icon-quote-right:before, .icon-paperclip:before, .icon-reply-all:before, .icon-forward-2:before, .icon-user-2:before, .icon-users:before, .icon-heart-2:before, .icon-heart-3:before, .icon-thumbs-up-2:before, .icon-thumbs-down-2:before, .icon-publish:before, .icon-chat:before, .icon-comment-2:before, .icon-skypeonline:before, .icon-error:before, .icon-drawer:before, .icon-drawer-2:before, .icon-drawer-3:before, .icon-volume-high:before, .icon-images:before, .icon-image:before, .icon-pencil-2:before, .icon-cart:before, .icon-coin:before, .icon-credit-2:before, .icon-phone-2:before, .icon-menu:before, .icon-earth:before, .icon-briefcase-2:before, .icon-airplane:before, .icon-truck-2:before, .icon-road-2:before, .icon-happy:before, .icon-sad:before, .icon-checkmark:before, .icon-checkmark-circle:before, .icon-file-pdf:before, .icon-file-openoffice:before, .icon-file-word:before, .icon-file-excel:before, .icon-file-zip:before, .icon-file-css:before, .icon-checkout:before, .icon-file-powerpoint:before, .icon-twitter-2:before, .icon-google-plus-2:before, .icon-facebook-2:before, .icon-flickr:before, .icon-flickr-2:before, .icon-vimeo:before, .icon-soundcloud:before, .icon-skype:before, .icon-apple:before, .icon-windows8:before, .icon-chrome:before, .icon-firefox:before, .icon-IE:before, .icon-opera:before, .icon-barcode:before, .icon-locked:before, .icon-redo:before, .icon-reply:before, .icon-file-add:before, .icon-folder-open:before, .icon-cord:before, .icon-cube:before, .icon-puzzle:before, .icon-tools:before, .icon-equalizer:before, .icon-brush:before, .icon-checkbox-partial:before, .icon-calendar:before, .icon-calendar-2:before, .icon-lifebuoy:before, .icon-exclamation-sign:before, .icon-box-add:before, .icon-box-remove:before, .icon-facetime-video:before, .icon-play-2:before, .icon-play-3:before, .icon-database:before, .icon-aid:before, .icon-vcard:before, .icon-compass:before, .icon-map:before, .icon-lightbulb:before, .icon-stats:before, .icon-pie:before, .icon-cart-2:before, .icon-share-2:before, .icon-html5:before, .icon-github-2:before, .icon-youtube:before, .icon-file-xml:before, .icon-alert:before, [data-icon]:before {
+  font-family: "icomoon";
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* =============================================================================
+Hard-coded icons (for the moment)
+========================================================================== */
+/* line 653, sass/partials/icomoon/_icomoon.scss */
+.icon-glass:before {
+  content: "\f000";
+}
+
+/* line 657, sass/partials/icomoon/_icomoon.scss */
+.icon-music:before {
+  content: "\f001";
+}
+
+/* line 661, sass/partials/icomoon/_icomoon.scss */
+.icon-search:before {
+  content: "\f002";
+}
+
+/* line 665, sass/partials/icomoon/_icomoon.scss */
+.icon-envelope:before {
+  content: "\f003";
+}
+
+/* line 669, sass/partials/icomoon/_icomoon.scss */
+.icon-heart:before {
+  content: "\f004";
+}
+
+/* line 673, sass/partials/icomoon/_icomoon.scss */
+.icon-star:before {
+  content: "\f005";
+}
+
+/* line 677, sass/partials/icomoon/_icomoon.scss */
+.icon-star-empty:before {
+  content: "\f006";
+}
+
+/* line 681, sass/partials/icomoon/_icomoon.scss */
+.icon-user:before {
+  content: "\f007";
+}
+
+/* line 685, sass/partials/icomoon/_icomoon.scss */
+.icon-film:before {
+  content: "\f008";
+}
+
+/* line 689, sass/partials/icomoon/_icomoon.scss */
+.icon-th-large:before {
+  content: "\f009";
+}
+
+/* line 693, sass/partials/icomoon/_icomoon.scss */
+.icon-th:before {
+  content: "\f00a";
+}
+
+/* line 697, sass/partials/icomoon/_icomoon.scss */
+.icon-th-list:before {
+  content: "\f00b";
+}
+
+/* line 701, sass/partials/icomoon/_icomoon.scss */
+.icon-remove:before {
+  content: "\f00d";
+}
+
+/* line 705, sass/partials/icomoon/_icomoon.scss */
+.icon-zoom-in:before {
+  content: "\f00e";
+}
+
+/* line 709, sass/partials/icomoon/_icomoon.scss */
+.icon-zoom-out:before {
+  content: "\f010";
+}
+
+/* line 713, sass/partials/icomoon/_icomoon.scss */
+.icon-off:before {
+  content: "\f011";
+}
+
+/* line 717, sass/partials/icomoon/_icomoon.scss */
+.icon-signal:before {
+  content: "\f012";
+}
+
+/* line 721, sass/partials/icomoon/_icomoon.scss */
+.icon-cog:before {
+  content: "\f013";
+}
+
+/* line 725, sass/partials/icomoon/_icomoon.scss */
+.icon-trash:before {
+  content: "\f014";
+}
+
+/* line 729, sass/partials/icomoon/_icomoon.scss */
+.icon-home:before {
+  content: "\f015";
+}
+
+/* line 733, sass/partials/icomoon/_icomoon.scss */
+.icon-file:before {
+  content: "\f016";
+}
+
+/* line 737, sass/partials/icomoon/_icomoon.scss */
+.icon-time:before {
+  content: "\f017";
+}
+
+/* line 741, sass/partials/icomoon/_icomoon.scss */
+.icon-road:before {
+  content: "\f018";
+}
+
+/* line 745, sass/partials/icomoon/_icomoon.scss */
+.icon-download-alt:before {
+  content: "\f019";
+}
+
+/* line 749, sass/partials/icomoon/_icomoon.scss */
+.icon-download:before {
+  content: "\f01a";
+}
+
+/* line 753, sass/partials/icomoon/_icomoon.scss */
+.icon-upload:before {
+  content: "\f01b";
+}
+
+/* line 757, sass/partials/icomoon/_icomoon.scss */
+.icon-repeat:before {
+  content: "\f01e";
+}
+
+/* line 761, sass/partials/icomoon/_icomoon.scss */
+.icon-refresh:before {
+  content: "\f021";
+}
+
+/* line 765, sass/partials/icomoon/_icomoon.scss */
+.icon-list-alt:before {
+  content: "\f022";
+}
+
+/* line 769, sass/partials/icomoon/_icomoon.scss */
+.icon-lock:before {
+  content: "\f023";
+}
+
+/* line 773, sass/partials/icomoon/_icomoon.scss */
+.icon-flag:before {
+  content: "\f024";
+}
+
+/* line 777, sass/partials/icomoon/_icomoon.scss */
+.icon-headphones:before {
+  content: "\f025";
+}
+
+/* line 781, sass/partials/icomoon/_icomoon.scss */
+.icon-volume-off:before {
+  content: "\f026";
+}
+
+/* line 785, sass/partials/icomoon/_icomoon.scss */
+.icon-volume-down:before {
+  content: "\f027";
+}
+
+/* line 789, sass/partials/icomoon/_icomoon.scss */
+.icon-volume-up:before {
+  content: "\f028";
+}
+
+/* line 793, sass/partials/icomoon/_icomoon.scss */
+.icon-qrcode:before {
+  content: "\f029";
+}
+
+/* line 797, sass/partials/icomoon/_icomoon.scss */
+.icon-tag:before {
+  content: "\f02b";
+}
+
+/* line 801, sass/partials/icomoon/_icomoon.scss */
+.icon-tags:before {
+  content: "\f02c";
+}
+
+/* line 805, sass/partials/icomoon/_icomoon.scss */
+.icon-book:before {
+  content: "\f02d";
+}
+
+/* line 809, sass/partials/icomoon/_icomoon.scss */
+.icon-bookmark:before {
+  content: "\f02e";
+}
+
+/* line 813, sass/partials/icomoon/_icomoon.scss */
+.icon-print:before {
+  content: "\f02f";
+}
+
+/* line 817, sass/partials/icomoon/_icomoon.scss */
+.icon-camera:before {
+  content: "\f030";
+}
+
+/* line 821, sass/partials/icomoon/_icomoon.scss */
+.icon-font:before {
+  content: "\f031";
+}
+
+/* line 825, sass/partials/icomoon/_icomoon.scss */
+.icon-bold:before {
+  content: "\f032";
+}
+
+/* line 829, sass/partials/icomoon/_icomoon.scss */
+.icon-italic:before {
+  content: "\f033";
+}
+
+/* line 833, sass/partials/icomoon/_icomoon.scss */
+.icon-text-height:before {
+  content: "\f034";
+}
+
+/* line 837, sass/partials/icomoon/_icomoon.scss */
+.icon-text-width:before {
+  content: "\f035";
+}
+
+/* line 841, sass/partials/icomoon/_icomoon.scss */
+.icon-align-left:before {
+  content: "\f036";
+}
+
+/* line 845, sass/partials/icomoon/_icomoon.scss */
+.icon-align-center:before {
+  content: "\f037";
+}
+
+/* line 849, sass/partials/icomoon/_icomoon.scss */
+.icon-align-right:before {
+  content: "\f038";
+}
+
+/* line 853, sass/partials/icomoon/_icomoon.scss */
+.icon-align-justify:before {
+  content: "\f039";
+}
+
+/* line 857, sass/partials/icomoon/_icomoon.scss */
+.icon-list:before {
+  content: "\f03a";
+}
+
+/* line 861, sass/partials/icomoon/_icomoon.scss */
+.icon-indent-left:before {
+  content: "\f03b";
+}
+
+/* line 865, sass/partials/icomoon/_icomoon.scss */
+.icon-indent-right:before {
+  content: "\f03c";
+}
+
+/* line 869, sass/partials/icomoon/_icomoon.scss */
+.icon-picture:before {
+  content: "\f03e";
+}
+
+/* line 873, sass/partials/icomoon/_icomoon.scss */
+.icon-pencil:before {
+  content: "\f040";
+}
+
+/* line 877, sass/partials/icomoon/_icomoon.scss */
+.icon-map-marker:before {
+  content: "\f041";
+}
+
+/* line 881, sass/partials/icomoon/_icomoon.scss */
+.icon-adjust:before {
+  content: "\f042";
+}
+
+/* line 885, sass/partials/icomoon/_icomoon.scss */
+.icon-edit:before {
+  content: "\f044";
+}
+
+/* line 889, sass/partials/icomoon/_icomoon.scss */
+.icon-share:before {
+  content: "\f045";
+}
+
+/* line 893, sass/partials/icomoon/_icomoon.scss */
+.icon-move:before {
+  content: "\f047";
+}
+
+/* line 897, sass/partials/icomoon/_icomoon.scss */
+.icon-step-backward:before {
+  content: "\f048";
+}
+
+/* line 901, sass/partials/icomoon/_icomoon.scss */
+.icon-fast-backward:before {
+  content: "\f049";
+}
+
+/* line 905, sass/partials/icomoon/_icomoon.scss */
+.icon-backward:before {
+  content: "\f04a";
+}
+
+/* line 909, sass/partials/icomoon/_icomoon.scss */
+.icon-play:before {
+  content: "\f04b";
+}
+
+/* line 913, sass/partials/icomoon/_icomoon.scss */
+.icon-pause:before {
+  content: "\f04c";
+}
+
+/* line 917, sass/partials/icomoon/_icomoon.scss */
+.icon-stop:before {
+  content: "\f04d";
+}
+
+/* line 921, sass/partials/icomoon/_icomoon.scss */
+.icon-forward:before {
+  content: "\f04e";
+}
+
+/* line 925, sass/partials/icomoon/_icomoon.scss */
+.icon-fast-forward:before {
+  content: "\f050";
+}
+
+/* line 929, sass/partials/icomoon/_icomoon.scss */
+.icon-step-forward:before {
+  content: "\f051";
+}
+
+/* line 933, sass/partials/icomoon/_icomoon.scss */
+.icon-eject:before {
+  content: "\f052";
+}
+
+/* line 937, sass/partials/icomoon/_icomoon.scss */
+.icon-chevron-left:before {
+  content: "\f053";
+}
+
+/* line 941, sass/partials/icomoon/_icomoon.scss */
+.icon-chevron-right:before {
+  content: "\f054";
+}
+
+/* line 945, sass/partials/icomoon/_icomoon.scss */
+.icon-plus-sign:before {
+  content: "\f055";
+}
+
+/* line 949, sass/partials/icomoon/_icomoon.scss */
+.icon-minus-sign:before {
+  content: "\f056";
+}
+
+/* line 953, sass/partials/icomoon/_icomoon.scss */
+.icon-remove-sign:before {
+  content: "\f057";
+}
+
+/* line 957, sass/partials/icomoon/_icomoon.scss */
+.icon-question-sign:before {
+  content: "\f059";
+}
+
+/* line 961, sass/partials/icomoon/_icomoon.scss */
+.icon-info-sign:before {
+  content: "\f05a";
+}
+
+/* line 965, sass/partials/icomoon/_icomoon.scss */
+.icon-screenshot:before {
+  content: "\f05b";
+}
+
+/* line 969, sass/partials/icomoon/_icomoon.scss */
+.icon-arrow-left:before {
+  content: "\f060";
+}
+
+/* line 973, sass/partials/icomoon/_icomoon.scss */
+.icon-arrow-right:before {
+  content: "\f061";
+}
+
+/* line 977, sass/partials/icomoon/_icomoon.scss */
+.icon-arrow-up:before {
+  content: "\f062";
+}
+
+/* line 981, sass/partials/icomoon/_icomoon.scss */
+.icon-arrow-down:before {
+  content: "\f063";
+}
+
+/* line 985, sass/partials/icomoon/_icomoon.scss */
+.icon-share-alt:before {
+  content: "\f064";
+}
+
+/* line 989, sass/partials/icomoon/_icomoon.scss */
+.icon-resize-full:before {
+  content: "\f065";
+}
+
+/* line 993, sass/partials/icomoon/_icomoon.scss */
+.icon-resize-small:before {
+  content: "\f066";
+}
+
+/* line 997, sass/partials/icomoon/_icomoon.scss */
+.icon-plus:before {
+  content: "\f067";
+}
+
+/* line 1001, sass/partials/icomoon/_icomoon.scss */
+.icon-minus:before {
+  content: "\f068";
+}
+
+/* line 1005, sass/partials/icomoon/_icomoon.scss */
+.icon-gift:before {
+  content: "\f06b";
+}
+
+/* line 1009, sass/partials/icomoon/_icomoon.scss */
+.icon-leaf:before {
+  content: "\f06c";
+}
+
+/* line 1013, sass/partials/icomoon/_icomoon.scss */
+.icon-fire:before {
+  content: "\f06d";
+}
+
+/* line 1017, sass/partials/icomoon/_icomoon.scss */
+.icon-eye-open:before {
+  content: "\f06e";
+}
+
+/* line 1021, sass/partials/icomoon/_icomoon.scss */
+.icon-eye-close:before {
+  content: "\f070";
+}
+
+/* line 1025, sass/partials/icomoon/_icomoon.scss */
+.icon-warning-sign:before {
+  content: "\f071";
+}
+
+/* line 1029, sass/partials/icomoon/_icomoon.scss */
+.icon-plane:before {
+  content: "\f072";
+}
+
+/* line 1033, sass/partials/icomoon/_icomoon.scss */
+.icon-random:before {
+  content: "\f074";
+}
+
+/* line 1037, sass/partials/icomoon/_icomoon.scss */
+.icon-comment:before {
+  content: "\f075";
+}
+
+/* line 1041, sass/partials/icomoon/_icomoon.scss */
+.icon-magnet:before {
+  content: "\f076";
+}
+
+/* line 1045, sass/partials/icomoon/_icomoon.scss */
+.icon-chevron-up:before {
+  content: "\f077";
+}
+
+/* line 1049, sass/partials/icomoon/_icomoon.scss */
+.icon-chevron-down:before {
+  content: "\f078";
+}
+
+/* line 1053, sass/partials/icomoon/_icomoon.scss */
+.icon-retweet:before {
+  content: "\f079";
+}
+
+/* line 1057, sass/partials/icomoon/_icomoon.scss */
+.icon-folder-close:before {
+  content: "\f07b";
+}
+
+/* line 1061, sass/partials/icomoon/_icomoon.scss */
+.icon-resize-vertical:before {
+  content: "\f07d";
+}
+
+/* line 1065, sass/partials/icomoon/_icomoon.scss */
+.icon-resize-horizontal:before {
+  content: "\f07e";
+}
+
+/* line 1069, sass/partials/icomoon/_icomoon.scss */
+.icon-twitter-sign:before {
+  content: "\f081";
+}
+
+/* line 1073, sass/partials/icomoon/_icomoon.scss */
+.icon-facebook-sign:before {
+  content: "\f082";
+}
+
+/* line 1077, sass/partials/icomoon/_icomoon.scss */
+.icon-key:before {
+  content: "\f084";
+}
+
+/* line 1081, sass/partials/icomoon/_icomoon.scss */
+.icon-cogs:before {
+  content: "\f085";
+}
+
+/* line 1085, sass/partials/icomoon/_icomoon.scss */
+.icon-comments:before {
+  content: "\f086";
+}
+
+/* line 1089, sass/partials/icomoon/_icomoon.scss */
+.icon-thumbs-up:before {
+  content: "\f087";
+}
+
+/* line 1093, sass/partials/icomoon/_icomoon.scss */
+.icon-thumbs-down:before {
+  content: "\f088";
+}
+
+/* line 1097, sass/partials/icomoon/_icomoon.scss */
+.icon-heart-empty:before {
+  content: "\f08a";
+}
+
+/* line 1101, sass/partials/icomoon/_icomoon.scss */
+.icon-signout:before {
+  content: "\f08b";
+}
+
+/* line 1105, sass/partials/icomoon/_icomoon.scss */
+.icon-linkedin-sign:before {
+  content: "\f08c";
+}
+
+/* line 1109, sass/partials/icomoon/_icomoon.scss */
+.icon-pushpin:before {
+  content: "\f08d";
+}
+
+/* line 1113, sass/partials/icomoon/_icomoon.scss */
+.icon-external-link:before {
+  content: "\f08e";
+}
+
+/* line 1117, sass/partials/icomoon/_icomoon.scss */
+.icon-signin:before {
+  content: "\f090";
+}
+
+/* line 1121, sass/partials/icomoon/_icomoon.scss */
+.icon-trophy:before {
+  content: "\f091";
+}
+
+/* line 1125, sass/partials/icomoon/_icomoon.scss */
+.icon-github-sign:before {
+  content: "\f092";
+}
+
+/* line 1129, sass/partials/icomoon/_icomoon.scss */
+.icon-upload-alt:before {
+  content: "\f093";
+}
+
+/* line 1133, sass/partials/icomoon/_icomoon.scss */
+.icon-lemon:before {
+  content: "\f094";
+}
+
+/* line 1137, sass/partials/icomoon/_icomoon.scss */
+.icon-phone:before {
+  content: "\f095";
+}
+
+/* line 1141, sass/partials/icomoon/_icomoon.scss */
+.icon-bookmark-empty:before {
+  content: "\f097";
+}
+
+/* line 1145, sass/partials/icomoon/_icomoon.scss */
+.icon-phone-sign:before {
+  content: "\f098";
+}
+
+/* line 1149, sass/partials/icomoon/_icomoon.scss */
+.icon-twitter:before {
+  content: "\f099";
+}
+
+/* line 1153, sass/partials/icomoon/_icomoon.scss */
+.icon-facebook:before {
+  content: "\f09a";
+}
+
+/* line 1157, sass/partials/icomoon/_icomoon.scss */
+.icon-github:before {
+  content: "\f09b";
+}
+
+/* line 1161, sass/partials/icomoon/_icomoon.scss */
+.icon-unlock:before {
+  content: "\f09c";
+}
+
+/* line 1165, sass/partials/icomoon/_icomoon.scss */
+.icon-credit:before {
+  content: "\f09d";
+}
+
+/* line 1169, sass/partials/icomoon/_icomoon.scss */
+.icon-rss:before {
+  content: "\f09e";
+}
+
+/* line 1173, sass/partials/icomoon/_icomoon.scss */
+.icon-hdd:before {
+  content: "\f0a0";
+}
+
+/* line 1177, sass/partials/icomoon/_icomoon.scss */
+.icon-bullhorn:before {
+  content: "\f0a1";
+}
+
+/* line 1181, sass/partials/icomoon/_icomoon.scss */
+.icon-bell:before {
+  content: "\f0a2";
+}
+
+/* line 1185, sass/partials/icomoon/_icomoon.scss */
+.icon-certificate:before {
+  content: "\f0a3";
+}
+
+/* line 1189, sass/partials/icomoon/_icomoon.scss */
+.icon-hand-right:before {
+  content: "\f0a4";
+}
+
+/* line 1193, sass/partials/icomoon/_icomoon.scss */
+.icon-hand-left:before {
+  content: "\f0a5";
+}
+
+/* line 1197, sass/partials/icomoon/_icomoon.scss */
+.icon-hand-up:before {
+  content: "\f0a6";
+}
+
+/* line 1201, sass/partials/icomoon/_icomoon.scss */
+.icon-hand-down:before {
+  content: "\f0a7";
+}
+
+/* line 1205, sass/partials/icomoon/_icomoon.scss */
+.icon-circle-arrow-left:before {
+  content: "\f0a8";
+}
+
+/* line 1209, sass/partials/icomoon/_icomoon.scss */
+.icon-circle-arrow-right:before {
+  content: "\f0a9";
+}
+
+/* line 1213, sass/partials/icomoon/_icomoon.scss */
+.icon-circle-arrow-up:before {
+  content: "\f0aa";
+}
+
+/* line 1217, sass/partials/icomoon/_icomoon.scss */
+.icon-circle-arrow-down:before {
+  content: "\f0ab";
+}
+
+/* line 1221, sass/partials/icomoon/_icomoon.scss */
+.icon-globe:before {
+  content: "\f0ac";
+}
+
+/* line 1225, sass/partials/icomoon/_icomoon.scss */
+.icon-wrench:before {
+  content: "\f0ad";
+}
+
+/* line 1229, sass/partials/icomoon/_icomoon.scss */
+.icon-tasks:before {
+  content: "\f0ae";
+}
+
+/* line 1233, sass/partials/icomoon/_icomoon.scss */
+.icon-filter:before {
+  content: "\f0b0";
+}
+
+/* line 1237, sass/partials/icomoon/_icomoon.scss */
+.icon-briefcase:before {
+  content: "\f0b1";
+}
+
+/* line 1241, sass/partials/icomoon/_icomoon.scss */
+.icon-fullscreen:before {
+  content: "\f0b2";
+}
+
+/* line 1245, sass/partials/icomoon/_icomoon.scss */
+.icon-group:before {
+  content: "\f0c0";
+}
+
+/* line 1249, sass/partials/icomoon/_icomoon.scss */
+.icon-link:before {
+  content: "\f0c1";
+}
+
+/* line 1253, sass/partials/icomoon/_icomoon.scss */
+.icon-cloud:before {
+  content: "\f0c2";
+}
+
+/* line 1257, sass/partials/icomoon/_icomoon.scss */
+.icon-beaker:before {
+  content: "\f0c3";
+}
+
+/* line 1261, sass/partials/icomoon/_icomoon.scss */
+.icon-cut:before {
+  content: "\f0c4";
+}
+
+/* line 1265, sass/partials/icomoon/_icomoon.scss */
+.icon-copy:before {
+  content: "\f0c5";
+}
+
+/* line 1269, sass/partials/icomoon/_icomoon.scss */
+.icon-paper-clip:before {
+  content: "\f0c6";
+}
+
+/* line 1273, sass/partials/icomoon/_icomoon.scss */
+.icon-save:before {
+  content: "\f0c7";
+}
+
+/* line 1277, sass/partials/icomoon/_icomoon.scss */
+.icon-sign-blank:before {
+  content: "\f0c8";
+}
+
+/* line 1281, sass/partials/icomoon/_icomoon.scss */
+.icon-reorder:before {
+  content: "\f0c9";
+}
+
+/* line 1285, sass/partials/icomoon/_icomoon.scss */
+.icon-list-ul:before {
+  content: "\f0ca";
+}
+
+/* line 1289, sass/partials/icomoon/_icomoon.scss */
+.icon-list-ol:before {
+  content: "\f0cb";
+}
+
+/* line 1293, sass/partials/icomoon/_icomoon.scss */
+.icon-strikethrough:before {
+  content: "\f0cc";
+}
+
+/* line 1297, sass/partials/icomoon/_icomoon.scss */
+.icon-underline:before {
+  content: "\f0cd";
+}
+
+/* line 1301, sass/partials/icomoon/_icomoon.scss */
+.icon-table:before {
+  content: "\f0ce";
+}
+
+/* line 1305, sass/partials/icomoon/_icomoon.scss */
+.icon-magic:before {
+  content: "\f0d0";
+}
+
+/* line 1309, sass/partials/icomoon/_icomoon.scss */
+.icon-truck:before {
+  content: "\f0d1";
+}
+
+/* line 1313, sass/partials/icomoon/_icomoon.scss */
+.icon-pinterest:before {
+  content: "\f0d2";
+}
+
+/* line 1317, sass/partials/icomoon/_icomoon.scss */
+.icon-google-plus-sign:before {
+  content: "\f0d4";
+}
+
+/* line 1321, sass/partials/icomoon/_icomoon.scss */
+.icon-google-plus:before {
+  content: "\f0d5";
+}
+
+/* line 1325, sass/partials/icomoon/_icomoon.scss */
+.icon-money:before {
+  content: "\f0d6";
+}
+
+/* line 1329, sass/partials/icomoon/_icomoon.scss */
+.icon-caret-down:before {
+  content: "\f0d7";
+}
+
+/* line 1333, sass/partials/icomoon/_icomoon.scss */
+.icon-caret-up:before {
+  content: "\f0d8";
+}
+
+/* line 1337, sass/partials/icomoon/_icomoon.scss */
+.icon-caret-left:before {
+  content: "\f0d9";
+}
+
+/* line 1341, sass/partials/icomoon/_icomoon.scss */
+.icon-caret-right:before {
+  content: "\f0da";
+}
+
+/* line 1345, sass/partials/icomoon/_icomoon.scss */
+.icon-columns:before {
+  content: "\f0db";
+}
+
+/* line 1349, sass/partials/icomoon/_icomoon.scss */
+.icon-sort:before {
+  content: "\f0dc";
+}
+
+/* line 1353, sass/partials/icomoon/_icomoon.scss */
+.icon-sort-down:before {
+  content: "\f0dd";
+}
+
+/* line 1357, sass/partials/icomoon/_icomoon.scss */
+.icon-sort-up:before {
+  content: "\f0de";
+}
+
+/* line 1361, sass/partials/icomoon/_icomoon.scss */
+.icon-envelope-alt:before {
+  content: "\f0e0";
+}
+
+/* line 1365, sass/partials/icomoon/_icomoon.scss */
+.icon-linkedin:before {
+  content: "\f0e1";
+}
+
+/* line 1369, sass/partials/icomoon/_icomoon.scss */
+.icon-undo:before {
+  content: "\f0e2";
+}
+
+/* line 1373, sass/partials/icomoon/_icomoon.scss */
+.icon-legal:before {
+  content: "\f0e3";
+}
+
+/* line 1377, sass/partials/icomoon/_icomoon.scss */
+.icon-dashboard:before {
+  content: "\f0e4";
+}
+
+/* line 1381, sass/partials/icomoon/_icomoon.scss */
+.icon-comment-alt:before {
+  content: "\f0e5";
+}
+
+/* line 1385, sass/partials/icomoon/_icomoon.scss */
+.icon-comments-alt:before {
+  content: "\f0e6";
+}
+
+/* line 1389, sass/partials/icomoon/_icomoon.scss */
+.icon-bolt:before {
+  content: "\f0e7";
+}
+
+/* line 1393, sass/partials/icomoon/_icomoon.scss */
+.icon-sitemap:before {
+  content: "\f0e8";
+}
+
+/* line 1397, sass/partials/icomoon/_icomoon.scss */
+.icon-umbrella:before {
+  content: "\f0e9";
+}
+
+/* line 1401, sass/partials/icomoon/_icomoon.scss */
+.icon-paste:before {
+  content: "\f0ea";
+}
+
+/* line 1405, sass/partials/icomoon/_icomoon.scss */
+.icon-stethoscope:before {
+  content: "\f0eb";
+}
+
+/* line 1409, sass/partials/icomoon/_icomoon.scss */
+.icon-suitcase:before {
+  content: "\f0ec";
+}
+
+/* line 1413, sass/partials/icomoon/_icomoon.scss */
+.icon-bell-alt:before {
+  content: "\f0ed";
+}
+
+/* line 1417, sass/partials/icomoon/_icomoon.scss */
+.icon-coffee:before {
+  content: "\f0ee";
+}
+
+/* line 1421, sass/partials/icomoon/_icomoon.scss */
+.icon-food:before {
+  content: "\f0f0";
+}
+
+/* line 1425, sass/partials/icomoon/_icomoon.scss */
+.icon-file-alt:before {
+  content: "\f0f1";
+}
+
+/* line 1429, sass/partials/icomoon/_icomoon.scss */
+.icon-building:before {
+  content: "\f0f2";
+}
+
+/* line 1433, sass/partials/icomoon/_icomoon.scss */
+.icon-hospital:before {
+  content: "\f0f3";
+}
+
+/* line 1437, sass/partials/icomoon/_icomoon.scss */
+.icon-ambulance:before {
+  content: "\f0f4";
+}
+
+/* line 1441, sass/partials/icomoon/_icomoon.scss */
+.icon-medkit:before {
+  content: "\f0f5";
+}
+
+/* line 1445, sass/partials/icomoon/_icomoon.scss */
+.icon-angle-up:before {
+  content: "\f0f6";
+}
+
+/* line 1449, sass/partials/icomoon/_icomoon.scss */
+.icon-angle-down:before {
+  content: "\f0f7";
+}
+
+/* line 1453, sass/partials/icomoon/_icomoon.scss */
+.icon-desktop:before {
+  content: "\f0f8";
+}
+
+/* line 1457, sass/partials/icomoon/_icomoon.scss */
+.icon-laptop:before {
+  content: "\f0f9";
+}
+
+/* line 1461, sass/partials/icomoon/_icomoon.scss */
+.icon-tablet:before {
+  content: "\f0fa";
+}
+
+/* line 1465, sass/partials/icomoon/_icomoon.scss */
+.icon-mobile:before {
+  content: "\f0fb";
+}
+
+/* line 1469, sass/partials/icomoon/_icomoon.scss */
+.icon-circle-blank:before {
+  content: "\f0fc";
+}
+
+/* line 1473, sass/partials/icomoon/_icomoon.scss */
+.icon-quote-left:before {
+  content: "\f0fd";
+}
+
+/* line 1477, sass/partials/icomoon/_icomoon.scss */
+.icon-quote-right:before {
+  content: "\f0fe";
+}
+
+/* line 1481, sass/partials/icomoon/_icomoon.scss */
+.icon-paperclip:before {
+  content: "\f104";
+}
+
+/* line 1485, sass/partials/icomoon/_icomoon.scss */
+.icon-reply-all:before {
+  content: "\f107";
+}
+
+/* line 1489, sass/partials/icomoon/_icomoon.scss */
+.icon-forward-2:before {
+  content: "\f108";
+}
+
+/* line 1493, sass/partials/icomoon/_icomoon.scss */
+.icon-user-2:before {
+  content: "\f109";
+}
+
+/* line 1497, sass/partials/icomoon/_icomoon.scss */
+.icon-users:before {
+  content: "\f10a";
+}
+
+/* line 1501, sass/partials/icomoon/_icomoon.scss */
+.icon-heart-2:before {
+  content: "\f10b";
+}
+
+/* line 1505, sass/partials/icomoon/_icomoon.scss */
+.icon-heart-3:before {
+  content: "\f10c";
+}
+
+/* line 1509, sass/partials/icomoon/_icomoon.scss */
+.icon-thumbs-up-2:before {
+  content: "\f110";
+}
+
+/* line 1513, sass/partials/icomoon/_icomoon.scss */
+.icon-thumbs-down-2:before {
+  content: "\f111";
+}
+
+/* line 1517, sass/partials/icomoon/_icomoon.scss */
+.icon-chat:before {
+  content: "\f112";
+}
+
+/* line 1521, sass/partials/icomoon/_icomoon.scss */
+.icon-comment-2:before {
+  content: "\f113";
+}
+
+/* line 1525, sass/partials/icomoon/_icomoon.scss */
+.icon-skypeonline:before {
+  content: "\f39e";
+}
+
+/* line 1529, sass/partials/icomoon/_icomoon.scss */
+.icon-error:before {
+  content: "\e002";
+}
+
+/* line 1533, sass/partials/icomoon/_icomoon.scss */
+.icon-drawer:before {
+  content: "\e003";
+}
+
+/* line 1537, sass/partials/icomoon/_icomoon.scss */
+.icon-drawer-2:before {
+  content: "\e004";
+}
+
+/* line 1541, sass/partials/icomoon/_icomoon.scss */
+.icon-drawer-3:before {
+  content: "\e005";
+}
+
+/* line 1545, sass/partials/icomoon/_icomoon.scss */
+.icon-volume-high:before {
+  content: "\e006";
+}
+
+/* line 1549, sass/partials/icomoon/_icomoon.scss */
+.icon-images:before {
+  content: "\e008";
+}
+
+/* line 1553, sass/partials/icomoon/_icomoon.scss */
+.icon-image:before {
+  content: "\e009";
+}
+
+/* line 1557, sass/partials/icomoon/_icomoon.scss */
+.icon-pencil-2:before {
+  content: "\e00a";
+}
+
+/* line 1561, sass/partials/icomoon/_icomoon.scss */
+.icon-cart:before {
+  content: "\e00e";
+}
+
+/* line 1565, sass/partials/icomoon/_icomoon.scss */
+.icon-coin:before {
+  content: "\e00c";
+}
+
+/* line 1569, sass/partials/icomoon/_icomoon.scss */
+.icon-credit-2:before {
+  content: "\e00d";
+}
+
+/* line 1573, sass/partials/icomoon/_icomoon.scss */
+.icon-phone-2:before {
+  content: "\e00f";
+}
+
+/* line 1577, sass/partials/icomoon/_icomoon.scss */
+.icon-menu:before {
+  content: "\e011";
+}
+
+/* line 1581, sass/partials/icomoon/_icomoon.scss */
+.icon-earth:before {
+  content: "\e012";
+}
+
+/* line 1585, sass/partials/icomoon/_icomoon.scss */
+.icon-briefcase-2:before {
+  content: "\e013";
+}
+
+/* line 1589, sass/partials/icomoon/_icomoon.scss */
+.icon-airplane:before {
+  content: "\e014";
+}
+
+/* line 1593, sass/partials/icomoon/_icomoon.scss */
+.icon-truck-2:before {
+  content: "\e015";
+}
+
+/* line 1597, sass/partials/icomoon/_icomoon.scss */
+.icon-road-2:before {
+  content: "\e016";
+}
+
+/* line 1601, sass/partials/icomoon/_icomoon.scss */
+.icon-happy:before {
+  content: "\e018";
+}
+
+/* line 1605, sass/partials/icomoon/_icomoon.scss */
+.icon-sad:before {
+  content: "\e01b";
+}
+
+/* line 1609, sass/partials/icomoon/_icomoon.scss */
+.icon-checkmark:before {
+  content: "\e019";
+}
+
+/* line 1613, sass/partials/icomoon/_icomoon.scss */
+.icon-checkmark-circle:before {
+  content: "\e01c";
+}
+
+/* line 1617, sass/partials/icomoon/_icomoon.scss */
+.icon-file-pdf:before {
+  content: "\e020";
+}
+
+/* line 1621, sass/partials/icomoon/_icomoon.scss */
+.icon-file-openoffice:before {
+  content: "\e021";
+}
+
+/* line 1625, sass/partials/icomoon/_icomoon.scss */
+.icon-file-word:before {
+  content: "\e022";
+}
+
+/* line 1629, sass/partials/icomoon/_icomoon.scss */
+.icon-file-excel:before {
+  content: "\e023";
+}
+
+/* line 1633, sass/partials/icomoon/_icomoon.scss */
+.icon-file-zip:before {
+  content: "\e024";
+}
+
+/* line 1637, sass/partials/icomoon/_icomoon.scss */
+.icon-file-css:before {
+  content: "\e025";
+}
+
+/* line 1641, sass/partials/icomoon/_icomoon.scss */
+.icon-file-powerpoint:before {
+  content: "\e026";
+}
+
+/* line 1645, sass/partials/icomoon/_icomoon.scss */
+.icon-twitter-2:before {
+  content: "\e027";
+}
+
+/* line 1649, sass/partials/icomoon/_icomoon.scss */
+.icon-google-plus-2:before {
+  content: "\e02a";
+}
+
+/* line 1653, sass/partials/icomoon/_icomoon.scss */
+.icon-facebook-2:before {
+  content: "\e028";
+}
+
+/* line 1657, sass/partials/icomoon/_icomoon.scss */
+.icon-flickr:before {
+  content: "\e029";
+}
+
+/* line 1661, sass/partials/icomoon/_icomoon.scss */
+.icon-flickr-2:before {
+  content: "\e02b";
+}
+
+/* line 1665, sass/partials/icomoon/_icomoon.scss */
+.icon-vimeo:before {
+  content: "\e02c";
+}
+
+/* line 1669, sass/partials/icomoon/_icomoon.scss */
+.icon-soundcloud:before {
+  content: "\e02f";
+}
+
+/* line 1673, sass/partials/icomoon/_icomoon.scss */
+.icon-skype:before {
+  content: "\e030";
+}
+
+/* line 1677, sass/partials/icomoon/_icomoon.scss */
+.icon-apple:before {
+  content: "\e031";
+}
+
+/* line 1681, sass/partials/icomoon/_icomoon.scss */
+.icon-windows8:before {
+  content: "\e032";
+}
+
+/* line 1685, sass/partials/icomoon/_icomoon.scss */
+.icon-chrome:before {
+  content: "\e033";
+}
+
+/* line 1689, sass/partials/icomoon/_icomoon.scss */
+.icon-firefox:before {
+  content: "\e034";
+}
+
+/* line 1693, sass/partials/icomoon/_icomoon.scss */
+.icon-IE:before {
+  content: "\e035";
+}
+
+/* line 1697, sass/partials/icomoon/_icomoon.scss */
+.icon-opera:before {
+  content: "\e036";
+}
+
+/* line 1701, sass/partials/icomoon/_icomoon.scss */
+.icon-barcode:before {
+  content: "\f02a";
+}
+
+/* line 1705, sass/partials/icomoon/_icomoon.scss */
+.icon-locked:before {
+  content: "\e000";
+}
+
+/* line 1709, sass/partials/icomoon/_icomoon.scss */
+.icon-redo:before {
+  content: "\e001";
+}
+
+/* line 1713, sass/partials/icomoon/_icomoon.scss */
+.icon-reply:before {
+  content: "\f106";
+}
+
+/* line 1717, sass/partials/icomoon/_icomoon.scss */
+.icon-file-add:before {
+  content: "\e037";
+}
+
+/* line 1721, sass/partials/icomoon/_icomoon.scss */
+.icon-folder-open:before {
+  content: "\f07c";
+}
+
+/* line 1725, sass/partials/icomoon/_icomoon.scss */
+.icon-cord:before {
+  content: "\e00b";
+}
+
+/* line 1729, sass/partials/icomoon/_icomoon.scss */
+.icon-cube:before {
+  content: "\e038";
+}
+
+/* line 1733, sass/partials/icomoon/_icomoon.scss */
+.icon-puzzle:before {
+  content: "\e039";
+}
+
+/* line 1737, sass/partials/icomoon/_icomoon.scss */
+.icon-tools:before {
+  content: "\e03a";
+}
+
+/* line 1741, sass/partials/icomoon/_icomoon.scss */
+.icon-equalizer:before {
+  content: "\e03b";
+}
+
+/* line 1745, sass/partials/icomoon/_icomoon.scss */
+.icon-brush:before {
+  content: "\e03c";
+}
+
+/* line 1749, sass/partials/icomoon/_icomoon.scss */
+.icon-checkbox-partial:before {
+  content: "\e03d";
+}
+
+/* line 1753, sass/partials/icomoon/_icomoon.scss */
+.icon-calendar:before {
+  content: "\f073";
+}
+
+/* line 1757, sass/partials/icomoon/_icomoon.scss */
+.icon-calendar-2:before {
+  content: "\e03e";
+}
+
+/* line 1761, sass/partials/icomoon/_icomoon.scss */
+.icon-lifebuoy:before {
+  content: "\e03f";
+}
+
+/* line 1765, sass/partials/icomoon/_icomoon.scss */
+.icon-exclamation-sign:before {
+  content: "\f06a";
+}
+
+/* line 1769, sass/partials/icomoon/_icomoon.scss */
+.icon-box-add:before {
+  content: "\e010";
+}
+
+/* line 1773, sass/partials/icomoon/_icomoon.scss */
+.icon-box-remove:before {
+  content: "\e017";
+}
+
+/* line 1777, sass/partials/icomoon/_icomoon.scss */
+.icon-facetime-video:before {
+  content: "\f03d";
+}
+
+/* line 1781, sass/partials/icomoon/_icomoon.scss */
+.icon-play-2:before {
+  content: "\e007";
+}
+
+/* line 1785, sass/partials/icomoon/_icomoon.scss */
+.icon-play-3:before {
+  content: "\e01a";
+}
+
+/* line 1789, sass/partials/icomoon/_icomoon.scss */
+.icon-database:before {
+  content: "\e01d";
+}
+
+/* line 1793, sass/partials/icomoon/_icomoon.scss */
+.icon-aid:before {
+  content: "\e01e";
+}
+
+/* line 1797, sass/partials/icomoon/_icomoon.scss */
+.icon-vcard:before {
+  content: "\e01f";
+}
+
+/* line 1801, sass/partials/icomoon/_icomoon.scss */
+.icon-compass:before {
+  content: "\e040";
+}
+
+/* line 1805, sass/partials/icomoon/_icomoon.scss */
+.icon-map:before {
+  content: "\e041";
+}
+
+/* line 1809, sass/partials/icomoon/_icomoon.scss */
+.icon-lightbulb:before {
+  content: "\e02e";
+}
+
+/* line 1813, sass/partials/icomoon/_icomoon.scss */
+.icon-stats:before {
+  content: "\e042";
+}
+
+/* line 1817, sass/partials/icomoon/_icomoon.scss */
+.icon-pie:before {
+  content: "\e043";
+}
+
+/* line 1821, sass/partials/icomoon/_icomoon.scss */
+.icon-cart-2:before {
+  content: "\e044";
+}
+
+/* line 1825, sass/partials/icomoon/_icomoon.scss */
+.icon-share-2:before {
+  content: "\e045";
+}
+
+/* line 1829, sass/partials/icomoon/_icomoon.scss */
+.icon-html5:before {
+  content: "\e046";
+}
+
+/* line 1833, sass/partials/icomoon/_icomoon.scss */
+.icon-github-2:before {
+  content: "\e047";
+}
+
+/* line 1837, sass/partials/icomoon/_icomoon.scss */
+.icon-youtube:before {
+  content: "\e02d";
+}
+
+/* line 1841, sass/partials/icomoon/_icomoon.scss */
+.icon-file-xml:before {
+  content: "\e048";
+}
+
+/* line 1845, sass/partials/icomoon/_icomoon.scss */
+.icon-alert:before {
+  content: "\e049";
+}
+
+/*------------------------------------------------------------------------------------------------------------------------
+ @package: Macmillan - Wonderland (app)
+
+ @author: Sam Latif
+ @www: http://www.samlatif.co.uk
+ @github: samlatif
+
+ @twitter: samlatifuk
+
+ @copyright: COPYRIGHT 8-21-2014 On behalf of Paper Partnerships Ltd
+ =============================================================================
+ Filename: _mixins.scss
+ =============================================================================
+ This file is responsible for all mixins in the Macmillan - Wonderland app.  Styles should be compiled using compass and sass.
+ --------------------------------------------------------------------------------------------------------------------- */
+/* =============================================================================
+Visibility Mixins
+========================================================================== */
+/* Optional imports */
+/*------------------------------------------------------------------------------------------------------------------------
+ @package: Macmillan - Wonderland (app)
+
+ @author: Sam Latif
+ @www: http://www.samlatif.co.uk
+ @github: samlatif
+
+ @twitter: samlatifuk
+
+ @copyright: COPYRIGHT 8-21-2014 On behalf of Paper Partnerships Ltd
+ =============================================================================
+ Filename: _type.scss
+ =============================================================================
+ This file is responsible for typographic elements on the Macmillan - Wonderland app.  Styles should be compiled using compass and sass.
+ --------------------------------------------------------------------------------------------------------------------- */
+/* Type */
+/* line 20, sass/partials/_type.scss */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 300;
+}
+
+/* line 25, sass/partials/_type.scss */
+1 {
+  font-size: 3.575em;
+}
+
+/* line 25, sass/partials/_type.scss */
+2 {
+  font-size: 3.12em;
+}
+
+/* line 25, sass/partials/_type.scss */
+3 {
+  font-size: 2.665em;
+}
+
+/* line 25, sass/partials/_type.scss */
+4 {
+  font-size: 2.21em;
+}
+
+/* line 25, sass/partials/_type.scss */
+5 {
+  font-size: 1.755em;
+}
+
+/* line 25, sass/partials/_type.scss */
+6 {
+  font-size: 1.3em;
+}
+
+/* line 30, sass/partials/_type.scss */
 a {
-  text-decoration: none; }
-  /* line 28, C:\xampp\htdocs\Welcome-To-Wonderland\Wonderland.Web\css\SCSS\main.scss */
-  a:hover {
-    text-decoration: underline; }
+  color: white;
+  text-decoration: none;
+}
+/* line 33, sass/partials/_type.scss */
+a:visited {
+  color: black;
+}
 
-/* line 34, C:\xampp\htdocs\Welcome-To-Wonderland\Wonderland.Web\css\SCSS\main.scss */
-#siteHeader nav, #siteHeader li, #siteHeader a:first-child {
-  float: left; }
-/* line 35, C:\xampp\htdocs\Welcome-To-Wonderland\Wonderland.Web\css\SCSS\main.scss */
-#siteHeader a:last-child {
-  float: right; }
+/* line 39, sass/partials/_type.scss */
+ul, ol, dl {
+  padding-left: 1.69em;
+}
 
-/* line 38, C:\xampp\htdocs\Welcome-To-Wonderland\Wonderland.Web\css\SCSS\main.scss */
-#homeBanner, #promoLinks {
-  margin-left: 15rem; }
+/*------------------------------------------------------------------------------------------------------------------------
+ @package: Macmillan - Wonderland (app)
 
-/* line 44, C:\xampp\htdocs\Welcome-To-Wonderland\Wonderland.Web\css\SCSS\main.scss */
-#promoLinks > img {
-  margin: 1rem; }
+ @author: Sam Latif
+ @www: http://www.samlatif.co.uk
+ @github: samlatif
+
+ @twitter: samlatifuk
+
+ @copyright: COPYRIGHT 8-21-2014 On behalf of Paper Partnerships Ltd
+ =============================================================================
+ Filename: _forms.scss
+ =============================================================================
+ This file is responsible for all form styles in the Macmillan - Wonderland app.
+ --------------------------------------------------------------------------------------------------------------------- */
+/* =============================================================================
+Buttons
+========================================================================== */
+/* Normal buttons */
+/* line 21, sass/partials/_forms.scss */
+button, .responsive-grid, .btn, input[type="submit"] {
+  cursor: pointer;
+  font-weight: 500;
+  margin: 0 1em 0 0;
+  color: #97d377;
+  padding: 0.76923em 1em;
+  text-shadow: 0 1px 0 white;
+  text-decoration: none;
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #b479d4), color-stop(100%, #682c88));
+  background: -webkit-linear-gradient(#b479d4, #682c88);
+  background: -moz-linear-gradient(#b479d4, #682c88);
+  background: -o-linear-gradient(#b479d4, #682c88);
+  -pie-background: linear-gradient(#b479d4, #682c88);
+  background: linear-gradient(#b479d4, #682c88);
+  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 0.3em rgba(104, 44, 136, 0.5);
+  -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 0.3em rgba(104, 44, 136, 0.5);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 0.3em rgba(104, 44, 136, 0.5);
+}
+/* line 37, sass/partials/_forms.scss */
+button:hover, .responsive-grid:hover, button:focus, .responsive-grid:focus, .btn:hover, .btn:focus, input[type="submit"]:hover, input[type="submit"]:focus {
+  background: #7c7c7c;
+  border-color: #494949;
+  color: white;
+  text-shadow: 0 1px 1px #494949;
+  -webkit-box-shadow: inset 0 1px 0 rgba(104, 44, 136, 0.75), 0 1px 4px rgba(104, 44, 136, 0.5);
+  -moz-box-shadow: inset 0 1px 0 rgba(104, 44, 136, 0.75), 0 1px 4px rgba(104, 44, 136, 0.5);
+  box-shadow: inset 0 1px 0 rgba(104, 44, 136, 0.75), 0 1px 4px rgba(104, 44, 136, 0.5);
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #969696), color-stop(100%, #7c7c7c));
+  background: -webkit-linear-gradient(#969696, #7c7c7c);
+  background: -moz-linear-gradient(#969696, #7c7c7c);
+  background: -o-linear-gradient(#969696, #7c7c7c);
+  -pie-background: linear-gradient(#969696, #7c7c7c);
+  background: linear-gradient(#969696, #7c7c7c);
+}
+/* line 45, sass/partials/_forms.scss */
+button:active, .responsive-grid:active, .btn:active, input[type="submit"]:active {
+  border-color: rgba(140, 140, 140, 0.5);
+  -webkit-box-shadow: inset 0 0 1.0em black;
+  -moz-box-shadow: inset 0 0 1.0em black;
+  box-shadow: inset 0 0 1.0em black;
+}
+
+/* Button groups */
+/* line 52, sass/partials/_forms.scss */
+.form-actions, .btn-group, .toolbar {
+  background: rgba(104, 44, 136, 0.17);
+}
+/* line 58, sass/partials/_forms.scss */
+.form-actions input, .form-actions .btn, .form-actions button, .form-actions .responsive-grid, .btn-group input, .btn-group .btn, .btn-group button, .btn-group .responsive-grid, .toolbar input, .toolbar .btn, .toolbar button, .toolbar .responsive-grid {
+  margin: 0 -0.28177em 0 0;
+}
+
+/* =============================================================================
+Form inputs
+========================================================================== */
+/* Allow inputs to be displayed similarly */
+/* line 75, sass/partials/_forms.scss */
+input, input[type="password"], input[type="search"], isindex {
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+/*------------------------------------------------------------------------------------------------------------------------
+ @package: Macmillan - Wonderland (app)
+
+ @author: Sam Latif
+ @www: http://www.samlatif.co.uk
+ @github: samlatif
+
+ @twitter: samlatifuk
+
+ @copyright: COPYRIGHT 8-21-2014 On behalf of Paper Partnerships Ltd
+ =============================================================================
+ Filename: _type.scss
+ =============================================================================
+ This file is responsible for navigation elements on the Macmillan - Wonderland app.  Styles should be compiled using compass and sass.
+ --------------------------------------------------------------------------------------------------------------------- */
+/*------------------------------------------------------------------------------------------------------------------------
+ @package: Macmillan - Wonderland (app)
+
+ @author: Sam Latif
+ @www: http://www.samlatif.co.uk
+ @github: samlatif
+
+ @twitter: samlatifuk
+
+ @copyright: COPYRIGHT 8-21-2014 On behalf of Paper Partnerships Ltd
+ =============================================================================
+ Filename: _variables.scss
+ =============================================================================
+ This file is responsible for all variables in the Macmillan - Wonderland app.  Styles should be compiled using compass and sass.
+ --------------------------------------------------------------------------------------------------------------------- */
+/* =============================================================================
+CSS3 PIE
+========================================================================== */
+/* =============================================================================
+Sizes and Spacing
+========================================================================== */
+/* Padding */
+/* Margin */
+/* =============================================================================
+Grid
+========================================================================== */
+/* =============================================================================
+Type
+========================================================================== */
+/* Transitions*/
+/* =============================================================================
+Colours
+========================================================================== */
+/* Links */
+/* =============================================================================
+Borders
+========================================================================== */
+/* =============================================================================
+Media query variables
+========================================================================== */
+/*------------------------------------------------------------------------------------------------------------------------
+ @package: Macmillan - Wonderland (app)
+
+ @author: Sam Latif
+ @www: http://www.samlatif.co.uk
+ @github: samlatif
+
+ @twitter: samlatifuk
+
+ @copyright: COPYRIGHT 8-21-2014 On behalf of Paper Partnerships Ltd
+ =============================================================================
+ Filename: _helpers.scss
+ =============================================================================
+ This file contains all useful helpers (usually used through @extends) in the Macmillan - Wonderland app.  Styles should be compiled using compass and sass (make sure SUSY is installed).
+ --------------------------------------------------------------------------------------------------------------------- */
+/**
+ * Non-semantic helper classes: please define your styles before this section
+ */
+/* =============================================================================
+Visibility Helpers
+========================================================================== */
+/* For image replacement */
+/* Hide for both screenreaders and browsers:
+   css-discuss.incutio.com/wiki/Screenreader_Visibility */
+/* line 42, sass/partials/_helpers.scss */
+.responsive-grid {
+  display: none;
+}
+
+/* Hide only visually, but have it available for screenreaders: by Jon Neal.
+  www.webaim.org/techniques/css/invisiblecontent/  &  j.mp/visuallyhidden */
+/* Hide visually and from screenreaders, but maintain layout */
+/* line 72, sass/partials/_helpers.scss */
+.nav ul ul {
+  visibility: hidden;
+}
+
+/* line 76, sass/partials/_helpers.scss */
+.nav ul ul li:hover > ul, .nav ul li:hover > ul {
+  visibility: visible;
+}
+
+/* The Magnificent Clearfix: Updated to prevent margin-collapsing on child elements in most situations.
+   nicolasgallagher.com/micro-clearfix-hack/ */
+/* line 82, sass/partials/_helpers.scss */
+.nav {
+  zoom: 1;
+}
+/* line 84, sass/partials/_helpers.scss */
+.nav:before, .nav:after {
+  content: "";
+  display: table;
+}
+/* line 88, sass/partials/_helpers.scss */
+.nav:after {
+  clear: both;
+}
+
+/* line 93, sass/partials/_helpers.scss */
+.form-actions, .btn-group, .toolbar {
+  text-align: center;
+}
+
+/* =============================================================================
+CSS3 PIE
+========================================================================== */
+/* =============================================================================
+Overflow
+========================================================================== */
+/* line 125, sass/partials/_helpers.scss */
+.nav {
+  overflow: visible;
+}
+
+/* =============================================================================
+Margins
+========================================================================== */
+/* Normal margin */
+/* line 138, sass/partials/_helpers.scss */
+.box {
+  margin: 1em;
+}
+
+/* line 142, sass/partials/_helpers.scss */
+.nav, .nav ul, .nav ul ul li:hover > ul, .nav ul li:hover > ul, .responsive-grid, nav ul, nav li ul, .toolbar ul, .toolbar li ul, .btn-group ul {
+  margin: 0;
+}
+
+/* line 146, sass/partials/_helpers.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, p, h1, h2, h3, h4, h5, h6, blockquote, pre, address, cite, code, del, dfn, img, q, dl, ul, fieldset, form, legend, table, caption, summary, audio, video {
+  margin-bottom: 1em;
+}
+
+/* line 154, sass/partials/_helpers.scss */
+.nav ul ul {
+  margin-left: 1em;
+}
+
+/* Normal margin combinations */
+/* line 163, sass/partials/_helpers.scss */
+ul, ol, dl {
+  margin: 1em 0;
+}
+
+/* Large Margin */
+/* Small Margin */
+/* Mini Margin */
+/* =============================================================================
+Padding
+========================================================================== */
+/* Normal padding */
+/* line 254, sass/partials/_helpers.scss */
+.form-actions, .btn-group, .toolbar, .box {
+  padding: 1em;
+}
+
+/* line 258, sass/partials/_helpers.scss */
+.nav, .nav ul, nav ul, nav li ul, .toolbar ul, .toolbar li ul, .btn-group ul {
+  padding: 0;
+}
+
+/* line 262, sass/partials/_helpers.scss */
+.form-actions, .btn-group, .toolbar {
+  padding: 1em 0;
+}
+
+/* line 266, sass/partials/_helpers.scss */
+input:not([type]), input[type="color"], input[type="email"], input[type="number"], input[type="password"], input[type="tel"], input[type="url"], input[type="text"] {
+  padding: 0 1em;
+}
+
+/* Large Padding */
+/* Small Padding */
+/* line 314, sass/partials/_helpers.scss */
+input:not([type]), input[type="color"], input[type="email"], input[type="number"], input[type="password"], input[type="tel"], input[type="url"], input[type="text"] {
+  padding: 0.76923em 0;
+}
+
+/* Mini Padding */
+/* =============================================================================
+Border radius
+========================================================================== */
+/* Normal border radii */
+/* line 373, sass/partials/_helpers.scss */
+.box, nav, button, .responsive-grid, .btn, pre, code, aside, menu {
+  -webkit-border-radius: 0.3663em;
+  -moz-border-radius: 0.3663em;
+  -ms-border-radius: 0.3663em;
+  -o-border-radius: 0.3663em;
+  border-radius: 0.3663em;
+}
+
+/* line 377, sass/partials/_helpers.scss */
+.form-actions input:first-child, .form-actions .btn:first-child, .form-actions button:first-child, .form-actions .responsive-grid:first-child, .btn-group input:first-child, .btn-group .btn:first-child, .btn-group button:first-child, .btn-group .responsive-grid:first-child, .toolbar input:first-child, .toolbar .btn:first-child, .toolbar button:first-child, .toolbar .responsive-grid:first-child {
+  -moz-border-radius-topleft: 0.3663em;
+  -webkit-border-top-left-radius: 0.3663em;
+  border-top-left-radius: 0.3663em;
+  -moz-border-radius-bottomleft: 0.3663em;
+  -webkit-border-bottom-left-radius: 0.3663em;
+  border-bottom-left-radius: 0.3663em;
+}
+
+/* line 382, sass/partials/_helpers.scss */
+.form-actions input:last-child, .form-actions .btn:last-child, .form-actions button:last-child, .form-actions .responsive-grid:last-child, .btn-group input:last-child, .btn-group .btn:last-child, .btn-group button:last-child, .btn-group .responsive-grid:last-child, .toolbar input:last-child, .toolbar .btn:last-child, .toolbar button:last-child, .toolbar .responsive-grid:last-child {
+  -moz-border-radius-topright: 0.3663em;
+  -webkit-border-top-right-radius: 0.3663em;
+  border-top-right-radius: 0.3663em;
+  -moz-border-radius-bottomright: 0.3663em;
+  -webkit-border-bottom-right-radius: 0.3663em;
+  border-bottom-right-radius: 0.3663em;
+}
+
+/* line 387, sass/partials/_helpers.scss */
+.nav ul ul li:first-child a {
+  -moz-border-radius-topleft: 0.3663em;
+  -webkit-border-top-left-radius: 0.3663em;
+  border-top-left-radius: 0.3663em;
+  -moz-border-radius-topright: 0.3663em;
+  -webkit-border-top-right-radius: 0.3663em;
+  border-top-right-radius: 0.3663em;
+}
+
+/* Large border radii */
+/* line 404, sass/partials/_helpers.scss */
+button, .responsive-grid, .btn, input[type="submit"], input[type="search"], input[type="password"][type="search"], isindex[type="search"] {
+  -webkit-border-radius: 1.0em;
+  -moz-border-radius: 1.0em;
+  -ms-border-radius: 1.0em;
+  -o-border-radius: 1.0em;
+  border-radius: 1.0em;
+}
+
+/* No rounded radii (useful for overriding other elements with radii) */
+/* line 430, sass/partials/_helpers.scss */
+.form-actions input, .form-actions .btn, .form-actions button, .form-actions .responsive-grid, .btn-group input, .btn-group .btn, .btn-group button, .btn-group .responsive-grid, .toolbar input, .toolbar .btn, .toolbar button, .toolbar .responsive-grid {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  -ms-border-radius: 0;
+  -o-border-radius: 0;
+  border-radius: 0;
+}
+
+/* line 455, sass/partials/_helpers.scss */
+.container, button, .responsive-grid, .btn, input[type="submit"], input:not([type]), input[type="color"], input[type="email"], input[type="number"], input[type="password"], input[type="tel"], input[type="url"], input[type="text"], .box {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* line 463, sass/partials/_helpers.scss */
+a, button, .responsive-grid, .btn, input[type="submit"], .box {
+  -webkit-transition: 0.5s all ease;
+  -moz-transition: 0.5s all ease;
+  -o-transition: 0.5s all ease;
+  transition: 0.5s all ease;
+}
+
+/* =============================================================================
+Font Sizes
+========================================================================== */
+/* line 474, sass/partials/_helpers.scss */
+button, .responsive-grid, .btn, input[type="submit"], .nav ul a {
+  font-size: 130%;
+}
+
+/* =============================================================================
+Opacity/visibility
+========================================================================== */
+/* line 489, sass/partials/_helpers.scss */
+.nav ul ul {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+}
+
+/* line 497, sass/partials/_helpers.scss */
+.nav ul ul li:hover > ul, .nav ul li:hover > ul {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  opacity: 1;
+}
+
+/* =============================================================================
+Borders
+========================================================================== */
+/* line 504, sass/partials/_helpers.scss */
+button, .responsive-grid, .btn, input[type="submit"], .box {
+  border: 1px solid rgba(204, 204, 204, 0.5);
+}
+
+/* line 516, sass/partials/_helpers.scss */
+.form-actions, .btn-group, .toolbar, header, footer, article, section {
+  border-top: 1px solid rgba(204, 204, 204, 0.5);
+}
+
+/* line 520, sass/partials/_helpers.scss */
+header, footer, article, section {
+  border-bottom: 1px solid rgba(204, 204, 204, 0.5);
+}
+
+/* =============================================================================
+Floats
+========================================================================== */
+/* =============================================================================
+Positions
+========================================================================== */
+/* line 541, sass/partials/_helpers.scss */
+.nav ul ul, .nav ul ul li:first-child a:after {
+  position: absolute;
+}
+
+/* line 549, sass/partials/_helpers.scss */
+.nav ul li {
+  position: relative;
+}
+
+/* =============================================================================
+Display modes
+========================================================================== */
+/* line 560, sass/partials/_helpers.scss */
+.nav ul li:hover > ul {
+  display: block;
+}
+
+/* line 564, sass/partials/_helpers.scss */
+.nav ul a, .nav ul li, nav, nav li, .toolbar, .toolbar li, .btn-group, nav input, nav li input, .toolbar input, .toolbar li input, .btn-group input {
+  display: -moz-inline-stack;
+  display: inline-block;
+  vertical-align: middle;
+  *vertical-align: auto;
+  zoom: 1;
+  *display: inline;
+}
+
+/* =============================================================================
+Lists
+========================================================================== */
+/* line 571, sass/partials/_helpers.scss */
+.nav, .nav ul, .nav ul ul {
+  list-style: none;
+}
+
+/* =============================================================================
+Links
+========================================================================== */
+/* =============================================================================
+Widths
+========================================================================== */
+/* line 585, sass/partials/_helpers.scss */
+.nav {
+  width: 100%;
+}
+
+/* line 27, sass/partials/_nav.scss */
+.nav {
+  background: #565656;
+  border-bottom: 1px solid rgba(166, 166, 166, 0.5);
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #7c7c7c), color-stop(100%, #2f2f2f));
+  background: -webkit-linear-gradient(#7c7c7c, #2f2f2f);
+  background: -moz-linear-gradient(#7c7c7c, #2f2f2f);
+  background: -o-linear-gradient(#7c7c7c, #2f2f2f);
+  -pie-background: linear-gradient(#7c7c7c, #2f2f2f);
+  background: linear-gradient(#7c7c7c, #2f2f2f);
+}
+/* line 36, sass/partials/_nav.scss */
+.nav ul a {
+  color: white;
+  border-right: 1px solid #1e0d28;
+  padding: 0.76923em 1.3em;
+  text-decoration: none;
+  text-shadow: 0 1px 0.76923em black;
+}
+/* line 45, sass/partials/_nav.scss */
+.nav ul a:hover {
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #c9c9c9), color-stop(100%, #7c7c7c));
+  background: -webkit-linear-gradient(#c9c9c9, #7c7c7c);
+  background: -moz-linear-gradient(#c9c9c9, #7c7c7c);
+  background: -o-linear-gradient(#c9c9c9, #7c7c7c);
+  -pie-background: linear-gradient(#c9c9c9, #7c7c7c);
+  background: linear-gradient(#c9c9c9, #7c7c7c);
+}
+/* line 49, sass/partials/_nav.scss */
+.nav ul ul {
+  z-index: 9;
+  top: 100%;
+  background: #494949;
+  -webkit-transition: opacity 0.5s ease;
+  -moz-transition: opacity 0.5s ease;
+  -o-transition: opacity 0.5s ease;
+  transition: opacity 0.5s ease;
+  -webkit-box-shadow: 0 0 0.76923em rgba(255, 255, 255, 0.5);
+  -moz-box-shadow: 0 0 0.76923em rgba(255, 255, 255, 0.5);
+  box-shadow: 0 0 0.76923em rgba(255, 255, 255, 0.5);
+}
+/* line 62, sass/partials/_nav.scss */
+.nav ul ul ul {
+  left: 100%;
+  top: 0;
+  z-index: 10;
+}
+/* line 70, sass/partials/_nav.scss */
+.nav ul ul ul li:first-child a:after {
+  left: -0.4em;
+  top: 0.8em;
+  width: 0;
+  height: 0;
+  border-left: 0;
+  border-bottom: 0.3663em solid transparent;
+  border-top: 0.3663em solid transparent;
+  border-right: 1.0em solid black;
+}
+/* line 82, sass/partials/_nav.scss */
+.nav ul ul ul li:first-child a:hover:after {
+  border-right-color: #e2e2e2;
+  border-bottom-color: transparent;
+}
+/* line 90, sass/partials/_nav.scss */
+.nav ul ul ul li:last-child a {
+  border-right-color: #e2e2e2;
+  border-bottom-color: transparent;
+}
+/* line 110, sass/partials/_nav.scss */
+.nav ul ul li:first-child a:hover:after {
+  border-bottom-color: #c9c9c9;
+}
+/* line 114, sass/partials/_nav.scss */
+.nav ul ul li:first-child a:after {
+  content: "";
+  left: 2.73em;
+  top: -0.4em;
+  width: 0;
+  height: 0;
+  border-left: 1.3px solid transparent;
+  border-right: 1.3px solid transparent;
+  border-bottom: 2.73px solid #3c194e;
+}
+/* line 133, sass/partials/_nav.scss */
+.nav ul li:hover a {
+  color: #e6e6e6;
+}
+
+/*------------------------------------------------------------------------------------------------------------------------
+ @author: Sam Latif
+ @www: http://www.samlatif.co.uk
+ @github: samlatif
+
+ @twitter: samlatifuk
+
+ @copyright: COPYRIGHT 8-21-2014 On behalf of Paper Partnerships Ltd
+ =============================================================================
+ Filename: _base.scss
+ =============================================================================
+ This file is responsible for establishing base styles for the Macmillan - Wonderland app.
+ --------------------------------------------------------------------------------------------------------------------- */
+/* line 15, sass/partials/_base.scss */
+body {
+  color: black;
+  background: white;
+  line-height: 1.4;
+  font-family: "Open Sans", "sans-serif", "arial";
+}
+
+/* =============================================================================
+Border Radius
+========================================================================== */
+/* =============================================================================
+Shadows
+========================================================================== */
+/* line 61, sass/partials/_base.scss */
+.shadowed {
+  -webkit-box-shadow: inset 0 0 3em rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: inset 0 0 3em rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 0 3em rgba(0, 0, 0, 0.3);
+}
+
+/* =============================================================================
+images
+========================================================================== */
+/* line 68, sass/partials/_base.scss */
+img, object, embed {
+  max-width: 100%;
+}
+
+/*------------------------------------------------------------------------------------------------------------------------
+ @package: Macmillan - Wonderland (app)
+
+ @author: Sam Latif
+ @www: http://www.samlatif.co.uk
+ @github: samlatif
+
+ @twitter: samlatifuk
+
+ @copyright: COPYRIGHT 8-21-2014 On behalf of Paper Partnerships Ltd
+ =============================================================================
+ Filename: _media-queries.scss
+ =============================================================================
+ This file is responsible for all media query code in the Macmillan - Wonderland app.  Styles should be compiled using compass and sass.  The reason we don't use inline is because it's confusing, and we easily lose track of what media query is where.
+ --------------------------------------------------------------------------------------------------------------------- */
+/* --- main content ------------------------------------------------------------------------------------------------- */
+/*------------------------------------------------------------------------------------------------------------------------
+ @package: Macmillan - Wonderland (app)
+
+ @author: Sam Latif
+ @www: http://www.samlatif.co.uk
+ @github: samlatif
+
+ @twitter: samlatifuk
+
+ @copyright: COPYRIGHT 8-21-2014 On behalf of Paper Partnerships Ltd
+ =============================================================================
+ Filename: _variables.scss
+ =============================================================================
+ This file is responsible for all variables in the Macmillan - Wonderland app.  Styles should be compiled using compass and sass.
+ --------------------------------------------------------------------------------------------------------------------- */
+/* =============================================================================
+CSS3 PIE
+========================================================================== */
+/* =============================================================================
+Sizes and Spacing
+========================================================================== */
+/* Padding */
+/* Margin */
+/* =============================================================================
+Grid
+========================================================================== */
+/* =============================================================================
+Type
+========================================================================== */
+/* Transitions*/
+/* =============================================================================
+Colours
+========================================================================== */
+/* Links */
+/* =============================================================================
+Borders
+========================================================================== */
+/* =============================================================================
+Media query variables
+========================================================================== */
+/* --- print (optional) --------------------------------------------------------------------------------------------- */
+@media print {
+  /* line 25, sass/partials/_media-queries.scss */
+  body {
+    background: transparent !important;
+    color: black !important;
+    text-shadow: none !important;
+    filter: none !important;
+    -ms-filter: none !important;
+  }
+
+  /* Black prints faster: sanbeiji.com/archives/953 */
+  /* line 33, sass/partials/_media-queries.scss */
+  a, a:visited {
+    color: #444 !important;
+    text-decoration: underline;
+  }
+
+  /* line 37, sass/partials/_media-queries.scss */
+  a[href]:after {
+    content: " (" attr(href) ")";
+  }
+
+  /* line 40, sass/partials/_media-queries.scss */
+  abbr[title]:after {
+    content: " (" attr(title) ")";
+  }
+
+  /* line 43, sass/partials/_media-queries.scss */
+  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after {
+    content: "";
+  }
+
+  /* Don't show links for images, or javascript/internal links */
+  /* line 47, sass/partials/_media-queries.scss */
+  pre, blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
+
+  /* line 51, sass/partials/_media-queries.scss */
+  thead {
+    display: table-header-group;
+  }
+
+  /* css-discuss.incutio.com/wiki/Printing_Tables */
+  /* line 55, sass/partials/_media-queries.scss */
+  tr, img {
+    page-break-inside: avoid;
+  }
+
+  /* line 58, sass/partials/_media-queries.scss */
+  img {
+    max-width: 100% !important;
+  }
+
+  @page {
+    margin: 0.5cm;
+}
+
+  /* line 64, sass/partials/_media-queries.scss */
+  p, h2, h3 {
+    orphans: 3;
+    widows: 3;
+  }
+
+  /* line 69, sass/partials/_media-queries.scss */
+  h2, h3 {
+    page-break-after: avoid;
+  }
+}
+/* =============================================================================
+Mobile main media query
+========================================================================== */
+@media screen, (max-width: 767px) {
+  /* Ensure no increased font sizes */
+  /* line 80, sass/partials/_media-queries.scss */
+  body {
+    font-size: 100%;
+    -webkit-text-size-adjust: none;
+  }
+
+  /* Responsive grids */
+  /* line 85, sass/partials/_media-queries.scss */
+  .row, body, .container, .button, button, .responsive-grid, .btn, input[type="submit"], a.submit, textarea, input, img, .actions, .form-actions, .btn-group, .toolbar, .nav ul li {
+    width: 100%;
+    min-width: 0;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  /* line 91, sass/partials/_media-queries.scss */
+  .container {
+    padding: 0 1em;
+  }
+  /* line 95, sass/partials/_media-queries.scss */
+  .container .row .onecol, .container .row .onecol:last-child {
+    width: auto;
+    float: none;
+    position: static !important;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  /* line 95, sass/partials/_media-queries.scss */
+  .container .row .twocol, .container .row .twocol:last-child {
+    width: auto;
+    float: none;
+    position: static !important;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  /* line 95, sass/partials/_media-queries.scss */
+  .container .row .threecol, .container .row .threecol:last-child {
+    width: auto;
+    float: none;
+    position: static !important;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  /* line 95, sass/partials/_media-queries.scss */
+  .container .row .fourcol, .container .row .fourcol:last-child {
+    width: auto;
+    float: none;
+    position: static !important;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  /* line 95, sass/partials/_media-queries.scss */
+  .container .row .fivecol, .container .row .fivecol:last-child {
+    width: auto;
+    float: none;
+    position: static !important;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  /* line 95, sass/partials/_media-queries.scss */
+  .container .row .sixcol, .container .row .sixcol:last-child {
+    width: auto;
+    float: none;
+    position: static !important;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  /* line 95, sass/partials/_media-queries.scss */
+  .container .row .sevencol, .container .row .sevencol:last-child {
+    width: auto;
+    float: none;
+    position: static !important;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  /* line 95, sass/partials/_media-queries.scss */
+  .container .row .eightcol, .container .row .eightcol:last-child {
+    width: auto;
+    float: none;
+    position: static !important;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  /* line 95, sass/partials/_media-queries.scss */
+  .container .row .ninecol, .container .row .ninecol:last-child {
+    width: auto;
+    float: none;
+    position: static !important;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  /* line 95, sass/partials/_media-queries.scss */
+  .container .row .tencol, .container .row .tencol:last-child {
+    width: auto;
+    float: none;
+    position: static !important;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  /* line 95, sass/partials/_media-queries.scss */
+  .container .row .elevencol, .container .row .elevencol:last-child {
+    width: auto;
+    float: none;
+    position: static !important;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  /* line 95, sass/partials/_media-queries.scss */
+  .container .row .twelvecol, .container .row .twelvecol:last-child {
+    width: auto;
+    float: none;
+    position: static !important;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  /* line 105, sass/partials/_media-queries.scss */
+  header {
+    overflow: visible;
+  }
+
+  /* line 108, sass/partials/_media-queries.scss */
+  .toolbar, .form-actions, header, footer, caption, menu, figure, figcaption, nav, .button, button, .responsive-grid, .btn, input[type="submit"], a.submit {
+    text-align: center;
+  }
+
+  /* line 111, sass/partials/_media-queries.scss */
+  textarea, input {
+    padding: 0.76923em 1em;
+  }
+
+  /* line 114, sass/partials/_media-queries.scss */
+  .hidden-phone {
+    display: none;
+  }
+
+  /* line 117, sass/partials/_media-queries.scss */
+  .container .show-phone, .button, button, .responsive-grid, .btn, input[type="submit"], a.submit {
+    display: block;
+  }
+
+  /* Responsive buttons */
+  /* line 122, sass/partials/_media-queries.scss */
+  .actions .button, .actions button, .actions .responsive-grid, .actions .btn, .actions input[type="submit"], .actions a.submit, .form-actions .button, .form-actions button, .form-actions .responsive-grid, .form-actions .btn, .form-actions input[type="submit"], .form-actions a.submit, .btn-group .button, .btn-group button, .btn-group .responsive-grid, .btn-group .btn, .btn-group input[type="submit"], .btn-group a.submit, .toolbar .button, .toolbar button, .toolbar .responsive-grid, .toolbar .btn, .toolbar input[type="submit"], .toolbar a.submit {
+    margin: -0.28177em 0 0 0;
+  }
+  /* line 123, sass/partials/_media-queries.scss */
+  .actions .button:first-child, .actions button:first-child, .actions .responsive-grid:first-child, .actions .btn:first-child, .actions input[type="submit"]:first-child, .actions a.submit:first-child, .form-actions .button:first-child, .form-actions button:first-child, .form-actions .responsive-grid:first-child, .form-actions .btn:first-child, .form-actions input[type="submit"]:first-child, .form-actions a.submit:first-child, .btn-group .button:first-child, .btn-group button:first-child, .btn-group .responsive-grid:first-child, .btn-group .btn:first-child, .btn-group input[type="submit"]:first-child, .btn-group a.submit:first-child, .toolbar .button:first-child, .toolbar button:first-child, .toolbar .responsive-grid:first-child, .toolbar .btn:first-child, .toolbar input[type="submit"]:first-child, .toolbar a.submit:first-child {
+    -moz-border-radius-topleft: 1.0em;
+    -webkit-border-top-left-radius: 1.0em;
+    border-top-left-radius: 1.0em;
+    -moz-border-radius-topright: 1.0em;
+    -webkit-border-top-right-radius: 1.0em;
+    border-top-right-radius: 1.0em;
+    -moz-border-radius-bottomleft: 0;
+    -webkit-border-bottom-left-radius: 0;
+    border-bottom-left-radius: 0;
+    -moz-border-radius-bottomright: 0;
+    -webkit-border-bottom-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  /* line 127, sass/partials/_media-queries.scss */
+  .actions .button:last-child, .actions button:last-child, .actions .responsive-grid:last-child, .actions .btn:last-child, .actions input[type="submit"]:last-child, .actions a.submit:last-child, .form-actions .button:last-child, .form-actions button:last-child, .form-actions .responsive-grid:last-child, .form-actions .btn:last-child, .form-actions input[type="submit"]:last-child, .form-actions a.submit:last-child, .btn-group .button:last-child, .btn-group button:last-child, .btn-group .responsive-grid:last-child, .btn-group .btn:last-child, .btn-group input[type="submit"]:last-child, .btn-group a.submit:last-child, .toolbar .button:last-child, .toolbar button:last-child, .toolbar .responsive-grid:last-child, .toolbar .btn:last-child, .toolbar input[type="submit"]:last-child, .toolbar a.submit:last-child {
+    -moz-border-radius-topleft: 0;
+    -webkit-border-top-left-radius: 0;
+    border-top-left-radius: 0;
+    -moz-border-radius-topright: 0;
+    -webkit-border-top-right-radius: 0;
+    border-top-right-radius: 0;
+    -moz-border-radius-bottomleft: 1.0em;
+    -webkit-border-bottom-left-radius: 1.0em;
+    border-bottom-left-radius: 1.0em;
+    -moz-border-radius-bottomright: 1.0em;
+    -webkit-border-bottom-right-radius: 1.0em;
+    border-bottom-right-radius: 1.0em;
+  }
+
+  /* Responsive navigation */
+  /* line 138, sass/partials/_media-queries.scss */
+  .nav ul li a {
+    display: block;
+    border-right: none;
+    border-left: none;
+    border-bottom: 1px solid #1e0d28;
+  }
+  /* line 144, sass/partials/_media-queries.scss */
+  .nav ul li:last-child a {
+    border-bottom: none;
+  }
+  /* line 147, sass/partials/_media-queries.scss */
+  .nav ul li ul, .nav ul li ul ul {
+    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+    opacity: 1;
+    visibility: visible;
+    font-size: 210.0%;
+    display: block;
+    position: static;
+    margin: 0;
+  }
+
+  /*Responsive grid button*/
+  /* line 159, sass/partials/_media-queries.scss */
+  .responsive-grid + input[type="checkbox"]:checked + nav {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+    left: -500%;
+  }
+
+  /* line 165, sass/partials/_media-queries.scss */
+  input:not([type]), input[type="color"], input[type="email"], input[type="number"], input[type="password"], input[type="tel"], input[type="url"], input[type="text"] {
+    width: 100%;
+  }
+}
+/* =============================================================================
+Main Styles
+========================================================================== */
+/* line 42, sass/main.scss */
+body {
+  color: black;
+  background: #000;
+  line-height: 1.4;
+  font-family: "http://fonts.googleapis.com/css?family=Open+Sans:400,300";
+  font-size: 100%;
+  margin: 0;
+}
+
+/* =============================================================================
+images
+========================================================================== */
+/* line 55, sass/main.scss */
+img, object, embed {
+  max-width: 100%;
+  border: none;
+}
