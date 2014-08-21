@@ -33,5 +33,7 @@
 	"select": "Select",
 	"icon": "Icon",
 	"enableDisabling": "Enable Fieldset Disabling?",
-	"enableDisablingDescription": "Allows fieldsets to be individually enabled/disabled."
+	"enableDisablingDescription": "Allows fieldsets to be individually enabled/disabled.",
+	"deepDatatypeRequest":"Enable Deep Datatype Requests?",
+	"deepDatatypeRequestDescription":"Allows for easier datatype interception at the cost of caching performance."
 }

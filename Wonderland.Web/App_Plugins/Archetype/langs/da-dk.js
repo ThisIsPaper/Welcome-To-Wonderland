@@ -33,5 +33,7 @@
 	"select": "Vælg",
 	"icon": "Ikon",
 	"enableDisabling": "Aktivér fieldset-deaktivering?",
-	"enableDisablingDescription": "Tillad brugere at aktivere/deaktivere individuelle fieldsets."
+	"enableDisablingDescription": "Tillad brugere at aktivere/deaktivere individuelle fieldsets.",
+	"deepDatatypeRequest":"Enable Deep Datatype Requests?",
+	"deepDatatypeRequestDescription":"Allows for easier datatype interception at the cost of caching performance."
 }
