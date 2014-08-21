@@ -96,7 +96,7 @@ $wonderlandTransitionFunction: ease !default; //transition function for CSS3 tra
 /* =============================================================================
 Colours
 ========================================================================== */
-$wonderlandTextColour: #000 !default;
+$wonderlandTextColour: #fff !default;
 $wonderlandInverseTextColour: invert($wonderlandTextColour) !default;
 $wonderlandPrimaryColour: #007eac !default; // colour of text and main colour overall
 $wonderlandSecondaryColour: #682c88 !default; // colour of any components, backgrounds, etc.
@@ -118,7 +118,7 @@ $wonderlandBorder: $wonderlandBorderWidth $wonderlandBorderStyle $wonderlandBord
 /* =============================================================================
 Media query variables
 ========================================================================== */
-$wonderlandBreakpointMain: (screen) (max-width 767px);
+$wonderlandBreakpointMain: (screen) (max-width 1024px);
 $wonderlandQueryIphone3: (only screen) (min-device-width 320px) (max-device-width 480px) (1 -webkit-device-pixel-ratio);
 $wonderlandQueryIphone3Portrait: (only screen) (min-device-width 320px) (max-device-width 480px) (1 -webkit-device-pixel-ratio) (orientation portrait);
 $wonderlandQueryIphone3Landscape: (only screen) (min-device-width 320px) (max-device-width 480px) (1 -webkit-device-pixel-ratio) (orientation landscape);

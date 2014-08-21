@@ -303,17 +303,17 @@ Borders
 ========================================================================== */
 /* line 504, sass/partials/_helpers.scss */
 button, .responsive-grid, .btn, input[type="submit"], .box {
-  border: 1px solid rgba(204, 204, 204, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.5);
 }
 
 /* line 516, sass/partials/_helpers.scss */
 .form-actions, .btn-group, .toolbar, header, footer, article, section {
-  border-top: 1px solid rgba(204, 204, 204, 0.5);
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
 }
 
 /* line 520, sass/partials/_helpers.scss */
 header, footer, article, section {
-  border-bottom: 1px solid rgba(204, 204, 204, 0.5);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
 }
 
 /* =============================================================================
@@ -2151,12 +2151,12 @@ h1, h2, h3, h4, h5, h6 {
 
 /* line 30, sass/partials/_type.scss */
 a {
-  color: white;
+  color: black;
   text-decoration: none;
 }
 /* line 33, sass/partials/_type.scss */
 a:visited {
-  color: black;
+  color: #b3b3b3;
 }
 
 /* line 39, sass/partials/_type.scss */
@@ -2190,7 +2190,7 @@ button, .responsive-grid, .btn, input[type="submit"] {
   margin: 0 1em 0 0;
   color: #97d377;
   padding: 0.76923em 1em;
-  text-shadow: 0 1px 0 white;
+  text-shadow: 0 1px 0 black;
   text-decoration: none;
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #b479d4), color-stop(100%, #682c88));
   background: -webkit-linear-gradient(#b479d4, #682c88);
@@ -2198,15 +2198,15 @@ button, .responsive-grid, .btn, input[type="submit"] {
   background: -o-linear-gradient(#b479d4, #682c88);
   -pie-background: linear-gradient(#b479d4, #682c88);
   background: linear-gradient(#b479d4, #682c88);
-  -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 0.3em rgba(104, 44, 136, 0.5);
-  -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 0.3em rgba(104, 44, 136, 0.5);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4), 0 1px 0.3em rgba(104, 44, 136, 0.5);
+  -webkit-box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.4), 0 1px 0.3em rgba(104, 44, 136, 0.5);
+  -moz-box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.4), 0 1px 0.3em rgba(104, 44, 136, 0.5);
+  box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.4), 0 1px 0.3em rgba(104, 44, 136, 0.5);
 }
 /* line 37, sass/partials/_forms.scss */
 button:hover, .responsive-grid:hover, button:focus, .responsive-grid:focus, .btn:hover, .btn:focus, input[type="submit"]:hover, input[type="submit"]:focus {
   background: #7c7c7c;
   border-color: #494949;
-  color: white;
+  color: black;
   text-shadow: 0 1px 1px #494949;
   -webkit-box-shadow: inset 0 1px 0 rgba(104, 44, 136, 0.75), 0 1px 4px rgba(104, 44, 136, 0.5);
   -moz-box-shadow: inset 0 1px 0 rgba(104, 44, 136, 0.75), 0 1px 4px rgba(104, 44, 136, 0.5);
@@ -2220,7 +2220,7 @@ button:hover, .responsive-grid:hover, button:focus, .responsive-grid:focus, .btn
 }
 /* line 45, sass/partials/_forms.scss */
 button:active, .responsive-grid:active, .btn:active, input[type="submit"]:active {
-  border-color: rgba(140, 140, 140, 0.5);
+  border-color: rgba(191, 191, 191, 0.5);
   -webkit-box-shadow: inset 0 0 1.0em black;
   -moz-box-shadow: inset 0 0 1.0em black;
   box-shadow: inset 0 0 1.0em black;
@@ -2547,17 +2547,17 @@ Borders
 ========================================================================== */
 /* line 504, sass/partials/_helpers.scss */
 button, .responsive-grid, .btn, input[type="submit"], .box {
-  border: 1px solid rgba(204, 204, 204, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.5);
 }
 
 /* line 516, sass/partials/_helpers.scss */
 .form-actions, .btn-group, .toolbar, header, footer, article, section {
-  border-top: 1px solid rgba(204, 204, 204, 0.5);
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
 }
 
 /* line 520, sass/partials/_helpers.scss */
 header, footer, article, section {
-  border-bottom: 1px solid rgba(204, 204, 204, 0.5);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
 }
 
 /* =============================================================================
@@ -2616,7 +2616,7 @@ Widths
 /* line 27, sass/partials/_nav.scss */
 .nav {
   background: #565656;
-  border-bottom: 1px solid rgba(166, 166, 166, 0.5);
+  border-bottom: 1px solid rgba(217, 217, 217, 0.5);
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #7c7c7c), color-stop(100%, #2f2f2f));
   background: -webkit-linear-gradient(#7c7c7c, #2f2f2f);
   background: -moz-linear-gradient(#7c7c7c, #2f2f2f);
@@ -2626,11 +2626,11 @@ Widths
 }
 /* line 36, sass/partials/_nav.scss */
 .nav ul a {
-  color: white;
+  color: black;
   border-right: 1px solid #1e0d28;
   padding: 0.76923em 1.3em;
   text-decoration: none;
-  text-shadow: 0 1px 0.76923em black;
+  text-shadow: 0 1px 0.76923em white;
 }
 /* line 45, sass/partials/_nav.scss */
 .nav ul a:hover {
@@ -2650,9 +2650,9 @@ Widths
   -moz-transition: opacity 0.5s ease;
   -o-transition: opacity 0.5s ease;
   transition: opacity 0.5s ease;
-  -webkit-box-shadow: 0 0 0.76923em rgba(255, 255, 255, 0.5);
-  -moz-box-shadow: 0 0 0.76923em rgba(255, 255, 255, 0.5);
-  box-shadow: 0 0 0.76923em rgba(255, 255, 255, 0.5);
+  -webkit-box-shadow: 0 0 0.76923em rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0 0 0.76923em rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 0.76923em rgba(0, 0, 0, 0.5);
 }
 /* line 62, sass/partials/_nav.scss */
 .nav ul ul ul {
@@ -2698,7 +2698,7 @@ Widths
 }
 /* line 133, sass/partials/_nav.scss */
 .nav ul li:hover a {
-  color: #e6e6e6;
+  color: black;
 }
 
 /*------------------------------------------------------------------------------------------------------------------------
@@ -2716,8 +2716,8 @@ Widths
  --------------------------------------------------------------------------------------------------------------------- */
 /* line 15, sass/partials/_base.scss */
 body {
-  color: black;
-  background: white;
+  color: white;
+  background: black;
   line-height: 1.4;
   font-family: "Open Sans", "sans-serif", "arial";
 }
@@ -2730,9 +2730,9 @@ Shadows
 ========================================================================== */
 /* line 61, sass/partials/_base.scss */
 .shadowed {
-  -webkit-box-shadow: inset 0 0 3em rgba(0, 0, 0, 0.3);
-  -moz-box-shadow: inset 0 0 3em rgba(0, 0, 0, 0.3);
-  box-shadow: inset 0 0 3em rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: inset 0 0 3em rgba(255, 255, 255, 0.3);
+  -moz-box-shadow: inset 0 0 3em rgba(255, 255, 255, 0.3);
+  box-shadow: inset 0 0 3em rgba(255, 255, 255, 0.3);
 }
 
 /* =============================================================================
@@ -2873,7 +2873,7 @@ Media query variables
 /* =============================================================================
 Mobile main media query
 ========================================================================== */
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 64em) {
   /* Ensure no increased font sizes */
   /* line 80, sass/partials/_media-queries.scss */
   body {
@@ -3094,45 +3094,32 @@ Mobile main media query
     width: 100%;
   }
 }
-/* =============================================================================
-Main Styles
-========================================================================== */
-/* line 42, sass/main.scss */
-body {
-  color: black;
-  background: #000;
-  line-height: 1.4;
-  font-family: "http://fonts.googleapis.com/css?family=Open+Sans:400,300";
-  font-size: 100%;
-  margin: 0;
+/* line 39, sass/main.scss */
+#siteHeader {
+  position: fixed;
+  max-width: 1180px;
+  width: 1180px;
+  margin: 0 363px;
 }
-
-/* =============================================================================
-images
-========================================================================== */
-/* line 55, sass/main.scss */
-img, object, embed {
-  max-width: 100%;
-  border: none;
-}
-
-/* line 63, sass/main.scss */
+/* line 46, sass/main.scss */
 #siteHeader nav,
 #siteHeader li,
 #siteHeader a:first-child {
   float: left;
 }
-/* line 64, sass/main.scss */
+/* line 47, sass/main.scss */
 #siteHeader a:last-child {
   float: right;
 }
 
-/* line 67, sass/main.scss */
-#homeBanner, #promoLinks {
-  margin-left: 15rem;
+/* line 51, sass/main.scss */
+main,
+footer {
+  max-width: 1180px;
+  margin: 0 auto;
 }
 
-/* line 73, sass/main.scss */
+/* line 57, sass/main.scss */
 #promoLinks > img {
-  margin: 1rem;
+  margin: 2rem;
 }

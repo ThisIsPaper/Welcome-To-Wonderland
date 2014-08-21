@@ -36,41 +36,25 @@ Imports
 @import "partials/_base.scss";
 @import "partials/_media-queries";
 
-/* =============================================================================
-Main Styles
-========================================================================== */
-body {
-    color: $wonderlandTextColour;
-    background:  #000;
-    line-height: $wonderlandLineHeight;
-    font-family: $wonderlandFontURL;
-    font-size: $wonderlandBaseFontSize;
-    margin: 0;
-}
-
-
-/* =============================================================================
-images
-========================================================================== */
-img, object, embed {
-    max-width: $wonderlandRowWidth; //prevent images from going beyond the viewport
-    border: none;
-}
-
 #siteHeader {
+  position: fixed;
+  max-width: 1180px;
+  width: 1180px;
+  margin: 0 363px;
   nav,
   li,
   a:first-child { float: left }
   a:last-child { float: right }
 }
 
-#homeBanner {
-  margin-left: 15rem;
+main,
+footer {
+  max-width: 1180px;
+  margin: 0 auto;
 }
 
 #promoLinks {
-  @extend #homeBanner;
   > img {
-      margin: 1rem;
+    margin: 2rem;
   }
 }
