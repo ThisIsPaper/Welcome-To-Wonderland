@@ -254,6 +254,11 @@
     <Content Include="Views\PistePoints.cshtml" />
     <Content Include="Views\Wonderlanders.cshtml" />
     <Content Include="Views\PartyIdeas.cshtml" />
+    <Content Include="Views\Leaderboard.cshtml" />
+    <Content Include="Views\FundraisingIdeas.cshtml" />
+    <Content Include="Views\Party.cshtml" />
+    <Content Include="Views\FAQs.cshtml" />
+    <Content Include="Views\Legal.cshtml" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>
