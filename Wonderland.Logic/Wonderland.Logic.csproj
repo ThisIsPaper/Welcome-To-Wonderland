@@ -214,6 +214,7 @@
     <Compile Include="Models\Entities\PartyKit.cs" />
     <Compile Include="Models\Entities\Reward.cs" />
     <Compile Include="Models\Entities\SiteSettings.cs" />
+    <Compile Include="Models\Media\Image.cs" />
     <Compile Include="Models\Media\PromotionTile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
