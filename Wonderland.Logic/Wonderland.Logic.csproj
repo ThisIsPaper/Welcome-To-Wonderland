@@ -155,6 +155,9 @@
     <Reference Include="TidyNet">
       <HintPath>..\packages\UmbracoCms.Core.7.1.5\lib\TidyNet.dll</HintPath>
     </Reference>
+    <Reference Include="uComponents.nuPickers">
+      <HintPath>..\Wonderland.Web\bin\uComponents.nuPickers.dll</HintPath>
+    </Reference>
     <Reference Include="umbraco">
       <HintPath>..\packages\UmbracoCms.Core.7.1.5\lib\umbraco.dll</HintPath>
     </Reference>
@@ -191,6 +194,7 @@
     <Compile Include="Events\SetPublishedContentModelFactory.cs" />
     <Compile Include="Models\Content\Home.cs" />
     <Compile Include="Models\Content\SitePage.cs" />
+    <Compile Include="Models\Entities\SiteSettings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
