@@ -3,3 +3,15 @@
     Layout = "SitePage.cshtml";
 }
 <h1>Piste Points</h1>
+
+
+@foreach(Reward reward in Model.Rewards)
+{
+    <h1>@reward.Heading</h1>
+    <h2>@reward.SubHeading</h2>
+    <p>@reward.Copy</p>
+}
+
+@Model.HostAPartyLinkText
+
+@Html.Partial("PartyKit", Model.PartyKit)

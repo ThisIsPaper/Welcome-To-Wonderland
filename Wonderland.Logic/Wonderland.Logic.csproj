@@ -30,6 +30,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Archetype">
+      <HintPath>..\Wonderland.Web\bin\Archetype.dll</HintPath>
+    </Reference>
     <Reference Include="AutoMapper">
       <HintPath>..\packages\AutoMapper.3.0.0\lib\net40\AutoMapper.dll</HintPath>
     </Reference>
@@ -208,6 +211,8 @@
     <Compile Include="Models\Content\SitePage.cs" />
     <Compile Include="Models\Content\SpotifyTile.cs" />
     <Compile Include="Models\Content\Wonderlanders.cs" />
+    <Compile Include="Models\Entities\PartyKit.cs" />
+    <Compile Include="Models\Entities\Reward.cs" />
     <Compile Include="Models\Entities\SiteSettings.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

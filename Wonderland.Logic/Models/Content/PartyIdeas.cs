@@ -15,5 +15,13 @@ namespace Wonderland.Logic.Models.Content
             : base(content)
         {
         }
+
+        public string PageHeading
+        {
+            get
+            {
+                return this.GetPropertyValue<string>("pageHeading");
+            }
+        }
     }
 }
