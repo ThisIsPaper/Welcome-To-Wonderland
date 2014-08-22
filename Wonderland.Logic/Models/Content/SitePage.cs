@@ -1,6 +1,7 @@
 ﻿
 namespace Wonderland.Logic.Models.Content
 {
+    using System.Linq;
     using Umbraco.Web;
     using Umbraco.Core.Models;
     using Umbraco.Core.Models.PublishedContent;
@@ -26,6 +27,15 @@ namespace Wonderland.Logic.Models.Content
             {
                 return new SiteSettings(new Home(this.AncestorOrSelf(Home.Alias)));
             }
+        }
+
+        /// <summary>
+        /// returns true if the sitePage supplied is either the current page, or an ancestor of the current page, (ie. it's in the path of this)
+        /// </summary>
+        /// <param name="sitePage">the page to test to see if it's in the current path</param>
+        public bool IsInPathOf(SitePage sitePage)
+        {
+            return this.AncestorsOrSelf().Select(x => x.Id).Contains(sitePage.Id);
         }
     }
 }
