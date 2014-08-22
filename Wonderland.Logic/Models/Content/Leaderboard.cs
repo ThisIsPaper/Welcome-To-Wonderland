@@ -9,7 +9,7 @@ namespace Wonderland.Logic.Models.Content
 
     public class Leaderboard : SitePage
     {
-        public const string Alias = "Leaderboard";
+        public new const string Alias = "Leaderboard";
 
         public Leaderboard(IPublishedContent content)
             : base(content)

@@ -11,7 +11,7 @@ namespace Wonderland.Logic.Models.Content
 
     public class PistePoints : SitePage
     {
-        public const string Alias = "PistePoints";
+        public new const string Alias = "PistePoints";
 
         public PistePoints(IPublishedContent content)
             : base(content)

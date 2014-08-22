@@ -9,7 +9,7 @@ namespace Wonderland.Logic.Models.Content
 
     public class FundraisingIdea : SitePage
     {
-        public const string Alias = "FundraisingIdea";
+        public new const string Alias = "FundraisingIdea";
 
         public FundraisingIdea(IPublishedContent content)
             : base(content)

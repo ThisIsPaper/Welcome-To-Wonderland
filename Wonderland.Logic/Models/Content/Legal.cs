@@ -9,7 +9,7 @@ namespace Wonderland.Logic.Models.Content
 
     public class Legal : SitePage
     {
-        public const string Alias = "Legal";
+        public new const string Alias = "Legal";
 
         public Legal(IPublishedContent content)
             : base(content)

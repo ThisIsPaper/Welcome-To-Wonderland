@@ -6,10 +6,11 @@ namespace Wonderland.Logic.Models.Content
     using Umbraco.Web;
     using Umbraco.Core.Models;
     using nuPickers;
+    using Wonderland.Logic.Models.Media;
 
     public class Home : SitePage
     {
-        public const string Alias = "Home";
+        public new const string Alias = "Home";
 
         public Home(IPublishedContent content) : base(content)
         {
@@ -28,6 +29,14 @@ namespace Wonderland.Logic.Models.Content
             get
             {
                 return this.GetPropertyValue<string>("bannerCopy");
+            }
+        }
+
+        public IEnumerable<PromotionTile> PromotionTiles
+        {
+            get
+            {
+                return this.GetPropertyValue<Picker>("promotionTiles").AsPublishedContent().Select(x => new PromotionTile(x));
             }
         }
 

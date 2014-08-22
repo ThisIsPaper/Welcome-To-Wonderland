@@ -9,7 +9,7 @@ namespace Wonderland.Logic.Models.Content
 
     public class DecorationTile : PartyIdeaTile
     {
-        public const string Alias = "DecorationTile";
+        public new const string Alias = "DecorationTile";
 
         public DecorationTile(IPublishedContent content)
             : base(content)

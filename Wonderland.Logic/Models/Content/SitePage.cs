@@ -9,6 +9,8 @@ namespace Wonderland.Logic.Models.Content
 
     public class SitePage : PublishedContentModel
     {
+        public const string Alias = "SitePage";
+
         public SitePage(IPublishedContent content) : base(content)
         {
         }

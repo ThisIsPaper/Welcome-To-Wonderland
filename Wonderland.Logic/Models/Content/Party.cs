@@ -9,7 +9,7 @@ namespace Wonderland.Logic.Models.Content
 
     public class Party : SitePage
     {
-        public const string Alias = "Party";
+        public new const string Alias = "Party";
 
         public Party(IPublishedContent content)
             : base(content)

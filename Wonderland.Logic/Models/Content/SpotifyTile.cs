@@ -9,7 +9,7 @@ namespace Wonderland.Logic.Models.Content
 
     public class SpotifyTile : PartyIdeaTile
     {
-        public const string Alias = "SpotifyTile";
+        public new const string Alias = "SpotifyTile";
 
         public SpotifyTile(IPublishedContent content)
             : base(content)

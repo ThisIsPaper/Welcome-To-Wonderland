@@ -11,6 +11,13 @@
 
     @Model.BannerCopy
 
+    <ul>
+        @foreach (PromotionTile promotionTile in Model.PromotionTiles)
+        {
+            <li>@promotionTile.Name</li>
+        }
+    </ul>
+
   <img src="img/home-banner-ph.png" />       
 </section>
 <section id="promoLinks">
