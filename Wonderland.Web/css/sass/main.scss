@@ -37,21 +37,16 @@ Imports
 @import "partials/_media-queries";
 
 #siteHeader {
-  position: fixed;
-  max-width: 1180px;
-  width: 1180px;
-  margin: 0 363px;
+  @extend %fixed;
+  width: $wonderlandRowWidth;
   nav,
   li,
-  a:first-child { float: left }
-  a:last-child { float: right }
+  a:first-child { 
+    @extend %pull-left;
+  }
+  a:last-child { @extend %pull-right; }
 }
 
-main,
-footer {
-  max-width: 1180px;
-  margin: 0 auto;
-}
 
 #promoLinks {
   > img {

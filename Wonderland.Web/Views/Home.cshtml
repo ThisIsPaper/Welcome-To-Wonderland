@@ -2,11 +2,14 @@
 @{
   Layout = "SitePage.cshtml";
 }
+<div class="container">
+  <section id="heroGraphic">
+    <img src="img/hero-ph.jpg" />        
+  </section>
+  <section id="homeBanner">
+    <img src="img/home-banner-ph.png" />
+    @Model.BannerHeading
 
-<section id="heroGraphic">
-  <img src="img/hero-ph.jpg" />        
-</section>
-<section id="homeBanner">
     @Model.BannerHeading
 
     @Model.BannerCopy
@@ -18,7 +21,7 @@
         }
     </ul>
 
-  <img src="img/home-banner-ph.png" />       
+         
 </section>
 <section id="promoLinks">
 @for( var i = 0; i < 6; i++ ) {
