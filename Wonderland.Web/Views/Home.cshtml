@@ -9,11 +9,25 @@
   <section id="homeBanner">
       @Model.BannerHeading
 
-      @Model.BannerCopy
-  </section>
-  <section id="promoLinks">
-  @for( var i = 0; i < 6; i++ ) {
-    <img src="img/home-tile-ph.png" class="col">
-  }
-  </section>
-</div>
+<section id="heroGraphic">
+  <img src="img/hero-ph.jpg" />        
+</section>
+<section id="homeBanner">
+    @Model.BannerHeading
+
+    @Model.BannerCopy
+
+    <ul>
+        @foreach (PromotionTile promotionTile in Model.PromotionTiles)
+        {
+            <li>@promotionTile.Name</li>
+        }
+    </ul>
+
+  <img src="img/home-banner-ph.png" />       
+</section>
+<section id="promoLinks">
+@for( var i = 0; i < 6; i++ ) {
+  <img src="img/home-tile-ph.png">
+}
+</section>
