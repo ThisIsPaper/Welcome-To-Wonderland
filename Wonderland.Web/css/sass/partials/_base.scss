@@ -46,14 +46,7 @@ nav, nav li, .toolbar, .toolbar li, .btn-group {
 /* =============================================================================
 Border Radius
 ========================================================================== */
-nav, button, .btn, pre, code, aside, menu {
-	@extend %rounded;
-}
 
-header, footer, article, section {
-	@extend %bordered-bottom;
-	@extend %bordered-top;
-}
 
 /* =============================================================================
 Shadows

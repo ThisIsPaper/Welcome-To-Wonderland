@@ -451,6 +451,24 @@ Border radius
 	@include border-bottom-right-radius(0);
 }
 
+/* Uneven border radii */
+
+%rounded-skew-one {
+	@include border-top-left-radius(0.5em 1.1em);
+	@include border-bottom-left-radius(0.5em 1.3em);
+	@include border-top-right-radius(0.9em 0.8em);
+	@include border-bottom-right-radius(0.6em 1.4em);
+}
+
+%rounded-left-skew-one {
+	@include border-top-left-radius(0.5em 1.1em);
+	@include border-bottom-left-radius(0.5em 1.3em);
+}
+
+%rounded-right-skew-one {
+	@include border-top-right-radius(0.9em 0.8em);
+	@include border-bottom-right-radius(0.6em 1.4em);
+}
 
 %border-box {
 	@include box-sizing(border-box);

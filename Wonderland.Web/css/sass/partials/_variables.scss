@@ -35,13 +35,13 @@ Sizes and Spacing
 ========================================================================== */
 
 /* Padding */
-$wonderlandPadding: 1em !default;
+$wonderlandPadding: 1.2em !default;
 $wonderlandPaddingLarge: $wonderlandPadding * $wonderlandMultiplier;
 $wonderlandPaddingSmall: $wonderlandPadding / $wonderlandMultiplier;
 $wonderlandPaddingMini: $wonderlandPadding / $wonderlandMultiplierLarge;
 
 /* Margin */
-$wonderlandMargin: 1em !default;
+$wonderlandMargin: 1.2em !default;
 $wonderlandMarginSmall: $wonderlandMargin / $wonderlandMultiplier;
 $wonderlandMarginLarge: $wonderlandMargin * $wonderlandMultiplierLarge;
 $wonderlandMarginMini: $wonderlandMarginSmall / $wonderlandMultiplierLarge;
@@ -49,8 +49,8 @@ $wonderlandMarginMini: $wonderlandMarginSmall / $wonderlandMultiplierLarge;
 /* =============================================================================
 Grid
 ========================================================================== */
-$wonderlandNum-cols: 12 !default;
 $wonderlandRowWidth: 100% !default;
+$wonderlandNum-cols: 12 !default;
 $wonderlandContainer-lateral-padding: $wonderlandPadding !default;
 $wonderlandCol-margin-right: 3.8% !default;
 $wonderlandCol-unit: (($wonderlandRowWidth + $wonderlandCol-margin-right) / $wonderlandNum-cols) !default;
@@ -96,13 +96,13 @@ $wonderlandTransitionFunction: ease !default; //transition function for CSS3 tra
 /* =============================================================================
 Colours
 ========================================================================== */
-$wonderlandTextColour: #fff !default;
+$wonderlandTextColour: #666 !default;
 $wonderlandInverseTextColour: invert($wonderlandTextColour) !default;
 $wonderlandPrimaryColour: #007eac !default; // colour of text and main colour overall
 $wonderlandSecondaryColour: #682c88 !default; // colour of any components, backgrounds, etc.
 $wonderlandTertiaryColour: #7c7c7c !default; //special colour to complement secondary colour
 //background colour.  Should be the opposite of primary colour for good results
-$wonderlandBodyBackground: $wonderlandInverseTextColour !default;
+$wonderlandBodyBackground: #fff !default;
 
 /* Links */
 $wonderlandLinkColour: contrast-color($wonderlandTextColour, lighten($wonderlandTextColour, 30), darken($wonderlandTextColour, 30), 40%);

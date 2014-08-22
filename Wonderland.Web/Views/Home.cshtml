@@ -2,19 +2,18 @@
 @{
   Layout = "SitePage.cshtml";
 }
+<div class="container">
+  <section id="heroGraphic">
+    <img src="img/hero-ph.jpg" />        
+  </section>
+  <section id="homeBanner">
+      @Model.BannerHeading
 
-<section id="heroGraphic">
-  <img src="img/hero-ph.jpg" />        
-</section>
-<section id="homeBanner">
-    @Model.BannerHeading
-
-    @Model.BannerCopy
-
-  <img src="img/home-banner-ph.png" />       
-</section>
-<section id="promoLinks">
-@for( var i = 0; i < 6; i++ ) {
-  <img src="img/home-tile-ph.png">
-}
-</section>
+      @Model.BannerCopy
+  </section>
+  <section id="promoLinks">
+  @for( var i = 0; i < 6; i++ ) {
+    <img src="img/home-tile-ph.png" class="col">
+  }
+  </section>
+</div>
