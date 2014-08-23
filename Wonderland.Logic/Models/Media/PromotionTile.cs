@@ -10,26 +10,26 @@ namespace Wonderland.Logic.Models.Media
 
     public class PromotionTile : PublishedContentModel
     {
-        public new const string Alias = "PromotionTile";
+        public const string Alias = "PromotionTile";
 
         public PromotionTile(IPublishedContent content)
             : base(content)
         {
         }
 
-        public string TileImage
+        public string TileImageUrl
         {
             get
             {
-                return "tileImage";
+                return this.GetPropertyValue<string>("tileImage");
             }
         }
 
-        public string OverlayImage
+        public string OverlayImageUrl
         {
             get
             {
-                return "overlayImage";
+                return this.GetPropertyValue<string>("overlayImage");
             }
         }
     }

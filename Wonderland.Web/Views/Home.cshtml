@@ -8,7 +8,6 @@
   </section>
   <section id="homeBanner">
     <img src="img/home-banner-ph.png" />
-    @Model.BannerHeading
 
     @Model.BannerHeading
 
@@ -17,7 +16,9 @@
     <ul>
         @foreach (PromotionTile promotionTile in Model.PromotionTiles)
         {
-            <li>@promotionTile.Name</li>
+            <li>@promotionTile.Name</li>            
+            <li>@promotionTile.TileImageUrl</li>            
+            <li>@promotionTile.OverlayImageUrl</li>
         }
     </ul>
 

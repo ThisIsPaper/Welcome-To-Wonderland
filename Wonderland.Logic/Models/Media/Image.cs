@@ -10,7 +10,7 @@ namespace Wonderland.Logic.Models.Media
 
     public class Image : PublishedContentModel
     {
-        public new const string Alias = "Image";
+        public const string Alias = "Image";
 
         public Image(IPublishedContent content)
             : base(content)
