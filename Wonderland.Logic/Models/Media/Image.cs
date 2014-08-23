@@ -21,7 +21,7 @@ namespace Wonderland.Logic.Models.Media
         {
             get
             {
-                return this.GetPropertyValue<string>("umbracoFile");
+                return this.GetCropUrl(null);
             }
         }
 

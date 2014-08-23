@@ -12,8 +12,12 @@ namespace Wonderland.Logic.Models.Entities
     {
         internal PartyKit(ArchetypeFieldsetModel archetypeFieldsetModel)
         {
-            this.Heading = archetypeFieldsetModel.GetValue<string>("heading");                        
+            this.Heading = archetypeFieldsetModel.GetValue<string>("heading");
+
             //this.Images = archetypeFieldsetModel.GetValue<IEnumerable<IPublishedContent>>("images").Select(x => new Image(x));
+            // replaces above, by providing a fall back value for when the property is empty (Archetype doens't seem to call PVC when property is empty)
+            this.Images = archetypeFieldsetModel.GetValue<IEnumerable<IPublishedContent>>("images", Enumerable.Empty<IPublishedContent>()).Select(x => new Image(x));
+
             this.LinkText = archetypeFieldsetModel.GetValue<string>("linkText");
             this.Copy = archetypeFieldsetModel.GetValue<string>("copy");
         }

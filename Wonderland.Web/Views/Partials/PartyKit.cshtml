@@ -7,7 +7,18 @@
     <dd>@Model.Heading</dd>
 
     <dt>Images</dt>
-    <dd></dd>
+    <dd>
+        <ul>
+            @foreach (Image image in Model.Images)
+            {
+                <li>
+                    @image.Name
+                    <img src="@image.Url" alt="@image.HtmlAltText" />
+                </li>
+            }
+
+        </ul>
+    </dd>
 
     <dt>Link Text</dt>
     <dd>@Model.LinkText</dd>
