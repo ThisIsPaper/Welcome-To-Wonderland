@@ -7,6 +7,7 @@ namespace Wonderland.Logic.Models.Content
     using Umbraco.Core.Models;
     using nuPickers;
     using Wonderland.Logic.Enums;
+    using Wonderland.Logic.Models.Media;
 
     public class PartyIdeaTile : SitePage
     {
@@ -33,7 +34,13 @@ namespace Wonderland.Logic.Models.Content
             }
         }
 
-        // IMAGE 
+        public Image TileImage
+        {
+            get
+            {
+                return new Image(this.GetPropertyValue<IPublishedContent>("tileImage"));
+            }
+        }
 
         public string TileCopy
         {

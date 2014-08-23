@@ -6,6 +6,7 @@ namespace Wonderland.Logic.Models.Content
     using Umbraco.Web;
     using Umbraco.Core.Models;
     using nuPickers;
+    using Umbraco.Core.Models.PublishedContent;
 
     public class PartyIdeas : SitePage
     {
@@ -21,6 +22,15 @@ namespace Wonderland.Logic.Models.Content
             get
             {
                 return this.GetPropertyValue<string>("pageHeading");
+            }
+        }
+
+        public IEnumerable<PartyIdeaTile> PartyIdeaTiles
+        {
+            get
+            {
+                // reuse the built-in IPublishedContent -> Model factory
+                return this.Children().Select(x => (PartyIdeaTile)PublishedContentModelFactoryResolver.Current.Factory.CreateModel(x));
             }
         }
     }

@@ -7,11 +7,11 @@ namespace Wonderland.Logic.Models.Content
     using Umbraco.Core.Models;
     using nuPickers;
 
-    public class FashionIdeaTile : PartyIdeaTile
+    public class FashionTile : PartyIdeaTile
     {
-        public new const string Alias = "FashionIdeaTile";
+        public new const string Alias = "FashionTile";
 
-        public FashionIdeaTile(IPublishedContent content)
+        public FashionTile(IPublishedContent content)
             : base(content)
         {
         }

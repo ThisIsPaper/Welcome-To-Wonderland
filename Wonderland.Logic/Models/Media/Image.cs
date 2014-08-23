@@ -21,7 +21,14 @@ namespace Wonderland.Logic.Models.Media
         {
             get
             {
-                return this.GetCropUrl(null);
+                try
+                {
+                   return this.GetCropUrl(null);
+                }
+                catch
+                {
+                    return string.Empty; // TODO: fallback to a default image (set in CMS)
+                }
             }
         }
 
