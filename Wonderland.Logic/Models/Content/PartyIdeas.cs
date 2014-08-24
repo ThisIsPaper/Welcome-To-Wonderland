@@ -25,13 +25,10 @@ namespace Wonderland.Logic.Models.Content
             }
         }
 
-        public IEnumerable<PartyIdeaTile> PartyIdeaTiles
+        public IEnumerable<PartyIdeaTile> GetPartyIdeaTiles()
         {
-            get
-            {
-                // reuse the built-in IPublishedContent -> Model factory
-                return this.Children().Select(x => (PartyIdeaTile)PublishedContentModelFactoryResolver.Current.Factory.CreateModel(x));
-            }
+            // reuse the built-in IPublishedContent -> Model factory
+            return this.Children().Select(x => (PartyIdeaTile)PublishedContentModelFactoryResolver.Current.Factory.CreateModel(x));
         }
     }
 }

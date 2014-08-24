@@ -79,5 +79,16 @@ namespace Wonderland.Logic.Models.Content
                 return this.GetPropertyValue<int>("mostRecentHostsCount");
             }
         }
+
+        public IEnumerable<Member> GetTopFundraisers()
+        {
+            return Enumerable.Empty<Member>();
+        }
+
+        public IEnumerable<Member> GetMostGuests()
+        {
+            return Enumerable.Empty<Member>();
+        }
+
     }
 }

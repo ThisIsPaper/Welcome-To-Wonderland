@@ -9,13 +9,21 @@ namespace Wonderland.Logic.Models.Content
     using Wonderland.Logic.Enums;
     using Wonderland.Logic.Models.Media;
 
-    public class PartyIdeaTile : SitePage
+    public abstract class PartyIdeaTile : SitePage
     {
         public new const string Alias = "PartyIdeaTile";
 
         public PartyIdeaTile(IPublishedContent content)
             : base(content)
         {
+        }
+
+        /// <summary>
+        /// string used to build a css class name
+        /// </summary>
+        public abstract string TileType
+        {
+            get;
         }
 
         public string TileHeading

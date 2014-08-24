@@ -4,34 +4,44 @@
 }
 <h1>Party Ideas</h1>
 
-<ul>
-    @foreach (PartyIdeaTile partyIdeaTile in Model.PartyIdeaTiles)
+<ul class="party-idea-tiles">
+    <!--
+        tile-size-large
+        tile-size-medium
+        tile-size-small
+
+        tile-type-spotify
+        tile-type-recipe
+        tile-type-decoration
+        tile-type-fashion
+    -->
+    @foreach (PartyIdeaTile partyIdeaTile in Model.GetPartyIdeaTiles())
     {
-        <li class="party-idea-tile-size-@partyIdeaTile.TileSize.ToString().ToLower()">
-            <h1>@partyIdeaTile.TileHeading</h1>
-            <h2>@partyIdeaTile.TileSize</h2>
+        <li class="tile-size-@partyIdeaTile.TileSize.ToString().ToLower() tile-type-@partyIdeaTile.TileType">
+            
+            <h2>@partyIdeaTile.TileHeading</h2>
             <img src="@partyIdeaTile.TileImage.Url" />
             <p>@partyIdeaTile.TileCopy</p>
             <a href="@partyIdeaTile.Url">@partyIdeaTile.Url</a>
 
             @if (partyIdeaTile is SpotifyTile)
             {
-                <h5>Spotify Tile</h5>
+                <h3>Spotify Tile</h3>
             }
             
             @if (partyIdeaTile is RecipeTile)
             {
-                <h5>Recipe Tile</h5>
+                <h3>Recipe Tile</h3>
             }
             
             @if (partyIdeaTile is DecorationTile)
             {
-                <h5>Decoration Tile</h5>
+                <h3>Decoration Tile</h3>
             }
             
             @if (partyIdeaTile is FashionTile)
             {
-                <h5>Fashion Tile</h5>
+                <h3>Fashion Tile</h3>
             }
 
         </li>

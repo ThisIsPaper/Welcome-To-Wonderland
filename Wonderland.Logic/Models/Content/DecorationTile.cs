@@ -15,5 +15,13 @@ namespace Wonderland.Logic.Models.Content
             : base(content)
         {
         }
+
+        public override string TileType
+        {
+            get 
+            { 
+                return "decoration"; 
+            }
+        }
     }
 }
