@@ -14,15 +14,13 @@
     @Model.BannerCopy
 
     <ul>
-        @foreach (PromotionTile promotionTile in Model.PromotionTiles)
-        {
-            <li>@promotionTile.Name</li>            
-            <li>@promotionTile.TileImageUrl</li>            
-            <li>@promotionTile.OverlayImageUrl</li>
-        }
+      @foreach (PromotionTile promotionTile in Model.PromotionTiles)
+      {
+        <li>@promotionTile.Name</li>            
+        <li>@promotionTile.TileImageUrl</li>            
+        <li>@promotionTile.OverlayImageUrl</li>
+      }
     </ul>
-
-         
 </section>
 <section id="promoLinks">
 @for( var i = 0; i < 6; i++ ) {
