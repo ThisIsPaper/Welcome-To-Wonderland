@@ -216,6 +216,7 @@
     <Compile Include="Models\Entities\SiteSettings.cs" />
     <Compile Include="Models\Media\Image.cs" />
     <Compile Include="Models\Media\PromotionTile.cs" />
+    <Compile Include="Models\Members\Partier.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -224,7 +225,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controllers\" />
-    <Folder Include="Models\Members\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
