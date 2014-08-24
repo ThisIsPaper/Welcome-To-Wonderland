@@ -15,5 +15,10 @@ namespace Wonderland.Logic.Models.Content
             : base(content)
         {
         }
+
+        public IEnumerable<FundraisingIdea> GetFundraisingIdeas()
+        {
+            return this.Children().Select(x => new FundraisingIdea(x));
+        }
     }
 }

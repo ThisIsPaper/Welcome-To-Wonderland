@@ -3,3 +3,10 @@
     Layout = "SitePage.cshtml";
 }
 <h1>Fundraising Ideas</h1>
+
+<ul>
+    @foreach(FundraisingIdea fundraisingIdea in Model.GetFundraisingIdeas())
+    {
+        <li>@fundraisingIdea.Name</li>   
+    }
+</ul>
