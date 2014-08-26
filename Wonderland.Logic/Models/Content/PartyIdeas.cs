@@ -27,8 +27,16 @@ namespace Wonderland.Logic.Models.Content
 
         public IEnumerable<PartyIdeaTile> GetPartyIdeaTiles()
         {
+            // TODO: add cms field to allow overall ordering amongst tile types
+
             // reuse the built-in IPublishedContent -> Model factory
-            return this.Children().Select(x => (PartyIdeaTile)PublishedContentModelFactoryResolver.Current.Factory.CreateModel(x));
+            return this.Descendants()
+                        .Where(x => 
+                                x.DocumentTypeAlias == DecorationTile.Alias ||
+                                x.DocumentTypeAlias == FashionTile.Alias ||
+                                x.DocumentTypeAlias == PlaylistTile.Alias ||
+                                x.DocumentTypeAlias == RecipeTile.Alias)
+                        .Select(x => (PartyIdeaTile)PublishedContentModelFactoryResolver.Current.Factory.CreateModel(x));
         }
     }
 }

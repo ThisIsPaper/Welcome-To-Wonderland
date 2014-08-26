@@ -7,11 +7,11 @@ namespace Wonderland.Logic.Models.Content
     using Umbraco.Core.Models;
     using nuPickers;
 
-    public class SpotifyTile : PartyIdeaTile
+    public class PlaylistTile : PartyIdeaTile
     {
-        public new const string Alias = "SpotifyTile";
+        public new const string Alias = "PlaylistTile";
 
-        public SpotifyTile(IPublishedContent content)
+        public PlaylistTile(IPublishedContent content)
             : base(content)
         {
         }
@@ -20,7 +20,7 @@ namespace Wonderland.Logic.Models.Content
         {
             get
             {
-                return "spotify";
+                return "playlist";
             }
         }
     }

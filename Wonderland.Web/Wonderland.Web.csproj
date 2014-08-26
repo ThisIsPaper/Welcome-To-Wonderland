@@ -284,6 +284,7 @@
     <Content Include="config\applications.config" />
     <Content Include="config\404handlers.config" />
     <Content Include="Views\Partials\PartyKit.cshtml" />
+    <Content Include="Views\PartyIdeaCategory.cshtml" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>

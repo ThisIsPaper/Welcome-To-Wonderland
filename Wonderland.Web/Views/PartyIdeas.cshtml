@@ -10,10 +10,10 @@
         tile-size-medium
         tile-size-small
 
-        tile-type-spotify
-        tile-type-recipe
         tile-type-decoration
         tile-type-fashion
+        tile-type-playlist
+        tile-type-recipe
     -->
     @foreach (PartyIdeaTile partyIdeaTile in Model.GetPartyIdeaTiles())
     {
@@ -22,17 +22,7 @@
             <h2>@partyIdeaTile.TileHeading</h2>
             <img src="@partyIdeaTile.TileImage.Url" />
             <p>@partyIdeaTile.TileCopy</p>
-            <a href="@partyIdeaTile.Url">@partyIdeaTile.Url</a>
-
-            @if (partyIdeaTile is SpotifyTile)
-            {
-                <h3>Spotify Tile</h3>
-            }
-            
-            @if (partyIdeaTile is RecipeTile)
-            {
-                <h3>Recipe Tile</h3>
-            }
+            <a href="@partyIdeaTile.Url">@partyIdeaTile.Url</a>            
             
             @if (partyIdeaTile is DecorationTile)
             {
@@ -42,6 +32,16 @@
             @if (partyIdeaTile is FashionTile)
             {
                 <h3>Fashion Tile</h3>
+            }
+
+            @if (partyIdeaTile is PlaylistTile)
+            {
+                <h3>Playlist Tile</h3>
+            }
+
+            @if (partyIdeaTile is RecipeTile)
+            {
+                <h3>Recipe Tile</h3>
             }
 
         </li>
