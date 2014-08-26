@@ -8,7 +8,7 @@
 @foreach(Reward reward in Model.Rewards)
 {
     <h1>@reward.Heading</h1>
-    <img src="@reward.Image.Url"/>
+    <img src="@reward.Image.GetResponsiveImageUrl(10, 10)"/>
     <h2>@reward.SubHeading</h2>    
     <p>@reward.Copy</p>
 }

@@ -248,6 +248,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="scripts\dummy.txt" />
+    <Content Include="scripts\slimmage.js" />
+    <Content Include="scripts\slimmage.min.js" />
+    <Content Include="scripts\slimmage.settings.js" />
+    <Content Include="scripts\slimmage.settings.min.js" />
     <Content Include="usercontrols\dummy.txt" />
     <Content Include="web.config">
       <SubType>Designer</SubType>
