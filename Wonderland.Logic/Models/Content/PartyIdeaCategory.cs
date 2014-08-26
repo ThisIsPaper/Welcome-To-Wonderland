@@ -5,6 +5,7 @@ namespace Wonderland.Logic.Models.Content
     using System.Linq;
     using Umbraco.Web;
     using Umbraco.Core.Models;
+    using Umbraco.Core.Models.PublishedContent;
     using nuPickers;
     using Wonderland.Logic.Enums;
     using Wonderland.Logic.Models.Media;
@@ -18,9 +19,9 @@ namespace Wonderland.Logic.Models.Content
         {
         }
 
-        //public IEnumerable<PartyIdeaTile> GetPartyIdeaTiles()
-        //{
-
-        //}
+        public IEnumerable<PartyIdeaTile> GetPartyIdeaTiles()
+        {
+            return this.Children().Select(x => (PartyIdeaTile)PublishedContentModelFactoryResolver.Current.Factory.CreateModel(x));
+        }
     }
 }

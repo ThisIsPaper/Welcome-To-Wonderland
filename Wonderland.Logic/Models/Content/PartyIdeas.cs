@@ -55,18 +55,6 @@ namespace Wonderland.Logic.Models.Content
                                         .Where(x => x is PartyIdeaTile && !this.PriorityTiles.Select(y => y.Id).Contains(x.Id))
                                         .Cast<PartyIdeaTile>());
 
-            
-
-            //// reuse the built-in IPublishedContent -> Model factory
-            //return this.Descendants()
-            //            .Where(x => 
-            //                    x.DocumentTypeAlias == DecorationTile.Alias ||
-            //                    x.DocumentTypeAlias == FashionTile.Alias ||
-            //                    x.DocumentTypeAlias == PlaylistTile.Alias ||
-            //                    x.DocumentTypeAlias == RecipeTile.Alias)
-            //            .Select(x => (PartyIdeaTile)PublishedContentModelFactoryResolver.Current.Factory.CreateModel(x));
-
-
             return partyIdeaTiles;
         }
     }

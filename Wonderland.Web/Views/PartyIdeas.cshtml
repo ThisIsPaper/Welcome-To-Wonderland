@@ -2,48 +2,6 @@
 @{
     Layout = "SitePage.cshtml";
 }
-<h1>Party Ideas</h1>
+<h1>Party Ideas (all tiles)</h1>
 
-<ul class="party-idea-tiles">
-    <!--
-        tile-size-large
-        tile-size-medium
-        tile-size-small
-
-        tile-type-decoration
-        tile-type-fashion
-        tile-type-playlist
-        tile-type-recipe
-    -->
-    @foreach (PartyIdeaTile partyIdeaTile in Model.GetPartyIdeaTiles())
-    {
-        <li class="tile-size-@partyIdeaTile.TileSize.ToString().ToLower() tile-type-@partyIdeaTile.TileType">
-            
-            <h2>@partyIdeaTile.TileHeading</h2>
-            <img src="@partyIdeaTile.TileImage.Url" />
-            <p>@partyIdeaTile.TileCopy</p>
-            <a href="@partyIdeaTile.Url">@partyIdeaTile.Url</a>            
-            
-            @if (partyIdeaTile is DecorationTile)
-            {
-                <h3>Decoration Tile</h3>
-            }
-            
-            @if (partyIdeaTile is FashionTile)
-            {
-                <h3>Fashion Tile</h3>
-            }
-
-            @if (partyIdeaTile is PlaylistTile)
-            {
-                <h3>Playlist Tile</h3>
-            }
-
-            @if (partyIdeaTile is RecipeTile)
-            {
-                <h3>Recipe Tile</h3>
-            }
-
-        </li>
-    }
-</ul>
+@Html.Partial("PartyIdeaTiles", Model.GetPartyIdeaTiles())
