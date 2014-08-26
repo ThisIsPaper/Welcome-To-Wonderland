@@ -17,7 +17,7 @@ namespace Wonderland.Logic.Models.Media
         {
         }
 
-        public string Url
+        public string ImageUrl
         {
             get
             {

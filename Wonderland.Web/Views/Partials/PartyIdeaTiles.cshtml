@@ -18,7 +18,7 @@
         <li class="tile-size-@partyIdeaTile.TileSize.ToString().ToLower() tile-type-@partyIdeaTile.TileType">
 
             <h2>@partyIdeaTile.TileHeading</h2>
-            <img src="@partyIdeaTile.TileImage.Url" />
+            <img src="@partyIdeaTile.TileImage.GetCropUrl("Square")" />
             <p>@partyIdeaTile.TileCopy</p>
             <a href="@partyIdeaTile.Url">@partyIdeaTile.Url</a>
 
