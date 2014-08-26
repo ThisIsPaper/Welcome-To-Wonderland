@@ -42,7 +42,7 @@ Buttons
   @extend .btn-primary;
   @extend %rounded-skew-two;
   background: $wonderlandPrimaryColour;  
-  padding: $wonderlandPaddingSmall - .1 2.7rem;
+  padding: $wonderlandPaddingSmall - .1 2.4rem;
   &:hover, &:focus {
     background: darken($wonderlandPrimaryColour, 5%);
   }
