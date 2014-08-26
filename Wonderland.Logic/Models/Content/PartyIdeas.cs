@@ -25,18 +25,49 @@ namespace Wonderland.Logic.Models.Content
             }
         }
 
+        /// <summary>
+        /// marked as internal as not needed in the view model
+        /// </summary>
+        internal IEnumerable<PartyIdeaTile> PriorityTiles
+        {
+            get
+            {
+                return this.GetPropertyValue<Picker>("priorityTiles")
+                            .AsPublishedContent()
+                            .Select(x => (PartyIdeaTile)PublishedContentModelFactoryResolver.Current.Factory.CreateModel(x));
+            }
+        }
+
+        /// <summary>
+        /// gets a collection of all party idea tiles in a specific rendering order
+        /// </summary>
+        /// <returns></returns>
         public IEnumerable<PartyIdeaTile> GetPartyIdeaTiles()
         {
-            // TODO: add cms field to allow overall ordering amongst tile types
+            List<PartyIdeaTile> partyIdeaTiles = new List<PartyIdeaTile>();
 
-            // reuse the built-in IPublishedContent -> Model factory
-            return this.Descendants()
-                        .Where(x => 
-                                x.DocumentTypeAlias == DecorationTile.Alias ||
-                                x.DocumentTypeAlias == FashionTile.Alias ||
-                                x.DocumentTypeAlias == PlaylistTile.Alias ||
-                                x.DocumentTypeAlias == RecipeTile.Alias)
-                        .Select(x => (PartyIdeaTile)PublishedContentModelFactoryResolver.Current.Factory.CreateModel(x));
+            // add the priority tiles to the top of the list
+            partyIdeaTiles.AddRange(this.PriorityTiles);
+
+            // add all remaining tiles (that are not in the priority list)
+            partyIdeaTiles.AddRange(this.Descendants()
+                                        .Select(x => PublishedContentModelFactoryResolver.Current.Factory.CreateModel(x))
+                                        .Where(x => x is PartyIdeaTile && !this.PriorityTiles.Select(y => y.Id).Contains(x.Id))
+                                        .Cast<PartyIdeaTile>());
+
+            
+
+            //// reuse the built-in IPublishedContent -> Model factory
+            //return this.Descendants()
+            //            .Where(x => 
+            //                    x.DocumentTypeAlias == DecorationTile.Alias ||
+            //                    x.DocumentTypeAlias == FashionTile.Alias ||
+            //                    x.DocumentTypeAlias == PlaylistTile.Alias ||
+            //                    x.DocumentTypeAlias == RecipeTile.Alias)
+            //            .Select(x => (PartyIdeaTile)PublishedContentModelFactoryResolver.Current.Factory.CreateModel(x));
+
+
+            return partyIdeaTiles;
         }
     }
 }

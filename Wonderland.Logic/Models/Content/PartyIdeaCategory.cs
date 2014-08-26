@@ -17,5 +17,10 @@ namespace Wonderland.Logic.Models.Content
             : base(content)
         {
         }
+
+        //public IEnumerable<PartyIdeaTile> GetPartyIdeaTiles()
+        //{
+
+        //}
     }
 }
