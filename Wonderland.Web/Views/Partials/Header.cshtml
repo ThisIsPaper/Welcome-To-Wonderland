@@ -1,14 +1,14 @@
 ﻿@inherits UmbracoViewPage<IEnumerable<SitePage>> 
-<header id="siteHeader" class="toolbar" >
+<header id="siteHeader" class="nav">
   <a class="btn-primary">Host a party ></a>
-  <nav>
+  <nav class="toolbar">
     <ul>
-        @* Model is just a collection of site pages *@
-        @foreach (SitePage sitePage in Model)
-        {
-            <li><a href="@sitePage.Url">@sitePage.Name</a></li>
-        }
+      @* Model is just a collection of site pages *@
+      @foreach (SitePage sitePage in Model)
+      {
+        <li><a href="@sitePage.Url">@sitePage.Name</a></li>
+      }
     </ul>
   </nav>
-  <a class="btn-secondary">Log in</a>
+  <a class="btn-secondary">Login</a>
 </header>

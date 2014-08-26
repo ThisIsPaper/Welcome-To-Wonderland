@@ -13,18 +13,16 @@
 
     @Model.BannerCopy
 
-</section>
-<section id="promoLinks"><!-- can we rename to promotionTiles ? -->
-
-    <ul>
-        @foreach (PromotionTile promotionTile in Model.PromotionTiles)
-        {
-            <li>
-                @promotionTile.Name
-                <img src="@promotionTile.TileImageUrl" />
-                <img src="@promotionTile.OverlayImageUrl" />        
-            </li>            
-        }
-    </ul>
-
+  </section>
+<section id="promoTiles">
+  <ul>
+      @foreach (PromotionTile promotionTile in Model.PromotionTiles)
+      {
+        <li>
+          @promotionTile.Name
+          <img src="@promotionTile.TileImageUrl" />
+          <img src="@promotionTile.OverlayImageUrl" />        
+        </li>            
+      }
+  </ul>
 </section>

@@ -188,25 +188,25 @@ $zoo: $phi - $xoo * (1 - ($wonderlandContainer-width / $yoo));
 
 /* Type */
 #{headings(all)} {
-	font-weight: $wonderlandHeadingFontWeight;
+  font-weight: $wonderlandHeadingFontWeight;
 }
 
-@for $i from 1 through 6 {
-	#{$i} {
-		font-size: (($wonderlandEm * $wonderlandMultiplierLarge) - (($i * (($wonderlandEm * $wonderlandMultiplierLarge) / 6 )))) + ($wonderlandEm * $wonderlandMultiplier);
-	}
-}
+// @for $i from 1 through 6 {
+//  #{$i} {
+//    font-size: (($wonderlandEm * $wonderlandMultiplierLarge) - (($i * (($wonderlandEm * $wonderlandMultiplierLarge) / 6 )))) + ($wonderlandEm * $wonderlandMultiplier);
+//  }
+// }
 
 a {
-	@extend %transition-all;
-	color: $wonderlandInverseTextColour;
-	&:visited {
-		color: darken($wonderlandTextColour, 30);
-	}
-	text-decoration: none;
+  @extend %transition-all;
+  color: $wonderlandInverseTextColour;
+  &:visited {
+    color: darken($wonderlandTextColour, 30);
+  }
+  text-decoration: none;
 }
 
 ul, ol, dl {
-	padding-left: ($wonderlandPaddingLarge * $wonderlandMultiplier);
-	@extend %normal-margin-top-bottom;
+  padding-left: ($wonderlandPaddingLarge * $wonderlandMultiplier);
+  @extend %normal-margin-top-bottom;
 }

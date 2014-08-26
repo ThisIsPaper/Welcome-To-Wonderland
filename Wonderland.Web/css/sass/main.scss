@@ -22,7 +22,7 @@ Imports
 @import "partials/_variables.scss";
 @import "partials/_helpers.scss";
 @import "compass/reset";
-@import "compass/css3/pie";
+// @import "compass/css3/pie";
 @import "compass/css3";
 @import "partials/_variables.scss";
 @import "partials/_grids.scss";
@@ -38,18 +38,10 @@ Imports
 
 #siteHeader {
   @extend %fixed;
-  width: $wonderlandRowWidth;
   nav,
   li,
-  a:first-child { 
-    @extend %pull-left;
-  }
-  a:last-child { @extend %pull-right; }
-}
-
-
-#promoLinks {
-  > img {
-    margin: 2rem;
+  a {
+    &:first-child { @extend %pull-left; }
+    &:last-child { @extend %pull-right; }
   }
 }

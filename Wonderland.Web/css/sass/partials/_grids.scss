@@ -90,16 +90,16 @@
 	%#{$wonderlandRowNotation} {
 		%#{col-name($i)}:last-child {
 			@extend %last !optional;
-			@include span-columns($i omega, $wonderlandNum-cols);
+			@include span($i of $wonderlandNum-cols);
 		}
 	}
 
 	%#{col-name($i)} {
 		@if $i == $wonderlandNum-cols {
-			@include span-columns($i omega, $wonderlandNum-cols);
+			@include span($i of $wonderlandNum-cols);
 		}
 		@else {
-			@include span-columns($i, $wonderlandNum-cols);
+			@include span($i of $wonderlandNum-cols);
 		}
 	}
 }
@@ -107,7 +107,7 @@
 .container {
 	@include container;
 	@extend %border-box;
-	max-width: 1180px;
+	max-width: 74.3rem;
 	%#{$wonderlandRowNotation} {
 		width: $wonderlandContainer-width;
 		margin: 0 auto;

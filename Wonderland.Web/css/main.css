@@ -73,16 +73,16 @@ Media query variables
  This file contains all useful helpers (usually used through @extends) in the Macmillan - Wonderland app.  Styles should be compiled using compass and sass (make sure SUSY is installed).
  --------------------------------------------------------------------------------------------------------------------- */
 /**
- * Non-sremantic helper classes: please define your styles before this section
+ * Non-semantic helper classes: please define your styles before this section
  */
 /* =============================================================================
 Visibility Helpers
 ========================================================================== */
-/* For image replacrement */
+/* For image replacement */
 @import url("http://fonts.googleapis.com/css?family=Open+Sans:400,300");
 /* Hide for both screenreaders and browsers:
    css-discuss.incutio.com/wiki/Screenreader_Visibility */
-/* line 42, sass/partials/_helpers.scss */
+/* line 43, sass/partials/_helpers.scss */
 .responsive-grid {
   display: none;
 }
@@ -90,33 +90,33 @@ Visibility Helpers
 /* Hide only visually, but have it available for screenreaders: by Jon Neal.
   www.webaim.org/techniques/css/invisiblecontent/  &  j.mp/visuallyhidden */
 /* Hide visually and from screenreaders, but maintain layout */
-/* line 72, sass/partials/_helpers.scss */
+/* line 73, sass/partials/_helpers.scss */
 .nav ul ul {
   visibility: hidden;
 }
 
-/* line 76, sass/partials/_helpers.scss */
+/* line 77, sass/partials/_helpers.scss */
 .nav ul ul li:hover > ul, .nav ul li:hover > ul {
   visibility: visible;
 }
 
-/* The Magnificent Clearfix: Updated to prevent margin-collapsing on child elrements in most situations.
+/* The Magnificent Clearfix: Updated to prevent margin-collapsing on child elements in most situations.
    nicolasgallagher.com/micro-clearfix-hack/ */
-/* line 82, sass/partials/_helpers.scss */
+/* line 83, sass/partials/_helpers.scss */
 .nav {
   zoom: 1;
 }
-/* line 84, sass/partials/_helpers.scss */
+/* line 85, sass/partials/_helpers.scss */
 .nav:before, .nav:after {
   content: "";
   display: table;
 }
-/* line 88, sass/partials/_helpers.scss */
+/* line 89, sass/partials/_helpers.scss */
 .nav:after {
   clear: both;
 }
 
-/* line 93, sass/partials/_helpers.scss */
+/* line 94, sass/partials/_helpers.scss */
 .form-actions, .btn-group, .toolbar {
   text-align: center;
 }
@@ -127,7 +127,7 @@ CSS3 PIE
 /* =============================================================================
 Overflow
 ========================================================================== */
-/* line 125, sass/partials/_helpers.scss */
+/* line 126, sass/partials/_helpers.scss */
 .nav {
   overflow: visible;
 }
@@ -136,28 +136,28 @@ Overflow
 Margins
 ========================================================================== */
 /* Normal margin */
-/* line 138, sass/partials/_helpers.scss */
+/* line 139, sass/partials/_helpers.scss */
 .box {
   margin: 1.2rem;
 }
 
-/* line 142, sass/partials/_helpers.scss */
+/* line 143, sass/partials/_helpers.scss */
 .nav, .nav ul, .nav ul ul li:hover > ul, .nav ul li:hover > ul, .responsive-grid, nav ul, nav li ul, .toolbar ul, .toolbar li ul, .btn-group ul {
   margin: 0;
 }
 
-/* line 146, sass/partials/_helpers.scss */
+/* line 147, sass/partials/_helpers.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, p, h1, h2, h3, h4, h5, h6, blockquote, pre, address, cite, code, del, dfn, img, q, dl, ul, fieldset, form, legend, table, caption, summary, audio, video {
   margin-bottom: 1.2rem;
 }
 
-/* line 154, sass/partials/_helpers.scss */
+/* line 155, sass/partials/_helpers.scss */
 .nav ul ul {
   margin-left: 1.2rem;
 }
 
 /* Normal margin combinations */
-/* line 163, sass/partials/_helpers.scss */
+/* line 164, sass/partials/_helpers.scss */
 ul, ol, dl {
   margin: 1.2rem 0;
 }
@@ -169,29 +169,29 @@ ul, ol, dl {
 Padding
 ========================================================================== */
 /* Normal padding */
-/* line 254, sass/partials/_helpers.scss */
+/* line 255, sass/partials/_helpers.scss */
 .form-actions, .btn-group, .toolbar, .box {
   padding: 1.2rem;
 }
 
-/* line 258, sass/partials/_helpers.scss */
+/* line 259, sass/partials/_helpers.scss */
 .nav, .nav ul, nav ul, nav li ul, .toolbar ul, .toolbar li ul, .btn-group ul {
   padding: 0;
 }
 
-/* line 262, sass/partials/_helpers.scss */
+/* line 263, sass/partials/_helpers.scss */
 .form-actions, .btn-group, .toolbar {
   padding: 1.2rem 0;
 }
 
-/* line 266, sass/partials/_helpers.scss */
+/* line 267, sass/partials/_helpers.scss */
 input:not([type]), input[type="color"], input[type="email"], input[type="number"], input[type="password"], input[type="tel"], input[type="url"], input[type="text"] {
   padding: 0 1.2rem;
 }
 
 /* Large Padding */
 /* Small Padding */
-/* line 314, sass/partials/_helpers.scss */
+/* line 315, sass/partials/_helpers.scss */
 input:not([type]), input[type="color"], input[type="email"], input[type="number"], input[type="password"], input[type="tel"], input[type="url"], input[type="text"] {
   padding: 0.92308rem 0;
 }
@@ -201,36 +201,14 @@ input:not([type]), input[type="color"], input[type="email"], input[type="number"
 Border radius
 ========================================================================== */
 /* Normal border radii */
-/* line 373, sass/partials/_helpers.scss */
+/* line 374, sass/partials/_helpers.scss */
 .box {
-  -webkit-border-radius: 0.43956rem;
   -moz-border-radius: 0.43956rem;
-  -ms-border-radius: 0.43956rem;
-  -o-border-radius: 0.43956rem;
+  -webkit-border-radius: 0.43956rem;
   border-radius: 0.43956rem;
 }
 
-/* line 377, sass/partials/_helpers.scss */
-.form-actions input:first-child, .form-actions .btn:first-child, .form-actions button:first-child, .form-actions .responsive-grid:first-child, .btn-group input:first-child, .btn-group .btn:first-child, .btn-group button:first-child, .btn-group .responsive-grid:first-child, .toolbar input:first-child, .toolbar .btn:first-child, .toolbar button:first-child, .toolbar .responsive-grid:first-child {
-  -moz-border-radius-topleft: 0.43956rem;
-  -webkit-border-top-left-radius: 0.43956rem;
-  border-top-left-radius: 0.43956rem;
-  -moz-border-radius-bottomleft: 0.43956rem;
-  -webkit-border-bottom-left-radius: 0.43956rem;
-  border-bottom-left-radius: 0.43956rem;
-}
-
-/* line 382, sass/partials/_helpers.scss */
-.form-actions input:last-child, .form-actions .btn:last-child, .form-actions button:last-child, .form-actions .responsive-grid:last-child, .btn-group input:last-child, .btn-group .btn:last-child, .btn-group button:last-child, .btn-group .responsive-grid:last-child, .toolbar input:last-child, .toolbar .btn:last-child, .toolbar button:last-child, .toolbar .responsive-grid:last-child {
-  -moz-border-radius-topright: 0.43956rem;
-  -webkit-border-top-right-radius: 0.43956rem;
-  border-top-right-radius: 0.43956rem;
-  -moz-border-radius-bottomright: 0.43956rem;
-  -webkit-border-bottom-right-radius: 0.43956rem;
-  border-bottom-right-radius: 0.43956rem;
-}
-
-/* line 387, sass/partials/_helpers.scss */
+/* line 388, sass/partials/_helpers.scss */
 .nav ul ul li:first-child a {
   -moz-border-radius-topleft: 0.43956rem;
   -webkit-border-top-left-radius: 0.43956rem;
@@ -241,27 +219,16 @@ Border radius
 }
 
 /* Large border radii */
-/* line 404, sass/partials/_helpers.scss */
+/* line 405, sass/partials/_helpers.scss */
 input[type="search"], input[type="password"][type="search"], isindex[type="search"] {
-  -webkit-border-radius: 1.2rem;
   -moz-border-radius: 1.2rem;
-  -ms-border-radius: 1.2rem;
-  -o-border-radius: 1.2rem;
+  -webkit-border-radius: 1.2rem;
   border-radius: 1.2rem;
 }
 
-/* No rounded radii (useful for overriding other elrements with radii) */
-/* line 430, sass/partials/_helpers.scss */
-.form-actions input, .form-actions .btn, .form-actions button, .form-actions .responsive-grid, .btn-group input, .btn-group .btn, .btn-group button, .btn-group .responsive-grid, .toolbar input, .toolbar .btn, .toolbar button, .toolbar .responsive-grid {
-  -webkit-border-radius: 0;
-  -moz-border-radius: 0;
-  -ms-border-radius: 0;
-  -o-border-radius: 0;
-  border-radius: 0;
-}
-
+/* No rounded radii (useful for overriding other elements with radii) */
 /* Uneven border radii */
-/* line 456, sass/partials/_helpers.scss */
+/* line 457, sass/partials/_helpers.scss */
 .btn-primary, .btn-secondary {
   -moz-border-radius-topleft: 0.5rem 1.1rem;
   -webkit-border-top-left-radius: 0.5rem 1.1rem;
@@ -269,6 +236,10 @@ input[type="search"], input[type="password"][type="search"], isindex[type="searc
   -moz-border-radius-bottomleft: 0.5rem 1.3rem;
   -webkit-border-bottom-left-radius: 0.5rem 1.3rem;
   border-bottom-left-radius: 0.5rem 1.3rem;
+}
+
+/* line 462, sass/partials/_helpers.scss */
+.btn-primary, .btn-secondary {
   -moz-border-radius-topright: 0.9rem 0.8rem;
   -webkit-border-top-right-radius: 0.9rem 0.8rem;
   border-top-right-radius: 0.9rem 0.8rem;
@@ -277,25 +248,45 @@ input[type="search"], input[type="password"][type="search"], isindex[type="searc
   border-bottom-right-radius: 0.6rem 1.4rem;
 }
 
-/* line 473, sass/partials/_helpers.scss */
+/* line 467, sass/partials/_helpers.scss */
+.btn-secondary {
+  -moz-border-radius-topleft: 0.3rem 0.6rem;
+  -webkit-border-top-left-radius: 0.3rem 0.6rem;
+  border-top-left-radius: 0.3rem 0.6rem;
+  -moz-border-radius-bottomleft: 0.5rem 1.3rem;
+  -webkit-border-bottom-left-radius: 0.5rem 1.3rem;
+  border-bottom-left-radius: 0.5rem 1.3rem;
+}
+
+/* line 472, sass/partials/_helpers.scss */
+.btn-secondary {
+  -moz-border-radius-topright: 0.9rem 0.4rem;
+  -webkit-border-top-right-radius: 0.9rem 0.4rem;
+  border-top-right-radius: 0.9rem 0.4rem;
+  -moz-border-radius-bottomright: 0.6rem 1rem;
+  -webkit-border-bottom-right-radius: 0.6rem 1rem;
+  border-bottom-right-radius: 0.6rem 1rem;
+}
+
+/* line 487, sass/partials/_helpers.scss */
 .container, .btn-primary, .btn-secondary, input:not([type]), input[type="color"], input[type="email"], input[type="number"], input[type="password"], input[type="tel"], input[type="url"], input[type="text"], .box {
-  -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
-/* line 481, sass/partials/_helpers.scss */
+/* line 495, sass/partials/_helpers.scss */
 a, .btn-primary, .btn-secondary, .box {
-  -webkit-transition: 0.5s all ease;
-  -moz-transition: 0.5s all ease;
-  -o-transition: 0.5s all ease;
-  transition: 0.5s all ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 
 /* =============================================================================
 Font Sizes
 ========================================================================== */
-/* line 492, sass/partials/_helpers.scss */
+/* line 506, sass/partials/_helpers.scss */
 .btn-primary, .btn-secondary, .nav ul a {
   font-size: 81.25%;
 }
@@ -303,42 +294,44 @@ Font Sizes
 /* =============================================================================
 Opacity/visibility
 ========================================================================== */
-/* line 507, sass/partials/_helpers.scss */
+/* line 521, sass/partials/_helpers.scss */
 .nav ul ul {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
 }
 
-/* line 515, sass/partials/_helpers.scss */
+/* line 529, sass/partials/_helpers.scss */
 .nav ul ul li:hover > ul, .nav ul li:hover > ul {
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
   opacity: 1;
 }
 
 /* =============================================================================
 Borders
 ========================================================================== */
-/* line 522, sass/partials/_helpers.scss */
+/* line 536, sass/partials/_helpers.scss */
 .box {
   border: 0.1rem solid rgba(255, 255, 255, 0.5);
 }
 
-/* line 534, sass/partials/_helpers.scss */
-.form-actions, .btn-group, .toolbar {
-  border-top: 0.1rem solid rgba(255, 255, 255, 0.5);
+/* line 556, sass/partials/_helpers.scss */
+.form-actions input, .form-actions button, .form-actions .responsive-grid, .btn-group input, .btn-group button, .btn-group .responsive-grid, .toolbar input, .toolbar button, .toolbar .responsive-grid {
+  border: 0;
 }
 
 /* =============================================================================
 Floats
 ========================================================================== */
-/* line 549, sass/partials/_helpers.scss */
-#siteHeader nav,
-#siteHeader li,
+/* line 563, sass/partials/_helpers.scss */
+#siteHeader nav:first-child,
+#siteHeader li:first-child,
 #siteHeader a:first-child {
   float: left;
 }
 
-/* line 552, sass/partials/_helpers.scss */
+/* line 566, sass/partials/_helpers.scss */
+#siteHeader nav:last-child,
+#siteHeader li:last-child,
 #siteHeader a:last-child {
   float: right;
 }
@@ -346,17 +339,17 @@ Floats
 /* =============================================================================
 Positions
 ========================================================================== */
-/* line 559, sass/partials/_helpers.scss */
+/* line 573, sass/partials/_helpers.scss */
 .nav ul ul, .nav ul ul li:first-child a:after {
   position: absolute;
 }
 
-/* line 563, sass/partials/_helpers.scss */
+/* line 577, sass/partials/_helpers.scss */
 #siteHeader {
   position: fixed;
 }
 
-/* line 567, sass/partials/_helpers.scss */
+/* line 581, sass/partials/_helpers.scss */
 .nav ul li {
   position: relative;
 }
@@ -364,25 +357,24 @@ Positions
 /* =============================================================================
 Display modes
 ========================================================================== */
-/* line 578, sass/partials/_helpers.scss */
+/* line 592, sass/partials/_helpers.scss */
 .nav ul li:hover > ul {
   display: block;
 }
 
-/* line 582, sass/partials/_helpers.scss */
+/* line 596, sass/partials/_helpers.scss */
 .nav ul a, .nav ul li, nav, nav li, .toolbar, .toolbar li, .btn-group, nav input, nav li input, .toolbar input, .toolbar li input, .btn-group input {
-  display: -moz-inline-stack;
   display: inline-block;
   vertical-align: middle;
   *vertical-align: auto;
-  zoom: 1;
+  *zoom: 1;
   *display: inline;
 }
 
 /* =============================================================================
 Lists
 ========================================================================== */
-/* line 589, sass/partials/_helpers.scss */
+/* line 603, sass/partials/_helpers.scss */
 .nav, .nav ul, .nav ul ul {
   list-style: none;
 }
@@ -393,12 +385,12 @@ Links
 /* =============================================================================
 Widths
 ========================================================================== */
-/* line 603, sass/partials/_helpers.scss */
+/* line 617, sass/partials/_helpers.scss */
 .nav {
   width: 100%;
 }
 
-/* line 17, ../../../../../Users/Sam/AppData/Roaming/Mixture/Tools/Ruby/lib/ruby/gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 5, ../../../../../Users/Sam Latif/AppData/Roaming/Mixture/Tools/Ruby/lib/ruby/gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -420,46 +412,46 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
-/* line 22, ../../../../../Users/Sam/AppData/Roaming/Mixture/Tools/Ruby/lib/ruby/gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 22, ../../../../../Users/Sam Latif/AppData/Roaming/Mixture/Tools/Ruby/lib/ruby/gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
 html {
   line-height: 1;
 }
 
-/* line 24, ../../../../../Users/Sam/AppData/Roaming/Mixture/Tools/Ruby/lib/ruby/gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 24, ../../../../../Users/Sam Latif/AppData/Roaming/Mixture/Tools/Ruby/lib/ruby/gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 26, ../../../../../Users/Sam/AppData/Roaming/Mixture/Tools/Ruby/lib/ruby/gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 26, ../../../../../Users/Sam Latif/AppData/Roaming/Mixture/Tools/Ruby/lib/ruby/gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 28, ../../../../../Users/Sam/AppData/Roaming/Mixture/Tools/Ruby/lib/ruby/gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 28, ../../../../../Users/Sam Latif/AppData/Roaming/Mixture/Tools/Ruby/lib/ruby/gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 30, ../../../../../Users/Sam/AppData/Roaming/Mixture/Tools/Ruby/lib/ruby/gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 30, ../../../../../Users/Sam Latif/AppData/Roaming/Mixture/Tools/Ruby/lib/ruby/gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none;
 }
-/* line 103, ../../../../../Users/Sam/AppData/Roaming/Mixture/Tools/Ruby/lib/ruby/gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 103, ../../../../../Users/Sam Latif/AppData/Roaming/Mixture/Tools/Ruby/lib/ruby/gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
 
-/* line 32, ../../../../../Users/Sam/AppData/Roaming/Mixture/Tools/Ruby/lib/ruby/gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 32, ../../../../../Users/Sam Latif/AppData/Roaming/Mixture/Tools/Ruby/lib/ruby/gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
 
-/* line 116, ../../../../../Users/Sam/AppData/Roaming/Mixture/Tools/Ruby/lib/ruby/gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
-article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+/* line 116, ../../../../../Users/Sam Latif/AppData/Roaming/Mixture/Tools/Ruby/lib/ruby/gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
   display: block;
 }
 
@@ -560,19 +552,15 @@ Media query variables
 ========================================================================== */
 /* line 107, sass/partials/_grids.scss */
 .container {
-  *zoom: 1;
-  max-width: 59em;
-  _width: 59em;
-  padding-left: 1em;
-  padding-right: 1em;
+  max-width: 100%;
   margin-left: auto;
   margin-right: auto;
-  max-width: 1180px;
+  max-width: 74.3rem;
 }
-/* line 38, ../../../../../Users/Sam/AppData/Roaming/Mixture/Tools/Ruby/lib/ruby/gems/2.0.0/gems/compass-0.12.6/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+/* line 12, ../../../../../Users/Sam Latif/AppData/Roaming/Mixture/Tools/Ruby/lib/ruby/gems/2.0.0/gems/susy-2.1.3/sass/susy/output/support/_clearfix.scss */
 .container:after {
-  content: "";
-  display: table;
+  content: " ";
+  display: block;
   clear: both;
 }
 /*------------------------------------------------------------------------------------------------------------------------
@@ -598,7 +586,6 @@ Helpers
   font-weight: normal;
   font-style: normal;
 }
-
 /* line 26, sass/partials/icomoon/_icomoon.scss */
 .icon-glass:before, .icon-music:before, .icon-search:before, .icon-envelope:before, .icon-heart:before, .icon-star:before, .icon-star-empty:before, .icon-user:before, .icon-film:before, .icon-th-large:before, .icon-th:before, .icon-th-list:before, .icon-remove:before, .icon-zoom-in:before, .icon-zoom-out:before, .icon-off:before, .icon-signal:before, .icon-cog:before, .icon-trash:before, .icon-home:before, .icon-file:before, .icon-time:before, .icon-road:before, .icon-download-alt:before, .icon-download:before, .icon-upload:before, .icon-repeat:before, .icon-refresh:before, .icon-list-alt:before, .icon-lock:before, .icon-flag:before, .icon-headphones:before, .icon-volume-off:before, .icon-volume-down:before, .icon-volume-up:before, .icon-qrcode:before, .icon-tag:before, .icon-tags:before, .icon-book:before, .icon-bookmark:before, .icon-print:before, .icon-camera:before, .icon-font:before, .icon-bold:before, .icon-italic:before, .icon-text-height:before, .icon-text-width:before, .icon-align-left:before, .icon-align-center:before, .icon-align-right:before, .icon-align-justify:before, .icon-list:before, .icon-indent-left:before, .icon-indent-right:before, .icon-picture:before, .icon-pencil:before, .icon-map-marker:before, .icon-adjust:before, .icon-edit:before, .icon-share:before, .icon-move:before, .icon-step-backward:before, .icon-fast-backward:before, .icon-backward:before, .icon-play:before, .icon-pause:before, .icon-stop:before, .icon-forward:before, .icon-fast-forward:before, .icon-step-forward:before, .icon-eject:before, .icon-chevron-left:before, .icon-chevron-right:before, .icon-plus-sign:before, .icon-minus-sign:before, .icon-remove-sign:before, .icon-question-sign:before, .icon-info-sign:before, .icon-screenshot:before, .icon-arrow-left:before, .icon-arrow-right:before, .icon-arrow-up:before, .icon-arrow-down:before, .icon-share-alt:before, .icon-resize-full:before, .icon-resize-small:before, .icon-plus:before, .icon-minus:before, .icon-gift:before, .icon-leaf:before, .icon-fire:before, .icon-eye-open:before, .icon-eye-close:before, .icon-warning-sign:before, .icon-plane:before, .icon-random:before, .icon-comment:before, .icon-magnet:before, .icon-chevron-up:before, .icon-chevron-down:before, .icon-retweet:before, .icon-folder-close:before, .icon-resize-vertical:before, .icon-resize-horizontal:before, .icon-twitter-sign:before, .icon-facebook-sign:before, .icon-key:before, .icon-cogs:before, .icon-comments:before, .icon-thumbs-up:before, .icon-thumbs-down:before, .icon-heart-empty:before, .icon-signout:before, .icon-linkedin-sign:before, .icon-pushpin:before, .icon-external-link:before, .icon-signin:before, .icon-trophy:before, .icon-github-sign:before, .icon-upload-alt:before, .icon-lemon:before, .icon-phone:before, .icon-bookmark-empty:before, .icon-phone-sign:before, .icon-twitter:before, .icon-facebook:before, .icon-github:before, .icon-unlock:before, .icon-credit:before, .icon-rss:before, .icon-hdd:before, .icon-bullhorn:before, .icon-bell:before, .icon-certificate:before, .icon-hand-right:before, .icon-hand-left:before, .icon-hand-up:before, .icon-hand-down:before, .icon-circle-arrow-left:before, .icon-circle-arrow-right:before, .icon-circle-arrow-up:before, .icon-circle-arrow-down:before, .icon-globe:before, .icon-wrench:before, .icon-tasks:before, .icon-filter:before, .icon-briefcase:before, .icon-fullscreen:before, .icon-group:before, .icon-link:before, .icon-cloud:before, .icon-beaker:before, .icon-cut:before, .icon-copy:before, .icon-paper-clip:before, .icon-save:before, .icon-sign-blank:before, .icon-reorder:before, .icon-list-ul:before, .icon-list-ol:before, .icon-strikethrough:before, .icon-underline:before, .icon-table:before, .icon-magic:before, .icon-truck:before, .icon-pinterest:before, .icon-google-plus-sign:before, .icon-google-plus:before, .icon-money:before, .icon-caret-down:before, .icon-caret-up:before, .icon-caret-left:before, .icon-caret-right:before, .icon-columns:before, .icon-sort:before, .icon-sort-down:before, .icon-sort-up:before, .icon-envelope-alt:before, .icon-linkedin:before, .icon-undo:before, .icon-legal:before, .icon-dashboard:before, .icon-comment-alt:before, .icon-comments-alt:before, .icon-bolt:before, .icon-sitemap:before, .icon-umbrella:before, .icon-paste:before, .icon-stethoscope:before, .icon-suitcase:before, .icon-bell-alt:before, .icon-coffee:before, .icon-food:before, .icon-file-alt:before, .icon-building:before, .icon-hospital:before, .icon-ambulance:before, .icon-medkit:before, .icon-angle-up:before, .icon-angle-down:before, .icon-desktop:before, .icon-laptop:before, .icon-tablet:before, .icon-mobile:before, .icon-circle-blank:before, .icon-quote-left:before, .icon-quote-right:before, .icon-paperclip:before, .icon-reply-all:before, .icon-forward-2:before, .icon-user-2:before, .icon-users:before, .icon-heart-2:before, .icon-heart-3:before, .icon-thumbs-up-2:before, .icon-thumbs-down-2:before, .icon-publish:before, .icon-chat:before, .icon-comment-2:before, .icon-skypeonline:before, .icon-error:before, .icon-drawer:before, .icon-drawer-2:before, .icon-drawer-3:before, .icon-volume-high:before, .icon-images:before, .icon-image:before, .icon-pencil-2:before, .icon-cart:before, .icon-coin:before, .icon-credit-2:before, .icon-phone-2:before, .icon-menu:before, .icon-earth:before, .icon-briefcase-2:before, .icon-airplane:before, .icon-truck-2:before, .icon-road-2:before, .icon-happy:before, .icon-sad:before, .icon-checkmark:before, .icon-checkmark-circle:before, .icon-file-pdf:before, .icon-file-openoffice:before, .icon-file-word:before, .icon-file-excel:before, .icon-file-zip:before, .icon-file-css:before, .icon-checkout:before, .icon-file-powerpoint:before, .icon-twitter-2:before, .icon-google-plus-2:before, .icon-facebook-2:before, .icon-flickr:before, .icon-flickr-2:before, .icon-vimeo:before, .icon-soundcloud:before, .icon-skype:before, .icon-apple:before, .icon-windows8:before, .icon-chrome:before, .icon-firefox:before, .icon-IE:before, .icon-opera:before, .icon-barcode:before, .icon-locked:before, .icon-redo:before, .icon-reply:before, .icon-file-add:before, .icon-folder-open:before, .icon-cord:before, .icon-cube:before, .icon-puzzle:before, .icon-tools:before, .icon-equalizer:before, .icon-brush:before, .icon-checkbox-partial:before, .icon-calendar:before, .icon-calendar-2:before, .icon-lifebuoy:before, .icon-exclamation-sign:before, .icon-box-add:before, .icon-box-remove:before, .icon-facetime-video:before, .icon-play-2:before, .icon-play-3:before, .icon-database:before, .icon-aid:before, .icon-vcard:before, .icon-compass:before, .icon-map:before, .icon-lightbulb:before, .icon-stats:before, .icon-pie:before, .icon-cart-2:before, .icon-share-2:before, .icon-html5:before, .icon-github-2:before, .icon-youtube:before, .icon-file-xml:before, .icon-alert:before, [data-icon]:before {
   font-family: "icomoon";
@@ -2149,36 +2136,6 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 300;
 }
 
-/* line 195, sass/partials/_type.scss */
-1 {
-  font-size: 3.575rem;
-}
-
-/* line 195, sass/partials/_type.scss */
-2 {
-  font-size: 3.12rem;
-}
-
-/* line 195, sass/partials/_type.scss */
-3 {
-  font-size: 2.665rem;
-}
-
-/* line 195, sass/partials/_type.scss */
-4 {
-  font-size: 2.21rem;
-}
-
-/* line 195, sass/partials/_type.scss */
-5 {
-  font-size: 1.755rem;
-}
-
-/* line 195, sass/partials/_type.scss */
-6 {
-  font-size: 1.3rem;
-}
-
 /* line 200, sass/partials/_type.scss */
 a {
   color: #999999;
@@ -2217,50 +2174,48 @@ Buttons
 .btn-primary, .btn-secondary {
   cursor: pointer;
   font-weight: 500;
-  margin: 0.92308rem 1.2rem;
+  margin: 1.53812rem 1.9656rem;
   color: #fff;
-  padding: 0.92308rem 1.2rem;
+  padding: 0.82308rem 1.92rem;
   text-decoration: none;
   text-transform: uppercase;
   background: #682c88;
 }
 /* line 34, sass/partials/_forms.scss */
 .btn-primary:hover, .btn-secondary:hover, .btn-primary:focus, .btn-secondary:focus {
-  background: #8538af;
-  color: #999999;
+  background: #592675;
 }
-/* line 38, sass/partials/_forms.scss */
+/* line 37, sass/partials/_forms.scss */
 .btn-primary:active, .btn-secondary:active {
-  border-color: rgba(191, 191, 191, 0.5);
-  -webkit-box-shadow: inset 0 0 1.2rem black;
-  -moz-box-shadow: inset 0 0 1.2rem black;
-  box-shadow: inset 0 0 1.2rem black;
+  -moz-box-shadow: inset 0 0 1.2rem #000;
+  -webkit-box-shadow: inset 0 0 1.2rem #000;
+  box-shadow: inset 0 0 1.2rem #000;
 }
 
-/* line 43, sass/partials/_forms.scss */
+/* line 41, sass/partials/_forms.scss */
 .btn-secondary {
   background: #007eac;
+  padding: 0.82308rem 2.7rem;
+}
+/* line 46, sass/partials/_forms.scss */
+.btn-secondary:hover, .btn-secondary:focus {
+  background: #006b93;
 }
 
 /* Button groups */
-/* line 49, sass/partials/_forms.scss */
+/* line 52, sass/partials/_forms.scss */
 .form-actions, .btn-group, .toolbar {
-  background: rgba(104, 44, 136, 0.17);
-}
-/* line 55, sass/partials/_forms.scss */
-.form-actions input, .form-actions .btn, .form-actions button, .form-actions .responsive-grid, .btn-group input, .btn-group .btn, .btn-group button, .btn-group .responsive-grid, .toolbar input, .toolbar .btn, .toolbar button, .toolbar .responsive-grid {
-  margin: 0 -0.33812rem 0 0;
+  background: white;
 }
 
 /* =============================================================================
 Form inputs
 ========================================================================== */
 /* Allow inputs to be displayed similarly */
-/* line 72, sass/partials/_forms.scss */
+/* line 67, sass/partials/_forms.scss */
 input, input[type="password"], input[type="search"], isindex {
-  -webkit-appearance: textfield;
   -moz-appearance: textfield;
-  appearance: textfield;
+  -webkit-appearance: textfield;
 }
 
 /*------------------------------------------------------------------------------------------------------------------------
@@ -2274,7 +2229,7 @@ input, input[type="password"], input[type="search"], isindex {
 
  @copyright: COPYRIGHT 8-21-2014 On behalf of Paper Partnerships Ltd
  =============================================================================
- Filename: _type.scss
+ Filename: _nav.scss
  =============================================================================
  This file is responsible for navigation elements on the Macmillan - Wonderland app.  Styles should be compiled using compass and sass.
  --------------------------------------------------------------------------------------------------------------------- */
@@ -2334,15 +2289,15 @@ Media query variables
  This file contains all useful helpers (usually used through @extends) in the Macmillan - Wonderland app.  Styles should be compiled using compass and sass (make sure SUSY is installed).
  --------------------------------------------------------------------------------------------------------------------- */
 /**
- * Non-sremantic helper classes: please define your styles before this section
+ * Non-semantic helper classes: please define your styles before this section
  */
 /* =============================================================================
 Visibility Helpers
 ========================================================================== */
-/* For image replacrement */
+/* For image replacement */
 /* Hide for both screenreaders and browsers:
    css-discuss.incutio.com/wiki/Screenreader_Visibility */
-/* line 42, sass/partials/_helpers.scss */
+/* line 43, sass/partials/_helpers.scss */
 .responsive-grid {
   display: none;
 }
@@ -2350,33 +2305,33 @@ Visibility Helpers
 /* Hide only visually, but have it available for screenreaders: by Jon Neal.
   www.webaim.org/techniques/css/invisiblecontent/  &  j.mp/visuallyhidden */
 /* Hide visually and from screenreaders, but maintain layout */
-/* line 72, sass/partials/_helpers.scss */
+/* line 73, sass/partials/_helpers.scss */
 .nav ul ul {
   visibility: hidden;
 }
 
-/* line 76, sass/partials/_helpers.scss */
+/* line 77, sass/partials/_helpers.scss */
 .nav ul ul li:hover > ul, .nav ul li:hover > ul {
   visibility: visible;
 }
 
-/* The Magnificent Clearfix: Updated to prevent margin-collapsing on child elrements in most situations.
+/* The Magnificent Clearfix: Updated to prevent margin-collapsing on child elements in most situations.
    nicolasgallagher.com/micro-clearfix-hack/ */
-/* line 82, sass/partials/_helpers.scss */
+/* line 83, sass/partials/_helpers.scss */
 .nav {
   zoom: 1;
 }
-/* line 84, sass/partials/_helpers.scss */
+/* line 85, sass/partials/_helpers.scss */
 .nav:before, .nav:after {
   content: "";
   display: table;
 }
-/* line 88, sass/partials/_helpers.scss */
+/* line 89, sass/partials/_helpers.scss */
 .nav:after {
   clear: both;
 }
 
-/* line 93, sass/partials/_helpers.scss */
+/* line 94, sass/partials/_helpers.scss */
 .form-actions, .btn-group, .toolbar {
   text-align: center;
 }
@@ -2387,7 +2342,7 @@ CSS3 PIE
 /* =============================================================================
 Overflow
 ========================================================================== */
-/* line 125, sass/partials/_helpers.scss */
+/* line 126, sass/partials/_helpers.scss */
 .nav {
   overflow: visible;
 }
@@ -2396,28 +2351,28 @@ Overflow
 Margins
 ========================================================================== */
 /* Normal margin */
-/* line 138, sass/partials/_helpers.scss */
+/* line 139, sass/partials/_helpers.scss */
 .box {
   margin: 1.2rem;
 }
 
-/* line 142, sass/partials/_helpers.scss */
+/* line 143, sass/partials/_helpers.scss */
 .nav, .nav ul, .nav ul ul li:hover > ul, .nav ul li:hover > ul, .responsive-grid, nav ul, nav li ul, .toolbar ul, .toolbar li ul, .btn-group ul {
   margin: 0;
 }
 
-/* line 146, sass/partials/_helpers.scss */
+/* line 147, sass/partials/_helpers.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, p, h1, h2, h3, h4, h5, h6, blockquote, pre, address, cite, code, del, dfn, img, q, dl, ul, fieldset, form, legend, table, caption, summary, audio, video {
   margin-bottom: 1.2rem;
 }
 
-/* line 154, sass/partials/_helpers.scss */
+/* line 155, sass/partials/_helpers.scss */
 .nav ul ul {
   margin-left: 1.2rem;
 }
 
 /* Normal margin combinations */
-/* line 163, sass/partials/_helpers.scss */
+/* line 164, sass/partials/_helpers.scss */
 ul, ol, dl {
   margin: 1.2rem 0;
 }
@@ -2429,29 +2384,29 @@ ul, ol, dl {
 Padding
 ========================================================================== */
 /* Normal padding */
-/* line 254, sass/partials/_helpers.scss */
+/* line 255, sass/partials/_helpers.scss */
 .form-actions, .btn-group, .toolbar, .box {
   padding: 1.2rem;
 }
 
-/* line 258, sass/partials/_helpers.scss */
+/* line 259, sass/partials/_helpers.scss */
 .nav, .nav ul, nav ul, nav li ul, .toolbar ul, .toolbar li ul, .btn-group ul {
   padding: 0;
 }
 
-/* line 262, sass/partials/_helpers.scss */
+/* line 263, sass/partials/_helpers.scss */
 .form-actions, .btn-group, .toolbar {
   padding: 1.2rem 0;
 }
 
-/* line 266, sass/partials/_helpers.scss */
+/* line 267, sass/partials/_helpers.scss */
 input:not([type]), input[type="color"], input[type="email"], input[type="number"], input[type="password"], input[type="tel"], input[type="url"], input[type="text"] {
   padding: 0 1.2rem;
 }
 
 /* Large Padding */
 /* Small Padding */
-/* line 314, sass/partials/_helpers.scss */
+/* line 315, sass/partials/_helpers.scss */
 input:not([type]), input[type="color"], input[type="email"], input[type="number"], input[type="password"], input[type="tel"], input[type="url"], input[type="text"] {
   padding: 0.92308rem 0;
 }
@@ -2461,36 +2416,14 @@ input:not([type]), input[type="color"], input[type="email"], input[type="number"
 Border radius
 ========================================================================== */
 /* Normal border radii */
-/* line 373, sass/partials/_helpers.scss */
+/* line 374, sass/partials/_helpers.scss */
 .box {
-  -webkit-border-radius: 0.43956rem;
   -moz-border-radius: 0.43956rem;
-  -ms-border-radius: 0.43956rem;
-  -o-border-radius: 0.43956rem;
+  -webkit-border-radius: 0.43956rem;
   border-radius: 0.43956rem;
 }
 
-/* line 377, sass/partials/_helpers.scss */
-.form-actions input:first-child, .form-actions .btn:first-child, .form-actions button:first-child, .form-actions .responsive-grid:first-child, .btn-group input:first-child, .btn-group .btn:first-child, .btn-group button:first-child, .btn-group .responsive-grid:first-child, .toolbar input:first-child, .toolbar .btn:first-child, .toolbar button:first-child, .toolbar .responsive-grid:first-child {
-  -moz-border-radius-topleft: 0.43956rem;
-  -webkit-border-top-left-radius: 0.43956rem;
-  border-top-left-radius: 0.43956rem;
-  -moz-border-radius-bottomleft: 0.43956rem;
-  -webkit-border-bottom-left-radius: 0.43956rem;
-  border-bottom-left-radius: 0.43956rem;
-}
-
-/* line 382, sass/partials/_helpers.scss */
-.form-actions input:last-child, .form-actions .btn:last-child, .form-actions button:last-child, .form-actions .responsive-grid:last-child, .btn-group input:last-child, .btn-group .btn:last-child, .btn-group button:last-child, .btn-group .responsive-grid:last-child, .toolbar input:last-child, .toolbar .btn:last-child, .toolbar button:last-child, .toolbar .responsive-grid:last-child {
-  -moz-border-radius-topright: 0.43956rem;
-  -webkit-border-top-right-radius: 0.43956rem;
-  border-top-right-radius: 0.43956rem;
-  -moz-border-radius-bottomright: 0.43956rem;
-  -webkit-border-bottom-right-radius: 0.43956rem;
-  border-bottom-right-radius: 0.43956rem;
-}
-
-/* line 387, sass/partials/_helpers.scss */
+/* line 388, sass/partials/_helpers.scss */
 .nav ul ul li:first-child a {
   -moz-border-radius-topleft: 0.43956rem;
   -webkit-border-top-left-radius: 0.43956rem;
@@ -2501,27 +2434,16 @@ Border radius
 }
 
 /* Large border radii */
-/* line 404, sass/partials/_helpers.scss */
+/* line 405, sass/partials/_helpers.scss */
 input[type="search"], input[type="password"][type="search"], isindex[type="search"] {
-  -webkit-border-radius: 1.2rem;
   -moz-border-radius: 1.2rem;
-  -ms-border-radius: 1.2rem;
-  -o-border-radius: 1.2rem;
+  -webkit-border-radius: 1.2rem;
   border-radius: 1.2rem;
 }
 
-/* No rounded radii (useful for overriding other elrements with radii) */
-/* line 430, sass/partials/_helpers.scss */
-.form-actions input, .form-actions .btn, .form-actions button, .form-actions .responsive-grid, .btn-group input, .btn-group .btn, .btn-group button, .btn-group .responsive-grid, .toolbar input, .toolbar .btn, .toolbar button, .toolbar .responsive-grid {
-  -webkit-border-radius: 0;
-  -moz-border-radius: 0;
-  -ms-border-radius: 0;
-  -o-border-radius: 0;
-  border-radius: 0;
-}
-
+/* No rounded radii (useful for overriding other elements with radii) */
 /* Uneven border radii */
-/* line 456, sass/partials/_helpers.scss */
+/* line 457, sass/partials/_helpers.scss */
 .btn-primary, .btn-secondary {
   -moz-border-radius-topleft: 0.5rem 1.1rem;
   -webkit-border-top-left-radius: 0.5rem 1.1rem;
@@ -2529,6 +2451,10 @@ input[type="search"], input[type="password"][type="search"], isindex[type="searc
   -moz-border-radius-bottomleft: 0.5rem 1.3rem;
   -webkit-border-bottom-left-radius: 0.5rem 1.3rem;
   border-bottom-left-radius: 0.5rem 1.3rem;
+}
+
+/* line 462, sass/partials/_helpers.scss */
+.btn-primary, .btn-secondary {
   -moz-border-radius-topright: 0.9rem 0.8rem;
   -webkit-border-top-right-radius: 0.9rem 0.8rem;
   border-top-right-radius: 0.9rem 0.8rem;
@@ -2537,25 +2463,45 @@ input[type="search"], input[type="password"][type="search"], isindex[type="searc
   border-bottom-right-radius: 0.6rem 1.4rem;
 }
 
-/* line 473, sass/partials/_helpers.scss */
+/* line 467, sass/partials/_helpers.scss */
+.btn-secondary {
+  -moz-border-radius-topleft: 0.3rem 0.6rem;
+  -webkit-border-top-left-radius: 0.3rem 0.6rem;
+  border-top-left-radius: 0.3rem 0.6rem;
+  -moz-border-radius-bottomleft: 0.5rem 1.3rem;
+  -webkit-border-bottom-left-radius: 0.5rem 1.3rem;
+  border-bottom-left-radius: 0.5rem 1.3rem;
+}
+
+/* line 472, sass/partials/_helpers.scss */
+.btn-secondary {
+  -moz-border-radius-topright: 0.9rem 0.4rem;
+  -webkit-border-top-right-radius: 0.9rem 0.4rem;
+  border-top-right-radius: 0.9rem 0.4rem;
+  -moz-border-radius-bottomright: 0.6rem 1rem;
+  -webkit-border-bottom-right-radius: 0.6rem 1rem;
+  border-bottom-right-radius: 0.6rem 1rem;
+}
+
+/* line 487, sass/partials/_helpers.scss */
 .container, .btn-primary, .btn-secondary, input:not([type]), input[type="color"], input[type="email"], input[type="number"], input[type="password"], input[type="tel"], input[type="url"], input[type="text"], .box {
-  -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
-/* line 481, sass/partials/_helpers.scss */
+/* line 495, sass/partials/_helpers.scss */
 a, .btn-primary, .btn-secondary, .box {
-  -webkit-transition: 0.5s all ease;
-  -moz-transition: 0.5s all ease;
-  -o-transition: 0.5s all ease;
-  transition: 0.5s all ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
 }
 
 /* =============================================================================
 Font Sizes
 ========================================================================== */
-/* line 492, sass/partials/_helpers.scss */
+/* line 506, sass/partials/_helpers.scss */
 .btn-primary, .btn-secondary, .nav ul a {
   font-size: 81.25%;
 }
@@ -2563,42 +2509,44 @@ Font Sizes
 /* =============================================================================
 Opacity/visibility
 ========================================================================== */
-/* line 507, sass/partials/_helpers.scss */
+/* line 521, sass/partials/_helpers.scss */
 .nav ul ul {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
 }
 
-/* line 515, sass/partials/_helpers.scss */
+/* line 529, sass/partials/_helpers.scss */
 .nav ul ul li:hover > ul, .nav ul li:hover > ul {
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+  filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
   opacity: 1;
 }
 
 /* =============================================================================
 Borders
 ========================================================================== */
-/* line 522, sass/partials/_helpers.scss */
+/* line 536, sass/partials/_helpers.scss */
 .box {
   border: 0.1rem solid rgba(255, 255, 255, 0.5);
 }
 
-/* line 534, sass/partials/_helpers.scss */
-.form-actions, .btn-group, .toolbar {
-  border-top: 0.1rem solid rgba(255, 255, 255, 0.5);
+/* line 556, sass/partials/_helpers.scss */
+.form-actions input, .form-actions button, .form-actions .responsive-grid, .btn-group input, .btn-group button, .btn-group .responsive-grid, .toolbar input, .toolbar button, .toolbar .responsive-grid {
+  border: 0;
 }
 
 /* =============================================================================
 Floats
 ========================================================================== */
-/* line 549, sass/partials/_helpers.scss */
-#siteHeader nav,
-#siteHeader li,
+/* line 563, sass/partials/_helpers.scss */
+#siteHeader nav:first-child,
+#siteHeader li:first-child,
 #siteHeader a:first-child {
   float: left;
 }
 
-/* line 552, sass/partials/_helpers.scss */
+/* line 566, sass/partials/_helpers.scss */
+#siteHeader nav:last-child,
+#siteHeader li:last-child,
 #siteHeader a:last-child {
   float: right;
 }
@@ -2606,17 +2554,17 @@ Floats
 /* =============================================================================
 Positions
 ========================================================================== */
-/* line 559, sass/partials/_helpers.scss */
+/* line 573, sass/partials/_helpers.scss */
 .nav ul ul, .nav ul ul li:first-child a:after {
   position: absolute;
 }
 
-/* line 563, sass/partials/_helpers.scss */
+/* line 577, sass/partials/_helpers.scss */
 #siteHeader {
   position: fixed;
 }
 
-/* line 567, sass/partials/_helpers.scss */
+/* line 581, sass/partials/_helpers.scss */
 .nav ul li {
   position: relative;
 }
@@ -2624,25 +2572,24 @@ Positions
 /* =============================================================================
 Display modes
 ========================================================================== */
-/* line 578, sass/partials/_helpers.scss */
+/* line 592, sass/partials/_helpers.scss */
 .nav ul li:hover > ul {
   display: block;
 }
 
-/* line 582, sass/partials/_helpers.scss */
+/* line 596, sass/partials/_helpers.scss */
 .nav ul a, .nav ul li, nav, nav li, .toolbar, .toolbar li, .btn-group, nav input, nav li input, .toolbar input, .toolbar li input, .btn-group input {
-  display: -moz-inline-stack;
   display: inline-block;
   vertical-align: middle;
   *vertical-align: auto;
-  zoom: 1;
+  *zoom: 1;
   *display: inline;
 }
 
 /* =============================================================================
 Lists
 ========================================================================== */
-/* line 589, sass/partials/_helpers.scss */
+/* line 603, sass/partials/_helpers.scss */
 .nav, .nav ul, .nav ul ul {
   list-style: none;
 }
@@ -2653,21 +2600,19 @@ Links
 /* =============================================================================
 Widths
 ========================================================================== */
-/* line 603, sass/partials/_helpers.scss */
+/* line 617, sass/partials/_helpers.scss */
 .nav {
   width: 100%;
 }
 
 /* line 27, sass/partials/_nav.scss */
 .nav {
-  background: #565656;
-  border-bottom: 0.1rem solid rgba(217, 217, 217, 0.5);
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #7c7c7c), color-stop(100%, #2f2f2f));
-  background: -webkit-linear-gradient(#7c7c7c, #2f2f2f);
-  background: -moz-linear-gradient(#7c7c7c, #2f2f2f);
-  background: -o-linear-gradient(#7c7c7c, #2f2f2f);
-  -pie-background: linear-gradient(#7c7c7c, #2f2f2f);
-  background: linear-gradient(#7c7c7c, #2f2f2f);
+  background: white;
+  text-align: center;
+}
+/* line 32, sass/partials/_nav.scss */
+.nav .toolbar {
+  width: 60%;
 }
 /* line 36, sass/partials/_nav.scss */
 .nav ul a {
@@ -2675,37 +2620,27 @@ Widths
   border-right: 1px solid #1e0d28;
   padding: 0.92308rem 1.56rem;
   text-decoration: none;
-  text-shadow: 0 1px 0.92308rem #666666;
 }
-/* line 45, sass/partials/_nav.scss */
-.nav ul a:hover {
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #c9c9c9), color-stop(100%, #7c7c7c));
-  background: -webkit-linear-gradient(#c9c9c9, #7c7c7c);
-  background: -moz-linear-gradient(#c9c9c9, #7c7c7c);
-  background: -o-linear-gradient(#c9c9c9, #7c7c7c);
-  -pie-background: linear-gradient(#c9c9c9, #7c7c7c);
-  background: linear-gradient(#c9c9c9, #7c7c7c);
-}
-/* line 49, sass/partials/_nav.scss */
+/* line 46, sass/partials/_nav.scss */
 .nav ul ul {
   z-index: 9;
   top: 100%;
   background: #494949;
-  -webkit-transition: opacity 0.5s ease;
   -moz-transition: opacity 0.5s ease;
   -o-transition: opacity 0.5s ease;
+  -webkit-transition: opacity 0.5s ease;
   transition: opacity 0.5s ease;
-  -webkit-box-shadow: 0 0 0.92308rem rgba(255, 255, 255, 0.5);
   -moz-box-shadow: 0 0 0.92308rem rgba(255, 255, 255, 0.5);
+  -webkit-box-shadow: 0 0 0.92308rem rgba(255, 255, 255, 0.5);
   box-shadow: 0 0 0.92308rem rgba(255, 255, 255, 0.5);
 }
-/* line 62, sass/partials/_nav.scss */
+/* line 59, sass/partials/_nav.scss */
 .nav ul ul ul {
   left: 100%;
   top: 0;
   z-index: 10;
 }
-/* line 70, sass/partials/_nav.scss */
+/* line 67, sass/partials/_nav.scss */
 .nav ul ul ul li:first-child a:after {
   left: -0.4em;
   top: 0.8rem;
@@ -2716,21 +2651,21 @@ Widths
   border-top: 0.43956rem solid transparent;
   border-right: 1.2rem solid black;
 }
-/* line 82, sass/partials/_nav.scss */
+/* line 79, sass/partials/_nav.scss */
 .nav ul ul ul li:first-child a:hover:after {
   border-right-color: #e2e2e2;
   border-bottom-color: transparent;
 }
-/* line 90, sass/partials/_nav.scss */
+/* line 87, sass/partials/_nav.scss */
 .nav ul ul ul li:last-child a {
   border-right-color: #e2e2e2;
   border-bottom-color: transparent;
 }
-/* line 110, sass/partials/_nav.scss */
+/* line 107, sass/partials/_nav.scss */
 .nav ul ul li:first-child a:hover:after {
   border-bottom-color: #c9c9c9;
 }
-/* line 114, sass/partials/_nav.scss */
+/* line 111, sass/partials/_nav.scss */
 .nav ul ul li:first-child a:after {
   content: "";
   left: 3.276rem;
@@ -2741,7 +2676,7 @@ Widths
   border-right: 0.13rem solid transparent;
   border-bottom: 0.273rem solid #3c194e;
 }
-/* line 133, sass/partials/_nav.scss */
+/* line 130, sass/partials/_nav.scss */
 .nav ul li:hover a {
   color: gray;
 }
@@ -2761,8 +2696,8 @@ Widths
  --------------------------------------------------------------------------------------------------------------------- */
 /* line 15, sass/partials/_base.scss */
 body {
-  color: #666666;
-  background: white;
+  color: #666;
+  background: #fff;
   line-height: 1.4;
   font-family: "Open Sans", "sans-serif", "arial";
 }
@@ -2775,9 +2710,9 @@ Shadows
 ========================================================================== */
 /* line 54, sass/partials/_base.scss */
 .shadowed {
-  -webkit-box-shadow: inset 0 0 3em rgba(102, 102, 102, 0.3);
-  -moz-box-shadow: inset 0 0 3em rgba(102, 102, 102, 0.3);
-  box-shadow: inset 0 0 3em rgba(102, 102, 102, 0.3);
+  -moz-box-shadow: inset 0 0 3rem rgba(102, 102, 102, 0.3);
+  -webkit-box-shadow: inset 0 0 3rem rgba(102, 102, 102, 0.3);
+  box-shadow: inset 0 0 3rem rgba(102, 102, 102, 0.3);
 }
 
 /* =============================================================================
@@ -2902,8 +2837,7 @@ Media query variables
 
   @page {
     margin: 0.5cm;
-}
-
+  }
   /* line 64, sass/partials/_media-queries.scss */
   p, h2, h3 {
     orphans: 3;
@@ -3111,7 +3045,7 @@ Mobile main media query
   }
   /* line 147, sass/partials/_media-queries.scss */
   .nav ul li ul, .nav ul li ul ul {
-    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100);
+    filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
     opacity: 1;
     visibility: visible;
     font-size: 131.25%;
@@ -3138,13 +3072,4 @@ Mobile main media query
   input:not([type]), input[type="color"], input[type="email"], input[type="number"], input[type="password"], input[type="tel"], input[type="url"], input[type="text"] {
     width: 100%;
   }
-}
-/* line 39, sass/main.scss */
-#siteHeader {
-  width: 100%;
-}
-
-/* line 52, sass/main.scss */
-#promoLinks > img {
-  margin: 2rem;
 }

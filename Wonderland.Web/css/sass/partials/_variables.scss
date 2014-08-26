@@ -14,13 +14,13 @@
  This file is responsible for all variables in the Macmillan - Wonderland app.  Styles should be compiled using compass and sass.
  --------------------------------------------------------------------------------------------------------------------- */
 
-@import "compass/css3/pie";
-@import "compass/css3";
+// @import "compass/css3/pie";
+// @import "compass/css3";
 
 /* =============================================================================
 CSS3 PIE
 ========================================================================== */
-$pie-enabled: true !default;
+$pie-enabled: false !default;
 $pie-behavior: url("/css/PIE.htc");
 $pie-base-class: pie-element;
 
@@ -105,7 +105,7 @@ $wonderlandTertiaryColour: #7c7c7c !default; //special colour to complement seco
 $wonderlandBodyBackground: #fff !default;
 
 /* Links */
-$wonderlandLinkColour: contrast-color($wonderlandTextColour, lighten($wonderlandTextColour, 30), darken($wonderlandTextColour, 30), 40%);
+$wonderlandLinkColour: contrast-color($wonderlandTextColour, lighten($wonderlandTextColour, 30), darken($wonderlandTextColour, 30));
 
 /* =============================================================================
 Borders
