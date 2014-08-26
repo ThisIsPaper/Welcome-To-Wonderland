@@ -17,14 +17,20 @@ namespace Wonderland.Logic.Models.Media
         {
         }
 
+        /// <summary>
+        /// returns the url for the square crop (this is the only crop)
+        /// </summary>
         public string TileImageUrl
         {
             get
             {
-                return this.GetPropertyValue<string>("tileImage");
+                return this.GetCropUrl("tileImage", "Square");                
             }
         }
 
+        /// <summary>
+        /// returns the uploaded image (this will be hand-crafted, hence will have exact dimensions)
+        /// </summary>
         public string OverlayImageUrl
         {
             get

@@ -13,17 +13,18 @@
 
     @Model.BannerCopy
 
-    <ul>
-      @foreach (PromotionTile promotionTile in Model.PromotionTiles)
-      {
-        <li>@promotionTile.Name</li>            
-        <li>@promotionTile.TileImageUrl</li>            
-        <li>@promotionTile.OverlayImageUrl</li>
-      }
-    </ul>
 </section>
-<section id="promoLinks">
-@for( var i = 0; i < 6; i++ ) {
-  <img src="img/home-tile-ph.png">
-}
+<section id="promoLinks"><!-- can we rename to promotionTiles ? -->
+
+    <ul>
+        @foreach (PromotionTile promotionTile in Model.PromotionTiles)
+        {
+            <li>
+                @promotionTile.Name
+                <img src="@promotionTile.TileImageUrl" />
+                <img src="@promotionTile.OverlayImageUrl" />        
+            </li>            
+        }
+    </ul>
+
 </section>
