@@ -35,13 +35,13 @@ Sizes and Spacing
 ========================================================================== */
 
 /* Padding */
-$wonderlandPadding: 1.2em !default;
+$wonderlandPadding: 1.2rem !default;
 $wonderlandPaddingLarge: $wonderlandPadding * $wonderlandMultiplier;
 $wonderlandPaddingSmall: $wonderlandPadding / $wonderlandMultiplier;
 $wonderlandPaddingMini: $wonderlandPadding / $wonderlandMultiplierLarge;
 
 /* Margin */
-$wonderlandMargin: 1.2em !default;
+$wonderlandMargin: 1.2rem !default;
 $wonderlandMarginSmall: $wonderlandMargin / $wonderlandMultiplier;
 $wonderlandMarginLarge: $wonderlandMargin * $wonderlandMultiplierLarge;
 $wonderlandMarginMini: $wonderlandMarginSmall / $wonderlandMultiplierLarge;
@@ -68,13 +68,13 @@ $wonderlandFrom-direction: left;
 $wonderlandContainer-style: fluid;
 
 //Turn off media-query fallback output for non-IE stylesheets.
-$wonderlandBreakpoint-ie-output: true;
+$wonderlandBreakpoint-ie-output: false;
 /* =============================================================================
 Type
 ========================================================================== */
 $wonderlandFontURL: "http://fonts.googleapis.com/css?family=Open+Sans:400,300"; //google font url.  Imported at _type.scss
-$wonderlandEm: 1em !default;
-$wonderlandBaseFontSize: 100% !default;
+$wonderlandEm: 1rem !default;
+$wonderlandBaseFontSize: 62.5% !default;
 $wonderlandBaseFontFamily: "Open Sans", "sans-serif", "arial" !default;
 $wonderlandFontSizeSmall: ($wonderlandBaseFontSize / $wonderlandMultiplierSmall) !default;
 $wonderlandFontSizeMedium: ($wonderlandBaseFontSize * $wonderlandMultiplier) !default;
@@ -110,7 +110,7 @@ $wonderlandLinkColour: contrast-color($wonderlandTextColour, lighten($wonderland
 /* =============================================================================
 Borders
 ========================================================================== */
-$wonderlandBorderWidth: 1px !default;
+$wonderlandBorderWidth: .1rem !default;
 $wonderlandBorderStyle: solid !default;
 $wonderlandBorderColour: fade-out(lighten($wonderlandTextColour, 80%), 0.5) !default;
 $wonderlandBorder: $wonderlandBorderWidth $wonderlandBorderStyle $wonderlandBorderColour;

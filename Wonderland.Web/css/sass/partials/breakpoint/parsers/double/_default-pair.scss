@@ -13,8 +13,8 @@
 
   // Make them EMs if need be
   @if ($breakpoint-to-ems == true) {
-    $min: breakpoint-to-base-em($min);
-    $max: breakpoint-to-base-em($max);
+    $min: breakpoint-to-base-rem($min);
+    $max: breakpoint-to-base-rem($max);
   }
 
   @return '(min-#{$default}: #{$min}) and (max-#{$default}: #{$max})';

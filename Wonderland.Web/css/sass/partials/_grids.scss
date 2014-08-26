@@ -107,7 +107,7 @@
 .container {
 	@include container;
 	@extend %border-box;
-	max-width: 77em;
+	max-width: 1180px;
 	%#{$wonderlandRowNotation} {
 		width: $wonderlandContainer-width;
 		margin: 0 auto;
