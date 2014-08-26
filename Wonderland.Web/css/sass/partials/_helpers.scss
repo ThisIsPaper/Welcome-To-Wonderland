@@ -15,7 +15,7 @@
  --------------------------------------------------------------------------------------------------------------------- */
 
 /**
- * Non-sremantic helper classes: please define your styles before this section
+ * Non-semantic helper classes: please define your styles before this section
  */
 @import "compass/css3/pie";
 @import "compass/css3";
@@ -23,7 +23,7 @@
 /* =============================================================================
 Visibility Helpers
 ========================================================================== */
-/* For image replacrement */
+/* For image replacement */
 %ir {
 	display: block;
 	text-indent: -99in;
@@ -34,7 +34,7 @@ Visibility Helpers
 }
 
 /* Hide for both screenreaders and browsers:
-   css-discuss.incutio.com/wiki/Screenreader_Visibility */
+   css-discuss.incutio.com/wiki/Screenreader_Visibility */_
 %hidden {
 	display: none;
 }
@@ -57,7 +57,7 @@ Visibility Helpers
 	left: -500%;
 
 	&.focusable {
-		&:active, &:focus { /* Extends the .visuallyhidden class to allow the elrement to be focusable when navigated to via the keyboard: drupal.org/node/897638 */
+		&:active, &:focus { /* Extends the .visuallyhidden class to allow the element to be focusable when navigated to via the keyboard: drupal.org/node/897638 */
 			clip: auto;
 			height: auto;
 			margin: 0;
@@ -76,7 +76,7 @@ Visibility Helpers
 %visible {
 	visibility: visible;
 }
-/* The Magnificent Clearfix: Updated to prevent margin-collapsing on child elrements in most situations.
+/* The Magnificent Clearfix: Updated to prevent margin-collapsing on child elements in most situations.
    nicolasgallagher.com/micro-clearfix-hack/ */
 
 %clearfix {
@@ -98,18 +98,18 @@ Visibility Helpers
 CSS3 PIE
 ========================================================================== */
 @if $pie-enabled == true {
-	.pie-elrement {
+	.pie-element {
 		// relative is the default, so passing relative
 		// is redundant, but we do it here for clarity%
-		@include pie-elrement(relative);
+		@include pie-element(relative);
 	}
 // But sometimes this messes up your positioning
 // So you can also use z-indexing. In this case
-// an ancestor elrement before or having the first
+// an ancestor element before or having the first
 // opaque background should be marked as a pie-container
 // which gives it a z-index of 0 (actually any z-index
 // can be provided to the pie-container mixin).
-// And then the pie elrement itself should be given
+// And then the pie element itself should be given
 // a z-index of -1.
 	.pie-container {
 		@include pie-container;
@@ -425,7 +425,7 @@ Border radius
 	@include border-bottom-right-radius($wonderlandBorderRadiusLarge);
 }
 
-/* No rounded radii (useful for overriding other elrements with radii) */
+/* No rounded radii (useful for overriding other elements with radii) */
 
 %rounded-none {
 	@include border-radius(0);
