@@ -89,5 +89,9 @@ namespace Wonderland.Logic.Models.Content
             return Enumerable.Empty<Member>();
         }
 
+        public IEnumerable<Member> GetRecentHosts()
+        {
+            return Enumerable.Empty<Member>();
+        }
     }
 }

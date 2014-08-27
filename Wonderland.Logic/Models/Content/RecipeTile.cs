@@ -1,7 +1,10 @@
 ﻿
 namespace Wonderland.Logic.Models.Content
 {
+    using System.Collections.Generic;
+    using System.Linq;
     using Umbraco.Core.Models;
+    using Umbraco.Web;
 
     public class RecipeTile : PartyIdeaTile
     {
@@ -17,6 +20,22 @@ namespace Wonderland.Logic.Models.Content
             get
             {
                 return "recipe";
+            }
+        }
+
+        public string RecipeName
+        {
+            get
+            {
+                return this.GetPropertyValue<string>("recipeName");
+            }
+        }
+
+        public IEnumerable<string> Ingredients
+        {
+            get
+            {
+                return this.GetPropertyValue<string[]>("ingredients");
             }
         }
     }

@@ -2,6 +2,7 @@
 namespace Wonderland.Logic.Models.Content
 {
     using Umbraco.Core.Models;
+    using Umbraco.Web;
 
     public class PlaylistTile : PartyIdeaTile
     {
@@ -17,6 +18,22 @@ namespace Wonderland.Logic.Models.Content
             get
             {
                 return "playlist";
+            }
+        }
+
+        public string PlaylistName
+        {
+            get
+            {
+                return this.GetPropertyValue<string>("playlistName");
+            }
+        }
+
+        public string SpotifyUrl
+        {
+            get
+            {
+                return this.GetPropertyValue<string>("spotifyUrl");
             }
         }
     }

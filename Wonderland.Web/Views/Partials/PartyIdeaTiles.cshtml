@@ -39,22 +39,36 @@
 
             @if (partyIdeaTile is DecorationTile)
             {
-                <h3>Decoration Tile</h3>
+                DecorationTile decorationTile = (DecorationTile)partyIdeaTile;
+                <h3>@decorationTile.PinterestBoradUrl</h3>
             }
 
             @if (partyIdeaTile is FashionTile)
             {
-                <h3>Fashion Tile</h3>
+                FashionTile fashionTile = (FashionTile)partyIdeaTile;
+                
+                <h3>@fashionTile.PinterestBoradUrl</h3>
             }
 
             @if (partyIdeaTile is PlaylistTile)
             {
-                <h3>Playlist Tile</h3>
+                PlaylistTile playlistTile = (PlaylistTile)partyIdeaTile;
+                
+                <h3>@playlistTile.PlaylistName</h3>
+                <span>@playlistTile.SpotifyUrl</span>
             }
 
             @if (partyIdeaTile is RecipeTile)
-            {
-                <h3>Recipe Tile</h3>
+            {         
+                RecipeTile recipeTile = (RecipeTile)partyIdeaTile;
+                
+                <h3>@recipeTile.RecipeName</h3>
+                <ol>
+                    @foreach(string ingredient in recipeTile.Ingredients)
+                    {
+                        <li>@ingredient</li>
+                    }
+                </ol>
             }
 
         </li>

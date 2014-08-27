@@ -2,6 +2,7 @@
 namespace Wonderland.Logic.Models.Content
 {
     using Umbraco.Core.Models;
+    using Umbraco.Web;
 
     public class DecorationTile : PartyIdeaTile
     {
@@ -17,6 +18,14 @@ namespace Wonderland.Logic.Models.Content
             get 
             { 
                 return "decoration"; 
+            }
+        }
+
+        public string PinterestBoradUrl
+        {
+            get
+            {
+                return this.GetPropertyValue<string>("pinterestBoardUrl");
             }
         }
     }
