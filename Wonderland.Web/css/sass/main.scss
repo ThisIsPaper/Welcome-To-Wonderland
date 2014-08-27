@@ -40,7 +40,7 @@ Imports
   @extend %fixed;
   nav,
   li,
-  a {
+  > a {
     &:first-child { @extend %pull-left; }
     &:last-child { @extend %pull-right; }
   }

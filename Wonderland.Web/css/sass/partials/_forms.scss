@@ -19,7 +19,6 @@ Buttons
 ========================================================================== */
 /* Skewed buttons */
 .btn-primary {
-  @extend %medium;
   @extend %rounded-skew-one;
   @extend %border-box;
   @extend %transition-all;
@@ -27,7 +26,7 @@ Buttons
   font-weight: $wonderlandBaseFontWeight;
   margin: $wonderlandMarginMini + 1.2 $wonderlandMarginLarge * .6;
   color: #fff;
-  padding: $wonderlandPaddingSmall - .1 $wonderlandPaddingLarge + .36;
+  padding: $wonderlandPaddingSmall - 0.2 $wonderlandPadding - .1;
   text-decoration: none;
   text-transform: uppercase;
   background: $wonderlandSecondaryColour;
@@ -42,7 +41,7 @@ Buttons
   @extend .btn-primary;
   @extend %rounded-skew-two;
   background: $wonderlandPrimaryColour;  
-  padding: $wonderlandPaddingSmall - .1 2.4rem;
+  padding: $wonderlandPaddingSmall - .1 2.1rem;
   &:hover, &:focus {
     background: darken($wonderlandPrimaryColour, 5%);
   }
