@@ -3,12 +3,9 @@ namespace Wonderland.Logic.Models.Content
 {
     using System.Collections.Generic;
     using System.Linq;
-    using Umbraco.Web;
     using Umbraco.Core.Models;
     using Umbraco.Core.Models.PublishedContent;
-    using nuPickers;
-    using Wonderland.Logic.Enums;
-    using Wonderland.Logic.Models.Media;
+    using Umbraco.Web;
 
     public abstract class PartyIdeaCategory : SitePage
     {

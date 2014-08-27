@@ -1,9 +1,9 @@
 ﻿
 namespace Wonderland.Logic.Models.Entities
 {
-    using Wonderland.Logic.Models.Media;
     using Archetype.Models;
     using Umbraco.Core.Models;
+    using Wonderland.Logic.Models.Media;
 
     public class PromotionTile
     {

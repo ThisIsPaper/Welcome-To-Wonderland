@@ -1,11 +1,10 @@
 ﻿
 namespace Wonderland.Logic.Models.Content
 {
-    using System.Collections.Generic;
-    using System.Linq;
-    using Umbraco.Web;
-    using Umbraco.Core.Models;
     using nuPickers;
+    using System.Linq;
+    using Umbraco.Core.Models;
+    using Umbraco.Web;
     using Wonderland.Logic.Enums;
     using Wonderland.Logic.Models.Media;
 
