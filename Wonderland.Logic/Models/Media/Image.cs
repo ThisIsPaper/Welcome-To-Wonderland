@@ -17,11 +17,11 @@ namespace Wonderland.Logic.Models.Media
         {
         }
 
-        public string HtmlAltText
+        public string AltText
         {
             get
             {
-                return this.GetPropertyValue<string>("htmlAltText");
+                return this.GetPropertyValue<string>("altText");
             }
         }
 
