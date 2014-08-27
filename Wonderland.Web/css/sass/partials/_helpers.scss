@@ -470,8 +470,8 @@ Border radius
 }
 
 %rounded-right-skew-two {
-  @include border-top-right-radius(0.9rem 0.4rem);
-  @include border-bottom-right-radius(0.6rem 1rem);
+  @include border-top-right-radius(1rem 0.4rem);
+  @include border-bottom-right-radius(1.1rem 0.7rem);
 }
 
 %rounded-skew-one {
@@ -481,6 +481,11 @@ Border radius
 
 %rounded-skew-two {
   @extend %rounded-left-skew-two;
+  @extend %rounded-right-skew-two;
+}
+
+%rounded-skew-three {
+  @extend %rounded-left-skew-one;
   @extend %rounded-right-skew-two;
 }
 
