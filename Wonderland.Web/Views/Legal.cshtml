@@ -2,4 +2,6 @@
 @{
     Layout = "SitePage.cshtml";
 }
-<h1>Legal</h1>
+<h1>@Model.PageHeading</h1>
+
+@Html.Raw(Model.Copy)
