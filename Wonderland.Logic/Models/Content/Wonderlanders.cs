@@ -5,6 +5,7 @@ namespace Wonderland.Logic.Models.Content
     using System.Linq;
     using Umbraco.Core.Models;
     using Umbraco.Web;
+    using Wonderland.Logic.Models.Members;
 
     public class Wonderlanders : SitePage
     {
@@ -31,7 +32,7 @@ namespace Wonderland.Logic.Models.Content
             }
         }
 
-        private int TopFundraisersCount
+        public int TopFundraisersCount
         {
             get
             {
@@ -79,24 +80,29 @@ namespace Wonderland.Logic.Models.Content
             }
         }
 
-        public IEnumerable<Member> GetTopFundraisers()
+        public Leaderboard GetLeaderboard()
         {
-            return Enumerable.Empty<Member>();
+            return this.Children<Leaderboard>().Single();
         }
 
-        public IEnumerable<Member> GetMostGuests()
+        public IEnumerable<Partier> GetTopFundraiserPartiers()
         {
-            return Enumerable.Empty<Member>();
+            return Enumerable.Empty<Partier>();
         }
 
-        public IEnumerable<Member> GetBadgesToday()
+        public IEnumerable<Partier> GetMostGuestPartiers()
         {
-            return Enumerable.Empty<Member>();
+            return Enumerable.Empty<Partier>();
         }
 
-        public IEnumerable<Member> GetRecentHosts()
+        public IEnumerable<Partier> GetBadgesTodayPartiers()
         {
-            return Enumerable.Empty<Member>();
+            return Enumerable.Empty<Partier>();
+        }
+
+        public IEnumerable<Partier> GetRecentHostPartiers()
+        {
+            return Enumerable.Empty<Partier>();
         }
     }
 }
