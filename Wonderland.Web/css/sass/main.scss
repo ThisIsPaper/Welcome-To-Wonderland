@@ -37,6 +37,7 @@ Imports
 @import "partials/_media-queries";
 
 #siteHeader {
+  z-index: 100;
   @extend %fixed;
   nav,
   li,
@@ -44,4 +45,27 @@ Imports
     &:first-child { @extend %pull-left; }
     &:last-child { @extend %pull-right; }
   }
+}
+
+main {
+  padding-top: 7rem;
+}
+
+#heroGraphic {
+  @extend %centred;
+  @extend %row-width;
+  height: 40rem;
+  background-image: inline-image('hero-ph.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  
+  .hero-title img {
+    margin-top: 10%;
+  }
+
+  .actions {
+    @extend %row-width;
+  }
+
 }

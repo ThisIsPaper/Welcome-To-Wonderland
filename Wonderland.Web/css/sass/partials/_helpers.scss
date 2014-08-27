@@ -459,19 +459,44 @@ Border radius
   @include border-bottom-left-radius(0.5rem 1.3rem);
 }
 
-%rounded-right-skew-one {
-  @include border-top-right-radius(0.9rem 0.8rem);
-  @include border-bottom-right-radius(0.6rem 1.4rem);
-}
-
 %rounded-left-skew-two {
   @include border-top-left-radius(0.3rem 0.6rem);
   @include border-bottom-left-radius(0.5rem 1.3rem);
 }
 
+%rounded-left-skew-three {
+  @include border-top-left-radius(1.64rem 1.1rem);
+  @include border-bottom-left-radius(0.5rem 1.3rem);
+}
+
+%rounded-left-skew-four {
+  @include border-top-left-radius(0.7rem 0.6rem);
+  @include border-bottom-left-radius(0.9rem 0.8rem);
+}
+
+%rounded-right-skew-one {
+  @include border-top-right-radius(0.9rem 0.8rem);
+  @include border-bottom-right-radius(0.6rem 1.4rem);
+}
+
 %rounded-right-skew-two {
   @include border-top-right-radius(1rem 0.4rem);
-  @include border-bottom-right-radius(1.1rem 0.7rem);
+  @include border-bottom-right-radius(1.1rem 1.4rem);
+}
+
+%rounded-right-skew-three {
+  @include border-top-right-radius(0.9rem 0.8rem);
+  @include border-bottom-right-radius(0.9rem 1.4rem);
+}
+
+%rounded-right-skew-four {
+  @include border-top-right-radius(1.2rem 0.7rem);
+  @include border-bottom-right-radius(1.7rem 1.1rem);
+}
+
+%rounded-right-skew-five {
+  @include border-top-right-radius(1.4rem 1rem);
+  @include border-bottom-right-radius(0.9rem 1.7rem);
 }
 
 %rounded-skew-one {

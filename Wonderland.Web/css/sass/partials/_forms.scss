@@ -31,7 +31,7 @@ Buttons
   text-transform: uppercase;
   background: $wonderlandSecondaryColour;
   &:hover, &:focus {
-    background: darken($wonderlandSecondaryColour, 5%);
+    background: darken($wonderlandSecondaryColour, 10%);
   }
   &:active {
     @include box-shadow(inset 0 0 $wonderlandBorderRadiusLarge #000);
@@ -43,7 +43,7 @@ Buttons
   background: $wonderlandPrimaryColour;  
   padding: $wonderlandPaddingSmall - .1 2.1rem;
   &:hover, &:focus {
-    background: darken($wonderlandPrimaryColour, 5%);
+    background: darken($wonderlandPrimaryColour, 10%);
   }
 }
 
