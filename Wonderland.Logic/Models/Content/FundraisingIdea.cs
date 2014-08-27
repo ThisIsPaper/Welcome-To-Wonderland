@@ -1,11 +1,9 @@
 ﻿
 namespace Wonderland.Logic.Models.Content
 {
-    using System.Collections.Generic;
-    using System.Linq;
-    using Umbraco.Web;
     using Umbraco.Core.Models;
-    using nuPickers;
+    using Umbraco.Web;
+    using Wonderland.Logic.Models.Media;
 
     public class FundraisingIdea : SitePage
     {
@@ -14,6 +12,30 @@ namespace Wonderland.Logic.Models.Content
         public FundraisingIdea(IPublishedContent content)
             : base(content)
         {
+        }
+
+        public string Heading
+        {
+            get
+            {
+                return this.GetPropertyValue<string>("heading");
+            }
+        }
+
+        public Image Image
+        {
+            get
+            {
+                return new Image(this.GetPropertyValue<IPublishedContent>("image"));
+            }
+        }
+
+        public string Copy
+        {
+            get
+            {
+                return this.GetPropertyValue<string>("copy");
+            }
         }
     }
 }

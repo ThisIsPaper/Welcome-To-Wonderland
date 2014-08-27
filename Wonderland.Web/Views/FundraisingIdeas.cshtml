@@ -7,6 +7,10 @@
 <ul>
     @foreach(FundraisingIdea fundraisingIdea in Model.GetFundraisingIdeas())
     {
-        <li>@fundraisingIdea.Name</li>   
+        <li>
+            <h2>@fundraisingIdea.Heading</h2>
+            <img src="@fundraisingIdea.Image.GetResponsiveCropUrl("Square")" />
+            @Html.Raw(fundraisingIdea.Copy)
+        </li>        
     }
 </ul>

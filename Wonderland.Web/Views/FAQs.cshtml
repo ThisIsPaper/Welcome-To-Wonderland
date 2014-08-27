@@ -1,5 +1,16 @@
-﻿@inherits UmbracoViewPage<Faqs>
+﻿@inherits UmbracoViewPage<FAQs>
 @{
     Layout = "SitePage.cshtml";
 }
-<h1>FAQs</h1>
+
+<h1>@Model.PageHeading</h1>
+
+<dl>
+    @foreach (QuestionAndAnswer questionAndAnswer in Model.QuestionsAndAnswers)
+    {
+        <dt>@questionAndAnswer.Question</dt>
+        <dd>@questionAndAnswer.Answer</dd>
+    }
+</dl>
+
+@Html.Raw(Model.Copy)

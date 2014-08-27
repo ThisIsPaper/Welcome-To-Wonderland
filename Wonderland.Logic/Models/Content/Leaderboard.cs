@@ -1,11 +1,8 @@
 ﻿
 namespace Wonderland.Logic.Models.Content
 {
-    using System.Collections.Generic;
-    using System.Linq;
-    using Umbraco.Web;
     using Umbraco.Core.Models;
-    using nuPickers;
+    using Umbraco.Web;
 
     public class Leaderboard : SitePage
     {

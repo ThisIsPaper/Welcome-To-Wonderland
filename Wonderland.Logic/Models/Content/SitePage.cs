@@ -2,9 +2,9 @@
 namespace Wonderland.Logic.Models.Content
 {
     using System.Linq;
-    using Umbraco.Web;
     using Umbraco.Core.Models;
     using Umbraco.Core.Models.PublishedContent;
+    using Umbraco.Web;
     using Wonderland.Logic.Models.Entities;
 
     public class SitePage : PublishedContentModel

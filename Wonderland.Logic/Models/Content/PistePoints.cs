@@ -1,12 +1,11 @@
 ﻿
 namespace Wonderland.Logic.Models.Content
 {
+    using Archetype.Models;
     using System.Collections.Generic;
     using System.Linq;
-    using Umbraco.Web;
     using Umbraco.Core.Models;
-    using nuPickers;
-    using Archetype.Models;
+    using Umbraco.Web;
     using Wonderland.Logic.Models.Entities;
 
     public class PistePoints : SitePage
