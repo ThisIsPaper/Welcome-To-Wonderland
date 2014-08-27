@@ -2,27 +2,29 @@
 @{
   Layout = "SitePage.cshtml";
 }
+<section id="heroGraphic">
+  <img src="img/home-hero-copy.png" />
+  <a href="#" class="btn-primary">Host a party ></a>       
+</section>
 <div class="container">
-  <section id="heroGraphic">
-    <img src="img/hero-ph.jpg" />        
-  </section>
   <section id="homeBanner">
-    <img src="img/home-banner-ph.png" />
-
-    @Model.BannerHeading
-
-    @Model.BannerCopy
-
+    <h1>
+      @Model.BannerHeading
+    </h1>
+    <p>
+      @Model.BannerCopy
+    </p>
   </section>
+</div>
 <section id="promoTiles">
   <ul>
-      @foreach (PromotionTile promotionTile in Model.PromotionTiles)
-      {
-        <li>
-          @promotionTile.AltText
-          <img src="@promotionTile.Image.GetResponsiveCropUrl("Square")" />
-          <img src="@promotionTile.OverlayImage.Url" />        
-        </li>            
-      }
+    @foreach (PromotionTile promotionTile in Model.PromotionTiles)
+    {
+      <li>
+        @promotionTile.AltText
+        <img src="@promotionTile.Image.GetResponsiveCropUrl("Square")" />
+        <img src="@promotionTile.OverlayImage.Url" />        
+      </li>            
+    }
   </ul>
 </section>

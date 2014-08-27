@@ -3,10 +3,10 @@
   <section class="footer-primary">
     <nav>
       <ul>
-          @foreach (SitePage sitePage in Model.FooterNavigation)
-          {
-            <li><a href="@sitePage.Url">@sitePage.Name</a></li>
-          }
+        @foreach (SitePage sitePage in Model.FooterNavigation)
+        {
+          <li><a href="@sitePage.Url">@sitePage.Name</a></li>
+        }
       </ul>
     </nav>
     <div class="share-container">
@@ -16,7 +16,7 @@
         <li><a href="@Model.GooglePlusUrl">Google+</a></li>
       </ul>
 
-        @Model.CampaignHashtag
+      @Model.CampaignHashtag
 
     </div>
     <img class="footer-logo" src="" />
@@ -29,7 +29,7 @@
       <ul>
           @foreach (SitePage sitePage in Model.LegalNavigation)
           {
-              <li><a href="@sitePage.Url">@sitePage.Name</a></li>
+            <li><a href="@sitePage.Url">@sitePage.Name</a></li>
           }
       </ul>
     </nav>
