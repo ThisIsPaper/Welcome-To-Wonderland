@@ -31,7 +31,7 @@ namespace Wonderland.Logic.Models.Content
             }
         }
 
-        public int TopFundraisersCount
+        private int TopFundraisersCount
         {
             get
             {
@@ -63,19 +63,19 @@ namespace Wonderland.Logic.Models.Content
             }
         }
 
-        public string MostRecentHostsHeading
+        public string RecentHostsHeading
         {
             get
             {
-                return this.GetPropertyValue<string>("mostRecentHostsHeading");
+                return this.GetPropertyValue<string>("recentHostsHeading");
             }
         }
 
-        public int MostRecentHostsCount
+        public int RecentHostsCount
         {
             get
             {
-                return this.GetPropertyValue<int>("mostRecentHostsCount");
+                return this.GetPropertyValue<int>("recentHostsCount");
             }
         }
 
@@ -85,6 +85,11 @@ namespace Wonderland.Logic.Models.Content
         }
 
         public IEnumerable<Member> GetMostGuests()
+        {
+            return Enumerable.Empty<Member>();
+        }
+
+        public IEnumerable<Member> GetBadgesToday()
         {
             return Enumerable.Empty<Member>();
         }

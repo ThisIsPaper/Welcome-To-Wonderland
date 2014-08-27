@@ -2,4 +2,28 @@
 @{
     Layout = "SitePage.cshtml";
 }
-<h1>Wonderlanders</h1>
+<h1>@Model.PageHeading</h1>
+
+<h2>@Model.TopFundraisersHeading</h2>
+@foreach(Member member in Model.GetTopFundraisers())
+{
+    
+}
+
+<h2>@Model.MostGuestsHeading</h2>
+@foreach(Member member in Model.GetMostGuests())
+{
+    
+}
+
+<h2>@Model.BadgesTodayHeading</h2>
+@foreach(Member member in Model.GetBadgesToday())
+{
+    
+}
+
+<h2>@Model.RecentHostsHeading</h2>
+@foreach(Member member in Model.GetRecentHosts())
+{
+    
+}
