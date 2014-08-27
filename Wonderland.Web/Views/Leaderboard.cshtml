@@ -2,4 +2,14 @@
 @{
     Layout = "SitePage.cshtml";
 }
-<h1>Leaderboard</h1>
+<h1>@Model.PageHeading</h1>
+
+<dl>
+    <dt>Leaderboard Type</dt>
+    <dd>@Model.LeaderboardType</dd>
+</dl>
+
+@foreach(Partier partier in Model.GetPartiers())
+{
+    
+}

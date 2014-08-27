@@ -1,8 +1,12 @@
 ﻿
 namespace Wonderland.Logic.Models.Content
 {
+    using System.Collections.Generic;
+    using System.Linq;
     using Umbraco.Core.Models;
     using Umbraco.Web;
+    using Wonderland.Logic.Enums;
+    using Wonderland.Logic.Models.Members;
 
     public class Leaderboard : SitePage
     {
@@ -27,6 +31,38 @@ namespace Wonderland.Logic.Models.Content
             {
                 return this.GetPropertyValue<int>("leaderboardCount");
             }
+        }
+
+        public LeaderboardType LeaderboardType
+        {
+            get
+            {
+                var t = System.Web.HttpContext.Current.Request.QueryString;
+
+                return LeaderboardType.MostGuests;
+            }
+        }
+
+        public string MostGuestsLink
+        {
+            get
+            {
+                return this.Url + "?type=" + LeaderboardType.MostGuests;
+            }
+        }
+
+        public string TopFundraisersLink
+        {
+            get
+            {
+                return this.Url + "?type=" + LeaderboardType.TopFundraisers;
+            }
+        }
+
+        public IEnumerable<Partier> GetPartiers()
+        {
+            // TODO: based on the current LeaderboardType
+            return Enumerable.Empty<Partier>();
         }
     }
 }

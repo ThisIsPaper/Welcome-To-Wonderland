@@ -5,25 +5,28 @@
 <h1>@Model.PageHeading</h1>
 
 <h2>@Model.TopFundraisersHeading</h2>
-@foreach(Member member in Model.GetTopFundraisers())
+@foreach (Partier partier in Model.GetTopFundraiserPartiers())
 {
     
 }
+<a href="@Model.GetLeaderboard().TopFundraisersLink">view all &gt;</a>
+
 
 <h2>@Model.MostGuestsHeading</h2>
-@foreach(Member member in Model.GetMostGuests())
+@foreach (Partier partier in Model.GetMostGuestPartiers())
 {
     
 }
+<a href="@Model.GetLeaderboard().MostGuestsLink">view all &gt;</a>
 
 <h2>@Model.BadgesTodayHeading</h2>
-@foreach(Member member in Model.GetBadgesToday())
+@foreach (Partier partier in Model.GetBadgesTodayPartiers())
 {
     
 }
 
 <h2>@Model.RecentHostsHeading</h2>
-@foreach(Member member in Model.GetRecentHosts())
+@foreach (Partier partier in Model.GetRecentHostPartiers())
 {
     
 }

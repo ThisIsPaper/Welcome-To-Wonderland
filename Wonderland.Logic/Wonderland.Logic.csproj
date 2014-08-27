@@ -193,6 +193,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Enums\LeaderboardType.cs" />
     <Compile Include="Enums\PartyIdeaTileSize.cs" />
     <Compile Include="Events\SetPublishedContentModelFactory.cs" />
     <Compile Include="Models\Content\DecorationCategory.cs" />
