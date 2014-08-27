@@ -505,13 +505,13 @@ Border radius
 }
 
 %rounded-skew-two {
-  @extend %rounded-left-skew-two;
-  @extend %rounded-right-skew-two;
+  @extend %rounded-left-skew-four;
+  @extend %rounded-right-skew-four;
 }
 
 %rounded-skew-three {
-  @extend %rounded-left-skew-one;
-  @extend %rounded-right-skew-two;
+  @extend %rounded-left-skew-three;
+  @extend %rounded-right-skew-three;
 }
 
 %border-box {

@@ -3,17 +3,12 @@
   <nav class="nav">
     <a class="btn-primary">Host a party ></a>
     <ul class="toolbar">
-      @{ var i = 0; }
       @foreach (SitePage sitePage in Model.HeaderNavigation)
       {
-        if (i != 2) {
-          <li><a href="@sitePage.Url">@sitePage.Name</a></li>
-        } else {
-          <li class="wonderland-crest-logo"></li>
-        }
-        i++;
+        <li><a href="@sitePage.Url">@sitePage.Name</a></li>
       }
     </ul>
+    <div class="wonderland-crest-logo"></div>
     <a class="btn-secondary" href="@Model.LoginUrl">Login</a>
   </nav>
   <div class="snow-brush-overlay"></div>
