@@ -7,8 +7,6 @@ namespace Wonderland.Logic.Models.Content
     using Umbraco.Web;
     using Wonderland.Logic.Enums;
     using Wonderland.Logic.Models.Members;
-    using System.Web;
-using System;
 
     public class Leaderboard : SitePage
     {
@@ -37,17 +35,8 @@ using System;
 
         public LeaderboardType LeaderboardType
         {
-            get
-            {
-                try
-                {
-                    return (LeaderboardType)Enum.Parse(typeof(LeaderboardType), HttpContext.Current.Request.QueryString.ToString(), true);
-                }
-                catch
-                {
-                    return LeaderboardType.Unknown;
-                }                
-            }
+            get;
+            internal set;
         }
 
         public string MostGuestsLink

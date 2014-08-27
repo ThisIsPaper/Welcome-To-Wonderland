@@ -13,11 +13,6 @@ namespace Wonderland.Logic.Enums
         /// <summary>
         /// 
         /// </summary>
-        TopFundraisers,
-
-        /// <summary>
-        /// 
-        /// </summary>
-        Unknown
+        TopFundraisers
     }
 }
