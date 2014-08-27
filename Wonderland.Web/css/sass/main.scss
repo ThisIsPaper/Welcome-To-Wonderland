@@ -37,18 +37,22 @@ Imports
 @import "partials/_media-queries";
 
 #siteHeader {
-  z-index: 100;
   @extend %fixed;
-  nav,
-  li,
-  > a {
+  @extend %row-width;  
+  a {
     &:first-child { @extend %pull-left; }
     &:last-child { @extend %pull-right; }
+  }
+  .header-overlay {
+    @extend %row-width; 
+    background: inline-image('header_texture.png') repeat center;
+    height: 1.2rem;
+    margin-top: .5rem;
   }
 }
 
 main {
-  padding-top: 7rem;
+  padding-top: 5rem;
 }
 
 #heroGraphic {

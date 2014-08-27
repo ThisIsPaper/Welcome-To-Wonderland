@@ -19,16 +19,16 @@
       @Model.BannerCopy
     </p>
   </section>
+  <section id="promoTiles">
+    <ul>
+      @foreach (PromotionTile promotionTile in Model.PromotionTiles)
+      {
+        <li>
+          @promotionTile.AltText
+          <img src="@promotionTile.Image.GetResponsiveCropUrl("Square")" />
+          <img src="@promotionTile.OverlayImage.Url" />        
+        </li>            
+      }
+    </ul>
+  </section>
 </div>
-<section id="promoTiles">
-  <ul>
-    @foreach (PromotionTile promotionTile in Model.PromotionTiles)
-    {
-      <li>
-        @promotionTile.AltText
-        <img src="@promotionTile.Image.GetResponsiveCropUrl("Square")" />
-        <img src="@promotionTile.OverlayImage.Url" />        
-      </li>            
-    }
-  </ul>
-</section>

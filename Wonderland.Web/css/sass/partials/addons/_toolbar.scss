@@ -1,7 +1,0 @@
-.toolbar {
-  @extend %centred, %border-box, %normal-padding, %large-margin-left;
-  background: white;
-  @media screen and (max-width: $breakpointMain) {
-    text-align: center;
-  }
-}

@@ -25,17 +25,14 @@
 }
 
 .nav {
-  background: white;
   text-align: center;
   @extend %overflow-visible;
   @extend %row-width;
-  .toolbar {
-    width: 60%;
-  }
+  .toolbar { width: 60%; }
   ul {
     a {
-      color: $wonderlandInverseTextColour;
-      @extend %medium;
+      color: $wonderlandPrimaryColour;
+      @extend %large;
       border-right: 1px solid darken($wonderlandSecondaryColour, 25);
       @extend %inline;
       padding: $wonderlandPaddingSmall $wonderlandPaddingLarge;

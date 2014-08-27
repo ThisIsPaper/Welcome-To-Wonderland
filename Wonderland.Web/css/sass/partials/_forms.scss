@@ -24,9 +24,9 @@ Buttons
   @extend %transition-all;
   cursor: pointer;
   font-weight: $wonderlandBaseFontWeight;
-  margin: $wonderlandMarginMini + 1.2 $wonderlandMarginLarge * .6;
+  margin: ($wonderlandMarginMini + 1.2) ($wonderlandMarginLarge * .6) 0;
   color: #fff;
-  padding: $wonderlandPaddingSmall - 0.2 $wonderlandPadding - .1;
+  padding: ($wonderlandPaddingSmall - 0.2) ($wonderlandPadding - .1);
   text-decoration: none;
   text-transform: uppercase;
   background: $wonderlandSecondaryColour;

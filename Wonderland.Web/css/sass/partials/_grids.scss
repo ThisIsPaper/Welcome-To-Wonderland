@@ -20,107 +20,107 @@
 
 @function col-name($n) {
 /* Use naming consistent with original 1140x Grid V2 */
-	$col-name: $wonderlandColumnNotation; //default
+  $col-name: $wonderlandColumnNotation; //default
 
-	@if $n == 1  {
-		$col-name: one;
-	}
-	@if $n == 2  {
-		$col-name: two;
-	}
-	@if $n == 3  {
-		$col-name: three;
-	}
-	@if $n == 4  {
-		$col-name: four;
-	}
-	@if $n == 5  {
-		$col-name: five;
-	}
-	@if $n == 6  {
-		$col-name: six;
-	}
-	@if $n == 7  {
-		$col-name: seven;
-	}
-	@if $n == 8  {
-		$col-name: eight;
-	}
-	@if $n == 9  {
-		$col-name: nine;
-	}
-	@if $n == 10 {
-		$col-name: ten;
-	}
-	@if $n == 11 {
-		$col-name: eleven;
-	}
-	@if $n == 12 {
-		$col-name: twelve;
-	}
-	@if $n == 13 {
-		$col-name: thirteen;
-	}
-	@if $n == 14 {
-		$col-name: fourteen;
-	}
-	@if $n == 15 {
-		$col-name: fifteen;
-	}
-	@if $n == 16 {
-		$col-name: sixteen;
-	}
-	@return $col-name#{$wonderlandColumnNotation};
+  @if $n == 1  {
+    $col-name: one;
+  }
+  @if $n == 2  {
+    $col-name: two;
+  }
+  @if $n == 3  {
+    $col-name: three;
+  }
+  @if $n == 4  {
+    $col-name: four;
+  }
+  @if $n == 5  {
+    $col-name: five;
+  }
+  @if $n == 6  {
+    $col-name: six;
+  }
+  @if $n == 7  {
+    $col-name: seven;
+  }
+  @if $n == 8  {
+    $col-name: eight;
+  }
+  @if $n == 9  {
+    $col-name: nine;
+  }
+  @if $n == 10 {
+    $col-name: ten;
+  }
+  @if $n == 11 {
+    $col-name: eleven;
+  }
+  @if $n == 12 {
+    $col-name: twelve;
+  }
+  @if $n == 13 {
+    $col-name: thirteen;
+  }
+  @if $n == 14 {
+    $col-name: fourteen;
+  }
+  @if $n == 15 {
+    $col-name: fifteen;
+  }
+  @if $n == 16 {
+    $col-name: sixteen;
+  }
+  @return $col-name#{$wonderlandColumnNotation};
 }
 
 @function relativeColName($n, $wonderlandNum-cols) {
-	$colClassFloat: $wonderlandNum-cols / $n;
-	@return round($colClassFloat);
+  $colClassFloat: $wonderlandNum-cols / $n;
+  @return round($colClassFloat);
 }
 
 %col {
-	@extend %transition-all;
+  @extend %transition-all;
 }
 
 @for $i from 1 through ($wonderlandNum-cols) {
-	%#{col-name($i)} {
-		@extend %col;
-	}
+  %#{col-name($i)} {
+    @extend %col;
+  }
 
-	%#{$wonderlandRowNotation} {
-		%#{col-name($i)}:last-child {
-			@extend %last !optional;
-			@include span($i of $wonderlandNum-cols);
-		}
-	}
+  %#{$wonderlandRowNotation} {
+    %#{col-name($i)}:last-child {
+      @extend %last !optional;
+      @include span($i of $wonderlandNum-cols);
+    }
+  }
 
-	%#{col-name($i)} {
-		@if $i == $wonderlandNum-cols {
-			@include span($i of $wonderlandNum-cols);
-		}
-		@else {
-			@include span($i of $wonderlandNum-cols);
-		}
-	}
+  %#{col-name($i)} {
+    @if $i == $wonderlandNum-cols {
+      @include span($i of $wonderlandNum-cols);
+    }
+    @else {
+      @include span($i of $wonderlandNum-cols);
+    }
+  }
 }
 
 .container {
-	@include container;
-	@extend %border-box;
-	max-width: 74.3rem;
-	%#{$wonderlandRowNotation} {
-		width: $wonderlandContainer-width;
-		margin: 0 auto;
-		@extend %overflow-hidden;
-		@extend %padding-none;
-		@extend %border-box;
+  @include container;
+  @extend %border-box;
+  max-width: 74.3rem;
+  %#{$wonderlandRowNotation} {
+    width: $wonderlandContainer-width;
+    margin: 0 auto;
+    @extend %overflow-hidden;
+    @extend %padding-none;
+    @extend %border-box;
 
-		&.extended-height {
-			@extend %overflow-visible;
-		}
-	}
+    &.extended-height {
+      @extend %overflow-visible;
+    }
+  }
 }
 
 %last {
-	margin-right: 0;
+  margin-right: 0;
 }

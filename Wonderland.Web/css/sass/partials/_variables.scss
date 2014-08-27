@@ -76,9 +76,9 @@ $wonderlandFontURL: "http://fonts.googleapis.com/css?family=Open+Sans:400,300"; 
 $wonderlandEm: 1rem !default;
 $wonderlandBaseFontSize: 62.5% !default;
 $wonderlandBaseFontFamily: "Open Sans", "sans-serif", "arial" !default;
-$wonderlandFontSizeSmall: ($wonderlandBaseFontSize / $wonderlandMultiplierSmall) !default;
-$wonderlandFontSizeMedium: ($wonderlandBaseFontSize * $wonderlandMultiplier) !default;
-$wonderlandFontSizeLarge: ($wonderlandBaseFontSize * $wonderlandMultiplierLarge) !default;
+$wonderlandFontSizeSmall: $wonderlandEm !default;
+$wonderlandFontSizeMedium: 1.2rem !default;
+$wonderlandFontSizeLarge: 1.6 !default;
 $wonderlandFontSizeMini: ($wonderlandBaseFontSize / $wonderlandMultiplierLarge) !default;
 $wonderlandLineHeight: 1.4 !default;
 
@@ -90,8 +90,8 @@ $wonderlandBorderRadiusSmall: ($wonderlandBorderRadius / $wonderlandMultiplier) 
 $wonderlandBorderRadiusLarge: ($wonderlandBorderRadius * $wonderlandMultiplierLarge) !default;
 
 /* Transitions*/
-$wonderlandTransitionTime: 0.5s !default; //global transition time
-$wonderlandTransitionFunction: ease !default; //transition function for CSS3 transitions
+$wonderlandTransitionTime: 0.75s !default; //global transition time
+$wonderlandTransitionFunction: ease-in-out !default; //transition function for CSS3 transitions
 
 /* =============================================================================
 Colours
