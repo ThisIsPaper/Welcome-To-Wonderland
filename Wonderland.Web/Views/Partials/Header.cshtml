@@ -1,11 +1,10 @@
-﻿@inherits UmbracoViewPage<IEnumerable<SitePage>> 
+﻿@inherits UmbracoViewPage<SiteSettings> 
 <header id="siteHeader">
   <nav class="nav">
     <a class="btn-primary">Host a party ></a>
     <ul class="toolbar">
-      @* Model is just a collection of site pages *@
       @{ var i = 0; }
-      @foreach (SitePage sitePage in Model)
+      @foreach (SitePage sitePage in Model.HeaderNavigation)
       {
         if (i != 2) {
           <li><a href="@sitePage.Url">@sitePage.Name</a></li>
@@ -15,7 +14,7 @@
         i++;
       }
     </ul>
-    <a class="btn-secondary">Login</a>
+    <a class="btn-secondary" href="@Model.LoginUrl">Login</a>
   </nav>
   <div class="snow-brush-overlay"></div>
 </header>
