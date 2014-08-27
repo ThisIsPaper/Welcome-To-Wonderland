@@ -18,10 +18,24 @@
         <li class="tile-size-@partyIdeaTile.TileSize.ToString().ToLower() tile-type-@partyIdeaTile.TileType">
 
             <h2>@partyIdeaTile.TileHeading</h2>
-            <img src="@partyIdeaTile.TileImage.Url" />
-            @*<img src="@partyIdeaTile.TileImage.GetCropUrl("Square")" />*@
+            <img src="@partyIdeaTile.TileImage.GetResponsiveCropUrl("Square")" />
             <p>@partyIdeaTile.TileCopy</p>
             <a href="@partyIdeaTile.Url">@partyIdeaTile.Url</a>
+            
+            @switch (partyIdeaTile.TileSize)
+            {
+                case PartyIdeaTileSize.Large:
+                    <h3>Large Tile</h3>
+                    break;
+                    
+                case PartyIdeaTileSize.Medium:
+                    <h3>Medium Tile</h3>
+                    break;
+                    
+                case PartyIdeaTileSize.Small:
+                    <h3>Small Tile</h3>
+                    break;
+            }
 
             @if (partyIdeaTile is DecorationTile)
             {
