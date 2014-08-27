@@ -202,11 +202,13 @@
     <Compile Include="Models\Content\FAQs.cs" />
     <Compile Include="Models\Content\FashionCategory.cs" />
     <Compile Include="Models\Content\FashionTile.cs" />
+    <Compile Include="Models\Content\ForgottenPassword.cs" />
     <Compile Include="Models\Content\FundraisingIdea.cs" />
     <Compile Include="Models\Content\FundraisingIdeas.cs" />
     <Compile Include="Models\Content\Home.cs" />
     <Compile Include="Models\Content\Leaderboard.cs" />
     <Compile Include="Models\Content\Legal.cs" />
+    <Compile Include="Models\Content\Login.cs" />
     <Compile Include="Models\Content\Party.cs" />
     <Compile Include="Models\Content\PartyIdeaCategory.cs" />
     <Compile Include="Models\Content\PartyIdeas.cs" />
@@ -215,6 +217,7 @@
     <Compile Include="Models\Content\PlaylistCategory.cs" />
     <Compile Include="Models\Content\RecipeCategory.cs" />
     <Compile Include="Models\Content\RecipeTile.cs" />
+    <Compile Include="Models\Content\ResetPassword.cs" />
     <Compile Include="Models\Content\SitePage.cs" />
     <Compile Include="Models\Content\PlaylistTile.cs" />
     <Compile Include="Models\Content\Wonderlanders.cs" />
@@ -231,7 +234,11 @@
     <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Controllers\Api\" />
+    <Folder Include="Controllers\Render\" />
+    <Folder Include="Controllers\Surface\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

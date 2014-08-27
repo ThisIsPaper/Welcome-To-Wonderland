@@ -13,6 +13,14 @@ namespace Wonderland.Logic.Models.Content
 
         public SitePage(IPublishedContent content) : base(content)
         {
+            // not cms managed - render controllers can disable this
+            this.ShowHeaderAndFooter = true;
+        }
+
+        public bool ShowHeaderAndFooter
+        {
+            get;
+            internal set;
         }
 
         public string MetaDescription
