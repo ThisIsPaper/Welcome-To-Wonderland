@@ -49,8 +49,11 @@ Imports
   .wonderland-crest-logo {
     @extend %absolute;
     background: inline-image('wonderland-crest-logo.png') no-repeat;
+    left: 50%;
     padding: 4.4rem 6.1rem;
     margin: 0.7rem -3.9rem;
+    margin-left: -7rem;
+    top: 0;
   }
   .snow-brush-overlay {
     @extend %row-width; 
