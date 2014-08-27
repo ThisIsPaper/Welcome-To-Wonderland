@@ -217,10 +217,10 @@
     <Compile Include="Models\Content\PlaylistTile.cs" />
     <Compile Include="Models\Content\Wonderlanders.cs" />
     <Compile Include="Models\Entities\PartyKit.cs" />
+    <Compile Include="Models\Entities\PromotionTile.cs" />
     <Compile Include="Models\Entities\Reward.cs" />
     <Compile Include="Models\Entities\SiteSettings.cs" />
     <Compile Include="Models\Media\Image.cs" />
-    <Compile Include="Models\Media\PromotionTile.cs" />
     <Compile Include="Models\Members\Partier.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

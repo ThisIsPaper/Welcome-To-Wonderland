@@ -19,9 +19,9 @@
       @foreach (PromotionTile promotionTile in Model.PromotionTiles)
       {
         <li>
-          @promotionTile.Name
-          <img src="@promotionTile.TileImageUrl" />
-          <img src="@promotionTile.OverlayImageUrl" />        
+          @promotionTile.AltText
+          <img src="@promotionTile.Image.GetResponsiveCropUrl("Square")" />
+          <img src="@promotionTile.OverlayImage.Url" />        
         </li>            
       }
   </ul>

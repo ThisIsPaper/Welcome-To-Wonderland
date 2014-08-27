@@ -6,7 +6,8 @@ namespace Wonderland.Logic.Models.Content
     using Umbraco.Web;
     using Umbraco.Core.Models;
     using nuPickers;
-    using Wonderland.Logic.Models.Media;
+    using Wonderland.Logic.Models.Entities;
+    using Archetype.Models;
 
     public class Home : SitePage
     {
@@ -36,7 +37,7 @@ namespace Wonderland.Logic.Models.Content
         {
             get
             {
-                return this.GetPropertyValue<Picker>("promotionTiles").AsPublishedContent().Select(x => new PromotionTile(x));
+                return this.GetPropertyValue<ArchetypeModel>("promotionTiles").Select(x => new PromotionTile(x));
             }
         }
 
