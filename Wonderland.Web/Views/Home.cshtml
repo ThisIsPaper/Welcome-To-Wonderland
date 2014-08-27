@@ -10,25 +10,27 @@
     <a href="#" class="btn-primary">Host a party ></a>       
   </div>
 </section>
-<div class="container">
-  <section id="homeBanner">
-    <h1>
-      @Model.BannerHeading
-    </h1>
-    <p>
-      @Model.BannerCopy
-    </p>
-  </section>
-  <section id="promoTiles">
-    <ul>
-      @foreach (PromotionTile promotionTile in Model.PromotionTiles)
-      {
-        <li>
-          @promotionTile.AltText
-          <img src="@promotionTile.Image.GetResponsiveCropUrl("Square")" />
-          <img src="@promotionTile.OverlayImage.Url" />        
-        </li>            
-      }
-    </ul>
-  </section>
+<div id="homeBg">
+  <div class="container">
+    <section id="homeBanner">
+      <h1>
+        @Model.BannerHeading
+      </h1>
+      <p>
+        @Model.BannerCopy
+      </p>
+    </section>
+    <section id="promoTiles">
+      <ul>
+        @foreach (PromotionTile promotionTile in Model.PromotionTiles)
+        {
+          <li>
+            @promotionTile.AltText
+            <img src="@promotionTile.Image.GetResponsiveCropUrl("Square")" />
+            <img src="@promotionTile.OverlayImage.Url" />        
+          </li>            
+        }
+      </ul>
+    </section>
+  </div>
 </div>

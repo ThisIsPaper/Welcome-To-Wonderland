@@ -2,14 +2,20 @@
 <header id="siteHeader">
   <nav class="nav">
     <a class="btn-primary">Host a party ></a>
-      <ul class="toolbar">
-        @* Model is just a collection of site pages *@
-        @foreach (SitePage sitePage in Model)
-        {
+    <ul class="toolbar">
+      @* Model is just a collection of site pages *@
+      @{ var i = 0; }
+      @foreach (SitePage sitePage in Model)
+      {
+        if (i != 2) {
           <li><a href="@sitePage.Url">@sitePage.Name</a></li>
+        } else {
+          <li class="wonderland-crest-logo"></li>
         }
-      </ul>
+        i++;
+      }
+    </ul>
     <a class="btn-secondary">Login</a>
   </nav>
-  <div class="header-overlay"> </div>
+  <div class="snow-brush-overlay"></div>
 </header>

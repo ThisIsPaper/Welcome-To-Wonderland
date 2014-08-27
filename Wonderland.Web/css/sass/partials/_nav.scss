@@ -28,17 +28,19 @@
   text-align: center;
   @extend %overflow-visible;
   @extend %row-width;
-  .toolbar { width: 60%; }
-  ul {
+  ul.toolbar {
+    margin-left: -20%;
+    background: transparent;
     a {
-      color: $wonderlandPrimaryColour;
       @extend %large;
-      border-right: 1px solid darken($wonderlandSecondaryColour, 25);
       @extend %inline;
-      padding: $wonderlandPaddingSmall $wonderlandPaddingLarge;
-      text-decoration: none;
+      color: $wonderlandPrimaryColour;
+      font-weight: bold;
+      padding: 13% 20%;
+      text-transform: uppercase;
       &:hover {
-      }
+        text-decoration: underline;
+      } 
     }
     ul {
       //nested menu 1
