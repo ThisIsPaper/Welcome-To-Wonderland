@@ -7,14 +7,10 @@
       @{ var i = 0; }
       @foreach (SitePage sitePage in Model)
       {
-        if (i != 2) {
-          <li><a href="@sitePage.Url">@sitePage.Name</a></li>
-        } else {
-          <li class="wonderland-crest-logo"></li>
-        }
-        i++;
+        <li><a href="@sitePage.Url">@sitePage.Name</a></li>
       }
     </ul>
+    <div class="wonderland-crest-logo"></div>
     <a class="btn-secondary">Login</a>
   </nav>
   <div class="snow-brush-overlay"></div>

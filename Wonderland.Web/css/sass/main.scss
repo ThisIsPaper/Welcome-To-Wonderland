@@ -38,7 +38,8 @@ Imports
 
 #siteHeader {
   @extend %fixed;
-  @extend %row-width;  
+  @extend %row-width; 
+  z-index: 999; 
   nav { 
     background: white; 
     >a {
@@ -101,5 +102,7 @@ main { padding-top: 3.5rem; }
   margin: -8rem 1rem;
   background: white;
   position: absolute;
-  width: 79%;
+  min-width: 60%;
+  max-width: 80%;
+  padding: 1rem;
 }

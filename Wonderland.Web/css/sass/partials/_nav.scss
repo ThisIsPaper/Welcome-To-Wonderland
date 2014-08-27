@@ -29,8 +29,6 @@
   @extend %overflow-visible;
   @extend %row-width;
   ul.toolbar {
-    margin-left: -20%;
-    background: transparent;
     a {
       @extend %large;
       @extend %inline;
