@@ -197,7 +197,7 @@
     <Compile Include="Events\SetPublishedContentModelFactory.cs" />
     <Compile Include="Models\Content\DecorationCategory.cs" />
     <Compile Include="Models\Content\DecorationTile.cs" />
-    <Compile Include="Models\Content\Faqs.cs" />
+    <Compile Include="Models\Content\FAQs.cs" />
     <Compile Include="Models\Content\FashionCategory.cs" />
     <Compile Include="Models\Content\FashionTile.cs" />
     <Compile Include="Models\Content\FundraisingIdea.cs" />

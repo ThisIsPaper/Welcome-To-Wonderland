@@ -2,6 +2,7 @@
 namespace Wonderland.Logic.Models.Content
 {
     using Umbraco.Core.Models;
+    using Umbraco.Web;
 
     public class Party : SitePage
     {
@@ -10,6 +11,22 @@ namespace Wonderland.Logic.Models.Content
         public Party(IPublishedContent content)
             : base(content)
         {
+        }
+
+        public string DefaultHeading
+        {
+            get
+            {
+                return this.GetPropertyValue<string>("defaultHeading");
+            }
+        }
+
+        public string DefaultCopy
+        {
+            get
+            {
+                return this.GetPropertyValue<string>("defaultCopy");
+            }
         }
     }
 }

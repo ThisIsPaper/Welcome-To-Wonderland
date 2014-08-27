@@ -2,8 +2,11 @@
 @{
     Layout = "SitePage.cshtml";
 }
-<h1>Fundraising Ideas</h1>
+<h1>@Model.PageHeading</h1>
 
+@Html.Partial("PartyKit", Model.PartyKit)
+
+<h2>@Model.SubHeading</h2>
 <ul>
     @foreach(FundraisingIdea fundraisingIdea in Model.GetFundraisingIdeas())
     {
