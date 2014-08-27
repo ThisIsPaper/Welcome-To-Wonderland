@@ -386,7 +386,7 @@ Links
 Widths
 ========================================================================== */
 /* line 647, sass/partials/_helpers.scss */
-.nav, #heroGraphic {
+.nav, #heroGraphic, #heroGraphic .actions {
   width: 100%;
 }
 
@@ -2601,7 +2601,7 @@ Links
 Widths
 ========================================================================== */
 /* line 647, sass/partials/_helpers.scss */
-.nav, #heroGraphic {
+.nav, #heroGraphic, #heroGraphic .actions {
   width: 100%;
 }
 
@@ -3090,4 +3090,8 @@ main {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+}
+/* line 63, sass/main.scss */
+#heroGraphic .hero-title img {
+  margin-top: 10%;
 }

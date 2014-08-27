@@ -59,4 +59,13 @@ main {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  
+  .hero-title img {
+    margin-top: 10%;
+  }
+
+  .actions {
+    @extend %row-width;
+  }
+
 }
