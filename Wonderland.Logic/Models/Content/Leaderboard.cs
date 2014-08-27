@@ -7,6 +7,8 @@ namespace Wonderland.Logic.Models.Content
     using Umbraco.Web;
     using Wonderland.Logic.Enums;
     using Wonderland.Logic.Models.Members;
+    using System.Web;
+using System;
 
     public class Leaderboard : SitePage
     {
@@ -37,9 +39,14 @@ namespace Wonderland.Logic.Models.Content
         {
             get
             {
-                var t = System.Web.HttpContext.Current.Request.QueryString;
-
-                return LeaderboardType.MostGuests;
+                try
+                {
+                    return (LeaderboardType)Enum.Parse(typeof(LeaderboardType), HttpContext.Current.Request.QueryString.ToString(), true);
+                }
+                catch
+                {
+                    return LeaderboardType.Unknown;
+                }                
             }
         }
 
@@ -47,7 +54,7 @@ namespace Wonderland.Logic.Models.Content
         {
             get
             {
-                return this.Url + "?type=" + LeaderboardType.MostGuests;
+                return this.Url + "?" + LeaderboardType.MostGuests;
             }
         }
 
@@ -55,7 +62,7 @@ namespace Wonderland.Logic.Models.Content
         {
             get
             {
-                return this.Url + "?type=" + LeaderboardType.TopFundraisers;
+                return this.Url + "?" + LeaderboardType.TopFundraisers;
             }
         }
 
