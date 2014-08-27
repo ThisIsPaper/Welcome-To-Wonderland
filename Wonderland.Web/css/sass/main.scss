@@ -67,6 +67,7 @@ main { padding-top: 3.5rem; }
 #homeBg {
   background: inline-image('wood_texture.jpg') repeat top left;
   background-size: contain;
+  margin-top: -1.2rem;
 }
 
 #heroGraphic {
@@ -93,4 +94,12 @@ main { padding-top: 3.5rem; }
     padding: 0.9rem 1.9rem;
   }
 
+}
+
+#homeBanner {
+  @extend %rounded-skew-three;
+  margin: -8rem 1rem;
+  background: white;
+  position: absolute;
+  width: 79%;
 }
