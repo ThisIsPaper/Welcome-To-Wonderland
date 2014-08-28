@@ -12,7 +12,9 @@
  Filename: main.scss
  =============================================================================
  This file is responsible for all styles on the Macmillan - Wonderland app.  Styles should be compiled using compass and sass.
+
  --------------------------------------------------------------------------------------------------------------------- */
+
 
 /* =============================================================================
 Imports
@@ -36,15 +38,40 @@ Imports
 @import "partials/_base.scss";
 @import "partials/_media-queries";
 
+// TODO : abstract out into partials and replace hardcoded values with vars
+
 #siteHeader {
   @extend %fixed;
   @extend %row-width; 
   z-index: 999; 
   nav { 
     background: white; 
-    >a {
-      &:first-child { @extend %pull-left; }
-      &:last-child { @extend %pull-right; }
+    > a {
+      &:first-child { 
+        @extend %pull-left; 
+        margin-right: 0;
+      }
+      &:last-child { 
+        @extend %pull-right; 
+        margin-left: 0;
+      }
+    }
+  }
+  ul.toolbar {
+    max-width: 66.6%;
+    width: 56%;
+    > li {
+      @for $i from 1 through 4 {
+        @if $i < 3 {
+          &:nth-child(#{$i}) {
+            @extend %pull-left;
+          }
+        } @else {
+          &:nth-child(#{$i}) {
+            @extend %pull-right;
+          }
+        }
+      }     
     }
   }
   .wonderland-crest-logo {
@@ -73,10 +100,10 @@ main { padding-top: 3.5rem; }
 #heroGraphic {
   @extend %centred;
   @extend %row-width;
-  height: 40rem;
+  height: 35rem;
   background-image: image-url('hero-ph.jpg');
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: top center;
   background-size: cover;
   margin: 0;
 
@@ -98,7 +125,7 @@ main { padding-top: 3.5rem; }
 
 #homeBanner {
   @extend %rounded-skew-three;
-  margin: -8rem 1rem;
+  margin: -2rem 1rem;
   background: white;
   position: absolute;
   min-width: 60%;
