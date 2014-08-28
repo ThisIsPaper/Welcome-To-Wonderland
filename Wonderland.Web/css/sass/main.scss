@@ -46,13 +46,14 @@ Imports
   z-index: 999; 
   nav { 
     background: white; 
-    > a {
+    >a {
+        @extend %absolute; 
       &:first-child { 
-        @extend %pull-left; 
+        left: 0;
         margin-right: 0;
       }
       &:last-child { 
-        @extend %pull-right; 
+        right: 0;
         margin-left: 0;
       }
     }
@@ -124,11 +125,35 @@ main { padding-top: 3.5rem; }
 }
 
 #homeBanner {
+  @extend %border-box;
   @extend %rounded-skew-three;
-  margin: -2rem 1rem;
-  background: white;
+  background: rgba(255, 255, 255, .98);
+  padding: 0 2.2rem;
   position: absolute;
   min-width: 60%;
-  max-width: 80%;
-  padding: 1rem;
+  margin: -2rem 1.5rem;
+  max-width: 79%;
+
+  h1 {
+    color: $wonderlandPrimaryColour;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 2.36667rem;
+    line-height: 2.18885;
+    letter-spacing: 0.05rem;
+    margin: 0;
+  }
+
+  p {
+    @include grSubHeadlineSize();
+    font-weight: bold;
+  }
+  .banner-info {
+    @include span(60%);
+    padding: 0.5rem 0.2rem;
+  }
+  .money-raised-info {
+    @include span(28%);
+  }
 }
+

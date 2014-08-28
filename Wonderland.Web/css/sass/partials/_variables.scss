@@ -90,8 +90,8 @@ $wonderlandBorderRadiusSmall: ($wonderlandBorderRadius / $wonderlandMultiplier) 
 $wonderlandBorderRadiusLarge: ($wonderlandBorderRadius * $wonderlandMultiplierLarge) !default;
 
 /* Transitions*/
-$wonderlandTransitionTime: 0.75s !default; //global transition time
-$wonderlandTransitionFunction: ease-in-out !default; //transition function for CSS3 transitions
+$wonderlandTransitionTime: 0.5s !default; //global transition time
+$wonderlandTransitionFunction: ease-out !default; //transition function for CSS3 transitions
 
 /* =============================================================================
 Colours

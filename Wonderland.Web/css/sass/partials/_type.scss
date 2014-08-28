@@ -24,7 +24,7 @@
 // Golden Ratio Math
 //
 // Let's do some math so we can build beautiful typography and vertical rhythm.
-// For any magic to happen, set the $ContentWidth variable on _variables.scss
+// For any magic to happen, set the $wonderlandContainer-width variable on _variables.scss
 // to match your content box width (normally this is 640px, 740px, etc...).
 //
 // Many thanks to Chris Pearson's scary math skills http://t.co/KoeUoEWrNS
@@ -32,7 +32,7 @@
 //
 // @author Greg Rickaby
 // @since 1.0
-// @requires $ContentWidth
+// @requires $wonderlandContainer-width
 // ----------------------------------
 $phi: (1 + sqrt(5)) / 2; // 1.61803398874989 or "The Golden Ratio"
 $xoo: 1 / (2 * $phi);
@@ -42,7 +42,7 @@ $zoo: $phi - $xoo * (1 - ($wonderlandContainer-width / $yoo));
  
 // Title Size
 //
-// Calculated title size based on $ContentWidth.
+// Calculated title size based on $wonderlandContainer-width.
 //
 // @author Greg Rickaby
 // @since 1.0
@@ -55,7 +55,7 @@ $zoo: $phi - $xoo * (1 - ($wonderlandContainer-width / $yoo));
 }
  
 @mixin grTitleSize() {
-  font-size: calcTitleSize() + px;
+  font-size: calcTitleSize();
   font-size: (calcTitleSize() / calcFontSize()) + rem;
   line-height: calcTitleSize() / $yoo;
 }
@@ -63,7 +63,7 @@ $zoo: $phi - $xoo * (1 - ($wonderlandContainer-width / $yoo));
  
 // Headline Size
 //
-// Calculated headline size based on $ContentWidth.
+// Calculated headline size based on $wonderlandContainer-width.
 //
 // @author Greg Rickaby
 // @since 1.0
@@ -76,7 +76,6 @@ $zoo: $phi - $xoo * (1 - ($wonderlandContainer-width / $yoo));
 }
  
 @mixin grHeadlineSize() {
-  font-size: calcHeadlineSize() + px;
   font-size: (calcHeadlineSize() / calcFontSize()) + rem;
   line-height: calcHeadlineSize() / $yoo;
 }
@@ -84,7 +83,7 @@ $zoo: $phi - $xoo * (1 - ($wonderlandContainer-width / $yoo));
  
 // Sub-headline Size
 //
-// Caclulated sub-headline size based on $ContentWidth.
+// Caclulated sub-headline size based on $wonderlandContainer-width.
 //
 // @author Greg Rickaby
 // @since 1.0
@@ -97,7 +96,7 @@ $zoo: $phi - $xoo * (1 - ($wonderlandContainer-width / $yoo));
 }
  
 @mixin grSubHeadlineSize() {
-  font-size: calcSubHeadlineSize() + px;
+  font-size: calcSubHeadlineSize();
   font-size: (calcSubHeadlineSize() / calcFontSize()) + rem;
   line-height: calcSubHeadlineSize() / $yoo;
 }
@@ -105,7 +104,7 @@ $zoo: $phi - $xoo * (1 - ($wonderlandContainer-width / $yoo));
  
 // Font Size
 //
-// Calculated font size based on $ContentWidth.
+// Calculated font size based on $wonderlandContainer-width.
 //
 // @author Greg Rickaby
 // @since 1.0
@@ -113,7 +112,7 @@ $zoo: $phi - $xoo * (1 - ($wonderlandContainer-width / $yoo));
 // Usage: @include grFontSize();
 // --------------------------------
 @function calcFontSize() {
-  $foo: sqrt($ContentWidth) / $phi;
+  $foo: sqrt($wonderlandContainer-width) / $phi;
     @return round($foo);
 }
  
@@ -126,7 +125,7 @@ $zoo: $phi - $xoo * (1 - ($wonderlandContainer-width / $yoo));
  
 // Secondary Text
 //
-// Calculated secondary text size based on $ContentWidth.
+// Calculated secondary text size based on $wonderlandContainer-width.
 //
 // @author Greg Rickaby
 // @since 1.0
@@ -147,7 +146,7 @@ $zoo: $phi - $xoo * (1 - ($wonderlandContainer-width / $yoo));
  
 // Default Line Height
 //
-// Calculate default line-height based on $ContentWidth.
+// Calculate default line-height based on $wonderlandContainer-width.
 //
 // @author Greg Rickaby
 // @since 1.0
@@ -155,8 +154,8 @@ $zoo: $phi - $xoo * (1 - ($wonderlandContainer-width / $yoo));
 // Usage: @include grBaseLineHeight();
 // --------------------------------
 @function calcBaseLineHeight() {
-  $foobar: sqrt($ContentWidth) / $phi;
-  $foo: calcFontSize() * ($phi - $xoo * (1 - ($ContentWidth / pow(calcFontSize() * $phi, 2))));
+  $foobar: sqrt($wonderlandContainer-width) / $phi;
+  $foo: calcFontSize() * ($phi - $xoo * (1 - ($wonderlandContainer-width / pow(calcFontSize() * $phi, 2))));
   $fo: $foo / $foobar;
     @return $fo;
 }
@@ -177,7 +176,7 @@ $zoo: $phi - $xoo * (1 - ($wonderlandContainer-width / $yoo));
 // Usage: @include grCustomLineHeight(26);
 // --------------------------------
 @function calcCustomLineHeight($target) {
-  $foobar: sqrt($ContentWidth) / $phi;
+  $foobar: sqrt($wonderlandContainer-width) / $phi;
   $foo: $target / $foobar;
     @return $foo;
 }
