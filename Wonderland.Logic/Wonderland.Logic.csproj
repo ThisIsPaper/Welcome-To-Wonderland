@@ -206,6 +206,8 @@
     <Compile Include="Models\Content\FundraisingIdea.cs" />
     <Compile Include="Models\Content\FundraisingIdeas.cs" />
     <Compile Include="Models\Content\Home.cs" />
+    <Compile Include="Models\Content\RegisterGuestConfirmation.cs" />
+    <Compile Include="Models\Content\RegisterHostPartyUrl.cs" />
     <Compile Include="Models\Content\Leaderboard.cs" />
     <Compile Include="Models\Content\Legal.cs" />
     <Compile Include="Models\Content\Login.cs" />
@@ -217,6 +219,9 @@
     <Compile Include="Models\Content\PlaylistCategory.cs" />
     <Compile Include="Models\Content\RecipeCategory.cs" />
     <Compile Include="Models\Content\RecipeTile.cs" />
+    <Compile Include="Models\Content\RegisterGuest.cs" />
+    <Compile Include="Models\Content\RegisterHost.cs" />
+    <Compile Include="Models\Content\RegisterHostPartyKit.cs" />
     <Compile Include="Models\Content\ResetPassword.cs" />
     <Compile Include="Models\Content\SitePage.cs" />
     <Compile Include="Models\Content\PlaylistTile.cs" />

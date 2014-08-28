@@ -13,5 +13,13 @@ namespace Wonderland.Logic.Models.Content
         {
             this.ShowHeaderAndFooter = false;
         }
+
+        public string PageHeading
+        {
+            get
+            {
+                return this.GetPropertyValue<string>("pageHeading");
+            }
+        }
     }
 }
