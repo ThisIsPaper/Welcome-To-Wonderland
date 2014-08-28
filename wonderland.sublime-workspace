@@ -1,0 +1,2006 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"tu",
+				"tt-u	text-transform: uppercase;"
+			],
+			[
+				"te",
+				"text-decoration"
+			],
+			[
+				"pa",
+				"padding-left"
+			],
+			[
+				"Angula",
+				"AngularJS"
+			],
+			[
+				"Angu",
+				"AngularJS"
+			],
+			[
+				"mi",
+				"min-height"
+			],
+			[
+				"font",
+				"font-style"
+			],
+			[
+				"pad",
+				"padding-top"
+			],
+			[
+				"slide",
+				"slideDown	.slideDown()"
+			],
+			[
+				"add",
+				"addClass	addClass"
+			],
+			[
+				"max",
+				"max-width"
+			],
+			[
+				"bg",
+				"bgImageClassArray"
+			],
+			[
+				"toggle",
+				"toggleClass	.toggleClass()"
+			],
+			[
+				"ad",
+				"addClass	addClass"
+			],
+			[
+				"que",
+				"question-page"
+			],
+			[
+				"qus",
+				"question-page"
+			],
+			[
+				"ques",
+				"questionId"
+			],
+			[
+				"qu",
+				"question"
+			],
+			[
+				"inc",
+				"include	@include"
+			],
+			[
+				"bac",
+				"background-size"
+			],
+			[
+				"mar",
+				"margin-top"
+			],
+			[
+				"text",
+				"text-align"
+			],
+			[
+				"di",
+				"display"
+			],
+			[
+				"opaci",
+				"opacity"
+			],
+			[
+				"resul",
+				"resultsPage"
+			],
+			[
+				"p",
+				"pointer"
+			],
+			[
+				"po",
+				"position"
+			],
+			[
+				"tra",
+				"transparent"
+			],
+			[
+				"out",
+				"outerHeight	.outerHeight"
+			],
+			[
+				"mixi",
+				"mixin	@mixin"
+			],
+			[
+				"con",
+				"content"
+			],
+			[
+				"setin",
+				"setIntroPageClass"
+			],
+			[
+				"contai",
+				"container"
+			],
+			[
+				"wind",
+				"windowHeight"
+			],
+			[
+				"win",
+				"window"
+			],
+			[
+				"res",
+				"resize	.resize"
+			],
+			[
+				"ta",
+				"target	jsEvent"
+			],
+			[
+				"game",
+				"gamePopUp"
+			],
+			[
+				"tex",
+				"text-indent"
+			],
+			[
+				"lea",
+				"leaderBoardGradientBot"
+			],
+			[
+				"no",
+				"not	.not()"
+			],
+			[
+				"ha",
+				"hasClass	.hasClass"
+			],
+			[
+				"slidsho",
+				"slideShowFontColour"
+			],
+			[
+				"bann",
+				"bannerBgColour"
+			],
+			[
+				"slidshow",
+				"slideShowBgColour"
+			],
+			[
+				"bor",
+				"border-radius"
+			],
+			[
+				"fon",
+				"font-size"
+			],
+			[
+				"sl",
+				"slideShowBtnBgColour"
+			],
+			[
+				"css",
+				"css	.css() - multiple"
+			],
+			[
+				"child",
+				"children"
+			],
+			[
+				"slideS",
+				"slideShowOne"
+			],
+			[
+				"impor",
+				"important"
+			],
+			[
+				"link",
+				"linkFeedFloppyColour"
+			],
+			[
+				"wid",
+				"width"
+			],
+			[
+				"lin",
+				"linkFeedHeaderBorderColour"
+			],
+			[
+				"fot",
+				"font-size"
+			],
+			[
+				"abs",
+				"absolute"
+			],
+			[
+				"pos",
+				"position"
+			],
+			[
+				"sale",
+				"salesPeopleDescFontColour"
+			],
+			[
+				"fl",
+				"fl-l	float: left;"
+			],
+			[
+				"slideShowDdT",
+				"slideShowDdTwo"
+			],
+			[
+				"li",
+				"lighten	lighten()"
+			],
+			[
+				"g",
+				"get	$.get()"
+			],
+			[
+				"le",
+				"leaderBoardBgColour"
+			],
+			[
+				"sli",
+				"slideShowBgColour"
+			],
+			[
+				"slid",
+				"slideshow"
+			],
+			[
+				"togg",
+				"toggleClass	.toggleClass()"
+			],
+			[
+				"min",
+				"min-height"
+			],
+			[
+				"z-",
+				"z-index"
+			],
+			[
+				"in",
+				"include	@include"
+			],
+			[
+				"end",
+				"endOfLeaseBox"
+			],
+			[
+				"tog",
+				"toggleClass	.toggleClass()"
+			],
+			[
+				"cl",
+				"click	click"
+			],
+			[
+				"i",
+				"important"
+			],
+			[
+				"d",
+				"d-n	display: none;"
+			],
+			[
+				"chec",
+				"checkbox"
+			],
+			[
+				"inp",
+				"input"
+			],
+			[
+				"imp",
+				"important"
+			],
+			[
+				"fo",
+				"font-size"
+			],
+			[
+				"foo",
+				"footer-container"
+			],
+			[
+				"und",
+				"undefined	jsProp"
+			],
+			[
+				"hom",
+				"home-page"
+			],
+			[
+				"home",
+				"home-block"
+			],
+			[
+				"store",
+				"store-options"
+			],
+			[
+				"cms",
+				"cms-find-a-store"
+			],
+			[
+				"ne",
+				"nested-container"
+			],
+			[
+				"cur",
+				"cursor"
+			],
+			[
+				"ma",
+				"margin"
+			],
+			[
+				"cli",
+				"click	click"
+			],
+			[
+				"hid",
+				"hidden"
+			],
+			[
+				"input",
+				"input-text"
+			],
+			[
+				"app",
+				"append	.append"
+			],
+			[
+				"m",
+				"margin"
+			],
+			[
+				"ce",
+				"center"
+			],
+			[
+				"up",
+				"uppercase"
+			],
+			[
+				"bot",
+				"bot	CSS - bottom: 0;"
+			],
+			[
+				"bo",
+				"bottom"
+			],
+			[
+				"ab",
+				"absolute"
+			],
+			[
+				"t",
+				"transition	CSS - transition: ;"
+			],
+			[
+				"rb",
+				"rgba()"
+			],
+			[
+				"r",
+				"rig	CSS - right: 0;"
+			],
+			[
+				"w",
+				"width"
+			],
+			[
+				"rel",
+				"relative"
+			],
+			[
+				"f",
+				"float"
+			],
+			[
+				"b",
+				"bottom"
+			],
+			[
+				"ba",
+				"background"
+			],
+			[
+				"fad",
+				"fadeOut	.fadeOut()"
+			],
+			[
+				"fade",
+				"fadeIn	.fadeIn()"
+			],
+			[
+				"cat",
+				"category-view"
+			],
+			[
+				"slideD",
+				"slideDown	jQuery"
+			],
+			[
+				"category-top",
+				"category-top-content"
+			],
+			[
+				"_",
+				"_iterator"
+			],
+			[
+				"che",
+				"checkout-progress"
+			],
+			[
+				"ch",
+				"checkout-progress"
+			],
+			[
+				"box-s",
+				"box-sizing"
+			],
+			[
+				"ac",
+				"active"
+			],
+			[
+				"acc",
+				"account-status"
+			],
+			[
+				"disc",
+				"discount"
+			],
+			[
+				"nav",
+				"nav-container"
+			],
+			[
+				"mous",
+				"mouseenter	mouseenter"
+			],
+			[
+				"mouse",
+				"mouseenter	mouseenter"
+			],
+			[
+				"men",
+				"menu-holder"
+			],
+			[
+				"first",
+				"first-child"
+			],
+			[
+				"eas",
+				"ease-in-out"
+			],
+			[
+				"a",
+				"acctab"
+			],
+			[
+				"prod",
+				"product-view"
+			],
+			[
+				"mobile-",
+				"mobile-only"
+			],
+			[
+				"mo",
+				"mobile-header"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "Wonderland.Web/Views/Partials/Header.cshtml",
+			"settings":
+			{
+				"buffer_size": 472,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "Wonderland.Web/Views/Home.cshtml",
+			"settings":
+			{
+				"buffer_size": 861,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "Wonderland.Web/css/sass/partials/_grids.scss",
+			"settings":
+			{
+				"buffer_size": 2685,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "Wonderland.Web/css/sass/partials/_mixins.scss",
+			"settings":
+			{
+				"buffer_size": 1149,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "Wonderland.Web/css/sass/partials/_media-queries.scss",
+			"settings":
+			{
+				"buffer_size": 5094,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "Wonderland.Web/css/sass/partials/_forms.scss",
+			"settings":
+			{
+				"buffer_size": 2612,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "Wonderland.Web/css/sass/partials/_nav.scss",
+			"settings":
+			{
+				"buffer_size": 4219,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "Wonderland.Web/css/sass/main.scss",
+			"settings":
+			{
+				"buffer_size": 2777,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "Wonderland.Web/css/sass/partials/_helpers.scss",
+			"settings":
+			{
+				"buffer_size": 14346,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "Wonderland.Web/css/sass/partials/_variables.scss",
+			"settings":
+			{
+				"buffer_size": 6152,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 104.0,
+		"selected_items":
+		[
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"raz",
+				"Set Syntax: Razor"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"set",
+				"Set Syntax: HTML"
+			],
+			[
+				"jso",
+				"Pretty JSON: Format (Pretty Print) JSON"
+			],
+			[
+				"setjs",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"spe",
+				"Google Spell Check"
+			],
+			[
+				"spel",
+				"Google Spell Check"
+			],
+			[
+				"spell",
+				"Google Spell Check"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"be",
+				"HTMLBeautify"
+			],
+			[
+				"bea",
+				"HTMLBeautify"
+			],
+			[
+				"beau",
+				"HTMLBeautify"
+			],
+			[
+				"beat",
+				"HTMLBeautify"
+			],
+			[
+				"css",
+				"Set Syntax: CSS"
+			],
+			[
+				"htm",
+				"Set Syntax: HTML"
+			],
+			[
+				"js",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"set html",
+				"Set Syntax: HTML"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"Snippet: ",
+				"Snippet: Lorem ipsum"
+			],
+			[
+				"prefix",
+				"Autoprefix CSS"
+			]
+		],
+		"width": 400.0
+	},
+	"console":
+	{
+		"height": 125.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)",
+			"C:\\Program Files (x86)\\SmartGitHg\\git\\bin"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/xampp/htdocs/wonderland/Wonderland.Web/css/sass/partials/_nav.scss",
+		"/C/xampp/htdocs/wonderland/Wonderland.Web/css/main.css",
+		"/C/xampp/htdocs/wonderland/Wonderland.Web/mixture.json",
+		"/C/xampp/htdocs/wonderland/Wonderland.Web/css/sass/partials/_helpers.scss",
+		"/C/xampp/htdocs/wonderland/Wonderland.Web/css/sass/.sass-cache/026644375810dd9553278c69faf77ef50f228ad5/_hyphenation.scssc",
+		"/C/xampp/htdocs/wonderland/Wonderland.Web/css/sass/.sass-cache/026644375810dd9553278c69faf77ef50f228ad5/_text-shadow.scssc",
+		"/C/xampp/htdocs/wonderland/Wonderland.Web/scripts/bower_components/html5shiv/readme.md",
+		"/C/xampp/htdocs/wonderland/Wonderland.Web/umbraco_client/Tinymce3/Themes/Advanced/editor_template.js",
+		"/C/xampp/htdocs/wonderland/Wonderland.Web/css/sass/partials/addons/_toolbar.scss",
+		"/C/xampp/htdocs/wonderland/Wonderland.Web/css/sass/partials/_variables.scss",
+		"/C/xampp/htdocs/wonderland/wonderland.sublime-project",
+		"/C/xampp/htdocs/wonderland/Wonderland.Web/css/sass/main.scss",
+		"/C/xampp/htdocs/wonderland/Wonderland.Web/css/sass/partials/_base.scss",
+		"/C/xampp/htdocs/wonderland/Wonderland.Web/Views/Partials/Header.cshtml",
+		"/C/xampp/htdocs/wonderland/Wonderland.Web/css/sass/partials/_grids.scss",
+		"/C/xampp/htdocs/wonderland/Wonderland.Web/Views/Home.cshtml",
+		"/C/xampp/htdocs/wonderland/Wonderland.Web/css/sass/partials/_forms.scss",
+		"/C/xampp/htdocs/wonderland/Wonderland.Web/css/sass/partials/_type.scss",
+		"/C/xampp/htdocs/wonderland/Wonderland.Web/compass/config.rb",
+		"/C/xampp/htdocs/wonderland/Wonderland.Web/umbraco/lib/bootstrap/less/variables.less",
+		"/C/xampp/htdocs/wonderland/Wonderland.Web/umbraco/Dialogs/viewAuditTrail.aspx",
+		"/C/xampp/htdocs/wonderland/Wonderland.Web/umbraco/Members/ViewMembers.aspx",
+		"/C/xampp/htdocs/wonderland/Wonderland.Web/umbraco/lib/bootstrap/less/tooltip.less",
+		"/C/xampp/htdocs/wonderland/Wonderland.Web/doc/TOC.md",
+		"/C/xampp/htdocs/wonderland/Wonderland.Web/config/trees.config",
+		"/C/xampp/htdocs/wonderland/Wonderland.Web/umbraco/assets/img/applicationIcons/help.svg",
+		"/C/xampp/htdocs/wonderland/Wonderland.Web/umbraco/helpRedirect.aspx",
+		"/C/xampp/htdocs/wonderland/Wonderland.Web/umbraco/lib/bootstrap/less/grid.less",
+		"/C/xampp/htdocs/wonderland/Wonderland.Web/umbraco/Create/media.ascx",
+		"/C/xampp/htdocs/wonderland/Wonderland.Web/bin/umbraco.MacroEngines.xml",
+		"/C/xampp/htdocs/wonderland/Wonderland.Web/umbraco/lib/bootstrap/less/mixins.less",
+		"/C/xampp/htdocs/wonderland/Wonderland.Web/umbraco_client/Tree/menuIcons.css",
+		"/C/xampp/htdocs/wonderland/Wonderland.Web/umbraco/Views/propertyeditors/grid/grid.html",
+		"/C/xampp/htdocs/wonderland/Wonderland.Web/scripts/bower_components/html5shiv/Gruntfile.js",
+		"/C/xampp/htdocs/wonderland/Wonderland.Web/Global.asax",
+		"/C/xampp/htdocs/wonderland/Wonderland.Web/scripts/main.js",
+		"/C/xampp/htdocs/wonderland/Wonderland.Web/Views/FAQs.cshtml",
+		"/C/xampp/htdocs/wonderland/Wonderland.Web/App_Plugins/Archetype/views/archetype.config.html",
+		"/C/xampp/htdocs/wonderland/Wonderland.Web/umbraco/installer.html",
+		"/C/xampp/htdocs/wonderland/Wonderland.Web/scripts/bower_components/html5shiv/dist/html5shiv.js",
+		"/C/xampp/htdocs/wonderland/Wonderland.Web/umbraco/Dialogs/ChangeDocType.aspx",
+		"/C/xampp/htdocs/wonderland/Wonderland.Web/umbraco/Webservices/codeEditorSave.asmx",
+		"/C/xampp/htdocs/wonderland/Wonderland.Web/bin/MiniProfiler.xml",
+		"/C/xampp/htdocs/wonderland/Wonderland.Web/umbraco/Dialogs/moveOrCopy.aspx",
+		"/C/xampp/htdocs/wonderland/Wonderland.Web/umbraco_client/CodeMirror/Js/Mode/Ocaml/index.html",
+		"/C/xampp/htdocs/wonderland/Wonderland.Web/umbraco_client/CodeMirror/Js/Theme/monokai.css",
+		"/C/xampp/htdocs/wonderland/Wonderland.Web/config/scripting.config",
+		"/C/xampp/htdocs/wonderland/Wonderland.Web/Views/SitePage.cshtml",
+		"/C/xampp/htdocs/wonderland/Wonderland.Web/umbraco_client/Splitbutton/splitbutton.css",
+		"/C/xampp/htdocs/wonderland/Wonderland.Web/css/sass/.sass-cache/20eb6446bf6401c8763118b027e3ebe1a7249e5a/_forms.scssc",
+		"/C/xampp/htdocs/wonderland/Wonderland.Web/App_Browsers/Form.browser",
+		"/C/xampp/htdocs/wonderland/Wonderland.Web/css/sass/.sass-cache/026644375810dd9553278c69faf77ef50f228ad5/_transform.scssc",
+		"/C/xampp/htdocs/wonderland/Wonderland.Web/umbraco_client/Installer/Css/form.css",
+		"/C/xampp/htdocs/wonderland/Wonderland.Web/umbraco/Create/PartialView.ascx",
+		"/C/xampp/htdocs/wonderland/Wonderland.Web/Views/Party.cshtml",
+		"/C/xampp/htdocs/wonderland/Wonderland.Web/packages.config",
+		"/C/xampp/htdocs/wonderland/Wonderland.Web/css/sass/.sass-cache/026644375810dd9553278c69faf77ef50f228ad5/_columns.scssc",
+		"/C/xampp/htdocs/wonderland/Wonderland.Web/css/sass/.sass-cache/65d1a710f8918768d91bb1b4a8f3ececd08e5be4/_color.scssc",
+		"/C/xampp/htdocs/wonderland/Wonderland.Web/umbraco_client/Colorpicker/Js/colorpicker.js",
+		"/C/xampp/htdocs/wonderland/Wonderland.Web/css/sass/.sass-cache/0b58c9610d11d2c7f1bd8b1443834dcbd8d85913/_scaffolding.scssc",
+		"/C/xampp/htdocs/wonderland/Wonderland.Web/css/sass/.sass-cache/948996d6caded710fe963b78aad4cf07f565f7f1/_contrast.scssc",
+		"/C/xampp/htdocs/wonderland/Wonderland.Web/css/sass/.sass-cache/118120733380f5345cda026bf63c09bc20a1bf97/_container.scssc",
+		"/C/xampp/htdocs/wonderland/Wonderland.Web/css/sass/.sass-cache/270af1df66b8c8d739f7769b876e14d34a2d4ea5/_container.scssc",
+		"/C/xampp/htdocs/wonderland/Wonderland.Web/css/sass/.sass-cache/797838377cbb014ac1c7ebbc5157117577b1ea5a/_container.scssc",
+		"/C/xampp/htdocs/wonderland/Wonderland.Web/doc/html.md",
+		"/C/xampp/htdocs/wonderland/Wonderland.Web/web.config",
+		"/C/xampp/htdocs/wonderland/Wonderland.Web/App_Data/Logs/UmbracoTraceLog.txt",
+		"/C/Windows/System32/drivers/etc/hosts",
+		"/C/xampp/htdocs/wonderland/Wonderland.Web/App_Data/access.config",
+		"/C/xampp/htdocs/wonderland/Wonderland.Web/umbraco_client/Editors/EditMacroScripts.js",
+		"/C/xampp/htdocs/wonderland/Wonderland.Web/scripts/bower_components/matches-selector/matches-selector.js",
+		"/C/xampp/htdocs/wonderland/Wonderland.Web/css/sass/.sass-cache/797838377cbb014ac1c7ebbc5157117577b1ea5a/_margins.scssc",
+		"/C/xampp/htdocs/wonderland/Wonderland.Web/umbraco_client/Installer/Js/jquery.main.js",
+		"/C/xampp/htdocs/wonderland/Wonderland.Web/css/sass/.sass-cache/270af1df66b8c8d739f7769b876e14d34a2d4ea5/_margins.scssc",
+		"/C/xampp/htdocs/wonderland/Wonderland.Web/css/sass/partials/_mixins.scss",
+		"/C/xampp/htdocs/wonderland/Wonderland.Web/umbraco/PartialViewMacros/Templates/Empty (ForUseWithCustomViews).cshtml",
+		"/C/xampp/htdocs/wonderland/Wonderland.Web/css/sass/.sass-cache/20eb6446bf6401c8763118b027e3ebe1a7249e5a/_helpers.scssc",
+		"/C/xampp/htdocs/wonderland/Wonderland.Web/css/sass/partials/breakpoint/_helpers.scss",
+		"/C/xampp/htdocs/wonderland/Wonderland.Web/bin/controls.xml",
+		"/C/xampp/htdocs/wonderland/Wonderland.Web/bin/cms.xml",
+		"/F/wms_development_env.box/0/virtualbox/metadata.json",
+		"/C/xampp/htdocs/richlist/public/lib/angular/angular.js",
+		"/C/xampp/htdocs/richlist/public/lib/angular.min.js",
+		"/C/xampp/htdocs/richlist/public/js/app.js",
+		"/C/xampp/htdocs/richlist/public/styles/sass/_mixins.scss",
+		"/C/xampp/htdocs/richlist/mixture.json",
+		"/C/xampp/htdocs/richlist/public/data/survey.json",
+		"/C/xampp/htdocs/richlist/.sass-cache/e67857653ddd327c8a16e253fc5766ad9a82dbb0/_mixins.scssc",
+		"/C/xampp/htdocs/richlist/compass/config.rb",
+		"/C/xampp/htdocs/richlist/.sass-cache/e67857653ddd327c8a16e253fc5766ad9a82dbb0/style.scssc",
+		"/C/xampp/htdocs/richlist/times-richlist.sublime-project",
+		"/C/xampp/htdocs/richlist/README.md",
+		"/C/xampp/htdocs/richlist/.pid",
+		"/C/xampp/htdocs/richlist/.gitignore",
+		"/C/xampp/apache/conf/extra/httpd-vhosts.conf",
+		"/C/xampp/apache/conf/extra/httpd-xampp.conf",
+		"/C/xampp/htdocs/richlist/public/lib/angular/angular-sanitize.js",
+		"/C/xampp/htdocs/richlist/public/lib/angular/bower.json",
+		"/C/xampp/htdocs/richlist/templates/layouts/layout.liquid",
+		"/C/xampp/htdocs/richlist/public/lib/angular-route.min.js",
+		"/C/xampp/htdocs/richlist/public/partials/result.html",
+		"/C/xampp/htdocs/richlist/templates/welcome.liquid",
+		"/C/xampp/htdocs/richlist/public/scripts/app.js",
+		"/C/xampp/htdocs/foxps-cisco/assets/scss/style-three.scss",
+		"/C/xampp/htdocs/foxps-cisco/foxps-cisco.sublime-workspace",
+		"/C/xampp/htdocs/foxps-cisco/assets/scss/style-two.scss",
+		"/C/xampp/htdocs/foxps-cisco/assets/scss/style-one.scss",
+		"/C/xampp/htdocs/cisco/assets/js/app.js",
+		"/C/xampp/htdocs/cisco/assets/js/unslider.min.js",
+		"/C/xampp/htdocs/cisco/assets/css/normalise.css",
+		"/C/xampp/htdocs/cisco/assets/scss/style-three.scss",
+		"/C/xampp/htdocs/cisco/assets/scss/style-two.scss",
+		"/C/xampp/htdocs/cisco/assets/scss/_mixins.scss",
+		"/C/xampp/htdocs/cisco/assets/js/unslider.js",
+		"/C/xampp/htdocs/cisco/index.html",
+		"/C/xampp/htdocs/cisco/assets/scss/style-one.scss",
+		"/C/Users/Sam/Downloads/unslider-master (1)/unslider-master/src/unslider.js",
+		"/C/Users/Sam/Downloads/unslider-master (1)/unslider-master/src/unslider.min.js",
+		"/C/xampp/htdocs/unslider/src/extras/unslider.fade.js",
+		"/C/xampp/htdocs/cisco/assets/scss/styles.scss",
+		"/C/xampp/htdocs/cisco/assets/scss/_colourOne.scss",
+		"/C/xampp/htdocs/cisco/assets/scss/_colourTwo.scss",
+		"/C/xampp/htdocs/cisco/assets/scss/_colourThree.scss",
+		"/C/Users/Sam/Downloads/unslider-master/unslider-master/src/unslider.js",
+		"/C/xampp/htdocs/unslider/src/unslider.js",
+		"/C/xampp/htdocs/cisco/assets/js/jquery.min.js",
+		"/C/xampp/htdocs/cisco/mixture.json",
+		"/C/xampp/htdocs/cisco/assets/js/jquery.event.move.js"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 90.0,
+		"where_history":
+		[
+			"<open folders>,-*.css",
+			"<open folders>",
+			"*.phtml,C:\\xampp\\htdocs\\redbox\\projects-capezio\\app\\design\\frontend\\capezio\\default\\template",
+			"<open folders>,*.phtml",
+			"<open folders>,*.xm",
+			"<open folders>,*.phtml",
+			"<open folders>",
+			"<open folders>,*.js",
+			"<open folders>"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"two",
+			"li",
+			"button",
+			"margin",
+			"focus",
+			"span-columns",
+			"rem",
+			"fa-",
+			"px",
+			" }",
+			"/mob",
+			"mob",
+			"'image': '/results/author.png',",
+			"{\n",
+			";\n",
+			"('.",
+			"('/');\n",
+			"\n    ",
+			"80",
+			"180deg",
+			"        \n",
+			"Frame",
+			"'image': ''",
+			"question",
+			"}}",
+			"{{",
+			"5",
+			"e.",
+			"padding",
+			"slideshow-more-info",
+			"slideShowPopup",
+			"toggleClass",
+			"info widge",
+			"slideshow-more-info",
+			"Three",
+			"span",
+			"content extra",
+			"span",
+			"                    var mouseX = e.pageX - $(this).offset().left;\n                    var mouseY = e.pageY - $(this).offset().top;",
+			"details",
+			"linkFeedFloppyColour",
+			"floppy-o",
+			"border-ra",
+			"Two",
+			"One",
+			"one",
+			"One",
+			".i",
+			"\n                            $slideShowOne\n                            .children('ul')\n                            .children('li')\n                            .width($slideShowOne.parent().outerWidth());",
+			"   \n",
+			"content",
+			"height",
+			"slideshow",
+			"toggle dropdown",
+			"bgThree",
+			"bgTwo",
+			"bgOne",
+			"One",
+			"r\">'",
+			"<lin",
+			"polina",
+			"two",
+			"ubtitl",
+			"ef=\"#\">",
+			"f=\"\"",
+			"class=\"sales-person-name\"",
+			"jpg",
+			"people.",
+			"1",
+			"DdOne",
+			"wDdOne",
+			"DdOne",
+			"One",
+			"h2",
+			"'a'",
+			"a",
+			"span",
+			"                            <span class=\"content details\">\n                                of executives say that cloud-based collaboration tools accelerate business results. \n                                <a href=\"#\">\n                                    Find out more >\n                                </a>\n                            </span>",
+			"stats\"",
+			"why\"",
+			"why",
+			"Why",
+			"why",
+			"h5 class=\"title\"",
+			"<div class=\"slideshow\">",
+			"f='st",
+			"styl",
+			"fx",
+			"set t",
+			".toggleClass('active');",
+			"data",
+			"eq",
+			"wDd",
+			"owDd",
+			"timeOfDayStyleSwapper",
+			" if ( data.i === 0 )",
+			"slideShowDD",
+			"One",
+			"\" i>",
+			"i>",
+			"i",
+			"DD\"",
+			"current",
+			"id=\"slide",
+			"slideOneDD",
+			"addClass",
+			"One",
+			"')",
+			"add",
+			"span",
+			"div",
+			"text/css'>\");",
+			"Morning",
+			"docu",
+			"50",
+			"68%",
+			"rator\">",
+			"/li>",
+			"=\"\"></",
+			"public",
+			"></",
+			"button",
+			"fieldset",
+			"field",
+			"-prototype",
+			"ember",
+			"\\",
+			"C:\\xampp\\htdocs\\redbox\\projects-capezio\\"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"/>\n",
+			"popup",
+			".icon-flag.",
+			"",
+			"tobar-sprite.png)",
+			"tobar-sprite.png",
+			"best-seller",
+			"                  <a href=\"#userProfile\" data-transition=\"slidefade\">\n                      Profile",
+			"                  <a id=\"showLovedPanel\" href=\"#productPage\" data-transition=\"slidefade\">\n                      My Collections\n                  </a>",
+			"<a href=\"#productPage\" data-transition=\"slidefade\">\n  My Collections\n</a>",
+			"data-iconpos=\"notext\" data-iconsize=\"26\"",
+			"ios-pack-color-grid",
+			"data-theme=\"a\"",
+			"lovedPanel",
+			"alertPage",
+			"collectionPage",
+			"productPage",
+			"homePage",
+			"home",
+			"#saleAlertPage",
+			"#collectionsPage",
+			"#productsPage",
+			"",
+			"div class=\"upload-button btn <?php if (Application_Model_Style::GENDER_MALE !== $this->currentUser['facebook_gender']): ?>btn-female<?php elseif (Application_Model_Style::GENDER_MALE === $this->currentUser['facebook_gender']): ?>btn-male<?php endif; ?>\">\n                <div class=\"upload-button-contents\">\n                    <span class=\"glyphicon glyphicon-picture\"></span>\n                    <div class=\"avatar-button-text\">Upload</div>\n                </div>\n                <input type=\"file\" name=\"file\" id=\"inp-avatar-upload\">\n            <",
+			"#aaaaa",
+			"#FFFFF",
+			".jpg\"",
+			"            <div class=\"productSingleShareProduct addthis_toolbox addthis_default_style\">\n                <a class=\"addthis_button_facebook <?= $view->user['facebook_gender'] ?>\"><span class=\"grabblyphs-share-facebook\"></span></a>\n                <a class=\"addthis_button_twitter <?= $view->user['facebook_gender'] ?>\"><span class=\"grabblyphs-share-twitter\"></span></a>\n                <a class=\"addthis_button_pinterest_share <?= $view->user['facebook_gender'] ?>\"><span class=\"grabblyphs-share-pinterest\"></span></a>\n                <a class=\"addthis_button_google_plusone_share <?= $view->user['facebook_gender'] ?>\"><span class=\"grabblyphs-share-google-plus\"></span></a>\n                <!--a class=\"addthis_button_facebook_like\"><span class=\"grabblyphs-share-facebook-like\"></span></a-->\n                <!--a class=\"addthis_button_compact\"><span class=\"grabblyphs-share-addthis\"></span></a-->\n            </div>",
+			"$this->productWebsiteId()",
+			"'",
+			"filters",
+			"this->filterStyles",
+			"bookmarkletInstructions",
+			"h1.title",
+			"",
+			"->retailer",
+			"$this->retailer['username']",
+			"$this->url(array('controller' => 'retailer', 'action' => 'index', 'user' => $this->retailer['username']), null, true) ?>",
+			"<?php if (Application_Model_Style::GENDER_MALE !== $this->currentUser['facebook_gender']): ?>btn-female<?php elseif (Application_Model_Style::GENDER_MALE === $this->currentUser['facebook_gender']): ?>btn-male<?php endif; ?>",
+			"<?php if (Application_Model_Style::GENDER_MALE !== $this->currentUser['facebook_gender']): ?>f<?php elseif (Application_Model_Style::GENDER_MALE === $this->currentUser['facebook_gender']): ?>m<?php endif; ?>",
+			"<?php if (Application_Model_Style::GENDER_MALE !== $this->currentUser['facebook_gender']): ?>f<?php elseif : (Application_Model_Style::GENDER_MALE === $this->currentUser['facebook_gender'])?>m<?php endif; ?>",
+			";",
+			"",
+			"0",
+			"",
+			"0,",
+			"0",
+			"main-label",
+			"font-family: \"FS Sally Web Regular\", Georgia, 'Times New Roman', Times, serif;\n	font-size-adjust: 0.44;\n	font-weight: normal;\n	font-style: normal;",
+			"font-family: \"FS Sally Web Regular\", Georgia, 'Times New Roman', Times, serif;\nfont-size-adjust: 0.44;\nfont-weight: normal;\nfont-style: normal;",
+			"169fb5",
+			""
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": false
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "Wonderland.Web/Views/Partials/Header.cshtml",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 472,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								472,
+								472
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Razor/Razor.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "Wonderland.Web/Views/Home.cshtml",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 861,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								621,
+								621
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Razor/Razor.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 216.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 2,
+			"sheets":
+			[
+				{
+					"buffer": 2,
+					"file": "Wonderland.Web/css/sass/partials/_grids.scss",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2685,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								2685
+							]
+						],
+						"settings":
+						{
+							"history_list_is_closing": true,
+							"syntax": "Packages/SCSS/SCSS.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1800.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "Wonderland.Web/css/sass/partials/_mixins.scss",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1149,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1149,
+								1149
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SCSS/SCSS.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 126.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "Wonderland.Web/css/sass/partials/_media-queries.scss",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5094,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2072,
+								2072
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SCSS/SCSS.tmLanguage",
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 636.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 2,
+			"sheets":
+			[
+				{
+					"buffer": 5,
+					"file": "Wonderland.Web/css/sass/partials/_forms.scss",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2612,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1405,
+								1405
+							]
+						],
+						"settings":
+						{
+							"history_list_is_closing": true,
+							"syntax": "Packages/SCSS/SCSS.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 144.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "Wonderland.Web/css/sass/partials/_nav.scss",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4219,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1026,
+								1026
+							]
+						],
+						"settings":
+						{
+							"history_list_is_closing": true,
+							"syntax": "Packages/SCSS/SCSS.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 504.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "Wonderland.Web/css/sass/main.scss",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2777,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2553,
+								2553
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/SCSS/SCSS.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1692.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 8,
+					"file": "Wonderland.Web/css/sass/partials/_helpers.scss",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 14346,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								11222,
+								11222
+							]
+						],
+						"settings":
+						{
+							"history_list_is_closing": true,
+							"syntax": "Packages/SCSS/SCSS.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 9936.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "Wonderland.Web/css/sass/partials/_variables.scss",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6152,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2594,
+								2594
+							]
+						],
+						"settings":
+						{
+							"history_list_is_closing": true,
+							"syntax": "Packages/SCSS/SCSS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 1800.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 34.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			],
+			[
+				0,
+				1,
+				1,
+				2
+			],
+			[
+				1,
+				1,
+				2,
+				2
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.5,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			0.5,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "wonderland.sublime-project",
+	"replace":
+	{
+		"height": 48.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"_na",
+				"Wonderland.Web\\css\\sass\\partials\\_nav.scss"
+			],
+			[
+				"mainsc",
+				"Wonderland.Web\\css\\sass\\main.scss"
+			],
+			[
+				"_nav",
+				"Wonderland.Web\\css\\sass\\partials\\_nav.scss"
+			],
+			[
+				"home",
+				"Views\\Home.cshtml"
+			],
+			[
+				"head",
+				"Views\\Partials\\Header.cshtml"
+			],
+			[
+				"var",
+				"css\\sass\\partials\\_variables.scss"
+			],
+			[
+				"help",
+				"css\\sass\\partials\\_helpers.scss"
+			],
+			[
+				"_form",
+				"css\\sass\\partials\\_forms.scss"
+			],
+			[
+				"toolb",
+				"css\\sass\\partials\\addons\\_toolbar.scss"
+			],
+			[
+				"_tool",
+				"css\\sass\\partials\\addons\\_toolbar.scss"
+			],
+			[
+				"helps",
+				"css\\sass\\partials\\_helpers.scss"
+			],
+			[
+				"_too",
+				"css\\sass\\partials\\addons\\_toolbar.scss"
+			],
+			[
+				"media-",
+				"css\\sass\\partials\\_media-queries.scss"
+			],
+			[
+				"mixin",
+				"css\\sass\\partials\\_mixins.scss"
+			],
+			[
+				"grid",
+				"css\\sass\\partials\\_grids.scss"
+			],
+			[
+				"main",
+				"css\\sass\\main.scss"
+			],
+			[
+				"he",
+				"Views\\Partials\\Header.cshtml"
+			],
+			[
+				"_va",
+				"css\\sass\\partials\\_variables.scss"
+			],
+			[
+				".chtml",
+				"Views\\Home.cshtml"
+			],
+			[
+				"mai",
+				"css\\sass\\main.scss"
+			],
+			[
+				"_fro",
+				"css\\sass\\partials\\_forms.scss"
+			],
+			[
+				"_help",
+				"css\\sass\\partials\\_helpers.scss"
+			],
+			[
+				"_type",
+				"css\\sass\\partials\\_type.scss"
+			],
+			[
+				"_grids",
+				"css\\sass\\partials\\_grids.scss"
+			],
+			[
+				"partials_he",
+				"css\\sass\\partials\\_helpers.scss"
+			],
+			[
+				"",
+				"css\\sass\\main.scss"
+			],
+			[
+				"_var",
+				"css\\sass\\partials\\_variables.scss"
+			],
+			[
+				"_bas",
+				"css\\sass\\partials\\_base.scss"
+			],
+			[
+				"mscs",
+				"css\\sass\\main.scss"
+			],
+			[
+				"_hep",
+				"css\\sass\\partials\\_helpers.scss"
+			],
+			[
+				"conf",
+				"compass\\config.rb"
+			],
+			[
+				"scrmi",
+				"public\\js\\scripts.min.js"
+			],
+			[
+				"dir",
+				"public\\js\\directives.js"
+			],
+			[
+				"con",
+				"public\\js\\controllers.js"
+			],
+			[
+				"contrm",
+				"public\\js\\controllers.min.js"
+			],
+			[
+				"cont",
+				"public\\js\\controllers.js"
+			],
+			[
+				"ap",
+				"public\\js\\app.js"
+			],
+			[
+				"anr",
+				"public\\lib\\angular-route.min.js"
+			],
+			[
+				"an",
+				"public\\lib\\angular.min.js"
+			],
+			[
+				"sc",
+				"public\\js\\scripts.js"
+			],
+			[
+				"m",
+				"mixture.json"
+			],
+			[
+				"mjs",
+				"mixture.json"
+			],
+			[
+				"scrip",
+				"public\\js\\scripts.js"
+			],
+			[
+				"_mic",
+				"public\\styles\\sass\\_mixins.scss"
+			],
+			[
+				"que",
+				"public\\partials\\question.html"
+			],
+			[
+				"mixi",
+				"public\\styles\\sass\\_mixins.scss"
+			],
+			[
+				"inde",
+				"richlist\\public\\index.html"
+			],
+			[
+				"we",
+				"richlist\\public\\partials\\welcome.html"
+			],
+			[
+				"morscss",
+				"assets/scss/morning.scss"
+			],
+			[
+				"mor",
+				"assets/css/morning.css"
+			],
+			[
+				"threscss",
+				"assets/scss/style-three.scss"
+			],
+			[
+				"threescss",
+				"assets/scss/style-three.scss"
+			],
+			[
+				"twoscss",
+				"assets/scss/style-two.scss"
+			],
+			[
+				"stylscss",
+				"assets/scss/style-one.scss"
+			],
+			[
+				"un",
+				"assets/js/unslider.min.js"
+			],
+			[
+				"js",
+				"assets/js/unslider.js"
+			],
+			[
+				"unsl",
+				"assets/js/unslider.js"
+			],
+			[
+				"uns",
+				"assets/js/unslider.min.js"
+			],
+			[
+				"sw",
+				"assets/js/jquery.event.swipe.js"
+			],
+			[
+				"event",
+				"assets/js/jquery.event.move.js"
+			],
+			[
+				"nav",
+				"templates/includes/navigation.liquid"
+			],
+			[
+				"sty",
+				".sass-cache/fbb70a955905886fc66ebcac7429e5503fefb0a9/styles.scssc"
+			],
+			[
+				"caphead",
+				"app/design/frontend/capezio/default/template/page/html/head.phtml"
+			],
+			[
+				"cap1c",
+				"app/design/frontend/capezio/default/template/page/1column.phtml"
+			],
+			[
+				"capheader",
+				"app/design/frontend/capezio/default/template/page/html/header.phtml"
+			],
+			[
+				"capfooter",
+				"app/design/frontend/capezio/default/template/page/html/footer.phtml"
+			],
+			[
+				"shoe",
+				"app/design/frontend/base/default/template/shoewidget/shoewidget.phtml"
+			],
+			[
+				"redbox",
+				"js/redboxdigital/redbox.js"
+			],
+			[
+				"capcs",
+				"skin/frontend/capezio/default/js/cscriptsv2.js"
+			],
+			[
+				"capstylecs",
+				"skin/frontend/capezio/default/css/styles.css"
+			],
+			[
+				"c",
+				"composer.json"
+			],
+			[
+				"gmap",
+				"app/design/frontend/capezio/default/template/redbox/shopfinder/gmap_shops.phtml"
+			],
+			[
+				"stores",
+				"app/design/frontend/enterprise/default/template/page/switch/stores.phtml"
+			],
+			[
+				"st",
+				"errors/default/css/styles.css"
+			],
+			[
+				"frontend/capezio/default/template/reports/widget/viewed/content/viewed_grid.phtml",
+				"app/design/frontend/capezio/default/template/reports/widget/viewed/content/viewed_grid.phtml"
+			],
+			[
+				"capstyle",
+				"skin/frontend/capezio/default/css/styles.css"
+			],
+			[
+				"capcscripts",
+				"skin/frontend/capezio/default/js/cscriptsv2.js"
+			],
+			[
+				"cap3col",
+				"app/design/frontend/capezio/default/template/page/3columns.phtml"
+			],
+			[
+				"cap2col",
+				"app/design/frontend/capezio/default/template/page/2columns-left.phtml"
+			],
+			[
+				"capeziocolumnphtml",
+				"app/design/frontend/capezio/default/template/page/1column.phtml"
+			],
+			[
+				"capcolumphtml",
+				"app/design/frontend/capezio/default/template/page/2columns-right.phtml"
+			],
+			[
+				"capez/1",
+				"app/design/frontend/capezio/default/template/page/1column.phtml"
+			],
+			[
+				"capshop",
+				"app/design/frontend/capezio/default/template/redbox/shopfinder/gmap_shops.phtml"
+			],
+			[
+				"capstores",
+				"app/design/frontend/capezio/default/template/page/switch/stores.phtml"
+			],
+			[
+				"slideshowphtml",
+				"app/design/frontend/responsive/default/template/infortis/ultraslideshow/slideshow.phtml"
+			],
+			[
+				"slidexml",
+				"app/design/frontend/responsive/default/layout/infortis_ultraslideshow.xml"
+			],
+			[
+				"responsi/l",
+				"app/design/frontend/responsive/default/layout/local.xml"
+			],
+			[
+				"style-ie",
+				"skin/frontend/capezio/default/css/styles-ie8.css"
+			],
+			[
+				"caploca",
+				"app/design/frontend/capezio/default/layout/local.xml"
+			],
+			[
+				"apploca",
+				"app/etc/local.xml"
+			],
+			[
+				"capcatvie",
+				"app/design/frontend/capezio/default/template/catalog/category/view.phtml"
+			],
+			[
+				"shopfinderlis",
+				"app/design/frontend/capezio/default/template/redbox/shopfinder/list.phtml"
+			],
+			[
+				"flintf",
+				"app/design/frontend/base/default/layout/flint_feefo.xml"
+			],
+			[
+				"shopfindxml",
+				"app/design/frontend/base/default/layout/redbox/shopfinder.xml"
+			],
+			[
+				"caplocal",
+				"app/design/frontend/capezio/default/layout/local.xml"
+			],
+			[
+				"capprodview",
+				"app/design/frontend/capezio/default/template/catalog/product/view.phtml"
+			],
+			[
+				"capsty",
+				"skin/frontend/capezio/default/css/styles.css"
+			],
+			[
+				"additiona",
+				"js/redbox/shopfinder/additional.js"
+			],
+			[
+				"caplayout",
+				"skin/frontend/capezio/default/css/layout.css"
+			],
+			[
+				"capstyles",
+				"skin/frontend/capezio/default/css/styles.css"
+			],
+			[
+				"style",
+				"errors/default/css/styles.css"
+			],
+			[
+				"capezio/style",
+				"skin/frontend/capezio/default/css/styles.css"
+			],
+			[
+				"cscr",
+				"skin/frontend/capezio/default/js/cscripts.js"
+			],
+			[
+				"phtml",
+				"downloader/template/footer.phtml"
+			],
+			[
+				"1-col",
+				"app/design/frontend/foundation/default/template/page/1column-checkout.phtml"
+			],
+			[
+				"scss/comp",
+				"skin/frontend/foundation/default/scss/components/_account.scss"
+			],
+			[
+				"foundcomp",
+				"skin/frontend/foundation/default/scss/components/_base.scss"
+			],
+			[
+				"foundas",
+				"skin/frontend/foundation/default/foundation/scss/foundation.scss"
+			],
+			[
+				"local",
+				"app/etc/local.xml"
+			],
+			[
+				"tobarstyle",
+				"htdocs/skin/frontend/tobar/default/css/styles.css"
+			],
+			[
+				"tobarcss",
+				"htdocs/js/extjs/css/toolbar.css"
+			],
+			[
+				"tobarloc",
+				"htdocs/app/design/frontend/tobar/default/layout/local.xml"
+			],
+			[
+				"tobarheader",
+				"htdocs/app/design/frontend/tobar/default/template/page/html/header.phtml"
+			],
+			[
+				"frontend/tobar/default/template/persistent/customer/form/login.phtml",
+				"htdocs/app/design/frontend/tobar/default/template/persistent/customer/form/login.phtml"
+			],
+			[
+				"tobarcat",
+				"htdocs/app/design/frontend/tobar/default/template/catalog/product/view.phtml"
+			],
+			[
+				"featured",
+				"htdocs/app/design/frontend/tobar/default/template/catalog/product/featured.phtml"
+			],
+			[
+				"tobarcart",
+				"htdocs/app/design/frontend/tobar/default/template/checkout/cart.phtml"
+			],
+			[
+				"ajaxca",
+				"htdocs/skin/frontend/base/default/css/ajaxcart.css"
+			],
+			[
+				"tobarstyles",
+				"htdocs/skin/frontend/tobar/default/css/styles.css"
+			],
+			[
+				"tobarlay",
+				"htdocs/skin/frontend/tobar/default/css/layout.css"
+			],
+			[
+				"tobarcheckou",
+				"htdocs/app/design/frontend/tobar/default/template/checkout/cart.phtml"
+			],
+			[
+				"tobarcheckout",
+				"htdocs/app/design/frontend/tobar/default/template/onestepcheckout/checkout.phtml"
+			],
+			[
+				"tobarcatpr",
+				"htdocs/app/design/frontend/tobar/default/template/catalog/product/view.phtml"
+			],
+			[
+				"_shared",
+				"htdocs/skin/frontend/tobar/default/css/infortis/_shared/dropdown.css"
+			],
+			[
+				"tobarlocal",
+				"htdocs/app/design/frontend/tobar/default/layout/local.xml"
+			],
+			[
+				"tobarstye",
+				"htdocs/skin/frontend/tobar/default/css/styles.css"
+			],
+			[
+				"tobarcatlist",
+				"htdocs/app/design/frontend/tobar/default/template/catalog/product/list.phtml"
+			],
+			[
+				"frontend/tobar/default/template/targetrule/checkout/cart/crosssell.phtml",
+				"htdocs/app/design/frontend/tobar/default/template/targetrule/checkout/cart/crosssell.phtml"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+			[
+				"",
+				"/C/Users/Sam/Documents/Web dev/Redbox/tobarb2b.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": false,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 277.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
