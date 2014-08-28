@@ -30,12 +30,17 @@
             @foreach (PromotionTile promotionTile in Model.PromotionTiles)
             {
                 <li class="frame">
-                    @promotionTile.AltText
-                    <img src="@promotionTile.Image.GetResponsiveCropUrl("Square")" />
+                    <img src="@promotionTile.Image.GetResponsiveCropUrl("Square")" alt="@promotionTile.AltText" />
                     <img src="@promotionTile.OverlayImage.Url" />        
                 </li>            
             }
             </ul>
+        </section>
+        <section id="shareWonderland">
+            
+        </section>
+        <section id="twitterFeed">
+            
         </section>
       </div>
 </div>
