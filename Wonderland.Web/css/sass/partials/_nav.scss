@@ -30,11 +30,11 @@
   @extend %row-width;
   ul.toolbar {
     a {
-      @extend %large;
       @extend %inline;
       color: $wonderlandPrimaryColour;
       font-weight: bold;
-      padding: 2.26rem;
+      font-size: 0.9rem;
+      padding: 2.26rem 1.2rem;
       text-transform: uppercase;
       &:hover {
         text-decoration: underline;
