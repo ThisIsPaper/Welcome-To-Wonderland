@@ -11,6 +11,7 @@ namespace Wonderland.Logic.Models.Content
         public ForgottenPassword(IPublishedContent content)
             : base(content)
         {
+            this.ShowHeaderAndFooter = false;
         }
     }
 }
