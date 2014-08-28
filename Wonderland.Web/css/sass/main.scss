@@ -176,6 +176,7 @@ main { padding-top: 3.5rem; }
   @extend %frame;
   width: 30%;
   margin: $wonderlandMargin;
+  padding: 0.5rem;
   img {
     &:first-child {
       width: 100%;
