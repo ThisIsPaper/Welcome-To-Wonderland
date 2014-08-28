@@ -239,8 +239,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="default.aspx" />
-    <Content Include="Global.asax" />
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -280,6 +278,14 @@
     <Content Include="Views\Partials\PartyKit.cshtml" />
     <Content Include="Views\PartyIdeaCategory.cshtml" />
     <Content Include="Views\Partials\PartyIdeaTiles.cshtml" />
+    <Content Include="Views\ForgottenPassword.cshtml" />
+    <Content Include="Views\Login.cshtml" />
+    <Content Include="Views\ResetPassword.cshtml" />
+    <Content Include="Views\RegisterGuest.cshtml" />
+    <Content Include="Views\RegisterGuestConfirmation.cshtml" />
+    <Content Include="Views\RegisterHost.cshtml" />
+    <Content Include="Views\RegisterHostPartyKit.cshtml" />
+    <Content Include="Views\RegisterHostPartyUrl.cshtml" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>

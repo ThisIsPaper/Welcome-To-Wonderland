@@ -4,11 +4,11 @@ namespace Wonderland.Logic.Models.Content
     using Umbraco.Core.Models;
     using Umbraco.Web;
 
-    public class ResetPassword : SitePage
+    public class RegisterGuest : SitePage
     {
-        public new const string Alias = "ResetPassword";
+        public new const string Alias = "RegisterGuest";
 
-        public ResetPassword(IPublishedContent content)
+        public RegisterGuest(IPublishedContent content)
             : base(content)
         {
         }

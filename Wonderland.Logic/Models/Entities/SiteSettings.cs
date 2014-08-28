@@ -18,6 +18,7 @@ namespace Wonderland.Logic.Models.Entities
             this.TwitterUrl = home.TwitterUrl;
             this.GooglePlusUrl = home.GooglePlusUrl;
             this.FooterCopy = home.FooterCopy;
+            this.RegisterHostUrl = home.Children<RegisterHost>().Single().Url;
             this.LoginUrl = home.Children<Login>().Single().Url;
         }
 
@@ -36,6 +37,8 @@ namespace Wonderland.Logic.Models.Entities
         public string GooglePlusUrl { get; private set; }
 
         public string FooterCopy { get; private set; }
+
+        public string RegisterHostUrl { get; private set; }
 
         public string LoginUrl { get; private set; }
     }
