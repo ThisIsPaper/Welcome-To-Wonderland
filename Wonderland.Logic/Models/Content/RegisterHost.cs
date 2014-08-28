@@ -11,7 +11,6 @@ namespace Wonderland.Logic.Models.Content
         public RegisterHost(IPublishedContent content)
             : base(content)
         {
-            this.ShowHeaderAndFooter = false;
         }
     }
 }

@@ -11,7 +11,6 @@ namespace Wonderland.Logic.Models.Content
         public Login(IPublishedContent content)
             : base(content)
         {
-            this.ShowHeaderAndFooter = false;
         }
 
         public string PageHeading

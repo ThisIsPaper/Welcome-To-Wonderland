@@ -1,7 +1,7 @@
 ﻿@inherits UmbracoViewPage<SiteSettings> 
 <header id="siteHeader">
     <nav class="nav">
-    <a class="btn-primary">Host a party ></a>
+    <a class="btn-primary" href="@Model.RegisterHostUrl">Host a party ></a>
     <ul class="toolbar">
     @foreach (SitePage sitePage in Model.HeaderNavigation)
     {

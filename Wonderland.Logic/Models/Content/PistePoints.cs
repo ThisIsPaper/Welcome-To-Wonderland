@@ -33,11 +33,11 @@ namespace Wonderland.Logic.Models.Content
             }
         }
 
-        public string HostAPartyLinkText
+        public string RegisterHostLinkText
         {
             get
             {
-                return this.GetPropertyValue<string>("hostAPartyLinkText");
+                return this.GetPropertyValue<string>("registerHostLinkText");
             }
         }
 
