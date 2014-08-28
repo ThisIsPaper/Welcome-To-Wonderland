@@ -26,16 +26,16 @@
             </div>
         </section>
         <section id="promoTiles">
-          <ul>
+            <ul class="promo-tiles">
             @foreach (PromotionTile promotionTile in Model.PromotionTiles)
             {
-              <li>
-                @promotionTile.AltText
-                <img src="@promotionTile.Image.GetResponsiveCropUrl("Square")" />
-                <img src="@promotionTile.OverlayImage.Url" />        
-              </li>            
+                <li class="frame">
+                    @promotionTile.AltText
+                    <img src="@promotionTile.Image.GetResponsiveCropUrl("Square")" />
+                    <img src="@promotionTile.OverlayImage.Url" />        
+                </li>            
             }
-          </ul>
+            </ul>
         </section>
       </div>
 </div>
