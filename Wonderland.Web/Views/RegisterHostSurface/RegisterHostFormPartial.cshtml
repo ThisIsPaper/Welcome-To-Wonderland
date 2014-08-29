@@ -6,7 +6,23 @@
 {
     @Html.AntiForgeryToken()
     
-    @Html.EditorForModel()
+    <div class="editor-label">
+        @Html.LabelFor(x => x.EmailAddress)
+    </div>
+    <div class="editor-field">
+        @Html.EditorFor(x => x.EmailAddress)
+        @Html.ValidationMessageFor(x => x.EmailAddress)
+        @Html.ValidationMessage("EmailValidation")    
+    </div>
+
+    @Html.EditorForField(x => x.Password)
+            
+    <div class="editor-label">
+        @Html.LabelFor(x => x.MarketingSource)
+    </div>
+    <div class="editor-field">
+        @Html.DropDownListFor(x => x.MarketingSource, (SelectList)this.ViewBag.MarketingSources)
+    </div>
     
     <button type="submit">Submit</button>
 }
