@@ -98,7 +98,6 @@ main { padding-top: 3.5rem; }
   background: image-url('wood_texture.jpg') repeat top left;
   background-size: 100% 50%;
   margin-top: -1.2rem;
-  padding-bottom: 12rem;
 }
 
 #heroGraphic {
@@ -112,12 +111,15 @@ main { padding-top: 3.5rem; }
   margin: 0;
 
   .hero-title {
-    padding-top: 11.66%;
+    background: inline-image('welcome-to-wonderland.svg') no-repeat center;
+    padding: 30rem 0 0 0;
+    margin: 0 auto;
+    width: 54rem;
   }
 
   .actions {
     @extend %row-width;
-    margin: 2rem -0.5rem
+    margin: -8rem -0.5rem
   }
 
   a.btn-primary {
@@ -175,8 +177,8 @@ main { padding-top: 3.5rem; }
 .frame {
   @extend %frame;
   width: 30%;
-  margin: $wonderlandMargin;
-  padding: 0.5rem;
+  margin: 1rem;
+  padding: 1rem;
   &:first-child {
     margin-left: 0;
   }
@@ -215,14 +217,14 @@ main { padding-top: 3.5rem; }
   @extend %pull-left;
   background: image-url('home-share-ph.png') no-repeat;
   padding: 7rem 15.2rem;
-  margin: 3.1rem -1.5rem;
+  margin: 3.1rem 1.5rem;
 }
 
 
 #twitterFeed {
   @extend %pull-right;
   background: image-url('home-twitter-ph.png') no-repeat;
-  padding: 16rem 17.5rem 12rem;
+  padding: 16rem 17.5rem 13rem;
   margin: 2.2rem 1.4rem 0 0;
 }
 
@@ -234,4 +236,10 @@ footer {
     height: 4rem;
     margin-top: -4rem;
   }
+  #placeholder {
+    display: block;
+    background: inline-image('footer-ph.png') no-repeat center 100%;
+    height: 13.5rem;
+  }
+  .footer-primary, .footer-secondary { display: none !important; }
 }
