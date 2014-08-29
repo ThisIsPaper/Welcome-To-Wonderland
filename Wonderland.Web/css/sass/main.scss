@@ -90,6 +90,21 @@ Imports
     background: inline-image('header_texture.png') repeat center;
     padding-top: 1.2rem;
   }
+
+  &.compressed {
+    > a {
+      margin-top: 0.5rem;
+    }
+
+    .toolbar a {
+      padding-top: 1.35em;
+    }
+
+    .wonderland-crest-logo {
+      background: inline-image('wonderland-logo.png') no-repeat center;
+      padding: 2rem 3rem;
+    }
+  }
 }
 
 main { padding-top: 3.5rem; }
