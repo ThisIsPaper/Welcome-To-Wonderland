@@ -7,6 +7,7 @@ namespace Wonderland.Logic.Controllers.Surface
     using Umbraco.Web.Mvc;
     using Wonderland.Logic.Models.Content;
     using Wonderland.Logic.Models.Forms;
+    using Wonderland.Logic.Models.Members;
 
     public class RegisterHostSurfaceController : SurfaceController
     {
@@ -27,7 +28,7 @@ namespace Wonderland.Logic.Controllers.Surface
 
         public JsonResult ValidateIsEmailAvailable(string emailAddress)
         {
-            return Json(this.IsEmailAvailable(emailAddress), JsonRequestBehavior.AllowGet);
+            return Json(this.Members.GetByUsername(emailAddress) == null, JsonRequestBehavior.AllowGet);
         }
 
         [HttpPost]
@@ -39,22 +40,17 @@ namespace Wonderland.Logic.Controllers.Surface
                 return this.CurrentUmbracoPage();
             }
 
-            if (!this.IsEmailAvailable(registerHostForm.EmailAddress))
+            // safety check here as the Umbraco membership service allows the creation of duplicate users !
+            if (this.Members.GetByUsername(registerHostForm.EmailAddress) != null)
             {
                 this.ModelState.AddModelError("EmailValidation", "Email already registered");
                 return this.CurrentUmbracoPage();
             }
 
-            // TODO: create new member and login
-
-                                    
-            // have to redirect as next form has a differnt main view (it doesn't have the header / footer)
+            Partier.RegisterHost(registerHostForm.EmailAddress, registerHostForm.Password, registerHostForm.MarketingSource);
+        
+            // redirecting as next form has a different main view (it doesn't have the header / footer)
             return this.RedirectToUmbracoPage(this.CurrentPage.Children.Single(x => x.DocumentTypeAlias == RegisterHostPartyKit.Alias));
-        }
-
-        private bool IsEmailAvailable(string emailAddress)
-        {            
-            return this.Members.GetByUsername(emailAddress) == null;
-        }
+        }      
     }
 }
