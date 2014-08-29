@@ -1,6 +1,7 @@
 ﻿
 namespace Wonderland.Logic.Controllers.Surface
 {
+    using System.Collections.Generic;
     using System.Linq;
     using System.Web.Mvc;
     using Umbraco.Web.Mvc;
@@ -16,7 +17,10 @@ namespace Wonderland.Logic.Controllers.Surface
             RegisterHost registerHost = (RegisterHost)this.CurrentPage;
 
             // add marketing sources so view can build drop down 
-            this.ViewBag.MarketingSources = new SelectList(registerHost.MarketingSources);
+            List<string> marketingSources = new List<string>(registerHost.MarketingSources);
+            marketingSources.Insert(0, string.Empty);
+
+            this.ViewBag.MarketingSources = new SelectList(marketingSources);
 
             return this.PartialView("RegisterHostFormPartial", new RegisterHostForm());
         }
@@ -41,7 +45,7 @@ namespace Wonderland.Logic.Controllers.Surface
                 return this.CurrentUmbracoPage();
             }
 
-            // TODO: create new member
+            // TODO: create new member and login
 
                                     
             // have to redirect as next form has a differnt main view (it doesn't have the header / footer)
