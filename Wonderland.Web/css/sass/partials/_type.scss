@@ -199,9 +199,6 @@ $zoo: $phi - $xoo * (1 - ($wonderlandContainer-width / $yoo));
 a {
   @extend %transition-all;
   color: $wonderlandInverseTextColour;
-  &:visited {
-    color: darken($wonderlandTextColour, 30);
-  }
   text-decoration: none;
 }
 

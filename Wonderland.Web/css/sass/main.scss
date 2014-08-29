@@ -61,8 +61,7 @@ Imports
     }
   }
   ul.toolbar {
-    max-width: 66.6%;
-    width: 56%;
+    width: 48rem;
     > li {
       @for $i from 1 through 4 {
         @if $i < 3 {
@@ -84,6 +83,7 @@ Imports
     padding: 4.4rem 6.1rem;
     margin: 0.7rem -6.3rem;
     top: 0;
+    text-indent: -99999rem;
   }
   .snow-brush-overlay {
     @extend %row-width; 
@@ -96,7 +96,7 @@ main { padding-top: 3.5rem; }
 
 #homeBg {
   background: image-url('wood_texture.jpg') repeat top left;
-  background-size: contain;
+  background-size: 100% 50%;
   margin-top: -1.2rem;
   padding-bottom: 12rem;
 }
@@ -107,7 +107,7 @@ main { padding-top: 3.5rem; }
   height: 35rem;
   background-image: image-url('hero-ph.jpg');
   background-repeat: no-repeat;
-  background-position: top center;
+  background-position: center;
   background-size: cover;
   margin: 0;
 
@@ -177,14 +177,22 @@ main { padding-top: 3.5rem; }
   width: 30%;
   margin: $wonderlandMargin;
   padding: 0.5rem;
+  &:first-child {
+    margin-left: 0;
+  }
+  &:last-child {
+    margin-right: 0;
+  }
   img {
     &:first-child {
+      margin-left: 0;
       width: 100%;
     }
     &:last-child {
       @extend %absolute;
       bottom: 0;
       left: 0;
+      margin-right: 0;
       width: 50%
     }
   } 
@@ -206,16 +214,16 @@ main { padding-top: 3.5rem; }
 #shareWonderland {
   @extend %pull-left;
   background: image-url('home-share-ph.png') no-repeat;
-  padding: 7rem 16rem;
-  margin: 3.1rem -3.5rem;
+  padding: 7rem 15.2rem;
+  margin: 3.1rem -1.5rem;
 }
 
 
 #twitterFeed {
   @extend %pull-right;
   background: image-url('home-twitter-ph.png') no-repeat;
-  padding: 16rem 18rem 8rem;
-  margin: 2.2rem 5.4rem 0 0;
+  padding: 16rem 17.5rem 12rem;
+  margin: 2.2rem 1.4rem 0 0;
 }
 
 footer {

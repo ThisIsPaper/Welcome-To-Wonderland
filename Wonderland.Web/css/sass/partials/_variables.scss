@@ -118,7 +118,7 @@ $wonderlandBorder: $wonderlandBorderWidth $wonderlandBorderStyle $wonderlandBord
 /* =============================================================================
 Media query variables
 ========================================================================== */
-$wonderlandBreakpointMain: (screen) (max-width 1024px);
+$wonderlandBreakpointMain: (screen) (max-width 768px);
 $wonderlandQueryIphone3: (only screen) (min-device-width 320px) (max-device-width 480px) (1 -webkit-device-pixel-ratio);
 $wonderlandQueryIphone3Portrait: (only screen) (min-device-width 320px) (max-device-width 480px) (1 -webkit-device-pixel-ratio) (orientation portrait);
 $wonderlandQueryIphone3Landscape: (only screen) (min-device-width 320px) (max-device-width 480px) (1 -webkit-device-pixel-ratio) (orientation landscape);
