@@ -231,6 +231,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Content Include="Views\RegisterHostPartyKitSurface\RegisterHostPartyKitFormPartial.cshtml" />
+    <None Include="Views\RegisterHostSurface\RegisterHostFormPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Wonderland.Logic\Wonderland.Logic.csproj">

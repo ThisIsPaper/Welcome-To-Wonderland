@@ -1,6 +1,7 @@
 ﻿
 namespace Wonderland.Logic.Models.Content
 {
+    using System.Collections.Generic;
     using Umbraco.Core.Models;
     using Umbraco.Web;
 
@@ -11,6 +12,14 @@ namespace Wonderland.Logic.Models.Content
         public RegisterHost(IPublishedContent content)
             : base(content)
         {
+        }
+
+        public IEnumerable<string> MarketingSource
+        {
+            get
+            {
+                return this.GetPropertyValue<string[]>("marketingSource");
+            }
         }
     }
 }

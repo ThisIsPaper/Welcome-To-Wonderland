@@ -1,5 +1,5 @@
 ﻿
-namespace Wonderland.Logic.Controllers
+namespace Wonderland.Logic.Controllers.Render
 {
     using System;
     using System.Web.Mvc;

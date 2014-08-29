@@ -107,6 +107,7 @@
       <HintPath>..\packages\UmbracoCms.Core.7.1.5\lib\SQLCE4Umbraco.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.SqlServerCe, Version=4.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <Private>True</Private>
@@ -193,7 +194,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controllers\LeaderboardController.cs" />
+    <Compile Include="Controllers\Render\LeaderboardController.cs" />
+    <Compile Include="Controllers\Surface\RegisterHostPartyKitSurfaceController.cs" />
+    <Compile Include="Controllers\Surface\RegisterHostSurfaceController.cs" />
     <Compile Include="Enums\LeaderboardType.cs" />
     <Compile Include="Enums\PartyIdeaTileSize.cs" />
     <Compile Include="Events\SetPublishedContentModelFactory.cs" />
@@ -231,6 +234,8 @@
     <Compile Include="Models\Entities\QuestionAndAnswer.cs" />
     <Compile Include="Models\Entities\Reward.cs" />
     <Compile Include="Models\Entities\SiteSettings.cs" />
+    <Compile Include="Models\Forms\RegisterHostForm.cs" />
+    <Compile Include="Models\Forms\RegisterHostPartyKitForm.cs" />
     <Compile Include="Models\Media\Image.cs" />
     <Compile Include="Models\Members\Partier.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -241,8 +246,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controllers\Api\" />
-    <Folder Include="Controllers\Render\" />
-    <Folder Include="Controllers\Surface\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

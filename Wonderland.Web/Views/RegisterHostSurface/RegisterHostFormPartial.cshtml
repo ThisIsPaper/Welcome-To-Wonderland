@@ -1,0 +1,12 @@
+﻿@model RegisterHostForm
+
+<h1>Register Host Form Partial</h1>
+
+@using(Html.BeginUmbracoForm<RegisterHostSurfaceController>("RegisterHostForm"))
+{
+    @Html.AntiForgeryToken()
+    
+    @Html.EditorForModel()
+    
+    <button type="submit">Submit</button>
+}

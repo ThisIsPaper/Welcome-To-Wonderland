@@ -1,0 +1,12 @@
+﻿@model RegisterHostPartyKitForm
+
+<h1>Register Host Party Kit Form Partial</h1>
+
+@using (Html.BeginUmbracoForm<RegisterHostPartyKitSurfaceController>("RegisterHostPartyKitForm"))
+{
+    @Html.AntiForgeryToken()
+
+    @Html.EditorForModel()
+
+    <button type="submit">Submit</button>
+}
