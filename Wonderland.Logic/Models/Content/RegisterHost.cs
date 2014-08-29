@@ -14,11 +14,11 @@ namespace Wonderland.Logic.Models.Content
         {
         }
 
-        public IEnumerable<string> MarketingSource
+        public IEnumerable<string> MarketingSources
         {
             get
             {
-                return this.GetPropertyValue<string[]>("marketingSource");
+                return this.GetPropertyValue<string[]>("marketingSources");
             }
         }
     }
