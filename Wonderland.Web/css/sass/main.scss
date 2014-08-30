@@ -233,11 +233,11 @@ main { padding-top: 3.5rem; }
   @for $i from 1 through 6 {
     &:nth-child( #{ $i } ) {
       @if $i % 2 == 0 {
-        $rand: (random( 333 ) * 0.1) + deg; // generate positive random number (converted to float)
+        $rand: (random( 23 ) * 0.1) + deg; // generate positive random number (converted to float)
           @include transform( rotate( $rand ) );
       } 
       @else {
-          $rand: ( (random( 333 ) * 0.1 ) * - 1 )  + deg;  // generate negative random number
+          $rand: ( (random( 23 ) * 0.1 ) * - 1 )  + deg;  // generate negative random number
           @include transform( rotate( $rand ) );
       }
     }
