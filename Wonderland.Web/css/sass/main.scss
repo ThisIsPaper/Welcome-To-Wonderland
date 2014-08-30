@@ -46,10 +46,11 @@ Imports
   z-index: 999; 
   nav { 
     @extend %transition-all;    
+    @extend %use-GPU-hack;  
     background: white; 
     > a {
       @extend %absolute; 
-      @extend %use-GPU-hack;
+      @extend %use-GPU-hack;  
       top: 0;
       &:first-child { 
         left: 0;
@@ -62,7 +63,8 @@ Imports
       }
     }
   }
-  ul.toolbar {
+  .toolbar {
+    @extend %transition-all;    
     @extend %use-GPU-hack;
     width: 48rem;
     > li {
@@ -80,13 +82,10 @@ Imports
     }
   }
   .wonderland-logo-bg {
-    @extend %absolute;
-    @extend %use-GPU-hack;
     background: image-url('wonderland-crest.svg') no-repeat;
     left: 50%;
     padding: 4rem 0 3rem;
     margin: 1rem -2.93rem;
-    top: 0;
     p { 
       text-indent: -999rem
     }
@@ -107,17 +106,15 @@ Imports
   }
 
   &.compressed {
-    nav > a {
+    nav a {
       margin-top: 1rem;
     }
     .wonderland-logo-bg { 
-      height: 0;
-      padding: 0; 
-      max-height: 0;
+      padding: 0 0; 
     }
     .toolbar {
       width: 55rem;
-      a { padding: 2rem 0.5rem 1rem; }
+      a { padding: 0.5rem 0.5rem 1.5rem; }
     } 
 
   }
