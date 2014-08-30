@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"pa",
+				"padding"
+			],
+			[
+				"max",
+				"max-height"
+			],
+			[
 				"nth",
 				"nth-child"
 			],
@@ -22,10 +30,6 @@
 			[
 				"te",
 				"text-decoration"
-			],
-			[
-				"pa",
-				"padding-left"
 			],
 			[
 				"Angula",
@@ -54,10 +58,6 @@
 			[
 				"add",
 				"addClass	addClass"
-			],
-			[
-				"max",
-				"max-width"
 			],
 			[
 				"bg",
@@ -523,7 +523,7 @@
 			"file": "Wonderland.Web/Views/Home.cshtml",
 			"settings":
 			{
-				"buffer_size": 1312,
+				"buffer_size": 1339,
 				"line_ending": "Windows"
 			}
 		},
@@ -531,7 +531,7 @@
 			"file": "Wonderland.Web/Views/Partials/Footer.cshtml",
 			"settings":
 			{
-				"buffer_size": 962,
+				"buffer_size": 1135,
 				"line_ending": "Windows"
 			}
 		},
@@ -539,7 +539,7 @@
 			"file": "Wonderland.Web/Views/Partials/Header.cshtml",
 			"settings":
 			{
-				"buffer_size": 502,
+				"buffer_size": 635,
 				"line_ending": "Windows"
 			}
 		},
@@ -552,10 +552,10 @@
 			}
 		},
 		{
-			"file": "Wonderland.Web/css/sass/partials/_type.scss",
+			"file": "Wonderland.Web/css/sass/partials/_helpers.scss",
 			"settings":
 			{
-				"buffer_size": 5502,
+				"buffer_size": 14743,
 				"line_ending": "Windows"
 			}
 		},
@@ -587,7 +587,7 @@
 			"file": "Wonderland.Web/css/sass/partials/_nav.scss",
 			"settings":
 			{
-				"buffer_size": 4229,
+				"buffer_size": 4283,
 				"line_ending": "Windows"
 			}
 		},
@@ -595,7 +595,7 @@
 			"file": "Wonderland.Web/css/sass/main.scss",
 			"settings":
 			{
-				"buffer_size": 5209,
+				"buffer_size": 6159,
 				"line_ending": "Windows"
 			}
 		},
@@ -603,47 +603,15 @@
 			"file": "Wonderland.Web/.compass/config.rb",
 			"settings":
 			{
-				"buffer_size": 654,
+				"buffer_size": 564,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "Wonderland.Web/css/sass/partials/_helpers.scss",
+			"file": "Wonderland.Web/scripts/main.js",
 			"settings":
 			{
-				"buffer_size": 14695,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "Wonderland.Web/css/sass/partials/_base.scss",
-			"settings":
-			{
-				"buffer_size": 1712,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "Wonderland.Web/css/main.css",
-			"settings":
-			{
-				"buffer_size": 0,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "Wonderland.Web/css/sass/partials/_variables.scss",
-			"settings":
-			{
-				"buffer_size": 6148,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "Wonderland.Web/mixture.json",
-			"settings":
-			{
-				"buffer_size": 1188,
+				"buffer_size": 288,
 				"line_ending": "Windows"
 			}
 		}
@@ -761,11 +729,23 @@
 	},
 	"file_history":
 	[
+		"/C/xampp/htdocs/wonderland/Wonderland.Web/css/sass/partials/_variables.scss",
+		"/C/xampp/htdocs/wonderland/Wonderland.Web/css/sass/main.scss",
+		"/C/xampp/htdocs/wonderland/Wonderland.Web/css/main.css",
+		"/C/xampp/htdocs/wonderland/Wonderland.Web/mixture.json",
+		"/C/xampp/htdocs/wonderland/Wonderland.Web/css/sass/partials/_helpers.scss",
+		"/C/xampp/htdocs/wonderland/Wonderland.Web/css/sass/partials/_base.scss",
+		"/C/xampp/htdocs/wonderland/Wonderland.Web/umbraco/Js/app.js",
+		"/C/xampp/htdocs/wonderland/Wonderland.Web/umbraco/lib/angular/1.1.5/i18n/angular-locale_pl-pl.js",
+		"/C/xampp/htdocs/wonderland/Wonderland.Web/umbraco/lib/angular/1.1.5/i18n/angular-locale_pl.js",
+		"/C/xampp/htdocs/wonderland/Wonderland.Web/App_Data/access.config",
+		"/C/xampp/htdocs/wonderland/Wonderland.Web/css/sass/partials/_type.scss",
+		"/C/xampp/htdocs/wonderland/Wonderland.Web/css/sass/.sass-cache/895a6b52ec830b379ae722aa264f024a65911c05/_media.scssc",
+		"/C/xampp/htdocs/wonderland/Wonderland.Web/css/sass/partials/_mixins.scss",
 		"/C/xampp/htdocs/wonderland/Wonderland.Web/scripts/main.js",
 		"/C/xampp/htdocs/wonderland/Wonderland.Web/web.Release.config",
 		"/C/xampp/htdocs/wonderland/Wonderland.Web/.gitignore",
 		"/C/xampp/htdocs/wonderland/Wonderland.Web/App_Browsers/Form.browser",
-		"/C/xampp/htdocs/wonderland/Wonderland.Web/css/sass/partials/_variables.scss",
 		"/C/xampp/htdocs/wonderland/Wonderland.Web/css/sass/partials/_media-queries.scss",
 		"/C/xampp/htdocs/wonderland/Wonderland.Web/css/sass/partials/_grids.scss",
 		"/C/xampp/htdocs/wonderland/Wonderland.Web/css/sass/partials/addons/_toolbar.scss",
@@ -776,19 +756,13 @@
 		"/C/xampp/htdocs/wonderland/Wonderland.Web/config/trees.config",
 		"/C/xampp/htdocs/wonderland/wonderland.sublime-project",
 		"/C/xampp/htdocs/wonderland/Wonderland.Web/css/sass/partials/_nav.scss",
-		"/C/xampp/htdocs/wonderland/Wonderland.Web/css/main.css",
-		"/C/xampp/htdocs/wonderland/Wonderland.Web/mixture.json",
-		"/C/xampp/htdocs/wonderland/Wonderland.Web/css/sass/partials/_helpers.scss",
 		"/C/xampp/htdocs/wonderland/Wonderland.Web/css/sass/.sass-cache/026644375810dd9553278c69faf77ef50f228ad5/_hyphenation.scssc",
 		"/C/xampp/htdocs/wonderland/Wonderland.Web/css/sass/.sass-cache/026644375810dd9553278c69faf77ef50f228ad5/_text-shadow.scssc",
 		"/C/xampp/htdocs/wonderland/Wonderland.Web/scripts/bower_components/html5shiv/readme.md",
 		"/C/xampp/htdocs/wonderland/Wonderland.Web/umbraco_client/Tinymce3/Themes/Advanced/editor_template.js",
-		"/C/xampp/htdocs/wonderland/Wonderland.Web/css/sass/main.scss",
-		"/C/xampp/htdocs/wonderland/Wonderland.Web/css/sass/partials/_base.scss",
 		"/C/xampp/htdocs/wonderland/Wonderland.Web/Views/Partials/Header.cshtml",
 		"/C/xampp/htdocs/wonderland/Wonderland.Web/Views/Home.cshtml",
 		"/C/xampp/htdocs/wonderland/Wonderland.Web/css/sass/partials/_forms.scss",
-		"/C/xampp/htdocs/wonderland/Wonderland.Web/css/sass/partials/_type.scss",
 		"/C/xampp/htdocs/wonderland/Wonderland.Web/compass/config.rb",
 		"/C/xampp/htdocs/wonderland/Wonderland.Web/umbraco/lib/bootstrap/less/variables.less",
 		"/C/xampp/htdocs/wonderland/Wonderland.Web/umbraco/Dialogs/viewAuditTrail.aspx",
@@ -836,13 +810,11 @@
 		"/C/xampp/htdocs/wonderland/Wonderland.Web/web.config",
 		"/C/xampp/htdocs/wonderland/Wonderland.Web/App_Data/Logs/UmbracoTraceLog.txt",
 		"/C/Windows/System32/drivers/etc/hosts",
-		"/C/xampp/htdocs/wonderland/Wonderland.Web/App_Data/access.config",
 		"/C/xampp/htdocs/wonderland/Wonderland.Web/umbraco_client/Editors/EditMacroScripts.js",
 		"/C/xampp/htdocs/wonderland/Wonderland.Web/scripts/bower_components/matches-selector/matches-selector.js",
 		"/C/xampp/htdocs/wonderland/Wonderland.Web/css/sass/.sass-cache/797838377cbb014ac1c7ebbc5157117577b1ea5a/_margins.scssc",
 		"/C/xampp/htdocs/wonderland/Wonderland.Web/umbraco_client/Installer/Js/jquery.main.js",
 		"/C/xampp/htdocs/wonderland/Wonderland.Web/css/sass/.sass-cache/270af1df66b8c8d739f7769b876e14d34a2d4ea5/_margins.scssc",
-		"/C/xampp/htdocs/wonderland/Wonderland.Web/css/sass/partials/_mixins.scss",
 		"/C/xampp/htdocs/wonderland/Wonderland.Web/umbraco/PartialViewMacros/Templates/Empty (ForUseWithCustomViews).cshtml",
 		"/C/xampp/htdocs/wonderland/Wonderland.Web/css/sass/.sass-cache/20eb6446bf6401c8763118b027e3ebe1a7249e5a/_helpers.scssc",
 		"/C/xampp/htdocs/wonderland/Wonderland.Web/css/sass/partials/breakpoint/_helpers.scss",
@@ -884,11 +856,7 @@
 		"/C/xampp/htdocs/cisco/assets/js/unslider.js",
 		"/C/xampp/htdocs/cisco/index.html",
 		"/C/xampp/htdocs/cisco/assets/scss/style-one.scss",
-		"/C/Users/Sam/Downloads/unslider-master (1)/unslider-master/src/unslider.js",
-		"/C/Users/Sam/Downloads/unslider-master (1)/unslider-master/src/unslider.min.js",
-		"/C/xampp/htdocs/unslider/src/extras/unslider.fade.js",
-		"/C/xampp/htdocs/cisco/assets/scss/styles.scss",
-		"/C/xampp/htdocs/cisco/assets/scss/_colourOne.scss"
+		"/C/Users/Sam/Downloads/unslider-master (1)/unslider-master/src/unslider.js"
 	],
 	"find":
 	{
@@ -1112,7 +1080,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 2,
 			"sheets":
 			[
 				{
@@ -1121,7 +1089,7 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1312,
+						"buffer_size": 1339,
 						"regions":
 						{
 						},
@@ -1139,10 +1107,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 376.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 10,
+					"stack_index": 7,
 					"type": "text"
 				},
 				{
@@ -1151,15 +1119,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 962,
+						"buffer_size": 1135,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								546,
-								546
+								455,
+								455
 							]
 						],
 						"settings":
@@ -1172,7 +1140,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
@@ -1181,15 +1149,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 502,
+						"buffer_size": 635,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								491,
-								491
+								422,
+								422
 							]
 						],
 						"settings":
@@ -1202,7 +1170,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 9,
+					"stack_index": 4,
 					"type": "text"
 				}
 			]
@@ -1224,8 +1192,8 @@
 						"selection":
 						[
 							[
-								2260,
-								2260
+								1732,
+								1732
 							]
 						],
 						"settings":
@@ -1239,24 +1207,24 @@
 						"translation.y": 1152.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 14,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
 					"buffer": 4,
-					"file": "Wonderland.Web/css/sass/partials/_type.scss",
+					"file": "Wonderland.Web/css/sass/partials/_helpers.scss",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5502,
+						"buffer_size": 14743,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2683,
-								2683
+								0,
+								0
 							]
 						],
 						"settings":
@@ -1266,10 +1234,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1368.0,
+						"translation.y": 11682.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 12,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
@@ -1291,6 +1259,7 @@
 						],
 						"settings":
 						{
+							"history_list_is_closing": true,
 							"syntax": "Packages/SCSS/SCSS.tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
@@ -1299,7 +1268,7 @@
 						"translation.y": 247.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 13,
+					"stack_index": 11,
 					"type": "text"
 				},
 				{
@@ -1329,7 +1298,7 @@
 						"translation.y": 924.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 16,
+					"stack_index": 12,
 					"type": "text"
 				}
 			]
@@ -1366,7 +1335,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 10,
 					"type": "text"
 				},
 				{
@@ -1375,15 +1344,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4229,
+						"buffer_size": 4283,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1549,
-								1549
+								1254,
+								1254
 							]
 						],
 						"settings":
@@ -1394,10 +1363,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 2376.0,
+						"translation.y": 967.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 9,
 					"type": "text"
 				},
 				{
@@ -1406,28 +1375,59 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5209,
+						"buffer_size": 6159,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4073,
-								4073
+								2668,
+								2668
 							]
 						],
 						"settings":
 						{
+							"history_list_is_closing": true,
 							"syntax": "Packages/SCSS/SCSS.tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 3060.0,
+						"translation.y": 1422.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "Wonderland.Web/css/sass/partials/_media-queries.scss",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5094,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3134,
+								3134
+							]
+						],
+						"settings":
+						{
+							"history_list_is_closing": true,
+							"syntax": "Packages/SCSS/SCSS.tmLanguage",
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1494.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
@@ -1436,15 +1436,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 654,
+						"buffer_size": 564,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								491,
-								491
+								241,
+								241
 							]
 						],
 						"settings":
@@ -1455,126 +1455,35 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 8,
 					"type": "text"
 				}
 			]
 		},
 		{
-			"selected": 3,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 11,
-					"file": "Wonderland.Web/css/sass/partials/_helpers.scss",
+					"file": "Wonderland.Web/scripts/main.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 14695,
+						"buffer_size": 288,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								14640,
-								14640
+								162,
+								162
 							]
 						],
 						"settings":
 						{
-							"history_list_is_closing": true,
-							"syntax": "Packages/SCSS/SCSS.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 11571.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 9,
-					"file": "Wonderland.Web/css/sass/main.scss",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 5209,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/SCSS/SCSS.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 8,
-					"type": "text"
-				},
-				{
-					"buffer": 12,
-					"file": "Wonderland.Web/css/sass/partials/_base.scss",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1712,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								920,
-								920
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/SCSS/SCSS.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 13,
-					"file": "Wonderland.Web/css/main.css",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 0,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
@@ -1583,65 +1492,6 @@
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 14,
-					"file": "Wonderland.Web/css/sass/partials/_variables.scss",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 6148,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2238,
-								2238
-							]
-						],
-						"settings":
-						{
-							"history_list_is_closing": true,
-							"syntax": "Packages/SCSS/SCSS.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 720.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 11,
-					"type": "text"
-				},
-				{
-					"buffer": 15,
-					"file": "Wonderland.Web/mixture.json",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1188,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								357,
-								357
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/JavaScript/JSON.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 15,
 					"type": "text"
 				}
 			]
@@ -1713,6 +1563,22 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"_hel",
+				"css\\sass\\partials\\_helpers.scss"
+			],
+			[
+				"mainjs",
+				"scripts\\main.js"
+			],
+			[
+				"appjs",
+				"umbraco\\Js\\app.js"
+			],
+			[
+				"_mead",
+				"css\\sass\\partials\\_media-queries.scss"
+			],
 			[
 				"ma",
 				"css\\main.css"
@@ -2208,22 +2074,6 @@
 			[
 				"featured",
 				"htdocs/app/design/frontend/tobar/default/template/catalog/product/featured.phtml"
-			],
-			[
-				"tobarcart",
-				"htdocs/app/design/frontend/tobar/default/template/checkout/cart.phtml"
-			],
-			[
-				"ajaxca",
-				"htdocs/skin/frontend/base/default/css/ajaxcart.css"
-			],
-			[
-				"tobarstyles",
-				"htdocs/skin/frontend/tobar/default/css/styles.css"
-			],
-			[
-				"tobarlay",
-				"htdocs/skin/frontend/tobar/default/css/layout.css"
 			]
 		],
 		"width": 0.0
