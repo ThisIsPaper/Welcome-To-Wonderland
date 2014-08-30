@@ -526,6 +526,10 @@ Border radius
   @include transition($wonderlandTransitionTime all $wonderlandTransitionFunction);
 }
 
+%use-GPU-hack {
+  @include translateZ(0);
+}
+
 /* =============================================================================
 Font Sizes
 ========================================================================== */

@@ -45,9 +45,11 @@ Imports
   @extend %row-width; 
   z-index: 999; 
   nav { 
+    @extend %transition-all;    
     background: white; 
-    >a {
+    > a {
       @extend %absolute; 
+      @extend %use-GPU-hack;
       top: 0;
       &:first-child { 
         left: 0;
@@ -61,6 +63,7 @@ Imports
     }
   }
   ul.toolbar {
+    @extend %use-GPU-hack;
     width: 48rem;
     > li {
       @for $i from 1 through 4 {
@@ -76,15 +79,27 @@ Imports
       }     
     }
   }
-  .wonderland-crest-logo {
+  .wonderland-logo-bg {
     @extend %absolute;
-    background: inline-image('wonderland-crest-logo.png') no-repeat;
+    @extend %use-GPU-hack;
+    background: image-url('wonderland-crest.svg') no-repeat;
     left: 50%;
-    padding: 4.4rem 6.1rem;
-    margin: 0.7rem -6.3rem;
+    padding: 4rem 0;
+    margin: 1rem -3.3rem;
     top: 0;
-    text-indent: -99999rem;
+    p { 
+      text-indent: -999rem
+    }
   }
+
+  .wonderland-logo {
+    @extend %absolute;
+    background: image-url('wonderland-logo.svg') no-repeat center;
+    padding: 2rem 7rem;
+    z-index: 1;
+    margin: -0.5rem -7rem;
+  }
+
   .snow-brush-overlay {
     @extend %row-width; 
     background: inline-image('header_texture.png') repeat center;
@@ -92,18 +107,19 @@ Imports
   }
 
   &.compressed {
-    > a {
-      margin-top: 0.5rem;
+    nav > a {
+      margin-top: 1rem;
     }
+    .wonderland-logo-bg { 
+      height: 0;
+      padding: 0; 
+      max-height: 0;
+    }
+    .toolbar {
+      width: 55rem;
+      a { padding: 2rem 0.5rem 1rem; }
+    } 
 
-    .toolbar a {
-      padding-top: 1.35em;
-    }
-
-    .wonderland-crest-logo {
-      background: inline-image('wonderland-logo.png') no-repeat center;
-      padding: 2rem 3rem;
-    }
   }
 }
 
@@ -217,11 +233,11 @@ main { padding-top: 3.5rem; }
   @for $i from 1 through 6 {
     &:nth-child( #{ $i } ) {
       @if $i % 2 == 0 {
-        $rand: (random( 33 ) * .1) + deg; // generate positive random number (converted to float)
+        $rand: (random( 333 ) * 0.1) + deg; // generate positive random number (converted to float)
           @include transform( rotate( $rand ) );
       } 
       @else {
-          $rand: ( (random( 33 ) * 0.1 ) * - 1 )  + deg;  // generate negative random number
+          $rand: ( (random( 333 ) * 0.1 ) * - 1 )  + deg;  // generate negative random number
           @include transform( rotate( $rand ) );
       }
     }
