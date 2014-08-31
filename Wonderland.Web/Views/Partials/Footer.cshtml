@@ -1,7 +1,7 @@
 ﻿@inherits UmbracoViewPage<SiteSettings>
 <footer>
     <div class="snow-brush-overlay"></div>
-    <div id="placeholder"></div>
+    @* <div id="placeholder"></div> *@
     <section class="footer-primary">
         <nav>
             <ul>
@@ -20,6 +20,9 @@
             <p>
                 @Model.CampaignHashtag
             </p>
+        </div>
+        <div class="footer-logo">
+            <img src="img/macmillan-logo.png" alt="Macmillan Cancer Support">
         </div>
     </section>
     <section class="footer-secondary">
