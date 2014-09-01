@@ -12,7 +12,7 @@
     <div class="editor-field">
         @Html.EditorFor(x => x.EmailAddress)
         @Html.ValidationMessageFor(x => x.EmailAddress)
-        @Html.ValidationMessage("EmailValidation") @* additional check after form submission (email may have been registered elsewhere between entry and submission) *@ 
+        @Html.ValidationMessage("EmailValidation") @* additional check after form submission *@ 
     </div>
 
     @Html.EditorForField(x => x.Password) @* uses the custom HtmlHelperExtensions *@ 

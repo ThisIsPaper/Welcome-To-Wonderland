@@ -38,6 +38,10 @@ namespace Wonderland.Logic.Models.Members
             {
                 return this.GetPropertyValue<string>("firstName");
             }
+            set
+            {
+                this.SetPropertyValue("firstName", value);
+            }
         }
 
         public string LastName
@@ -45,6 +49,10 @@ namespace Wonderland.Logic.Models.Members
             get
             {
                 return this.GetPropertyValue<string>("lastName");
+            }
+            set
+            {
+                this.SetPropertyValue("lastName", value);
             }
         }
 
@@ -55,20 +63,24 @@ namespace Wonderland.Logic.Models.Members
         {
             get
             {
-                return new Address(this.GetPropertyValue<ArchetypeModel>("address").Single());
+                return new Address(this.GetPropertyValue<ArchetypeModel>("partyKitAddress").Single());
             }
-
-            //http://our.umbraco.org/projects/backoffice-extensions/archetype/sound-off!/56042-How-to-add-archetype-values-programatically
-            //set { }
+            set 
+            {
+                this.SetPropertyValue("partyKitAddress", value.ToArchetypeModel());
+            }
         }
 
         public Address BillingAddress
         {
             get
             {
-                return new Address(this.GetPropertyValue<ArchetypeModel>("address").Single());
+                return new Address(this.GetPropertyValue<ArchetypeModel>("billingAddress").Single());
             }
-            //set { }
+            set 
+            {
+                this.SetPropertyValue("billingAddress", value.ToArchetypeModel());
+            }
         }
 
         //public bool IsPartyHost(Guid partyGuid)
@@ -85,13 +97,12 @@ namespace Wonderland.Logic.Models.Members
         //{
         //    return false;
         //}
-
         
         /// <summary>
         /// Gets the Partier for the currently logged on member
         /// </summary>
         /// <returns>a Partier (if logged in) or null</returns>
-        public static Partier GetPartier()
+        public static Partier GetCurrentPartier()
         {
             MembershipHelper membershipHelper = new MembershipHelper(UmbracoContext.Current);
 
@@ -103,9 +114,14 @@ namespace Wonderland.Logic.Models.Members
             return null;
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="membershipUser"></param>
+        /// <returns></returns>
         public static explicit operator Partier(MembershipUser membershipUser)
         {
-            return Partier.GetPartier(membershipUser.UserName); // (ProviderUserKey is null during registration)
+            return new Partier(new MembershipHelper(UmbracoContext.Current).GetByUsername(membershipUser.UserName));
         }
 
         //public static explicit operator Partier(Member member)
@@ -113,9 +129,9 @@ namespace Wonderland.Logic.Models.Members
         //    return Partier.GetPartier(member.Username);
         //}
 
-        private static Partier GetPartier(string username)
-        {
-            return new Partier(new MembershipHelper(UmbracoContext.Current).GetByUsername(username));
-        }
+        //private static Partier GetPartier(string username)
+        //{
+        //    return new Partier(new MembershipHelper(UmbracoContext.Current).GetByUsername(username));
+        //}
     }
 }

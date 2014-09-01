@@ -87,9 +87,6 @@ namespace Wonderland.Logic.Controllers.Surface
 
             partier.MarketingSource = registerHostForm.MarketingSource;
             
-            // update timestamp
-            membersUmbracoMembershipProvider.GetUser(partier.Username, true);
-
             // send cookie
             FormsAuthentication.SetAuthCookie(partier.Username, true);
 

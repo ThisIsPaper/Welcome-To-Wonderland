@@ -7,6 +7,7 @@ namespace Wonderland.Logic.Controllers.Surface
     using Wonderland.Logic.Models.Content;
     using Wonderland.Logic.Models.Forms;
     using Wonderland.Logic.Models.Members;
+    using Wonderland.Logic.Models.Entities;
 
     public class RegisterHostPartyKitSurfaceController : SurfaceController
     {
@@ -27,11 +28,18 @@ namespace Wonderland.Logic.Controllers.Surface
                 return this.CurrentUmbracoPage();
             }
             
-            // Partier partier = Partier.GetPartier(); // no need to null check as only logged in members can get here
+            Partier partier = Partier.GetCurrentPartier(); // no need to null check as only logged in members can get here
             
-            // TODO:
-            
+            partier.FirstName = registerHostPartyKitForm.FirstName;
+            partier.LastName = registerHostPartyKitForm.LastName;
 
+            partier.PartyKitAddress = new Address()
+                                        {
+                                            Address1 = registerHostPartyKitForm.Address1,
+                                            Address2 = registerHostPartyKitForm.Address2,
+                                            TownCity = registerHostPartyKitForm.TownCity,
+                                            Postcode = registerHostPartyKitForm.PostCode
+                                        };
 
             return this.RedirectToUmbracoPage(this.CurrentPage.Parent.Children.Single(x => x.DocumentTypeAlias == RegisterHostPartyUrl.Alias));
         }
