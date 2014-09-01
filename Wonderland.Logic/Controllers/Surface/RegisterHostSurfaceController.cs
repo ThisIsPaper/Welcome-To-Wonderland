@@ -4,6 +4,9 @@ namespace Wonderland.Logic.Controllers.Surface
     using System.Collections.Generic;
     using System.Linq;
     using System.Web.Mvc;
+    using System.Web.Security;
+    using Umbraco.Core;
+    using Umbraco.Core.Security;
     using Umbraco.Web.Mvc;
     using Wonderland.Logic.Models.Content;
     using Wonderland.Logic.Models.Forms;
@@ -11,6 +14,10 @@ namespace Wonderland.Logic.Controllers.Surface
 
     public class RegisterHostSurfaceController : SurfaceController
     {
+        /// <summary>
+        /// returns the partial for the host registration form
+        /// </summary>
+        /// <returns></returns>
         [ChildActionOnly]
         public ActionResult Index()
         {
@@ -40,14 +47,45 @@ namespace Wonderland.Logic.Controllers.Surface
                 return this.CurrentUmbracoPage();
             }
 
-            // safety check here as the Umbraco membership service allows the creation of duplicate users !
-            if (this.Members.GetByUsername(registerHostForm.EmailAddress) != null)
+            UmbracoMembershipProviderBase membersUmbracoMembershipProvider = Membership.Providers[Constants.Conventions.Member.UmbracoMemberProviderName] as UmbracoMembershipProviderBase;
+
+            MembershipCreateStatus membershipCreateStatus;
+
+            MembershipUser membershipUser = membersUmbracoMembershipProvider.CreateUser(
+                                                Partier.Alias,
+                                                registerHostForm.EmailAddress,
+                                                registerHostForm.Password,
+                                                registerHostForm.EmailAddress,
+                                                null,
+                                                null,
+                                                true, 
+                                                null, 
+                                                out membershipCreateStatus);
+            
+            if (membershipCreateStatus != MembershipCreateStatus.Success)
             {
-                this.ModelState.AddModelError("EmailValidation", "Email already registered");
+                switch (membershipCreateStatus)
+                {
+                    case MembershipCreateStatus.DuplicateEmail:
+                    case MembershipCreateStatus.DuplicateUserName:
+
+                        this.ModelState.AddModelError("EmailValidation", "Email already registered");
+
+                        break;
+                }
+
                 return this.CurrentUmbracoPage();
             }
 
-            Partier.RegisterHost(registerHostForm.EmailAddress, registerHostForm.Password, registerHostForm.MarketingSource);
+            // TODO: set the marketing source
+
+            // TODO: assign "Party Host" role
+
+            // set memeber as online
+            membersUmbracoMembershipProvider.GetUser(registerHostForm.EmailAddress, true);
+
+            // log in
+            FormsAuthentication.SetAuthCookie(registerHostForm.EmailAddress, true);
         
             // redirecting as next form has a different main view (it doesn't have the header / footer)
             return this.RedirectToUmbracoPage(this.CurrentPage.Children.Single(x => x.DocumentTypeAlias == RegisterHostPartyKit.Alias));
