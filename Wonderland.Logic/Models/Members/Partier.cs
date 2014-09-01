@@ -83,6 +83,18 @@ namespace Wonderland.Logic.Models.Members
             }
         }
 
+        public bool HasRequestedPartyKit
+        {
+            get
+            {
+                return this.GetPropertyValue<bool>("hasRequestedPartyKit");
+            }
+            set
+            {
+                this.SetPropertyValue("hasRequestedPartyKit", value);
+            }
+        }
+
         //public bool IsPartyHost(Guid partyGuid)
         //{
         //    return false;
@@ -105,7 +117,7 @@ namespace Wonderland.Logic.Models.Members
         public static Partier GetCurrentPartier()
         {
             MembershipHelper membershipHelper = new MembershipHelper(UmbracoContext.Current);
-
+            
             if (membershipHelper.GetCurrentLoginStatus() != null)
             {
                 return new Partier(membershipHelper.GetCurrentMember());
@@ -123,15 +135,5 @@ namespace Wonderland.Logic.Models.Members
         {
             return new Partier(new MembershipHelper(UmbracoContext.Current).GetByUsername(membershipUser.UserName));
         }
-
-        //public static explicit operator Partier(Member member)
-        //{
-        //    return Partier.GetPartier(member.Username);
-        //}
-
-        //private static Partier GetPartier(string username)
-        //{
-        //    return new Partier(new MembershipHelper(UmbracoContext.Current).GetByUsername(username));
-        //}
     }
 }

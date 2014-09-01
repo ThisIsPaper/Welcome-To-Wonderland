@@ -41,6 +41,8 @@ namespace Wonderland.Logic.Controllers.Surface
                                             Postcode = registerHostPartyKitForm.PostCode
                                         };
 
+            partier.HasRequestedPartyKit = true;
+
             return this.RedirectToUmbracoPage(this.CurrentPage.Parent.Children.Single(x => x.DocumentTypeAlias == RegisterHostPartyUrl.Alias));
         }
     }
