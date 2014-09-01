@@ -11,17 +11,19 @@ namespace Wonderland.Logic.Controllers.Render
     {
         public ActionResult RegisterHost()
         {
-            RegisterHost model = CurrentPage as RegisterHost;
+            RegisterHost model = (RegisterHost)this.CurrentPage;
 
-            // safety checks incase user manually goes to this url
+            // safety checks
             if (this.User.Identity.IsAuthenticated)
             {
                 if (this.User.IsInRole(Partier.HostRoleAlias))
                 {
+                    // user already registered as a host, so move onto the next step
                     return this.Redirect(model.Children.Single(x => x.DocumentTypeAlias == RegisterHostPartyKit.Alias).Url);
                 }
                 else
                 {
+                    // user already registered but not a host, so redirect back to home
                     return this.Redirect(Home.GetCurrentHome(model).Url);
                 }
             }

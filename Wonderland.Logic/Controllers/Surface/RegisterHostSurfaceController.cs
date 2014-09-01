@@ -25,10 +25,13 @@ namespace Wonderland.Logic.Controllers.Surface
             // get the model for the current page
             RegisterHost registerHost = (RegisterHost)this.CurrentPage;
 
-            // add marketing sources so view can build drop down 
+            // get marketing sources for a dropdown 
             List<string> marketingSources = new List<string>(registerHost.MarketingSources);
+
+            // add an empty option the the beginning
             marketingSources.Insert(0, string.Empty);
 
+            // add a dropdown to the viewbag
             this.ViewBag.MarketingSources = new SelectList(marketingSources);
 
             return this.PartialView("RegisterHostFormPartial", new RegisterHostForm());
@@ -79,18 +82,22 @@ namespace Wonderland.Logic.Controllers.Surface
                 return this.CurrentUmbracoPage();
             }
 
-            //Partier partier = Partier.GetPartier(registerHostForm.EmailAddress);           
+            Partier partier = (Partier)membershipUser; // NOTE: considering moving the setters below into the Partier.cs
 
-            IMember member = this.Services.MemberService.GetByUsername(registerHostForm.EmailAddress);
+            partier.AssignRole(Partier.HostRoleAlias);
 
-            // assign Party host role
-            this.Services.MemberService.AssignRole(member.Id, Partier.HostRoleAlias);           
+            partier.MarketingSource = registerHostForm.MarketingSource;
 
-            // set the marketing source
-            member.Properties.Single(x => x.Alias == "marketingSource").Value = registerHostForm.MarketingSource;
+            //IMember member = this.Services.MemberService.GetByUsername(registerHostForm.EmailAddress);
 
-            // save member (so custom marketing source is set)
-            this.Services.MemberService.Save(member, true);
+            //// assign Party host role
+            //this.Services.MemberService.AssignRole(member.Id, Partier.HostRoleAlias);           
+
+            //// set the marketing source
+            //member.Properties.Single(x => x.Alias == "marketingSource").Value = registerHostForm.MarketingSource;
+
+            //// save member (so custom marketing source is set)
+            //this.Services.MemberService.Save(member, true);
 
             // set memeber as online
             membersUmbracoMembershipProvider.GetUser(registerHostForm.EmailAddress, true);

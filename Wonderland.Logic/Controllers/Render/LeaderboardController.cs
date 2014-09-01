@@ -11,7 +11,7 @@ namespace Wonderland.Logic.Controllers.Render
     {
         public ActionResult Leaderboard()
         {
-            Leaderboard model = CurrentPage as Leaderboard;
+            Leaderboard model = (Leaderboard)this.CurrentPage;
 
             try
             {
