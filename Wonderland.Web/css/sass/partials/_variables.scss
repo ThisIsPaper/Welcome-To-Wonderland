@@ -68,7 +68,7 @@ $wonderlandFrom-direction: left;
 $wonderlandContainer-style: fluid;
 
 //Turn off media-query fallback output for non-IE stylesheets.
-$wonderlandBreakpoint-ie-output: false;
+$wonderlandBreakpoint-ie-output: true;
 /* =============================================================================
 Type
 ========================================================================== */
@@ -90,8 +90,8 @@ $wonderlandBorderRadiusSmall: ($wonderlandBorderRadius / $wonderlandMultiplier) 
 $wonderlandBorderRadiusLarge: ($wonderlandBorderRadius * $wonderlandMultiplierLarge) !default;
 
 /* Transitions*/
-$wonderlandTransitionTime: 0.5s !default; //global transition time
-$wonderlandTransitionFunction: ease-out !default; //transition function for CSS3 transitions
+$wonderlandTransitionTime: 0.45s !default; //global transition time
+$wonderlandTransitionFunction: ease-in-out !default; //transition function for CSS3 transitions
 
 /* =============================================================================
 Colours
@@ -118,7 +118,8 @@ $wonderlandBorder: $wonderlandBorderWidth $wonderlandBorderStyle $wonderlandBord
 /* =============================================================================
 Media query variables
 ========================================================================== */
-$wonderlandBreakpointMain: (screen) (max-width 768px);
-$wonderlandQueryIphone3: (only screen) (min-device-width 320px) (max-device-width 480px) (1 -webkit-device-pixel-ratio);
-$wonderlandQueryIphone3Portrait: (only screen) (min-device-width 320px) (max-device-width 480px) (1 -webkit-device-pixel-ratio) (orientation portrait);
-$wonderlandQueryIphone3Landscape: (only screen) (min-device-width 320px) (max-device-width 480px) (1 -webkit-device-pixel-ratio) (orientation landscape);
+$wonderlandBreakpointMain: (screen) (max-width 788px);
+$wonderlandBreakpointTablet: (screen) (max-width 788px);
+$wonderlandQueryMobile: (only screen) (min-device-width 320px) (max-device-width 480px) (1 -webkit-device-pixel-ratio);
+$wonderlandQueryMobilePortrait: (only screen) (min-device-width 320px) (max-device-width 480px) (1 -webkit-device-pixel-ratio) (orientation portrait);
+$wonderlandQueryMobileLandscape: (only screen) (min-device-width 320px) (max-device-width 480px) (1 -webkit-device-pixel-ratio) (orientation landscape);

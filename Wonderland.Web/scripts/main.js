@@ -5,11 +5,11 @@ $(document).ready( function() {
     $siteHeader = $('#siteHeader');
 
     if ( $scroll > 100 ) {
-        $siteHeader.addClass('compressed');
+      $siteHeader.addClass('compressed');
     }
     else {
-        $siteHeader.removeClass('compressed');
+      $siteHeader.removeClass('compressed');
     }
-}
+  }
 
 });

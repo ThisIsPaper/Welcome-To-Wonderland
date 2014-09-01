@@ -1,9 +1,10 @@
 ﻿@inherits UmbracoViewPage<SiteSettings>
-<footer>
-    <div class="snow-brush-overlay"></div>
+<div class="footer-snow-brush-overlay"></div>
+<footer class="container">
     @* <div id="placeholder"></div> *@
     <section class="footer-primary">
         <nav>
+            <h2>Pages</h2>
             <ul>
             @foreach (SitePage sitePage in Model.FooterNavigation)
             {
@@ -12,6 +13,9 @@
             </ul>
         </nav>
         <div class="share-container">
+            <h2>
+                Share
+            </h2>
             <ul>
                 <li><a href="@Model.FacebookUrl">Facebook</a></li>
                 <li><a href="@Model.TwitterUrl">Twitter</a></li>
@@ -22,7 +26,7 @@
             </p>
         </div>
         <div class="footer-logo">
-            <img src="img/macmillan-logo.png" alt="Macmillan Cancer Support">
+            <img src="img/macmillan_logo.svg" alt="Macmillan Cancer Support" />
         </div>
     </section>
     <section class="footer-secondary">
