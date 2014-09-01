@@ -159,17 +159,25 @@ main { padding-top: 3.5rem; }
 
 }
 
-#homeBanner {
-  @extend %border-box;
+.banner {
+  @include container();
   @extend %rounded-skew-three;
   background: white;
   height: 13.5rem;
   padding: 0 2.2rem;
   position: absolute;
-  min-width: 60%;
   margin: -2rem 1.5rem;
-  max-width: 71.2rem;
+  .banner-info {
+    @extend %pull-left;  
+    padding: 0.5rem 0.2rem;
+  }
 
+  .money-raised-info {
+    @extend %pull-right;  
+    background: image-url('amount-raised-ph.png') no-repeat center right transparent;
+    margin-right: -1.2rem;  
+    padding: 14rem 2rem 0 0;
+  }
   h1 {
     color: $wonderlandPrimaryColour;
     font-weight: bold;
@@ -185,18 +193,6 @@ main { padding-top: 3.5rem; }
     line-height: 1.79443;
     font-weight: bold;
     margin-top: -0.5rem;
-  }
-  .banner-info {
-    @extend %pull-left;
-    width: 60%;
-    padding: 0.5rem 0.2rem;
-  }
-  .money-raised-info {
-    @extend %pull-right;
-    background: image-url('amount-raised-ph.png') no-repeat center right transparent;
-    margin-right: -1.2rem;  
-    padding: 14rem 2rem 0 0;
-    width: 30%;
   }
 }
 
@@ -258,14 +254,15 @@ main { padding-top: 3.5rem; }
   margin: 2.2rem 1.4rem 0 0;
 }
 
+.footer-snow-brush-overlay {
+  @extend %row-width; 
+  background: image-url('footer_texture.png') repeat-x center;
+  padding-top: 1.2rem;
+  height: 4rem;
+  margin-top: -2rem;
+}
+
 footer {
-  .snow-brush-overlay {
-    @extend %row-width; 
-    background: inline-image('footer_texture.png') repeat-x center;
-    padding-top: 1.2rem;
-    height: 4rem;
-    margin-top: -4.5rem;
-  }
   .footer-primary {
     margin: 0 auto;
     max-width: 71.3rem;

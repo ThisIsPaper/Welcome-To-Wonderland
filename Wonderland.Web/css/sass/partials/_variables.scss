@@ -55,8 +55,8 @@ $wonderlandContainer-lateral-padding: $wonderlandPadding !default;
 $wonderlandCol-margin-right: 3.8% !default;
 $wonderlandCol-unit: (($wonderlandRowWidth + $wonderlandCol-margin-right) / $wonderlandNum-cols) !default;
 
-$wonderlandRowNotation: row- !default;
-$wonderlandColumnNotation: col- !default;
+$wonderlandRowNotation: row !default;
+$wonderlandColumnNotation: col !default;
 
 $wonderlandContainer-width: $wonderlandRowWidth;
 $wonderlandTotal-columns: $wonderlandNum-cols;
