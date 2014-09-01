@@ -34,7 +34,7 @@ namespace Wonderland.Logic.Models.Content
         {
             get
             {
-                return new SiteSettings(new Home(this.AncestorOrSelf(Home.Alias)));
+                return new SiteSettings(Home.GetCurrentHome(this));
             }
         }
 

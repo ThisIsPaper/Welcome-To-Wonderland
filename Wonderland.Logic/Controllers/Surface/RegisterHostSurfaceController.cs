@@ -6,6 +6,7 @@ namespace Wonderland.Logic.Controllers.Surface
     using System.Web.Mvc;
     using System.Web.Security;
     using Umbraco.Core;
+    using Umbraco.Core.Models;
     using Umbraco.Core.Security;
     using Umbraco.Web.Mvc;
     using Wonderland.Logic.Models.Content;
@@ -18,7 +19,7 @@ namespace Wonderland.Logic.Controllers.Surface
         /// returns the partial for the host registration form
         /// </summary>
         /// <returns></returns>
-        [ChildActionOnly]
+        [ChildActionOnly] // (Cannot redirect from a Child Action - see Controllers\Render\RegisterHostController)
         public ActionResult Index()
         {
             // get the model for the current page
@@ -33,16 +34,17 @@ namespace Wonderland.Logic.Controllers.Surface
             return this.PartialView("RegisterHostFormPartial", new RegisterHostForm());
         }
 
-        public JsonResult ValidateIsEmailAvailable(string emailAddress)
-        {
-            return Json(this.Members.GetByUsername(emailAddress) == null, JsonRequestBehavior.AllowGet);
-        }
+        //// commented out until js client side validation wired-up
+        //public JsonResult ValidateIsEmailAvailable(string emailAddress)
+        //{
+        //    return Json(this.Members.GetByUsername(emailAddress) == null, JsonRequestBehavior.AllowGet);
+        //}
 
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult RegisterHostForm(RegisterHostForm registerHostForm)
         {
-            if (!ModelState.IsValid)
+            if (!this.ModelState.IsValid)
             {
                 return this.CurrentUmbracoPage();
             }
@@ -77,18 +79,26 @@ namespace Wonderland.Logic.Controllers.Surface
                 return this.CurrentUmbracoPage();
             }
 
-            // TODO: set the marketing source
+            //Partier partier = Partier.GetPartier(registerHostForm.EmailAddress);           
 
-            // TODO: assign "Party Host" role
+            IMember member = this.Services.MemberService.GetByUsername(registerHostForm.EmailAddress);
+
+            // assign Party host role
+            this.Services.MemberService.AssignRole(member.Id, Partier.HostRoleAlias);           
+
+            // set the marketing source
+            member.Properties.Single(x => x.Alias == "marketingSource").Value = registerHostForm.MarketingSource;
+
+            // save member (so custom marketing source is set)
+            this.Services.MemberService.Save(member, true);
 
             // set memeber as online
             membersUmbracoMembershipProvider.GetUser(registerHostForm.EmailAddress, true);
 
             // log in
             FormsAuthentication.SetAuthCookie(registerHostForm.EmailAddress, true);
-        
-            // redirecting as next form has a different main view (it doesn't have the header / footer)
+
             return this.RedirectToUmbracoPage(this.CurrentPage.Children.Single(x => x.DocumentTypeAlias == RegisterHostPartyKit.Alias));
-        }      
+        }
     }
 }

@@ -104,5 +104,15 @@ namespace Wonderland.Logic.Models.Content
                 return this.GetPropertyValue<string>("footerCopy");
             }
         }
+
+        /// <summary>
+        /// helper that walks up the tree to get the current home
+        /// </summary>
+        /// <param name="content"></param>
+        /// <returns></returns>
+        internal static Home GetCurrentHome(IPublishedContent content)
+        {
+            return new Home(content.AncestorOrSelf(Home.Alias));
+        }
     }
 }
