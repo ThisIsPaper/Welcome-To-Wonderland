@@ -6,7 +6,6 @@ namespace Wonderland.Logic.Controllers.Surface
     using System.Web.Mvc;
     using System.Web.Security;
     using Umbraco.Core;
-    using Umbraco.Core.Models;
     using Umbraco.Core.Security;
     using Umbraco.Web.Mvc;
     using Wonderland.Logic.Models.Content;
@@ -52,19 +51,19 @@ namespace Wonderland.Logic.Controllers.Surface
                 return this.CurrentUmbracoPage();
             }
 
-            UmbracoMembershipProviderBase membersUmbracoMembershipProvider = Membership.Providers[Constants.Conventions.Member.UmbracoMemberProviderName] as UmbracoMembershipProviderBase;
+            UmbracoMembershipProviderBase membersUmbracoMembershipProvider = (UmbracoMembershipProviderBase)Membership.Providers[Constants.Conventions.Member.UmbracoMemberProviderName];
 
             MembershipCreateStatus membershipCreateStatus;
 
             MembershipUser membershipUser = membersUmbracoMembershipProvider.CreateUser(
-                                                Partier.Alias,
-                                                registerHostForm.EmailAddress,
+                                                Partier.Alias,                                  // member type alias
+                                                registerHostForm.EmailAddress,                  // username
                                                 registerHostForm.Password,
-                                                registerHostForm.EmailAddress,
-                                                null,
-                                                null,
-                                                true, 
-                                                null, 
+                                                registerHostForm.EmailAddress,                  // email
+                                                null,                                           // forgotten password question
+                                                null,                                           // forgotten password answer
+                                                true,                                           // is approved 
+                                                null,                                           // provider user key
                                                 out membershipCreateStatus);
             
             if (membershipCreateStatus != MembershipCreateStatus.Success)
@@ -82,30 +81,20 @@ namespace Wonderland.Logic.Controllers.Surface
                 return this.CurrentUmbracoPage();
             }
 
-            Partier partier = (Partier)membershipUser; // NOTE: considering moving the setters below into the Partier.cs
+            Partier partier = (Partier)membershipUser;
 
             partier.AssignRole(Partier.HostRoleAlias);
 
             partier.MarketingSource = registerHostForm.MarketingSource;
+            
+            // update timestamp
+            membersUmbracoMembershipProvider.GetUser(partier.Username, true);
 
-            //IMember member = this.Services.MemberService.GetByUsername(registerHostForm.EmailAddress);
-
-            //// assign Party host role
-            //this.Services.MemberService.AssignRole(member.Id, Partier.HostRoleAlias);           
-
-            //// set the marketing source
-            //member.Properties.Single(x => x.Alias == "marketingSource").Value = registerHostForm.MarketingSource;
-
-            //// save member (so custom marketing source is set)
-            //this.Services.MemberService.Save(member, true);
-
-            // set memeber as online
-            membersUmbracoMembershipProvider.GetUser(registerHostForm.EmailAddress, true);
-
-            // log in
-            FormsAuthentication.SetAuthCookie(registerHostForm.EmailAddress, true);
+            // send cookie
+            FormsAuthentication.SetAuthCookie(partier.Username, true);
 
             return this.RedirectToUmbracoPage(this.CurrentPage.Children.Single(x => x.DocumentTypeAlias == RegisterHostPartyKit.Alias));
         }
     }
 }
+
