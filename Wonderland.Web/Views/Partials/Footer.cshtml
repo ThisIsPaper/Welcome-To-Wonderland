@@ -4,6 +4,7 @@
     @* <div id="placeholder"></div> *@
     <section class="footer-primary">
         <nav>
+            <h2>Pages</h2>
             <ul>
             @foreach (SitePage sitePage in Model.FooterNavigation)
             {
@@ -12,6 +13,9 @@
             </ul>
         </nav>
         <div class="share-container">
+            <h2>
+                Share
+            </h2>
             <ul>
                 <li><a href="@Model.FacebookUrl">Facebook</a></li>
                 <li><a href="@Model.TwitterUrl">Twitter</a></li>

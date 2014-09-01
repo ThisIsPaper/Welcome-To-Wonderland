@@ -94,9 +94,9 @@ Imports
   .wonderland-logo {
     @extend %absolute;
     background: image-url('wonderland-logo.svg') no-repeat center;
-    padding: 2rem 7rem;
+    padding: 1.5rem 6rem;
     z-index: 1;
-    margin: -0.9rem -7rem;
+    margin: 1.5rem -6rem;
   }
 
   .snow-brush-overlay {
@@ -110,7 +110,9 @@ Imports
       margin-top: 1rem;
     }
     .wonderland-logo-bg { 
-      padding: 0 0; 
+      padding: 0;
+      margin-top: -0.5rem;
+      max-height: 0;
     }
     .toolbar {
       width: 55rem;
@@ -265,11 +267,17 @@ footer {
     margin-top: -4.5rem;
   }
   .footer-primary {
-    max-width: 74.3rem;
     margin: 0 auto;
-    > nav, div { 
-      @include span(25%);
-      &:last-child { @include span(32.5% omega); }
+    max-width: 71.3rem;
+    > nav {
+      @include span(3 of 12);
+    }
+    > div { 
+      @include span(4 of 12);
+      &.share-container { 
+        text-align: center; 
+      }  
+      &:last-child { @include span(4 of 12 omega); }
     }
   }
 }
