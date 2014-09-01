@@ -3198,6 +3198,7 @@ main {
   padding: 0 2.2rem;
   position: absolute;
   margin: -2rem 1.5rem;
+  max-width: 66rem;
 }
 /* line 12, ../../../../../Users/Sam Latif/AppData/Roaming/Mixture/Tools/Ruby/lib/ruby/gems/2.0.0/gems/susy-2.1.3/sass/susy/output/support/_clearfix.scss */
 .banner:after {
@@ -3205,17 +3206,17 @@ main {
   display: block;
   clear: both;
 }
-/* line 170, sass/main.scss */
+/* line 171, sass/main.scss */
 .banner .banner-info {
   padding: 0.5rem 0.2rem;
 }
-/* line 175, sass/main.scss */
+/* line 176, sass/main.scss */
 .banner .money-raised-info {
   background: url('/img/amount-raised-ph.png?1409243626') no-repeat center right transparent;
   margin-right: -1.2rem;
   padding: 14rem 2rem 0 0;
 }
-/* line 181, sass/main.scss */
+/* line 182, sass/main.scss */
 .banner h1 {
   color: #007eac;
   font-weight: bold;
@@ -3225,7 +3226,7 @@ main {
   letter-spacing: 0.05rem;
   margin: 0;
 }
-/* line 191, sass/main.scss */
+/* line 192, sass/main.scss */
 .banner p {
   font-size: 1.13333rem;
   line-height: 1.79443;
@@ -3233,95 +3234,95 @@ main {
   margin-top: -0.5rem;
 }
 
-/* line 199, sass/main.scss */
+/* line 200, sass/main.scss */
 .promo-tiles {
   padding-top: 15rem;
 }
 
-/* line 203, sass/main.scss */
+/* line 204, sass/main.scss */
 .frame {
   width: 30%;
   margin: 1rem;
   padding: 1rem;
 }
-/* line 208, sass/main.scss */
+/* line 209, sass/main.scss */
 .frame:first-child {
   margin-left: 0;
 }
-/* line 211, sass/main.scss */
+/* line 212, sass/main.scss */
 .frame:last-child {
   margin-right: 0;
 }
-/* line 215, sass/main.scss */
+/* line 216, sass/main.scss */
 .frame img:first-child {
   margin-left: 0;
   width: 100%;
 }
-/* line 219, sass/main.scss */
+/* line 220, sass/main.scss */
 .frame img:last-child {
   bottom: 0;
   left: 0;
   margin-right: 0;
   width: 50%;
 }
-/* line 229, sass/main.scss */
+/* line 230, sass/main.scss */
 .frame:nth-child(1) {
-  -moz-transform: rotate(-1.9deg);
-  -ms-transform: rotate(-1.9deg);
-  -webkit-transform: rotate(-1.9deg);
-  transform: rotate(-1.9deg);
+  -moz-transform: rotate(-1.6deg);
+  -ms-transform: rotate(-1.6deg);
+  -webkit-transform: rotate(-1.6deg);
+  transform: rotate(-1.6deg);
 }
-/* line 229, sass/main.scss */
+/* line 230, sass/main.scss */
 .frame:nth-child(2) {
-  -moz-transform: rotate(1.4deg);
-  -ms-transform: rotate(1.4deg);
-  -webkit-transform: rotate(1.4deg);
-  transform: rotate(1.4deg);
+  -moz-transform: rotate(0.4deg);
+  -ms-transform: rotate(0.4deg);
+  -webkit-transform: rotate(0.4deg);
+  transform: rotate(0.4deg);
 }
-/* line 229, sass/main.scss */
+/* line 230, sass/main.scss */
 .frame:nth-child(3) {
-  -moz-transform: rotate(-0.1deg);
-  -ms-transform: rotate(-0.1deg);
-  -webkit-transform: rotate(-0.1deg);
-  transform: rotate(-0.1deg);
+  -moz-transform: rotate(-1.5deg);
+  -ms-transform: rotate(-1.5deg);
+  -webkit-transform: rotate(-1.5deg);
+  transform: rotate(-1.5deg);
 }
-/* line 229, sass/main.scss */
+/* line 230, sass/main.scss */
 .frame:nth-child(4) {
-  -moz-transform: rotate(1deg);
-  -ms-transform: rotate(1deg);
-  -webkit-transform: rotate(1deg);
-  transform: rotate(1deg);
+  -moz-transform: rotate(2.3deg);
+  -ms-transform: rotate(2.3deg);
+  -webkit-transform: rotate(2.3deg);
+  transform: rotate(2.3deg);
 }
-/* line 229, sass/main.scss */
+/* line 230, sass/main.scss */
 .frame:nth-child(5) {
-  -moz-transform: rotate(-1.4deg);
-  -ms-transform: rotate(-1.4deg);
-  -webkit-transform: rotate(-1.4deg);
-  transform: rotate(-1.4deg);
+  -moz-transform: rotate(-0.2deg);
+  -ms-transform: rotate(-0.2deg);
+  -webkit-transform: rotate(-0.2deg);
+  transform: rotate(-0.2deg);
 }
-/* line 229, sass/main.scss */
+/* line 230, sass/main.scss */
 .frame:nth-child(6) {
-  -moz-transform: rotate(2.2deg);
-  -ms-transform: rotate(2.2deg);
-  -webkit-transform: rotate(2.2deg);
-  transform: rotate(2.2deg);
+  -moz-transform: rotate(2deg);
+  -ms-transform: rotate(2deg);
+  -webkit-transform: rotate(2deg);
+  transform: rotate(2deg);
 }
 
-/* line 242, sass/main.scss */
+/* line 243, sass/main.scss */
 #shareWonderland {
   background: url('/img/home-share-ph.png?1409256896') no-repeat;
   padding: 7rem 15.2rem;
   margin: 3.1rem 1.5rem;
 }
 
-/* line 250, sass/main.scss */
+/* line 251, sass/main.scss */
 #twitterFeed {
   background: url('/img/home-twitter-ph.png?1409257968') no-repeat;
   padding: 16rem 17.5rem 13rem;
   margin: 2.2rem 1.4rem 0 0;
 }
 
-/* line 257, sass/main.scss */
+/* line 258, sass/main.scss */
 .footer-snow-brush-overlay {
   background: url('/img/footer_texture.png?1409082046') repeat-x center;
   padding-top: 1.2rem;
@@ -3329,28 +3330,28 @@ main {
   margin-top: -2rem;
 }
 
-/* line 266, sass/main.scss */
+/* line 267, sass/main.scss */
 footer .footer-primary {
   margin: 0 auto;
   max-width: 71.3rem;
 }
-/* line 269, sass/main.scss */
+/* line 270, sass/main.scss */
 footer .footer-primary > nav {
   width: 23.72881%;
   float: left;
   margin-right: 1.69492%;
 }
-/* line 272, sass/main.scss */
+/* line 273, sass/main.scss */
 footer .footer-primary > div {
   width: 32.20339%;
   float: left;
   margin-right: 1.69492%;
 }
-/* line 274, sass/main.scss */
+/* line 275, sass/main.scss */
 footer .footer-primary > div.share-container {
   text-align: center;
 }
-/* line 277, sass/main.scss */
+/* line 278, sass/main.scss */
 footer .footer-primary > div:last-child {
   width: 32.20339%;
   float: right;
