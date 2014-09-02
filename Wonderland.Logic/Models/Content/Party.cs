@@ -6,7 +6,12 @@ namespace Wonderland.Logic.Models.Content
 
     public class Party : SitePage
     {
+        // DocumentType
         public new const string Alias = "Party";
+
+        // Properties
+        public const string DefaultHeadingAlias = "defaultHeading";
+        public const string DefaultCopyAlias = "defaultCopy";
 
         public Party(IPublishedContent content)
             : base(content)
@@ -17,7 +22,7 @@ namespace Wonderland.Logic.Models.Content
         {
             get
             {
-                return this.GetPropertyValue<string>("defaultHeading");
+                return this.GetPropertyValue<string>(Party.DefaultHeadingAlias);
             }
         }
 
@@ -25,7 +30,7 @@ namespace Wonderland.Logic.Models.Content
         {
             get
             {
-                return this.GetPropertyValue<string>("defaultCopy");
+                return this.GetPropertyValue<string>(Party.DefaultCopyAlias);
             }
         }
     }

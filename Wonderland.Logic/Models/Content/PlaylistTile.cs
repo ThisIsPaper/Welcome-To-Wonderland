@@ -6,7 +6,12 @@ namespace Wonderland.Logic.Models.Content
 
     public class PlaylistTile : PartyIdeaTile
     {
+        // Document Type
         public new const string Alias = "PlaylistTile";
+
+        // Properties
+        public const string PlaylistNameAlias = "playlistName";
+        public const string SpotifyUrlAlias = "spotifyUrl";
 
         public PlaylistTile(IPublishedContent content)
             : base(content)
@@ -25,7 +30,7 @@ namespace Wonderland.Logic.Models.Content
         {
             get
             {
-                return this.GetPropertyValue<string>("playlistName");
+                return this.GetPropertyValue<string>(PlaylistTile.PlaylistNameAlias);
             }
         }
 
@@ -33,7 +38,7 @@ namespace Wonderland.Logic.Models.Content
         {
             get
             {
-                return this.GetPropertyValue<string>("spotifyUrl");
+                return this.GetPropertyValue<string>(PlaylistTile.SpotifyUrlAlias);
             }
         }
     }

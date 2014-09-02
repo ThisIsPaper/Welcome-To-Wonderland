@@ -6,7 +6,11 @@ namespace Wonderland.Logic.Models.Content
 
     public class DecorationTile : PartyIdeaTile
     {
+        // Document Type
         public new const string Alias = "DecorationTile";
+
+        // Properties
+        public const string PinterestBoardUrlAlias = "pinterestBoardUrl";
 
         public DecorationTile(IPublishedContent content)
             : base(content)
@@ -25,7 +29,7 @@ namespace Wonderland.Logic.Models.Content
         {
             get
             {
-                return this.GetPropertyValue<string>("pinterestBoardUrl");
+                return this.GetPropertyValue<string>(DecorationTile.PinterestBoardUrlAlias);
             }
         }
     }

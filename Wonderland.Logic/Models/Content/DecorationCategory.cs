@@ -5,6 +5,7 @@ namespace Wonderland.Logic.Models.Content
 
     public class DecorationCategory : PartyIdeaCategory
     {
+        // Document Type
         public new const string Alias = "DecorationCategory";
 
         public DecorationCategory(IPublishedContent content)

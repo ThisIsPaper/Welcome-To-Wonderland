@@ -10,7 +10,13 @@ namespace Wonderland.Logic.Models.Content
 
     public class FAQs : SitePage
     {
+        // Document Type
         public new const string Alias = "FAQs";
+
+        // Properties
+        public const string PageHeadingAlias = "pageHeading";
+        public const string QuestionsAndAnswersAlias = "questionsAndAnswers";
+        public const string CopyAlias = "copy";
 
         public FAQs(IPublishedContent content)
             : base(content)
@@ -21,7 +27,7 @@ namespace Wonderland.Logic.Models.Content
         {
             get
             {
-                return this.GetPropertyValue<string>("pageHeading");
+                return this.GetPropertyValue<string>(FAQs.PageHeadingAlias);
             }
         }
 
@@ -29,7 +35,7 @@ namespace Wonderland.Logic.Models.Content
         {
             get
             {
-                return this.GetPropertyValue<ArchetypeModel>("questionsAndAnswers").Select(x => new QuestionAndAnswer(x));
+                return this.GetPropertyValue<ArchetypeModel>(FAQs.QuestionsAndAnswersAlias).Select(x => new QuestionAndAnswer(x));
             }
         }
 
@@ -37,7 +43,7 @@ namespace Wonderland.Logic.Models.Content
         {
             get
             {
-                return this.GetPropertyValue<string>("copy");
+                return this.GetPropertyValue<string>(FAQs.CopyAlias);
             }
         }
     }

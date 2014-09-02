@@ -7,7 +7,13 @@ namespace Wonderland.Logic.Models.Content
 
     public class FundraisingIdea : SitePage
     {
+        // Document Type
         public new const string Alias = "FundraisingIdea";
+
+        // Properties
+        public const string HeadingAlias = "heading";
+        public const string ImageAlias = "image";
+        public const string CopyAlias = "copy";
 
         public FundraisingIdea(IPublishedContent content)
             : base(content)
@@ -18,7 +24,7 @@ namespace Wonderland.Logic.Models.Content
         {
             get
             {
-                return this.GetPropertyValue<string>("heading");
+                return this.GetPropertyValue<string>(FundraisingIdea.HeadingAlias);
             }
         }
 
@@ -26,7 +32,7 @@ namespace Wonderland.Logic.Models.Content
         {
             get
             {
-                return new Image(this.GetPropertyValue<IPublishedContent>("image"));
+                return new Image(this.GetPropertyValue<IPublishedContent>(FundraisingIdea.ImageAlias));
             }
         }
 
@@ -34,7 +40,7 @@ namespace Wonderland.Logic.Models.Content
         {
             get
             {
-                return this.GetPropertyValue<string>("copy");
+                return this.GetPropertyValue<string>(FundraisingIdea.CopyAlias);
             }
         }
     }

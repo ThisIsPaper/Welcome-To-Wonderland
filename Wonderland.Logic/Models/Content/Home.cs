@@ -11,7 +11,21 @@ namespace Wonderland.Logic.Models.Content
 
     public class Home : SitePage
     {
+        // Document Type
         public new const string Alias = "Home";
+
+        // Properties
+        public const string BannerHeadingAlias = "bannerHeading";
+        public const string BannerCopyAlias = "bannerCopy";
+        public const string PromotionTilesAlias = "promotionTiles";
+        public const string HeaderNavigationAlias = "headerNavigation";
+        public const string FooterNavigationAlias = "footerNavigation";
+        public const string LegalNavigationAlias = "legalNavigation";
+        public const string CampaignHashtagAlias = "campaignHashtag";
+        public const string FacebookUrlAlias = "facebookUrl";
+        public const string TwitterUrlAlias = "twitterUrl";
+        public const string GooglePlusUrlAlias = "googlePlusUrl";
+        public const string FooterCopyAlias = "footerCopy";
 
         public Home(IPublishedContent content) : base(content)
         {
@@ -21,7 +35,7 @@ namespace Wonderland.Logic.Models.Content
         {
             get
             {
-                return this.GetPropertyValue<string>("bannerHeading");
+                return this.GetPropertyValue<string>(Home.BannerHeadingAlias);
             }
         }
 
@@ -29,7 +43,7 @@ namespace Wonderland.Logic.Models.Content
         {
             get
             {
-                return this.GetPropertyValue<string>("bannerCopy");
+                return this.GetPropertyValue<string>(Home.BannerCopyAlias);
             }
         }
 
@@ -37,7 +51,7 @@ namespace Wonderland.Logic.Models.Content
         {
             get
             {
-                return this.GetPropertyValue<ArchetypeModel>("promotionTiles").Select(x => new PromotionTile(x));
+                return this.GetPropertyValue<ArchetypeModel>(Home.PromotionTilesAlias).Select(x => new PromotionTile(x));
             }
         }
 
@@ -45,7 +59,7 @@ namespace Wonderland.Logic.Models.Content
         {
             get
             {
-                return this.GetPropertyValue<Picker>("headerNavigation").AsPublishedContent().Select(x => new SitePage(x));
+                return this.GetPropertyValue<Picker>(Home.HeaderNavigationAlias).AsPublishedContent().Select(x => new SitePage(x));
             }
         }
 
@@ -53,7 +67,7 @@ namespace Wonderland.Logic.Models.Content
         {
             get
             {
-                return this.GetPropertyValue<Picker>("footerNavigation").AsPublishedContent().Select(x => new SitePage(x));
+                return this.GetPropertyValue<Picker>(Home.FooterNavigationAlias).AsPublishedContent().Select(x => new SitePage(x));
             }
         }
 
@@ -61,7 +75,7 @@ namespace Wonderland.Logic.Models.Content
         {
             get
             {
-                return this.GetPropertyValue<Picker>("legalNavigation").AsPublishedContent().Select(x => new SitePage(x));
+                return this.GetPropertyValue<Picker>(Home.LegalNavigationAlias).AsPublishedContent().Select(x => new SitePage(x));
             }
         }
 
@@ -69,7 +83,7 @@ namespace Wonderland.Logic.Models.Content
         {
             get
             {
-                return this.GetPropertyValue<string>("campaignHashtag");
+                return this.GetPropertyValue<string>(Home.CampaignHashtagAlias);
             }
         }
 
@@ -77,7 +91,7 @@ namespace Wonderland.Logic.Models.Content
         {
             get
             {
-                return this.GetPropertyValue<string>("facebookUrl");
+                return this.GetPropertyValue<string>(Home.FacebookUrlAlias);
             }
         }
 
@@ -85,7 +99,7 @@ namespace Wonderland.Logic.Models.Content
         {
             get
             {
-                return this.GetPropertyValue<string>("twitterUrl");
+                return this.GetPropertyValue<string>(Home.TwitterUrlAlias);
             }
         }
 
@@ -93,7 +107,7 @@ namespace Wonderland.Logic.Models.Content
         {
             get
             {
-                return this.GetPropertyValue<string>("googlePlusUrl");
+                return this.GetPropertyValue<string>(Home.GooglePlusUrlAlias);
             }
         }
 
@@ -101,7 +115,7 @@ namespace Wonderland.Logic.Models.Content
         {
             get
             {
-                return this.GetPropertyValue<string>("footerCopy");
+                return this.GetPropertyValue<string>(Home.FooterCopyAlias);
             }
         }
 

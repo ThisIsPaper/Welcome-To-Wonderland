@@ -7,7 +7,11 @@ namespace Wonderland.Logic.Models.Media
 
     public class Image : PublishedContentModel
     {
+        // Media Type
         public const string Alias = "Image";
+
+        // Properties
+        public const string AltTextAlias = "altText";
 
         public Image(IPublishedContent content)
             : base(content)
@@ -18,7 +22,7 @@ namespace Wonderland.Logic.Models.Media
         {
             get
             {
-                return this.GetPropertyValue<string>("altText");
+                return this.GetPropertyValue<string>(Image.AltTextAlias);
             }
         }
     }

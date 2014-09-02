@@ -10,7 +10,14 @@ namespace Wonderland.Logic.Models.Content
 
     public class PistePoints : SitePage
     {
+        // DocumentType
         public new const string Alias = "PistePoints";
+
+        // Properties
+        public const string PageHeadingAlias = "pageHeading";
+        public const string RewardsAlias = "rewards";
+        public const string RegisterHostLinkTextAlias = "registerHostLinkText";
+        public const string PartyKitAlias = "partyKit";
 
         public PistePoints(IPublishedContent content)
             : base(content)
@@ -21,7 +28,7 @@ namespace Wonderland.Logic.Models.Content
         {
             get 
             { 
-                return this.GetPropertyValue<string>("pageHeading");
+                return this.GetPropertyValue<string>(PistePoints.PageHeadingAlias);
             }
         }
 
@@ -29,7 +36,7 @@ namespace Wonderland.Logic.Models.Content
         {
             get
             {
-                return this.GetPropertyValue<ArchetypeModel>("rewards").Select(x => new Reward(x));
+                return this.GetPropertyValue<ArchetypeModel>(PistePoints.RewardsAlias).Select(x => new Reward(x));
             }
         }
 
@@ -37,7 +44,7 @@ namespace Wonderland.Logic.Models.Content
         {
             get
             {
-                return this.GetPropertyValue<string>("registerHostLinkText");
+                return this.GetPropertyValue<string>(PistePoints.RegisterHostLinkTextAlias);
             }
         }
 
@@ -45,7 +52,7 @@ namespace Wonderland.Logic.Models.Content
         {
             get
             {
-                return new PartyKit(this.GetPropertyValue<ArchetypeModel>("partyKit").Single());
+                return new PartyKit(this.GetPropertyValue<ArchetypeModel>(PistePoints.PartyKitAlias).Single());
             }
         }        
     }

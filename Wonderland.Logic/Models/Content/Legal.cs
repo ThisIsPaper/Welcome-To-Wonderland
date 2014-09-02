@@ -6,7 +6,12 @@ namespace Wonderland.Logic.Models.Content
 
     public class Legal : SitePage
     {
+        // Document Type
         public new const string Alias = "Legal";
+
+        // Properties
+        public const string PageHeadingAlias = "pageHeading";
+        public const string CopyAlias = "copy";
 
         public Legal(IPublishedContent content)
             : base(content)
@@ -17,7 +22,7 @@ namespace Wonderland.Logic.Models.Content
         {
             get
             {
-                return this.GetPropertyValue<string>("pageHeading");
+                return this.GetPropertyValue<string>(Legal.PageHeadingAlias);
             }
         }
 
@@ -25,7 +30,7 @@ namespace Wonderland.Logic.Models.Content
         {
             get
             {
-                return this.GetPropertyValue<string>("copy");
+                return this.GetPropertyValue<string>(Legal.CopyAlias);
             }
         }
     }

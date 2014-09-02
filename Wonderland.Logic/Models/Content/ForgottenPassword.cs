@@ -6,6 +6,7 @@ namespace Wonderland.Logic.Models.Content
 
     public class ForgottenPassword : SitePage
     {
+        // Document Type
         public new const string Alias = "ForgottenPassword";
 
         public ForgottenPassword(IPublishedContent content)

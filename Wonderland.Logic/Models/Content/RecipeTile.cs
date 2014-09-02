@@ -8,7 +8,12 @@ namespace Wonderland.Logic.Models.Content
 
     public class RecipeTile : PartyIdeaTile
     {
+        // Document Type
         public new const string Alias = "RecipeTile";
+
+        // Properties
+        public const string RecipeNameAlias = "recipeName";
+        public const string IngredientsAlias = "ingredients";
 
         public RecipeTile(IPublishedContent content)
             : base(content)
@@ -27,7 +32,7 @@ namespace Wonderland.Logic.Models.Content
         {
             get
             {
-                return this.GetPropertyValue<string>("recipeName");
+                return this.GetPropertyValue<string>(RecipeTile.RecipeNameAlias);
             }
         }
 
@@ -35,7 +40,7 @@ namespace Wonderland.Logic.Models.Content
         {
             get
             {
-                return this.GetPropertyValue<string[]>("ingredients");
+                return this.GetPropertyValue<string[]>(RecipeTile.IngredientsAlias);
             }
         }
     }

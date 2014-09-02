@@ -11,7 +11,18 @@ namespace Wonderland.Logic.Models.Members
 
     public class Partier : BaseMemberType
     {
+        // Member Type
         public const string Alias = "Partier";
+
+        // Properties
+        public const string MarketingSourceAlias = "marketingSource";
+        public const string FirstNameAlias = "firstName";
+        public const string LastNameAlias = "lastName";
+        public const string PartyKitAddressAlias = "partyKitAddress";
+        public const string BillingAddressAlias = "billingAddress";
+        public const string HasRequestedPartyKitAlias = "hasRequestedPartyKit";
+
+        // Roles
         public const string HostRoleAlias = "Party Host";
         public const string GuestRoleAlias = "Party Guest";
 
@@ -24,11 +35,11 @@ namespace Wonderland.Logic.Models.Members
         {
             get
             {
-                return this.GetPropertyValue<string>("marketingSource");
+                return this.GetPropertyValue<string>(Partier.MarketingSourceAlias);
             }
             set
             {
-                this.SetPropertyValue("marketingSource", value);
+                this.SetPropertyValue(Partier.MarketingSourceAlias, value);
             }
         }
 
@@ -36,11 +47,11 @@ namespace Wonderland.Logic.Models.Members
         {
             get
             {
-                return this.GetPropertyValue<string>("firstName");
+                return this.GetPropertyValue<string>(Partier.FirstNameAlias);
             }
             set
             {
-                this.SetPropertyValue("firstName", value);
+                this.SetPropertyValue(Partier.FirstNameAlias, value);
             }
         }
 
@@ -48,11 +59,11 @@ namespace Wonderland.Logic.Models.Members
         {
             get
             {
-                return this.GetPropertyValue<string>("lastName");
+                return this.GetPropertyValue<string>(Partier.LastNameAlias);
             }
             set
             {
-                this.SetPropertyValue("lastName", value);
+                this.SetPropertyValue(Partier.LastNameAlias, value);
             }
         }
 
@@ -63,11 +74,11 @@ namespace Wonderland.Logic.Models.Members
         {
             get
             {
-                return new Address(this.GetPropertyValue<ArchetypeModel>("partyKitAddress").Single());
+                return new Address(this.GetPropertyValue<ArchetypeModel>(Partier.PartyKitAddressAlias).Single());
             }
             set 
             {
-                this.SetPropertyValue("partyKitAddress", value.ToArchetypeModel());
+                this.SetPropertyValue(Partier.PartyKitAddressAlias, value.ToArchetypeModel());
             }
         }
 
@@ -75,11 +86,11 @@ namespace Wonderland.Logic.Models.Members
         {
             get
             {
-                return new Address(this.GetPropertyValue<ArchetypeModel>("billingAddress").Single());
+                return new Address(this.GetPropertyValue<ArchetypeModel>(Partier.BillingAddressAlias).Single());
             }
             set 
             {
-                this.SetPropertyValue("billingAddress", value.ToArchetypeModel());
+                this.SetPropertyValue(Partier.BillingAddressAlias, value.ToArchetypeModel());
             }
         }
 
@@ -87,11 +98,11 @@ namespace Wonderland.Logic.Models.Members
         {
             get
             {
-                return this.GetPropertyValue<bool>("hasRequestedPartyKit");
+                return this.GetPropertyValue<bool>(Partier.HasRequestedPartyKitAlias);
             }
             set
             {
-                this.SetPropertyValue("hasRequestedPartyKit", value);
+                this.SetPropertyValue(Partier.HasRequestedPartyKitAlias, value);
             }
         }
 

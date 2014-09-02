@@ -9,7 +9,18 @@ namespace Wonderland.Logic.Models.Content
 
     public class Wonderlanders : SitePage
     {
+        // Document Type
         public new const string Alias = "Wonderlanders";
+
+        // Properties
+        public const string PageHeadingAlias = "pageHeading";
+        public const string TopFundraisersHeadingAlias = "topFundraisersHeading";
+        public const string TopFundraisersCountAlias = "topFundraisersCount";
+        public const string MostGuestsHeadingAlias = "mostGuestsHeading";
+        public const string MostGuestsCountAlias = "mostGuestsCount";
+        public const string BadgesTodayHeadingAlias = "badgesTodayHeading";
+        public const string RecentHostsHeadingAlias = "recentHostsHeading";
+        public const string RecentHostsCountAlias = "recentHostsCount";
 
         public Wonderlanders(IPublishedContent content)
             : base(content)
@@ -20,7 +31,7 @@ namespace Wonderland.Logic.Models.Content
         {
             get
             {
-                return this.GetPropertyValue<string>("pageHeading");
+                return this.GetPropertyValue<string>(Wonderlanders.PageHeadingAlias);
             }
         }
 
@@ -28,7 +39,7 @@ namespace Wonderland.Logic.Models.Content
         {
             get
             {
-                return this.GetPropertyValue<string>("topFundraisersHeading");
+                return this.GetPropertyValue<string>(Wonderlanders.TopFundraisersHeadingAlias);
             }
         }
 
@@ -36,7 +47,7 @@ namespace Wonderland.Logic.Models.Content
         {
             get
             {
-                return this.GetPropertyValue<int>("topFundraisersCount");
+                return this.GetPropertyValue<int>(Wonderlanders.TopFundraisersCountAlias);
             }
         }
 
@@ -44,7 +55,7 @@ namespace Wonderland.Logic.Models.Content
         {
             get
             {
-                return this.GetPropertyValue<string>("mostGuestsHeading");
+                return this.GetPropertyValue<string>(Wonderlanders.MostGuestsHeadingAlias);
             }
         }
 
@@ -52,7 +63,7 @@ namespace Wonderland.Logic.Models.Content
         {
             get
             {
-                return this.GetPropertyValue<int>("mostGuestsCount");
+                return this.GetPropertyValue<int>(Wonderlanders.MostGuestsCountAlias);
             }
         }
 
@@ -60,7 +71,7 @@ namespace Wonderland.Logic.Models.Content
         {
             get
             {
-                return this.GetPropertyValue<string>("badgesTodayHeading");
+                return this.GetPropertyValue<string>(Wonderlanders.BadgesTodayHeadingAlias);
             }
         }
 
@@ -68,7 +79,7 @@ namespace Wonderland.Logic.Models.Content
         {
             get
             {
-                return this.GetPropertyValue<string>("recentHostsHeading");
+                return this.GetPropertyValue<string>(Wonderlanders.RecentHostsHeadingAlias);
             }
         }
 
@@ -76,7 +87,7 @@ namespace Wonderland.Logic.Models.Content
         {
             get
             {
-                return this.GetPropertyValue<int>("recentHostsCount");
+                return this.GetPropertyValue<int>(Wonderlanders.RecentHostsCountAlias);
             }
         }
 

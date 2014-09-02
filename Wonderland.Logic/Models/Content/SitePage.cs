@@ -9,7 +9,11 @@ namespace Wonderland.Logic.Models.Content
 
     public class SitePage : PublishedContentModel
     {
+        // Document Type
         public const string Alias = "SitePage";
+
+        // Properties
+        public const string MetaDescriptionAlias = "metaDescription";
 
         public SitePage(IPublishedContent content) : base(content)
         {
@@ -26,7 +30,7 @@ namespace Wonderland.Logic.Models.Content
         {
             get
             {
-                return this.GetPropertyValue<string>("metaDescription");
+                return this.GetPropertyValue<string>(SitePage.MetaDescriptionAlias);
             }
         }
 

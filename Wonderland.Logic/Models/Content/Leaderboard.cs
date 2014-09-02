@@ -10,7 +10,12 @@ namespace Wonderland.Logic.Models.Content
 
     public class Leaderboard : SitePage
     {
+        // Document Type
         public new const string Alias = "Leaderboard";
+
+        // Properties
+        public const string PageHeadingAlias = "pageHeading";
+        public const string LeaderboardCountAlias = "leaderboardCount";
 
         public Leaderboard(IPublishedContent content)
             : base(content)
@@ -21,7 +26,7 @@ namespace Wonderland.Logic.Models.Content
         {
             get
             {
-                return this.GetPropertyValue<string>("pageHeading");
+                return this.GetPropertyValue<string>(Leaderboard.PageHeadingAlias);
             }
         }
 
@@ -29,7 +34,7 @@ namespace Wonderland.Logic.Models.Content
         {
             get
             {
-                return this.GetPropertyValue<int>("leaderboardCount");
+                return this.GetPropertyValue<int>(Leaderboard.LeaderboardCountAlias);
             }
         }
 

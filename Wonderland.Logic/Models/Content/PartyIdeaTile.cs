@@ -10,7 +10,14 @@ namespace Wonderland.Logic.Models.Content
 
     public abstract class PartyIdeaTile : SitePage
     {
+        // DocumentType
         public new const string Alias = "PartyIdeaTile";
+
+        // Properties
+        public const string TileHeadingAlias = "tileHeading";
+        public const string TileSizeAlias = "tileSize";
+        public const string TileImageAlias = "tileImage";
+        public const string TileCopyAlias = "tileCopy";
 
         public PartyIdeaTile(IPublishedContent content)
             : base(content)
@@ -29,7 +36,7 @@ namespace Wonderland.Logic.Models.Content
         {
             get
             {
-                return this.GetPropertyValue<string>("tileHeading");
+                return this.GetPropertyValue<string>(PartyIdeaTile.TileHeadingAlias);
             }
         }
 
@@ -37,7 +44,7 @@ namespace Wonderland.Logic.Models.Content
         {
             get
             {
-                return this.GetPropertyValue<Picker>("tileSize").AsEnums<PartyIdeaTileSize>().Single();
+                return this.GetPropertyValue<Picker>(PartyIdeaTile.TileSizeAlias).AsEnums<PartyIdeaTileSize>().Single();
             }
         }
 
@@ -45,7 +52,7 @@ namespace Wonderland.Logic.Models.Content
         {
             get
             {
-                return new Image(this.GetPropertyValue<IPublishedContent>("tileImage"));
+                return new Image(this.GetPropertyValue<IPublishedContent>(PartyIdeaTile.TileImageAlias));
             }
         }
 
@@ -53,7 +60,7 @@ namespace Wonderland.Logic.Models.Content
         {
             get
             {
-                return this.GetPropertyValue<string>("tileCopy");
+                return this.GetPropertyValue<string>(PartyIdeaTile.TileCopyAlias);
             }
         }
     }

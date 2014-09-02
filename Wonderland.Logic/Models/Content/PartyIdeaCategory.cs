@@ -9,6 +9,7 @@ namespace Wonderland.Logic.Models.Content
 
     public abstract class PartyIdeaCategory : SitePage
     {
+        // DocumentType
         public new const string Alias = "PartyIdeaCategory";
 
         public PartyIdeaCategory(IPublishedContent content)

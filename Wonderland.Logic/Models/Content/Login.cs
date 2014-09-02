@@ -6,7 +6,11 @@ namespace Wonderland.Logic.Models.Content
 
     public class Login : SitePage
     {
+        // DocumentType
         public new const string Alias = "Login";
+
+        // Properties
+        public const string PageHeadingAlias = "pageHeading";
 
         public Login(IPublishedContent content)
             : base(content)
@@ -17,7 +21,7 @@ namespace Wonderland.Logic.Models.Content
         {
             get
             {
-                return this.GetPropertyValue<string>("pageHeading");
+                return this.GetPropertyValue<string>(Login.PageHeadingAlias);
             }
         }
     }

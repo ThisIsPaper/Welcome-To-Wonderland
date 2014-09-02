@@ -7,7 +7,11 @@ namespace Wonderland.Logic.Models.Content
 
     public class RegisterHost : SitePage
     {
+        // Document Type
         public new const string Alias = "RegisterHost";
+
+        // Properties
+        public const string MarketingSourcesAlias = "marketingSources";
 
         public RegisterHost(IPublishedContent content)
             : base(content)
@@ -18,7 +22,7 @@ namespace Wonderland.Logic.Models.Content
         {
             get
             {
-                return this.GetPropertyValue<string[]>("marketingSources");
+                return this.GetPropertyValue<string[]>(RegisterHost.MarketingSourcesAlias);
             }
         }
     }

@@ -6,6 +6,7 @@ namespace Wonderland.Logic.Models.Content
 
     public class RegisterGuestConfirmation : SitePage
     {
+        // Document Type
         public new const string Alias = "RegisterGuestConfirmation";
 
         public RegisterGuestConfirmation(IPublishedContent content)

@@ -6,6 +6,7 @@ namespace Wonderland.Logic.Models.Content
 
     public class ResetPassword : SitePage
     {
+        // Document Type
         public new const string Alias = "ResetPassword";
 
         public ResetPassword(IPublishedContent content)

@@ -6,7 +6,11 @@ namespace Wonderland.Logic.Models.Content
 
     public class FashionTile : PartyIdeaTile
     {
+        // Document Type
         public new const string Alias = "FashionTile";
+
+        // Properties
+        public const string PinterestBoardUrlAlias = "pinterestBoardUrl";
 
         public FashionTile(IPublishedContent content)
             : base(content)
@@ -21,11 +25,11 @@ namespace Wonderland.Logic.Models.Content
             }
         }
 
-        public string PinterestBoradUrl
+        public string PinterestBoardUrl
         {
             get
             {
-                return this.GetPropertyValue<string>("pinterestBoardUrl");
+                return this.GetPropertyValue<string>(FashionTile.PinterestBoardUrlAlias);
             }
         }
     }

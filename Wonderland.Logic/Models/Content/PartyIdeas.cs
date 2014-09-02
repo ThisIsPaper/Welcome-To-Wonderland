@@ -10,7 +10,12 @@ namespace Wonderland.Logic.Models.Content
 
     public class PartyIdeas : SitePage
     {
+        // DocumentType
         public new const string Alias = "PartyIdeas";
+
+        // Properties
+        public const string PageHeadingAlias = "pageHeading";
+        public const string PriorityTilesAlias = "priorityTiles";
 
         public PartyIdeas(IPublishedContent content)
             : base(content)
@@ -21,18 +26,18 @@ namespace Wonderland.Logic.Models.Content
         {
             get
             {
-                return this.GetPropertyValue<string>("pageHeading");
+                return this.GetPropertyValue<string>(PartyIdeas.PageHeadingAlias);
             }
         }
 
         /// <summary>
-        /// marked as internal as not needed in the view model
+        /// marked as internal as not needed in the view
         /// </summary>
         internal IEnumerable<PartyIdeaTile> PriorityTiles
         {
             get
             {
-                return this.GetPropertyValue<Picker>("priorityTiles")
+                return this.GetPropertyValue<Picker>(PartyIdeas.PriorityTilesAlias)
                             .AsPublishedContent()
                             .Select(x => (PartyIdeaTile)PublishedContentModelFactoryResolver.Current.Factory.CreateModel(x));
             }

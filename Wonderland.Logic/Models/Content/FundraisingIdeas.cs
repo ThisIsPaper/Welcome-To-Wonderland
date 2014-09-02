@@ -10,7 +10,14 @@ namespace Wonderland.Logic.Models.Content
 
     public class FundraisingIdeas : SitePage
     {
+        // Document Type
         public new const string Alias = "FundraisingIdeas";
+
+        // Properties
+        public const string PageHeadingAlias = "pageHeading";
+        public const string PartyKitAlias = "partyKit";
+        public const string SubHeadingAlias = "subHeading";
+
 
         public FundraisingIdeas(IPublishedContent content)
             : base(content)
@@ -21,7 +28,7 @@ namespace Wonderland.Logic.Models.Content
         {
             get
             {
-                return this.GetPropertyValue<string>("pageHeading");
+                return this.GetPropertyValue<string>(FundraisingIdeas.PageHeadingAlias);
             }
         }
 
@@ -29,7 +36,7 @@ namespace Wonderland.Logic.Models.Content
         {
             get
             {
-                return new PartyKit(this.GetPropertyValue<ArchetypeModel>("partyKit").Single());
+                return new PartyKit(this.GetPropertyValue<ArchetypeModel>(FundraisingIdeas.PartyKitAlias).Single());
             }
         }        
 
@@ -37,7 +44,7 @@ namespace Wonderland.Logic.Models.Content
         {
             get
             {
-                return this.GetPropertyValue<string>("subHeading");
+                return this.GetPropertyValue<string>(FundraisingIdeas.SubHeadingAlias);
             }
         }
 

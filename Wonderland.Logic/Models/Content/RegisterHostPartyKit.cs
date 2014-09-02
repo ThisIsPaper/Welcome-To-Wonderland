@@ -6,6 +6,7 @@ namespace Wonderland.Logic.Models.Content
 
     public class RegisterHostPartyKit : SitePage
     {
+        // Document Type
         public new const string Alias = "RegisterHostPartyKit";
 
         public RegisterHostPartyKit(IPublishedContent content)

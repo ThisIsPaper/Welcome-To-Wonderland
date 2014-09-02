@@ -5,6 +5,7 @@ namespace Wonderland.Logic.Models.Content
 
     public class PlaylistCategory : PartyIdeaCategory
     {
+        // Document Type
         public new const string Alias = "PlaylistCategory";
 
         public PlaylistCategory(IPublishedContent content)
