@@ -5,7 +5,7 @@ namespace Wonderland.Logic.Controllers.Render
     using Wonderland.Logic.Models.Content;
     using Wonderland.Logic.Models.Members;
 
-    public class RegisterHostPartyKitController : BaseRenderController
+    public class RegisterHostPartyKitController : BaseRenderMvcController
     {
         public ActionResult RegisterHostPartyKit()
         {

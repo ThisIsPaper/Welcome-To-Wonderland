@@ -5,7 +5,7 @@ namespace Wonderland.Logic.Controllers.Render
     using Umbraco.Web.Mvc;
     using Umbraco.Web.Security;
 
-    public abstract class BaseRenderController : RenderMvcController
+    public abstract class BaseRenderMvcController : RenderMvcController
     {
         private MembershipHelper membershipHelper = null;
 

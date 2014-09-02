@@ -6,7 +6,7 @@ namespace Wonderland.Logic.Controllers.Render
     using Wonderland.Logic.Models.Content;
     using Wonderland.Logic.Models.Members;
 
-    public class RegisterHostController : BaseRenderController
+    public class RegisterHostController : BaseRenderMvcController
     {
         public ActionResult RegisterHost()
         {            

@@ -6,7 +6,7 @@ namespace Wonderland.Logic.Controllers.Render
     using Wonderland.Logic.Enums;
     using Wonderland.Logic.Models.Content;
 
-    public class LeaderboardController : BaseRenderController
+    public class LeaderboardController : BaseRenderMvcController
     {
         public ActionResult Leaderboard()
         {

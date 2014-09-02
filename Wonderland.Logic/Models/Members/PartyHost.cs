@@ -21,10 +21,6 @@ namespace Wonderland.Logic.Models.Members
         public const string HasRequestedPartyKitAlias = "hasRequestedPartyKit";
         public const string PartyUrlIdentifierAlias = "partyUrlIdentifier";
 
-        //// Roles
-        //public const string HostRoleAlias = "Party Host";
-        //public const string GuestRoleAlias = "Party Guest";
-
         public PartyHost(IPublishedContent content)
             : base(content)
         {
@@ -124,26 +120,6 @@ namespace Wonderland.Logic.Models.Members
         //    return false;
         //}
 
-        //public bool IsInRole(string role)
-        //{
-        //    return false;
-        //}
-        
-        ///// <summary>
-        ///// Gets the Partier for the currently logged on member
-        ///// </summary>
-        ///// <returns>a Partier (if logged in) or null</returns>
-        //public static PartyHost GetCurrentPartier()
-        //{
-        //    MembershipHelper membershipHelper = new MembershipHelper(UmbracoContext.Current);
-            
-        //    if (membershipHelper.GetCurrentLoginStatus() != null)
-        //    {
-        //        return new PartyHost(membershipHelper.GetCurrentMember());
-        //    }
-
-        //    return null;
-        //}
 
         /// <summary>
         /// 
