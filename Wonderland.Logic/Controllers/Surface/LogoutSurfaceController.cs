@@ -11,10 +11,9 @@ namespace Wonderland.Logic.Controllers.Surface
         [Authorize]
         public ActionResult Logout()
         {
-            FormsAuthentication.SignOut();
-
+            this.Members.Logout();
+            
             return this.Redirect("/");
         }
     }
 }
-

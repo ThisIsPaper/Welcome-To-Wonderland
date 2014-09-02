@@ -2,9 +2,6 @@
 namespace Wonderland.Logic.Controllers.Surface
 {
     using System.Web.Mvc;
-    using System.Web.Security;
-    using Umbraco.Core;
-    using Umbraco.Core.Security;
     using Umbraco.Web.Mvc;
     using Wonderland.Logic.Models.Forms;
 
@@ -29,10 +26,8 @@ namespace Wonderland.Logic.Controllers.Surface
                 return this.CurrentUmbracoPage();
             }
 
-            if (Membership.ValidateUser(loginForm.EmailAddress, loginForm.Password))
-            {
-                // send cookie
-                FormsAuthentication.SetAuthCookie(loginForm.EmailAddress, true);
+            // this .Login check sets the forms authentication cookie if successful
+            if (this.Members.Login(loginForm.EmailAddress, loginForm.Password))            {
 
                 return this.Redirect("/");
             }

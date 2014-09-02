@@ -7,10 +7,10 @@ namespace Wonderland.Logic.Models.Members
     using Umbraco.Web.Security;
     using Wonderland.Logic.Models.Entities;
 
-    public class Partier : BaseMemberType
+    public class PartyHost : BaseMemberType
     {
         // Member Type
-        public const string Alias = "Partier";
+        public const string Alias = "PartyHost";
 
         // Properties
         public const string MarketingSourceAlias = "marketingSource";
@@ -21,11 +21,11 @@ namespace Wonderland.Logic.Models.Members
         public const string HasRequestedPartyKitAlias = "hasRequestedPartyKit";
         public const string PartyUrlIdentifierAlias = "partyUrlIdentifier";
 
-        // Roles
-        public const string HostRoleAlias = "Party Host";
-        public const string GuestRoleAlias = "Party Guest";
+        //// Roles
+        //public const string HostRoleAlias = "Party Host";
+        //public const string GuestRoleAlias = "Party Guest";
 
-        public Partier(IPublishedContent content)
+        public PartyHost(IPublishedContent content)
             : base(content)
         {
         }
@@ -34,11 +34,11 @@ namespace Wonderland.Logic.Models.Members
         {
             get
             {
-                return this.GetPropertyValue<string>(Partier.MarketingSourceAlias);
+                return this.GetPropertyValue<string>(PartyHost.MarketingSourceAlias);
             }
             set
             {
-                this.SetPropertyValue(Partier.MarketingSourceAlias, value);
+                this.SetPropertyValue(PartyHost.MarketingSourceAlias, value);
             }
         }
 
@@ -46,11 +46,11 @@ namespace Wonderland.Logic.Models.Members
         {
             get
             {
-                return this.GetPropertyValue<string>(Partier.FirstNameAlias);
+                return this.GetPropertyValue<string>(PartyHost.FirstNameAlias);
             }
             set
             {
-                this.SetPropertyValue(Partier.FirstNameAlias, value);
+                this.SetPropertyValue(PartyHost.FirstNameAlias, value);
             }
         }
 
@@ -58,11 +58,11 @@ namespace Wonderland.Logic.Models.Members
         {
             get
             {
-                return this.GetPropertyValue<string>(Partier.LastNameAlias);
+                return this.GetPropertyValue<string>(PartyHost.LastNameAlias);
             }
             set
             {
-                this.SetPropertyValue(Partier.LastNameAlias, value);
+                this.SetPropertyValue(PartyHost.LastNameAlias, value);
             }
         }
 
@@ -70,11 +70,11 @@ namespace Wonderland.Logic.Models.Members
         {
             get
             {
-                return new Address(this.GetPropertyValue<string>(Partier.PartyKitAddressAlias));
+                return new Address(this.GetPropertyValue<string>(PartyHost.PartyKitAddressAlias));
             }
             set 
             {
-                this.SetPropertyValue(Partier.PartyKitAddressAlias, value.ToString());
+                this.SetPropertyValue(PartyHost.PartyKitAddressAlias, value.ToString());
             }
         }
 
@@ -82,11 +82,11 @@ namespace Wonderland.Logic.Models.Members
         {
             get
             {
-                return new Address(this.GetPropertyValue<string>(Partier.BillingAddressAlias));
+                return new Address(this.GetPropertyValue<string>(PartyHost.BillingAddressAlias));
             }
             set
             {
-                this.SetPropertyValue(Partier.BillingAddressAlias, value.ToString());
+                this.SetPropertyValue(PartyHost.BillingAddressAlias, value.ToString());
             }
         }
 
@@ -94,11 +94,11 @@ namespace Wonderland.Logic.Models.Members
         {
             get
             {
-                return this.GetPropertyValue<bool>(Partier.HasRequestedPartyKitAlias);
+                return this.GetPropertyValue<bool>(PartyHost.HasRequestedPartyKitAlias);
             }
             set
             {
-                this.SetPropertyValue(Partier.HasRequestedPartyKitAlias, value);
+                this.SetPropertyValue(PartyHost.HasRequestedPartyKitAlias, value);
             }
         }
 
@@ -106,11 +106,11 @@ namespace Wonderland.Logic.Models.Members
         {
             get
             {
-                return this.GetPropertyValue<string>(Partier.PartyUrlIdentifierAlias);
+                return this.GetPropertyValue<string>(PartyHost.PartyUrlIdentifierAlias);
             }
             set
             {
-                this.SetPropertyValue(Partier.PartyUrlIdentifierAlias, value);
+                this.SetPropertyValue(PartyHost.PartyUrlIdentifierAlias, value);
             }
         }
 
@@ -129,30 +129,30 @@ namespace Wonderland.Logic.Models.Members
         //    return false;
         //}
         
-        /// <summary>
-        /// Gets the Partier for the currently logged on member
-        /// </summary>
-        /// <returns>a Partier (if logged in) or null</returns>
-        public static Partier GetCurrentPartier()
-        {
-            MembershipHelper membershipHelper = new MembershipHelper(UmbracoContext.Current);
+        ///// <summary>
+        ///// Gets the Partier for the currently logged on member
+        ///// </summary>
+        ///// <returns>a Partier (if logged in) or null</returns>
+        //public static PartyHost GetCurrentPartier()
+        //{
+        //    MembershipHelper membershipHelper = new MembershipHelper(UmbracoContext.Current);
             
-            if (membershipHelper.GetCurrentLoginStatus() != null)
-            {
-                return new Partier(membershipHelper.GetCurrentMember());
-            }
+        //    if (membershipHelper.GetCurrentLoginStatus() != null)
+        //    {
+        //        return new PartyHost(membershipHelper.GetCurrentMember());
+        //    }
 
-            return null;
-        }
+        //    return null;
+        //}
 
         /// <summary>
         /// 
         /// </summary>
         /// <param name="membershipUser"></param>
         /// <returns></returns>
-        public static explicit operator Partier(MembershipUser membershipUser)
+        public static explicit operator PartyHost(MembershipUser membershipUser)
         {
-            return new Partier(new MembershipHelper(UmbracoContext.Current).GetByUsername(membershipUser.UserName));
+            return new PartyHost(new MembershipHelper(UmbracoContext.Current).GetByUsername(membershipUser.UserName));
         }
     }
 }

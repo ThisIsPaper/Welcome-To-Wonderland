@@ -3,11 +3,10 @@ namespace Wonderland.Logic.Controllers.Render
 {
     using System;
     using System.Web.Mvc;
-    using Umbraco.Web.Mvc;
     using Wonderland.Logic.Enums;
     using Wonderland.Logic.Models.Content;
 
-    public class LeaderboardController : RenderMvcController
+    public class LeaderboardController : BaseRenderController
     {
         public ActionResult Leaderboard()
         {

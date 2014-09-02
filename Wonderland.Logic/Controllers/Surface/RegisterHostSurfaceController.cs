@@ -51,16 +51,15 @@ namespace Wonderland.Logic.Controllers.Surface
                 return this.CurrentUmbracoPage();
             }
 
-            // need to use the specific UmbracoMembershipProvividerBase rather than the more generic Membership
-            // this is because we need to provide a specific Umbraco Member Type alias
+            // no helper method on this.Members to register a user with a given memberType, so calling provider directly
             UmbracoMembershipProviderBase membersUmbracoMembershipProvider = (UmbracoMembershipProviderBase)Membership.Providers[Constants.Conventions.Member.UmbracoMemberProviderName];
 
             MembershipCreateStatus membershipCreateStatus;
             
             MembershipUser membershipUser = membersUmbracoMembershipProvider.CreateUser(
-                                                Partier.Alias,                                  // member type alias
+                                                PartyHost.Alias,                                // member type alias
                                                 registerHostForm.EmailAddress,                  // username
-                                                registerHostForm.Password,
+                                                registerHostForm.Password,                      // password
                                                 registerHostForm.EmailAddress,                  // email
                                                 null,                                           // forgotten password question
                                                 null,                                           // forgotten password answer
@@ -83,10 +82,11 @@ namespace Wonderland.Logic.Controllers.Surface
                 return this.CurrentUmbracoPage();
             }
 
-            Partier partier = (Partier)membershipUser;
+            // TODO: consider this..Members.Login(username, password)
 
-            partier.AssignRole(Partier.HostRoleAlias);
-
+            // this isn't yet the current user, so cast rather than use this.Members.GetCurrentMember() helper
+            PartyHost partier = (PartyHost)membershipUser;
+          
             partier.MarketingSource = registerHostForm.MarketingSource;
             
             // send cookie
