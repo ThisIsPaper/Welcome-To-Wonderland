@@ -1,7 +1,7 @@
 ﻿
 namespace Wonderland.Logic.Models.Entities
 {
-    using Archetype.Models;
+    using System;
 
     public class Address
     {
@@ -9,12 +9,12 @@ namespace Wonderland.Logic.Models.Entities
         {
         }
 
-        internal Address(ArchetypeFieldsetModel archetypeFieldsetModel)
+        internal Address(string address)
         {
-            this.Address1 = archetypeFieldsetModel.GetValue<string>("address1");
-            this.Address2 = archetypeFieldsetModel.GetValue<string>("address2");
-            this.TownCity = archetypeFieldsetModel.GetValue<string>("townCity");
-            this.Postcode = archetypeFieldsetModel.GetValue<string>("postcode");
+            //this.Address1 = 
+            //this.Address2 = 
+            //this.TownCity = 
+            //this.Postcode = 
         }
 
         public string Address1 { get; internal set; }
@@ -25,10 +25,21 @@ namespace Wonderland.Logic.Models.Entities
 
         public string Postcode { get; internal set; }
 
-        // http://our.umbraco.org/projects/backoffice-extensions/archetype/sound-off!/56042-How-to-add-archetype-values-programatically
-        internal string ToArchetypeModel() // TODO: BaseArchetype class ?
+        /// <summary>
+        /// converts this address to a carrige return delimited string (for cms presentation)
+        /// </summary>
+        /// <returns></returns>
+        public override string ToString()
         {
-            return string.Empty;
+            return string.Join(
+                            Environment.NewLine, 
+                            new string[] 
+                            {
+                                this.Address1,
+                                this.Address2,
+                                this.TownCity,
+                                this.Postcode
+                            });
         }
     }
 }

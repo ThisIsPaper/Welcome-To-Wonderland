@@ -1,8 +1,6 @@
 ﻿
 namespace Wonderland.Logic.Models.Members
 {
-    using Archetype.Models;
-    using System.Linq;
     using System.Web.Security;
     using Umbraco.Core.Models;
     using Umbraco.Web;
@@ -67,18 +65,15 @@ namespace Wonderland.Logic.Models.Members
             }
         }
 
-        /// <summary>
-        /// only a host may have this populated
-        /// </summary>
         public Address PartyKitAddress
         {
             get
             {
-                return new Address(this.GetPropertyValue<ArchetypeModel>(Partier.PartyKitAddressAlias).Single());
+                return new Address(this.GetPropertyValue<string>(Partier.PartyKitAddressAlias));
             }
             set 
             {
-                this.SetPropertyValue(Partier.PartyKitAddressAlias, value.ToArchetypeModel());
+                this.SetPropertyValue(Partier.PartyKitAddressAlias, value.ToString());
             }
         }
 
@@ -86,11 +81,11 @@ namespace Wonderland.Logic.Models.Members
         {
             get
             {
-                return new Address(this.GetPropertyValue<ArchetypeModel>(Partier.BillingAddressAlias).Single());
+                return new Address(this.GetPropertyValue<string>(Partier.BillingAddressAlias));
             }
-            set 
+            set
             {
-                this.SetPropertyValue(Partier.BillingAddressAlias, value.ToArchetypeModel());
+                this.SetPropertyValue(Partier.BillingAddressAlias, value.ToString());
             }
         }
 
