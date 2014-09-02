@@ -2,16 +2,11 @@
 @{
     Layout = "SitePage.cshtml";
 }
+
+<br/><br /><br /><br /><br /><br /><br /><br /><br /><br />
+
 <h1>@Model.PageHeading</h1>
 
-<!--
-    TODO: 
-    
-    Facebook button, to login and populate hidden fields with user id and image url
-
-    Email Address (this will be the username)
-
-    Password
--->
+@(Html.Action<LoginSurfaceController>("Index"))
 
 

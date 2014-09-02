@@ -1,0 +1,12 @@
+﻿@model LoginForm
+
+@using (Html.BeginUmbracoForm<LoginSurfaceController>("LoginForm"))
+{
+    @Html.AntiForgeryToken()
+
+    @Html.EditorForModel()
+
+    @Html.ValidationMessage("LoginValidation") @* server side validation message - reports an invalid username / password combination *@
+
+    <button type="submit">Submit</button>
+}

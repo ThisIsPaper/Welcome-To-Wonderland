@@ -51,10 +51,12 @@ namespace Wonderland.Logic.Controllers.Surface
                 return this.CurrentUmbracoPage();
             }
 
+            // need to use the specific UmbracoMembershipProvividerBase rather than the more generic Membership
+            // this is because we need to provide a specific Umbraco Member Type alias
             UmbracoMembershipProviderBase membersUmbracoMembershipProvider = (UmbracoMembershipProviderBase)Membership.Providers[Constants.Conventions.Member.UmbracoMemberProviderName];
 
             MembershipCreateStatus membershipCreateStatus;
-
+            
             MembershipUser membershipUser = membersUmbracoMembershipProvider.CreateUser(
                                                 Partier.Alias,                                  // member type alias
                                                 registerHostForm.EmailAddress,                  // username

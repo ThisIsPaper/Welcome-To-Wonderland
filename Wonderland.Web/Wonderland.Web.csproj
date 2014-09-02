@@ -232,6 +232,7 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Content Include="Views\RegisterHostPartyKitSurface\RegisterHostPartyKitFormPartial.cshtml" />
+    <Content Include="Views\LoginSurface\LoginFormPartial.cshtml" />
     <None Include="Views\RegisterHostSurface\RegisterHostFormPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
