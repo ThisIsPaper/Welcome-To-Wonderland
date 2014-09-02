@@ -196,6 +196,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\Render\BaseRenderMvcController.cs" />
     <Compile Include="Controllers\Render\LeaderboardController.cs" />
     <Compile Include="Controllers\Render\RegisterHostController.cs" />
     <Compile Include="Controllers\Render\RegisterHostPartyKitController.cs" />
@@ -247,7 +248,8 @@
     <Compile Include="Models\Forms\RegisterHostPartyKitForm.cs" />
     <Compile Include="Models\Media\Image.cs" />
     <Compile Include="Models\Members\BaseMemberType.cs" />
-    <Compile Include="Models\Members\Partier.cs" />
+    <Compile Include="Models\Members\PartyGuest.cs" />
+    <Compile Include="Models\Members\PartyHost.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

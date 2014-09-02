@@ -50,11 +50,6 @@ namespace Wonderland.Logic.Models.Members
             }
         }
 
-        public void AssignRole(string role)
-        {
-            this.MemberService.AssignRole(this.Id, role);
-        }
-
         protected void SetPropertyValue(string propertyAlias, object propertyValue)
         {
             this.Member.SetValue(propertyAlias, propertyValue);

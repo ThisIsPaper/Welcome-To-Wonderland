@@ -3,20 +3,18 @@ namespace Wonderland.Logic.Controllers.Render
 {
     using System.Linq;
     using System.Web.Mvc;
-    using Umbraco.Web.Mvc;
     using Wonderland.Logic.Models.Content;
     using Wonderland.Logic.Models.Members;
 
-    public class RegisterHostController : RenderMvcController
+    public class RegisterHostController : BaseRenderMvcController
     {
         public ActionResult RegisterHost()
-        {
+        {            
             RegisterHost model = (RegisterHost)this.CurrentPage;
 
-            // safety checks
-            if (this.User.Identity.IsAuthenticated)
+            if (this.Members.IsLoggedIn())
             {
-                if (this.User.IsInRole(Partier.HostRoleAlias))
+                if (this.Members.GetCurrentMember() is PartyHost)
                 {
                     // user already registered as a host, so move onto the next step
                     return this.Redirect(model.Children.Single(x => x.DocumentTypeAlias == RegisterHostPartyKit.Alias).Url);
