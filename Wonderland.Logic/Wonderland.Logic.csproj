@@ -196,6 +196,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\Render\BaseRenderController.cs" />
     <Compile Include="Controllers\Render\LeaderboardController.cs" />
     <Compile Include="Controllers\Render\RegisterHostController.cs" />
     <Compile Include="Controllers\Render\RegisterHostPartyKitController.cs" />

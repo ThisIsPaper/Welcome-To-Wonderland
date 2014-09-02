@@ -7,10 +7,12 @@ namespace Wonderland.Logic.Controllers.Render
     using Wonderland.Logic.Models.Content;
     using Wonderland.Logic.Models.Members;
 
-    public class RegisterHostController : RenderMvcController
+    public class RegisterHostController : BaseRenderController
     {
         public ActionResult RegisterHost()
         {
+            //var customModel = this.MemberhipHelper.GetCurrentMember();
+
             RegisterHost model = (RegisterHost)this.CurrentPage;
 
             // safety checks
