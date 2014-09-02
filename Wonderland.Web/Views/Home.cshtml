@@ -6,7 +6,14 @@
     <div class="hero-title">
     </div>
     <div class="actions">
-        <a href="@Model.SiteSettings.RegisterHostUrl" class="btn-primary">Host a party ></a>       
+        @if(!this.User.Identity.IsAuthenticated)
+        { 
+            <a href="@Model.SiteSettings.RegisterHostUrl" class="btn-primary">Host a party ></a>       
+        }
+        else
+        {
+            <a href="#" class="btn-primary">My party</a>
+        }
     </div>
 </section>
 <div id="homeBg">
