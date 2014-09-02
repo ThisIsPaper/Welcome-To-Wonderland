@@ -14,7 +14,20 @@
                 Wonderland Home
             </p>
         </a>
-	    <a class="btn-secondary" href="@Model.LoginUrl">Login</a>
+
+        @if (!this.User.Identity.IsAuthenticated)
+        {
+            <a class="btn-secondary" href="@Model.LoginUrl">Login</a>
+        }
+        else
+        {
+            <ul>
+                <li>
+                    @Html.ActionLink("Logout", "Logout", "LogoutSurface")
+                </li>
+            </ul>
+        }
+
     </nav>
 	<div class="snow-brush-overlay"></div>
 </header>
