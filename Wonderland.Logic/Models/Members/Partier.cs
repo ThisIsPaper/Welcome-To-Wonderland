@@ -19,6 +19,7 @@ namespace Wonderland.Logic.Models.Members
         public const string PartyKitAddressAlias = "partyKitAddress";
         public const string BillingAddressAlias = "billingAddress";
         public const string HasRequestedPartyKitAlias = "hasRequestedPartyKit";
+        public const string PartyUrlIdentifierAlias = "partyUrlIdentifier";
 
         // Roles
         public const string HostRoleAlias = "Party Host";
@@ -98,6 +99,18 @@ namespace Wonderland.Logic.Models.Members
             set
             {
                 this.SetPropertyValue(Partier.HasRequestedPartyKitAlias, value);
+            }
+        }
+
+        public string PartyUrlIdentifier
+        {
+            get
+            {
+                return this.GetPropertyValue<string>(Partier.PartyUrlIdentifierAlias);
+            }
+            set
+            {
+                this.SetPropertyValue(Partier.PartyUrlIdentifierAlias, value);
             }
         }
 
