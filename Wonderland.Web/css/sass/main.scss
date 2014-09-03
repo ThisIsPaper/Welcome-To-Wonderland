@@ -160,11 +160,12 @@ main { padding-top: 3.5rem; }
   @extend %rounded-skew-three;
   @include container();
   background: white;
-  height: 13.5rem;
+  min-height: 13.5rem;
   padding: 0 2.2rem;
   position: absolute;
   margin: -2rem 1.5rem;
   max-width: 67rem;
+
   .banner-info {
     @extend %pull-left;  
     padding: 0.5rem 0.2rem;
@@ -173,11 +174,10 @@ main { padding-top: 3.5rem; }
   }
 
   .money-raised-info {
-    @extend %relative;
     @extend %pull-right;  
     background: image-url('amount-raised-ph.png') no-repeat center right transparent;
     height: 14rem;
-    @include span(2 of 6 omega);
+    width: 21rem
   }
 
   h1 {
@@ -269,10 +269,15 @@ main { padding-top: 3.5rem; }
   background: image-url('footer_texture.png') repeat-x center;
   padding-top: 1.2rem;
   height: 4rem;
-  margin-top: -2rem;
+  margin-top: -5rem;
 }
 
 footer {
+  h2 {
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    font-weight: bold;
+  }
   .footer-primary {
     margin: 0 auto;
     max-width: 71.3rem;
@@ -283,8 +288,31 @@ footer {
       @include span(4 of 12);
       &.share-container { 
         text-align: center; 
+        ul { margin: 0 3rem; }
+        li {
+          float: left;
+          span {
+            font-size: 3.5rem;
+            padding: 0 0.6rem;
+            &.icon-facebook { color: #3b5798 }
+            &.icon-twitter { color: #17aaed }
+            &.icon-google_plus { color: #ce3628 }
+          }
+        }
+        p {
+          color: $wonderlandSecondaryColour;
+          font-size: 1.7rem;
+          margin-left: 5.5rem;
+        }
       }  
-      &:last-child { @include span(4 of 12 omega); }
+      &:last-child { 
+        @include span(4 of 12 omega); 
+      }
+    }
+    .footer-logo { 
+      img {
+        width: 15.5rem;
+      }  
     }
   }
 }
