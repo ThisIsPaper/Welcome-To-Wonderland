@@ -1,6 +1,8 @@
 ﻿
 namespace Wonderland.Logic.Events
 {
+    using System;
+    using System.Collections.Generic;
     using Umbraco.Core;
     using Umbraco.Core.Models.PublishedContent;
 
@@ -8,8 +10,8 @@ namespace Wonderland.Logic.Events
     {
         protected override void ApplicationStarting(UmbracoApplicationBase umbracoApplication, ApplicationContext applicationContext)
         {
-            var types = PluginManager.Current.ResolveTypes<PublishedContentModel>();
-            var factory = new PublishedContentModelFactory(types);
+            IEnumerable<Type> types = PluginManager.Current.ResolveTypes<PublishedContentModel>();
+            PublishedContentModelFactory factory = new PublishedContentModelFactory(types);
             PublishedContentModelFactoryResolver.Current.SetFactory(factory);
         }
     }
