@@ -347,7 +347,7 @@ Positions
 }
 
 /* line 615, sass/partials/_helpers.scss */
-.frame, .nav ul.toolbar li {
+.frame, .nav ul.toolbar li, .banner .money-raised-info {
   position: relative;
 }
 
@@ -398,7 +398,7 @@ Project Specific helpers
   background: white;
 }
 
-/* line 5, ../../../../../Users/Sam Latif/AppData/Roaming/Mixture/Tools/Ruby/lib/ruby/gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+/* line 5, ../../../../../Users/Sam/AppData/Roaming/Mixture/Tools/Ruby/lib/ruby/gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -420,45 +420,45 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
-/* line 22, ../../../../../Users/Sam Latif/AppData/Roaming/Mixture/Tools/Ruby/lib/ruby/gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+/* line 22, ../../../../../Users/Sam/AppData/Roaming/Mixture/Tools/Ruby/lib/ruby/gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
 html {
   line-height: 1;
 }
 
-/* line 24, ../../../../../Users/Sam Latif/AppData/Roaming/Mixture/Tools/Ruby/lib/ruby/gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+/* line 24, ../../../../../Users/Sam/AppData/Roaming/Mixture/Tools/Ruby/lib/ruby/gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 26, ../../../../../Users/Sam Latif/AppData/Roaming/Mixture/Tools/Ruby/lib/ruby/gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+/* line 26, ../../../../../Users/Sam/AppData/Roaming/Mixture/Tools/Ruby/lib/ruby/gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 28, ../../../../../Users/Sam Latif/AppData/Roaming/Mixture/Tools/Ruby/lib/ruby/gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+/* line 28, ../../../../../Users/Sam/AppData/Roaming/Mixture/Tools/Ruby/lib/ruby/gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 30, ../../../../../Users/Sam Latif/AppData/Roaming/Mixture/Tools/Ruby/lib/ruby/gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+/* line 30, ../../../../../Users/Sam/AppData/Roaming/Mixture/Tools/Ruby/lib/ruby/gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none;
 }
-/* line 103, ../../../../../Users/Sam Latif/AppData/Roaming/Mixture/Tools/Ruby/lib/ruby/gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+/* line 103, ../../../../../Users/Sam/AppData/Roaming/Mixture/Tools/Ruby/lib/ruby/gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
 
-/* line 32, ../../../../../Users/Sam Latif/AppData/Roaming/Mixture/Tools/Ruby/lib/ruby/gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+/* line 32, ../../../../../Users/Sam/AppData/Roaming/Mixture/Tools/Ruby/lib/ruby/gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
 
-/* line 116, ../../../../../Users/Sam Latif/AppData/Roaming/Mixture/Tools/Ruby/lib/ruby/gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+/* line 116, ../../../../../Users/Sam/AppData/Roaming/Mixture/Tools/Ruby/lib/ruby/gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
   display: block;
 }
@@ -566,7 +566,7 @@ Media query variables
   margin-right: auto;
   max-width: 74.3rem;
 }
-/* line 12, ../../../../../Users/Sam Latif/AppData/Roaming/Mixture/Tools/Ruby/lib/ruby/gems/2.0.0/gems/susy-2.1.3/sass/susy/output/support/_clearfix.scss */
+/* line 12, ../../../../../Users/Sam/AppData/Roaming/Mixture/Tools/Ruby/lib/ruby/gems/2.0.0/gems/susy-2.1.3/sass/susy/output/support/_clearfix.scss */
 .container:after {
   content: " ";
   display: block;
@@ -2566,7 +2566,7 @@ Positions
 }
 
 /* line 615, sass/partials/_helpers.scss */
-.frame, .nav ul.toolbar li {
+.frame, .nav ul.toolbar li, .banner .money-raised-info {
   position: relative;
 }
 
@@ -3111,7 +3111,7 @@ Mobile main media query
 }
 /* line 84, sass/main.scss */
 #siteHeader .wonderland-logo-bg {
-  background: url('/img/wonderland-crest.svg?1409699649') no-repeat;
+  background: url('/img/wonderland-crest.svg?1409735651') no-repeat;
   left: 50%;
   padding: 4rem 0 3rem;
   margin: 1rem -2.93rem;
@@ -3122,7 +3122,7 @@ Mobile main media query
 }
 /* line 94, sass/main.scss */
 #siteHeader .wonderland-logo {
-  background: url('/img/wonderland-logo.svg?1409341808') no-repeat center;
+  background: url('/img/wonderland-logo.svg?1409649424') no-repeat center;
   padding: 1.5rem 6rem;
   z-index: 1;
   margin: 1.5rem -6rem;
@@ -3158,7 +3158,7 @@ main {
 
 /* line 126, sass/main.scss */
 #homeBg {
-  background: url('/img/wood_texture.jpg?1409082046') repeat top left;
+  background: url('/img/wood_texture.jpg?1409129698') repeat top left;
   background-size: 100% 50%;
   margin-top: -1.2rem;
 }
@@ -3166,7 +3166,7 @@ main {
 /* line 132, sass/main.scss */
 #heroGraphic {
   height: 35rem;
-  background-image: url('/img/hero-ph.jpg?1409147324');
+  background-image: url('/img/hero-ph.jpg?1409137559');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -3197,9 +3197,9 @@ main {
   padding: 0 2.2rem;
   position: absolute;
   margin: -2rem 1.5rem;
-  max-width: 66rem;
+  max-width: 67rem;
 }
-/* line 12, ../../../../../Users/Sam Latif/AppData/Roaming/Mixture/Tools/Ruby/lib/ruby/gems/2.0.0/gems/susy-2.1.3/sass/susy/output/support/_clearfix.scss */
+/* line 12, ../../../../../Users/Sam/AppData/Roaming/Mixture/Tools/Ruby/lib/ruby/gems/2.0.0/gems/susy-2.1.3/sass/susy/output/support/_clearfix.scss */
 .banner:after {
   content: " ";
   display: block;
@@ -3208,14 +3208,20 @@ main {
 /* line 168, sass/main.scss */
 .banner .banner-info {
   padding: 0.5rem 0.2rem;
+  width: 65.51724%;
+  float: left;
+  margin-right: 3.44828%;
+  margin: 0;
 }
-/* line 173, sass/main.scss */
+/* line 175, sass/main.scss */
 .banner .money-raised-info {
-  background: url('/img/amount-raised-ph.png?1409243626') no-repeat center right transparent;
-  margin-right: -1.2rem;
-  padding: 14rem 2rem 0 0;
+  background: url('/img/amount-raised-ph.png?1409737448') no-repeat center right transparent;
+  height: 14rem;
+  width: 31.03448%;
+  float: right;
+  margin-right: 0;
 }
-/* line 179, sass/main.scss */
+/* line 183, sass/main.scss */
 .banner h1 {
   color: #007eac;
   font-weight: bold;
@@ -3225,85 +3231,91 @@ main {
   letter-spacing: 0.05rem;
   margin: 0;
 }
-/* line 189, sass/main.scss */
+/* line 193, sass/main.scss */
 .banner p {
   font-size: 1.13333rem;
   line-height: 1.79443;
   font-weight: bold;
   margin-top: -0.5rem;
 }
+/* line 199, sass/main.scss */
+.banner p.amount {
+  color: white;
+  font-size: 3rem;
+  margin: 2.5rem;
+}
 
-/* line 197, sass/main.scss */
+/* line 208, sass/main.scss */
 .promo-tiles {
   padding-top: 15rem;
 }
 
-/* line 201, sass/main.scss */
+/* line 212, sass/main.scss */
 .frame {
   width: 30%;
   margin: 1rem;
   padding: 1rem;
 }
-/* line 206, sass/main.scss */
+/* line 217, sass/main.scss */
 .frame:first-child {
   margin-left: 0;
 }
-/* line 209, sass/main.scss */
+/* line 220, sass/main.scss */
 .frame:last-child {
   margin-right: 0;
 }
-/* line 212, sass/main.scss */
+/* line 223, sass/main.scss */
 .frame img {
   display: block;
 }
-/* line 214, sass/main.scss */
+/* line 225, sass/main.scss */
 .frame img:first-child {
   margin-left: 0;
   width: 100%;
 }
-/* line 218, sass/main.scss */
+/* line 229, sass/main.scss */
 .frame img:last-child {
   bottom: 0;
   left: 0;
   margin-right: 0;
   width: 60%;
 }
-/* line 228, sass/main.scss */
+/* line 239, sass/main.scss */
 .frame:nth-child(1) {
-  -moz-transform: rotate(-0.7deg);
-  -ms-transform: rotate(-0.7deg);
-  -webkit-transform: rotate(-0.7deg);
-  transform: rotate(-0.7deg);
+  -moz-transform: rotate(-2.1deg);
+  -ms-transform: rotate(-2.1deg);
+  -webkit-transform: rotate(-2.1deg);
+  transform: rotate(-2.1deg);
 }
-/* line 228, sass/main.scss */
+/* line 239, sass/main.scss */
 .frame:nth-child(2) {
-  -moz-transform: rotate(2deg);
-  -ms-transform: rotate(2deg);
-  -webkit-transform: rotate(2deg);
-  transform: rotate(2deg);
+  -moz-transform: rotate(1.6deg);
+  -ms-transform: rotate(1.6deg);
+  -webkit-transform: rotate(1.6deg);
+  transform: rotate(1.6deg);
 }
-/* line 228, sass/main.scss */
+/* line 239, sass/main.scss */
 .frame:nth-child(3) {
-  -moz-transform: rotate(-1.5deg);
-  -ms-transform: rotate(-1.5deg);
-  -webkit-transform: rotate(-1.5deg);
-  transform: rotate(-1.5deg);
+  -moz-transform: rotate(-0.6deg);
+  -ms-transform: rotate(-0.6deg);
+  -webkit-transform: rotate(-0.6deg);
+  transform: rotate(-0.6deg);
 }
-/* line 228, sass/main.scss */
+/* line 239, sass/main.scss */
 .frame:nth-child(4) {
-  -moz-transform: rotate(1.5deg);
-  -ms-transform: rotate(1.5deg);
-  -webkit-transform: rotate(1.5deg);
-  transform: rotate(1.5deg);
+  -moz-transform: rotate(2.2deg);
+  -ms-transform: rotate(2.2deg);
+  -webkit-transform: rotate(2.2deg);
+  transform: rotate(2.2deg);
 }
-/* line 228, sass/main.scss */
+/* line 239, sass/main.scss */
 .frame:nth-child(5) {
-  -moz-transform: rotate(-0.3deg);
-  -ms-transform: rotate(-0.3deg);
-  -webkit-transform: rotate(-0.3deg);
-  transform: rotate(-0.3deg);
+  -moz-transform: rotate(-1.1deg);
+  -ms-transform: rotate(-1.1deg);
+  -webkit-transform: rotate(-1.1deg);
+  transform: rotate(-1.1deg);
 }
-/* line 228, sass/main.scss */
+/* line 239, sass/main.scss */
 .frame:nth-child(6) {
   -moz-transform: rotate(0.6deg);
   -ms-transform: rotate(0.6deg);
@@ -3311,50 +3323,50 @@ main {
   transform: rotate(0.6deg);
 }
 
-/* line 241, sass/main.scss */
+/* line 252, sass/main.scss */
 #shareWonderland {
-  background: url('/img/home-share-ph.png?1409256896') no-repeat;
+  background: url('/img/home-share-ph.png?1409306913') no-repeat;
   padding: 7rem 15.2rem;
   margin: 3.1rem 1.5rem;
 }
 
-/* line 249, sass/main.scss */
+/* line 260, sass/main.scss */
 #twitterFeed {
-  background: url('/img/home-twitter-ph.png?1409257968') no-repeat;
+  background: url('/img/home-twitter-ph.png?1409306913') no-repeat;
   padding: 16rem 17.5rem 13rem;
   margin: 2.2rem 1.4rem 0 0;
 }
 
-/* line 256, sass/main.scss */
+/* line 267, sass/main.scss */
 .footer-snow-brush-overlay {
-  background: url('/img/footer_texture.png?1409082046') repeat-x center;
+  background: url('/img/footer_texture.png?1409129698') repeat-x center;
   padding-top: 1.2rem;
   height: 4rem;
   margin-top: -2rem;
 }
 
-/* line 265, sass/main.scss */
+/* line 276, sass/main.scss */
 footer .footer-primary {
   margin: 0 auto;
   max-width: 71.3rem;
 }
-/* line 268, sass/main.scss */
+/* line 279, sass/main.scss */
 footer .footer-primary > nav {
   width: 23.72881%;
   float: left;
   margin-right: 1.69492%;
 }
-/* line 271, sass/main.scss */
+/* line 282, sass/main.scss */
 footer .footer-primary > div {
   width: 32.20339%;
   float: left;
   margin-right: 1.69492%;
 }
-/* line 273, sass/main.scss */
+/* line 284, sass/main.scss */
 footer .footer-primary > div.share-container {
   text-align: center;
 }
-/* line 276, sass/main.scss */
+/* line 287, sass/main.scss */
 footer .footer-primary > div:last-child {
   width: 32.20339%;
   float: right;
