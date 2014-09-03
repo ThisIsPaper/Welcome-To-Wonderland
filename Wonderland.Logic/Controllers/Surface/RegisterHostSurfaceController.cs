@@ -1,6 +1,7 @@
 ﻿
 namespace Wonderland.Logic.Controllers.Surface
 {
+    using System;
     using System.Collections.Generic;
     using System.Linq;
     using System.Web.Mvc;
@@ -86,6 +87,8 @@ namespace Wonderland.Logic.Controllers.Surface
             PartyHost partyHost = (PartyHost)membershipUser;
 
             partyHost.MarketingSource = registerHostForm.MarketingSource;
+
+            partyHost.PartyUrlIdentifier = Guid.NewGuid().ToString();
 
             // send cookie
             FormsAuthentication.SetAuthCookie(partyHost.Username, true);

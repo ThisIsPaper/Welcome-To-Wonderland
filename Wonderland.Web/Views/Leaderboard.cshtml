@@ -1,0 +1,35 @@
+﻿@inherits UmbracoViewPage<Leaderboard>
+@{
+    Layout = "SitePage.cshtml";
+}
+<h1>@Model.PageHeading - @Model.LeaderboardType</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Host Name</th>
+            @switch (Model.LeaderboardType)
+            {
+                case LeaderboardType.MostGuests:
+                    <th>Guests (sorted)</th>
+                    <th><a href="@Model.TopFundraisersLink">Amount Raised</a></th>
+                    break;
+                    
+                case LeaderboardType.TopFundraisers:
+                    <th><a href="@Model.MostGuestsLink">Guests</th>
+                    <th>Amount Raised (sorted)</th>
+                    break;
+            }
+        </tr>
+    </thead>
+    <tbody>
+        @*@foreach (Partier partier in Model.GetPartiers())
+        {
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        }*@
+    </tbody>
+</table>
