@@ -273,50 +273,68 @@ main { padding-top: 3.5rem; }
 }
 
 footer {
-  h2 {
-    color: #007dab;
-    font-size: 1.2rem;
-    font-weight: bold;
-    text-transform: uppercase;
-  }
-  .footer-primary {
-    margin: 0 auto;
-    max-width: 71.3rem;
-    > nav {
-      @include span(3 of 12);
-      a {
-        color: #007dab;
+  section {
+    @extend %pull-left;
+    width: $wonderlandRowWidth;
+    
+    &.footer-primary {
+      margin: 0 auto;
+      > nav {
+        @include span(3 of 12);
+        a {
+          color: #007dab;
+        }
       }
-    }
-    > div { 
-      @include span(4 of 12);
-      &.share-container { 
-        text-align: center; 
-        ul { margin: 0 3rem; }
-        li {
-          float: left;
-          span {
-            font-size: 3.5rem;
-            padding: 0 0.6rem;
-            &.icon-facebook { color: #3b5798 }
-            &.icon-twitter { color: #17aaed }
-            &.icon-google_plus { color: #ce3628 }
+      > div { 
+        @include span(4 of 12);
+        &.share-container { 
+          text-align: center; 
+          ul { margin: 0 3rem; }
+          li {
+            float: left;
+            span {
+              font-size: 3.5rem;
+              padding: 0 0.6rem;
+              &.icon-facebook { color: #3b5798 }
+              &.icon-twitter { color: #17aaed }
+              &.icon-google_plus { color: #ce3628 }
+            }
           }
+          p {
+            color: #17aaed;
+            font-size: 1.7rem;
+            margin-left: 5.5rem;
+          }
+        }  
+        &:last-child { 
+          @include span(4 of 12 omega); 
         }
-        p {
-          color: #17aaed;
-          font-size: 1.7rem;
-          margin-left: 5.5rem;
-        }
+      }
+      .footer-logo { 
+        img {
+          width: 15.5rem;
+        }  
       }  
-      &:last-child { 
-        @include span(4 of 12 omega); 
+      h2 {
+        color: #007dab;
+        font-size: 1.2rem;
+        font-weight: bold;
+        text-transform: uppercase;
       }
     }
-    .footer-logo { 
-      img {
-        width: 15.5rem;
-      }  
+    
+    &.footer-secondary {
+      nav {
+        @extend %pull-right;
+        text-transform: uppercase;
+        font-size: 0.8rem;
+        margin-top: 1rem;
+        a {
+          color: $wonderlandPrimaryColour;
+          padding: 0 0.1rem;
+          font-weight: bold;
+        }
+      }
     }
   }
 }
