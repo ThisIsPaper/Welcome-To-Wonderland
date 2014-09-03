@@ -80,17 +80,15 @@ namespace Wonderland.Logic.Controllers.Surface
                 }
 
                 return this.CurrentUmbracoPage();
-            }
+            }            
 
-            // TODO: consider this..Members.Login(username, password)
+            // cast from MembershipUser rather than use this.Members.GetCurrentMember() helper (which needs a round trip for the login)
+            PartyHost partyHost = (PartyHost)membershipUser;
 
-            // this isn't yet the current user, so cast rather than use this.Members.GetCurrentMember() helper
-            PartyHost partier = (PartyHost)membershipUser;
-          
-            partier.MarketingSource = registerHostForm.MarketingSource;
-            
+            partyHost.MarketingSource = registerHostForm.MarketingSource;
+
             // send cookie
-            FormsAuthentication.SetAuthCookie(partier.Username, true);
+            FormsAuthentication.SetAuthCookie(partyHost.Username, true);
 
             return this.RedirectToUmbracoPage(this.CurrentPage.Children.Single(x => x.DocumentTypeAlias == RegisterHostPartyKit.Alias));
         }
