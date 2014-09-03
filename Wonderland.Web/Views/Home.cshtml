@@ -5,7 +5,7 @@
 <section id="heroGraphic">
     <img src="img/home-hero-copy.png" alt="Welcome to Wonderland" class="hero-title">
     <div class="actions">
-        @if(!this.User.Identity.IsAuthenticated)
+        @if(!this.Members.IsLoggedIn())
         { 
             <a href="@Model.SiteSettings.RegisterHostUrl" class="btn-primary">Host a party ></a>       
         }

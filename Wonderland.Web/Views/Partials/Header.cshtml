@@ -1,7 +1,7 @@
 ﻿@inherits UmbracoViewPage<SiteSettings> 
 <header id="siteHeader">
     <nav class="nav">
-        @if (!this.User.Identity.IsAuthenticated)
+        @if (!this.Members.IsLoggedIn())
         {
             <a class="btn-primary" href="@Model.RegisterHostUrl">Host a party ></a>
         }
@@ -23,7 +23,7 @@
             </p>
         </a>
 
-        @if (!this.User.Identity.IsAuthenticated)
+        @if (!this.Members.IsLoggedIn())
         {
             <a class="btn-secondary" href="@Model.LoginUrl">Login</a>
         }
