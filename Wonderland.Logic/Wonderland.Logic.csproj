@@ -118,6 +118,7 @@
       <Private>True</Private>
       <HintPath>..\packages\UmbracoCms.Core.7.1.5\lib\System.Data.SqlServerCe.Entity.dll</HintPath>
     </Reference>
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.30506.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
     </Reference>
@@ -153,6 +154,7 @@
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -206,6 +208,7 @@
     <Compile Include="Controllers\Surface\RegisterHostSurfaceController.cs" />
     <Compile Include="Enums\LeaderboardType.cs" />
     <Compile Include="Enums\PartyIdeaTileSize.cs" />
+    <Compile Include="Events\SetPageNotFoundHandler.cs" />
     <Compile Include="Events\SetPublishedContentModelFactory.cs" />
     <Compile Include="Extensions\HtmlHelperExtensions.cs" />
     <Compile Include="Models\Content\DecorationCategory.cs" />
@@ -217,6 +220,7 @@
     <Compile Include="Models\Content\FundraisingIdea.cs" />
     <Compile Include="Models\Content\FundraisingIdeas.cs" />
     <Compile Include="Models\Content\Home.cs" />
+    <Compile Include="Models\Content\PageNotFound.cs" />
     <Compile Include="Models\Content\RegisterGuestConfirmation.cs" />
     <Compile Include="Models\Content\RegisterHostPartyUrl.cs" />
     <Compile Include="Models\Content\Leaderboard.cs" />
