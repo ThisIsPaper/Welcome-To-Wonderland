@@ -157,25 +157,29 @@ main { padding-top: 3.5rem; }
 }
 
 .banner {
-  @include container();
   @extend %rounded-skew-three;
+  @include container();
   background: white;
   height: 13.5rem;
   padding: 0 2.2rem;
   position: absolute;
   margin: -2rem 1.5rem;
-  max-width: 66rem;
+  max-width: 67rem;
   .banner-info {
     @extend %pull-left;  
     padding: 0.5rem 0.2rem;
+    @include span(4 of 6);
+    margin: 0;
   }
 
   .money-raised-info {
+    @extend %relative;
     @extend %pull-right;  
     background: image-url('amount-raised-ph.png') no-repeat center right transparent;
-    margin-right: -1.2rem;  
-    padding: 14rem 2rem 0 0;
+    height: 14rem;
+    @include span(2 of 6 omega);
   }
+
   h1 {
     color: $wonderlandPrimaryColour;
     font-weight: bold;
@@ -191,7 +195,14 @@ main { padding-top: 3.5rem; }
     line-height: 1.79443;
     font-weight: bold;
     margin-top: -0.5rem;
+    
+    &.amount {
+      color: white;
+      font-size: 3rem;  
+      margin: 2.5rem;
+    }
   }
+
 }
 
 .promo-tiles {
