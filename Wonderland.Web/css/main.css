@@ -324,12 +324,12 @@ Borders
 Floats
 ========================================================================== */
 /* line 597, sass/partials/_helpers.scss */
-.frame, #siteHeader .toolbar > li:nth-child(1), #siteHeader .toolbar > li:nth-child(2), .banner .banner-info, #shareWonderland {
+.frame, #siteHeader .toolbar > li:nth-child(1), #siteHeader .toolbar > li:nth-child(2), .banner .banner-info, #shareWonderland, footer section {
   float: left;
 }
 
 /* line 600, sass/partials/_helpers.scss */
-#siteHeader .toolbar > li:nth-child(3), #siteHeader .toolbar > li:nth-child(4), .banner .money-raised-info, #twitterFeed {
+#siteHeader .toolbar > li:nth-child(3), #siteHeader .toolbar > li:nth-child(4), .banner .money-raised-info, #twitterFeed, footer section.footer-secondary nav {
   float: right;
 }
 
@@ -398,7 +398,7 @@ Project Specific helpers
   background: white;
 }
 
-/* line 5, ../../../../../Users/Sam/AppData/Roaming/Mixture/Tools/Ruby/lib/ruby/gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+/* line 5, ../../../../../Users/Sam Latif/AppData/Roaming/Mixture/Tools/Ruby/lib/ruby/gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -420,45 +420,45 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
-/* line 22, ../../../../../Users/Sam/AppData/Roaming/Mixture/Tools/Ruby/lib/ruby/gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+/* line 22, ../../../../../Users/Sam Latif/AppData/Roaming/Mixture/Tools/Ruby/lib/ruby/gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
 html {
   line-height: 1;
 }
 
-/* line 24, ../../../../../Users/Sam/AppData/Roaming/Mixture/Tools/Ruby/lib/ruby/gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+/* line 24, ../../../../../Users/Sam Latif/AppData/Roaming/Mixture/Tools/Ruby/lib/ruby/gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 26, ../../../../../Users/Sam/AppData/Roaming/Mixture/Tools/Ruby/lib/ruby/gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+/* line 26, ../../../../../Users/Sam Latif/AppData/Roaming/Mixture/Tools/Ruby/lib/ruby/gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 28, ../../../../../Users/Sam/AppData/Roaming/Mixture/Tools/Ruby/lib/ruby/gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+/* line 28, ../../../../../Users/Sam Latif/AppData/Roaming/Mixture/Tools/Ruby/lib/ruby/gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 30, ../../../../../Users/Sam/AppData/Roaming/Mixture/Tools/Ruby/lib/ruby/gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+/* line 30, ../../../../../Users/Sam Latif/AppData/Roaming/Mixture/Tools/Ruby/lib/ruby/gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none;
 }
-/* line 103, ../../../../../Users/Sam/AppData/Roaming/Mixture/Tools/Ruby/lib/ruby/gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+/* line 103, ../../../../../Users/Sam Latif/AppData/Roaming/Mixture/Tools/Ruby/lib/ruby/gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
 
-/* line 32, ../../../../../Users/Sam/AppData/Roaming/Mixture/Tools/Ruby/lib/ruby/gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+/* line 32, ../../../../../Users/Sam Latif/AppData/Roaming/Mixture/Tools/Ruby/lib/ruby/gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
 
-/* line 116, ../../../../../Users/Sam/AppData/Roaming/Mixture/Tools/Ruby/lib/ruby/gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
+/* line 116, ../../../../../Users/Sam Latif/AppData/Roaming/Mixture/Tools/Ruby/lib/ruby/gems/2.0.0/gems/compass-core-1.0.1/stylesheets/compass/reset/_utilities.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
   display: block;
 }
@@ -566,7 +566,7 @@ Media query variables
   margin-right: auto;
   max-width: 74.3rem;
 }
-/* line 12, ../../../../../Users/Sam/AppData/Roaming/Mixture/Tools/Ruby/lib/ruby/gems/2.0.0/gems/susy-2.1.3/sass/susy/output/support/_clearfix.scss */
+/* line 12, ../../../../../Users/Sam Latif/AppData/Roaming/Mixture/Tools/Ruby/lib/ruby/gems/2.0.0/gems/susy-2.1.3/sass/susy/output/support/_clearfix.scss */
 .container:after {
   content: " ";
   display: block;
@@ -1088,12 +1088,12 @@ Borders
 Floats
 ========================================================================== */
 /* line 597, sass/partials/_helpers.scss */
-.frame, #siteHeader .toolbar > li:nth-child(1), #siteHeader .toolbar > li:nth-child(2), .banner .banner-info, #shareWonderland {
+.frame, #siteHeader .toolbar > li:nth-child(1), #siteHeader .toolbar > li:nth-child(2), .banner .banner-info, #shareWonderland, footer section {
   float: left;
 }
 
 /* line 600, sass/partials/_helpers.scss */
-#siteHeader .toolbar > li:nth-child(3), #siteHeader .toolbar > li:nth-child(4), .banner .money-raised-info, #twitterFeed {
+#siteHeader .toolbar > li:nth-child(3), #siteHeader .toolbar > li:nth-child(4), .banner .money-raised-info, #twitterFeed, footer section.footer-secondary nav {
   float: right;
 }
 
@@ -1656,7 +1656,7 @@ Mobile main media query
 }
 /* line 84, sass/main.scss */
 #siteHeader .wonderland-logo-bg {
-  background: url('/img/wonderland-crest.svg?1409735651') no-repeat;
+  background: url('/img/wonderland-crest.svg?1409699649') no-repeat;
   left: 50%;
   padding: 4rem 0 3rem;
   margin: 1rem -2.93rem;
@@ -1667,7 +1667,7 @@ Mobile main media query
 }
 /* line 94, sass/main.scss */
 #siteHeader .wonderland-logo {
-  background: url('/img/wonderland-logo.svg?1409649424') no-repeat center;
+  background: url('/img/wonderland-logo.svg?1409341808') no-repeat center;
   padding: 1.5rem 6rem;
   z-index: 1;
   margin: 1.5rem -6rem;
@@ -1703,7 +1703,7 @@ main {
 
 /* line 126, sass/main.scss */
 #homeBg {
-  background: url('/img/wood_texture.jpg?1409129698') repeat top left;
+  background: url('/img/wood_texture.jpg?1409082046') repeat top left;
   background-size: 100% 50%;
   margin-top: -1.2rem;
 }
@@ -1711,7 +1711,7 @@ main {
 /* line 132, sass/main.scss */
 #heroGraphic {
   height: 35rem;
-  background-image: url('/img/hero-ph.jpg?1409137559');
+  background-image: url('/img/hero-ph.jpg?1409147324');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -1744,7 +1744,7 @@ main {
   margin: -2rem 1.5rem;
   max-width: 67rem;
 }
-/* line 12, ../../../../../Users/Sam/AppData/Roaming/Mixture/Tools/Ruby/lib/ruby/gems/2.0.0/gems/susy-2.1.3/sass/susy/output/support/_clearfix.scss */
+/* line 12, ../../../../../Users/Sam Latif/AppData/Roaming/Mixture/Tools/Ruby/lib/ruby/gems/2.0.0/gems/susy-2.1.3/sass/susy/output/support/_clearfix.scss */
 .banner:after {
   content: " ";
   display: block;
@@ -1760,7 +1760,7 @@ main {
 }
 /* line 176, sass/main.scss */
 .banner .money-raised-info {
-  background: url('/img/amount-raised-ph.png?1409737448') no-repeat center right transparent;
+  background: url('/img/amount-raised-ph.png?1409755188') no-repeat center right transparent;
   height: 14rem;
   width: 21rem;
 }
@@ -1825,31 +1825,31 @@ main {
 }
 /* line 239, sass/main.scss */
 .frame:nth-child(1) {
-  -moz-transform: rotate(-1.4deg);
-  -ms-transform: rotate(-1.4deg);
-  -webkit-transform: rotate(-1.4deg);
-  transform: rotate(-1.4deg);
+  -moz-transform: rotate(-0.5deg);
+  -ms-transform: rotate(-0.5deg);
+  -webkit-transform: rotate(-0.5deg);
+  transform: rotate(-0.5deg);
 }
 /* line 239, sass/main.scss */
 .frame:nth-child(2) {
-  -moz-transform: rotate(2.2deg);
-  -ms-transform: rotate(2.2deg);
-  -webkit-transform: rotate(2.2deg);
-  transform: rotate(2.2deg);
+  -moz-transform: rotate(0.6deg);
+  -ms-transform: rotate(0.6deg);
+  -webkit-transform: rotate(0.6deg);
+  transform: rotate(0.6deg);
 }
 /* line 239, sass/main.scss */
 .frame:nth-child(3) {
-  -moz-transform: rotate(-0.4deg);
-  -ms-transform: rotate(-0.4deg);
-  -webkit-transform: rotate(-0.4deg);
-  transform: rotate(-0.4deg);
+  -moz-transform: rotate(-1.1deg);
+  -ms-transform: rotate(-1.1deg);
+  -webkit-transform: rotate(-1.1deg);
+  transform: rotate(-1.1deg);
 }
 /* line 239, sass/main.scss */
 .frame:nth-child(4) {
-  -moz-transform: rotate(0.5deg);
-  -ms-transform: rotate(0.5deg);
-  -webkit-transform: rotate(0.5deg);
-  transform: rotate(0.5deg);
+  -moz-transform: rotate(1.8deg);
+  -ms-transform: rotate(1.8deg);
+  -webkit-transform: rotate(1.8deg);
+  transform: rotate(1.8deg);
 }
 /* line 239, sass/main.scss */
 .frame:nth-child(5) {
@@ -1860,104 +1860,119 @@ main {
 }
 /* line 239, sass/main.scss */
 .frame:nth-child(6) {
-  -moz-transform: rotate(0.8deg);
-  -ms-transform: rotate(0.8deg);
-  -webkit-transform: rotate(0.8deg);
-  transform: rotate(0.8deg);
+  -moz-transform: rotate(0.4deg);
+  -ms-transform: rotate(0.4deg);
+  -webkit-transform: rotate(0.4deg);
+  transform: rotate(0.4deg);
 }
 
 /* line 252, sass/main.scss */
 #shareWonderland {
-  background: url('/img/home-share-ph.png?1409306913') no-repeat;
+  background: url('/img/home-share-ph.png?1409256896') no-repeat;
   padding: 7rem 15.2rem;
   margin: 3.1rem 1.5rem;
 }
 
 /* line 260, sass/main.scss */
 #twitterFeed {
-  background: url('/img/home-twitter-ph.png?1409306913') no-repeat;
+  background: url('/img/home-twitter-ph.png?1409257968') no-repeat;
   padding: 16rem 17.5rem 13rem;
   margin: 2.2rem 1.4rem 0 0;
 }
 
 /* line 267, sass/main.scss */
 .footer-snow-brush-overlay {
-  background: url('/img/footer_texture.png?1409129698') repeat-x center;
+  background: url('/img/footer_texture.png?1409082046') repeat-x center;
   padding-top: 1.2rem;
   height: 4rem;
   margin-top: -5rem;
 }
 
 /* line 276, sass/main.scss */
-footer h2 {
+footer section {
+  width: 100%;
+}
+/* line 280, sass/main.scss */
+footer section.footer-primary {
+  margin: 0 auto;
+}
+/* line 282, sass/main.scss */
+footer section.footer-primary > nav {
+  width: 23.72881%;
+  float: left;
+  margin-right: 1.69492%;
+}
+/* line 284, sass/main.scss */
+footer section.footer-primary > nav a {
+  color: #007dab;
+}
+/* line 288, sass/main.scss */
+footer section.footer-primary > div {
+  width: 32.20339%;
+  float: left;
+  margin-right: 1.69492%;
+}
+/* line 290, sass/main.scss */
+footer section.footer-primary > div.share-container {
+  text-align: center;
+}
+/* line 292, sass/main.scss */
+footer section.footer-primary > div.share-container ul {
+  margin: 0 3rem;
+}
+/* line 293, sass/main.scss */
+footer section.footer-primary > div.share-container li {
+  float: left;
+}
+/* line 295, sass/main.scss */
+footer section.footer-primary > div.share-container li span {
+  font-size: 3.5rem;
+  padding: 0 0.6rem;
+}
+/* line 298, sass/main.scss */
+footer section.footer-primary > div.share-container li span.icon-facebook {
+  color: #3b5798;
+}
+/* line 299, sass/main.scss */
+footer section.footer-primary > div.share-container li span.icon-twitter {
+  color: #17aaed;
+}
+/* line 300, sass/main.scss */
+footer section.footer-primary > div.share-container li span.icon-google_plus {
+  color: #ce3628;
+}
+/* line 303, sass/main.scss */
+footer section.footer-primary > div.share-container p {
+  color: #17aaed;
+  font-size: 1.7rem;
+  margin-left: 5.5rem;
+}
+/* line 309, sass/main.scss */
+footer section.footer-primary > div:last-child {
+  width: 32.20339%;
+  float: right;
+  margin-right: 0;
+}
+/* line 314, sass/main.scss */
+footer section.footer-primary .footer-logo img {
+  width: 15.5rem;
+}
+/* line 318, sass/main.scss */
+footer section.footer-primary h2 {
   color: #007dab;
   font-size: 1.2rem;
   font-weight: bold;
   text-transform: uppercase;
 }
-/* line 282, sass/main.scss */
-footer .footer-primary {
-  margin: 0 auto;
-  max-width: 71.3rem;
+/* line 327, sass/main.scss */
+footer section.footer-secondary nav {
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  margin-top: 1rem;
 }
-/* line 285, sass/main.scss */
-footer .footer-primary > nav {
-  width: 23.72881%;
-  float: left;
-  margin-right: 1.69492%;
-}
-/* line 287, sass/main.scss */
-footer .footer-primary > nav a {
-  color: #007dab;
-}
-/* line 291, sass/main.scss */
-footer .footer-primary > div {
-  width: 32.20339%;
-  float: left;
-  margin-right: 1.69492%;
-}
-/* line 293, sass/main.scss */
-footer .footer-primary > div.share-container {
-  text-align: center;
-}
-/* line 295, sass/main.scss */
-footer .footer-primary > div.share-container ul {
-  margin: 0 3rem;
-}
-/* line 296, sass/main.scss */
-footer .footer-primary > div.share-container li {
-  float: left;
-}
-/* line 298, sass/main.scss */
-footer .footer-primary > div.share-container li span {
-  font-size: 3.5rem;
-  padding: 0 0.6rem;
-}
-/* line 301, sass/main.scss */
-footer .footer-primary > div.share-container li span.icon-facebook {
-  color: #3b5798;
-}
-/* line 302, sass/main.scss */
-footer .footer-primary > div.share-container li span.icon-twitter {
-  color: #17aaed;
-}
-/* line 303, sass/main.scss */
-footer .footer-primary > div.share-container li span.icon-google_plus {
-  color: #ce3628;
-}
-/* line 306, sass/main.scss */
-footer .footer-primary > div.share-container p {
-  color: #17aaed;
-  font-size: 1.7rem;
-  margin-left: 5.5rem;
-}
-/* line 312, sass/main.scss */
-footer .footer-primary > div:last-child {
-  width: 32.20339%;
-  float: right;
-  margin-right: 0;
-}
-/* line 317, sass/main.scss */
-footer .footer-primary .footer-logo img {
-  width: 15.5rem;
+/* line 332, sass/main.scss */
+footer section.footer-secondary nav a {
+  color: #007eac;
+  padding: 0 0.1rem;
+  font-weight: bold;
 }
