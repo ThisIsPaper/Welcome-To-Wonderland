@@ -242,8 +242,8 @@ main { padding-top: 3.5rem; }
         @include transform( rotate( $rand ) );
       } 
       @else {
-          $rand: ( (random( 23 ) * 0.1 ) * - 1 )  + deg;  // generate negative random number
-          @include transform( rotate( $rand ) );
+        $rand: ( (random( 23 ) * 0.1 ) * - 1 )  + deg;  // generate negative random number
+        @include transform( rotate( $rand ) );
       }
     }
   }
@@ -274,15 +274,19 @@ main { padding-top: 3.5rem; }
 
 footer {
   h2 {
-    text-transform: uppercase;
+    color: #007dab;
     font-size: 1.2rem;
     font-weight: bold;
+    text-transform: uppercase;
   }
   .footer-primary {
     margin: 0 auto;
     max-width: 71.3rem;
     > nav {
       @include span(3 of 12);
+      a {
+        color: #007dab;
+      }
     }
     > div { 
       @include span(4 of 12);
@@ -300,7 +304,7 @@ footer {
           }
         }
         p {
-          color: $wonderlandSecondaryColour;
+          color: #17aaed;
           font-size: 1.7rem;
           margin-left: 5.5rem;
         }
