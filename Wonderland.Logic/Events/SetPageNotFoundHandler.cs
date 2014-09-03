@@ -23,7 +23,8 @@ namespace Wonderland.Logic.Events
                 // get the "Page Not Found" page
                 contentRequest.PublishedContent = contentRequest.RoutingContext.UmbracoContext.ContentCache.GetSingleByXPath("//" + PageNotFound.Alias);
 
-                contentRequest.SetResponseStatus(404);
+                // don't need to set this
+                // contentRequest.SetResponseStatus(404);
 
                 return true;
             }

@@ -200,6 +200,7 @@
   <ItemGroup>
     <Compile Include="Controllers\Render\BaseRenderMvcController.cs" />
     <Compile Include="Controllers\Render\LeaderboardController.cs" />
+    <Compile Include="Controllers\Render\PartyController.cs" />
     <Compile Include="Controllers\Render\RegisterHostController.cs" />
     <Compile Include="Controllers\Render\RegisterHostPartyKitController.cs" />
     <Compile Include="Controllers\Surface\LoginSurfaceController.cs" />
@@ -209,6 +210,7 @@
     <Compile Include="Enums\LeaderboardType.cs" />
     <Compile Include="Enums\PartyIdeaTileSize.cs" />
     <Compile Include="Events\SetPageNotFoundHandler.cs" />
+    <Compile Include="Events\SetPartyHandler.cs" />
     <Compile Include="Events\SetPublishedContentModelFactory.cs" />
     <Compile Include="Extensions\HtmlHelperExtensions.cs" />
     <Compile Include="Models\Content\DecorationCategory.cs" />
