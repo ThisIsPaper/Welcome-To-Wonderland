@@ -10,15 +10,15 @@ namespace Wonderland.Logic.Events
     using Wonderland.Logic.Models.Content;
     using Wonderland.Logic.Models.Members;
 
-    public class SetPartyHandler : ApplicationEventHandler
+    public class SetPartyContentFinder : ApplicationEventHandler
     {
         protected override void ApplicationStarting(UmbracoApplicationBase umbracoApplication, ApplicationContext applicationContext)
         {
-            ContentFinderResolver.Current.InsertTypeBefore<ContentFinderByNiceUrl, PartyHandler>();
+            ContentFinderResolver.Current.InsertTypeBefore<ContentFinderByNiceUrl, PartyContentFinder>();
         }
     }
 
-    public class PartyHandler : IContentFinder
+    public class PartyContentFinder : IContentFinder
     {
         public bool TryFindContent(PublishedContentRequest contentRequest)
         {

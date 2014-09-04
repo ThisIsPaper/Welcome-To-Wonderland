@@ -10,6 +10,7 @@ namespace Wonderland.Logic.Controllers.Render
 
     public class PartyController : BaseRenderMvcController
     {
+        //public override ActionResult Index(Umbraco.Web.Models.RenderModel model)
         public ActionResult Party()
         {
             Party model = (Party)this.CurrentPage;

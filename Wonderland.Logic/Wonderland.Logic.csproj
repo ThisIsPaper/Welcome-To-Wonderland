@@ -209,8 +209,8 @@
     <Compile Include="Controllers\Surface\RegisterHostSurfaceController.cs" />
     <Compile Include="Enums\LeaderboardType.cs" />
     <Compile Include="Enums\PartyIdeaTileSize.cs" />
-    <Compile Include="Events\SetPageNotFoundHandler.cs" />
-    <Compile Include="Events\SetPartyHandler.cs" />
+    <Compile Include="Events\SetPageNotFoundContentFinder.cs" />
+    <Compile Include="Events\SetPartyContentFinder.cs" />
     <Compile Include="Events\SetPublishedContentModelFactory.cs" />
     <Compile Include="Extensions\HtmlHelperExtensions.cs" />
     <Compile Include="Models\Content\DecorationCategory.cs" />

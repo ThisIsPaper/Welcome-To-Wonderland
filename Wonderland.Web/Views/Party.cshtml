@@ -2,6 +2,15 @@
 @{
     Layout = "SitePage.cshtml";
 }
+
+<br/><br /><br /><br /><br /><br /><br /><br />
+
 <h1>@Model.DefaultHeading</h1>
 
 <p>@Model.DefaultCopy</p>
+
+
+
+@Model.PartyHost.Name
+
+@this.Members.GetCurrentMember()
