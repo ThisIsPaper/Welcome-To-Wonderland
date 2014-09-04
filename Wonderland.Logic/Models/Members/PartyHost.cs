@@ -6,8 +6,9 @@ namespace Wonderland.Logic.Models.Members
     using Umbraco.Web;
     using Umbraco.Web.Security;
     using Wonderland.Logic.Models.Entities;
+    using Wonderland.Logic.Models.Content;
 
-    public class PartyHost : BaseMemberType
+    public class PartyHost : BaseMemberType, IPartier
     {
         // Member Type
         public const string Alias = "PartyHost";
@@ -120,6 +121,10 @@ namespace Wonderland.Logic.Models.Members
         //    return false;
         //}
 
+        public string GetPartyUrl()
+        {
+            return UmbracoContext.Current.ContentCache.GetSingleByXPath("//" + Party.Alias).Url + this.PartyUrlIdentifier;         
+        }
 
         /// <summary>
         /// 

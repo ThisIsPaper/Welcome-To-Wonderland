@@ -254,6 +254,7 @@
     <Compile Include="Models\Forms\RegisterHostPartyKitForm.cs" />
     <Compile Include="Models\Media\Image.cs" />
     <Compile Include="Models\Members\BaseMemberType.cs" />
+    <Compile Include="Models\Members\IPartier.cs" />
     <Compile Include="Models\Members\PartyGuest.cs" />
     <Compile Include="Models\Members\PartyHost.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

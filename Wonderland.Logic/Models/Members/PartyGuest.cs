@@ -7,7 +7,7 @@ namespace Wonderland.Logic.Models.Members
     using Umbraco.Web.Security;
     using Wonderland.Logic.Models.Entities;
 
-    public class PartyGuest : BaseMemberType
+    public class PartyGuest : BaseMemberType, IPartier
     {
         // Member Type
         public const string Alias = "PartyGuest";
@@ -19,9 +19,16 @@ namespace Wonderland.Logic.Models.Members
         {
         }
 
+        public string GetPartyUrl()
+        {
+            // TODO:
+            return "/";
+        }
+
         public static explicit operator PartyGuest(MembershipUser membershipUser)
         {
             return new PartyGuest(new MembershipHelper(UmbracoContext.Current).GetByUsername(membershipUser.UserName));
         }
+
     }
 }

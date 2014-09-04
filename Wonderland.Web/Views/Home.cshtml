@@ -7,11 +7,11 @@
     <div class="actions">
         @if(!this.Members.IsLoggedIn())
         { 
-            <a href="@Model.SiteSettings.RegisterHostUrl" class="btn-primary">Host a party ></a>       
+            <a href="@Model.SiteSettings.RegisterHostUrl" class="btn-primary">Host a party ></a>
         }
         else
         {
-            <a href="#" class="btn-primary">My party</a>
+            <a href="@(((IPartier)this.Members.GetCurrentMember()).GetPartyUrl())" class="btn-primary">My party</a>
         }
     </div>
 </section>
