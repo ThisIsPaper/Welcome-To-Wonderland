@@ -10,23 +10,23 @@ namespace Wonderland.Logic.Controllers.Render
     {
         public ActionResult RegisterHost()
         {            
-            RegisterHost model = (RegisterHost)this.CurrentPage;
+            RegisterHost registerHost = (RegisterHost)this.CurrentPage;
 
             if (this.Members.IsLoggedIn())
             {
                 if (this.Members.GetCurrentMember() is PartyHost)
                 {
                     // user already registered as a host, so move onto the next step
-                    return this.Redirect(model.Children.Single(x => x.DocumentTypeAlias == RegisterHostPartyKit.Alias).Url);
+                    return this.Redirect(registerHost.Children.Single(x => x.DocumentTypeAlias == RegisterHostPartyKit.Alias).Url);
                 }
                 else
                 {
                     // user already registered but not a host, so redirect back to home
-                    return this.Redirect(Home.GetCurrentHome(model).Url);
+                    return this.Redirect(Home.GetCurrentHome(registerHost).Url);
                 }
             }
 
-            return this.CurrentTemplate(model);
+            return this.CurrentTemplate(registerHost);
         }
     }
 }

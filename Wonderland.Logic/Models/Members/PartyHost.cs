@@ -6,8 +6,8 @@ namespace Wonderland.Logic.Models.Members
     using Umbraco.Core.Models;
     using Umbraco.Web;
     using Umbraco.Web.Security;
-    using Wonderland.Logic.Models.Entities;
     using Wonderland.Logic.Models.Content;
+    using Wonderland.Logic.Models.Entities;
 
     public class PartyHost : BaseMemberType, IPartier
     {
@@ -150,16 +150,6 @@ namespace Wonderland.Logic.Models.Members
                 this.SetPropertyValue(PartyHost.PartyCopyAlias, value);
             }
         }
-
-        //public bool IsPartyHost(Guid partyGuid)
-        //{
-        //    return false;
-        //}
-
-        //public bool IsPartyGuest(Guid partyGuid)
-        //{
-        //    return false;
-        //}
 
         public string PartyUrl
         {

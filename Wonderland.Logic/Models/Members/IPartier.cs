@@ -16,5 +16,8 @@ namespace Wonderland.Logic.Models.Members
         /// </summary>
         /// <returns></returns>
         string PartyUrl { get; }
+
+
+        int Id { get; }
     }
 }

@@ -1,21 +1,18 @@
 ﻿
 namespace Wonderland.Logic.Controllers.Render
 {
-    using System.Linq;
-    using System;
+    using System.Collections.Generic;
     using System.Web.Mvc;
-    using Wonderland.Logic.Enums;
+    using Umbraco.Core.Models;
+    using Umbraco.Web.Models;
     using Wonderland.Logic.Models.Content;
     using Wonderland.Logic.Models.Members;
-    using Umbraco.Core.Models;
-    using System.Collections.Generic;
 
     public class PartyController : BaseRenderMvcController
     {
-        //public override ActionResult Index(Umbraco.Web.Models.RenderModel model)
-        public ActionResult Party()
+        public override ActionResult Index(RenderModel model) // have to override index instead of a Party() method, as there isn't a Party template
         {
-            Party model = (Party)this.CurrentPage;
+            Party party = (Party)model.Content;
 
             PartyHost partyHost;
 
@@ -36,7 +33,7 @@ namespace Wonderland.Logic.Controllers.Render
 
                     if (currentMember is PartyHost)
                     {
-                        return this.Redirect(model.Url + ((PartyHost)currentMember).PartyUrlIdentifier + "/");
+                        return this.Redirect(party.Url + ((PartyHost)currentMember).PartyUrlIdentifier + "/");
                     }
                     else if (currentMember is PartyGuest)
                     {
@@ -45,11 +42,11 @@ namespace Wonderland.Logic.Controllers.Render
                 }
 
                 // fallback
-                return this.Redirect(Home.GetCurrentHome(model).Url);
+                return this.Redirect(Home.GetCurrentHome(party).Url);
             }
 
-            // associate the party host
-            model.PartyHost = partyHost;
+            // known host, so build the party leaderboard
+            party.PartyHost = partyHost;
 
             // image
 
@@ -66,14 +63,26 @@ namespace Wonderland.Logic.Controllers.Render
             // partiers - the host + all guests
             List<IPartier> partiers = new List<IPartier>();
             partiers.Add(partyHost);
+           
 
-            
-
-            model.Partiers = partiers;
+            party.Partiers = partiers;
 
             // badges
 
-            return this.CurrentTemplate(model);
+
+            // detemine view to return based on the user
+            if (this.Members.IsLoggedIn())
+            {                
+                if (((IPartier)this.Members.GetCurrentMember()).Id == partyHost.Id)
+                {
+                    return View("Host", party);
+                }
+
+                // TODO: check to see if current user is a guest at this party
+            }
+
+            // fallback
+            return View("Anonymous", party);
         }
     }
 }

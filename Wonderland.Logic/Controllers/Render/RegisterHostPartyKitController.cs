@@ -9,19 +9,19 @@ namespace Wonderland.Logic.Controllers.Render
     {
         public ActionResult RegisterHostPartyKit()
         {
-            RegisterHostPartyKit model = (RegisterHostPartyKit)this.CurrentPage;
+            RegisterHostPartyKit registerHostPartyKit = (RegisterHostPartyKit)this.CurrentPage;
 
             if (this.Members.IsLoggedIn() && this.Members.GetCurrentMember() is PartyHost)
             {
                 // only allow access to this page if the host hasn't yet requested a party kit
                 if (!((PartyHost)this.Members.GetCurrentMember()).HasRequestedPartyKit)
                 {
-                    return this.CurrentTemplate(model);
+                    return this.CurrentTemplate(registerHostPartyKit);
                 }
             }
             
             // fallback
-            return this.Redirect(Home.GetCurrentHome(model).Url);
+            return this.Redirect(Home.GetCurrentHome(registerHostPartyKit).Url);
         }
     }
 }

@@ -234,6 +234,9 @@
     <Content Include="Views\RegisterHostPartyKitSurface\RegisterHostPartyKitFormPartial.cshtml" />
     <Content Include="Views\LoginSurface\LoginFormPartial.cshtml" />
     <Content Include="Views\PageNotFound.cshtml" />
+    <Content Include="Views\Party\Anonymous.cshtml" />
+    <Content Include="Views\Party\Host.cshtml" />
+    <Content Include="Views\Party\Guest.cshtml" />
     <None Include="Views\RegisterHostSurface\RegisterHostFormPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -260,7 +263,6 @@
     <Content Include="Views\PartyIdeas.cshtml" />
     <Content Include="Views\Leaderboard.cshtml" />
     <Content Include="Views\FundraisingIdeas.cshtml" />
-    <Content Include="Views\Party.cshtml" />
     <Content Include="Views\FAQs.cshtml" />
     <Content Include="Views\Legal.cshtml" />
     <Content Include="config\UrlRewriting.config" />

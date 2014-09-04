@@ -22,7 +22,7 @@ namespace Wonderland.Logic.Controllers.Surface
         [ChildActionOnly] // (Cannot redirect from a Child Action - see Controllers\Render\RegisterHostController)
         public ActionResult Index()
         {
-            // get the model for the current page
+            // get the party for the current page
             RegisterHost registerHost = (RegisterHost)this.CurrentPage;
 
             // get marketing sources for a dropdown 

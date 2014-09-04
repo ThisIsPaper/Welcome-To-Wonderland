@@ -8,20 +8,20 @@ namespace Wonderland.Logic.Controllers.Render
 
     public class LeaderboardController : BaseRenderMvcController
     {
-        public ActionResult Leaderboard()
+        public ActionResult Leaderboard() // method executed in preference to the Index, as Leaderboard is the template name
         {
-            Leaderboard model = (Leaderboard)this.CurrentPage;
+            Leaderboard leaderboard = (Leaderboard)this.CurrentPage;
 
             try
             {
-                model.LeaderboardType = (LeaderboardType)Enum.Parse(typeof(LeaderboardType), this.Request.QueryString.ToString(), true);
+                leaderboard.LeaderboardType = (LeaderboardType)Enum.Parse(typeof(LeaderboardType), this.Request.QueryString.ToString(), true);
             }
             catch
             {
-                return this.Redirect(model.Parent.Url);
+                return this.Redirect(leaderboard.Parent.Url);
             }                
 
-            return this.CurrentTemplate(model);
+            return this.CurrentTemplate(leaderboard);
         }
     }
 }
