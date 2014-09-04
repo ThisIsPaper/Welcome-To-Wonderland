@@ -199,8 +199,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\Render\BaseRenderMvcController.cs" />
+    <Compile Include="Controllers\Render\DecorationTileController.cs" />
+    <Compile Include="Controllers\Render\FashionTileController.cs" />
     <Compile Include="Controllers\Render\LeaderboardController.cs" />
     <Compile Include="Controllers\Render\PartyController.cs" />
+    <Compile Include="Controllers\Render\PlaylistTileController.cs" />
     <Compile Include="Controllers\Render\RegisterHostController.cs" />
     <Compile Include="Controllers\Render\RegisterHostPartyKitController.cs" />
     <Compile Include="Controllers\Surface\LoginSurfaceController.cs" />
