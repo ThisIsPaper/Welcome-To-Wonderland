@@ -19,11 +19,24 @@ namespace Wonderland.Logic.Models.Members
         {
         }
 
-        public string GetPartyUrl()
+        public string PartyUrl
         {
-            // TODO:
-            return "/";
+            get
+            {
+                // TODO:
+                return "/";
+            }            
         }
+
+        public string PersonName
+        {
+            get
+            {
+                // TODO:
+                return "unknown guest";
+            }
+        }
+
 
         public static explicit operator PartyGuest(MembershipUser membershipUser)
         {

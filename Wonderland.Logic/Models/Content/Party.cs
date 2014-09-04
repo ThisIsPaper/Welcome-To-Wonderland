@@ -4,6 +4,7 @@ namespace Wonderland.Logic.Models.Content
     using Umbraco.Core.Models;
     using Umbraco.Web;
     using Wonderland.Logic.Models.Members;
+    using System.Collections.Generic;
 
     public class Party : SitePage
     {
@@ -39,6 +40,12 @@ namespace Wonderland.Logic.Models.Content
         /// set by the controller to identify the host member for this party
         /// </summary>
         public PartyHost PartyHost
+        {
+            get;
+            internal set;
+        }
+
+        public IEnumerable<IPartier> Partiers
         {
             get;
             internal set;

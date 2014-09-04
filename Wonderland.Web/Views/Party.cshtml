@@ -5,12 +5,38 @@
 
 <br/><br /><br /><br /><br /><br /><br /><br />
 
-<h1>@Model.DefaultHeading</h1>
+@* image *@
 
-<p>@Model.DefaultCopy</p>
+@* location *@
+
+@* heading *@
+
+@* copy *@
+
+@* wall *@
+
+@* totaliser *@
+
+@if (!this.Members.IsLoggedIn())
+{
+    @* only anonymous users have the ability to 'join the party' *@
+
+}
+
+@* partiers *@
+<h2>Who's Coming (@this.Model.Partiers.Count())</h2>
+<ul>
+    @foreach (IPartier partier in this.Model.Partiers)
+    {
+        <li>
+            @partier.PersonName
+        </li>
+    }
+</ul>
+
+@* badges *@
 
 
 
-@Model.PartyHost.Name
 
-@this.Members.GetCurrentMember()
+

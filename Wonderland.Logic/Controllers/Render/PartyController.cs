@@ -8,6 +8,7 @@ namespace Wonderland.Logic.Controllers.Render
     using Wonderland.Logic.Models.Content;
     using Wonderland.Logic.Models.Members;
     using Umbraco.Core.Models;
+    using System.Collections.Generic;
 
     public class PartyController : BaseRenderMvcController
     {
@@ -49,6 +50,28 @@ namespace Wonderland.Logic.Controllers.Render
 
             // associate the party host
             model.PartyHost = partyHost;
+
+            // image
+
+            // location
+
+            // heading
+
+            // copy
+
+            // wall
+
+            // totaliser
+
+            // partiers - the host + all guests
+            List<IPartier> partiers = new List<IPartier>();
+            partiers.Add(partyHost);
+
+            
+
+            model.Partiers = partiers;
+
+            // badges
 
             return this.CurrentTemplate(model);
         }

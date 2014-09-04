@@ -21,6 +21,8 @@ namespace Wonderland.Logic.Models.Members
         public const string BillingAddressAlias = "billingAddress";
         public const string HasRequestedPartyKitAlias = "hasRequestedPartyKit";
         public const string PartyUrlIdentifierAlias = "partyUrlIdentifier";
+        public const string PartyHeadingAlias = "partyHeading";
+        public const string PartyCopyAlias = "partyCopy";
 
         public PartyHost(IPublishedContent content)
             : base(content)
@@ -111,6 +113,30 @@ namespace Wonderland.Logic.Models.Members
             }
         }
 
+        public string PartyHeading
+        {
+            get
+            {
+                return this.GetPropertyValue<string>(PartyHost.PartyHeadingAlias);
+            }
+            set
+            {
+                this.SetPropertyValue(PartyHost.PartyHeadingAlias, value);
+            }
+        }
+
+        public string PartyCopy
+        {
+            get
+            {
+                return this.GetPropertyValue<string>(PartyHost.PartyCopyAlias);
+            }
+            set
+            {
+                this.SetPropertyValue(PartyHost.PartyCopyAlias, value);
+            }
+        }
+
         //public bool IsPartyHost(Guid partyGuid)
         //{
         //    return false;
@@ -121,9 +147,20 @@ namespace Wonderland.Logic.Models.Members
         //    return false;
         //}
 
-        public string GetPartyUrl()
+        public string PartyUrl
         {
-            return UmbracoContext.Current.ContentCache.GetSingleByXPath("//" + Party.Alias).Url + this.PartyUrlIdentifier;         
+            get
+            {
+                return UmbracoContext.Current.ContentCache.GetSingleByXPath("//" + Party.Alias).Url + this.PartyUrlIdentifier;
+            }
+        }
+
+        public string PersonName
+        {
+            get
+            {
+                return this.FirstName + " " + this.LastName;
+            }
         }
 
         /// <summary>
