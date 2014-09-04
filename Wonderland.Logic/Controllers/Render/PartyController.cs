@@ -7,6 +7,7 @@ namespace Wonderland.Logic.Controllers.Render
     using Wonderland.Logic.Enums;
     using Wonderland.Logic.Models.Content;
     using Wonderland.Logic.Models.Members;
+    using Umbraco.Core.Models;
 
     public class PartyController : BaseRenderMvcController
     {
@@ -28,7 +29,21 @@ namespace Wonderland.Logic.Controllers.Render
 
             if (!(partyHost is PartyHost))
             {
-                // redirect to home, as no known party host
+                if (this.Members.IsLoggedIn())
+                {                    
+                    IPublishedContent currentMember = this.Members.GetCurrentMember();
+
+                    if (currentMember is PartyHost)
+                    {
+                        return this.Redirect(model.Url + ((PartyHost)currentMember).PartyUrlIdentifier + "/");
+                    }
+                    else if (currentMember is PartyGuest)
+                    {
+                        // TODO:
+                    }
+                }
+
+                // fallback
                 return this.Redirect(Home.GetCurrentHome(model).Url);
             }
 

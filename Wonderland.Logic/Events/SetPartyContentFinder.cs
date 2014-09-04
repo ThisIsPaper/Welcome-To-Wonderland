@@ -20,6 +20,11 @@ namespace Wonderland.Logic.Events
 
     public class PartyContentFinder : IContentFinder
     {
+        /// <summary>
+        /// handles custom party urls - if custom url is valid then the party page is used together with a http context value indicating the party host
+        /// </summary>
+        /// <param name="contentRequest"></param>
+        /// <returns></returns>
         public bool TryFindContent(PublishedContentRequest contentRequest)
         {
             // chop up the url
