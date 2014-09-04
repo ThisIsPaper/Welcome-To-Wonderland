@@ -18,9 +18,13 @@ namespace Wonderland.Logic.Models.Content
         public Party(IPublishedContent content)
             : base(content)
         {
+            this.Heading = this.DefaultHeading;
+            this.Copy = this.DefaultCopy;
         }
 
-        public string DefaultHeading
+        #region Properties set by CMS
+
+        internal string DefaultHeading
         {
             get
             {
@@ -28,13 +32,17 @@ namespace Wonderland.Logic.Models.Content
             }
         }
 
-        public string DefaultCopy
+        internal string DefaultCopy
         {
             get
             {
                 return this.GetPropertyValue<string>(Party.DefaultCopyAlias);
             }
         }
+
+        #endregion
+
+        #region Properties set by Controller
 
         /// <summary>
         /// set by the controller to identify the host member for this party
@@ -45,10 +53,24 @@ namespace Wonderland.Logic.Models.Content
             internal set;
         }
 
+        public string Heading
+        {
+            get;
+            internal set;
+        }
+
+        public string Copy
+        {
+            get;
+            internal set;
+        }
+
         public IEnumerable<IPartier> Partiers
         {
             get;
             internal set;
         }
+
+        #endregion
     }
 }

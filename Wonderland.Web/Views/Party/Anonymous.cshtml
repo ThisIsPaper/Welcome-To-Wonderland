@@ -9,29 +9,35 @@
 <h1>the current user (logged in or not) is anonymous for this party</h1>
 
 
+
 @* image *@
+
 <h1>@(this.Model.PartyHost.FirstName)'s Wonderland party</h1>
+
+@* time *@
 @* location *@
 
-@* heading *@
-@* copy *@
+<h2>@this.Model.Heading</h2>
+<p>@this.Model.Copy</p>
+
 @* wall *@
 @* totaliser *@
+
 @if (!this.Members.IsLoggedIn())
 {
-    @* only anonymous users have the ability to 'join the party' *@
+    @* only users who don't already have a party can 'join the party' *@
+    
 
 }
 
-    @* partiers *@
-    <h2>Who's Coming (@this.Model.Partiers.Count())</h2>
-    <ul>
-        @foreach (IPartier partier in this.Model.Partiers)
-        {
-            <li>
-                @partier.PersonName
-            </li>
-        }
-    </ul>
+<h2>Who's Coming (@this.Model.Partiers.Count())</h2>
+<ul>
+    @foreach (IPartier partier in this.Model.Partiers)
+    {
+        <li>
+            @partier.PersonName
+        </li>
+    }
+</ul>
 
-    @* badges *@
+@* badges *@

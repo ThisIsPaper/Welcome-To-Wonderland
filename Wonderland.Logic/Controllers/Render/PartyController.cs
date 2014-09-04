@@ -53,8 +53,16 @@ namespace Wonderland.Logic.Controllers.Render
             // location
 
             // heading
-
+            if (!string.IsNullOrWhiteSpace(partyHost.PartyHeading))
+            {
+                party.Heading = partyHost.PartyHeading;
+            }
+            
             // copy
+            if (!string.IsNullOrWhiteSpace(partyHost.PartyCopy))
+            {
+                party.Copy = partyHost.PartyCopy;
+            }
 
             // wall
 

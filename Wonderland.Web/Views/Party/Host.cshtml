@@ -7,3 +7,30 @@
 
 
 <h1>the current user is the host for this party</h1>
+
+
+
+@* image *@
+
+<h1>@(this.Model.PartyHost.FirstName)'s Wonderland party</h1>
+
+@* time *@
+@* location *@
+
+<h2>@this.Model.Heading</h2>
+<p>@this.Model.Copy</p>
+
+@* wall *@
+@* totaliser *@
+
+<h2>Who's Coming (@this.Model.Partiers.Count())</h2>
+<ul>
+    @foreach (IPartier partier in this.Model.Partiers)
+    {
+        <li>
+            @partier.PersonName
+        </li>
+    }
+</ul>
+
+@* badges *@
