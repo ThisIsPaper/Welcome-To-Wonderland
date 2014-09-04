@@ -18,7 +18,7 @@ namespace Wonderland.Logic.Models.Members
         public const string FirstNameAlias = "firstName";
         public const string LastNameAlias = "lastName";
         public const string PartyKitAddressAlias = "partyKitAddress";
-        public const string BillingAddressAlias = "billingAddress";
+        public const string PartyAddressAlias = "partyAddress";
         public const string HasRequestedPartyKitAlias = "hasRequestedPartyKit";
         public const string PartyUrlIdentifierAlias = "partyUrlIdentifier";
         public const string PartyHeadingAlias = "partyHeading";
@@ -77,15 +77,15 @@ namespace Wonderland.Logic.Models.Members
             }
         }
 
-        public Address BillingAddress
+        public Address PartyAddress
         {
             get
             {
-                return new Address(this.GetPropertyValue<string>(PartyHost.BillingAddressAlias));
+                return new Address(this.GetPropertyValue<string>(PartyHost.PartyAddressAlias));
             }
             set
             {
-                this.SetPropertyValue(PartyHost.BillingAddressAlias, value.ToString());
+                this.SetPropertyValue(PartyHost.PartyAddressAlias, value.ToString());
             }
         }
 
