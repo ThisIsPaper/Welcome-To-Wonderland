@@ -13,10 +13,36 @@ namespace Wonderland.Logic.Models.Members
         public const string Alias = "PartyGuest";
 
         // Properties
+        public const string FirstNameAlias = "firstName";
+        public const string LastNameAlias = "lastName";
 
         public PartyGuest(IPublishedContent content)
             : base(content)
         {
+        }
+
+        public string FirstName
+        {
+            get
+            {
+                return this.GetPropertyValue<string>(PartyHost.FirstNameAlias);
+            }
+            set
+            {
+                this.SetPropertyValue(PartyHost.FirstNameAlias, value);
+            }
+        }
+
+        public string LastName
+        {
+            get
+            {
+                return this.GetPropertyValue<string>(PartyHost.LastNameAlias);
+            }
+            set
+            {
+                this.SetPropertyValue(PartyHost.LastNameAlias, value);
+            }
         }
 
         public string PartyUrl
