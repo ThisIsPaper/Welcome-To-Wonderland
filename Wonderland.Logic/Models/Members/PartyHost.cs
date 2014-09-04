@@ -1,6 +1,7 @@
 ﻿
 namespace Wonderland.Logic.Models.Members
 {
+    using System;
     using System.Web.Security;
     using Umbraco.Core.Models;
     using Umbraco.Web;
@@ -19,6 +20,7 @@ namespace Wonderland.Logic.Models.Members
         public const string LastNameAlias = "lastName";
         public const string PartyKitAddressAlias = "partyKitAddress";
         public const string PartyAddressAlias = "partyAddress";
+        public const string PartyDateTimeAlias = "partyDateTime";
         public const string HasRequestedPartyKitAlias = "hasRequestedPartyKit";
         public const string PartyUrlIdentifierAlias = "partyUrlIdentifier";
         public const string PartyHeadingAlias = "partyHeading";
@@ -86,6 +88,18 @@ namespace Wonderland.Logic.Models.Members
             set
             {
                 this.SetPropertyValue(PartyHost.PartyAddressAlias, value.ToString());
+            }
+        }
+
+        public DateTime PartyDateTime
+        {
+            get
+            {
+                return this.GetPropertyValue<DateTime>(PartyHost.PartyDateTimeAlias);
+            }
+            set
+            {
+                this.SetPropertyValue(PartyHost.PartyDateTimeAlias, value);
             }
         }
 
