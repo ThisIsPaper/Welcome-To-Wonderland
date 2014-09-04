@@ -10,9 +10,9 @@ namespace Wonderland.Logic.Controllers.Render
 
     public class PartyController : BaseRenderMvcController
     {
-        public override ActionResult Index(RenderModel model) // have to override index instead of a Party() method, as there isn't a Party template
+        public override ActionResult Index(RenderModel renderModel) // have to override index instead of a Party() method, as there isn't a Party template
         {
-            Party party = (Party)model.Content;
+            Party model = (Party)renderModel.Content;
 
             PartyHost partyHost;
 
@@ -33,7 +33,7 @@ namespace Wonderland.Logic.Controllers.Render
 
                     if (currentMember is PartyHost)
                     {
-                        return this.Redirect(party.Url + ((PartyHost)currentMember).PartyUrlIdentifier + "/");
+                        return this.Redirect(model.Url + ((PartyHost)currentMember).PartyUrlIdentifier + "/");
                     }
                     else if (currentMember is PartyGuest)
                     {
@@ -42,11 +42,11 @@ namespace Wonderland.Logic.Controllers.Render
                 }
 
                 // fallback
-                return this.Redirect(Home.GetCurrentHome(party).Url);
+                return this.Redirect(Home.GetCurrentHome(model).Url);
             }
 
-            // known host, so build the party leaderboard
-            party.PartyHost = partyHost;
+            // known host, so build the renderModel renderModel
+            model.PartyHost = partyHost;
 
             // image
 
@@ -55,13 +55,13 @@ namespace Wonderland.Logic.Controllers.Render
             // heading
             if (!string.IsNullOrWhiteSpace(partyHost.PartyHeading))
             {
-                party.Heading = partyHost.PartyHeading;
+                model.Heading = partyHost.PartyHeading;
             }
             
             // copy
             if (!string.IsNullOrWhiteSpace(partyHost.PartyCopy))
             {
-                party.Copy = partyHost.PartyCopy;
+                model.Copy = partyHost.PartyCopy;
             }
 
             // wall
@@ -73,7 +73,7 @@ namespace Wonderland.Logic.Controllers.Render
             partiers.Add(partyHost);
            
 
-            party.Partiers = partiers;
+            model.Partiers = partiers;
 
             // badges
 
@@ -83,14 +83,14 @@ namespace Wonderland.Logic.Controllers.Render
             {                
                 if (((IPartier)this.Members.GetCurrentMember()).Id == partyHost.Id)
                 {
-                    return View("Host", party);
+                    return View("Host", model);
                 }
 
-                // TODO: check to see if current user is a guest at this party
+                // TODO: check to see if current user is a guest at this renderModel
             }
 
             // fallback
-            return View("Anonymous", party);
+            return View("Anonymous", model);
         }
     }
 }

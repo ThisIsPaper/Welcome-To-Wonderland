@@ -6,10 +6,10 @@ namespace Wonderland.Logic.Controllers.Render
 
     public class DecorationTileController : BaseRenderMvcController
     {       
-        public override ActionResult Index(RenderModel model)
+        public override ActionResult Index(RenderModel renderModel)
         {
             // always redirect to partent
-            return this.Redirect(model.Content.Parent.Url);
+            return this.Redirect(renderModel.Content.Parent.Url);
         }
     }
 }

@@ -21,7 +21,7 @@ namespace Wonderland.Logic.Events
     public class PartyContentFinder : IContentFinder
     {
         /// <summary>
-        /// handles custom party urls - if custom url is valid then the party page is used together with a http context value indicating the party host
+        /// handles custom renderModel urls - if custom url is valid then the renderModel page is used together with a http context value indicating the renderModel host
         /// </summary>
         /// <param name="contentRequest"></param>
         /// <returns></returns>
@@ -30,7 +30,7 @@ namespace Wonderland.Logic.Events
             // chop up the url
             string[] urlParts = contentRequest.Uri.GetAbsolutePathDecoded().Split(new[] { '/' }, StringSplitOptions.RemoveEmptyEntries);
 
-            // if we're looking for the party page with an id
+            // if we're looking for the renderModel page with an id
             if (urlParts.Length == 2 && urlParts[0].ToLower() == "party")
             {
                 string partyUrlIdentifier = urlParts[1].ToLower();
@@ -47,7 +47,7 @@ namespace Wonderland.Logic.Events
                     // add to httpContext for consumption in the hijack controller
                     HttpContext.Current.Items["partyHostId"] = partyHost.Id;
 
-                    // set to use the party page
+                    // set to use the renderModel page
                     contentRequest.PublishedContent = contentRequest.RoutingContext.UmbracoContext.ContentCache.GetSingleByXPath("//" + Party.Alias);
 
                     // indicate suitable content has been found

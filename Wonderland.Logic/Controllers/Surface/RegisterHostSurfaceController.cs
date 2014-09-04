@@ -19,14 +19,14 @@ namespace Wonderland.Logic.Controllers.Surface
         /// returns the partial for the host registration form
         /// </summary>
         /// <returns></returns>
-        [ChildActionOnly] // (Cannot redirect from a Child Action - see Controllers\Render\RegisterHostController)
+        [ChildActionOnly] // (Cannot redirect from a Child Action)
         public ActionResult Index()
         {
-            // get the party for the current page
-            RegisterHost registerHost = (RegisterHost)this.CurrentPage;
+            // get the renderModel for the current page
+            RegisterHost model = (RegisterHost)this.CurrentPage;
 
             // get marketing sources for a dropdown 
-            List<string> marketingSources = new List<string>(registerHost.MarketingSources);
+            List<string> marketingSources = new List<string>(model.MarketingSources);
 
             // add an empty option the the beginning
             marketingSources.Insert(0, string.Empty);

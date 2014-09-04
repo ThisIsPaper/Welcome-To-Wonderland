@@ -45,7 +45,7 @@ namespace Wonderland.Logic.Models.Content
         #region Properties set by Controller
 
         /// <summary>
-        /// set by the controller to identify the host member for this party
+        /// set by the controller to identify the host member for this renderModel
         /// </summary>
         public PartyHost PartyHost
         {

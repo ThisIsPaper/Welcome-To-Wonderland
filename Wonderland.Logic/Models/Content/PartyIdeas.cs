@@ -44,7 +44,7 @@ namespace Wonderland.Logic.Models.Content
         }
 
         /// <summary>
-        /// gets a collection of all party idea tiles in a specific rendering order
+        /// gets a collection of all renderModel idea tiles in a specific rendering order
         /// </summary>
         /// <returns></returns>
         public IEnumerable<PartyIdeaTile> GetPartyIdeaTiles()

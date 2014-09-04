@@ -31,6 +31,8 @@ namespace Wonderland.Logic.Models.Members
         {
         }
 
+        #region Properties set by CMS
+
         public string MarketingSource
         {
             get
@@ -150,6 +152,8 @@ namespace Wonderland.Logic.Models.Members
                 this.SetPropertyValue(PartyHost.PartyCopyAlias, value);
             }
         }
+
+        #endregion
 
         public string PartyUrl
         {
