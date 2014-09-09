@@ -98,7 +98,12 @@ namespace Wonderland.Logic.Controllers.Surface
 
             partyHost.MarketingSource = registerHostForm.MarketingSource;
 
-            partyHost.PartyUrlIdentifier = Guid.NewGuid().ToString();
+            Guid partyGuid = Guid.NewGuid();
+
+            partyHost.PartyGuid = partyGuid;
+
+            // set the default custom url to be the party guid
+            partyHost.PartyUrlIdentifier = partyGuid.ToString();
 
             // send cookie
             FormsAuthentication.SetAuthCookie(partyHost.Username, true);

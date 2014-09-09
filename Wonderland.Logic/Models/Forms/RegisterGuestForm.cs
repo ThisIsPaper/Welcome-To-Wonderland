@@ -1,12 +1,25 @@
 ﻿
 namespace Wonderland.Logic.Models.Forms
 {
+    using System;
     using System.ComponentModel;
     using System.ComponentModel.DataAnnotations;
     using System.Web.Mvc;
 
     public class RegisterGuestForm
     {
+        /// <summary>
+        /// empty constructor for asp.net mvc
+        /// </summary>
+        public RegisterGuestForm()
+        {
+        }
+
+        public RegisterGuestForm(Guid partyGuid)
+        {
+            this.PartyGuid = partyGuid;
+        }
+
         [Required]
         [DataType(DataType.EmailAddress)]
         //[Remote("ValidateIsEmailAvailable", "RegisterHostSurface", ErrorMessage="Email already registered")]
@@ -24,6 +37,6 @@ namespace Wonderland.Logic.Models.Forms
 
         [Required]
         [HiddenInput(DisplayValue=false)]
-        public string PartyIdentifier { get; set; }
+        public Guid PartyGuid { get; set; }
     }
 }

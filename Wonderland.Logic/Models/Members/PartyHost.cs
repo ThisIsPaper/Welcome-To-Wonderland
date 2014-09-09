@@ -15,13 +15,14 @@ namespace Wonderland.Logic.Models.Members
         public const string Alias = "PartyHost";
 
         // Properties
+        public const string PartyGuidAlias = "partyGuid";
         public const string MarketingSourceAlias = "marketingSource";
         public const string FirstNameAlias = "firstName";
         public const string LastNameAlias = "lastName";
         public const string PartyKitAddressAlias = "partyKitAddress";
         public const string PartyAddressAlias = "partyAddress";
         public const string PartyDateTimeAlias = "partyDateTime";
-        public const string HasRequestedPartyKitAlias = "hasRequestedPartyKit";
+        public const string HasRequestedPartyKitAlias = "hasRequestedPartyKit";        
         public const string PartyUrlIdentifierAlias = "partyUrlIdentifier";
         public const string PartyHeadingAlias = "partyHeading";
         public const string PartyCopyAlias = "partyCopy";
@@ -29,6 +30,21 @@ namespace Wonderland.Logic.Models.Members
         public PartyHost(IPublishedContent content)
             : base(content)
         {
+        }
+
+        /// <summary>
+        /// once created, never changes - this guid identifies a specific party
+        /// </summary>
+        public Guid PartyGuid
+        {
+            get
+            {
+                return this.GetPropertyValue<Guid>(PartyHost.PartyGuidAlias);
+            }
+            set
+            {
+                this.SetPropertyValue(PartyHost.PartyGuidAlias, value.ToString());
+            }
         }
 
         #region Properties set by CMS
@@ -117,6 +133,9 @@ namespace Wonderland.Logic.Models.Members
             }
         }
 
+        /// <summary>
+        /// defaults to the party guid, but TODO: feature to allow for a custom url for a party
+        /// </summary>
         public string PartyUrlIdentifier
         {
             get
@@ -155,20 +174,17 @@ namespace Wonderland.Logic.Models.Members
 
         #endregion
 
-        public string PartyUrl
-        {
-            get
-            {
-                return UmbracoContext.Current.ContentCache.GetSingleByXPath("//" + Party.Alias).Url + this.PartyUrlIdentifier;
-            }
-        }
-
         public string PersonName
         {
             get
             {
                 return this.FirstName + " " + this.LastName;
             }
+        }
+
+        public string GetPartyUrl()
+        {
+            return UmbracoContext.Current.ContentCache.GetSingleByXPath("//" + Party.Alias).Url + this.PartyUrlIdentifier;
         }
 
         /// <summary>

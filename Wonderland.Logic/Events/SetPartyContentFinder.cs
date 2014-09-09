@@ -35,6 +35,7 @@ namespace Wonderland.Logic.Events
             {
                 string partyUrlIdentifier = urlParts[1].ToLower();
 
+                // WARNING: this will hit the db
                 IMember partyHost = ApplicationContext
                                         .Current
                                         .Services

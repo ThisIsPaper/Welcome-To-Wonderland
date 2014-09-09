@@ -13,6 +13,15 @@
     <p>@reward.Copy</p>
 }
 
-<a href="@Model.SiteSettings.RegisterHostUrl">@Model.RegisterHostLinkText</a>
+
+@if (!this.Members.IsLoggedIn())
+{
+    @Html.ActionLink(Model.RegisterHostLinkText, "NavigateToRegisterHostUrl", "RegisterHostSurface", null, null)
+}
+else
+{
+    <a href="@(((IPartier)this.Members.GetCurrentMember()).GetPartyUrl())" class="btn-primary">My party</a>
+}
+
 
 @Html.Partial("PartyKit", Model.PartyKit)

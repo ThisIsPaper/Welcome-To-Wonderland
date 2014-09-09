@@ -25,8 +25,8 @@
 
 @if (!this.Members.IsLoggedIn())
 {
-    @* only users who don't already have a party can 'join the party' *@
-    @Html.ActionLink("Join the party", "NavigateToRegisterGuestUrl", "RegisterGuestSurface", null, new { @class = "" })
+    @* only users who don't already have a party can 'join the party' *@ 
+    @Html.ActionLink("Join the party", "NavigateToRegisterGuestUrl", "RegisterGuestSurface", new { partyGuid = Model.PartyHost.PartyGuid }, new { @class = "" })
 
 }
 

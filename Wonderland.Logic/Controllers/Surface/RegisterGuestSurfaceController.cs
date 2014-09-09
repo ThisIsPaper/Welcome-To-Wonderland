@@ -20,11 +20,9 @@ namespace Wonderland.Logic.Controllers.Surface
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        public ActionResult NavigateToRegisterGuestUrl()
+        public ActionResult NavigateToRegisterGuestUrl(Guid partyGuid)
         {
-            // TODO pass in party identifier
-
-            return this.Redirect(this.Umbraco.TypedContentSingleAtXPath("//" + RegisterGuest.Alias).Url);
+            return this.Redirect(this.Umbraco.TypedContentSingleAtXPath("//" + RegisterGuest.Alias).Url + "?partyGuid=" + partyGuid.ToString());
         }
 
         /// <summary>
@@ -34,12 +32,13 @@ namespace Wonderland.Logic.Controllers.Surface
         [ChildActionOnly]
         public ActionResult RenderRegisterGuestForm()
         {
-            return this.PartialView("RegisterGuestFormPartial", new RegisterGuestForm());
+            // get party guid from the querystring
+            return this.PartialView("RegisterGuestFormPartial", new RegisterGuestForm(Guid.Parse(this.Request.QueryString["partyGuid"])));
         }
 
         //// commented out until js client side validation wired-up
         //public JsonResult ValidateIsEmailAvailable(string emailAddress)
-        //{
+        //{it's
         //    return Json(this.Members.GetByUsername(emailAddress) == null, JsonRequestBehavior.AllowGet);
         //}
 
@@ -52,48 +51,46 @@ namespace Wonderland.Logic.Controllers.Surface
                 return this.CurrentUmbracoPage();
             }
 
-            //// no helper method on this.Members to register a user with a given memberType, so calling provider directly
-            //UmbracoMembershipProviderBase membersUmbracoMembershipProvider = (UmbracoMembershipProviderBase)Membership.Providers[Constants.Conventions.Member.UmbracoMemberProviderName];
+            // no helper method on this.Members to register a user with a given memberType, so calling provider directly
+            UmbracoMembershipProviderBase membersUmbracoMembershipProvider = (UmbracoMembershipProviderBase)Membership.Providers[Constants.Conventions.Member.UmbracoMemberProviderName];
 
-            //MembershipCreateStatus membershipCreateStatus;
+            MembershipCreateStatus membershipCreateStatus;
 
-            //MembershipUser membershipUser = membersUmbracoMembershipProvider.CreateUser(
-            //                                    PartyHost.Alias,                                // member type alias
-            //                                    registerHostForm.EmailAddress,                  // username
-            //                                    registerHostForm.Password,                      // password
-            //                                    registerHostForm.EmailAddress,                  // email
-            //                                    null,                                           // forgotten password question
-            //                                    null,                                           // forgotten password answer
-            //                                    true,                                           // is approved 
-            //                                    null,                                           // provider user key
-            //                                    out membershipCreateStatus);
+            MembershipUser membershipUser = membersUmbracoMembershipProvider.CreateUser(
+                                                PartyGuest.Alias,                               // member type alias
+                                                registerGuestForm.EmailAddress,                 // username
+                                                registerGuestForm.Password,                     // password
+                                                registerGuestForm.EmailAddress,                 // email
+                                                null,                                           // forgotten password question
+                                                null,                                           // forgotten password answer
+                                                true,                                           // is approved 
+                                                null,                                           // provider user key
+                                                out membershipCreateStatus);
 
-            //if (membershipCreateStatus != MembershipCreateStatus.Success)
-            //{
-            //    switch (membershipCreateStatus)
-            //    {
-            //        case MembershipCreateStatus.DuplicateEmail:
-            //        case MembershipCreateStatus.DuplicateUserName:
+            if (membershipCreateStatus != MembershipCreateStatus.Success)
+            {
+                switch (membershipCreateStatus)
+                {
+                    case MembershipCreateStatus.DuplicateEmail:
+                    case MembershipCreateStatus.DuplicateUserName:
 
-            //            this.ModelState.AddModelError("EmailValidation", "Email already registered");
+                        this.ModelState.AddModelError("EmailValidation", "Email already registered");
 
-            //            break;
-            //    }
+                        break;
+                }
 
-            //    return this.CurrentUmbracoPage();
-            //}
+                return this.CurrentUmbracoPage();
+            }
 
-            //// cast from MembershipUser rather than use this.Members.GetCurrentMember() helper (which needs a round trip for the login)
-            //PartyHost partyHost = (PartyHost)membershipUser;
+            // cast from MembershipUser rather than use this.Members.GetCurrentMember() helper (which needs a round trip for the login)
+            PartyGuest partyguest = (PartyGuest)membershipUser;
 
-            //partyHost.MarketingSource = registerHostForm.MarketingSource;
+            partyguest.PartyGuid = registerGuestForm.PartyGuid;
 
-            //partyHost.PartyUrlIdentifier = Guid.NewGuid().ToString();
+            // send cookie
+            FormsAuthentication.SetAuthCookie(partyguest.Username, true);
 
-            //// send cookie
-            //FormsAuthentication.SetAuthCookie(partyHost.Username, true);
-
-            return this.RedirectToUmbracoPage(this.CurrentPage.Children.Single(x => x.DocumentTypeAlias == RegisterHostPartyKit.Alias));
+            return this.RedirectToUmbracoPage(this.CurrentPage.Children.Single(x => x.DocumentTypeAlias == RegisterGuestConfirmation.Alias));
         }
     }
 }

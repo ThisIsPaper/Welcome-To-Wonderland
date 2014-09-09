@@ -29,16 +29,7 @@ namespace Wonderland.Logic.Controllers.Render
             {
                 if (this.Members.IsLoggedIn())
                 {                    
-                    IPublishedContent currentMember = this.Members.GetCurrentMember();
-
-                    if (currentMember is PartyHost)
-                    {
-                        return this.Redirect(model.Url + ((PartyHost)currentMember).PartyUrlIdentifier + "/");
-                    }
-                    else if (currentMember is PartyGuest)
-                    {
-                        // TODO:
-                    }
+                    return this.Redirect(((IPartier)this.Members.GetCurrentMember()).GetPartyUrl());
                 }
 
                 // fallback
@@ -80,13 +71,27 @@ namespace Wonderland.Logic.Controllers.Render
 
             // detemine view to return based on the user
             if (this.Members.IsLoggedIn())
-            {                
-                if (((IPartier)this.Members.GetCurrentMember()).Id == partyHost.Id)
+            {
+                IPartier partier = (IPartier)this.Members.GetCurrentMember();
+                if (partier is PartyHost && partier.Id == partyHost.Id)
                 {
                     return View("Host", model);
                 }
+                else if (partier is PartyGuest && ((PartyGuest)partier).PartyGuid == partyHost.PartyGuid)
+                {
+                    return View("Guest", model);
+                }
 
-                // TODO: check to see if current user is a guest at this renderModel
+                //if (((IPartier)this.Members.GetCurrentMember()).Id == partyHost.Id)
+                //{
+                //    return View("Host", model);
+                //}
+
+                //// TODO: check to see if current user is a guest at this renderModel
+                //if (((IPartier)this.Members.GetCurrentMember()).PartyGuid == partyHost.PartyGuid)
+                //{
+
+                //}
             }
 
             // fallback

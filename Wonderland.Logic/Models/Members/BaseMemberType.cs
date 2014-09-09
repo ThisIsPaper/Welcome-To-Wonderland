@@ -5,15 +5,36 @@ namespace Wonderland.Logic.Models.Members
     using Umbraco.Core.Models;
     using Umbraco.Core.Models.PublishedContent;
     using Umbraco.Core.Services;
+    using Umbraco.Web;
+    using Umbraco.Web.Security;
 
     public abstract class BaseMemberType : PublishedContentModel
     {
+        private MembershipHelper membershipHelper = null;
+
         private IMember member = null;
 
         public BaseMemberType(IPublishedContent content)
             : base(content)
         {
         }
+
+        /// <summary>
+        /// to match the .Members property found in the SurfaceControllers and the Views
+        /// </summary>
+        protected MembershipHelper Members
+        {
+            get
+            {
+                if (this.membershipHelper == null)
+                {
+                    this.membershipHelper = new MembershipHelper(UmbracoContext.Current);
+                }
+
+                return this.membershipHelper;
+            }
+        }
+
 
         /// <summary>
         /// helper to get at the MemberService
