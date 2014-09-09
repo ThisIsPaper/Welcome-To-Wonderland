@@ -13,7 +13,7 @@ namespace Wonderland.Logic.Controllers.Surface
     {
         [ChildActionOnly]
         [MemberAuthorize(AllowType=PartyHost.Alias)]
-        public ActionResult Index()
+        public ActionResult RenderRegisterHostPartyKitForm()
         {
             return this.PartialView("RegisterHostPartyKitFormPartial", new RegisterHostPartyKitForm());
         }
@@ -21,7 +21,7 @@ namespace Wonderland.Logic.Controllers.Surface
         [HttpPost]
         [ValidateAntiForgeryToken]
         [MemberAuthorize(AllowType=PartyHost.Alias)]
-        public ActionResult RegisterHostPartyKitForm(RegisterHostPartyKitForm registerHostPartyKitForm)
+        public ActionResult HandleRegisterHostPartyKitForm(RegisterHostPartyKitForm registerHostPartyKitForm)
         {
             if (!ModelState.IsValid)
             {

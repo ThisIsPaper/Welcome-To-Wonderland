@@ -30,7 +30,7 @@ namespace Wonderland.Logic.Controllers.Surface
         /// </summary>
         /// <returns></returns>
         [ChildActionOnly] // (Cannot redirect from a Child Action)
-        public ActionResult Index()
+        public ActionResult RenderRegisterHostForm()
         {
             // get the renderModel for the current page
             RegisterHost model = (RegisterHost)this.CurrentPage;
@@ -55,7 +55,7 @@ namespace Wonderland.Logic.Controllers.Surface
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult RegisterHostForm(RegisterHostForm registerHostForm)
+        public ActionResult HandleRegisterHostForm(RegisterHostForm registerHostForm)
         {
             if (!this.ModelState.IsValid)
             {
