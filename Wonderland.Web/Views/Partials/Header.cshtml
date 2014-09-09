@@ -3,7 +3,7 @@
     <nav class="nav">
         @if (!this.Members.IsLoggedIn())
         {
-            <a class="btn-primary" href="@Model.RegisterHostUrl">Host a party ></a>
+            @Html.ActionLink("Host a party >", "NavigateToRegisterHostUrl", "RegisterHostSurface", null, new { @class = "btn-secondary" })
         }
         else
         {
@@ -24,8 +24,8 @@
         </a>
 
         @if (!this.Members.IsLoggedIn())
-        {
-            <a class="btn-secondary" href="@Model.LoginUrl">Login</a>
+        {            
+            @Html.ActionLink("Login", "NavigateToLoginUrl", "LoginSurface", null, new { @class = "btn-secondary" })
         }
         else
         {

@@ -14,7 +14,17 @@ namespace Wonderland.Logic.Controllers.Surface
     using Wonderland.Logic.Models.Members;
 
     public class RegisterHostSurfaceController : SurfaceController
-    {
+    {        
+        /// <summary>
+        /// Handles inbound links to the register host page
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        public ActionResult NavigateToRegisterHostUrl()
+        {
+            return this.Redirect(this.Umbraco.TypedContentSingleAtXPath("//" + RegisterHost.Alias).Url);
+        }
+
         /// <summary>
         /// returns the partial for the host registration form
         /// </summary>

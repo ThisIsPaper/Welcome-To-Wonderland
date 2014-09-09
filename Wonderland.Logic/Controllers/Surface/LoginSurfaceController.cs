@@ -5,22 +5,33 @@ namespace Wonderland.Logic.Controllers.Surface
     using Umbraco.Web.Mvc;
     using Wonderland.Logic.Models.Forms;
     using Wonderland.Logic.Models.Members;
+    using Wonderland.Logic.Models.Content;
 
     public class LoginSurfaceController : SurfaceController
     {
+        /// <summary>
+        /// Handles inbound links to the login page
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet]
+        public ActionResult NavigateToLoginUrl()
+        {
+            return this.Redirect(this.Umbraco.TypedContentSingleAtXPath("//" + Login.Alias).Url);
+        }
+
         /// <summary>
         /// returns the partial for the login form
         /// </summary>
         /// <returns></returns>
         [ChildActionOnly]
-        public ActionResult Index()
+        public ActionResult RenderLoginForm()
         {
             return this.PartialView("LoginFormPartial", new LoginForm());
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult LoginForm(LoginForm loginForm)
+        public ActionResult HandleLoginForm(LoginForm loginForm)
         {
             if (!this.ModelState.IsValid)
             {
