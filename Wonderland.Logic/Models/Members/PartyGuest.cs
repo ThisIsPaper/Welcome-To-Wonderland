@@ -80,6 +80,8 @@ namespace Wonderland.Logic.Models.Members
         /// <returns></returns>
         public string GetPartyUrl()
         {
+            //PartyHost partyhost = PartyHost.GetByPartyGuid(this.PartyGuid);
+
             // WARNING: Hits DB
             IMember partyHost = this.MemberService
                                     .GetMembersByMemberType(PartyHost.Alias)
@@ -95,6 +97,5 @@ namespace Wonderland.Logic.Models.Members
         {
             return new PartyGuest(new MembershipHelper(UmbracoContext.Current).GetByUsername(membershipUser.UserName));
         }
-
     }
 }

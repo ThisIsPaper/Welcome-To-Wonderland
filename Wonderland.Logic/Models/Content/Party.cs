@@ -72,5 +72,11 @@ namespace Wonderland.Logic.Models.Content
         }
 
         #endregion
+
+        #region Calulcated Properties
+
+
+
+        #endregion
     }
 }

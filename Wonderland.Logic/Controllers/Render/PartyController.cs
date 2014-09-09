@@ -16,6 +16,8 @@ namespace Wonderland.Logic.Controllers.Render
 
             PartyHost partyHost;
 
+            #region Redirect if party host unknown (see: Events/SetPartyContentFinder)
+
             try
             {
                 partyHost = (PartyHost)this.Members.GetById(int.Parse(this.HttpContext.Items["partyHostId"].ToString()));
@@ -36,33 +38,35 @@ namespace Wonderland.Logic.Controllers.Render
                 return this.Redirect(Home.GetCurrentHome(model).Url);
             }
 
+            #endregion
+
             // known host, so build the renderModel renderModel
             model.PartyHost = partyHost;
 
             // image
 
-            // location
-
-            // heading
+            // location - use model.PartyHost.PartyAddress
+            
+            // heading - use custom heading if set by host
             if (!string.IsNullOrWhiteSpace(partyHost.PartyHeading))
             {
                 model.Heading = partyHost.PartyHeading;
             }
             
-            // copy
+            // copy - use custom copy if set by host
             if (!string.IsNullOrWhiteSpace(partyHost.PartyCopy))
             {
                 model.Copy = partyHost.PartyCopy;
             }
 
-            // wall
+            // wall - TODO: hit db ?
 
             // totaliser
 
             // partiers - the host + all guests
             List<IPartier> partiers = new List<IPartier>();
             partiers.Add(partyHost);
-           
+            
 
             model.Partiers = partiers;
 
@@ -81,17 +85,6 @@ namespace Wonderland.Logic.Controllers.Render
                 {
                     return View("Guest", model);
                 }
-
-                //if (((IPartier)this.Members.GetCurrentMember()).Id == partyHost.Id)
-                //{
-                //    return View("Host", model);
-                //}
-
-                //// TODO: check to see if current user is a guest at this renderModel
-                //if (((IPartier)this.Members.GetCurrentMember()).PartyGuid == partyHost.PartyGuid)
-                //{
-
-                //}
             }
 
             // fallback

@@ -2,7 +2,9 @@
 namespace Wonderland.Logic.Models.Members
 {
     using System;
+    using System.Linq;
     using System.Web.Security;
+    using Umbraco.Core;
     using Umbraco.Core.Models;
     using Umbraco.Web;
     using Umbraco.Web.Security;
@@ -46,8 +48,6 @@ namespace Wonderland.Logic.Models.Members
                 this.SetPropertyValue(PartyHost.PartyGuidAlias, value.ToString());
             }
         }
-
-        #region Properties set by CMS
 
         public string MarketingSource
         {
@@ -172,8 +172,6 @@ namespace Wonderland.Logic.Models.Members
             }
         }
 
-        #endregion
-
         public string PersonName
         {
             get
@@ -185,6 +183,24 @@ namespace Wonderland.Logic.Models.Members
         public string GetPartyUrl()
         {
             return UmbracoContext.Current.ContentCache.GetSingleByXPath("//" + Party.Alias).Url + this.PartyUrlIdentifier;
+        }
+
+        public static PartyHost GetByPartyGuid(Guid partyGuid)
+        {
+            // WARNING: hits db            
+            IMember partyHost = ApplicationContext
+                                .Current
+                                .Services
+                                .MemberService
+                                .GetMembersByMemberType(PartyHost.Alias)
+                                .SingleOrDefault(x => x.GetValue<Guid>(PartyHost.PartyGuidAlias) == partyGuid);
+
+            if (partyHost != null)
+            {
+                return new PartyHost(new MembershipHelper(UmbracoContext.Current).GetByUsername(partyHost.Username));
+            }
+
+            return null;
         }
 
         /// <summary>

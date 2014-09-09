@@ -13,14 +13,16 @@ namespace Wonderland.Logic.Controllers.Render
         {
             RegisterGuest model = (RegisterGuest)this.CurrentPage;
 
-            // check to see there's a valid party guid
             Guid partyGuid;
 
             if (Guid.TryParse(this.Request.QueryString["partyGuid"], out partyGuid))
             {
-                // TODO: ensure guid is a valid party guid
+                model.PartyHost = PartyHost.GetByPartyGuid(partyGuid);
 
-                return this.CurrentTemplate(model);    
+                if (model.PartyHost != null)
+                {
+                    return this.CurrentTemplate(model);
+                }
             }
 
             // fallback
