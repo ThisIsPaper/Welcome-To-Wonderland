@@ -1,0 +1,13 @@
+﻿@model RegisterGuestForm
+
+<br /><br /><br /><br /><br /><br /><br /><br />
+<h1>Register Guest Form Partial</h1>
+
+@using (Html.BeginUmbracoForm<RegisterGuestSurfaceController>("HandleRegisterGuestForm"))
+{
+    @Html.AntiForgeryToken()
+
+    @Html.EditorForModel()
+    
+    <button type="submit">Submit</button>
+}

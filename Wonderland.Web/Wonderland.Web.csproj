@@ -237,6 +237,7 @@
     <Content Include="Views\Party\Anonymous.cshtml" />
     <Content Include="Views\Party\Host.cshtml" />
     <Content Include="Views\Party\Guest.cshtml" />
+    <Content Include="Views\RegisterGuestSurface\RegisterGuestFormPartial.cshtml" />
     <None Include="Views\RegisterHostSurface\RegisterHostFormPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>

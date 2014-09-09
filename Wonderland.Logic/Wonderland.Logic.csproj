@@ -208,6 +208,7 @@
     <Compile Include="Controllers\Render\RegisterHostPartyKitController.cs" />
     <Compile Include="Controllers\Surface\LoginSurfaceController.cs" />
     <Compile Include="Controllers\Surface\LogoutSurfaceController.cs" />
+    <Compile Include="Controllers\Surface\RegisterGuestSurfaceController.cs" />
     <Compile Include="Controllers\Surface\RegisterHostPartyKitSurfaceController.cs" />
     <Compile Include="Controllers\Surface\RegisterHostSurfaceController.cs" />
     <Compile Include="Enums\LeaderboardType.cs" />
@@ -253,6 +254,7 @@
     <Compile Include="Models\Entities\Reward.cs" />
     <Compile Include="Models\Entities\SiteSettings.cs" />
     <Compile Include="Models\Forms\LoginForm.cs" />
+    <Compile Include="Models\Forms\RegisterGuestForm.cs" />
     <Compile Include="Models\Forms\RegisterHostForm.cs" />
     <Compile Include="Models\Forms\RegisterHostPartyKitForm.cs" />
     <Compile Include="Models\Media\Image.cs" />
