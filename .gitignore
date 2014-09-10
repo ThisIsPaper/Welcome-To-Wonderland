@@ -2,6 +2,7 @@
 /Wonderland.Web/obj
 /Wonderland.Web/Wonderland.Web.csproj.user
 *.pdb
+*.idea
 Wonderland.Logic/obj/
 Wonderland.Logic/bin/
 /packages

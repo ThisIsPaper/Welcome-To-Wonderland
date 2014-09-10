@@ -1,41 +1,87 @@
 ﻿@inherits UmbracoViewPage<SiteSettings> 
-<header id="siteHeader">
-    <nav class="nav">
-        @if (!this.Members.IsLoggedIn())
-        {
-            @Html.ActionLink("Host a party >", "NavigateToRegisterHostUrl", "RegisterHostSurface", null, new { @class = "btn-secondary" })
-        }
-        else
-        {
-            <a href="@(((IPartier)this.Members.GetCurrentMember()).GetPartyUrl())" class="btn-primary">My party</a>
-        }
-	    
-	    <ul class="toolbar">
-	        @foreach (SitePage sitePage in Model.HeaderNavigation)
-	        {
-	            <li><a href="@sitePage.Url">@sitePage.Name</a></li>
-	        }
-	    </ul>
-	    <a href="/" class="wonderland-logo-bg">
-            <span class="wonderland-logo"></span> 
-            <p>
-                Wonderland Home
-            </p>
-        </a>
 
-        @if (!this.Members.IsLoggedIn())
-        {            
-            @Html.ActionLink("Login", "NavigateToLoginUrl", "LoginSurface", null, new { @class = "btn-secondary" })
-        }
-        else
-        {
+
+<header class="site-header">
+
+
+    <a class="nav-burger nav-end-block" onclick="toggleMenu('showing-side-menu')">Burger</a>
+
+    <a class="nav-account nav-end-block end-block-right" onclick="toggleMenu('showing-account-menu')">Account</a>
+
+
+
+
+    @if (!this.Members.IsLoggedIn())
+    {
+        @Html.ActionLink("Host a party >", "NavigateToRegisterHostUrl", "RegisterHostSurface", null, new { @class = "btn-primary btn-small nav-end-block" })
+    }
+    else
+    {
+        <a href="@(((IPartier)this.Members.GetCurrentMember()).GetPartyUrl())" class="btn-primary btn-small nav-end-block">My party</a>
+    }
+
+
+
+    @if (!this.Members.IsLoggedIn())
+    {
+        <div class="nav-end-block end-block-right">
+            @Html.ActionLink("Login", "NavigateToLoginUrl", "LoginSurface", null, new { @class = "btn-secondary btn-small" })
+        </div>
+    }
+    else
+    {
+        <div class="nav-end-block end-block-right">
+            @Html.ActionLink("Logout", "Logout", "LogoutSurface", null, new { @class = "btn-secondary btn-small" })
+        </div>
+    }
+
+
+
+
+    <nav class="nav">
+
+
+        <div class="nav-menu">
             <ul>
-                <li>
-                    @Html.ActionLink("Logout", "Logout", "LogoutSurface")
+                <li class="menu left-side">
+                    <ul>
+                        @foreach (SitePage sitePage in Model.HeaderNavigationLeft)
+                        {
+                            <li><a href="@sitePage.Url">@sitePage.Name</a></li>
+                        }
+                    </ul>
+                </li>
+                <li class="menu right-side">
+                    <ul>
+                        @foreach (SitePage sitePage in Model.HeaderNavigationRight)
+                        {
+                            <li><a href="@sitePage.Url">@sitePage.Name</a></li>
+                        }
+                    </ul>
                 </li>
             </ul>
-        }
+        </div>
+
+
+        <a href="#" class="logo">
+            <span class="logo-ribbon"></span>
+            <span class="logo-copy">Wonderland Home</span>
+        </a>
+
+
+        <div class="account-menu">
+            <div class="menu">
+                <ul>
+                    <li><a href="#">My Party</a></li>
+                    <li><a href="#">My Profile</a></li>
+                    <li><a href="#">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+
 
     </nav>
-	<div class="snow-brush-overlay"></div>
+
+    <div class="snow-brush-overlay"></div>
+
 </header>
