@@ -22,8 +22,9 @@ body {
   line-height: $LineHeight;
   font-family: $BaseFontFamily;
   font-size: $FontSizeMedium;
+  @extend %margin-none;
+  @extend %padding-none;
 }
-
 
 nav, nav li, .toolbar, .toolbar li, .btn-group {
   @extend %inline;
@@ -48,4 +49,12 @@ images
 ========================================================================== */
 img, object, embed {
   max-width: $RowWidth; //prevent images from going beyond the viewport
+}
+
+/* =============================================================================
+Base page structure
+========================================================================== */
+.page-container {
+  position: relative;
+  width: 100%;
 }

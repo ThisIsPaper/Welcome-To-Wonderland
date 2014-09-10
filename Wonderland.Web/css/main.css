@@ -105,7 +105,7 @@ Margins
 ========================================================================== */
 /* Normal margin */
 /* line 118, sass/partials/_helpers.scss */
-nav ul, nav li ul, .toolbar ul, .toolbar li ul, .btn-group ul {
+body, nav ul, nav li ul, .toolbar ul, .toolbar li ul, .btn-group ul {
   margin: 0;
 }
 
@@ -128,7 +128,7 @@ Padding
 }
 
 /* line 234, sass/partials/_helpers.scss */
-nav ul, nav li ul, .toolbar ul, .toolbar li ul, .btn-group ul {
+body, nav ul, nav li ul, .toolbar ul, .toolbar li ul, .btn-group ul {
   padding: 0;
 }
 
@@ -799,7 +799,7 @@ body {
 /* =============================================================================
 Shadows
 ========================================================================== */
-/* line 42, sass/partials/_base.scss */
+/* line 43, sass/partials/_base.scss */
 .shadowed {
   -moz-box-shadow: 0 0 3rem rgba(102, 102, 102, 0.7);
   -webkit-box-shadow: 0 0 3rem rgba(102, 102, 102, 0.7);
@@ -809,9 +809,18 @@ Shadows
 /* =============================================================================
 images
 ========================================================================== */
-/* line 49, sass/partials/_base.scss */
+/* line 50, sass/partials/_base.scss */
 img, object, embed {
   max-width: 100%;
+}
+
+/* =============================================================================
+Base page structure
+========================================================================== */
+/* line 57, sass/partials/_base.scss */
+.page-container {
+  position: relative;
+  width: 100%;
 }
 
 @media only screen and (max-width: 1049px) {
@@ -964,7 +973,7 @@ main {
 
 /* line 46, sass/main.scss */
 #homeBg {
-  background: url('/img/wood_texture.jpg') repeat top left;
+  background: url('/img/wood_texture.jpg?1410364462') repeat top left;
   background-size: 100% 50%;
   margin-top: -1.2rem;
 }
@@ -972,7 +981,7 @@ main {
 /* line 52, sass/main.scss */
 #heroGraphic {
   height: 35rem;
-  background-image: url('/img/hero-ph.jpg');
+  background-image: url('/img/hero-ph.jpg?1410364462');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -1021,7 +1030,7 @@ main {
 }
 /* line 96, sass/main.scss */
 .banner .money-raised-info {
-  background: url('/img/amount-raised-ph.png') no-repeat center right transparent;
+  background: url('/img/amount-raised-ph.png?1410364470') no-repeat center right transparent;
   height: 14rem;
   width: 21rem;
 }
@@ -1086,64 +1095,64 @@ main {
 }
 /* line 159, sass/main.scss */
 .frame:nth-child(1) {
-  -moz-transform: rotate(-0.2deg);
-  -ms-transform: rotate(-0.2deg);
-  -webkit-transform: rotate(-0.2deg);
-  transform: rotate(-0.2deg);
+  -moz-transform: rotate(-1.2deg);
+  -ms-transform: rotate(-1.2deg);
+  -webkit-transform: rotate(-1.2deg);
+  transform: rotate(-1.2deg);
 }
 /* line 159, sass/main.scss */
 .frame:nth-child(2) {
+  -moz-transform: rotate(1.7deg);
+  -ms-transform: rotate(1.7deg);
+  -webkit-transform: rotate(1.7deg);
+  transform: rotate(1.7deg);
+}
+/* line 159, sass/main.scss */
+.frame:nth-child(3) {
+  -moz-transform: rotate(-0.4deg);
+  -ms-transform: rotate(-0.4deg);
+  -webkit-transform: rotate(-0.4deg);
+  transform: rotate(-0.4deg);
+}
+/* line 159, sass/main.scss */
+.frame:nth-child(4) {
   -moz-transform: rotate(2.3deg);
   -ms-transform: rotate(2.3deg);
   -webkit-transform: rotate(2.3deg);
   transform: rotate(2.3deg);
 }
 /* line 159, sass/main.scss */
-.frame:nth-child(3) {
-  -moz-transform: rotate(-0.6deg);
-  -ms-transform: rotate(-0.6deg);
-  -webkit-transform: rotate(-0.6deg);
-  transform: rotate(-0.6deg);
-}
-/* line 159, sass/main.scss */
-.frame:nth-child(4) {
-  -moz-transform: rotate(0.6deg);
-  -ms-transform: rotate(0.6deg);
-  -webkit-transform: rotate(0.6deg);
-  transform: rotate(0.6deg);
-}
-/* line 159, sass/main.scss */
 .frame:nth-child(5) {
-  -moz-transform: rotate(-2.1deg);
-  -ms-transform: rotate(-2.1deg);
-  -webkit-transform: rotate(-2.1deg);
-  transform: rotate(-2.1deg);
+  -moz-transform: rotate(-1.3deg);
+  -ms-transform: rotate(-1.3deg);
+  -webkit-transform: rotate(-1.3deg);
+  transform: rotate(-1.3deg);
 }
 /* line 159, sass/main.scss */
 .frame:nth-child(6) {
-  -moz-transform: rotate(0.4deg);
-  -ms-transform: rotate(0.4deg);
-  -webkit-transform: rotate(0.4deg);
-  transform: rotate(0.4deg);
+  -moz-transform: rotate(1.5deg);
+  -ms-transform: rotate(1.5deg);
+  -webkit-transform: rotate(1.5deg);
+  transform: rotate(1.5deg);
 }
 
 /* line 172, sass/main.scss */
 #shareWonderland {
-  background: url('/img/home-share-ph.png') no-repeat;
+  background: url('/img/home-share-ph.png?1410364473') no-repeat;
   padding: 7rem 15.2rem;
   margin: 3.1rem 1.5rem;
 }
 
 /* line 180, sass/main.scss */
 #twitterFeed {
-  background: url('/img/home-twitter-ph.png') no-repeat;
+  background: url('/img/home-twitter-ph.png?1410364465') no-repeat;
   padding: 16rem 17.5rem 13rem;
   margin: 2.2rem 1.4rem 0 0;
 }
 
 /* line 187, sass/main.scss */
 .footer-snow-brush-overlay {
-  background: url('/img/footer_texture.png') repeat-x center;
+  background: url('/img/footer_texture.png?1410364463') repeat-x center;
   padding-top: 1.2rem;
   height: 4rem;
   margin-top: -5rem;
