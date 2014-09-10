@@ -1,6 +1,7 @@
 ﻿
 namespace Wonderland.Logic.Models.Entities
 {
+    using System.Linq;
     using System.Collections.Generic;
     using Wonderland.Logic.Models.Content;
 
@@ -8,7 +9,8 @@ namespace Wonderland.Logic.Models.Entities
     {
         internal SiteSettings(Home home)
         {
-            this.HeaderNavigation = home.HeaderNavigation;
+            this.HeaderNavigationLeft = home.HeaderNavigation.Take(home.HeaderNavigation.Count() / 2);
+            this.HeaderNavigationRight = home.HeaderNavigation.Skip(home.HeaderNavigation.Count() / 2);
             this.FooterNavigation = home.FooterNavigation;
             this.LegalNavigation = home.LegalNavigation;
             this.CampaignHashtag = home.CampaignHashtag;
@@ -18,7 +20,9 @@ namespace Wonderland.Logic.Models.Entities
             this.FooterCopy = home.FooterCopy;
         }
 
-        public IEnumerable<SitePage> HeaderNavigation { get; private set; }
+        public IEnumerable<SitePage> HeaderNavigationLeft { get; private set; }
+
+        public IEnumerable<SitePage> HeaderNavigationRight { get; private set; }
 
         public IEnumerable<SitePage> FooterNavigation { get; private set; }
 
