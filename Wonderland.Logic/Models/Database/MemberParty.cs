@@ -5,14 +5,24 @@ namespace Wonderland.Logic.Models.Database
     using Umbraco.Core.Persistence;
 
     [TableName("wonderlandMemberParty")]
-    [PrimaryKey("MemberId")]
+    [PrimaryKey("MemberId", autoIncrement=false)]
     [ExplicitColumns]
-    internal class MemberParty
+    public class MemberParty
     {
+        internal MemberParty(int memberId, Guid partyGuid)
+        {
+            this.MemberId = memberId;
+            this.PartyGuid = partyGuid;
+        }
+
+        //public MemberParty()
+        //{
+        //}
+
         [Column("MemberId")]
-        internal int MemberId { get; set; }
+        public int MemberId { get; set; }
 
         [Column("PartyGuid")]
-        internal Guid PartyGuid { get; set; }
+        public Guid PartyGuid { get; set; }
     }
 }

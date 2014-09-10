@@ -2,7 +2,6 @@
 namespace Wonderland.Logic.Controllers.Surface
 {
     using System;
-    using System.Collections.Generic;
     using System.Linq;
     using System.Web.Mvc;
     using System.Web.Security;
@@ -10,6 +9,7 @@ namespace Wonderland.Logic.Controllers.Surface
     using Umbraco.Core.Security;
     using Umbraco.Web.Mvc;
     using Wonderland.Logic.Models.Content;
+    using Wonderland.Logic.Models.Database;
     using Wonderland.Logic.Models.Forms;
     using Wonderland.Logic.Models.Members;
 
@@ -83,12 +83,16 @@ namespace Wonderland.Logic.Controllers.Surface
             }
 
             // cast from MembershipUser rather than use this.Members.GetCurrentMember() helper (which needs a round trip for the login)
-            PartyGuest partyguest = (PartyGuest)membershipUser;
+            PartyGuest partyGuest = (PartyGuest)membershipUser;
 
-            partyguest.PartyGuid = registerGuestForm.PartyGuid;
+            // update database with member and party guid (duplicated data, but never changes)
+            this.ApplicationContext.DatabaseContext.Database.Insert(new MemberParty(partyGuest.Id, registerGuestForm.PartyGuid));
+
+            // (duplicate data) store party guid in cms cache
+            partyGuest.PartyGuid = registerGuestForm.PartyGuid;
 
             // send cookie
-            FormsAuthentication.SetAuthCookie(partyguest.Username, true);
+            FormsAuthentication.SetAuthCookie(partyGuest.Username, true);
 
             return this.RedirectToUmbracoPage(this.CurrentPage.Children.Single(x => x.DocumentTypeAlias == RegisterGuestConfirmation.Alias));
         }

@@ -10,6 +10,7 @@ namespace Wonderland.Logic.Controllers.Surface
     using Umbraco.Core.Security;
     using Umbraco.Web.Mvc;
     using Wonderland.Logic.Models.Content;
+    using Wonderland.Logic.Models.Database;
     using Wonderland.Logic.Models.Forms;
     using Wonderland.Logic.Models.Members;
 
@@ -100,6 +101,10 @@ namespace Wonderland.Logic.Controllers.Surface
 
             Guid partyGuid = Guid.NewGuid();
 
+            // update database with member and party guid (duplicated data, but never changes)
+            this.ApplicationContext.DatabaseContext.Database.Insert(new MemberParty(partyHost.Id, partyGuid));
+
+            // (duplicate data) store party guid in cms cache
             partyHost.PartyGuid = partyGuid;
 
             // set the default custom url to be the party guid
