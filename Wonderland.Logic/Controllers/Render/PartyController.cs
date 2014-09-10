@@ -72,8 +72,12 @@ namespace Wonderland.Logic.Controllers.Render
 
             // badges
 
+            // determine view to return
+            if (model.PartyHost.Blocked)
+            {
+                return View("Blocked", model);
+            }
 
-            // detemine view to return based on the user
             if (this.Members.IsLoggedIn())
             {
                 IPartier partier = (IPartier)this.Members.GetCurrentMember();
@@ -87,7 +91,6 @@ namespace Wonderland.Logic.Controllers.Render
                 }
             }
 
-            // fallback
             return View("Anonymous", model);
         }
     }

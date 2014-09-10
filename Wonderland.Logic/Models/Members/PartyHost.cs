@@ -18,9 +18,10 @@ namespace Wonderland.Logic.Models.Members
 
         // Properties
         public const string PartyGuidAlias = "partyGuid";
-        public const string MarketingSourceAlias = "marketingSource";
         public const string FirstNameAlias = "firstName";
         public const string LastNameAlias = "lastName";
+        public const string BlockedAlias = "blocked";
+        public const string MarketingSourceAlias = "marketingSource";
         public const string PartyKitAddressAlias = "partyKitAddress";
         public const string PartyAddressAlias = "partyAddress";
         public const string PartyDateTimeAlias = "partyDateTime";
@@ -49,18 +50,6 @@ namespace Wonderland.Logic.Models.Members
             }
         }
 
-        public string MarketingSource
-        {
-            get
-            {
-                return this.GetPropertyValue<string>(PartyHost.MarketingSourceAlias);
-            }
-            set
-            {
-                this.SetPropertyValue(PartyHost.MarketingSourceAlias, value);
-            }
-        }
-
         public string FirstName
         {
             get
@@ -82,6 +71,26 @@ namespace Wonderland.Logic.Models.Members
             set
             {
                 this.SetPropertyValue(PartyHost.LastNameAlias, value);
+            }
+        }
+
+        public bool Blocked
+        {
+            get
+            {
+                return this.GetPropertyValue<bool>(PartyHost.BlockedAlias);
+            }
+        }
+
+        public string MarketingSource
+        {
+            get
+            {
+                return this.GetPropertyValue<string>(PartyHost.MarketingSourceAlias);
+            }
+            set
+            {
+                this.SetPropertyValue(PartyHost.MarketingSourceAlias, value);
             }
         }
 
