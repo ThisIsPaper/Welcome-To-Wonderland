@@ -14,7 +14,7 @@
  This file is responsible for typographic elements on the Macmillan - Wonderland app.  Styles should be compiled using compass and sass.
  --------------------------------------------------------------------------------------------------------------------- */
 
-@import url($wonderlandFontURL);
+@import url($FontURL);
 
 //
 // Golden Ratio Typography
@@ -24,7 +24,7 @@
 // Golden Ratio Math
 //
 // Let's do some math so we can build beautiful typography and vertical rhythm.
-// For any magic to happen, set the $wonderlandContainer-width variable on _variables.scss
+// For any magic to happen, set the $Container-width variable on _variables.scss
 // to match your content box width (normally this is 640px, 740px, etc...).
 //
 // Many thanks to Chris Pearson's scary math skills http://t.co/KoeUoEWrNS
@@ -32,17 +32,17 @@
 //
 // @author Greg Rickaby
 // @since 1.0
-// @requires $wonderlandContainer-width
+// @requires $Container-width
 // ----------------------------------
 $phi: (1 + sqrt(5)) / 2; // 1.61803398874989 or "The Golden Ratio"
 $xoo: 1 / (2 * $phi);
-$yoo: sqrt($wonderlandContainer-width) / $phi; // Line-height
-$zoo: $phi - $xoo * (1 - ($wonderlandContainer-width / $yoo));
+$yoo: sqrt($Container-width) / $phi; // Line-height
+$zoo: $phi - $xoo * (1 - ($Container-width / $yoo));
  
  
 // Title Size
 //
-// Calculated title size based on $wonderlandContainer-width.
+// Calculated title size based on $Container-width.
 //
 // @author Greg Rickaby
 // @since 1.0
@@ -63,7 +63,7 @@ $zoo: $phi - $xoo * (1 - ($wonderlandContainer-width / $yoo));
  
 // Headline Size
 //
-// Calculated headline size based on $wonderlandContainer-width.
+// Calculated headline size based on $Container-width.
 //
 // @author Greg Rickaby
 // @since 1.0
@@ -83,7 +83,7 @@ $zoo: $phi - $xoo * (1 - ($wonderlandContainer-width / $yoo));
  
 // Sub-headline Size
 //
-// Caclulated sub-headline size based on $wonderlandContainer-width.
+// Caclulated sub-headline size based on $Container-width.
 //
 // @author Greg Rickaby
 // @since 1.0
@@ -104,7 +104,7 @@ $zoo: $phi - $xoo * (1 - ($wonderlandContainer-width / $yoo));
  
 // Font Size
 //
-// Calculated font size based on $wonderlandContainer-width.
+// Calculated font size based on $Container-width.
 //
 // @author Greg Rickaby
 // @since 1.0
@@ -112,7 +112,7 @@ $zoo: $phi - $xoo * (1 - ($wonderlandContainer-width / $yoo));
 // Usage: @include grFontSize();
 // --------------------------------
 @function calcFontSize() {
-  $foo: sqrt($wonderlandContainer-width) / $phi;
+  $foo: sqrt($Container-width) / $phi;
     @return round($foo);
 }
  
@@ -125,7 +125,7 @@ $zoo: $phi - $xoo * (1 - ($wonderlandContainer-width / $yoo));
  
 // Secondary Text
 //
-// Calculated secondary text size based on $wonderlandContainer-width.
+// Calculated secondary text size based on $Container-width.
 //
 // @author Greg Rickaby
 // @since 1.0
@@ -146,7 +146,7 @@ $zoo: $phi - $xoo * (1 - ($wonderlandContainer-width / $yoo));
  
 // Default Line Height
 //
-// Calculate default line-height based on $wonderlandContainer-width.
+// Calculate default line-height based on $Container-width.
 //
 // @author Greg Rickaby
 // @since 1.0
@@ -154,8 +154,8 @@ $zoo: $phi - $xoo * (1 - ($wonderlandContainer-width / $yoo));
 // Usage: @include grBaseLineHeight();
 // --------------------------------
 @function calcBaseLineHeight() {
-  $foobar: sqrt($wonderlandContainer-width) / $phi;
-  $foo: calcFontSize() * ($phi - $xoo * (1 - ($wonderlandContainer-width / pow(calcFontSize() * $phi, 2))));
+  $foobar: sqrt($Container-width) / $phi;
+  $foo: calcFontSize() * ($phi - $xoo * (1 - ($Container-width / pow(calcFontSize() * $phi, 2))));
   $fo: $foo / $foobar;
     @return $fo;
 }
@@ -176,7 +176,7 @@ $zoo: $phi - $xoo * (1 - ($wonderlandContainer-width / $yoo));
 // Usage: @include grCustomLineHeight(26);
 // --------------------------------
 @function calcCustomLineHeight($target) {
-  $foobar: sqrt($wonderlandContainer-width) / $phi;
+  $foobar: sqrt($Container-width) / $phi;
   $foo: $target / $foobar;
     @return $foo;
 }
@@ -187,22 +187,49 @@ $zoo: $phi - $xoo * (1 - ($wonderlandContainer-width / $yoo));
 
 /* Type */
 #{headings(all)} {
-  font-weight: $wonderlandHeadingFontWeight;
+  font-weight: $HeadingFontWeight;
 }
 
 // @for $i from 1 through 6 {
 //  #{$i} {
-//    font-size: (($wonderlandEm * $wonderlandMultiplierLarge) - (($i * (($wonderlandEm * $wonderlandMultiplierLarge) / 6 )))) + ($wonderlandEm * $wonderlandMultiplier);
+//    font-size: (($Em * $MultiplierLarge) - (($i * (($Em * $MultiplierLarge) / 6 )))) + ($Em * $Multiplier);
 //  }
 // }
 
 a {
-  @extend %transition-all;
-  color: $wonderlandInverseTextColour;
+  //@extend %transition-all;
+  color: $InverseTextColour;
   text-decoration: none;
 }
 
 ul, ol, dl {
-  padding-left: ($wonderlandPaddingLarge * $wonderlandMultiplier);
+  padding-left: ($PaddingLarge * $Multiplier);
   @extend %normal-margin-top-bottom;
 }
+
+
+
+//////////////////////////
+//
+//  Further by Matt Rawson | 2014.09.08
+//
+.heading-large {
+  font-size: $HeadingFontSizeLarge;
+}
+
+.heading-small {
+  font-size: $HeadingFontSizeSmall;
+}
+
+.body-large {
+  @extend %large;
+}
+
+.body-medium {
+  @extend %medium;
+}
+
+.body-small {
+  @extend %small;
+}
+

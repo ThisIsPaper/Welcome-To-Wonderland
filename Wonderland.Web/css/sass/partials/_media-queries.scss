@@ -1,168 +1,127 @@
-/*------------------------------------------------------------------------------------------------------------------------
- @package: Macmillan - Wonderland (app)
+@media only screen and (max-width: 1049px) {
 
- @author: Sam Latif
- @www: http://www.samlatif.co.uk
- @github: samlatif
+    .logo {
+        padding: 4.59rem 3.27rem;
+        margin: 0 -3.27rem;
+    }
 
- @twitter: samlatifuk
+    .logo-ribbon {
+        padding: 1.17rem 5.76rem;
+        margin: 1.2rem -5.76rem;
+    }
 
- @copyright: COPYRIGHT 8-21-2014 On behalf of Paper Partnerships Ltd
- =============================================================================
- Filename: _media-queries.scss
- =============================================================================
- This file is responsible for all media query code in the Macmillan - Wonderland app.  Styles should be compiled using compass and sass.  The reason we don't use inline is because it's confusing, and we easily lose track of what media query is where.
- --------------------------------------------------------------------------------------------------------------------- */
+    .left-side ul {
+        float: right;
+        margin-right: 4.47rem;
+    }
 
-/* --- main content ------------------------------------------------------------------------------------------------- */
-@import "variables.scss";
-@import "compass/css3";
-@import "breakpoint";
+    .right-side ul {
+        margin-left: 4.47rem;
+    }
 
-/* --- print (optional) --------------------------------------------------------------------------------------------- */
+    .menu li {
+        margin: 0 .3rem;
+    }
 
-@media print {
-  body {
-    background: transparent !important;
-    color: black !important;
-    text-shadow: none !important;
-    filter: none !important;
-    -ms-filter: none !important;
-  }
-/* Black prints faster: sanbeiji.com/archives/953 */
-  a, a:visited {
-    color: #444 !important;
-    text-decoration: underline;
-  }
-  a[href]:after {
-    content: " (" attr(href) ")";
-  }
-  abbr[title]:after {
-    content: " (" attr(title) ")";
-  }
-  .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after {
-    content: "";
-  }
-/* Don't show links for images, or javascript/internal links */
-  pre, blockquote {
-    border: 1px solid #999;
-    page-break-inside: avoid;
-  }
-  thead {
-    display: table-header-group;
-  }
-/* css-discuss.incutio.com/wiki/Printing_Tables */
-  tr, img {
-    page-break-inside: avoid;
-  }
-  img {
-    max-width: 100% !important;
-  }
-  @page {
-    margin: 0.5cm;
-  }
-  p, h2, h3 {
-    orphans: 3;
-    widows: 3;
-  }
+    .menu li a {
+        font-size: 1.1rem;
+    }
 
-  h2, h3 {
-    page-break-after: avoid;
-  }
+    .nav-end-block {
+        left: .5rem;
+    }
+
+    .nav-end-block.end-block-right {
+        right: .5rem;
+        left: auto;
+    }
+
+    .nav-end-block a, a.nav-end-block {
+        font-size: 1.1rem;
+    }
+
+
+    /********************/
+    /* COMPRESSED VIEW  */
+    /********************/
+    .site-header.compress .logo-ribbon {
+        margin-top: 13.7rem;
+    }
+
+    .site-header.compress .left-side ul {
+        margin-right: 6.2rem;
+    }
+
+    .site-header.compress .right-side ul {
+        margin-left: 6.2rem;
+    }
+
 }
 
-/* =============================================================================
-Mobile main media query
-========================================================================== */
+@media only screen and (max-width: 767px) {
 
-@include breakpoint($wonderlandBreakpointMain) {
-  /* Ensure no increased font sizes */
-  body {
-    font-size: $wonderlandBaseFontSize;
-    -webkit-text-size-adjust: none;
-  }
-  /* Responsive grids */
-  .#{$wonderlandRowNotation}, body, .container, .button, button, .btn, input[type="submit"], a.submit, textarea, input, img, .actions, .form-actions, .btn-group, .toolbar, .nav ul li {
-    width: 100%;
-    min-width: 0;
-    margin-left: 0;
-    margin-right: 0;
-  }
-  .container {
-    padding: 0 $wonderlandPadding; //allow padding to the side of the container
-    @for $i from 1 through $wonderlandNum-cols {
-      .#{$wonderlandRowNotation} {
-        .#{col-name($i)}, .#{col-name($i)}:last-child {
-          width: auto;
-          float: none;
-          position: static !important;
-          margin-left: 0;
-          margin-right: 0;
-        }
-      }
+    .page-container.showing-side-menu {
+        left: 25.6rem;
     }
-  }
-  header {
-    overflow: visible;
-  }
-  .toolbar, .form-actions, header, footer, caption, menu, figure, figcaption, nav, .button, button, .btn, input[type="submit"], a.submit {
-    text-align: center;
-  }
-  textarea, input {
-    padding: $wonderlandPaddingSmall $wonderlandPadding;
-  }
-  .hidden-phone {
-    display: none;
-  }
-  .container .show-phone, .button, button, .btn, input[type="submit"], a.submit {
-    display: block;
-  }
-  /* Responsive buttons */
-  .actions, .form-actions, .btn-group, .toolbar {
-    .button, button, .btn, input[type="submit"], a.submit {
-      &:first-child {
-        @include border-top-radius($wonderlandBorderRadiusLarge);
-        @include border-bottom-radius(0);
-      }
-      &:last-child {
-        @include border-top-radius(0);
-        @include border-bottom-radius($wonderlandBorderRadiusLarge);
-      }
-      margin: -#{$wonderlandMarginMini} 0 0 0; //buttons don't show double borders
-    }
-  }
 
-  /* Responsive navigation */
-  .nav ul {
-    li {
-      a {
+    .page-container.showing-account-menu {
+        left: -25.6rem;
+    }
+
+    .logo {
+        top: -16rem;
+    }
+
+    .logo-ribbon, .site-header.compress .logo-ribbon {
+        padding: 1.95rem 9.6rem;
+        margin: 12.9rem -9.6rem;
+    }
+
+    .nav-end-block {
+        display: none;
+    }
+
+    .nav-burger, .nav-account {
         display: block;
-        border-right: none;
-        border-left: none;
-        border-bottom: $wonderlandBorderWidth $wonderlandBorderStyle darken($wonderlandSecondaryColour, 25);
-      }
-      &:last-child a {
-        border-bottom: none;
-      }
-      ul, ul ul {
-        @include opacity(1);
-        visibility: visible;
-        font-size: $wonderlandFontSizeSmall;
+    }
+
+    /**********************/
+    /* NAV SIDE MENU
+    /**********************/
+    .nav-menu, .account-menu {
+        position: absolute;
+        left: -25.6rem;
+        width: 25.6rem;
+        height: 30rem;
+        background: #474740;
         display: block;
-        position: static;
+    }
+
+    .account-menu {
+        left: auto;
+        right: -25.6rem;
+    }
+
+    .menu {
+        width: 100%;
+    }
+
+    .menu ul {
+        float: none;
         margin: 0;
-      }
     }
-  }
-  /*Responsive grid button*/
-  .responsive-grid {
-    & + input[type="checkbox"]:checked + nav {
-      @include visuallyhidden;
-    }
-  }
 
-  //forms at full screen width
-  input:not([type]), input[type="color"], input[type="email"], input[type="number"], input[type="password"], input[type="tel"], input[type="url"], input[type="text"] {
-    width: $wonderlandRowWidth;
-  }
+    .menu li {
+        display: block;
+    }
+
+    .menu li a {
+        line-height: normal;
+        color: #fff;
+        font-size: 1.8rem;
+        font-weight: bold;
+
+    }
+
+
 }

@@ -1,148 +1,145 @@
-/*------------------------------------------------------------------------------------------------------------------------
- @package: Macmillan - Wonderland (app)
-
- @author: Sam Latif
- @www: http://www.samlatif.co.uk
- @github: samlatif
-
- @twitter: samlatifuk
-
- @copyright: COPYRIGHT 8-21-2014 On behalf of Paper Partnerships Ltd
- =============================================================================
- Filename: _nav.scss
- =============================================================================
- This file is responsible for navigation elements on the Macmillan - Wonderland app.  Styles should be compiled using compass and sass.
- --------------------------------------------------------------------------------------------------------------------- */
-
-@import "compass/css3";
-@import "variables.scss";
-@import "helpers";
-
-.nav, .nav ul {
-  @extend %margin-none;
-  @extend %padding-none;
-  @extend %no-list-style;
+.site-header {
+    position: relative; /* TODO - will be fixed though */
+    width: 100%;
 }
 
 .nav {
-  text-align: center;
-  @extend %overflow-visible;
-  @extend %row-width;
-  ul.toolbar {
-    a {
-      @extend %inline;
-      color: $wonderlandPrimaryColour;
-      font-weight: bold;
-      font-size: 0.9rem;
-      padding: 2.26rem 0.9rem;
-      text-transform: uppercase;
-      &:hover {
-        color: darken($wonderlandPrimaryColour, 10%);
-        text-decoration: underline;
-      } 
-    }
-    ul {
-      //nested menu 1
-      @extend %no-list-style;
-      @extend %opacity-0;
-      @extend %invisible;
-      @extend %absolute;
-      z-index: 9;
-      top: 100%;
-      @extend %normal-margin-left;
-      background: darken($wonderlandTertiaryColour, 20);
-      @include transition(opacity $wonderlandTransitionTime $wonderlandTransitionFunction);
-      @include box-shadow(0 0 $wonderlandPaddingSmall fade-out($wonderlandBodyBackground, 0.5));
-
-      ul {
-        //nested menu 2
-        left: 100%;
-        top: 0;
-        z-index: 10;
-        li {
-          &:first-child {
-            a {
-              &:after {
-                left: -0.4em;
-                top: $wonderlandEm * 0.8;
-                width: 0;
-                height: 0;
-                border-left: 0;
-                border-bottom: $wonderlandBorderRadius solid transparent;
-                border-top: $wonderlandBorderRadius solid transparent;
-                border-right: $wonderlandBorderRadiusLarge solid darken($wonderlandSecondaryColour, 40);
-              }
-
-              &:hover {
-                &:after {
-                  border-right-color: lighten($wonderlandTertiaryColour, 40);
-                  border-bottom-color: transparent;
-                }
-              }
-            }
-          }
-          &:last-child {
-            a {
-              border-right-color: lighten($wonderlandTertiaryColour, 40);
-              border-bottom-color: transparent;
-            }
-          }
-        }
-      }
-      li {
-        &:hover {
-          > ul {
-            @extend %opacity-1;
-            @extend %visible;
-            @extend %margin-none;
-          }
-        }
-
-        &:first-child {
-          a {
-            @extend %rounded-top;
-            &:hover {
-              &:after {
-                border-bottom-color: lighten($wonderlandTertiaryColour, 30);
-              }
-            }
-            &:after {
-              content: "";
-              @extend %absolute;
-              left: $wonderlandMarginLarge;
-              top: -0.4em;
-              width: 0;
-              height: 0;
-              border-left: ($wonderlandBorderWidth * $wonderlandMultiplier) $wonderlandBorderStyle transparent;
-              border-right: ($wonderlandBorderWidth * $wonderlandMultiplier) $wonderlandBorderStyle transparent;
-              border-bottom: ($wonderlandBorderWidth * $wonderlandMultiplierLarge) $wonderlandBorderStyle darken($wonderlandSecondaryColour, 15);
-            }
-          }
-        }
-      }
-    }
-    li {
-      @extend %inline;
-      @extend %relative;
-      &:hover {
-        a {
-          color: darken($wonderlandInverseTextColour, 10);
-        }
-        > ul {
-          @extend %block;
-          @extend %opacity-1;
-          @extend %visible;
-          @extend %margin-none;
-        }
-      }
-    }
-  }
-  @extend %clearfix;
+    width: 100%;
+    background: #fff;
+    position: relative;
+    min-height: 6.6rem;
 }
 
-//responsive button
-.responsive-grid {
-  @extend button;
-  @extend %margin-none;
-  @extend %show-phone;
+.logo {
+    position: absolute;
+    background: url('/img/wonderland-crest.svg') no-repeat;
+    top: 1rem;
+    left: 50%;
+    padding: 7.65rem 5.45rem;
+    margin: 0 -5.45rem;
+
+    transition-property: top;
+    transition-duration: .3s;
+    transition-timing-function: linear;
+    transition-delay: 0;
+}
+
+.logo-ribbon {
+    position: absolute;
+    background: url('/img/wonderland-logo.svg') no-repeat center;
+    padding: 1.95rem 9.6rem;
+    margin: 2rem -9.6rem;
+    z-index: 1;
+}
+
+.logo-copy {
+    position: absolute;
+    text-indent: -999rem;
+}
+
+.menu li a {
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #007eac;
+    cursor: pointer;
+    line-height: 8.4rem;
+
+    transition-property: line-height;
+    transition-duration: .3s;
+    transition-timing-function: linear;
+    transition-delay: 0;
+}
+
+.menu li a:hover {
+    color: #006593;
+    text-decoration: underline;
+}
+
+.menu {
+    width: 50%;
+}
+
+.right-side {
+    float: right;
+}
+
+.left-side ul {
+    float: right;
+    margin-right: 6.65rem;
+}
+
+.right-side ul {
+    margin-left: 6.65rem;
+}
+
+.logo-ribbon, .menu ul {
+    transition-property: margin;
+    transition-duration: .3s;
+    transition-timing-function: linear;
+    transition-delay: 0;
+}
+
+.menu li {
+    margin: 0 1.2rem;
+    padding: 0;
+}
+
+.snow-brush-overlay {
+    width: 100%;
+    background: url('/img/header_texture.png') repeat center;
+    padding-top: 1.2rem;
+}
+
+.nav-end-block {
+    position: absolute;
+    top: 2.5rem;
+    left: 2rem;
+    z-index: 3;
+
+    transition-property: top;
+    transition-duration: .3s;
+    transition-timing-function: linear;
+    transition-delay: 0;
+}
+
+.nav-end-block.end-block-right {
+    left: auto;
+    right: 2rem;
+}
+
+.nav-burger, .nav-account {
+    display: none;
+    cursor: pointer;
+}
+
+.account-menu {
+    display: none;
+}
+
+/********************/
+/* COMPRESSED VIEW  */
+/********************/
+.site-header.compress .logo {
+    top: -16rem;
+}
+
+.site-header.compress .logo-ribbon {
+    margin-top: 9.7rem;
+}
+
+.site-header.compress .left-side ul {
+    margin-right: 10.8rem;
+}
+
+.site-header.compress .right-side ul {
+    margin-left: 10.8rem;
+}
+
+.site-header.compress .menu li a {
+    line-height: 6.6rem;
+}
+
+.site-header.compress .nav-end-block {
+    top: 1.6rem;
 }

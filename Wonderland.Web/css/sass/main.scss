@@ -20,106 +20,26 @@
 Imports
 ========================================================================== */
 /* Base imports */
-@import "compass/utilities";
-@import "partials/_variables.scss";
-@import "partials/_helpers.scss";
-@import "compass/reset";
+@import "partials/init";
+//@import "compass/utilities";
+@import "partials/variables";
+@import "partials/helpers";
+//@import "compass/reset";
 // @import "compass/css3/pie";
-@import "compass/css3";
-@import "partials/_variables.scss";
-@import "partials/_grids.scss";
-@import "partials/icomoon/_icomoon.scss";
-@import "partials/_mixins.scss";
+//@import "compass/css3";
+@import "partials/grids";
+@import "partials/icomoon/icomoon";
+@import "partials/mixins";
 
 /* Optional imports */
-@import "partials/_type.scss";
-@import "partials/_forms.scss";
-@import "partials/_nav.scss";
-@import "partials/_base.scss";
-@import "partials/_media-queries";
+@import "partials/type";
+@import "partials/forms";
+@import "partials/nav";
+@import "partials/base";
+@import "partials/media-queries";
 
 // TODO : abstract out into partials and replace hardcoded values with vars
 
-#siteHeader {
-  @extend %fixed;
-  @extend %row-width; 
-  z-index: 999; 
-  nav { 
-    @extend %transition-all;    
-    @extend %use-GPU-hack;  
-    background: white; 
-    > a {
-      @extend %absolute; 
-      @extend %use-GPU-hack;  
-      top: 0;
-      &:first-child { 
-        left: 0;
-        margin-right: 0;
-      }
-    
-      &:last-child { 
-        right: 0;
-        margin-left: 0;
-      }
-    }
-  }
-  .toolbar {
-    @extend %transition-all;    
-    @extend %use-GPU-hack;
-    width: 48rem;
-    > li {
-      @for $i from 1 through 4 {
-        @if $i < 3 {
-          &:nth-child(#{$i}) {
-            @extend %pull-left;
-          }
-        } @else {
-          &:nth-child(#{$i}) {
-            @extend %pull-right;
-          }
-        }
-      }     
-    }
-  }
-  .wonderland-logo-bg {
-    background: image-url('wonderland-crest.svg') no-repeat;
-    left: 50%;
-    padding: 4rem 0 3rem;
-    margin: 1rem -2.93rem;
-    p { 
-      text-indent: -999rem;
-    }
-  }
-
-  .wonderland-logo {
-    @extend %absolute;
-    background: image-url('wonderland-logo.svg') no-repeat center;
-    padding: 1.5rem 6rem;
-    z-index: 1;
-    margin: 1.5rem -6rem;
-  }
-
-  .snow-brush-overlay {
-    @extend %row-width; 
-    background: inline-image('header_texture.png') repeat center;
-    padding-top: 1.2rem;
-  }
-
-  &.compressed {
-    nav a {
-      margin-top: 1rem;
-    }
-    .wonderland-logo-bg { 
-      padding: 0;
-      margin-top: -0.5rem;
-      max-height: 0;
-    }
-    .toolbar {
-      width: 55rem;
-      a { padding: 0.5rem 0.5rem 1.5rem; }
-    } 
-  }
-}
 
 main { padding-top: 3.5rem; }
 
@@ -181,7 +101,7 @@ main { padding-top: 3.5rem; }
   }
 
   h1 {
-    color: $wonderlandPrimaryColour;
+    color: $PrimaryColour;
     font-weight: bold;
     text-transform: uppercase;
     font-size: 2.36667rem;
@@ -275,7 +195,7 @@ main { padding-top: 3.5rem; }
 footer {
   section {
     @extend %pull-left;
-    width: $wonderlandRowWidth;
+    width: $RowWidth;
     
     &.footer-primary {
       margin: 0 auto;
@@ -330,7 +250,7 @@ footer {
         font-size: 0.8rem;
         margin-top: 1rem;
         a {
-          color: $wonderlandPrimaryColour;
+          color: $PrimaryColour;
           padding: 0 0.1rem;
           font-weight: bold;
         }

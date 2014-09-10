@@ -12,11 +12,16 @@
  This file is responsible for establishing base styles for the Macmillan - Wonderland app.
  --------------------------------------------------------------------------------------------------------------------- */
 
+html {
+  font-size: 62.5%;
+}
+
 body {
-  color: $wonderlandTextColour;
-  background: $wonderlandBodyBackground;
-  line-height: $wonderlandLineHeight;
-  font-family: $wonderlandBaseFontFamily;
+  color: $TextColour;
+  background: $BodyBackground;
+  line-height: $LineHeight;
+  font-family: $BaseFontFamily;
+  font-size: $FontSizeMedium;
 }
 
 
@@ -35,12 +40,12 @@ nav, nav li, .toolbar, .toolbar li, .btn-group {
 Shadows
 ========================================================================== */
 .shadowed {
-  @include box-shadow(0 0 3rem fade-out($wonderlandTextColour, .3));
+  @include box-shadow(0 0 3rem fade-out($TextColour, .3));
 }
 
 /* =============================================================================
 images
 ========================================================================== */
 img, object, embed {
-  max-width: $wonderlandRowWidth; //prevent images from going beyond the viewport
+  max-width: $RowWidth; //prevent images from going beyond the viewport
 }
