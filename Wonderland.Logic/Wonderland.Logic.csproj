@@ -248,6 +248,9 @@
     <Compile Include="Models\Content\SitePage.cs" />
     <Compile Include="Models\Content\PlaylistTile.cs" />
     <Compile Include="Models\Content\Wonderlanders.cs" />
+    <Compile Include="Models\Database\Donation.cs" />
+    <Compile Include="Models\Database\MemberParty.cs" />
+    <Compile Include="Models\Database\Wall.cs" />
     <Compile Include="Models\Entities\Address.cs" />
     <Compile Include="Models\Entities\PartyKit.cs" />
     <Compile Include="Models\Entities\PromotionTile.cs" />
