@@ -391,82 +391,145 @@ Media query variables
   display: block;
   clear: both;
 }
-/*------------------------------------------------------------------------------------------------------------------------
- @author: Sam Latif
- @www: http://www.samlatif.co.uk
- @github: samlatif
-
- @twitter: samlatifuk
-
- @copyright: COPYRIGHT 8-21-2014 On behalf of Paper Partnerships Ltd
- =============================================================================
- Filename: _icomoon.scss
- =============================================================================
- This file is responsible for all custom vector icons (via icomoon) in the Macmillan - Wonderland app.
- --------------------------------------------------------------------------------------------------------------------- */
-/* =============================================================================
-Helpers
-========================================================================== */
 @font-face {
-  font-family: "icomoon";
-  src: url("/fonts/icomoon.eot?-89hodh");
-  src: url("/fonts/icomoon.eot?#iefix-89hodh") format("embedded-opentype"), url("/fonts/icomoon.woff?-89hodh") format("woff"), url("/fonts/icomoon.ttf?-89hodh") format("truetype"), url("/fonts/icomoon.svg?-89hodh#icomoon") format("svg");
+  font-family: 'icomoon';
+  src: url("/fonts/icomoon.eot?-a7b8pb");
+  src: url("/fonts/icomoon.eot?#iefix-a7b8pb") format("embedded-opentype"), url("/fonts/icomoon.woff?-a7b8pb") format("woff"), url("/fonts/icomoon.ttf?-a7b8pb") format("truetype"), url("/fonts/icomoon.svg?-a7b8pb#icomoon") format("svg");
   font-weight: normal;
   font-style: normal;
 }
-/* line 29, sass/partials/icomoon/_icomoon.scss */
-.icon-glass:before, .icon-music:before, .icon-search:before, .icon-envelope:before, .icon-heart:before, .icon-star:before, .icon-star-empty:before, .icon-user:before, .icon-film:before, .icon-th-large:before, .icon-th:before, .icon-th-list:before, .icon-remove:before, .icon-zoom-in:before, .icon-zoom-out:before, .icon-off:before, .icon-signal:before, .icon-cog:before, .icon-trash:before, .icon-home:before, .icon-file:before, .icon-time:before, .icon-road:before, .icon-download-alt:before, .icon-download:before, .icon-upload:before, .icon-repeat:before, .icon-refresh:before, .icon-list-alt:before, .icon-lock:before, .icon-flag:before, .icon-headphones:before, .icon-volume-off:before, .icon-volume-down:before, .icon-volume-up:before, .icon-qrcode:before, .icon-tag:before, .icon-tags:before, .icon-book:before, .icon-bookmark:before, .icon-print:before, .icon-camera:before, .icon-font:before, .icon-bold:before, .icon-italic:before, .icon-text-height:before, .icon-text-width:before, .icon-align-left:before, .icon-align-center:before, .icon-align-right:before, .icon-align-justify:before, .icon-list:before, .icon-indent-left:before, .icon-indent-right:before, .icon-picture:before, .icon-pencil:before, .icon-map-marker:before, .icon-adjust:before, .icon-edit:before, .icon-share:before, .icon-move:before, .icon-step-backward:before, .icon-fast-backward:before, .icon-backward:before, .icon-play:before, .icon-pause:before, .icon-stop:before, .icon-forward:before, .icon-fast-forward:before, .icon-step-forward:before, .icon-eject:before, .icon-chevron-left:before, .icon-chevron-right:before, .icon-plus-sign:before, .icon-minus-sign:before, .icon-remove-sign:before, .icon-question-sign:before, .icon-info-sign:before, .icon-screenshot:before, .icon-arrow-left:before, .icon-arrow-right:before, .icon-arrow-up:before, .icon-arrow-down:before, .icon-share-alt:before, .icon-resize-full:before, .icon-resize-small:before, .icon-plus:before, .icon-minus:before, .icon-gift:before, .icon-leaf:before, .icon-fire:before, .icon-eye-open:before, .icon-eye-close:before, .icon-warning-sign:before, .icon-plane:before, .icon-random:before, .icon-comment:before, .icon-magnet:before, .icon-chevron-up:before, .icon-chevron-down:before, .icon-retweet:before, .icon-folder-close:before, .icon-resize-vertical:before, .icon-resize-horizontal:before, .icon-twitter-sign:before, .icon-facebook-sign:before, .icon-key:before, .icon-cogs:before, .icon-comments:before, .icon-thumbs-up:before, .icon-thumbs-down:before, .icon-heart-empty:before, .icon-signout:before, .icon-linkedin-sign:before, .icon-pushpin:before, .icon-external-link:before, .icon-signin:before, .icon-trophy:before, .icon-github-sign:before, .icon-upload-alt:before, .icon-lemon:before, .icon-phone:before, .icon-bookmark-empty:before, .icon-phone-sign:before, .icon-twitter:before, .icon-facebook:before, .icon-github:before, .icon-unlock:before, .icon-credit:before, .icon-rss:before, .icon-hdd:before, .icon-bullhorn:before, .icon-bell:before, .icon-certificate:before, .icon-hand-right:before, .icon-hand-left:before, .icon-hand-up:before, .icon-hand-down:before, .icon-circle-arrow-left:before, .icon-circle-arrow-right:before, .icon-circle-arrow-up:before, .icon-circle-arrow-down:before, .icon-globe:before, .icon-wrench:before, .icon-tasks:before, .icon-filter:before, .icon-briefcase:before, .icon-fullscreen:before, .icon-group:before, .icon-link:before, .icon-cloud:before, .icon-beaker:before, .icon-cut:before, .icon-copy:before, .icon-paper-clip:before, .icon-save:before, .icon-sign-blank:before, .icon-reorder:before, .icon-list-ul:before, .icon-list-ol:before, .icon-strikethrough:before, .icon-underline:before, .icon-table:before, .icon-magic:before, .icon-truck:before, .icon-pinterest:before, .icon-google-plus-sign:before, .icon-google-plus:before, .icon-money:before, .icon-caret-down:before, .icon-caret-up:before, .icon-caret-left:before, .icon-caret-right:before, .icon-columns:before, .icon-sort:before, .icon-sort-down:before, .icon-sort-up:before, .icon-envelope-alt:before, .icon-linkedin:before, .icon-undo:before, .icon-legal:before, .icon-dashboard:before, .icon-comment-alt:before, .icon-comments-alt:before, .icon-bolt:before, .icon-sitemap:before, .icon-umbrella:before, .icon-paste:before, .icon-stethoscope:before, .icon-suitcase:before, .icon-bell-alt:before, .icon-coffee:before, .icon-food:before, .icon-file-alt:before, .icon-building:before, .icon-hospital:before, .icon-ambulance:before, .icon-medkit:before, .icon-angle-up:before, .icon-angle-down:before, .icon-desktop:before, .icon-laptop:before, .icon-tablet:before, .icon-mobile:before, .icon-circle-blank:before, .icon-quote-left:before, .icon-quote-right:before, .icon-paperclip:before, .icon-reply-all:before, .icon-forward-2:before, .icon-user-2:before, .icon-users:before, .icon-heart-2:before, .icon-heart-3:before, .icon-thumbs-up-2:before, .icon-thumbs-down-2:before, .icon-publish:before, .icon-chat:before, .icon-comment-2:before, .icon-skypeonline:before, .icon-error:before, .icon-drawer:before, .icon-drawer-2:before, .icon-drawer-3:before, .icon-volume-high:before, .icon-images:before, .icon-image:before, .icon-pencil-2:before, .icon-cart:before, .icon-coin:before, .icon-credit-2:before, .icon-phone-2:before, .icon-menu:before, .icon-earth:before, .icon-briefcase-2:before, .icon-airplane:before, .icon-truck-2:before, .icon-road-2:before, .icon-happy:before, .icon-sad:before, .icon-checkmark:before, .icon-checkmark-circle:before, .icon-file-pdf:before, .icon-file-openoffice:before, .icon-file-word:before, .icon-file-excel:before, .icon-file-zip:before, .icon-file-css:before, .icon-checkout:before, .icon-file-powerpoint:before, .icon-twitter-2:before, .icon-google-plus-2:before, .icon-facebook-2:before, .icon-flickr:before, .icon-flickr-2:before, .icon-vimeo:before, .icon-soundcloud:before, .icon-skype:before, .icon-apple:before, .icon-windows8:before, .icon-chrome:before, .icon-firefox:before, .icon-IE:before, .icon-opera:before, .icon-barcode:before, .icon-locked:before, .icon-redo:before, .icon-reply:before, .icon-file-add:before, .icon-folder-open:before, .icon-cord:before, .icon-cube:before, .icon-puzzle:before, .icon-tools:before, .icon-equalizer:before, .icon-brush:before, .icon-checkbox-partial:before, .icon-calendar:before, .icon-calendar-2:before, .icon-lifebuoy:before, .icon-exclamation-sign:before, .icon-box-add:before, .icon-box-remove:before, .icon-facetime-video:before, .icon-play-2:before, .icon-play-3:before, .icon-database:before, .icon-aid:before, .icon-vcard:before, .icon-compass:before, .icon-map:before, .icon-lightbulb:before, .icon-stats:before, .icon-pie:before, .icon-cart-2:before, .icon-share-2:before, .icon-html5:before, .icon-github-2:before, .icon-youtube:before, .icon-file-xml:before, .icon-alert:before, [data-icon]:before {
-  font-family: "icomoon";
+/* line 12, sass/partials/icomoon/_icomoon.scss */
+[class^="icon-"], [class*=" icon-"] {
+  font-family: 'icomoon';
   speak: none;
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
   text-transform: none;
   line-height: 1;
+  /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* =============================================================================
-Hard-coded icons (for the moment)
-========================================================================== */
-/* line 657, sass/partials/icomoon/_icomoon.scss */
-.icon-down_arrow:before {
+/* line 26, sass/partials/icomoon/_icomoon.scss */
+.icon-icon_chevron_left:before {
   content: "\e600";
 }
 
-/* line 660, sass/partials/icomoon/_icomoon.scss */
-.icon-link:before {
+/* line 29, sass/partials/icomoon/_icomoon.scss */
+.icon-icon_chevron_right:before {
   content: "\e601";
 }
 
-/* line 663, sass/partials/icomoon/_icomoon.scss */
-.icon-chevron:before {
+/* line 32, sass/partials/icomoon/_icomoon.scss */
+.icon-icon_chevron_up:before {
   content: "\e602";
 }
 
-/* line 666, sass/partials/icomoon/_icomoon.scss */
-.icon-facebook:before {
+/* line 35, sass/partials/icomoon/_icomoon.scss */
+.icon-icon_chevron_down:before {
   content: "\e603";
 }
 
-/* line 669, sass/partials/icomoon/_icomoon.scss */
-.icon-google_plus:before {
+/* line 38, sass/partials/icomoon/_icomoon.scss */
+.icon-icon_hamburger_menu:before {
   content: "\e604";
 }
 
-/* line 672, sass/partials/icomoon/_icomoon.scss */
-.icon-twitter:before {
+/* line 41, sass/partials/icomoon/_icomoon.scss */
+.icon-icon_home:before {
   content: "\e605";
 }
 
-/* line 675, sass/partials/icomoon/_icomoon.scss */
-.icon-padlock:before {
+/* line 44, sass/partials/icomoon/_icomoon.scss */
+.icon-icon_camera:before {
   content: "\e606";
 }
 
-/* line 678, sass/partials/icomoon/_icomoon.scss */
-.icon-x:before {
+/* line 47, sass/partials/icomoon/_icomoon.scss */
+.icon-icon_clock:before {
   content: "\e607";
+}
+
+/* line 50, sass/partials/icomoon/_icomoon.scss */
+.icon-icon_cog:before {
+  content: "\e608";
+}
+
+/* line 53, sass/partials/icomoon/_icomoon.scss */
+.icon-icon_crown:before {
+  content: "\e609";
+}
+
+/* line 56, sass/partials/icomoon/_icomoon.scss */
+.icon-icon_cutlery:before {
+  content: "\e60a";
+}
+
+/* line 59, sass/partials/icomoon/_icomoon.scss */
+.icon-icon_edit:before {
+  content: "\e60b";
+}
+
+/* line 62, sass/partials/icomoon/_icomoon.scss */
+.icon-icon_fingerpost:before {
+  content: "\e60c";
+}
+
+/* line 65, sass/partials/icomoon/_icomoon.scss */
+.icon-icon_padlock_unlocked:before {
+  content: "\e60d";
+}
+
+/* line 68, sass/partials/icomoon/_icomoon.scss */
+.icon-icon_padlock:before {
+  content: "\e60e";
+}
+
+/* line 71, sass/partials/icomoon/_icomoon.scss */
+.icon-icon_person:before {
+  content: "\e60f";
+}
+
+/* line 74, sass/partials/icomoon/_icomoon.scss */
+.icon-icon_question:before {
+  content: "\e610";
+}
+
+/* line 77, sass/partials/icomoon/_icomoon.scss */
+.icon-icon_snowflake:before {
+  content: "\e611";
+}
+
+/* line 80, sass/partials/icomoon/_icomoon.scss */
+.icon-icon_star:before {
+  content: "\e612";
+}
+
+/* line 83, sass/partials/icomoon/_icomoon.scss */
+.icon-icon_t-shirt:before {
+  content: "\e613";
+}
+
+/* line 86, sass/partials/icomoon/_icomoon.scss */
+.icon-icon_twitter:before {
+  content: "\e614";
+}
+
+/* line 89, sass/partials/icomoon/_icomoon.scss */
+.icon-icon_facebook:before {
+  content: "\e615";
+}
+
+/* line 92, sass/partials/icomoon/_icomoon.scss */
+.icon-icon_google_plus:before {
+  content: "\e616";
+}
+
+/* line 95, sass/partials/icomoon/_icomoon.scss */
+.icon-icon_x:before {
+  content: "\e617";
 }
 
 /*------------------------------------------------------------------------------------------------------------------------
@@ -830,54 +893,97 @@ Base page structure
   -o-transition-duration: 0.2s;
   -webkit-transition-duration: 0.2s;
   transition-duration: 0.2s;
+  -moz-transition-timing-function: ease-in-out;
+  -o-transition-timing-function: ease-in-out;
+  -webkit-transition-timing-function: ease-in-out;
+  transition-timing-function: ease-in-out;
 }
 
+/*------------------------------------------------------------------------------------------------------------------------
+ @package: Macmillan - Wonderland (app)
+
+ @author: Sam Latif
+ @www: http://www.samlatif.co.uk
+ @github: samlatif
+
+ @twitter: samlatifuk
+
+ @copyright: COPYRIGHT 8-21-2014 On behalf of Paper Partnerships Ltd
+ =============================================================================
+ Filename: _variables.scss
+ =============================================================================
+ This file is responsible for all variables in the Macmillan - Wonderland app.  Styles should be compiled using compass and sass.
+ --------------------------------------------------------------------------------------------------------------------- */
+/* =============================================================================
+TODO - NOT SURE WHAT THESE ARE FOR
+========================================================================== */
+/* =============================================================================
+Sizes and Spacing
+========================================================================== */
+/* Padding */
+/* Margin */
+/* =============================================================================
+Grid
+========================================================================== */
+/* =============================================================================
+Type
+========================================================================== */
+/* =============================================================================
+Colours
+========================================================================== */
+/* Links */
+/* =============================================================================
+Borders
+========================================================================== */
+/* =============================================================================
+Media query variables
+========================================================================== */
 @media only screen and (max-width: 1049px) {
-  /* line 3, sass/partials/_media-queries.scss */
+  /* line 5, sass/partials/_media-queries.scss */
   .logo {
     padding: 4.59rem 3.27rem;
     margin: 0 -3.27rem;
   }
 
-  /* line 8, sass/partials/_media-queries.scss */
+  /* line 10, sass/partials/_media-queries.scss */
   .logo-ribbon {
     padding: 1.17rem 5.76rem;
     margin: 1.2rem -5.76rem;
   }
 
-  /* line 13, sass/partials/_media-queries.scss */
+  /* line 15, sass/partials/_media-queries.scss */
   .left-side ul {
     float: right;
     margin-right: 4.47rem;
   }
 
-  /* line 18, sass/partials/_media-queries.scss */
+  /* line 20, sass/partials/_media-queries.scss */
   .right-side ul {
     margin-left: 4.47rem;
   }
 
-  /* line 22, sass/partials/_media-queries.scss */
+  /* line 24, sass/partials/_media-queries.scss */
   .menu li {
     margin: 0 .3rem;
   }
 
-  /* line 26, sass/partials/_media-queries.scss */
+  /* line 28, sass/partials/_media-queries.scss */
   .menu li a {
     font-size: 1.1rem;
   }
 
-  /* line 30, sass/partials/_media-queries.scss */
+  /* line 32, sass/partials/_media-queries.scss */
   .nav-end-block {
     left: .5rem;
   }
 
-  /* line 34, sass/partials/_media-queries.scss */
+  /* line 36, sass/partials/_media-queries.scss */
   .nav-end-block.end-block-right {
     right: .5rem;
     left: auto;
   }
 
-  /* line 39, sass/partials/_media-queries.scss */
+  /* line 41, sass/partials/_media-queries.scss */
   .nav-end-block a, a.nav-end-block {
     font-size: 1.1rem;
   }
@@ -885,57 +991,75 @@ Base page structure
   /********************/
   /* COMPRESSED VIEW  */
   /********************/
-  /* line 47, sass/partials/_media-queries.scss */
+  /* line 49, sass/partials/_media-queries.scss */
   .site-header.compress .logo-ribbon {
     margin-top: 13.7rem;
   }
 
-  /* line 51, sass/partials/_media-queries.scss */
+  /* line 53, sass/partials/_media-queries.scss */
   .site-header.compress .left-side ul {
     margin-right: 6.2rem;
   }
 
-  /* line 55, sass/partials/_media-queries.scss */
+  /* line 57, sass/partials/_media-queries.scss */
   .site-header.compress .right-side ul {
     margin-left: 6.2rem;
   }
 }
 @media only screen and (max-width: 767px) {
-  /* line 63, sass/partials/_media-queries.scss */
+  /* line 65, sass/partials/_media-queries.scss */
   .page-container.showing-side-nav-menu {
     left: 25.6rem;
   }
 
-  /* line 67, sass/partials/_media-queries.scss */
+  /* line 69, sass/partials/_media-queries.scss */
   .page-container.showing-side-account-menu {
     left: -25.6rem;
   }
 
-  /* line 71, sass/partials/_media-queries.scss */
+  /* line 73, sass/partials/_media-queries.scss */
   .logo {
     top: -16rem;
   }
 
-  /* line 75, sass/partials/_media-queries.scss */
+  /* line 77, sass/partials/_media-queries.scss */
   .logo-ribbon, .site-header.compress .logo-ribbon {
     padding: 1.95rem 9.6rem;
     margin: 12.9rem -9.6rem;
   }
 
-  /* line 80, sass/partials/_media-queries.scss */
+  /* line 82, sass/partials/_media-queries.scss */
   .nav-end-block {
     display: none;
+    left: 1.5rem;
+    color: #007eac;
   }
 
-  /* line 84, sass/partials/_media-queries.scss */
+  /* line 88, sass/partials/_media-queries.scss */
+  .nav-end-block.end-block-right {
+    left: auto;
+    right: 1.5rem;
+  }
+
+  /* line 93, sass/partials/_media-queries.scss */
   .nav-burger, .nav-account {
     display: block;
+  }
+
+  /* line 97, sass/partials/_media-queries.scss */
+  .nav-end-block, .site-header.compress .nav-end-block {
+    top: 1.8rem;
+  }
+
+  /* line 101, sass/partials/_media-queries.scss */
+  .nav-end-block a, a.nav-end-block {
+    font-size: 3rem;
   }
 
   /**********************/
   /* NAV SIDE MENU
   /**********************/
-  /* line 91, sass/partials/_media-queries.scss */
+  /* line 108, sass/partials/_media-queries.scss */
   .nav-menu, .account-menu {
     position: absolute;
     left: -25.6rem;
@@ -946,29 +1070,29 @@ Base page structure
     overflow: hidden;
   }
 
-  /* line 101, sass/partials/_media-queries.scss */
+  /* line 118, sass/partials/_media-queries.scss */
   .account-menu {
     left: auto;
     right: -25.6rem;
   }
 
-  /* line 106, sass/partials/_media-queries.scss */
+  /* line 123, sass/partials/_media-queries.scss */
   .menu {
     width: 100%;
   }
 
-  /* line 110, sass/partials/_media-queries.scss */
+  /* line 127, sass/partials/_media-queries.scss */
   .menu ul {
     float: none;
     margin: 0;
   }
 
-  /* line 115, sass/partials/_media-queries.scss */
+  /* line 132, sass/partials/_media-queries.scss */
   .menu li {
     display: block;
   }
 
-  /* line 119, sass/partials/_media-queries.scss */
+  /* line 136, sass/partials/_media-queries.scss */
   .menu li a {
     line-height: normal;
     color: #fff;
@@ -1105,45 +1229,45 @@ main {
 }
 /* line 155, sass/main.scss */
 .frame:nth-child(1) {
-  -moz-transform: rotate(-0.7deg);
-  -ms-transform: rotate(-0.7deg);
-  -webkit-transform: rotate(-0.7deg);
-  transform: rotate(-0.7deg);
-}
-/* line 155, sass/main.scss */
-.frame:nth-child(2) {
-  -moz-transform: rotate(0.6deg);
-  -ms-transform: rotate(0.6deg);
-  -webkit-transform: rotate(0.6deg);
-  transform: rotate(0.6deg);
-}
-/* line 155, sass/main.scss */
-.frame:nth-child(3) {
   -moz-transform: rotate(-1.4deg);
   -ms-transform: rotate(-1.4deg);
   -webkit-transform: rotate(-1.4deg);
   transform: rotate(-1.4deg);
 }
 /* line 155, sass/main.scss */
+.frame:nth-child(2) {
+  -moz-transform: rotate(1.6deg);
+  -ms-transform: rotate(1.6deg);
+  -webkit-transform: rotate(1.6deg);
+  transform: rotate(1.6deg);
+}
+/* line 155, sass/main.scss */
+.frame:nth-child(3) {
+  -moz-transform: rotate(-0.3deg);
+  -ms-transform: rotate(-0.3deg);
+  -webkit-transform: rotate(-0.3deg);
+  transform: rotate(-0.3deg);
+}
+/* line 155, sass/main.scss */
 .frame:nth-child(4) {
-  -moz-transform: rotate(1deg);
-  -ms-transform: rotate(1deg);
-  -webkit-transform: rotate(1deg);
-  transform: rotate(1deg);
+  -moz-transform: rotate(2.1deg);
+  -ms-transform: rotate(2.1deg);
+  -webkit-transform: rotate(2.1deg);
+  transform: rotate(2.1deg);
 }
 /* line 155, sass/main.scss */
 .frame:nth-child(5) {
-  -moz-transform: rotate(-0.2deg);
-  -ms-transform: rotate(-0.2deg);
-  -webkit-transform: rotate(-0.2deg);
-  transform: rotate(-0.2deg);
+  -moz-transform: rotate(-0.8deg);
+  -ms-transform: rotate(-0.8deg);
+  -webkit-transform: rotate(-0.8deg);
+  transform: rotate(-0.8deg);
 }
 /* line 155, sass/main.scss */
 .frame:nth-child(6) {
-  -moz-transform: rotate(1deg);
-  -ms-transform: rotate(1deg);
-  -webkit-transform: rotate(1deg);
-  transform: rotate(1deg);
+  -moz-transform: rotate(1.9deg);
+  -ms-transform: rotate(1.9deg);
+  -webkit-transform: rotate(1.9deg);
+  transform: rotate(1.9deg);
 }
 
 /* line 168, sass/main.scss */

@@ -1,680 +1,97 @@
-/*------------------------------------------------------------------------------------------------------------------------
- @author: Sam Latif
- @www: http://www.samlatif.co.uk
- @github: samlatif
-
- @twitter: samlatifuk
-
- @copyright: COPYRIGHT 8-21-2014 On behalf of Paper Partnerships Ltd
- =============================================================================
- Filename: _icomoon.scss
- =============================================================================
- This file is responsible for all custom vector icons (via icomoon) in the Macmillan - Wonderland app.
- --------------------------------------------------------------------------------------------------------------------- */
-
-/* =============================================================================
-Helpers
-========================================================================== */
 @font-face {
-	font-family: "icomoon";
-	src:url('/fonts/icomoon.eot?-89hodh');
-	src:url('/fonts/icomoon.eot?#iefix-89hodh') format('embedded-opentype'),
-		url('/fonts/icomoon.woff?-89hodh') format('woff'),
-		url('/fonts/icomoon.ttf?-89hodh') format('truetype'),
-		url('/fonts/icomoon.svg?-89hodh#icomoon') format('svg');
+	font-family: 'icomoon';
+	src:url('/fonts/icomoon.eot?-a7b8pb');
+	src:url('/fonts/icomoon.eot?#iefix-a7b8pb') format('embedded-opentype'),
+		url('/fonts/icomoon.woff?-a7b8pb') format('woff'),
+		url('/fonts/icomoon.ttf?-a7b8pb') format('truetype'),
+		url('/fonts/icomoon.svg?-a7b8pb#icomoon') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
 
-%icomoon {
-	font-family: "icomoon";
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'icomoon';
 	speak: none;
 	font-style: normal;
 	font-weight: normal;
 	font-variant: normal;
 	text-transform: none;
 	line-height: 1;
+
+	/* Better Font Rendering =========== */
 	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
-$Icons: glass,music,search,envelope,heart,star,star-empty,user,film,th-large,th,th-list,remove,zoom-in,zoom-out,off,signal,cog,trash,home,file,time,road,download-alt,download,upload,repeat,refresh,list-alt,lock,flag,headphones,volume-off,volume-down,volume-up,qrcode,tag,tags,book,bookmark,print,camera,font,bold,italic,text-height,text-width,align-left,align-center,align-right,align-justify,list,indent-left,indent-right,picture,pencil,map-marker,adjust,edit,share,move,step-backward,fast-backward,backward,play,pause,stop,forward,fast-forward,step-forward,eject,chevron-left,chevron-right,plus-sign,minus-sign,remove-sign,question-sign,info-sign,screenshot,arrow-left,arrow-right,arrow-up,arrow-down,share-alt,resize-full,resize-small,plus,minus,gift,leaf,fire,eye-open,eye-close,warning-sign,plane,random,comment,magnet,chevron-up,chevron-down,retweet,folder-close,resize-vertical,resize-horizontal,twitter-sign,facebook-sign,key,cogs,comments,thumbs-up,thumbs-down,heart-empty,signout,linkedin-sign,pushpin,external-link,signin,trophy,github-sign,upload-alt,lemon,phone,bookmark-empty,phone-sign,twitter,facebook,github,unlock,credit,rss,hdd,bullhorn,bell,certificate,hand-right,hand-left,hand-up,hand-down,circle-arrow-left,circle-arrow-right,circle-arrow-up,circle-arrow-down,globe,wrench,tasks,filter,briefcase,fullscreen,group,link,cloud,beaker,cut,copy,paper-clip,save,sign-blank,reorder,list-ul,list-ol,strikethrough,underline,table,magic,truck,pinterest,google-plus-sign,google-plus,money,caret-down,caret-up,caret-left,caret-right,columns,sort,sort-down,sort-up,envelope-alt,linkedin,undo,legal,dashboard,comment-alt,comments-alt,bolt,sitemap,umbrella,paste,stethoscope,suitcase,bell-alt,coffee,food,file-alt,building,hospital,ambulance,medkit,angle-up,angle-down,desktop,laptop,tablet,mobile,circle-blank,quote-left,quote-right,paperclip,reply-all,forward-2,user-2,users,heart-2,heart-3,thumbs-up-2,thumbs-down-2,publish,chat,comment-2,skypeonline,error,drawer,drawer-2,drawer-3,volume-high,images,image,pencil-2,cart,coin,credit-2,phone-2,menu,earth,briefcase-2,airplane,truck-2,road-2,happy,sad,checkmark,checkmark-circle,file-pdf,file-openoffice,file-word,file-excel,file-zip,file-css,checkout,file-powerpoint,twitter-2,google-plus-2,facebook-2,flickr,flickr-2,vimeo,soundcloud,skype,apple,windows8,chrome,firefox,IE,opera,barcode,locked,redo,reply,file-add,folder-open,cord,cube,puzzle,tools,equalizer,brush,checkbox-partial,calendar,calendar-2,lifebuoy,exclamation-sign,box-add,box-remove,facetime-video,play-2,play-3,database,aid,vcard,compass,map,lightbulb,stats,pie,cart-2,share-2,html5,github-2,youtube,file-xml,alert;
-
-// $Icon-glass: "\f000";
-
-// $Icon-music: "\f001";
-
-// $Icon-search: "\f002";
-
-// $Icon-envelope: "\f003";
-
-// $Icon-heart: "\f004";
-
-// $Icon-star: "\f005";
-
-// $Icon-star-empty: "\f006";
-
-// $Icon-user: "\f007";
-
-// $Icon-film: "\f008";
-
-// $Icon-th-large: "\f009";
-
-// $Icon-th: "\f00a";
-
-// $Icon-th-list: "\f00b";
-
-// $Icon-remove: "\f00d";
-
-// $Icon-zoom-in: "\f00e";
-
-// $Icon-zoom-out: "\f010";
-
-// $Icon-off: "\f011";
-
-// $Icon-signal: "\f012";
-
-// $Icon-cog: "\f013";
-
-// $Icon-trash: "\f014";
-
-// $Icon-home: "\f015";
-
-// $Icon-file: "\f016";
-
-// $Icon-time: "\f017";
-
-// $Icon-road: "\f018";
-
-// $Icon-download-alt: "\f019";
-
-// $Icon-download: "\f01a";
-
-// $Icon-upload: "\f01b";
-
-// $Icon-repeat: "\f01e";
-
-// $Icon-refresh: "\f021";
-
-// $Icon-list-alt: "\f022";
-
-// $Icon-lock: "\f023";
-
-// $Icon-flag: "\f024";
-
-// $Icon-headphones: "\f025";
-
-// $Icon-volume-off: "\f026";
-
-// $Icon-volume-down: "\f027";
-
-// $Icon-volume-up: "\f028";
-
-// $Icon-qrcode: "\f029";
-
-// $Icon-tag: "\f02b";
-
-// $Icon-tags: "\f02c";
-
-// $Icon-book: "\f02d";
-
-// $Icon-bookmark: "\f02e";
-
-// $Icon-print: "\f02f";
-
-// $Icon-camera: "\f030";
-
-// $Icon-font: "\f031";
-
-// $Icon-bold: "\f032";
-
-// $Icon-italic: "\f033";
-
-// $Icon-text-height: "\f034";
-
-// $Icon-text-width: "\f035";
-
-// $Icon-align-left: "\f036";
-
-// $Icon-align-center: "\f037";
-
-// $Icon-align-right: "\f038";
-
-// $Icon-align-justify: "\f039";
-
-// $Icon-list: "\f03a";
-
-// $Icon-indent-left: "\f03b";
-
-// $Icon-indent-right: "\f03c";
-
-// $Icon-picture: "\f03e";
-
-// $Icon-pencil: "\f040";
-
-// $Icon-map-marker: "\f041";
-
-// $Icon-adjust: "\f042";
-
-// $Icon-edit: "\f044";
-
-// $Icon-share: "\f045";
-
-// $Icon-move: "\f047";
-
-// $Icon-step-backward: "\f048";
-
-// $Icon-fast-backward: "\f049";
-
-// $Icon-backward: "\f04a";
-
-// $Icon-play: "\f04b";
-
-// $Icon-pause: "\f04c";
-
-// $Icon-stop: "\f04d";
-
-// $Icon-forward: "\f04e";
-
-// $Icon-fast-forward: "\f050";
-
-// $Icon-step-forward: "\f051";
-
-// $Icon-eject: "\f052";
-
-// $Icon-chevron-left: "\f053";
-
-// $Icon-chevron-right: "\f054";
-
-// $Icon-plus-sign: "\f055";
-
-// $Icon-minus-sign: "\f056";
-
-// $Icon-remove-sign: "\f057";
-
-// $Icon-question-sign: "\f059";
-
-// $Icon-info-sign: "\f05a";
-
-// $Icon-screenshot: "\f05b";
-
-// $Icon-arrow-left: "\f060";
-
-// $Icon-arrow-right: "\f061";
-
-// $Icon-arrow-up: "\f062";
-
-// $Icon-arrow-down: "\f063";
-
-// $Icon-share-alt: "\f064";
-
-// $Icon-resize-full: "\f065";
-
-// $Icon-resize-small: "\f066";
-
-// $Icon-plus: "\f067";
-
-// $Icon-minus: "\f068";
-
-// $Icon-gift: "\f06b";
-
-// $Icon-leaf: "\f06c";
-
-// $Icon-fire: "\f06d";
-
-// $Icon-eye-open: "\f06e";
-
-// $Icon-eye-close: "\f070";
-
-// $Icon-warning-sign: "\f071";
-
-// $Icon-plane: "\f072";
-
-// $Icon-random: "\f074";
-
-// $Icon-comment: "\f075";
-
-// $Icon-magnet: "\f076";
-
-// $Icon-chevron-up: "\f077";
-
-// $Icon-chevron-down: "\f078";
-
-// $Icon-retweet: "\f079";
-
-// $Icon-folder-close: "\f07b";
-
-// $Icon-resize-vertical: "\f07d";
-
-// $Icon-resize-horizontal: "\f07e";
-
-// $Icon-twitter-sign: "\f081";
-
-// $Icon-facebook-sign: "\f082";
-
-// $Icon-key: "\f084";
-
-// $Icon-cogs: "\f085";
-
-// $Icon-comments: "\f086";
-
-// $Icon-thumbs-up: "\f087";
-
-// $Icon-thumbs-down: "\f088";
-
-// $Icon-heart-empty: "\f08a";
-
-// $Icon-signout: "\f08b";
-
-// $Icon-linkedin-sign: "\f08c";
-
-// $Icon-pushpin: "\f08d";
-
-// $Icon-external-link: "\f08e";
-
-// $Icon-signin: "\f090";
-
-// $Icon-trophy: "\f091";
-
-// $Icon-github-sign: "\f092";
-
-// $Icon-upload-alt: "\f093";
-
-// $Icon-lemon: "\f094";
-
-// $Icon-phone: "\f095";
-
-// $Icon-bookmark-empty: "\f097";
-
-// $Icon-phone-sign: "\f098";
-
-// $Icon-twitter: "\f099";
-
-// $Icon-facebook: "\f09a";
-
-// $Icon-github: "\f09b";
-
-// $Icon-unlock: "\f09c";
-
-// $Icon-credit: "\f09d";
-
-// $Icon-rss: "\f09e";
-
-// $Icon-hdd: "\f0a0";
-
-// $Icon-bullhorn: "\f0a1";
-
-// $Icon-bell: "\f0a2";
-
-// $Icon-certificate: "\f0a3";
-
-// $Icon-hand-right: "\f0a4";
-
-// $Icon-hand-left: "\f0a5";
-
-// $Icon-hand-up: "\f0a6";
-
-// $Icon-hand-down: "\f0a7";
-
-// $Icon-circle-arrow-left: "\f0a8";
-
-// $Icon-circle-arrow-right: "\f0a9";
-
-// $Icon-circle-arrow-up: "\f0aa";
-
-// $Icon-circle-arrow-down: "\f0ab";
-
-// $Icon-globe: "\f0ac";
-
-// $Icon-wrench: "\f0ad";
-
-// $Icon-tasks: "\f0ae";
-
-// $Icon-filter: "\f0b0";
-
-// $Icon-briefcase: "\f0b1";
-
-// $Icon-fullscreen: "\f0b2";
-
-// $Icon-group: "\f0c0";
-
-// $Icon-link: "\f0c1";
-
-// $Icon-cloud: "\f0c2";
-
-// $Icon-beaker: "\f0c3";
-
-// $Icon-cut: "\f0c4";
-
-// $Icon-copy: "\f0c5";
-
-// $Icon-paper-clip: "\f0c6";
-
-// $Icon-save: "\f0c7";
-
-// $Icon-sign-blank: "\f0c8";
-
-// $Icon-reorder: "\f0c9";
-
-// $Icon-list-ul: "\f0ca";
-
-// $Icon-list-ol: "\f0cb";
-
-// $Icon-strikethrough: "\f0cc";
-
-// $Icon-underline: "\f0cd";
-
-// $Icon-table: "\f0ce";
-
-// $Icon-magic: "\f0d0";
-
-// $Icon-truck: "\f0d1";
-
-// $Icon-pinterest: "\f0d2";
-
-// $Icon-google-plus-sign: "\f0d4";
-
-// $Icon-google-plus: "\f0d5";
-
-// $Icon-money: "\f0d6";
-
-// $Icon-caret-down: "\f0d7";
-
-// $Icon-caret-up: "\f0d8";
-
-// $Icon-caret-left: "\f0d9";
-
-// $Icon-caret-right: "\f0da";
-
-// $Icon-columns: "\f0db";
-
-// $Icon-sort: "\f0dc";
-
-// $Icon-sort-down: "\f0dd";
-
-// $Icon-sort-up: "\f0de";
-
-// $Icon-envelope-alt: "\f0e0";
-
-// $Icon-linkedin: "\f0e1";
-
-// $Icon-undo: "\f0e2";
-
-// $Icon-legal: "\f0e3";
-
-// $Icon-dashboard: "\f0e4";
-
-// $Icon-comment-alt: "\f0e5";
-
-// $Icon-comments-alt: "\f0e6";
-
-// $Icon-bolt: "\f0e7";
-
-// $Icon-sitemap: "\f0e8";
-
-// $Icon-umbrella: "\f0e9";
-
-// $Icon-paste: "\f0ea";
-
-// $Icon-stethoscope: "\f0eb";
-
-// $Icon-suitcase: "\f0ec";
-
-// $Icon-bell-alt: "\f0ed";
-
-// $Icon-coffee: "\f0ee";
-
-// $Icon-food: "\f0f0";
-
-// $Icon-file-alt: "\f0f1";
-
-// $Icon-building: "\f0f2";
-
-// $Icon-hospital: "\f0f3";
-
-// $Icon-ambulance: "\f0f4";
-
-// $Icon-medkit: "\f0f5";
-
-// $Icon-angle-up: "\f0f6";
-
-// $Icon-angle-down: "\f0f7";
-
-// $Icon-desktop: "\f0f8";
-
-// $Icon-laptop: "\f0f9";
-
-// $Icon-tablet: "\f0fa";
-
-// $Icon-mobile: "\f0fb";
-
-// $Icon-circle-blank: "\f0fc";
-
-// $Icon-quote-left: "\f0fd";
-
-// $Icon-quote-right: "\f0fe";
-
-// $Icon-paperclip: "\f104";
-
-// $Icon-reply-all: "\f107";
-
-// $Icon-forward-2: "\f108";
-
-// $Icon-user-2: "\f109";
-
-// $Icon-users: "\f10a";
-
-// $Icon-heart-2: "\f10b";
-
-// $Icon-heart-3: "\f10c";
-
-// $Icon-thumbs-up-2: "\f110";
-
-// $Icon-thumbs-down-2: "\f111";
-
-// $Icon-chat: "\f112";
-
-// $Icon-comment-2: "\f113";
-
-// $Icon-skypeonline: "\f39e";
-
-// $Icon-error: "\e002";
-
-// $Icon-drawer: "\e003";
-
-// $Icon-drawer-2: "\e004";
-
-// $Icon-drawer-3: "\e005";
-
-// $Icon-volume-high: "\e006";
-
-// $Icon-images: "\e008";
-
-// $Icon-image: "\e009";
-
-// $Icon-pencil-2: "\e00a";
-
-// $Icon-cart: "\e00e";
-
-// $Icon-coin: "\e00c";
-
-// $Icon-credit-2: "\e00d";
-
-// $Icon-phone-2: "\e00f";
-
-// $Icon-menu: "\e011";
-
-// $Icon-earth: "\e012";
-
-// $Icon-briefcase-2: "\e013";
-
-// $Icon-airplane: "\e014";
-
-// $Icon-truck-2: "\e015";
-
-// $Icon-road-2: "\e016";
-
-// $Icon-happy: "\e018";
-
-// $Icon-sad: "\e01b";
-
-// $Icon-checkmark: "\e019";
-
-// $Icon-checkmark-circle: "\e01c";
-
-// $Icon-file-pdf: "\e020";
-
-// $Icon-file-openoffice: "\e021";
-
-// $Icon-file-word: "\e022";
-
-// $Icon-file-excel: "\e023";
-
-// $Icon-file-zip: "\e024";
-
-// $Icon-file-css: "\e025";
-
-// $Icon-file-powerpoint: "\e026";
-
-// $Icon-twitter-2: "\e027";
-
-// $Icon-google-plus-2: "\e02a";
-
-// $Icon-facebook-2: "\e028";
-
-// $Icon-flickr: "\e029";
-
-// $Icon-flickr-2: "\e02b";
-
-// $Icon-vimeo: "\e02c";
-
-// $Icon-soundcloud: "\e02f";
-
-// $Icon-skype: "\e030";
-
-// $Icon-apple: "\e031";
-
-// $Icon-windows8: "\e032";
-
-// $Icon-chrome: "\e033";
-
-// $Icon-firefox: "\e034";
-
-// $Icon-IE: "\e035";
-
-// $Icon-opera: "\e036";
-
-// $Icon-barcode: "\f02a";
-
-// $Icon-locked: "\e000";
-
-// $Icon-redo: "\e001";
-
-// $Icon-reply: "\f106";
-
-// $Icon-file-add: "\e037";
-
-// $Icon-folder-open: "\f07c";
-
-// $Icon-cord: "\e00b";
-
-// $Icon-cube: "\e038";
-
-// $Icon-puzzle: "\e039";
-
-// $Icon-tools: "\e03a";
-
-// $Icon-equalizer: "\e03b";
-
-// $Icon-brush: "\e03c";
-
-// $Icon-checkbox-partial: "\e03d";
-
-// $Icon-calendar: "\f073";
-
-// $Icon-calendar-2: "\e03e";
-
-// $Icon-lifebuoy: "\e03f";
-
-// $Icon-exclamation-sign: "\f06a";
-
-// $Icon-box-add: "\e010";
-
-// $Icon-box-remove: "\e017";
-
-// $Icon-facetime-video: "\f03d";
-
-// $Icon-play-2: "\e007";
-
-// $Icon-play-3: "\e01a";
-
-// $Icon-database: "\e01d";
-
-// $Icon-aid: "\e01e";
-
-// $Icon-vcard: "\e01f";
-
-// $Icon-compass: "\e040";
-
-// $Icon-map: "\e041";
-
-// $Icon-lightbulb: "\e02e";
-
-// $Icon-stats: "\e042";
-
-// $Icon-pie: "\e043";
-
-// $Icon-cart-2: "\e044";
-
-// $Icon-share-2: "\e045";
-
-// $Icon-html5: "\e046";
-
-// $Icon-github-2: "\e047";
-
-// $Icon-youtube: "\e02d";
-
-// $Icon-file-xml: "\e048";
-
-// $Icon-alert: "\e049";
-
-
-$IconClasses: "";
-
-@each $icon in $Icons {
-	.icon-#{$icon}:before {
-		@extend %icomoon;
-	}
-}
-
-[data-icon]:before {
-	@extend %icomoon;
-}
-
-/* =============================================================================
-Hard-coded icons (for the moment)
-========================================================================== */
-
-.icon-down_arrow:before {
+.icon-icon_chevron_left:before {
 	content: "\e600";
 }
-.icon-link:before {
+.icon-icon_chevron_right:before {
 	content: "\e601";
 }
-.icon-chevron:before {
+.icon-icon_chevron_up:before {
 	content: "\e602";
 }
-.icon-facebook:before {
+.icon-icon_chevron_down:before {
 	content: "\e603";
 }
-.icon-google_plus:before {
+.icon-icon_hamburger_menu:before {
 	content: "\e604";
 }
-.icon-twitter:before {
+.icon-icon_home:before {
 	content: "\e605";
 }
-.icon-padlock:before {
+.icon-icon_camera:before {
 	content: "\e606";
 }
-.icon-x:before {
+.icon-icon_clock:before {
 	content: "\e607";
+}
+.icon-icon_cog:before {
+	content: "\e608";
+}
+.icon-icon_crown:before {
+	content: "\e609";
+}
+.icon-icon_cutlery:before {
+	content: "\e60a";
+}
+.icon-icon_edit:before {
+	content: "\e60b";
+}
+.icon-icon_fingerpost:before {
+	content: "\e60c";
+}
+.icon-icon_padlock_unlocked:before {
+	content: "\e60d";
+}
+.icon-icon_padlock:before {
+	content: "\e60e";
+}
+.icon-icon_person:before {
+	content: "\e60f";
+}
+.icon-icon_question:before {
+	content: "\e610";
+}
+.icon-icon_snowflake:before {
+	content: "\e611";
+}
+.icon-icon_star:before {
+	content: "\e612";
+}
+.icon-icon_t-shirt:before {
+	content: "\e613";
+}
+.icon-icon_twitter:before {
+	content: "\e614";
+}
+.icon-icon_facebook:before {
+	content: "\e615";
+}
+.icon-icon_google_plus:before {
+	content: "\e616";
+}
+.icon-icon_x:before {
+	content: "\e617";
 }

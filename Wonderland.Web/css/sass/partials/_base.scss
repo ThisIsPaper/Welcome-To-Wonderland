@@ -65,4 +65,5 @@ Base page structure
 
   @include transition-property(left);
   @include transition-duration(.2s);
+  @include transition-timing-function(ease-in-out);
 }
