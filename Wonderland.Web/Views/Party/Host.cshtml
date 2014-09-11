@@ -20,6 +20,16 @@
 <h2>@this.Model.Heading</h2>
 <p>@this.Model.Copy</p>
 
+
+<form action="@(Url.GetUmbracoApiService<PartyApiController>("UpdatePartyCopy"))?partyGuid=@Model.PartyHost.PartyGuid" method="post">
+
+    <input type="text" name="partyCopy" />
+
+    <input type="submit" />
+
+</form>
+
+
 @* wall *@
 @* totaliser *@
 
