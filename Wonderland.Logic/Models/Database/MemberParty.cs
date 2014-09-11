@@ -1,4 +1,4 @@
-﻿
+
 namespace Wonderland.Logic.Models.Database
 {
     using System;

@@ -96,31 +96,6 @@ Visibility Helpers
 }
 
 /* =============================================================================
-CSS3 PIE
-========================================================================== */
-@if $pie-enabled == true {
-  .pie-element {
-    // relative is the default, so passing relative
-    // is redundant, but we do it here for clarity%
-    // @include pie-element(relative);
-  }
-// But sometimes this messes up your positioning
-// So you can also use z-indexing. In this case
-// an ancestor element before or having the first
-// opaque background should be marked as a pie-container
-// which gives it a z-index of 0 (actually any z-index
-// can be provided to the pie-container mixin).
-// And then the pie element itself should be given
-// a z-index of -1.
-  .pie-container {
-    // @include pie-container;
-  }
-  .pie {
-    // @include pie;
-  }
-}
-
-/* =============================================================================
 Overflow
 ========================================================================== */
 %overflow-visible {
@@ -137,7 +112,7 @@ Margins
 
 /* Normal margin */
 %normal-margin {
-  margin: $wonderlandMargin;
+  margin: $Margin;
 }
 
 %margin-none {
@@ -145,106 +120,106 @@ Margins
 }
 
 %normal-margin-bottom {
-  margin-bottom: $wonderlandMargin;
+  margin-bottom: $Margin;
 }
 
 %normal-margin-top {
-  margin-top: $wonderlandMargin;
+  margin-top: $Margin;
 }
 
 %normal-margin-left {
-  margin-left: $wonderlandMargin;
+  margin-left: $Margin;
 }
 
 %normal-margin-right {
-  margin-right: $wonderlandMargin;
+  margin-right: $Margin;
 }
 
 /* Normal margin combinations */
 %normal-margin-top-bottom {
-  margin: $wonderlandMargin 0;
+  margin: $Margin 0;
 }
 
 %normal-margin-left-right {
-  margin: 0 $wonderlandMargin;
+  margin: 0 $Margin;
 }
 
 /* Large Margin */
 
 %large-margin {
-  margin: $wonderlandMarginLarge;
+  margin: $MarginLarge;
 }
 
 %large-margin-top-bottom {
-  margin: $wonderlandMarginLarge 0;
+  margin: $MarginLarge 0;
 }
 
 %large-margin-left-right {
-  margin: 0 $wonderlandMarginLarge;
+  margin: 0 $MarginLarge;
 }
 
 %large-margin-bottom {
-  margin-bottom: $wonderlandMarginLarge;
+  margin-bottom: $MarginLarge;
 }
 
 %large-margin-right {
-  margin-right: $wonderlandMarginLarge;
+  margin-right: $MarginLarge;
 }
 
 %large-margin-left {
-  margin-left: $wonderlandMarginLarge;
+  margin-left: $MarginLarge;
 }
 
 /* Small Margin */
 
 %small-margin {
-  margin: $wonderlandMarginSmall;
+  margin: $MarginSmall;
 }
 
 %small-margin-top-bottom {
-  margin: $wonderlandMarginSmall 0;
+  margin: $MarginSmall 0;
 }
 
 %small-margin-left-right {
-  margin: 0 $wonderlandMarginSmall;
+  margin: 0 $MarginSmall;
 }
 
 %small-margin-bottom {
-  margin-bottom: $wonderlandMarginSmall;
+  margin-bottom: $MarginSmall;
 }
 
 %small-margin-right {
-  margin-right: $wonderlandMarginSmall;
+  margin-right: $MarginSmall;
 }
 
 %small-margin-left {
-  margin-left: $wonderlandMarginSmall;
+  margin-left: $MarginSmall;
 }
 
 /* Mini Margin */
 
 %mini-margin {
-  margin: $wonderlandMarginMini;
+  margin: $MarginMini;
 }
 
 %mini-margin-top-bottom {
-  margin: $wonderlandMarginMini 0;
+  margin: $MarginMini 0;
 }
 
 %mini-margin-left-right {
-  margin: 0 $wonderlandMarginMini;
+  margin: 0 $MarginMini;
 }
 
 %mini-margin-bottom {
-  margin-bottom: $wonderlandMarginMini;
+  margin-bottom: $MarginMini;
 }
 
 %mini-margin-right {
-  margin-right: $wonderlandMarginMini;
+  margin-right: $MarginMini;
 }
 
 %mini-margin-left {
-  margin-left: $wonderlandMarginMini;
+  margin-left: $MarginMini;
 }
 
 /* =============================================================================
@@ -253,7 +228,7 @@ Padding
 
 /* Normal padding */
 %normal-padding {
-  padding: $wonderlandPadding;
+  padding: $Padding;
 }
 
 %padding-none {
@@ -261,138 +236,131 @@ Padding
 }
 
 %normal-padding-top-bottom {
-  padding: $wonderlandPadding 0;
+  padding: $Padding 0;
 }
 
 %normal-padding-left-right {
-  padding: 0 $wonderlandPadding;
+  padding: 0 $Padding;
 }
 
 %normal-padding-bottom {
-  padding-bottom: $wonderlandPadding;
+  padding-bottom: $Padding;
 }
 
 %normal-padding-right {
-  padding-right: $wonderlandPadding;
+  padding-right: $Padding;
 }
 
 %normal-padding-left {
-  padding-left: $wonderlandPadding;
+  padding-left: $Padding;
 }
 
 /* Large Padding */
 
 %large-padding {
-  padding: $wonderlandPaddingLarge;
+  padding: $PaddingLarge;
 }
 
 %large-padding-top-bottom {
-  padding: $wonderlandPaddingLarge 0;
+  padding: $PaddingLarge 0;
 }
 
 %large-padding-left-right {
-  padding: 0 $wonderlandPaddingLarge;
+  padding: 0 $PaddingLarge;
 }
 
 %large-padding-bottom {
-  padding-bottom: $wonderlandPaddingLarge;
+  padding-bottom: $PaddingLarge;
 }
 
 %large-padding-right {
-  padding-right: $wonderlandPaddingLarge;
+  padding-right: $PaddingLarge;
 }
 
 %large-padding-left {
-  padding-left: $wonderlandPaddingLarge;
+  padding-left: $PaddingLarge;
 }
 
 /* Small Padding */
 
 %small-padding {
-  padding: $wonderlandPaddingSmall;
+  padding: $PaddingSmall;
 }
 
 %small-padding-top-bottom {
-  padding: $wonderlandPaddingSmall 0;
+  padding: $PaddingSmall 0;
 }
 
 %small-padding-left-right {
-  padding: 0 $wonderlandPaddingSmall;
+  padding: 0 $PaddingSmall;
 }
 
 %small-padding-bottom {
-  padding-bottom: $wonderlandPaddingSmall;
+  padding-bottom: $PaddingSmall;
 }
 
 %small-padding-right {
-  padding-right: $wonderlandPaddingSmall;
+  padding-right: $PaddingSmall;
 }
 
 %small-padding-left {
-  padding-left: $wonderlandPaddingSmall;
+  padding-left: $PaddingSmall;
 }
 
 /* Mini Padding */
 
 %mini-padding {
-  padding: $wonderlandPaddingMini;
+  padding: $PaddingMini;
 }
 
 %mini-padding-top-bottom {
-  padding: $wonderlandPaddingMini 0;
+  padding: $PaddingMini 0;
 }
 
 %mini-padding-left-right {
-  padding: 0 $wonderlandPaddingMini;
+  padding: 0 $PaddingMini;
 }
 
 %mini-padding-bottom {
-  padding-bottom: $wonderlandPaddingMini;
+  padding-bottom: $PaddingMini;
 }
 
 %mini-padding-right {
-  padding-right: $wonderlandPaddingMini;
+  padding-right: $PaddingMini;
 }
 
 %mini-padding-left {
-  padding-left: $wonderlandPaddingMini;
+  padding-left: $PaddingMini;
 }
 
 /* =============================================================================
 Border radius
 ========================================================================== */
 
-//CSS PIE for all rounded corners
-%rounded, %rounded-left, %rounded-right, %rounded-top, %rounded-bottom, %rounded-large, %rounded-left-large, %rounded-right-large, %rounded-bottom-large, %rounded-top-large {
-  @if ($pie-enabled == true) {
-    @extend .pie;
-  }
-}
-
 /* Normal border radii */
 
 %rounded {
-  @include border-radius($wonderlandBorderRadius);
+  @include border-radius($BorderRadius);
 }
 
 %rounded-left {
-  @include border-top-left-radius($wonderlandBorderRadius);
-  @include border-bottom-left-radius($wonderlandBorderRadius);
+  @include border-top-left-radius($BorderRadius);
+  @include border-bottom-left-radius($BorderRadius);
 }
 
 %rounded-right {
-  @include border-top-right-radius($wonderlandBorderRadius);
-  @include border-bottom-right-radius($wonderlandBorderRadius);
+  @include border-top-right-radius($BorderRadius);
+  @include border-bottom-right-radius($BorderRadius);
 }
 
 %rounded-top {
-  @include border-top-left-radius($wonderlandBorderRadius);
-  @include border-top-right-radius($wonderlandBorderRadius);
+  @include border-top-left-radius($BorderRadius);
+  @include border-top-right-radius($BorderRadius);
 }
 
 %rounded-bottom {
-  @include border-bottom-left-radius($wonderlandBorderRadius);
-  @include border-bottom-right-radius($wonderlandBorderRadius);
+  @include border-bottom-left-radius($BorderRadius);
+  @include border-bottom-right-radius($BorderRadius);
 }
 
 %rounded-left-none {
@@ -403,27 +371,27 @@ Border radius
 /* Large border radii */
 
 %rounded-large {
-  @include border-radius($wonderlandBorderRadiusLarge);
+  @include border-radius($BorderRadiusLarge);
 }
 
 %rounded-left-large {
-  @include border-top-left-radius($wonderlandBorderRadiusLarge);
-  @include border-bottom-left-radius($wonderlandBorderRadiusLarge);
+  @include border-top-left-radius($BorderRadiusLarge);
+  @include border-bottom-left-radius($BorderRadiusLarge);
 }
 
 %rounded-right-large {
-  @include border-top-right-radius($wonderlandBorderRadiusLarge);
-  @include border-bottom-right-radius($wonderlandBorderRadiusLarge);
+  @include border-top-right-radius($BorderRadiusLarge);
+  @include border-bottom-right-radius($BorderRadiusLarge);
 }
 
 %rounded-top-large {
-  @include border-top-left-radius($wonderlandBorderRadiusLarge);
-  @include border-top-right-radius($wonderlandBorderRadiusLarge);
+  @include border-top-left-radius($BorderRadiusLarge);
+  @include border-top-right-radius($BorderRadiusLarge);
 }
 
 %rounded-bottom-large {
-  @include border-bottom-left-radius($wonderlandBorderRadiusLarge);
-  @include border-bottom-right-radius($wonderlandBorderRadiusLarge);
+  @include border-bottom-left-radius($BorderRadiusLarge);
+  @include border-bottom-right-radius($BorderRadiusLarge);
 }
 
 /* No rounded radii (useful for overriding other elements with radii) */
@@ -516,14 +484,6 @@ Border radius
 
 %border-box {
   @include box-sizing(border-box);
-  @if ($pie-enabled == true) {
-    *behavior: url(/css/boxsizing.htc); //allow correct box-sizing on IE 6, 7 (will not work on localhost)
-  //also, make sure to add `AddType text/x-component .htc` to apache.config file
-  }
-}
-
-%transition-all {
-  @include transition($wonderlandTransitionTime all $wonderlandTransitionFunction);
 }
 
 %use-GPU-hack {
@@ -534,19 +494,19 @@ Border radius
 Font Sizes
 ========================================================================== */
 %large {
-  font-size: $wonderlandFontSizeLarge;
+  font-size: $FontSizeLarge;
 }
 
 %medium {
-  font-size: $wonderlandFontSizeMedium;
+  font-size: $FontSizeMedium;
 }
 
 %small {
-  font-size: $wonderlandFontSizeSmall;
+  font-size: $FontSizeSmall;
 }
 
 %mini {
-  font-size: $wonderlandFontSizeMini;
+  font-size: $FontSizeMini;
 }
 
 /* =============================================================================
@@ -568,23 +528,23 @@ Opacity/visibility
 Borders
 ========================================================================== */
 %bordered {
-  border: $wonderlandBorder;
+  border: $Border;
 }
 
 %bordered-right {
-  border-right: $wonderlandBorder;
+  border-right: $Border;
 }
 
 %bordered-left {
-  border-left: $wonderlandBorder;
+  border-left: $Border;
 }
 
 %bordered-top {
-  border-top: $wonderlandBorder;
+  border-top: $Border;
 }
 
 %bordered-bottom {
-  border-bottom: $wonderlandBorder;
+  border-bottom: $Border;
 }
 
 %border-none {
@@ -649,7 +609,7 @@ Links
 Widths
 ========================================================================== */
 %row-width {
-  width: $wonderlandRowWidth;
+  width: $RowWidth;
 }
 
 /* =============================================================================

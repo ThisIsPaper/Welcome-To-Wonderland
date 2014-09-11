@@ -1,0 +1,1 @@
+var wonderlandApp = angular.module('wonderlandApp', []);

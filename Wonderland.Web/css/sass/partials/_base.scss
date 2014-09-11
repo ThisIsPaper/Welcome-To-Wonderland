@@ -12,13 +12,22 @@
  This file is responsible for establishing base styles for the Macmillan - Wonderland app.
  --------------------------------------------------------------------------------------------------------------------- */
 
-body {
-  color: $wonderlandTextColour;
-  background: $wonderlandBodyBackground;
-  line-height: $wonderlandLineHeight;
-  font-family: $wonderlandBaseFontFamily;
+@import "compass/css3";
+
+
+html {
+  font-size: 62.5%;
 }
 
+body {
+  color: $TextColour;
+  background: $BodyBackground;
+  line-height: $LineHeight;
+  font-family: $BaseFontFamily;
+  font-size: $FontSizeMedium;
+  @extend %margin-none;
+  @extend %padding-none;
+}
 
 nav, nav li, .toolbar, .toolbar li, .btn-group {
   @extend %inline;
@@ -35,12 +44,30 @@ nav, nav li, .toolbar, .toolbar li, .btn-group {
 Shadows
 ========================================================================== */
 .shadowed {
-  @include box-shadow(0 0 3rem fade-out($wonderlandTextColour, .3));
+  @include box-shadow(0 0 3rem fade-out($TextColour, .3));
 }
 
 /* =============================================================================
 images
 ========================================================================== */
 img, object, embed {
-  max-width: $wonderlandRowWidth; //prevent images from going beyond the viewport
+  max-width: $RowWidth; //prevent images from going beyond the viewport
+}
+
+/* =============================================================================
+Base page structure
+========================================================================== */
+.page-container {
+  position: relative;
+  width: 100%;
+  left: 0;
+
+
+  @include transition-property(left);
+  @include transition-duration(.2s);
+  @include transition-timing-function(ease-in-out);
+}
+
+main {
+    padding-top: 8.4rem;
 }

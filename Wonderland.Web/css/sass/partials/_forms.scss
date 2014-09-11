@@ -21,30 +21,39 @@ Buttons
 .btn-primary {
   @extend %rounded-skew-one;
   @extend %border-box;
-  @extend %transition-all;
   cursor: pointer;
-  font-weight: $wonderlandBaseFontWeight;
-  margin: ($wonderlandMarginMini + 1.2) ($wonderlandMarginLarge * .6) 0;
+  font-weight: $BaseFontWeight;
+  //margin: ($MarginMini + 1.2) ($MarginLarge * .6) 0;
   color: #fff;
-  padding: ($wonderlandPaddingSmall - 0.2) ($wonderlandPadding - .1);
+  padding: ($PaddingSmall - 0.2) ($Padding - .1);
   text-decoration: none;
   text-transform: uppercase;
-  background: $wonderlandSecondaryColour;
+  background: $SecondaryColour;
+  font-size: 1.8rem;
   &:hover, &:focus {
-    background: darken($wonderlandSecondaryColour, 10%);
-  }
-  &:active {
-    @include box-shadow(inset 0 0 $wonderlandBorderRadiusLarge #000);
+    background: darken($SecondaryColour, 10%);
   }
 }
 .btn-secondary {
   @extend .btn-primary;
   @extend %rounded-skew-two;
-  background: $wonderlandPrimaryColour;  
-  padding: $wonderlandPaddingSmall - .1 2.1rem;
+  background: $PrimaryColour;
+  padding: $PaddingSmall - .1 2.1rem;
   &:hover, &:focus {
-    background: darken($wonderlandPrimaryColour, 10%);
+    background: darken($PrimaryColour, 10%);
   }
+}
+
+.btn-mini {
+  font-size: 1.1rem;
+}
+
+.btn-small {
+  font-size: 1.4rem;
+}
+
+.btn-large {
+  font-size: 2.3rem;
 }
 
 /* Button groups */
@@ -52,7 +61,7 @@ Buttons
   @extend %centred;
   @extend %normal-padding-top-bottom;
   @extend %normal-padding;
-  background: white;
+  //background: white;
   input, button {
     @extend %border-none;
   }

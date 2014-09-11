@@ -1,12 +1,12 @@
 ﻿@inherits UmbracoViewPage<SiteSettings> 
 
 
-<header class="site-header">
+<header class="site-header" ng-class="{'compress': pageHeaderCompress}">
 
 
-    <a class="nav-burger nav-end-block" onclick="toggleMenu('showing-side-menu')">Burger</a>
+    <a class="nav-burger nav-end-block icon-icon_hamburger_menu" ng-click="pageShowingSideNavMenu=!pageShowingSideNavMenu" ng-class="{'icon-icon_x': pageShowingSideNavMenu}"></a>
 
-    <a class="nav-account nav-end-block end-block-right" onclick="toggleMenu('showing-account-menu')">Account</a>
+    <a class="nav-account nav-end-block end-block-right icon-icon_person" ng-click="pageShowingSideAccountMenu=!pageShowingSideAccountMenu" ng-class="{'icon-icon_x': pageShowingSideAccountMenu}"></a>
 
 
 
@@ -45,9 +45,11 @@
             <ul>
                 <li class="menu left-side">
                     <ul>
+                        <li class="side-only"><a class="icon-icon_home" href="/">Home</a></li>
+                        <li class="side-only"><a class="icon-icon_star" href="#">My Party</a></li>
                         @foreach (SitePage sitePage in Model.HeaderNavigationLeft)
                         {
-                            <li><a href="@sitePage.Url">@sitePage.Name</a></li>
+                            <li><a class="icon-icon_fingerpost" href="@sitePage.Url">@sitePage.Name</a></li>
                         }
                     </ul>
                 </li>
@@ -55,7 +57,7 @@
                     <ul>
                         @foreach (SitePage sitePage in Model.HeaderNavigationRight)
                         {
-                            <li><a href="@sitePage.Url">@sitePage.Name</a></li>
+                            <li><a class="icon-icon_fingerpost" href="@sitePage.Url">@sitePage.Name</a></li>
                         }
                     </ul>
                 </li>
@@ -72,9 +74,9 @@
         <div class="account-menu">
             <div class="menu">
                 <ul>
-                    <li><a href="#">My Party</a></li>
-                    <li><a href="#">My Profile</a></li>
-                    <li><a href="#">Logout</a></li>
+                    <li><a class="icon-icon_person" href="#">My Party</a></li>
+                    <li><a class="icon-icon_person" href="#">My Profile</a></li>
+                    <li><a class="icon-icon_person" href="#">Logout</a></li>
                 </ul>
             </div>
         </div>

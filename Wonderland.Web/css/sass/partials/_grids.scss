@@ -15,7 +15,7 @@
  Styles should be compiled using compass and sass (make sure SUSY is installed).
  --------------------------------------------------------------------------------------------------------------------- */
 @import "compass/css3";
-@import "variables.scss";
+@import "variables";
 @import "susy";
 
 @function col-name($n) {
@@ -70,46 +70,47 @@
   @if $n == 16 {
     $col-name: sixteen;
   }
-  @return $col-name#{'-' + $wonderlandColumnNotation};
+  @return $col-name#{'-' + $ColumnNotation};
 }
 
-@function relativeColName($n, $wonderlandNum-cols) {
-  $colClassFloat: $wonderlandNum-cols / $n;
+@function relativeColName($n, $Num-cols) {
+  $colClassFloat: $Num-cols / $n;
   @return round($colClassFloat);
 }
 
-%col {
-  @extend %transition-all;
-}
+//%col {
+//  @extend %transition-all;
+//}
 
-@for $i from 1 through ($wonderlandNum-cols) {
-  %#{col-name($i)} {
-    @extend %col;
-  }
+@for $i from 1 through ($Num-cols) {
+  //%#{col-name($i)} {
+  //  @extend %col;
+  //}
 
-  %#{$wonderlandRowNotation} {
+  %#{$RowNotation} {
     %#{col-name($i)}:last-child {
       @extend %last !optional;
-      @include span($i of $wonderlandNum-cols);
+      @include span($i of $Num-cols);
     }
   }
 
   %#{col-name($i)} {
-    @if $i == $wonderlandNum-cols {
-      @include span($i of $wonderlandNum-cols);
+    @if $i == $Num-cols {
+      @include span($i of $Num-cols);
     }
     @else {
-      @include span($i of $wonderlandNum-cols);
+      @include span($i of $Num-cols);
     }
   }
 }
+
 
 .container {
   @include container;
   @extend %border-box;
   max-width: 74.3rem;
-  %#{$wonderlandRowNotation} {
-    width: $wonderlandContainer-width;
+  %#{$RowNotation} {
+    width: $Container-width;
     margin: 0 auto;
     @extend %overflow-hidden;
     @extend %padding-none;
