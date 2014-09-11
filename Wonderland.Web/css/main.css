@@ -93,7 +93,7 @@ Visibility Helpers
 /* The Magnificent Clearfix: Updated to prevent margin-collapsing on child elements in most situations.
    nicolasgallagher.com/micro-clearfix-hack/ */
 /* line 94, sass/partials/_helpers.scss */
-.form-actions, .btn-group, .toolbar, #heroGraphic {
+#heroGraphic {
   text-align: center;
 }
 
@@ -122,46 +122,19 @@ ul, ol, dl {
 Padding
 ========================================================================== */
 /* Normal padding */
-/* line 230, sass/partials/_helpers.scss */
-.form-actions, .btn-group, .toolbar {
-  padding: 1.2rem;
-}
-
 /* line 234, sass/partials/_helpers.scss */
 body, nav ul, nav li ul, .toolbar ul, .toolbar li ul, .btn-group ul {
   padding: 0;
 }
 
-/* line 238, sass/partials/_helpers.scss */
-.form-actions, .btn-group, .toolbar {
-  padding: 1.2rem 0;
-}
-
-/* line 242, sass/partials/_helpers.scss */
-input:not([type]), input[type="color"], input[type="email"], input[type="number"], input[type="password"], input[type="tel"], input[type="url"], input[type="text"] {
-  padding: 0 1.2rem;
-}
-
 /* Large Padding */
 /* Small Padding */
-/* line 290, sass/partials/_helpers.scss */
-input:not([type]), input[type="color"], input[type="email"], input[type="number"], input[type="password"], input[type="tel"], input[type="url"], input[type="text"] {
-  padding: 0.92308rem 0;
-}
-
 /* Mini Padding */
 /* =============================================================================
 Border radius
 ========================================================================== */
 /* Normal border radii */
 /* Large border radii */
-/* line 373, sass/partials/_helpers.scss */
-input[type="search"], input[type="password"][type="search"], isindex[type="search"] {
-  -moz-border-radius: 1.2rem;
-  -webkit-border-radius: 1.2rem;
-  border-radius: 1.2rem;
-}
-
 /* No rounded radii (useful for overriding other elements with radii) */
 /* Uneven border radii */
 /* line 425, sass/partials/_helpers.scss */
@@ -225,7 +198,7 @@ input[type="search"], input[type="password"][type="search"], isindex[type="searc
 }
 
 /* line 485, sass/partials/_helpers.scss */
-.frame, .container, .btn-primary, .btn-secondary, input:not([type]), input[type="color"], input[type="email"], input[type="number"], input[type="password"], input[type="tel"], input[type="url"], input[type="text"] {
+.frame, .container, .btn-primary, .btn-secondary {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -255,11 +228,6 @@ Opacity/visibility
 /* =============================================================================
 Borders
 ========================================================================== */
-/* line 550, sass/partials/_helpers.scss */
-.form-actions input, .form-actions button, .btn-group input, .btn-group button, .toolbar input, .toolbar button {
-  border: 0;
-}
-
 /* =============================================================================
 Floats
 ========================================================================== */
@@ -653,15 +621,11 @@ Buttons
   font-size: 2.3rem;
 }
 
-/* Button groups */
-/* =============================================================================
-Form inputs
-========================================================================== */
-/* Allow inputs to be displayed similarly */
-/* line 75, sass/partials/_forms.scss */
-input, input[type="password"], input[type="search"], isindex {
-  -moz-appearance: textfield;
-  -webkit-appearance: textfield;
+/* line 60, sass/partials/_forms.scss */
+input[type='text'] {
+  width: 40rem;
+  height: 10rem;
+  display: block;
 }
 
 /* line 1, sass/partials/_nav.scss */
@@ -1284,45 +1248,45 @@ Media query variables
 }
 /* line 152, sass/main.scss */
 .frame:nth-child(1) {
-  -moz-transform: rotate(-2.2deg);
-  -ms-transform: rotate(-2.2deg);
-  -webkit-transform: rotate(-2.2deg);
-  transform: rotate(-2.2deg);
+  -moz-transform: rotate(-0.2deg);
+  -ms-transform: rotate(-0.2deg);
+  -webkit-transform: rotate(-0.2deg);
+  transform: rotate(-0.2deg);
 }
 /* line 152, sass/main.scss */
 .frame:nth-child(2) {
-  -moz-transform: rotate(0.2deg);
-  -ms-transform: rotate(0.2deg);
-  -webkit-transform: rotate(0.2deg);
-  transform: rotate(0.2deg);
+  -moz-transform: rotate(2.3deg);
+  -ms-transform: rotate(2.3deg);
+  -webkit-transform: rotate(2.3deg);
+  transform: rotate(2.3deg);
 }
 /* line 152, sass/main.scss */
 .frame:nth-child(3) {
-  -moz-transform: rotate(-0.4deg);
-  -ms-transform: rotate(-0.4deg);
-  -webkit-transform: rotate(-0.4deg);
-  transform: rotate(-0.4deg);
+  -moz-transform: rotate(-0.1deg);
+  -ms-transform: rotate(-0.1deg);
+  -webkit-transform: rotate(-0.1deg);
+  transform: rotate(-0.1deg);
 }
 /* line 152, sass/main.scss */
 .frame:nth-child(4) {
-  -moz-transform: rotate(1deg);
-  -ms-transform: rotate(1deg);
-  -webkit-transform: rotate(1deg);
-  transform: rotate(1deg);
+  -moz-transform: rotate(0.6deg);
+  -ms-transform: rotate(0.6deg);
+  -webkit-transform: rotate(0.6deg);
+  transform: rotate(0.6deg);
 }
 /* line 152, sass/main.scss */
 .frame:nth-child(5) {
-  -moz-transform: rotate(-2.3deg);
-  -ms-transform: rotate(-2.3deg);
-  -webkit-transform: rotate(-2.3deg);
-  transform: rotate(-2.3deg);
+  -moz-transform: rotate(-0.1deg);
+  -ms-transform: rotate(-0.1deg);
+  -webkit-transform: rotate(-0.1deg);
+  transform: rotate(-0.1deg);
 }
 /* line 152, sass/main.scss */
 .frame:nth-child(6) {
-  -moz-transform: rotate(1.4deg);
-  -ms-transform: rotate(1.4deg);
-  -webkit-transform: rotate(1.4deg);
-  transform: rotate(1.4deg);
+  -moz-transform: rotate(1.2deg);
+  -ms-transform: rotate(1.2deg);
+  -webkit-transform: rotate(1.2deg);
+  transform: rotate(1.2deg);
 }
 
 /* line 165, sass/main.scss */

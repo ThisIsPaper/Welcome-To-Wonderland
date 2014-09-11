@@ -3,49 +3,49 @@
     Layout = "~/Views/SitePage.cshtml";
 }
 
-<br /><br /><br /><br /><br /><br /><br /><br />
 
+<div ng-controller="PartyCtrl" ng-init="init(
 
-<h1>the current user is the host for this party</h1>
+    '@Json.Encode(
+            new
+            {
+                partyHeading = Model.Heading,
+                partyCopy = Model.Copy
+            }
+    )'
 
-@*<div ng-controller="ctrl" ng-init="init()"></div>*@
+    )">
 
-<pre>
-@Json.Encode(
-        new 
+    <h1>the current user is the host for this party</h1>
+
+    @* image *@
+
+    <h1>@(this.Model.PartyHost.FirstName)'s Wonderland party</h1>
+
+    @* time *@
+    @* location *@
+
+    <h2>@this.Model.Heading</h2>
+    <p ng-bind="basicModel.partyCopy">@this.Model.Copy</p>
+
+    <form action="@(Url.GetUmbracoApiService<PartyApiController>("UpdatePartyCopy"))?partyGuid=@Model.PartyHost.PartyGuid" method="post" post-on-submit="basicModelEditable">
+        <input type="text" name="partyCopy" ng-model="basicModelEditable.partyCopy" />
+        <input type="submit" />
+    </form>
+
+    @* wall *@
+    @* totaliser *@
+
+    <h2>Who's Coming (@this.Model.Partiers.Count())</h2>
+    <ul>
+        @foreach (IPartier partier in this.Model.Partiers)
         {
-            partyHeading = Model.Heading,
-            partyCopy = Model.Copy
+            <li>
+                @partier.PersonName
+            </li>
         }
-)
-</pre>
+    </ul>
 
-@* image *@
+    @* badges *@
 
-<h1 ng-bind="var1">@(this.Model.PartyHost.FirstName)'s Wonderland party</h1>
-
-@* time *@
-@* location *@
-
-<h2>@this.Model.Heading</h2>
-<p>@this.Model.Copy</p>
-
-<form action="@(Url.GetUmbracoApiService<PartyApiController>("UpdatePartyCopy"))?partyGuid=@Model.PartyHost.PartyGuid" method="post">
-    <input type="text" name="partyCopy" />
-    <input type="submit" />
-</form>
-
-@* wall *@
-@* totaliser *@
-
-<h2>Who's Coming (@this.Model.Partiers.Count())</h2>
-<ul>
-    @foreach (IPartier partier in this.Model.Partiers)
-    {
-        <li>
-            @partier.PersonName
-        </li>
-    }
-</ul>
-
-@* badges *@
+</div>

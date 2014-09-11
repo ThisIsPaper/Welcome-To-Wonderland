@@ -56,31 +56,9 @@ Buttons
   font-size: 2.3rem;
 }
 
-/* Button groups */
-.form-actions, .btn-group, .toolbar {
-  @extend %centred;
-  @extend %normal-padding-top-bottom;
-  @extend %normal-padding;
-  //background: white;
-  input, button {
-    @extend %border-none;
-  }
-}
 
-/* =============================================================================
-Form inputs
-========================================================================== */
-
-/* Allow inputs to be displayed similarly */
-input, input[type="password"], input[type="search"], isindex {
-  @include appearance("textfield");
-  &[type="search"] {
-    @extend %rounded-large; //large rounded corners for search
-  }
-}
-
-input:not([type]), input[type="color"], input[type="email"], input[type="number"], input[type="password"], input[type="tel"], input[type="url"], input[type="text"] {
-  @extend %border-box;
-  @extend %normal-padding-left-right;
-  @extend %small-padding-top-bottom;
+input[type='text'] {
+    width: 40rem;
+    height: 10rem;
+    display: block;
 }
