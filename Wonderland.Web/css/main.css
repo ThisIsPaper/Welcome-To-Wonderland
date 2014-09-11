@@ -729,27 +729,36 @@ input, input[type="password"], input[type="search"], isindex {
 }
 
 /* line 60, sass/partials/_nav.scss */
-.menu {
-  width: 50%;
+.menu li a[class^="icon-"]:before, .menu li a[class*=" icon-"]:before {
+  display: none;
 }
 
 /* line 64, sass/partials/_nav.scss */
+.menu {
+  width: 50%;
+}
+/* line 67, sass/partials/_nav.scss */
+.menu .side-only {
+  display: none;
+}
+
+/* line 73, sass/partials/_nav.scss */
 .right-side {
   float: right;
 }
 
-/* line 68, sass/partials/_nav.scss */
+/* line 77, sass/partials/_nav.scss */
 .left-side ul {
   float: right;
   margin-right: 6.65rem;
 }
 
-/* line 73, sass/partials/_nav.scss */
+/* line 82, sass/partials/_nav.scss */
 .right-side ul {
   margin-left: 6.65rem;
 }
 
-/* line 77, sass/partials/_nav.scss */
+/* line 86, sass/partials/_nav.scss */
 .logo-ribbon, .menu ul {
   transition-property: margin;
   transition-duration: .3s;
@@ -757,20 +766,20 @@ input, input[type="password"], input[type="search"], isindex {
   transition-delay: 0;
 }
 
-/* line 84, sass/partials/_nav.scss */
+/* line 93, sass/partials/_nav.scss */
 .menu li {
   margin: 0 1.2rem;
   padding: 0;
 }
 
-/* line 89, sass/partials/_nav.scss */
+/* line 98, sass/partials/_nav.scss */
 .snow-brush-overlay {
   width: 100%;
   background: url('/img/header_texture.png?1410369441') repeat center;
   padding-top: 1.2rem;
 }
 
-/* line 95, sass/partials/_nav.scss */
+/* line 104, sass/partials/_nav.scss */
 .nav-end-block {
   position: absolute;
   top: 2.5rem;
@@ -782,19 +791,19 @@ input, input[type="password"], input[type="search"], isindex {
   transition-delay: 0;
 }
 
-/* line 107, sass/partials/_nav.scss */
+/* line 116, sass/partials/_nav.scss */
 .nav-end-block.end-block-right {
   left: auto;
   right: 2rem;
 }
 
-/* line 112, sass/partials/_nav.scss */
+/* line 121, sass/partials/_nav.scss */
 .nav-burger, .nav-account {
   display: none;
   cursor: pointer;
 }
 
-/* line 117, sass/partials/_nav.scss */
+/* line 126, sass/partials/_nav.scss */
 .account-menu {
   display: none;
 }
@@ -802,32 +811,32 @@ input, input[type="password"], input[type="search"], isindex {
 /********************/
 /* COMPRESSED VIEW  */
 /********************/
-/* line 124, sass/partials/_nav.scss */
+/* line 133, sass/partials/_nav.scss */
 .site-header.compress .logo {
   top: -16rem;
 }
 
-/* line 128, sass/partials/_nav.scss */
+/* line 137, sass/partials/_nav.scss */
 .site-header.compress .logo-ribbon {
   margin-top: 9.7rem;
 }
 
-/* line 132, sass/partials/_nav.scss */
+/* line 141, sass/partials/_nav.scss */
 .site-header.compress .left-side ul {
   margin-right: 10.8rem;
 }
 
-/* line 136, sass/partials/_nav.scss */
+/* line 145, sass/partials/_nav.scss */
 .site-header.compress .right-side ul {
   margin-left: 10.8rem;
 }
 
-/* line 140, sass/partials/_nav.scss */
+/* line 149, sass/partials/_nav.scss */
 .site-header.compress .menu li a {
   line-height: 6.6rem;
 }
 
-/* line 144, sass/partials/_nav.scss */
+/* line 153, sass/partials/_nav.scss */
 .site-header.compress .nav-end-block {
   top: 1.6rem;
 }
@@ -899,6 +908,11 @@ Base page structure
   transition-timing-function: ease-in-out;
 }
 
+/* line 71, sass/partials/_base.scss */
+main {
+  padding-top: 8.4rem;
+}
+
 /*------------------------------------------------------------------------------------------------------------------------
  @package: Macmillan - Wonderland (app)
 
@@ -938,52 +952,57 @@ Borders
 /* =============================================================================
 Media query variables
 ========================================================================== */
+/*****************************/
+/*
+/*  JUST SMALLER THAN FULL (for site header)
+/*
+/*****************************/
 @media only screen and (max-width: 1049px) {
-  /* line 5, sass/partials/_media-queries.scss */
+  /* line 12, sass/partials/_media-queries.scss */
   .logo {
     padding: 4.59rem 3.27rem;
     margin: 0 -3.27rem;
   }
 
-  /* line 10, sass/partials/_media-queries.scss */
+  /* line 17, sass/partials/_media-queries.scss */
   .logo-ribbon {
     padding: 1.17rem 5.76rem;
     margin: 1.2rem -5.76rem;
   }
 
-  /* line 15, sass/partials/_media-queries.scss */
+  /* line 22, sass/partials/_media-queries.scss */
   .left-side ul {
     float: right;
     margin-right: 4.47rem;
   }
 
-  /* line 20, sass/partials/_media-queries.scss */
+  /* line 27, sass/partials/_media-queries.scss */
   .right-side ul {
     margin-left: 4.47rem;
   }
 
-  /* line 24, sass/partials/_media-queries.scss */
+  /* line 31, sass/partials/_media-queries.scss */
   .menu li {
     margin: 0 .3rem;
   }
 
-  /* line 28, sass/partials/_media-queries.scss */
+  /* line 35, sass/partials/_media-queries.scss */
   .menu li a {
     font-size: 1.1rem;
   }
 
-  /* line 32, sass/partials/_media-queries.scss */
+  /* line 39, sass/partials/_media-queries.scss */
   .nav-end-block {
     left: .5rem;
   }
 
-  /* line 36, sass/partials/_media-queries.scss */
+  /* line 43, sass/partials/_media-queries.scss */
   .nav-end-block.end-block-right {
     right: .5rem;
     left: auto;
   }
 
-  /* line 41, sass/partials/_media-queries.scss */
+  /* line 48, sass/partials/_media-queries.scss */
   .nav-end-block a, a.nav-end-block {
     font-size: 1.1rem;
   }
@@ -991,67 +1010,77 @@ Media query variables
   /********************/
   /* COMPRESSED VIEW  */
   /********************/
-  /* line 49, sass/partials/_media-queries.scss */
+  /* line 56, sass/partials/_media-queries.scss */
   .site-header.compress .logo-ribbon {
     margin-top: 13.7rem;
   }
 
-  /* line 53, sass/partials/_media-queries.scss */
+  /* line 60, sass/partials/_media-queries.scss */
   .site-header.compress .left-side ul {
     margin-right: 6.2rem;
   }
 
-  /* line 57, sass/partials/_media-queries.scss */
+  /* line 64, sass/partials/_media-queries.scss */
   .site-header.compress .right-side ul {
     margin-left: 6.2rem;
   }
 }
+/*****************************/
+/*
+/*  MOBILE VIEW
+/*
+/*****************************/
 @media only screen and (max-width: 767px) {
-  /* line 65, sass/partials/_media-queries.scss */
+  /* line 81, sass/partials/_media-queries.scss */
+  main {
+    padding-top: 6.6rem;
+  }
+
+  /* line 85, sass/partials/_media-queries.scss */
   .page-container.showing-side-nav-menu {
     left: 25.6rem;
   }
 
-  /* line 69, sass/partials/_media-queries.scss */
+  /* line 89, sass/partials/_media-queries.scss */
   .page-container.showing-side-account-menu {
     left: -25.6rem;
   }
 
-  /* line 73, sass/partials/_media-queries.scss */
+  /* line 93, sass/partials/_media-queries.scss */
   .logo {
     top: -16rem;
   }
 
-  /* line 77, sass/partials/_media-queries.scss */
+  /* line 97, sass/partials/_media-queries.scss */
   .logo-ribbon, .site-header.compress .logo-ribbon {
     padding: 1.95rem 9.6rem;
     margin: 12.9rem -9.6rem;
   }
 
-  /* line 82, sass/partials/_media-queries.scss */
+  /* line 102, sass/partials/_media-queries.scss */
   .nav-end-block {
     display: none;
     left: 1.5rem;
     color: #007eac;
   }
 
-  /* line 88, sass/partials/_media-queries.scss */
+  /* line 108, sass/partials/_media-queries.scss */
   .nav-end-block.end-block-right {
     left: auto;
     right: 1.5rem;
   }
 
-  /* line 93, sass/partials/_media-queries.scss */
+  /* line 113, sass/partials/_media-queries.scss */
   .nav-burger, .nav-account {
     display: block;
   }
 
-  /* line 97, sass/partials/_media-queries.scss */
+  /* line 117, sass/partials/_media-queries.scss */
   .nav-end-block, .site-header.compress .nav-end-block {
     top: 1.8rem;
   }
 
-  /* line 101, sass/partials/_media-queries.scss */
+  /* line 121, sass/partials/_media-queries.scss */
   .nav-end-block a, a.nav-end-block {
     font-size: 3rem;
   }
@@ -1059,7 +1088,7 @@ Media query variables
   /**********************/
   /* NAV SIDE MENU
   /**********************/
-  /* line 108, sass/partials/_media-queries.scss */
+  /* line 128, sass/partials/_media-queries.scss */
   .nav-menu, .account-menu {
     position: absolute;
     left: -25.6rem;
@@ -1070,49 +1099,75 @@ Media query variables
     overflow: hidden;
   }
 
-  /* line 118, sass/partials/_media-queries.scss */
+  /* line 138, sass/partials/_media-queries.scss */
   .account-menu {
     left: auto;
     right: -25.6rem;
   }
 
-  /* line 123, sass/partials/_media-queries.scss */
+  /* line 143, sass/partials/_media-queries.scss */
   .menu {
     width: 100%;
   }
+  /* line 146, sass/partials/_media-queries.scss */
+  .menu .side-only {
+    display: block;
+  }
 
-  /* line 127, sass/partials/_media-queries.scss */
+  /* line 151, sass/partials/_media-queries.scss */
   .menu ul {
     float: none;
     margin: 0;
   }
 
-  /* line 132, sass/partials/_media-queries.scss */
+  /* line 156, sass/partials/_media-queries.scss */
   .menu li {
     display: block;
+    margin: 0;
+    padding: 1.2rem;
+    border-bottom: .1rem solid #55554d;
   }
 
-  /* line 136, sass/partials/_media-queries.scss */
+  /* line 163, sass/partials/_media-queries.scss */
   .menu li a {
     line-height: normal;
-    color: #fff;
-    font-size: 1.8rem;
+    color: #d4d3cc;
+    font-size: 1.4rem;
     font-weight: bold;
   }
-}
-/* line 40, sass/main.scss */
-main {
-  padding-top: 3.5rem;
-}
 
-/* line 42, sass/main.scss */
+  /* line 171, sass/partials/_media-queries.scss */
+  .menu li a[class^="icon-"]:before, .menu li a[class*=" icon-"]:before {
+    color: #7b7a6d;
+    margin-right: 1rem;
+    display: inline;
+  }
+
+  /* line 177, sass/partials/_media-queries.scss */
+  .menu li a:hover {
+    color: #a5a395;
+    text-decoration: none;
+  }
+
+  /* line 183, sass/partials/_media-queries.scss */
+  .site-header.compress .left-side ul, .site-header.compress .right-side ul {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  /* line 188, sass/partials/_media-queries.scss */
+  .site-header.compress .menu li a {
+    line-height: normal;
+  }
+}
+/* line 39, sass/main.scss */
 #homeBg {
   background: url('/img/wood_texture.jpg?1410369441') repeat top left;
   background-size: 100% 50%;
   margin-top: -1.2rem;
 }
 
-/* line 48, sass/main.scss */
+/* line 45, sass/main.scss */
 #heroGraphic {
   height: 35rem;
   background-image: url('/img/hero-ph.jpg?1410369441');
@@ -1121,22 +1176,22 @@ main {
   background-size: cover;
   margin: 0;
 }
-/* line 58, sass/main.scss */
+/* line 55, sass/main.scss */
 #heroGraphic .hero-title {
   padding: 10.5rem 0 0 0;
   margin: 0 auto;
 }
-/* line 63, sass/main.scss */
+/* line 60, sass/main.scss */
 #heroGraphic .actions {
   margin: 2rem -0.5rem;
 }
-/* line 68, sass/main.scss */
+/* line 65, sass/main.scss */
 #heroGraphic a.btn-primary, #heroGraphic a.btn-secondary {
   font-size: 1.8rem;
   padding: 0.9rem 1.9rem;
 }
 
-/* line 75, sass/main.scss */
+/* line 72, sass/main.scss */
 .banner {
   max-width: 100%;
   margin-left: auto;
@@ -1154,7 +1209,7 @@ main {
   display: block;
   clear: both;
 }
-/* line 85, sass/main.scss */
+/* line 82, sass/main.scss */
 .banner .banner-info {
   padding: 0.5rem 0.2rem;
   width: 65.51724%;
@@ -1162,13 +1217,13 @@ main {
   margin-right: 3.44828%;
   margin: 0;
 }
-/* line 92, sass/main.scss */
+/* line 89, sass/main.scss */
 .banner .money-raised-info {
   background: url('/img/amount-raised-ph.png?1410369441') no-repeat center right transparent;
   height: 14rem;
   width: 21rem;
 }
-/* line 99, sass/main.scss */
+/* line 96, sass/main.scss */
 .banner h1 {
   color: #007eac;
   font-weight: bold;
@@ -1178,113 +1233,113 @@ main {
   letter-spacing: 0.05rem;
   margin: 0;
 }
-/* line 109, sass/main.scss */
+/* line 106, sass/main.scss */
 .banner p {
   font-size: 1.13333rem;
   line-height: 1.79443;
   font-weight: bold;
   margin-top: -0.5rem;
 }
-/* line 115, sass/main.scss */
+/* line 112, sass/main.scss */
 .banner p.amount {
   color: white;
   font-size: 3rem;
   margin: 2.5rem;
 }
 
-/* line 124, sass/main.scss */
+/* line 121, sass/main.scss */
 .promo-tiles {
   padding-top: 15rem;
 }
 
-/* line 128, sass/main.scss */
+/* line 125, sass/main.scss */
 .frame {
   width: 30%;
   margin: 1rem;
   padding: 1rem;
 }
-/* line 133, sass/main.scss */
+/* line 130, sass/main.scss */
 .frame:first-child {
   margin-left: 0;
 }
-/* line 136, sass/main.scss */
+/* line 133, sass/main.scss */
 .frame:last-child {
   margin-right: 0;
 }
-/* line 139, sass/main.scss */
+/* line 136, sass/main.scss */
 .frame img {
   display: block;
 }
-/* line 141, sass/main.scss */
+/* line 138, sass/main.scss */
 .frame img:first-child {
   margin-left: 0;
   width: 100%;
 }
-/* line 145, sass/main.scss */
+/* line 142, sass/main.scss */
 .frame img:last-child {
   bottom: 0;
   left: 0;
   margin-right: 0;
   width: 60%;
 }
-/* line 155, sass/main.scss */
+/* line 152, sass/main.scss */
 .frame:nth-child(1) {
-  -moz-transform: rotate(-1.4deg);
-  -ms-transform: rotate(-1.4deg);
-  -webkit-transform: rotate(-1.4deg);
-  transform: rotate(-1.4deg);
-}
-/* line 155, sass/main.scss */
-.frame:nth-child(2) {
-  -moz-transform: rotate(1.6deg);
-  -ms-transform: rotate(1.6deg);
-  -webkit-transform: rotate(1.6deg);
-  transform: rotate(1.6deg);
-}
-/* line 155, sass/main.scss */
-.frame:nth-child(3) {
-  -moz-transform: rotate(-0.3deg);
-  -ms-transform: rotate(-0.3deg);
-  -webkit-transform: rotate(-0.3deg);
-  transform: rotate(-0.3deg);
-}
-/* line 155, sass/main.scss */
-.frame:nth-child(4) {
-  -moz-transform: rotate(2.1deg);
-  -ms-transform: rotate(2.1deg);
-  -webkit-transform: rotate(2.1deg);
-  transform: rotate(2.1deg);
-}
-/* line 155, sass/main.scss */
-.frame:nth-child(5) {
   -moz-transform: rotate(-0.8deg);
   -ms-transform: rotate(-0.8deg);
   -webkit-transform: rotate(-0.8deg);
   transform: rotate(-0.8deg);
 }
-/* line 155, sass/main.scss */
+/* line 152, sass/main.scss */
+.frame:nth-child(2) {
+  -moz-transform: rotate(0.3deg);
+  -ms-transform: rotate(0.3deg);
+  -webkit-transform: rotate(0.3deg);
+  transform: rotate(0.3deg);
+}
+/* line 152, sass/main.scss */
+.frame:nth-child(3) {
+  -moz-transform: rotate(-0.6deg);
+  -ms-transform: rotate(-0.6deg);
+  -webkit-transform: rotate(-0.6deg);
+  transform: rotate(-0.6deg);
+}
+/* line 152, sass/main.scss */
+.frame:nth-child(4) {
+  -moz-transform: rotate(0.1deg);
+  -ms-transform: rotate(0.1deg);
+  -webkit-transform: rotate(0.1deg);
+  transform: rotate(0.1deg);
+}
+/* line 152, sass/main.scss */
+.frame:nth-child(5) {
+  -moz-transform: rotate(-1.1deg);
+  -ms-transform: rotate(-1.1deg);
+  -webkit-transform: rotate(-1.1deg);
+  transform: rotate(-1.1deg);
+}
+/* line 152, sass/main.scss */
 .frame:nth-child(6) {
-  -moz-transform: rotate(1.9deg);
-  -ms-transform: rotate(1.9deg);
-  -webkit-transform: rotate(1.9deg);
-  transform: rotate(1.9deg);
+  -moz-transform: rotate(0.6deg);
+  -ms-transform: rotate(0.6deg);
+  -webkit-transform: rotate(0.6deg);
+  transform: rotate(0.6deg);
 }
 
-/* line 168, sass/main.scss */
+/* line 165, sass/main.scss */
 #shareWonderland {
   background: url('/img/home-share-ph.png?1410369441') no-repeat;
   padding: 7rem 15.2rem;
   margin: 3.1rem 1.5rem;
 }
 
-/* line 176, sass/main.scss */
+/* line 173, sass/main.scss */
 #twitterFeed {
   background: url('/img/home-twitter-ph.png?1410369441') no-repeat;
   padding: 16rem 17.5rem 13rem;
   margin: 2.2rem 1.4rem 0 0;
 }
 
-/* line 183, sass/main.scss */
+/* line 180, sass/main.scss */
 .footer-snow-brush-overlay {
   background: url('/img/footer_texture.png?1410369441') repeat-x center;
   padding-top: 1.2rem;
@@ -1292,89 +1347,89 @@ main {
   margin-top: -5rem;
 }
 
-/* line 192, sass/main.scss */
+/* line 189, sass/main.scss */
 footer section {
   width: 100%;
 }
-/* line 196, sass/main.scss */
+/* line 193, sass/main.scss */
 footer section.footer-primary {
   margin: 0 auto;
 }
-/* line 198, sass/main.scss */
+/* line 195, sass/main.scss */
 footer section.footer-primary > nav {
   width: 23.72881%;
   float: left;
   margin-right: 1.69492%;
 }
-/* line 200, sass/main.scss */
+/* line 197, sass/main.scss */
 footer section.footer-primary > nav a {
   color: #007dab;
 }
-/* line 204, sass/main.scss */
+/* line 201, sass/main.scss */
 footer section.footer-primary > div {
   width: 32.20339%;
   float: left;
   margin-right: 1.69492%;
 }
-/* line 206, sass/main.scss */
+/* line 203, sass/main.scss */
 footer section.footer-primary > div.share-container {
   text-align: center;
 }
-/* line 208, sass/main.scss */
+/* line 205, sass/main.scss */
 footer section.footer-primary > div.share-container ul {
   margin: 0 3rem;
 }
-/* line 209, sass/main.scss */
+/* line 206, sass/main.scss */
 footer section.footer-primary > div.share-container li {
   float: left;
 }
-/* line 211, sass/main.scss */
+/* line 208, sass/main.scss */
 footer section.footer-primary > div.share-container li span {
   font-size: 3.5rem;
   padding: 0 0.6rem;
 }
-/* line 214, sass/main.scss */
+/* line 211, sass/main.scss */
 footer section.footer-primary > div.share-container li span.icon-facebook {
   color: #3b5798;
 }
-/* line 215, sass/main.scss */
+/* line 212, sass/main.scss */
 footer section.footer-primary > div.share-container li span.icon-twitter {
   color: #17aaed;
 }
-/* line 216, sass/main.scss */
+/* line 213, sass/main.scss */
 footer section.footer-primary > div.share-container li span.icon-google_plus {
   color: #ce3628;
 }
-/* line 219, sass/main.scss */
+/* line 216, sass/main.scss */
 footer section.footer-primary > div.share-container p {
   color: #17aaed;
   font-size: 1.7rem;
   margin-left: 5.5rem;
 }
-/* line 225, sass/main.scss */
+/* line 222, sass/main.scss */
 footer section.footer-primary > div:last-child {
   width: 32.20339%;
   float: right;
   margin-right: 0;
 }
-/* line 230, sass/main.scss */
+/* line 227, sass/main.scss */
 footer section.footer-primary .footer-logo img {
   width: 15.5rem;
 }
-/* line 234, sass/main.scss */
+/* line 231, sass/main.scss */
 footer section.footer-primary h2 {
   color: #007dab;
   font-size: 1.2rem;
   font-weight: bold;
   text-transform: uppercase;
 }
-/* line 243, sass/main.scss */
+/* line 240, sass/main.scss */
 footer section.footer-secondary nav {
   text-transform: uppercase;
   font-size: 0.8rem;
   margin-top: 1rem;
 }
-/* line 248, sass/main.scss */
+/* line 245, sass/main.scss */
 footer section.footer-secondary nav a {
   color: #007eac;
   padding: 0 0.1rem;

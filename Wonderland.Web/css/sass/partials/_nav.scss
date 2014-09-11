@@ -57,8 +57,17 @@
     text-decoration: underline;
 }
 
+.menu li a[class^="icon-"]:before, .menu li a[class*=" icon-"]:before {
+    display: none;
+}
+
 .menu {
     width: 50%;
+
+    .side-only {
+        display: none;
+    }
+
 }
 
 .right-side {

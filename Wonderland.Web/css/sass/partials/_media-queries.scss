@@ -1,5 +1,12 @@
 @import "partials/variables";
 
+
+/*****************************/
+/*
+/*  JUST SMALLER THAN FULL (for site header)
+/*
+/*****************************/
+
 @media only screen and (max-width: 1049px) {
 
     .logo {
@@ -60,7 +67,20 @@
 
 }
 
+
+
+
+/*****************************/
+/*
+/*  MOBILE VIEW
+/*
+/*****************************/
+
 @media only screen and (max-width: 767px) {
+
+    main {
+        padding-top: 6.6rem;
+    }
 
     .page-container.showing-side-nav-menu {
         left: 25.6rem;
@@ -122,6 +142,10 @@
 
     .menu {
         width: 100%;
+
+        .side-only {
+            display: block;
+        }
     }
 
     .menu ul {
@@ -131,14 +155,38 @@
 
     .menu li {
         display: block;
+        margin: 0;
+        padding: 1.2rem;
+        border-bottom: .1rem solid #55554d;
     }
 
     .menu li a {
         line-height: normal;
-        color: #fff;
-        font-size: 1.8rem;
+        color: #d4d3cc;
+        font-size: 1.4rem;
         font-weight: bold;
 
+    }
+
+    .menu li a[class^="icon-"]:before, .menu li a[class*=" icon-"]:before {
+        color: #7b7a6d;
+        margin-right: 1rem;
+        display: inline;
+    }
+
+    .menu li a:hover {
+        color: darken(#d4d3cc, 20%);
+        text-decoration: none;
+    }
+
+
+    .site-header.compress .left-side ul, .site-header.compress .right-side ul {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .site-header.compress .menu li a {
+        line-height: normal;
     }
 
 

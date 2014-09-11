@@ -67,3 +67,7 @@ Base page structure
   @include transition-duration(.2s);
   @include transition-timing-function(ease-in-out);
 }
+
+main {
+    padding-top: 8.4rem;
+}
