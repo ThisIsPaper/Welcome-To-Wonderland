@@ -220,6 +220,7 @@
     <Compile Include="Events\SetPublishedContentModelFactory.cs" />
     <Compile Include="Extensions\HtmlHelperExtensions.cs" />
     <Compile Include="Extensions\MembershipHelperExtensions.cs" />
+    <Compile Include="Models\Api\ApiResponse.cs" />
     <Compile Include="Models\Content\DecorationCategory.cs" />
     <Compile Include="Models\Content\DecorationTile.cs" />
     <Compile Include="Models\Content\FAQs.cs" />

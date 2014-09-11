@@ -5,7 +5,7 @@ namespace Wonderland.Logic.Models.Content
     using Umbraco.Web;
     using Wonderland.Logic.Models.Members;
     using System.Collections.Generic;
-
+    
     public class Party : SitePage
     {
         // DocumentType
@@ -22,9 +22,7 @@ namespace Wonderland.Logic.Models.Content
             this.Copy = this.DefaultCopy;
         }
 
-        #region Properties set by CMS
-
-        internal string DefaultHeading
+        private string DefaultHeading
         {
             get
             {
@@ -32,17 +30,13 @@ namespace Wonderland.Logic.Models.Content
             }
         }
 
-        internal string DefaultCopy
+        private string DefaultCopy
         {
             get
             {
                 return this.GetPropertyValue<string>(Party.DefaultCopyAlias);
             }
         }
-
-        #endregion
-
-        #region Properties set by Controller
 
         /// <summary>
         /// set by the controller to identify the host member for this renderModel
@@ -70,13 +64,5 @@ namespace Wonderland.Logic.Models.Content
             get;
             internal set;
         }
-
-        #endregion
-
-        #region Calulcated Properties
-
-
-
-        #endregion
     }
 }
