@@ -1,12 +1,12 @@
 ﻿@inherits UmbracoViewPage<SiteSettings> 
 
 
-<header class="site-header">
+<header class="site-header" ng-class="{'compress': pageHeaderCompress}">
 
 
-    <a class="nav-burger nav-end-block" onclick="toggleMenu('showing-side-menu')">Burger</a>
+    <a class="nav-burger nav-end-block" ng-click="pageShowingSideNavMenu=!pageShowingSideNavMenu">Burger</a>
 
-    <a class="nav-account nav-end-block end-block-right" onclick="toggleMenu('showing-account-menu')">Account</a>
+    <a class="nav-account nav-end-block end-block-right" ng-click="pageShowingSideAccountMenu=!pageShowingSideAccountMenu">Account</a>
 
 
 

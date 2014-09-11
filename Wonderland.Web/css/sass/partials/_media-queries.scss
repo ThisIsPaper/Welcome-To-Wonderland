@@ -60,11 +60,11 @@
 
 @media only screen and (max-width: 767px) {
 
-    .page-container.showing-side-menu {
+    .page-container.showing-side-nav-menu {
         left: 25.6rem;
     }
 
-    .page-container.showing-account-menu {
+    .page-container.showing-side-account-menu {
         left: -25.6rem;
     }
 
@@ -92,9 +92,10 @@
         position: absolute;
         left: -25.6rem;
         width: 25.6rem;
-        height: 30rem;
+        height: 300rem;
         background: #474740;
         display: block;
+        overflow: hidden;
     }
 
     .account-menu {

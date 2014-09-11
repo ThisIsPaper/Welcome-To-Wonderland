@@ -1,6 +1,7 @@
 .site-header {
-    position: relative; /* TODO - will be fixed though */
+    position: fixed;
     width: 100%;
+    z-index: 999;
 }
 
 .nav {
@@ -12,7 +13,7 @@
 
 .logo {
     position: absolute;
-    background: url('/img/wonderland-crest.svg') no-repeat;
+    background: image-url('wonderland-crest.svg') no-repeat;
     top: 1rem;
     left: 50%;
     padding: 7.65rem 5.45rem;
@@ -26,7 +27,7 @@
 
 .logo-ribbon {
     position: absolute;
-    background: url('/img/wonderland-logo.svg') no-repeat center;
+    background: image-url('wonderland-logo.svg') no-repeat center;
     padding: 1.95rem 9.6rem;
     margin: 2rem -9.6rem;
     z-index: 1;
@@ -87,7 +88,7 @@
 
 .snow-brush-overlay {
     width: 100%;
-    background: url('/img/header_texture.png') repeat center;
+    background: image-url('header_texture.png') repeat center;
     padding-top: 1.2rem;
 }
 

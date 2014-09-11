@@ -12,6 +12,9 @@
  This file is responsible for establishing base styles for the Macmillan - Wonderland app.
  --------------------------------------------------------------------------------------------------------------------- */
 
+@import "compass/css3";
+
+
 html {
   font-size: 62.5%;
 }
@@ -57,4 +60,9 @@ Base page structure
 .page-container {
   position: relative;
   width: 100%;
+  left: 0;
+
+
+  @include transition-property(left);
+  @include transition-duration(.2s);
 }

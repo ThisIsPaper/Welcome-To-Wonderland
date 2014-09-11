@@ -603,12 +603,12 @@ input, input[type="password"], input[type="search"], isindex {
 
 /* line 1, sass/partials/_nav.scss */
 .site-header {
-  position: relative;
-  /* TODO - will be fixed though */
+  position: fixed;
   width: 100%;
+  z-index: 999;
 }
 
-/* line 6, sass/partials/_nav.scss */
+/* line 7, sass/partials/_nav.scss */
 .nav {
   width: 100%;
   background: #fff;
@@ -616,10 +616,10 @@ input, input[type="password"], input[type="search"], isindex {
   min-height: 6.6rem;
 }
 
-/* line 13, sass/partials/_nav.scss */
+/* line 14, sass/partials/_nav.scss */
 .logo {
   position: absolute;
-  background: url("/img/wonderland-crest.svg") no-repeat;
+  background: url('/img/wonderland-crest.svg?1410369441') no-repeat;
   top: 1rem;
   left: 50%;
   padding: 7.65rem 5.45rem;
@@ -630,22 +630,22 @@ input, input[type="password"], input[type="search"], isindex {
   transition-delay: 0;
 }
 
-/* line 27, sass/partials/_nav.scss */
+/* line 28, sass/partials/_nav.scss */
 .logo-ribbon {
   position: absolute;
-  background: url("/img/wonderland-logo.svg") no-repeat center;
+  background: url('/img/wonderland-logo.svg?1410369441') no-repeat center;
   padding: 1.95rem 9.6rem;
   margin: 2rem -9.6rem;
   z-index: 1;
 }
 
-/* line 35, sass/partials/_nav.scss */
+/* line 36, sass/partials/_nav.scss */
 .logo-copy {
   position: absolute;
   text-indent: -999rem;
 }
 
-/* line 40, sass/partials/_nav.scss */
+/* line 41, sass/partials/_nav.scss */
 .menu li a {
   text-transform: uppercase;
   font-size: 1.4rem;
@@ -659,34 +659,34 @@ input, input[type="password"], input[type="search"], isindex {
   transition-delay: 0;
 }
 
-/* line 54, sass/partials/_nav.scss */
+/* line 55, sass/partials/_nav.scss */
 .menu li a:hover {
   color: #006593;
   text-decoration: underline;
 }
 
-/* line 59, sass/partials/_nav.scss */
+/* line 60, sass/partials/_nav.scss */
 .menu {
   width: 50%;
 }
 
-/* line 63, sass/partials/_nav.scss */
+/* line 64, sass/partials/_nav.scss */
 .right-side {
   float: right;
 }
 
-/* line 67, sass/partials/_nav.scss */
+/* line 68, sass/partials/_nav.scss */
 .left-side ul {
   float: right;
   margin-right: 6.65rem;
 }
 
-/* line 72, sass/partials/_nav.scss */
+/* line 73, sass/partials/_nav.scss */
 .right-side ul {
   margin-left: 6.65rem;
 }
 
-/* line 76, sass/partials/_nav.scss */
+/* line 77, sass/partials/_nav.scss */
 .logo-ribbon, .menu ul {
   transition-property: margin;
   transition-duration: .3s;
@@ -694,20 +694,20 @@ input, input[type="password"], input[type="search"], isindex {
   transition-delay: 0;
 }
 
-/* line 83, sass/partials/_nav.scss */
+/* line 84, sass/partials/_nav.scss */
 .menu li {
   margin: 0 1.2rem;
   padding: 0;
 }
 
-/* line 88, sass/partials/_nav.scss */
+/* line 89, sass/partials/_nav.scss */
 .snow-brush-overlay {
   width: 100%;
-  background: url("/img/header_texture.png") repeat center;
+  background: url('/img/header_texture.png?1410369441') repeat center;
   padding-top: 1.2rem;
 }
 
-/* line 94, sass/partials/_nav.scss */
+/* line 95, sass/partials/_nav.scss */
 .nav-end-block {
   position: absolute;
   top: 2.5rem;
@@ -719,19 +719,19 @@ input, input[type="password"], input[type="search"], isindex {
   transition-delay: 0;
 }
 
-/* line 106, sass/partials/_nav.scss */
+/* line 107, sass/partials/_nav.scss */
 .nav-end-block.end-block-right {
   left: auto;
   right: 2rem;
 }
 
-/* line 111, sass/partials/_nav.scss */
+/* line 112, sass/partials/_nav.scss */
 .nav-burger, .nav-account {
   display: none;
   cursor: pointer;
 }
 
-/* line 116, sass/partials/_nav.scss */
+/* line 117, sass/partials/_nav.scss */
 .account-menu {
   display: none;
 }
@@ -739,32 +739,32 @@ input, input[type="password"], input[type="search"], isindex {
 /********************/
 /* COMPRESSED VIEW  */
 /********************/
-/* line 123, sass/partials/_nav.scss */
+/* line 124, sass/partials/_nav.scss */
 .site-header.compress .logo {
   top: -16rem;
 }
 
-/* line 127, sass/partials/_nav.scss */
+/* line 128, sass/partials/_nav.scss */
 .site-header.compress .logo-ribbon {
   margin-top: 9.7rem;
 }
 
-/* line 131, sass/partials/_nav.scss */
+/* line 132, sass/partials/_nav.scss */
 .site-header.compress .left-side ul {
   margin-right: 10.8rem;
 }
 
-/* line 135, sass/partials/_nav.scss */
+/* line 136, sass/partials/_nav.scss */
 .site-header.compress .right-side ul {
   margin-left: 10.8rem;
 }
 
-/* line 139, sass/partials/_nav.scss */
+/* line 140, sass/partials/_nav.scss */
 .site-header.compress .menu li a {
   line-height: 6.6rem;
 }
 
-/* line 143, sass/partials/_nav.scss */
+/* line 144, sass/partials/_nav.scss */
 .site-header.compress .nav-end-block {
   top: 1.6rem;
 }
@@ -782,12 +782,12 @@ input, input[type="password"], input[type="search"], isindex {
  =============================================================================
  This file is responsible for establishing base styles for the Macmillan - Wonderland app.
  --------------------------------------------------------------------------------------------------------------------- */
-/* line 15, sass/partials/_base.scss */
+/* line 18, sass/partials/_base.scss */
 html {
   font-size: 62.5%;
 }
 
-/* line 19, sass/partials/_base.scss */
+/* line 22, sass/partials/_base.scss */
 body {
   color: #666;
   background: #fff;
@@ -799,7 +799,7 @@ body {
 /* =============================================================================
 Shadows
 ========================================================================== */
-/* line 43, sass/partials/_base.scss */
+/* line 46, sass/partials/_base.scss */
 .shadowed {
   -moz-box-shadow: 0 0 3rem rgba(102, 102, 102, 0.7);
   -webkit-box-shadow: 0 0 3rem rgba(102, 102, 102, 0.7);
@@ -809,7 +809,7 @@ Shadows
 /* =============================================================================
 images
 ========================================================================== */
-/* line 50, sass/partials/_base.scss */
+/* line 53, sass/partials/_base.scss */
 img, object, embed {
   max-width: 100%;
 }
@@ -817,10 +817,19 @@ img, object, embed {
 /* =============================================================================
 Base page structure
 ========================================================================== */
-/* line 57, sass/partials/_base.scss */
+/* line 60, sass/partials/_base.scss */
 .page-container {
   position: relative;
   width: 100%;
+  left: 0;
+  -moz-transition-property: left;
+  -o-transition-property: left;
+  -webkit-transition-property: left;
+  transition-property: left;
+  -moz-transition-duration: 0.2s;
+  -o-transition-duration: 0.2s;
+  -webkit-transition-duration: 0.2s;
+  transition-duration: 0.2s;
 }
 
 @media only screen and (max-width: 1049px) {
@@ -893,12 +902,12 @@ Base page structure
 }
 @media only screen and (max-width: 767px) {
   /* line 63, sass/partials/_media-queries.scss */
-  .page-container.showing-side-menu {
+  .page-container.showing-side-nav-menu {
     left: 25.6rem;
   }
 
   /* line 67, sass/partials/_media-queries.scss */
-  .page-container.showing-account-menu {
+  .page-container.showing-side-account-menu {
     left: -25.6rem;
   }
 
@@ -931,34 +940,35 @@ Base page structure
     position: absolute;
     left: -25.6rem;
     width: 25.6rem;
-    height: 30rem;
+    height: 300rem;
     background: #474740;
     display: block;
+    overflow: hidden;
   }
 
-  /* line 100, sass/partials/_media-queries.scss */
+  /* line 101, sass/partials/_media-queries.scss */
   .account-menu {
     left: auto;
     right: -25.6rem;
   }
 
-  /* line 105, sass/partials/_media-queries.scss */
+  /* line 106, sass/partials/_media-queries.scss */
   .menu {
     width: 100%;
   }
 
-  /* line 109, sass/partials/_media-queries.scss */
+  /* line 110, sass/partials/_media-queries.scss */
   .menu ul {
     float: none;
     margin: 0;
   }
 
-  /* line 114, sass/partials/_media-queries.scss */
+  /* line 115, sass/partials/_media-queries.scss */
   .menu li {
     display: block;
   }
 
-  /* line 118, sass/partials/_media-queries.scss */
+  /* line 119, sass/partials/_media-queries.scss */
   .menu li a {
     line-height: normal;
     color: #fff;
@@ -966,19 +976,19 @@ Base page structure
     font-weight: bold;
   }
 }
-/* line 41, sass/main.scss */
+/* line 40, sass/main.scss */
 main {
   padding-top: 3.5rem;
 }
 
-/* line 43, sass/main.scss */
+/* line 42, sass/main.scss */
 #homeBg {
   background: url('/img/wood_texture.jpg?1410369441') repeat top left;
   background-size: 100% 50%;
   margin-top: -1.2rem;
 }
 
-/* line 49, sass/main.scss */
+/* line 48, sass/main.scss */
 #heroGraphic {
   height: 35rem;
   background-image: url('/img/hero-ph.jpg?1410369441');
@@ -987,22 +997,22 @@ main {
   background-size: cover;
   margin: 0;
 }
-/* line 59, sass/main.scss */
+/* line 58, sass/main.scss */
 #heroGraphic .hero-title {
   padding: 10.5rem 0 0 0;
   margin: 0 auto;
 }
-/* line 64, sass/main.scss */
+/* line 63, sass/main.scss */
 #heroGraphic .actions {
   margin: 2rem -0.5rem;
 }
-/* line 69, sass/main.scss */
+/* line 68, sass/main.scss */
 #heroGraphic a.btn-primary, #heroGraphic a.btn-secondary {
   font-size: 1.8rem;
   padding: 0.9rem 1.9rem;
 }
 
-/* line 76, sass/main.scss */
+/* line 75, sass/main.scss */
 .banner {
   max-width: 100%;
   margin-left: auto;
@@ -1020,7 +1030,7 @@ main {
   display: block;
   clear: both;
 }
-/* line 86, sass/main.scss */
+/* line 85, sass/main.scss */
 .banner .banner-info {
   padding: 0.5rem 0.2rem;
   width: 65.51724%;
@@ -1028,13 +1038,13 @@ main {
   margin-right: 3.44828%;
   margin: 0;
 }
-/* line 93, sass/main.scss */
+/* line 92, sass/main.scss */
 .banner .money-raised-info {
   background: url('/img/amount-raised-ph.png?1410369441') no-repeat center right transparent;
   height: 14rem;
   width: 21rem;
 }
-/* line 100, sass/main.scss */
+/* line 99, sass/main.scss */
 .banner h1 {
   color: #007eac;
   font-weight: bold;
@@ -1044,113 +1054,113 @@ main {
   letter-spacing: 0.05rem;
   margin: 0;
 }
-/* line 110, sass/main.scss */
+/* line 109, sass/main.scss */
 .banner p {
   font-size: 1.13333rem;
   line-height: 1.79443;
   font-weight: bold;
   margin-top: -0.5rem;
 }
-/* line 116, sass/main.scss */
+/* line 115, sass/main.scss */
 .banner p.amount {
   color: white;
   font-size: 3rem;
   margin: 2.5rem;
 }
 
-/* line 125, sass/main.scss */
+/* line 124, sass/main.scss */
 .promo-tiles {
   padding-top: 15rem;
 }
 
-/* line 129, sass/main.scss */
+/* line 128, sass/main.scss */
 .frame {
   width: 30%;
   margin: 1rem;
   padding: 1rem;
 }
-/* line 134, sass/main.scss */
+/* line 133, sass/main.scss */
 .frame:first-child {
   margin-left: 0;
 }
-/* line 137, sass/main.scss */
+/* line 136, sass/main.scss */
 .frame:last-child {
   margin-right: 0;
 }
-/* line 140, sass/main.scss */
+/* line 139, sass/main.scss */
 .frame img {
   display: block;
 }
-/* line 142, sass/main.scss */
+/* line 141, sass/main.scss */
 .frame img:first-child {
   margin-left: 0;
   width: 100%;
 }
-/* line 146, sass/main.scss */
+/* line 145, sass/main.scss */
 .frame img:last-child {
   bottom: 0;
   left: 0;
   margin-right: 0;
   width: 60%;
 }
-/* line 156, sass/main.scss */
+/* line 155, sass/main.scss */
 .frame:nth-child(1) {
-  -moz-transform: rotate(-0.6deg);
-  -ms-transform: rotate(-0.6deg);
-  -webkit-transform: rotate(-0.6deg);
-  transform: rotate(-0.6deg);
+  -moz-transform: rotate(-0.7deg);
+  -ms-transform: rotate(-0.7deg);
+  -webkit-transform: rotate(-0.7deg);
+  transform: rotate(-0.7deg);
 }
-/* line 156, sass/main.scss */
+/* line 155, sass/main.scss */
 .frame:nth-child(2) {
-  -moz-transform: rotate(1.9deg);
-  -ms-transform: rotate(1.9deg);
-  -webkit-transform: rotate(1.9deg);
-  transform: rotate(1.9deg);
+  -moz-transform: rotate(0.6deg);
+  -ms-transform: rotate(0.6deg);
+  -webkit-transform: rotate(0.6deg);
+  transform: rotate(0.6deg);
 }
-/* line 156, sass/main.scss */
+/* line 155, sass/main.scss */
 .frame:nth-child(3) {
-  -moz-transform: rotate(-0.6deg);
-  -ms-transform: rotate(-0.6deg);
-  -webkit-transform: rotate(-0.6deg);
-  transform: rotate(-0.6deg);
+  -moz-transform: rotate(-1.4deg);
+  -ms-transform: rotate(-1.4deg);
+  -webkit-transform: rotate(-1.4deg);
+  transform: rotate(-1.4deg);
 }
-/* line 156, sass/main.scss */
+/* line 155, sass/main.scss */
 .frame:nth-child(4) {
-  -moz-transform: rotate(1.9deg);
-  -ms-transform: rotate(1.9deg);
-  -webkit-transform: rotate(1.9deg);
-  transform: rotate(1.9deg);
+  -moz-transform: rotate(1deg);
+  -ms-transform: rotate(1deg);
+  -webkit-transform: rotate(1deg);
+  transform: rotate(1deg);
 }
-/* line 156, sass/main.scss */
+/* line 155, sass/main.scss */
 .frame:nth-child(5) {
-  -moz-transform: rotate(-2.3deg);
-  -ms-transform: rotate(-2.3deg);
-  -webkit-transform: rotate(-2.3deg);
-  transform: rotate(-2.3deg);
+  -moz-transform: rotate(-0.2deg);
+  -ms-transform: rotate(-0.2deg);
+  -webkit-transform: rotate(-0.2deg);
+  transform: rotate(-0.2deg);
 }
-/* line 156, sass/main.scss */
+/* line 155, sass/main.scss */
 .frame:nth-child(6) {
-  -moz-transform: rotate(0.2deg);
-  -ms-transform: rotate(0.2deg);
-  -webkit-transform: rotate(0.2deg);
-  transform: rotate(0.2deg);
+  -moz-transform: rotate(1deg);
+  -ms-transform: rotate(1deg);
+  -webkit-transform: rotate(1deg);
+  transform: rotate(1deg);
 }
 
-/* line 169, sass/main.scss */
+/* line 168, sass/main.scss */
 #shareWonderland {
   background: url('/img/home-share-ph.png?1410369441') no-repeat;
   padding: 7rem 15.2rem;
   margin: 3.1rem 1.5rem;
 }
 
-/* line 177, sass/main.scss */
+/* line 176, sass/main.scss */
 #twitterFeed {
   background: url('/img/home-twitter-ph.png?1410369441') no-repeat;
   padding: 16rem 17.5rem 13rem;
   margin: 2.2rem 1.4rem 0 0;
 }
 
-/* line 184, sass/main.scss */
+/* line 183, sass/main.scss */
 .footer-snow-brush-overlay {
   background: url('/img/footer_texture.png?1410369441') repeat-x center;
   padding-top: 1.2rem;
@@ -1158,89 +1168,89 @@ main {
   margin-top: -5rem;
 }
 
-/* line 193, sass/main.scss */
+/* line 192, sass/main.scss */
 footer section {
   width: 100%;
 }
-/* line 197, sass/main.scss */
+/* line 196, sass/main.scss */
 footer section.footer-primary {
   margin: 0 auto;
 }
-/* line 199, sass/main.scss */
+/* line 198, sass/main.scss */
 footer section.footer-primary > nav {
   width: 23.72881%;
   float: left;
   margin-right: 1.69492%;
 }
-/* line 201, sass/main.scss */
+/* line 200, sass/main.scss */
 footer section.footer-primary > nav a {
   color: #007dab;
 }
-/* line 205, sass/main.scss */
+/* line 204, sass/main.scss */
 footer section.footer-primary > div {
   width: 32.20339%;
   float: left;
   margin-right: 1.69492%;
 }
-/* line 207, sass/main.scss */
+/* line 206, sass/main.scss */
 footer section.footer-primary > div.share-container {
   text-align: center;
 }
-/* line 209, sass/main.scss */
+/* line 208, sass/main.scss */
 footer section.footer-primary > div.share-container ul {
   margin: 0 3rem;
 }
-/* line 210, sass/main.scss */
+/* line 209, sass/main.scss */
 footer section.footer-primary > div.share-container li {
   float: left;
 }
-/* line 212, sass/main.scss */
+/* line 211, sass/main.scss */
 footer section.footer-primary > div.share-container li span {
   font-size: 3.5rem;
   padding: 0 0.6rem;
 }
-/* line 215, sass/main.scss */
+/* line 214, sass/main.scss */
 footer section.footer-primary > div.share-container li span.icon-facebook {
   color: #3b5798;
 }
-/* line 216, sass/main.scss */
+/* line 215, sass/main.scss */
 footer section.footer-primary > div.share-container li span.icon-twitter {
   color: #17aaed;
 }
-/* line 217, sass/main.scss */
+/* line 216, sass/main.scss */
 footer section.footer-primary > div.share-container li span.icon-google_plus {
   color: #ce3628;
 }
-/* line 220, sass/main.scss */
+/* line 219, sass/main.scss */
 footer section.footer-primary > div.share-container p {
   color: #17aaed;
   font-size: 1.7rem;
   margin-left: 5.5rem;
 }
-/* line 226, sass/main.scss */
+/* line 225, sass/main.scss */
 footer section.footer-primary > div:last-child {
   width: 32.20339%;
   float: right;
   margin-right: 0;
 }
-/* line 231, sass/main.scss */
+/* line 230, sass/main.scss */
 footer section.footer-primary .footer-logo img {
   width: 15.5rem;
 }
-/* line 235, sass/main.scss */
+/* line 234, sass/main.scss */
 footer section.footer-primary h2 {
   color: #007dab;
   font-size: 1.2rem;
   font-weight: bold;
   text-transform: uppercase;
 }
-/* line 244, sass/main.scss */
+/* line 243, sass/main.scss */
 footer section.footer-secondary nav {
   text-transform: uppercase;
   font-size: 0.8rem;
   margin-top: 1rem;
 }
-/* line 249, sass/main.scss */
+/* line 248, sass/main.scss */
 footer section.footer-secondary nav a {
   color: #007eac;
   padding: 0 0.1rem;

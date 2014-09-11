@@ -26,7 +26,7 @@
 </head>
 <body>
 
-    <div class="page-container">
+    <div class="page-container" ng-controller="PageCtrl" ng-class="{'showing-side-nav-menu': pageShowingSideNavMenu, 'showing-side-account-menu': pageShowingSideAccountMenu}">
         <!--[if lt IE 7]>
         <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
@@ -40,11 +40,17 @@
     </div>
 
     <!-- maybe use jquery... not sure yet -->
-  <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>-->
-  <!--<script>window.jQuery || document.write('<script src="scripts/vendor/jquery-1.10.2.min.js"><\/script>')</script>-->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script>window.jQuery || document.write('<script src="scripts/vendor/jquery-1.10.2.min.js"><\/script>')</script>
 
 
     <script src="scripts/bower_components/angular/angular.js"></script>
+
+    <script src="scripts/app/app.js"></script>
+    <script src="scripts/app/controllers/pageCtrl.js"></script>
+    <script src="scripts/app/services/debounce.js"></script>
+
+    <script>angular.bootstrap(document.getElementsByTagName("html")[0], ['wonderlandApp']);</script>
 
 
   <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
