@@ -378,7 +378,7 @@ Borders
 /* =============================================================================
 Media query variables
 ========================================================================== */
-/* line 107, sass/partials/_grids.scss */
+/* line 108, sass/partials/_grids.scss */
 .container {
   max-width: 100%;
   margin-left: auto;
@@ -682,7 +682,7 @@ input, input[type="password"], input[type="search"], isindex {
 /* line 14, sass/partials/_nav.scss */
 .logo {
   position: absolute;
-  background: url('/img/wonderland-crest.svg?1410369441') no-repeat;
+  background: url('/img/wonderland-crest.svg?1410449442') no-repeat;
   top: 1rem;
   left: 50%;
   padding: 7.65rem 5.45rem;
@@ -696,7 +696,7 @@ input, input[type="password"], input[type="search"], isindex {
 /* line 28, sass/partials/_nav.scss */
 .logo-ribbon {
   position: absolute;
-  background: url('/img/wonderland-logo.svg?1410369441') no-repeat center;
+  background: url('/img/wonderland-logo.svg?1410449442') no-repeat center;
   padding: 1.95rem 9.6rem;
   margin: 2rem -9.6rem;
   z-index: 1;
@@ -1284,45 +1284,45 @@ Media query variables
 }
 /* line 152, sass/main.scss */
 .frame:nth-child(1) {
-  -moz-transform: rotate(-0.8deg);
-  -ms-transform: rotate(-0.8deg);
-  -webkit-transform: rotate(-0.8deg);
-  transform: rotate(-0.8deg);
+  -moz-transform: rotate(-2.2deg);
+  -ms-transform: rotate(-2.2deg);
+  -webkit-transform: rotate(-2.2deg);
+  transform: rotate(-2.2deg);
 }
 /* line 152, sass/main.scss */
 .frame:nth-child(2) {
-  -moz-transform: rotate(0.3deg);
-  -ms-transform: rotate(0.3deg);
-  -webkit-transform: rotate(0.3deg);
-  transform: rotate(0.3deg);
+  -moz-transform: rotate(0.2deg);
+  -ms-transform: rotate(0.2deg);
+  -webkit-transform: rotate(0.2deg);
+  transform: rotate(0.2deg);
 }
 /* line 152, sass/main.scss */
 .frame:nth-child(3) {
-  -moz-transform: rotate(-0.6deg);
-  -ms-transform: rotate(-0.6deg);
-  -webkit-transform: rotate(-0.6deg);
-  transform: rotate(-0.6deg);
+  -moz-transform: rotate(-0.4deg);
+  -ms-transform: rotate(-0.4deg);
+  -webkit-transform: rotate(-0.4deg);
+  transform: rotate(-0.4deg);
 }
 /* line 152, sass/main.scss */
 .frame:nth-child(4) {
-  -moz-transform: rotate(0.1deg);
-  -ms-transform: rotate(0.1deg);
-  -webkit-transform: rotate(0.1deg);
-  transform: rotate(0.1deg);
+  -moz-transform: rotate(1deg);
+  -ms-transform: rotate(1deg);
+  -webkit-transform: rotate(1deg);
+  transform: rotate(1deg);
 }
 /* line 152, sass/main.scss */
 .frame:nth-child(5) {
-  -moz-transform: rotate(-1.1deg);
-  -ms-transform: rotate(-1.1deg);
-  -webkit-transform: rotate(-1.1deg);
-  transform: rotate(-1.1deg);
+  -moz-transform: rotate(-2.3deg);
+  -ms-transform: rotate(-2.3deg);
+  -webkit-transform: rotate(-2.3deg);
+  transform: rotate(-2.3deg);
 }
 /* line 152, sass/main.scss */
 .frame:nth-child(6) {
-  -moz-transform: rotate(0.6deg);
-  -ms-transform: rotate(0.6deg);
-  -webkit-transform: rotate(0.6deg);
-  transform: rotate(0.6deg);
+  -moz-transform: rotate(1.4deg);
+  -ms-transform: rotate(1.4deg);
+  -webkit-transform: rotate(1.4deg);
+  transform: rotate(1.4deg);
 }
 
 /* line 165, sass/main.scss */
