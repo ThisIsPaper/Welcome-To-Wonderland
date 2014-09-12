@@ -19,7 +19,7 @@ namespace Wonderland.Logic.Models.Members
         public const string PartyGuidAlias = "partyGuid";
         public const string FirstNameAlias = "firstName";
         public const string LastNameAlias = "lastName";
-        
+        public const string BillingAddressAlias = "billingAddress";
 
         public PartyGuest(IPublishedContent content)
             : base(content)
@@ -62,6 +62,18 @@ namespace Wonderland.Logic.Models.Members
             set
             {
                 this.SetPropertyValue(PartyHost.LastNameAlias, value);
+            }
+        }
+
+        public Address BillingAddress
+        {
+            get
+            {
+                return new Address(this.GetPropertyValue<string>(PartyGuest.BillingAddressAlias));
+            }
+            set
+            {
+                this.SetPropertyValue(PartyGuest.BillingAddressAlias, value.ToString());
             }
         }
 
