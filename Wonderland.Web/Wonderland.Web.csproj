@@ -243,13 +243,13 @@
     <Content Include="scripts\bower_components\html5shiv\dist\html5shiv.min.js" />
     <Content Include="scripts\bower_components\html5shiv\Gruntfile.js" />
     <Content Include="scripts\bower_components\susy\LICENSE.txt" />
-    <Content Include="scripts\dummy.txt" />
     <Content Include="scripts\main.js" />
     <Content Include="scripts\plugins.js" />
     <Content Include="scripts\slimmage.js" />
     <Content Include="scripts\slimmage.min.js" />
     <Content Include="scripts\slimmage.settings.js" />
     <Content Include="scripts\slimmage.settings.min.js" />
+    <Content Include="scripts\vendor\jquery-1.10.2.js" />
     <Content Include="scripts\vendor\jquery-1.10.2.min.js" />
     <Content Include="scripts\vendor\modernizr-2.6.2.min.js" />
     <Content Include="Views\RegisterHostPartyKitSurface\RegisterHostPartyKitFormPartial.cshtml" />
