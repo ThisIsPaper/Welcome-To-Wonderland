@@ -199,6 +199,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\Api\PartyApiController.cs" />
+    <Compile Include="Controllers\Api\SagePayApiController.cs" />
     <Compile Include="Controllers\Render\BaseRenderMvcController.cs" />
     <Compile Include="Controllers\Render\DecorationTileController.cs" />
     <Compile Include="Controllers\Render\FashionTileController.cs" />
