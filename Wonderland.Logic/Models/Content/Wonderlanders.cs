@@ -121,9 +121,11 @@ namespace Wonderland.Logic.Models.Content
         }
 
         public IEnumerable<PartyHost> RecentHosts
-        {  get
+        {
+            get
             {
-            return Enumerable.Empty<PartyHost>();
+                return Enumerable.Empty<PartyHost>();
+            }
         }
     }
 }
