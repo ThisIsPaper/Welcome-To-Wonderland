@@ -96,24 +96,34 @@ namespace Wonderland.Logic.Models.Content
             return this.Children<Leaderboard>().Single();
         }
 
-        //public IEnumerable<Partier> GetTopFundraiserPartiers()
-        //{
-        //    return Enumerable.Empty<Partier>();
-        //}
+        public IEnumerable<PartyHost> TopFundraisers
+        {
+            get
+            {
+                return Enumerable.Empty<PartyHost>();
+            }            
+        }
 
-        //public IEnumerable<Partier> GetMostGuestPartiers()
-        //{
-        //    return Enumerable.Empty<Partier>();
-        //}
+        public IEnumerable<PartyHost> MostGuests
+        {  
+            get
+            {
+                return Enumerable.Empty<PartyHost>();
+            }
+        }
 
-        //public IEnumerable<Partier> GetBadgesTodayPartiers()
-        //{
-        //    return Enumerable.Empty<Partier>();
-        //}
+        public IEnumerable<PartyHost> BadgesToday
+        {  
+            get
+            {
+                return Enumerable.Empty<PartyHost>();
+            }
+        }
 
-        //public IEnumerable<Partier> GetRecentHostPartiers()
-        //{
-        //    return Enumerable.Empty<Partier>();
-        //}
+        public IEnumerable<PartyHost> RecentHosts
+        {  get
+            {
+            return Enumerable.Empty<PartyHost>();
+        }
     }
 }

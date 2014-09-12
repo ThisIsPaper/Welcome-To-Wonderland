@@ -23,13 +23,13 @@
         </tr>
     </thead>
     <tbody>
-        @*@foreach (Partier partier in Model.GetPartiers())
+        @foreach (PartyHost partyHost in Model.Leaders)
         {
             <tr>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td>@partyHost.FirstName</td>
+                <td>@partyHost.LastName</td>
+                <td>@partyHost.Name</td>
             </tr>
-        }*@
+        }
     </tbody>
 </table>
