@@ -153,3 +153,47 @@
 .site-header.compress .nav-end-block {
     top: 1.6rem;
 }
+
+footer {
+    z-index: 998;
+    color: #666666;
+}
+
+footer [class*="grid-"] {
+  
+    margin-bottom: 2rem;
+
+    @include gridle_state(mobile) {
+
+        margin-bottom: 4rem;
+
+    }
+}
+
+.footer-menu ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-menu li a {
+    text-transform: uppercase;
+    font-size: $FontSizeSmall;
+    font-weight: bold;
+    color: #007eac;
+    cursor: pointer;
+}
+
+.footer-menu li a:hover {
+    color: #006593;
+    text-decoration: underline;
+}
+
+.footer-menu.single-line li {
+    float: left;
+    margin-right: 1rem;
+}
+.footer-menu.single-line li a {
+    font-size: $FontSizeMini;
+
+}

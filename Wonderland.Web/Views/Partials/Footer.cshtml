@@ -1,6 +1,7 @@
 ﻿@inherits UmbracoViewPage<SiteSettings>
-<div class="footer-snow-brush-overlay"></div>
-<footer class="container">
+
+
+@*<footer class="container">
     <section class="footer-primary">
         <nav>
             <h2>Pages</h2>
@@ -11,7 +12,7 @@
             }
             </ul>
         </nav>
-        <div class="share-container">
+        <div class="share-container menu">
             <h2>
                 Connect with us
             </h2>
@@ -41,4 +42,67 @@
             </ul>
         </nav>
     </section>
+</footer>*@
+
+
+
+
+<footer>
+    <div class="footer-snow-brush-overlay"></div>
+    <div class="container">
+
+        <div class="grid-4 grid-desktop-4 grid-mobile-12 footer-menu">
+            <h2>Pages</h2>
+            <ul>
+                @foreach (SitePage sitePage in Model.HeaderNavigationLeft)
+                {
+                    <li><a href="@sitePage.Url">@sitePage.Name</a></li>
+                }
+
+                @foreach (SitePage sitePage in Model.HeaderNavigationRight)
+                {
+                    <li><a href="@sitePage.Url">@sitePage.Name</a></li>
+                }
+            </ul>
+        </div>
+
+
+        <div class="grid-4 grid-desktop-4 grid-mobile-12">
+            <h2>
+                Connect with us
+            </h2>
+            @*<ul>
+                <li><a href="@Model.FacebookUrl"><span class="icon-facebook"> </span> </a></li>
+                <li><a href="@Model.TwitterUrl"><span class="icon-twitter"> </span> </a></li>
+                <li><a href="@Model.GooglePlusUrl"><span class="icon-google_plus"> </span> </a></li>
+            </ul>*@
+            <p>
+                @Model.CampaignHashtag
+            </p>
+        </div>
+
+
+        <div class="grid-4 grid-desktop-4 grid-mobile-12">
+            <img style="max-width: 25rem;" src="/img/macmillan-logo.svg" alt="Macmillan Cancer Support" />
+        </div>
+
+    </div>
+
+    <div class="container">
+
+        <div class="grid-7 grid-desktop-7 grid-mobile-12 body-mini">Macmillan Cancer Support, registered charity in England and Wales (261017) and the Isle of Man (604). A company limited by guarantee, registered in England and Wales company number 2400969. Isle of Man company number 4694F. Registered office: 89 Albert Embankment, London SE1 7UQ.</div>
+
+        <div class="grid-5 grid-desktop-5 grid-mobile-12 footer-menu single-line">
+
+            <ul>
+              @foreach (SitePage sitePage in Model.LegalNavigation)
+              {
+                <li><a href="@sitePage.Url">@sitePage.Name</a></li>
+              }
+            </ul>
+
+        </div>
+
+    </div>
+
 </footer>

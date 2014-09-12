@@ -125,3 +125,44 @@
 %last {
   margin-right: 0;
 }
+
+
+
+/*=============================================================================
+MAT GRID
+=============================================================================*/
+
+@import "../../scripts/bower_components/gridle/sass/gridle/gridle";
+
+$settings : (
+    context : 12,             // number of columns in your grid
+    gutter-width : 6rem,        // size of the gutters
+    direction : ltr,             // direction
+    name-multiplicator : 1     // to generate like grid-5, grid-10, etc...
+    // and more... (see in advanced settings section)
+);
+
+@include gridle_setup($settings);
+
+@include gridle_register_state( mobile , (
+    max-width : 40rem
+));
+
+@include gridle_register_state( tablet, (
+    min-width : 40.1rem,
+    max-width : 76.7rem,
+    gutter-width : 6rem
+));
+
+@include gridle_register_state( desktop, (
+    min-width : 76.8rem,
+    gutter-width : 6rem
+));
+
+
+@include gridle_generate_classes();
+
+.container {
+	max-width : 114rem;
+	margin : 0 auto;
+}
