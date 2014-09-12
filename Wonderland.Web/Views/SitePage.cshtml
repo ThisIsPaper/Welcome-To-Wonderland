@@ -16,16 +16,17 @@
 
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
         
+    @{ 
+        Html.RequiresCss("~/css/main.css"); 
+    } 
+    @Html.RenderCssHere()
+  
+    <script type="text/javascript">window.slimmage = { verbose: false };</script>
     @{
-        Html.RequiresCss("~/css/main.css");
+        Html.RequiresJs(new JavascriptFile("~/scripts/slimmage.js") { ForceProvider = "HeadRenderer" });
+        Html.RequiresJs(new JavascriptFile("~/scripts/vendor/modernizr-2.6.2.min.js") { ForceProvider = "HeadRenderer" });
     }
-    @Html.Raw(Html.RenderCssHere())
-
-    <script type="text/javascript">
-    window.slimmage = { verbose: false };
-    </script>
-    <script src="/scripts/slimmage.min.js"></script>
-    <script src="/scripts/vendor/modernizr-2.6.2.min.js"></script>
+    @Html.RenderJsHere("HeadRenderer")
 </head>
 <body>
 
