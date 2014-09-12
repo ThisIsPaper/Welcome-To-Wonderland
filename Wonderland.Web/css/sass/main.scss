@@ -40,6 +40,8 @@ Imports
   background: image-url('wood_texture.jpg') repeat top left;
   background-size: 100% 50%;
   margin-top: -1.2rem;
+  padding-bottom: 9rem;
+
 }
 
 #heroGraphic {
@@ -119,13 +121,14 @@ Imports
 }
 
 .promo-tiles {
-  padding-top: 15rem;
+  padding-top: 5rem;
+  list-style-type: none;
 }
 
 .frame {
   @extend %frame;
   width: 30%;
-  margin: 1rem;
+  margin: 2%;
   padding: 1rem;
   &:first-child {
     margin-left: 0;
@@ -134,7 +137,7 @@ Imports
     margin-right: 0;
   }
   img {
-    display: block;
+    //display: block;
     &:first-child {
       margin-left: 0;
       width: 100%;
