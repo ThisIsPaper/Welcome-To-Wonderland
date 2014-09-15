@@ -11,6 +11,7 @@ namespace Wonderland.Logic.Controllers.Surface
     using System.Drawing;
     using System.Drawing.Imaging;
     using Wonderland.Logic.Extensions;
+    using Wonderland.Logic.Models.Entities;
 
     public class PartySurfaceController : SurfaceController
     {
@@ -85,6 +86,61 @@ namespace Wonderland.Logic.Controllers.Surface
                     formResponse.Message = new PartyHost(this.Umbraco.TypedMember(partyHost.Id)).ProfileImageUrl;
                     formResponse.Success = true;
                 }
+            }
+
+            return Json(formResponse);
+        }
+
+        [ChildActionOnly]
+        [MemberAuthorize(AllowType = PartyHost.Alias)]
+        public ActionResult RenderPartyDetailsForm()
+        {
+            PartyDetailsForm partyDetailsForm = new PartyDetailsForm();
+
+            PartyHost partyHost = (PartyHost)this.Members.GetCurrentMember();
+
+            partyDetailsForm.PartyHeading = partyHost.PartyHeading;
+            partyDetailsForm.PartyDate = partyHost.PartyDateTime.Date.ToShortDateString();
+            partyDetailsForm.PartyTime = partyHost.PartyDateTime.TimeOfDay.ToString();
+
+            partyDetailsForm.Address1 = partyHost.PartyAddress.Address1;
+            partyDetailsForm.Address2 = partyHost.PartyAddress.Address2;
+            partyDetailsForm.TownCity = partyHost.PartyAddress.TownCity;
+            partyDetailsForm.Postcode = partyHost.PartyAddress.Postcode;
+            
+            return this.PartialView("PartyDetailsForm", partyDetailsForm);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [MemberAuthorize(AllowType = PartyHost.Alias)]
+        public JsonResult HandlePartyDetailsForm(PartyDetailsForm partyDetailsForm)
+        {
+            FormResponse formResponse = new FormResponse();
+
+            if (!this.ModelState.IsValid)
+            {
+                formResponse.Success = false;
+            }
+            else
+            {
+                PartyHost partyHost = (PartyHost)this.Members.GetCurrentMember();
+
+                partyHost.PartyHeading = partyDetailsForm.PartyHeading;
+
+                // TODO: convert party date and time into a DateTime
+
+                Address address = new Address()
+                {
+                    Address1 = partyDetailsForm.Address1.Replace(Environment.NewLine, string.Empty),
+                    Address2 = partyDetailsForm.Address2.Replace(Environment.NewLine, string.Empty),
+                    TownCity = partyDetailsForm.TownCity.Replace(Environment.NewLine, string.Empty),
+                    Postcode = partyDetailsForm.Postcode.Replace(Environment.NewLine, string.Empty)
+                };
+
+                partyHost.PartyAddress = address;
+
+                formResponse.Success = true;
             }
 
             return Json(formResponse);

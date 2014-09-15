@@ -1,6 +1,7 @@
 ﻿
 namespace Wonderland.Logic.Controllers.Surface
 {
+    using System;
     using System.Linq;
     using System.Web.Mvc;
     using Umbraco.Web.Mvc;
@@ -35,10 +36,10 @@ namespace Wonderland.Logic.Controllers.Surface
 
             Address address = new Address()
                                     {
-                                        Address1 = registerHostPartyKitForm.Address1,
-                                        Address2 = registerHostPartyKitForm.Address2,
-                                        TownCity = registerHostPartyKitForm.TownCity,
-                                        Postcode = registerHostPartyKitForm.PostCode
+                                        Address1 = registerHostPartyKitForm.Address1.Replace(Environment.NewLine, string.Empty),
+                                        Address2 = registerHostPartyKitForm.Address2.Replace(Environment.NewLine, string.Empty),
+                                        TownCity = registerHostPartyKitForm.TownCity.Replace(Environment.NewLine, string.Empty),
+                                        Postcode = registerHostPartyKitForm.PostCode.Replace(Environment.NewLine, string.Empty)
                                     };
 
             partyHost.PartyKitAddress = address;

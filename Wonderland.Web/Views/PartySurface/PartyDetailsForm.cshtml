@@ -1,0 +1,10 @@
+﻿@model PartyDetailsForm
+
+@using (Html.BeginUmbracoForm<PartySurfaceController>("HandlePartyDetailsForm"))
+{
+    @Html.AntiForgeryToken()
+
+    @Html.EditorForModel()
+
+    <button type="submit">Save Changes</button>
+}

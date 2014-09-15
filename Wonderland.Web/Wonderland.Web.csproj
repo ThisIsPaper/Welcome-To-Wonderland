@@ -336,6 +336,7 @@
     <Content Include="scripts\bower_components\susy\VERSION" />
     <Content Include="Views\PartySurface\PartyCopyForm.cshtml" />
     <Content Include="Views\PartySurface\ProfileImageForm.cshtml" />
+    <Content Include="Views\PartySurface\PartyDetailsForm.cshtml" />
     <None Include="Views\RegisterHostSurface\RegisterHostFormPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
