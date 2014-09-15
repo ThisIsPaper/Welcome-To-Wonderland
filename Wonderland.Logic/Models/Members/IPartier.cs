@@ -20,7 +20,7 @@ namespace Wonderland.Logic.Models.Members
         /// <summary>
         /// url to their profile image
         /// </summary>
-        string ProfileImageUrl { get; }
+        string GetProfileImageUrl();
 
         /// <summary>
         /// gets the custom url associated with the host or guest

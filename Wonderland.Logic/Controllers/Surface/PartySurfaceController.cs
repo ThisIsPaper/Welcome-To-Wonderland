@@ -83,7 +83,7 @@ namespace Wonderland.Logic.Controllers.Surface
                     partyHost.ProfileImage = fileName;
 
                     // re-inflate the current user model (to take into account newly set property)
-                    formResponse.Message = new PartyHost(this.Umbraco.TypedMember(partyHost.Id)).ProfileImageUrl;
+                    formResponse.Message = new PartyHost(this.Umbraco.TypedMember(partyHost.Id)).GetProfileImageUrl();
                     formResponse.Success = true;
                 }
             }
@@ -139,6 +139,40 @@ namespace Wonderland.Logic.Controllers.Surface
                 };
 
                 partyHost.PartyAddress = address;
+
+                formResponse.Success = true;
+            }
+
+            return Json(formResponse);
+        }
+
+        [ChildActionOnly]
+        [MemberAuthorize(AllowType = PartyHost.Alias)]
+        public ActionResult RenderSuggestedDonationForm()
+        {
+            SuggestedDonationForm suggestedDonationForm = new SuggestedDonationForm();
+
+            PartyHost partyHost = (PartyHost)this.Members.GetCurrentMember();
+
+            suggestedDonationForm.SuggestedDonation = partyHost.SuggestedDonation;
+
+            return this.PartialView("SuggestedDonationForm", suggestedDonationForm);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [MemberAuthorize(AllowType = PartyHost.Alias)]
+        public JsonResult HandleSuggestedDonationForm(SuggestedDonationForm suggestedDonationForm)
+        {
+            FormResponse formResponse = new FormResponse();
+
+            if (!this.ModelState.IsValid)
+            {
+                formResponse.Success = false;
+            }
+            else
+            {
+                ((PartyHost)this.Members.GetCurrentMember()).SuggestedDonation = suggestedDonationForm.SuggestedDonation;
 
                 formResponse.Success = true;
             }

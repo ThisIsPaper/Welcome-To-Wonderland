@@ -31,6 +31,7 @@ namespace Wonderland.Logic.Models.Members
         public const string PartyUrlIdentifierAlias = "partyUrlIdentifier";
         public const string PartyHeadingAlias = "partyHeading";
         public const string PartyCopyAlias = "partyCopy";
+        public const string SuggestedDonationAlias = "suggestedDonation";
 
         public PartyHost(IPublishedContent content)
             : base(content)
@@ -207,6 +208,18 @@ namespace Wonderland.Logic.Models.Members
             }
         }
 
+        public decimal SuggestedDonation
+        {
+            get
+            {
+                return this.GetPropertyValue<decimal>(PartyHost.SuggestedDonationAlias);
+            }
+            set
+            {
+                this.SetPropertyValue(PartyHost.SuggestedDonationAlias, value.ToString());
+            }
+        }
+
         public string PersonName
         {
             get
@@ -215,12 +228,9 @@ namespace Wonderland.Logic.Models.Members
             }
         }
 
-        public string ProfileImageUrl
+        public string GetProfileImageUrl()
         {
-            get
-            {
-                return "/Uploads/ProfileImages/" + this.ProfileImage;
-            }
+            return "/Uploads/ProfileImages/" + this.ProfileImage;
         }
 
         public string GetPartyUrl()

@@ -99,12 +99,9 @@ namespace Wonderland.Logic.Models.Members
             }
         }
 
-        public string ProfileImageUrl
+        public string GetProfileImageUrl()
         {
-            get
-            {
-                return "/Uploads/ProfileImages/" + this.ProfileImage;
-            }
+            return "/Uploads/ProfileImages/" + this.ProfileImage;
         }
 
         /// <summary>

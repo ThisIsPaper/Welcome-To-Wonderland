@@ -269,6 +269,7 @@
     <Compile Include="Models\Forms\RegisterGuestForm.cs" />
     <Compile Include="Models\Forms\RegisterHostForm.cs" />
     <Compile Include="Models\Forms\RegisterHostPartyKitForm.cs" />
+    <Compile Include="Models\Forms\SuggestedDonationForm.cs" />
     <Compile Include="Models\Media\Image.cs" />
     <Compile Include="Models\Members\BaseMemberType.cs" />
     <Compile Include="Models\Members\IPartier.cs" />
