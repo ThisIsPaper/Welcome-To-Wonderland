@@ -198,7 +198,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Controllers\Api\PartyApiController.cs" />
     <Compile Include="Controllers\Api\SagePayApiController.cs" />
     <Compile Include="Controllers\Render\BaseRenderMvcController.cs" />
     <Compile Include="Controllers\Render\DecorationTileController.cs" />
@@ -211,6 +210,7 @@
     <Compile Include="Controllers\Render\RegisterHostPartyKitController.cs" />
     <Compile Include="Controllers\Surface\LoginSurfaceController.cs" />
     <Compile Include="Controllers\Surface\LogoutSurfaceController.cs" />
+    <Compile Include="Controllers\Surface\PartySurfaceController.cs" />
     <Compile Include="Controllers\Surface\RegisterGuestSurfaceController.cs" />
     <Compile Include="Controllers\Surface\RegisterHostPartyKitSurfaceController.cs" />
     <Compile Include="Controllers\Surface\RegisterHostSurfaceController.cs" />
@@ -221,7 +221,6 @@
     <Compile Include="Events\SetPublishedContentModelFactory.cs" />
     <Compile Include="Extensions\HtmlHelperExtensions.cs" />
     <Compile Include="Extensions\MembershipHelperExtensions.cs" />
-    <Compile Include="Models\Api\ApiResponse.cs" />
     <Compile Include="Models\Content\DecorationCategory.cs" />
     <Compile Include="Models\Content\DecorationTile.cs" />
     <Compile Include="Models\Content\FAQs.cs" />
@@ -261,7 +260,9 @@
     <Compile Include="Models\Entities\QuestionAndAnswer.cs" />
     <Compile Include="Models\Entities\Reward.cs" />
     <Compile Include="Models\Entities\SiteSettings.cs" />
+    <Compile Include="Models\Forms\FormResponse.cs" />
     <Compile Include="Models\Forms\LoginForm.cs" />
+    <Compile Include="Models\Forms\PartyCopyForm.cs" />
     <Compile Include="Models\Forms\RegisterGuestForm.cs" />
     <Compile Include="Models\Forms\RegisterHostForm.cs" />
     <Compile Include="Models\Forms\RegisterHostPartyKitForm.cs" />

@@ -334,6 +334,7 @@
     <Content Include="scripts\bower_components\susy\templates\project\style.scss" />
     <Content Include="scripts\bower_components\susy\templates\project\_grids.scss" />
     <Content Include="scripts\bower_components\susy\VERSION" />
+    <Content Include="Views\PartySurface\PartyCopyForm.cshtml" />
     <None Include="Views\RegisterHostSurface\RegisterHostFormPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
