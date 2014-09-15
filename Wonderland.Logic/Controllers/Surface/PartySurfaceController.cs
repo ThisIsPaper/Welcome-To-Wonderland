@@ -13,7 +13,11 @@ namespace Wonderland.Logic.Controllers.Surface
         [MemberAuthorize(AllowType=PartyHost.Alias)]
         public ActionResult RenderPartyCopyForm()
         {
-            return this.PartialView("PartyCopyForm", new PartyCopyForm());
+            PartyCopyForm partyCopyForm = new PartyCopyForm();
+
+            partyCopyForm.Copy = ((PartyHost)this.Members.GetCurrentMember()).PartyCopy;
+
+            return this.PartialView("PartyCopyForm", partyCopyForm);
         }
 
         [HttpPost]
