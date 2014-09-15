@@ -21,6 +21,7 @@ namespace Wonderland.Logic.Models.Members
         public const string FirstNameAlias = "firstName";
         public const string LastNameAlias = "lastName";
         public const string BillingAddressAlias = "billingAddress";
+        public const string ProfileImageAlias = "profileImage";
         public const string BlockedAlias = "blocked";
         public const string MarketingSourceAlias = "marketingSource";
         public const string PartyKitAddressAlias = "partyKitAddress";
@@ -84,6 +85,18 @@ namespace Wonderland.Logic.Models.Members
             set
             {
                 this.SetPropertyValue(PartyHost.BillingAddressAlias, value.ToString());
+            }
+        }
+
+        public string ProfileImage
+        {
+            get
+            {
+                return this.GetPropertyValue<string>(PartyHost.ProfileImageAlias);
+            }
+            set
+            {
+                this.SetPropertyValue(PartyHost.ProfileImageAlias, value);
             }
         }
 
@@ -199,6 +212,14 @@ namespace Wonderland.Logic.Models.Members
             get
             {
                 return this.FirstName + " " + this.LastName;
+            }
+        }
+
+        public string ProfileImageUrl
+        {
+            get
+            {
+                return "/Uploads/ProfileImages/" + this.ProfileImage;
             }
         }
 

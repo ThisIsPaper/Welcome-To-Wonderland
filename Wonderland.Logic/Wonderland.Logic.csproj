@@ -221,6 +221,7 @@
     <Compile Include="Events\SetPublishedContentModelFactory.cs" />
     <Compile Include="Extensions\HtmlHelperExtensions.cs" />
     <Compile Include="Extensions\MembershipHelperExtensions.cs" />
+    <Compile Include="Extensions\StreamExtensions.cs" />
     <Compile Include="Models\Content\DecorationCategory.cs" />
     <Compile Include="Models\Content\DecorationTile.cs" />
     <Compile Include="Models\Content\FAQs.cs" />
@@ -263,6 +264,7 @@
     <Compile Include="Models\Forms\FormResponse.cs" />
     <Compile Include="Models\Forms\LoginForm.cs" />
     <Compile Include="Models\Forms\PartyCopyForm.cs" />
+    <Compile Include="Models\Forms\ProfileImageForm.cs" />
     <Compile Include="Models\Forms\RegisterGuestForm.cs" />
     <Compile Include="Models\Forms\RegisterHostForm.cs" />
     <Compile Include="Models\Forms\RegisterHostPartyKitForm.cs" />
