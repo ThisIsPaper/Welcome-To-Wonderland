@@ -25,7 +25,12 @@
 <h1 ng-bind="var1">@(this.Model.PartyHost.FirstName)'s Wonderland party</h1>
 
 @* time *@
-@* location *@
+<p>
+    @Model.PartyHost.PartyAddress.Address1, 
+    @Model.PartyHost.PartyAddress.Address2, 
+    @Model.PartyHost.PartyAddress.TownCity, 
+    @Model.PartyHost.PartyAddress.Postcode
+</p>
 
 <h2>@this.Model.Heading</h2>
 <p>@this.Model.Copy</p>
@@ -39,10 +44,7 @@
 
 @(Html.Action<PartySurfaceController>("RenderSuggestedDonationForm"))
 
-@*<form action="@(Url.GetUmbracoApiService<PartyApiController>("UpdatePartyCopy"))?partyGuid=@Model.PartyHost.PartyGuid" method="post">
-    <input type="text" name="partyCopy" />
-    <input type="submit" />
-</form>*@
+
 
 @* wall *@
 @* totaliser *@
