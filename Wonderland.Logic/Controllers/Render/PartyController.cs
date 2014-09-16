@@ -32,7 +32,7 @@ namespace Wonderland.Logic.Controllers.Render
             {
                 if (this.Members.IsLoggedIn())
                 {                    
-                    return this.Redirect(((IPartier)this.Members.GetCurrentMember()).GetPartyUrl());
+                    return this.Redirect(((IPartier)this.Members.GetCurrentMember()).PartyUrl);
                 }
 
                 // fallback

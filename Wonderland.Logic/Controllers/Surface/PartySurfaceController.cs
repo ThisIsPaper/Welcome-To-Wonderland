@@ -83,7 +83,7 @@ namespace Wonderland.Logic.Controllers.Surface
                     partyHost.ProfileImage = fileName;
 
                     // re-inflate the current user model (to take into account newly set property)
-                    formResponse.Message = new PartyHost(this.Umbraco.TypedMember(partyHost.Id)).GetProfileImageUrl();
+                    formResponse.Message = new PartyHost(this.Umbraco.TypedMember(partyHost.Id)).ProfileImageUrl;
                     formResponse.Success = true;
                 }
             }

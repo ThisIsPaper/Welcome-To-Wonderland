@@ -228,14 +228,20 @@ namespace Wonderland.Logic.Models.Members
             }
         }
 
-        public string GetProfileImageUrl()
+        public string ProfileImageUrl
         {
-            return "/Uploads/ProfileImages/" + this.ProfileImage;
+            get
+            {
+                return "/Uploads/ProfileImages/" + this.ProfileImage;
+            }          
         }
 
-        public string GetPartyUrl()
+        public string PartyUrl
         {
-            return UmbracoContext.Current.ContentCache.GetSingleByXPath("//" + Party.Alias).Url + this.PartyUrlIdentifier;
+            get
+            {
+                return UmbracoContext.Current.ContentCache.GetSingleByXPath("//" + Party.Alias).Url + this.PartyUrlIdentifier;
+            }
         }
 
         public static PartyHost GetByPartyGuid(Guid partyGuid)

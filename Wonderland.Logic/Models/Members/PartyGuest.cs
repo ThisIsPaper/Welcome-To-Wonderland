@@ -99,28 +99,34 @@ namespace Wonderland.Logic.Models.Members
             }
         }
 
-        public string GetProfileImageUrl()
+        public string ProfileImageUrl
         {
-            return "/Uploads/ProfileImages/" + this.ProfileImage;
+            get
+            {
+                return "/Uploads/ProfileImages/" + this.ProfileImage;
+            }
         }
 
         /// <summary>
         /// using the PartyGuid, finds the host to get the PartyUrlIdentification property
         /// </summary>
         /// <returns></returns>
-        public string GetPartyUrl()
+        public string PartyUrl
         {
-            //PartyHost partyhost = PartyHost.GetByPartyGuid(this.PartyGuid);
+            get
+            {
+                //PartyHost partyhost = PartyHost.GetByPartyGuid(this.PartyGuid);
 
-            // WARNING: Hits DB
-            IMember partyHost = this.MemberService
-                                    .GetMembersByMemberType(PartyHost.Alias)
-                                    .Single(x => x.GetValue<Guid>(PartyHost.PartyGuidAlias) == this.PartyGuid);
+                // WARNING: Hits DB
+                IMember partyHost = this.MemberService
+                                        .GetMembersByMemberType(PartyHost.Alias)
+                                        .Single(x => x.GetValue<Guid>(PartyHost.PartyGuidAlias) == this.PartyGuid);
 
-            // Jeavons suggestion to get published members:
-            // this.Members.GetCurrentMember().Parent.Children; (this is null)
+                // Jeavons suggestion to get published members:
+                // this.Members.GetCurrentMember().Parent.Children; (this is null)
             
-            return UmbracoContext.Current.ContentCache.GetSingleByXPath("//" + Party.Alias).Url + partyHost.GetValue<string>(PartyHost.PartyUrlIdentifierAlias);
+                return UmbracoContext.Current.ContentCache.GetSingleByXPath("//" + Party.Alias).Url + partyHost.GetValue<string>(PartyHost.PartyUrlIdentifierAlias);
+            }
         }
 
         public static explicit operator PartyGuest(MembershipUser membershipUser)
