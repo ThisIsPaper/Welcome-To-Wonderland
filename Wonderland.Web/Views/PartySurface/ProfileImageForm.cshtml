@@ -2,7 +2,7 @@
 
 @using (Html.BeginUmbracoForm<PartySurfaceController>("HandleProfileImageForm", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
-    @Html.AntiForgeryToken()
+    @*@Html.AntiForgeryToken()*@
 
     @*@Html.EditorForModel() // doesn't render upload field*@
     

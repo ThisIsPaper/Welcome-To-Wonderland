@@ -5,7 +5,7 @@
 <script type="text/ng-template" id="partials/partyCopyData.html">
     @using (Html.BeginUmbracoForm<PartySurfaceController>("HandlePartyCopyForm", FormMethod.Post, new { post_on_submit="partyCopyData" }))
     {
-        @Html.AntiForgeryToken()
+        @*@Html.AntiForgeryToken()*@
 
         @*@Html.EditorForModel()*@
 
