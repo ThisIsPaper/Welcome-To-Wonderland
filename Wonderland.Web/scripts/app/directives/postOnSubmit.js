@@ -14,8 +14,8 @@ wonderlandApp.directive('postOnSubmit', ['safeApply', '$http', '$parse', functio
                 onSuccessfulPost = attrs.mOnSuccessfulPost && $parse(attrs.mOnSuccessfulPost);
 
                 var hiddenFields = {
-                    'ufprt': element.find("[name='ufprt']")[0].value,
-                    '__RequestVerificationToken': element.find("[name='__RequestVerificationToken']")[0].value
+                    'ufprt': element.find("[name='ufprt']")[0].value
+//                    '__RequestVerificationToken': element.find("[name='__RequestVerificationToken']")[0].value
                 };
 
 
