@@ -45,7 +45,7 @@ namespace Wonderland.Logic.Controllers.Surface
             // add a dropdown to the viewbag
             this.ViewBag.MarketingSources = new SelectList(marketingSources);
 
-            return this.PartialView("RegisterHostFormPartial", new RegisterHostForm());
+            return this.PartialView("RegisterHostForm", new RegisterHostForm());
         }
 
         //// commented out until js client side validation wired-up

@@ -33,7 +33,7 @@ namespace Wonderland.Logic.Controllers.Surface
         public ActionResult RenderRegisterGuestForm()
         {
             // get party guid from the querystring
-            return this.PartialView("RegisterGuestFormPartial", new RegisterGuestForm(Guid.Parse(this.Request.QueryString["partyGuid"])));
+            return this.PartialView("RegisterGuestForm", new RegisterGuestForm(Guid.Parse(this.Request.QueryString["partyGuid"])));
         }
 
         //// commented out until js client side validation wired-up

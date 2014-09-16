@@ -16,7 +16,7 @@ namespace Wonderland.Logic.Controllers.Surface
         [MemberAuthorize(AllowType=PartyHost.Alias)]
         public ActionResult RenderRegisterHostPartyKitForm()
         {
-            return this.PartialView("RegisterHostPartyKitFormPartial", new RegisterHostPartyKitForm());
+            return this.PartialView("RegisterHostPartyKitForm", new RegisterHostPartyKitForm());
         }
 
         [HttpPost]
