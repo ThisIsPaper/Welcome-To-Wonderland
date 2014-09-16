@@ -35,32 +35,41 @@ namespace Wonderland.Logic.Controllers.Api
                             WHERE       MemberId IN (SELECT MemberId FROM wonderlandMemberParty WHERE PartyGuid = @0)
                             ORDER BY    [Timestamp] DESC
                         ";
-
+            
+            // get a collection of all raw data, for all wall items for a party - as sorted by sql
             foreach (Donation_Message donation_Message in this.DatabaseContext.Database.Fetch<Donation_Message>(sql, partyGuid))
             {
-                PartyWallItem partyWallItem = new PartyWallItem(donation_Message.PartyWallItemType)
-                                                {
-                                                    Timestamp = donation_Message.Timestamp
-                                                };
-
                 switch (donation_Message.PartyWallItemType)
                 {
                     case PartyWallItemType.Donation:
-                        partyWallItem.ThumbnailUrl = "";
-                        partyWallItem.Name = "";
-                        partyWallItem.Text = "";
-                        partyWallItem.ImageUrl = "";                        
+
+                        // create specific db model model from the combined donation_Message
+                        Donation donation = new Donation()
+                                                {
+                                                    MemberId = donation_Message.MemberId,
+                                                    Amount = donation_Message.Amount,
+                                                    Timestamp = donation_Message.Timestamp
+                                                };
+
+                        partyWallItems.Add(new PartyWallItem(donation));
+
                         break;
 
                     case PartyWallItemType.Message:
-                        partyWallItem.ThumbnailUrl = "";
-                        partyWallItem.Name = "";
-                        partyWallItem.Text = "";
-                        partyWallItem.ImageUrl = "";
+
+                        // create specific db model model from the combined donation_Message
+                        Message message = new Message()
+                                                {
+                                                    MemberId = donation_Message.MemberId,
+                                                    Text = donation_Message.Text,
+                                                    Image = donation_Message.Image,
+                                                    Timestamp = donation_Message.Timestamp
+                                                };
+
+                        partyWallItems.Add(new PartyWallItem(message));
+                        
                         break;
                 }
-
-                partyWallItems.Add(partyWallItem);
             }
 
             return partyWallItems;

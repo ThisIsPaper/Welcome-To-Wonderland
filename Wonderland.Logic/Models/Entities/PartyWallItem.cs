@@ -4,31 +4,60 @@ namespace Wonderland.Logic.Models.Entities
 {
     using System;
     using Wonderland.Logic.Enums;
+    using Wonderland.Logic.Models.Database;
     using Newtonsoft.Json;
 
-    /// <summary>
-    /// this class is serialized for the frontend rendering
-    /// </summary>
     public class PartyWallItem
     {
-        public PartyWallItem(PartyWallItemType partyWallItemType)
+        internal PartyWallItem(Donation donation)
         {
-            this.PartyWallItemType = partyWallItemType;
+            this.PartyWallItemType = PartyWallItemType.Donation;
+            this.Name = "donation debug";
+            this.Timestamp = donation.Timestamp;
         }
 
-        public PartyWallItemType PartyWallItemType { get; private set; }  // will determine how text is rendered (donation is bigger font)
+        internal PartyWallItem(Message message)
+        {
+            this.PartyWallItemType = PartyWallItemType.Message;
+            this.Name = "message debug";
+            this.Timestamp = message.Timestamp;
+        }
 
-        //public int Id { get; internal set; }
+        public PartyWallItemType PartyWallItemType
+        {
+            get;
+            private set;
+        }
 
-        public string ThumbnailUrl { get; internal set; } // usually a party guest or party host
+        public string ThumbnailUrl
+        {
+            get;
+            private set;
+        }
 
-        public string Name { get; internal set; }
+        public string Name
+        {
+            get;
+            private set;
+        }
 
-        public string Text { get; internal set; }
+        public string Text
+        {
+            get;
+            private set;
+        }
 
-        public string ImageUrl { get; internal set; }
+        public string ImageUrl
+        {
+            get;
+            private set;
+        }
 
         [JsonProperty("timestamp")]
-        public DateTime Timestamp { get; internal set; }
+        public DateTime Timestamp
+        {
+            get;
+            private set;
+        }
     }
 }

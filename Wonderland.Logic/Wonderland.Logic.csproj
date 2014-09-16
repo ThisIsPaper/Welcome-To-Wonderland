@@ -259,8 +259,10 @@
     <Compile Include="Models\Database\MemberParty.cs" />
     <Compile Include="Models\Database\Message.cs" />
     <Compile Include="Models\Entities\Address.cs" />
+    <Compile Include="Models\Entities\PartyWallItem.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Models\Entities\PartyKit.cs" />
-    <Compile Include="Models\Entities\PartyWallItem.cs" />
     <Compile Include="Models\Entities\PromotionTile.cs" />
     <Compile Include="Models\Entities\QuestionAndAnswer.cs" />
     <Compile Include="Models\Entities\Reward.cs" />
@@ -286,7 +288,9 @@
     <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Interfaces\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
