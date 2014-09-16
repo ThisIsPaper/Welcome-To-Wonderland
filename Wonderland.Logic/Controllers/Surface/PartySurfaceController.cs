@@ -28,7 +28,7 @@ namespace Wonderland.Logic.Controllers.Surface
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
+        //[ValidateAntiForgeryToken]
         [MemberAuthorize(AllowType=PartyHost.Alias)]
         public JsonResult HandlePartyCopyForm(PartyCopyForm partyCopyForm)
         {
@@ -60,7 +60,7 @@ namespace Wonderland.Logic.Controllers.Surface
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
+        //[ValidateAntiForgeryToken]
         [MemberAuthorize(AllowType = PartyHost.Alias)]
         public JsonResult HandleProfileImageForm(ProfileImageForm profileImageForm)
         {
@@ -113,7 +113,7 @@ namespace Wonderland.Logic.Controllers.Surface
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
+        //[ValidateAntiForgeryToken]
         [MemberAuthorize(AllowType = PartyHost.Alias)]
         public JsonResult HandlePartyDetailsForm(PartyDetailsForm partyDetailsForm)
         {
@@ -161,7 +161,7 @@ namespace Wonderland.Logic.Controllers.Surface
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
+        //[ValidateAntiForgeryToken]
         [MemberAuthorize(AllowType = PartyHost.Alias)]
         public JsonResult HandleSuggestedDonationForm(SuggestedDonationForm suggestedDonationForm)
         {
@@ -191,7 +191,7 @@ namespace Wonderland.Logic.Controllers.Surface
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
+        //[ValidateAntiForgeryToken]
         [MemberAuthorize]
         public JsonResult HandlePartyWallForm(PartyWallForm partyWallForm)
         {

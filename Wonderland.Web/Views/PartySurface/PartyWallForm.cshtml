@@ -4,7 +4,7 @@
 
 @using (Html.BeginUmbracoForm<PartySurfaceController>("HandlePartyWallForm"))
 {
-    @Html.AntiForgeryToken()
+    @*@Html.AntiForgeryToken()*@
 
     @Html.EditorForField(x => x.Message)
 
