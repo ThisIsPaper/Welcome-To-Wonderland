@@ -33,18 +33,19 @@ wonderlandApp.directive('postOnSubmit', ['safeApply', '$http', '$parse', functio
 //                    if (data.MAX_NUM_FORMS) {  // formset
 //                        data = formset.fromJsonForm(data);
 //                    }
-                    console.log('submit1', data);
 
-                    angular.extend(data, hiddenFields);
+                    var fd = FormData();
+                    angular.forEach(function (val, key) {
+                        fd.append(key, val);
+                    });
 
-                    console.log('submit2', data);
+                    fd.append('ufprt', element.find("[name='ufprt']")[0].value);
 
 //
 
                     formSubmitRequest = $http.post(attrs.action, {
-                        data: data,
-                        dataType: 'json',
-                        headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+                        data: fd,
+                        dataType: 'json'
                     });
 
                     formSubmitRequest.then(function (response) {
