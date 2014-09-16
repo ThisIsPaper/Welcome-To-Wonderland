@@ -4,6 +4,7 @@ namespace Wonderland.Logic.Controllers.Surface
     using System;
     using System.Web.Mvc;
     using Umbraco.Web.Mvc;
+    using Wonderland.Logic.Models.Database;
     using Wonderland.Logic.Models.Forms;
     using Wonderland.Logic.Models.Members;
     using Wonderland.Logic.Models.Content;
@@ -76,7 +77,7 @@ namespace Wonderland.Logic.Controllers.Surface
                     // WARNING: user may upload an image, but use an incorrect extension !
                     string fileName = Guid.NewGuid().ToString() + "." + profileImageForm.ProfileImage.ContentType.Split('/')[1];
 
-                    profileImageForm.ProfileImage.SaveAs(Server.MapPath("~/Uploads/ProfileImages/" + fileName));
+                    profileImageForm.ProfileImage.SaveAs(Server.MapPath("~/Uploads/Profile/" + fileName));
 
                     //update PartyHost property
                     PartyHost partyHost = (PartyHost)this.Members.GetCurrentMember();
@@ -173,6 +174,48 @@ namespace Wonderland.Logic.Controllers.Surface
             else
             {
                 ((PartyHost)this.Members.GetCurrentMember()).SuggestedDonation = suggestedDonationForm.SuggestedDonation;
+
+                formResponse.Success = true;
+            }
+
+            return Json(formResponse);
+        }
+
+        [ChildActionOnly]
+        [MemberAuthorize]
+        public ActionResult RenderPartyWallForm()
+        {
+            // TODO: safety check that current member is associated with this party ?
+
+            return this.PartialView("PartyWallForm", new PartyWallForm());
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [MemberAuthorize]
+        public JsonResult HandlePartyWallForm(PartyWallForm partyWallForm)
+        {
+            // TODO: safety check that current member is associated with this party
+
+            FormResponse formResponse = new FormResponse();
+
+            if (!this.ModelState.IsValid || (string.IsNullOrWhiteSpace(partyWallForm.Message) && partyWallForm.WallImage.ContentLength == 0))
+            {
+                formResponse.Success = false;
+            }
+            else
+            {
+                Guid partyGuid = ((Party)this.Umbraco.AssignedContentItem).PartyHost.PartyGuid;
+
+                // TODO: upload any image 
+                
+                // insert message into DB
+                //this.DatabaseContext.Database.Insert(new Wall() 
+                //                                            { 
+                //                                                MemberId = this.Members.GetCurrentMemberId(),
+                //                                                Message = partyWallForm.Message
+                //                                                // Image
+                //                                            });
 
                 formResponse.Success = true;
             }

@@ -232,7 +232,7 @@ namespace Wonderland.Logic.Models.Members
         {
             get
             {
-                return "/Uploads/ProfileImages/" + this.ProfileImage;
+                return "/Uploads/Profile/" + this.ProfileImage;
             }          
         }
 

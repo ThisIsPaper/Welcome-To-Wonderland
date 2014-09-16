@@ -1,0 +1,1 @@
+This file is only here so that the containing folder will be included GIT, it is safe to delete.
