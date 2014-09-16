@@ -6,7 +6,7 @@ namespace Wonderland.Logic.Models.Database
 
     [TableName("wonderlandDonation")]
     [ExplicitColumns]
-    internal class Donation
+    public class Donation
     {
         [Column("MemberId")]
         internal int MemberId { get; set; }

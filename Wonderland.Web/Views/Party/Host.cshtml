@@ -85,5 +85,10 @@
 
 
 @* wall *@
+@(Html.Action<PartySurfaceController>("RenderPartyWallForm"))
+
+@*call the following url to the json collection of party wall items*@
+@(Url.GetUmbracoApiService<PartyApiController>("GetPartyWallItems"))?PartyGuid=@Model.PartyHost.PartyGuid.ToString()&skip=0&take=10
+
 @* totaliser *@
 @* badges *@

@@ -4,15 +4,15 @@ namespace Wonderland.Logic.Models.Database
     using System;
     using Umbraco.Core.Persistence;
 
-    [TableName("wonderlandWall")]
+    [TableName("wonderlandMessage")]
     [ExplicitColumns]
-    internal class Wall
+    public class Message
     {
         [Column("MemberId")]
         internal int MemberId { get; set; }
 
-        [Column("Message")]
-        internal string Message { get; set; }
+        [Column("Text")]
+        internal string Text { get; set; }
 
         [Column("Image")]
         internal Guid Image { get; set; }

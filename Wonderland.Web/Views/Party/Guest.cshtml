@@ -26,6 +26,8 @@
 <p>@this.Model.Copy</p>
 
 @* wall *@
+@(Html.Action<PartySurfaceController>("RenderPartyWallForm"))
+
 @* totaliser *@
 
 <h2>Who's Coming (@this.Model.Partiers.Count())</h2>

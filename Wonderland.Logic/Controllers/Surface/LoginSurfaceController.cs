@@ -26,7 +26,7 @@ namespace Wonderland.Logic.Controllers.Surface
         [ChildActionOnly]
         public ActionResult RenderLoginForm()
         {
-            return this.PartialView("LoginFormPartial", new LoginForm());
+            return this.PartialView("LoginForm", new LoginForm());
         }
 
         [HttpPost]
@@ -41,7 +41,7 @@ namespace Wonderland.Logic.Controllers.Surface
             // this .Login check sets the forms authentication cookie if successful
             if (this.Members.Login(loginForm.EmailAddress, loginForm.Password))            
             {
-                return this.Redirect(((IPartier)this.Members.GetByUsername(loginForm.EmailAddress)).GetPartyUrl());
+                return this.Redirect(((IPartier)this.Members.GetByUsername(loginForm.EmailAddress)).PartyUrl);
             }
             else
             {

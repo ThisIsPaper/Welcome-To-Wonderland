@@ -198,6 +198,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\Api\PartyApiController.cs" />
     <Compile Include="Controllers\Api\SagePayApiController.cs" />
     <Compile Include="Controllers\Render\BaseRenderMvcController.cs" />
     <Compile Include="Controllers\Render\DecorationTileController.cs" />
@@ -216,6 +217,7 @@
     <Compile Include="Controllers\Surface\RegisterHostSurfaceController.cs" />
     <Compile Include="Enums\LeaderboardType.cs" />
     <Compile Include="Enums\PartyIdeaTileSize.cs" />
+    <Compile Include="Enums\PartyWallItemType.cs" />
     <Compile Include="Events\SetPageNotFoundContentFinder.cs" />
     <Compile Include="Events\SetPartyContentFinder.cs" />
     <Compile Include="Events\SetPublishedContentModelFactory.cs" />
@@ -253,10 +255,12 @@
     <Compile Include="Models\Content\PlaylistTile.cs" />
     <Compile Include="Models\Content\Wonderlanders.cs" />
     <Compile Include="Models\Database\Donation.cs" />
+    <Compile Include="Models\Database\Donation_Message.cs" />
     <Compile Include="Models\Database\MemberParty.cs" />
-    <Compile Include="Models\Database\Wall.cs" />
+    <Compile Include="Models\Database\Message.cs" />
     <Compile Include="Models\Entities\Address.cs" />
     <Compile Include="Models\Entities\PartyKit.cs" />
+    <Compile Include="Models\Entities\PartyWallItem.cs" />
     <Compile Include="Models\Entities\PromotionTile.cs" />
     <Compile Include="Models\Entities\QuestionAndAnswer.cs" />
     <Compile Include="Models\Entities\Reward.cs" />
@@ -265,6 +269,7 @@
     <Compile Include="Models\Forms\LoginForm.cs" />
     <Compile Include="Models\Forms\PartyCopyForm.cs" />
     <Compile Include="Models\Forms\PartyDetailsForm.cs" />
+    <Compile Include="Models\Forms\PartyWallForm.cs" />
     <Compile Include="Models\Forms\ProfileImageForm.cs" />
     <Compile Include="Models\Forms\RegisterGuestForm.cs" />
     <Compile Include="Models\Forms\RegisterHostForm.cs" />
