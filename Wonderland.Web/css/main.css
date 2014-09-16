@@ -165,7 +165,7 @@ input[type="search"], input[type="password"][type="search"], isindex[type="searc
 /* No rounded radii (useful for overriding other elements with radii) */
 /* Uneven border radii */
 /* line 425, sass/partials/_helpers.scss */
-.btn-primary, .btn-secondary {
+.boxx, .btn-primary, .btn-secondary {
   -moz-border-radius-topleft: 0.5rem 1.1rem;
   -webkit-border-top-left-radius: 0.5rem 1.1rem;
   border-top-left-radius: 0.5rem 1.1rem;
@@ -195,7 +195,7 @@ input[type="search"], input[type="password"][type="search"], isindex[type="searc
 }
 
 /* line 445, sass/partials/_helpers.scss */
-.btn-primary, .btn-secondary {
+.boxx, .btn-primary, .btn-secondary {
   -moz-border-radius-topright: 0.9rem 0.8rem;
   -webkit-border-top-right-radius: 0.9rem 0.8rem;
   border-top-right-radius: 0.9rem 0.8rem;
@@ -2620,10 +2620,16 @@ MAT GRID
    * Clear each class :
    */
 }
-/* line 165, sass/partials/_grids.scss */
+/* line 166, sass/partials/_grids.scss */
 .container {
   max-width: 114rem;
   margin: 0 auto;
+}
+
+/* line 171, sass/partials/_grids.scss */
+.boxx {
+  padding: 1.8rem;
+  background: #ffffff;
 }
 
 @font-face {
@@ -3114,8 +3120,12 @@ footer [class*="grid-"] {
   padding: 0;
   margin: 0;
 }
+/* line 178, sass/partials/_nav.scss */
+.footer-menu ul:after {
+  clear: both;
+}
 
-/* line 179, sass/partials/_nav.scss */
+/* line 183, sass/partials/_nav.scss */
 .footer-menu li a {
   text-transform: uppercase;
   font-size: 1.4rem;
@@ -3124,21 +3134,32 @@ footer [class*="grid-"] {
   cursor: pointer;
 }
 
-/* line 187, sass/partials/_nav.scss */
+/* line 191, sass/partials/_nav.scss */
 .footer-menu li a:hover {
   color: #006593;
   text-decoration: underline;
 }
 
-/* line 192, sass/partials/_nav.scss */
+/* line 196, sass/partials/_nav.scss */
 .footer-menu.single-line li {
   float: left;
   margin-right: 1rem;
 }
 
-/* line 196, sass/partials/_nav.scss */
+/* line 201, sass/partials/_nav.scss */
 .footer-menu.single-line li a {
   font-size: 1.1rem;
+}
+
+/* line 205, sass/partials/_nav.scss */
+.footer-menu.single-line.icon-list li a {
+  font-size: 4.7rem;
+  text-decoration: none;
+}
+
+/* line 210, sass/partials/_nav.scss */
+.footer-menu.single-line.icon-list li a span {
+  display: none;
 }
 
 /*------------------------------------------------------------------------------------------------------------------------
@@ -3211,6 +3232,19 @@ Base page structure
 /* line 71, sass/partials/_base.scss */
 main {
   padding-top: 8.4rem;
+}
+
+/* =============================================================================
+One-off uses
+========================================================================== */
+/* line 79, sass/partials/_base.scss */
+#twitter-widget-0 {
+  width: 100% !important;
+}
+
+/* line 83, sass/partials/_base.scss */
+.home-twitter-boxx {
+  height: 35.6rem;
 }
 
 /*------------------------------------------------------------------------------------------------------------------------
@@ -3463,7 +3497,7 @@ Media query variables
 /* line 39, sass/main.scss */
 #homeBg {
   background: url('/img/wood_texture.jpg?1410369441') repeat top left;
-  background-size: 100% 50%;
+  background-size: 100% 150%;
   margin-top: -1.2rem;
   padding-bottom: 9rem;
 }
@@ -3558,7 +3592,7 @@ Media query variables
 .frame {
   width: 30%;
   margin: 2%;
-  padding: 1rem;
+  padding: 1.5rem;
 }
 /* line 135, sass/main.scss */
 .frame:first-child {
@@ -3586,45 +3620,45 @@ Media query variables
 }
 /* line 160, sass/main.scss */
 .frame:nth-child(1) {
-  -moz-transform: rotate(-0.9deg);
-  -ms-transform: rotate(-0.9deg);
-  -webkit-transform: rotate(-0.9deg);
-  transform: rotate(-0.9deg);
+  -moz-transform: rotate(-0.4deg);
+  -ms-transform: rotate(-0.4deg);
+  -webkit-transform: rotate(-0.4deg);
+  transform: rotate(-0.4deg);
 }
 /* line 160, sass/main.scss */
 .frame:nth-child(2) {
-  -moz-transform: rotate(1.4deg);
-  -ms-transform: rotate(1.4deg);
-  -webkit-transform: rotate(1.4deg);
-  transform: rotate(1.4deg);
+  -moz-transform: rotate(1.7deg);
+  -ms-transform: rotate(1.7deg);
+  -webkit-transform: rotate(1.7deg);
+  transform: rotate(1.7deg);
 }
 /* line 160, sass/main.scss */
 .frame:nth-child(3) {
-  -moz-transform: rotate(-0.8deg);
-  -ms-transform: rotate(-0.8deg);
-  -webkit-transform: rotate(-0.8deg);
-  transform: rotate(-0.8deg);
+  -moz-transform: rotate(-2.2deg);
+  -ms-transform: rotate(-2.2deg);
+  -webkit-transform: rotate(-2.2deg);
+  transform: rotate(-2.2deg);
 }
 /* line 160, sass/main.scss */
 .frame:nth-child(4) {
-  -moz-transform: rotate(0.2deg);
-  -ms-transform: rotate(0.2deg);
-  -webkit-transform: rotate(0.2deg);
-  transform: rotate(0.2deg);
+  -moz-transform: rotate(2.3deg);
+  -ms-transform: rotate(2.3deg);
+  -webkit-transform: rotate(2.3deg);
+  transform: rotate(2.3deg);
 }
 /* line 160, sass/main.scss */
 .frame:nth-child(5) {
-  -moz-transform: rotate(-1deg);
-  -ms-transform: rotate(-1deg);
-  -webkit-transform: rotate(-1deg);
-  transform: rotate(-1deg);
+  -moz-transform: rotate(-0.7deg);
+  -ms-transform: rotate(-0.7deg);
+  -webkit-transform: rotate(-0.7deg);
+  transform: rotate(-0.7deg);
 }
 /* line 160, sass/main.scss */
 .frame:nth-child(6) {
-  -moz-transform: rotate(0.8deg);
-  -ms-transform: rotate(0.8deg);
-  -webkit-transform: rotate(0.8deg);
-  transform: rotate(0.8deg);
+  -moz-transform: rotate(1.1deg);
+  -ms-transform: rotate(1.1deg);
+  -webkit-transform: rotate(1.1deg);
+  transform: rotate(1.1deg);
 }
 
 /* line 173, sass/main.scss */
