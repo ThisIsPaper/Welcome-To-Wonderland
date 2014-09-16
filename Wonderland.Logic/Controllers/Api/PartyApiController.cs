@@ -43,31 +43,12 @@ namespace Wonderland.Logic.Controllers.Api
                 {
                     case PartyWallItemType.Donation:
 
-                        // create specific db model model from the combined donation_Message
-                        Donation donation = new Donation()
-                                                {
-                                                    MemberId = donation_Message.MemberId,
-                                                    Amount = donation_Message.Amount,
-                                                    Timestamp = donation_Message.Timestamp
-                                                };
-
-                        partyWallItems.Add(new PartyWallItem(donation));
-
+                        partyWallItems.Add(new PartyWallItem((Donation)donation_Message));
                         break;
 
                     case PartyWallItemType.Message:
 
-                        // create specific db model model from the combined donation_Message
-                        Message message = new Message()
-                                                {
-                                                    MemberId = donation_Message.MemberId,
-                                                    Text = donation_Message.Text,
-                                                    Image = donation_Message.Image,
-                                                    Timestamp = donation_Message.Timestamp
-                                                };
-
-                        partyWallItems.Add(new PartyWallItem(message));
-                        
+                        partyWallItems.Add(new PartyWallItem((Message)donation_Message));                        
                         break;
                 }
             }

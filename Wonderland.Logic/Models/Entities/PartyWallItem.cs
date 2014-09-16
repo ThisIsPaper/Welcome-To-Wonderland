@@ -13,6 +13,7 @@ namespace Wonderland.Logic.Models.Entities
         {
             this.PartyWallItemType = PartyWallItemType.Donation;
             this.Name = "donation debug";
+            this.ImageUrl = null;
             this.Timestamp = donation.Timestamp;
         }
 
@@ -20,6 +21,7 @@ namespace Wonderland.Logic.Models.Entities
         {
             this.PartyWallItemType = PartyWallItemType.Message;
             this.Name = "message debug";
+            this.ImageUrl = "/Uploads/Wall/";
             this.Timestamp = message.Timestamp;
         }
 
