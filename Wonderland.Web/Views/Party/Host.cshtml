@@ -46,6 +46,9 @@
 @* wall *@
 @(Html.Action<PartySurfaceController>("RenderPartyWallForm"))
 
+@*call the following url to the json collection of party wall items*@
+@(Url.GetUmbracoApiService<PartyApiController>("GetPartyWallItems"))?PartyGuid=@Model.PartyHost.PartyGuid.ToString()&skip=0&take=10
+
 @* totaliser *@
 
 <h2>Who's Coming (@this.Model.Partiers.Count())</h2>

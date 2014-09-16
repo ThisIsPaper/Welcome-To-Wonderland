@@ -6,7 +6,7 @@ namespace Wonderland.Logic.Models.Database
 
     [TableName("wonderlandMessage")]
     [ExplicitColumns]
-    internal class Message
+    public class Message
     {
         [Column("MemberId")]
         internal int MemberId { get; set; }
