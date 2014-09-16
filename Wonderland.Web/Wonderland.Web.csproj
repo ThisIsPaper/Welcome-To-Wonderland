@@ -232,8 +232,13 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Content Include="scripts\app\app.js" />
+    <Content Include="scripts\app\controllers\modelPartyCopyCtrl.js" />
     <Content Include="scripts\app\controllers\pageCtrl.js" />
+    <Content Include="scripts\app\controllers\partyCtrl.js" />
+    <Content Include="scripts\app\directives\postOnSubmit.js" />
     <Content Include="scripts\app\services\debounce.js" />
+    <Content Include="scripts\app\services\formset.js" />
+    <Content Include="scripts\app\services\safeApply.js" />
     <Content Include="scripts\bower_components\angular\angular-csp.css" />
     <Content Include="scripts\bower_components\angular\angular.js" />
     <Content Include="scripts\bower_components\angular\angular.min.js" />
