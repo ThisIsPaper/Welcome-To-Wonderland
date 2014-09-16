@@ -1,0 +1,12 @@
+﻿@model SuggestedDonationForm
+
+@using (Html.BeginUmbracoForm<PartySurfaceController>("HandleSuggestedDonationForm"))
+{
+    @Html.AntiForgeryToken()
+
+    // TODO: UI for 10 / 15/ 20 / 25 selection
+    
+    @Html.EditorForModel()
+
+    <button type="submit">Save Changes (suggested donation)</button>
+}

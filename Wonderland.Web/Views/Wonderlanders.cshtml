@@ -4,29 +4,29 @@
 }
 <h1>@Model.PageHeading</h1>
 
-@*<h2>@Model.TopFundraisersHeading</h2>
-@foreach (Partier partier in Model.GetTopFundraiserPartiers())
+<h2>@Model.TopFundraisersHeading</h2>
+@foreach (PartyHost partyHost in Model.TopFundraisers)
 {
-    
+    @partyHost.Name
 }
 <a href="@Model.GetLeaderboard().TopFundraisersLink">view all &gt;</a>
 
 
 <h2>@Model.MostGuestsHeading</h2>
-@foreach (Partier partier in Model.GetMostGuestPartiers())
+@foreach (PartyHost partyHost in Model.MostGuests)
 {
-    
+    @partyHost.Name
 }
 <a href="@Model.GetLeaderboard().MostGuestsLink">view all &gt;</a>
 
 <h2>@Model.BadgesTodayHeading</h2>
-@foreach (Partier partier in Model.GetBadgesTodayPartiers())
+@foreach (PartyHost partyHost in Model.BadgesToday)
 {
-    
+    @partyHost.Name
 }
 
 <h2>@Model.RecentHostsHeading</h2>
-@foreach (Partier partier in Model.GetRecentHostPartiers())
+@foreach (PartyHost partyHost in Model.RecentHosts)
 {
-    
-}*@
+    @partyHost.Name
+}

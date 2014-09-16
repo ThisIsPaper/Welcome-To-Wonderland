@@ -38,8 +38,10 @@ Imports
 
 #homeBg {
   background: image-url('wood_texture.jpg') repeat top left;
-  background-size: 100% 50%;
+  background-size: 100% 150%;
   margin-top: -1.2rem;
+  padding-bottom: 9rem;
+
 }
 
 #heroGraphic {
@@ -118,21 +120,26 @@ Imports
 
 }
 
+
 .promo-tiles {
-  padding-top: 15rem;
+  padding-top: 4rem;
+  list-style-type: none;
 }
 
 .frame {
+
   @extend %frame;
   width: 30%;
-  margin: 1rem;
-  padding: 1rem;
+  margin: 2%;
+  padding: 1.5rem;
   &:first-child {
     margin-left: 0;
   }
   &:last-child {
     margin-right: 0;
   }
+
+
   img {
     display: block;
     &:first-child {
@@ -146,14 +153,15 @@ Imports
       margin-right: 0;
       width: 60%
     }
-  } 
+  }
+
   // Calc a random rotate degree value for each frame tile
   @for $i from 1 through 6 {
     &:nth-child( #{ $i } ) {
       @if $i % 2 == 0 {
         $rand: (random( 23 ) * 0.1) + deg; // generate positive random number (converted to float)
         @include transform( rotate( $rand ) );
-      } 
+      }
       @else {
         $rand: ( (random( 23 ) * 0.1 ) * - 1 )  + deg;  // generate negative random number
         @include transform( rotate( $rand ) );
@@ -175,6 +183,7 @@ Imports
   background: image-url('home-twitter-ph.png') no-repeat;
   padding: 16rem 17.5rem 13rem;
   margin: 2.2rem 1.4rem 0 0;
+
 }
 
 .footer-snow-brush-overlay {
@@ -185,69 +194,69 @@ Imports
   margin-top: -5rem;
 }
 
-footer {
-  section {
-    @extend %pull-left;
-    width: $RowWidth;
-    
-    &.footer-primary {
-      margin: 0 auto;
-      > nav {
-        @include span(3 of 12);
-        a {
-          color: #007dab;
-        }
-      }
-      > div { 
-        @include span(4 of 12);
-        &.share-container { 
-          text-align: center; 
-          ul { margin: 0 3rem; }
-          li {
-            float: left;
-            span {
-              font-size: 3.5rem;
-              padding: 0 0.6rem;
-              &.icon-facebook { color: #3b5798 }
-              &.icon-twitter { color: #17aaed }
-              &.icon-google_plus { color: #ce3628 }
-            }
-          }
-          p {
-            color: #17aaed;
-            font-size: 1.7rem;
-            margin-left: 5.5rem;
-          }
-        }  
-        &:last-child { 
-          @include span(4 of 12 omega); 
-        }
-      }
-      .footer-logo { 
-        img {
-          width: 15.5rem;
-        }  
-      }  
-      h2 {
-        color: #007dab;
-        font-size: 1.2rem;
-        font-weight: bold;
-        text-transform: uppercase;
-      }
-    }
-    
-    &.footer-secondary {
-      nav {
-        @extend %pull-right;
-        text-transform: uppercase;
-        font-size: 0.8rem;
-        margin-top: 1rem;
-        a {
-          color: $PrimaryColour;
-          padding: 0 0.1rem;
-          font-weight: bold;
-        }
-      }
-    }
-  }
-}
+//footer {
+//  section {
+//    @extend %pull-left;
+//    width: $RowWidth;
+//
+//    &.footer-primary {
+//      margin: 0 auto;
+//      > nav {
+//        @include span(3 of 12);
+//        a {
+//          color: #007dab;
+//        }
+//      }
+//      > div {
+//        @include span(4 of 12);
+//        &.share-container {
+//          text-align: center;
+//          ul { margin: 0 3rem; }
+//          li {
+//            float: left;
+//            span {
+//              font-size: 3.5rem;
+//              padding: 0 0.6rem;
+//              &.icon-facebook { color: #3b5798 }
+//              &.icon-twitter { color: #17aaed }
+//              &.icon-google_plus { color: #ce3628 }
+//            }
+//          }
+//          p {
+//            color: #17aaed;
+//            font-size: 1.7rem;
+//            margin-left: 5.5rem;
+//          }
+//        }
+//        &:last-child {
+//          @include span(4 of 12 omega);
+//        }
+//      }
+//      .footer-logo {
+//        img {
+//          width: 15.5rem;
+//        }
+//      }
+//      h2 {
+//        color: #007dab;
+//        font-size: 1.2rem;
+//        font-weight: bold;
+//        text-transform: uppercase;
+//      }
+//    }
+//
+//    &.footer-secondary {
+//      nav {
+//        @extend %pull-right;
+//        text-transform: uppercase;
+//        font-size: 0.8rem;
+//        margin-top: 1rem;
+//        a {
+//          color: $PrimaryColour;
+//          padding: 0 0.1rem;
+//          font-weight: bold;
+//        }
+//      }
+//    }
+//  }
+//}

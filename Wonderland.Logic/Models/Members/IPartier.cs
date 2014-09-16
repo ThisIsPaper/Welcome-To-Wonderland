@@ -18,6 +18,11 @@ namespace Wonderland.Logic.Models.Members
         string PersonName { get; }
 
         /// <summary>
+        /// url to their profile image
+        /// </summary>
+        string GetProfileImageUrl();
+
+        /// <summary>
         /// gets the custom url associated with the host or guest
         /// </summary>
         /// <returns></returns>

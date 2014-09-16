@@ -19,7 +19,8 @@ namespace Wonderland.Logic.Models.Members
         public const string PartyGuidAlias = "partyGuid";
         public const string FirstNameAlias = "firstName";
         public const string LastNameAlias = "lastName";
-        
+        public const string BillingAddressAlias = "billingAddress";
+        public const string ProfileImageAlias = "profileImage";
 
         public PartyGuest(IPublishedContent content)
             : base(content)
@@ -65,6 +66,30 @@ namespace Wonderland.Logic.Models.Members
             }
         }
 
+        public Address BillingAddress
+        {
+            get
+            {
+                return new Address(this.GetPropertyValue<string>(PartyGuest.BillingAddressAlias));
+            }
+            set
+            {
+                this.SetPropertyValue(PartyGuest.BillingAddressAlias, value.ToString());
+            }
+        }
+
+        public string ProfileImage
+        {
+            get
+            {
+                return this.GetPropertyValue<string>(PartyGuest.ProfileImageAlias);
+            }
+            set
+            {
+                this.SetPropertyValue(PartyGuest.ProfileImageAlias, value);
+            }
+        }
+
         public string PersonName
         {
             get
@@ -72,6 +97,11 @@ namespace Wonderland.Logic.Models.Members
                 // TODO:
                 return "unknown guest";
             }
+        }
+
+        public string GetProfileImageUrl()
+        {
+            return "/Uploads/ProfileImages/" + this.ProfileImage;
         }
 
         /// <summary>

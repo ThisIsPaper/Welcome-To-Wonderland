@@ -15,6 +15,8 @@ namespace Wonderland.Logic.Models.Content
         // Properties
         public const string MetaDescriptionAlias = "metaDescription";
 
+        private SiteSettings siteSettings = null;
+
         public SitePage(IPublishedContent content) : base(content)
         {
             this.ShowHeaderAndFooter = true; // not cms managed
@@ -38,7 +40,13 @@ namespace Wonderland.Logic.Models.Content
         {
             get
             {
-                return new SiteSettings(Home.GetCurrentHome(this));
+                if (this.siteSettings == null)
+                {
+                    //this.siteSettings = new SiteSettings((Home)new UmbracoHelper(UmbracoContext.Current).TypedContentSingleAtXPath("//" + Home.Alias));                    
+                    this.siteSettings = new SiteSettings(Home.GetCurrentHome(this));
+                }
+
+                return this.siteSettings;
             }
         }
 

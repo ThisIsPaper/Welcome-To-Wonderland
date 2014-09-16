@@ -11,10 +11,19 @@ namespace Wonderland.Logic.Models.Entities
 
         internal Address(string address)
         {
-            //this.Address1 = 
-            //this.Address2 = 
-            //this.TownCity = 
-            //this.Postcode = 
+            try
+            {
+                string[] addressParts = address.Split(new string[] { Environment.NewLine }, StringSplitOptions.None);
+
+                this.Address1 = addressParts[0];
+                this.Address2 = addressParts[1];
+                this.TownCity = addressParts[2];
+                this.Postcode = addressParts[3];
+            }
+            catch
+            {
+
+            }
         }
 
         public string Address1 { get; internal set; }

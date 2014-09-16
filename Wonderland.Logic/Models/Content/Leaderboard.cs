@@ -60,10 +60,13 @@ namespace Wonderland.Logic.Models.Content
             }
         }
 
-        //public IEnumerable<Partier> GetPartiers()
-        //{
-        //    // TODO: based on the current LeaderboardType
-        //    return Enumerable.Empty<Partier>();
-        //}
+        public IEnumerable<PartyHost> Leaders
+        {
+            get
+            {                         
+                // TODO: based on the current LeaderboardType
+                return Enumerable.Empty<PartyHost>();
+            }            
+        }
     }
 }

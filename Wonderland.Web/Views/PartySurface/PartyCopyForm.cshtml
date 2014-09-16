@@ -1,0 +1,10 @@
+﻿@model PartyCopyForm
+
+@using (Html.BeginUmbracoForm<PartySurfaceController>("HandlePartyCopyForm"))
+{
+    @Html.AntiForgeryToken()
+    
+    @Html.EditorForModel()
+    
+    <button type="submit">Save Changes</button>
+}

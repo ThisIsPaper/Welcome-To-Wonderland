@@ -1,14 +1,10 @@
 ﻿
-namespace Wonderland.Logic.Models.Api
+namespace Wonderland.Logic.Models.Forms
 {
-
     using Newtonsoft.Json;
     using System.ComponentModel;
 
-    /// <summary>
-    /// common response from api controller methods 
-    /// </summary>
-    public class ApiResponse
+    public class FormResponse
     {
         [JsonProperty("success")]
         [DefaultValue(false)]

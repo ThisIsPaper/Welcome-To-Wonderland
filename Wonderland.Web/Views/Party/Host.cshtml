@@ -3,49 +3,60 @@
     Layout = "~/Views/SitePage.cshtml";
 }
 
+<br /><br /><br /><br /><br /><br /><br /><br />
 
-<div ng-controller="PartyCtrl" ng-init="init(
 
-    '@Json.Encode(
-            new
-            {
-                partyHeading = Model.Heading,
-                partyCopy = Model.Copy
-            }
-    )'
+<h1>the current user is the host for this party</h1>
 
-    )">
+@*<div ng-controller="ctrl" ng-init="init()"></div>*@
 
-    <h1>the current user is the host for this party</h1>
-
-    @* image *@
-
-    <h1>@(this.Model.PartyHost.FirstName)'s Wonderland party</h1>
-
-    @* time *@
-    @* location *@
-
-    <h2>@this.Model.Heading</h2>
-    <p ng-bind="basicModel.partyCopy">@this.Model.Copy</p>
-
-    <form action="@(Url.GetUmbracoApiService<PartyApiController>("UpdatePartyCopy"))?partyGuid=@Model.PartyHost.PartyGuid" method="post" post-on-submit="basicModelEditable">
-        <input type="text" name="partyCopy" ng-model="basicModelEditable.partyCopy" />
-        <input type="submit" />
-    </form>
-
-    @* wall *@
-    @* totaliser *@
-
-    <h2>Who's Coming (@this.Model.Partiers.Count())</h2>
-    <ul>
-        @foreach (IPartier partier in this.Model.Partiers)
+<pre>
+@Json.Encode(
+        new 
         {
-            <li>
-                @partier.PersonName
-            </li>
+            partyHeading = Model.Heading,
+            partyCopy = Model.Copy
         }
-    </ul>
+)
+</pre>
 
-    @* badges *@
+@* image *@
 
-</div>
+<h1 ng-bind="var1">@(this.Model.PartyHost.FirstName)'s Wonderland party</h1>
+
+@* time *@
+<p>
+    @Model.PartyHost.PartyAddress.Address1, 
+    @Model.PartyHost.PartyAddress.Address2, 
+    @Model.PartyHost.PartyAddress.TownCity, 
+    @Model.PartyHost.PartyAddress.Postcode
+</p>
+
+<h2>@this.Model.Heading</h2>
+<p>@this.Model.Copy</p>
+
+
+@(Html.Action<PartySurfaceController>("RenderPartyCopyForm"))
+
+@(Html.Action<PartySurfaceController>("RenderProfileImageForm"))
+
+@(Html.Action<PartySurfaceController>("RenderPartyDetailsForm"))
+
+@(Html.Action<PartySurfaceController>("RenderSuggestedDonationForm"))
+
+
+
+@* wall *@
+@* totaliser *@
+
+<h2>Who's Coming (@this.Model.Partiers.Count())</h2>
+<ul>
+    @foreach (IPartier partier in this.Model.Partiers)
+    {
+        <li>
+            @partier.PersonName
+        </li>
+    }
+</ul>
+
+@* badges *@

@@ -1,6 +1,7 @@
 ﻿@inherits UmbracoViewPage<SiteSettings>
-<div class="footer-snow-brush-overlay"></div>
-<footer class="container">
+
+
+@*<footer class="container">
     <section class="footer-primary">
         <nav>
             <h2>Pages</h2>
@@ -11,7 +12,7 @@
             }
             </ul>
         </nav>
-        <div class="share-container">
+        <div class="share-container menu">
             <h2>
                 Connect with us
             </h2>
@@ -41,4 +42,67 @@
             </ul>
         </nav>
     </section>
+</footer>*@
+
+
+
+
+<footer>
+    <div class="footer-snow-brush-overlay"></div>
+    <div class="container">
+
+        <div class="grid-3 grid-mobile-12 footer-menu">
+            <h2>Pages</h2>
+            <ul>
+                @foreach (SitePage sitePage in Model.HeaderNavigationLeft)
+                {
+                    <li><a href="@sitePage.Url">@sitePage.Name</a></li>
+                }
+
+                @foreach (SitePage sitePage in Model.HeaderNavigationRight)
+                {
+                    <li><a href="@sitePage.Url">@sitePage.Name</a></li>
+                }
+            </ul>
+        </div>
+
+
+        <div class="grid-4 grid-mobile-12 footer-menu single-line icon-list">
+            <h2>
+                Connect with us
+            </h2>
+            <ul>
+                <li><a class="icon-icon_facebook" href="@Model.FacebookUrl" target="_blank"><span>Find us on Facebook</span></a></li>
+                <li><a class="icon-icon_twitter" href="@Model.TwitterUrl" target="_blank"><span>Find us on Twitter</span></a></li>
+                <li><a class="icon-icon_google_plus" href="@Model.GooglePlusUrl" target="_blank"><span>Find us on Google+</span></a></li>
+            </ul>
+            <p display="display:block; clear:both;" class="body-large">@Model.CampaignHashtag</p>
+        </div>
+
+
+        <div class="grid-5 grid-mobile-12">
+            <img style="max-width: 25rem;" src="/img/macmillan-logo.svg" alt="Macmillan Cancer Support" />
+        </div>
+
+    </div>
+
+    <div class="container">
+
+
+        <div class="grid-5 grid-mobile-12 footer-menu single-line push-7 push-mobile-0">
+
+            <ul>
+              @foreach (SitePage sitePage in Model.LegalNavigation)
+              {
+                <li><a href="@sitePage.Url">@sitePage.Name</a></li>
+              }
+            </ul>
+
+        </div>
+
+        <div class="grid-7 grid-mobile-12 body-mini pull-5 pull-mobile-0">Macmillan Cancer Support, registered charity in England and Wales (261017) and the Isle of Man (604). A company limited by guarantee, registered in England and Wales company number 2400969. Isle of Man company number 4694F. Registered office: 89 Albert Embankment, London SE1 7UQ.</div>
+
+
+    </div>
+
 </footer>

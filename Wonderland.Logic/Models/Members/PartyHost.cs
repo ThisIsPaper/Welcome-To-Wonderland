@@ -20,6 +20,8 @@ namespace Wonderland.Logic.Models.Members
         public const string PartyGuidAlias = "partyGuid";
         public const string FirstNameAlias = "firstName";
         public const string LastNameAlias = "lastName";
+        public const string BillingAddressAlias = "billingAddress";
+        public const string ProfileImageAlias = "profileImage";
         public const string BlockedAlias = "blocked";
         public const string MarketingSourceAlias = "marketingSource";
         public const string PartyKitAddressAlias = "partyKitAddress";
@@ -29,6 +31,7 @@ namespace Wonderland.Logic.Models.Members
         public const string PartyUrlIdentifierAlias = "partyUrlIdentifier";
         public const string PartyHeadingAlias = "partyHeading";
         public const string PartyCopyAlias = "partyCopy";
+        public const string SuggestedDonationAlias = "suggestedDonation";
 
         public PartyHost(IPublishedContent content)
             : base(content)
@@ -71,6 +74,30 @@ namespace Wonderland.Logic.Models.Members
             set
             {
                 this.SetPropertyValue(PartyHost.LastNameAlias, value);
+            }
+        }
+
+        public Address BillingAddress
+        {
+            get
+            {
+                return new Address(this.GetPropertyValue<string>(PartyHost.BillingAddressAlias));
+            }
+            set
+            {
+                this.SetPropertyValue(PartyHost.BillingAddressAlias, value.ToString());
+            }
+        }
+
+        public string ProfileImage
+        {
+            get
+            {
+                return this.GetPropertyValue<string>(PartyHost.ProfileImageAlias);
+            }
+            set
+            {
+                this.SetPropertyValue(PartyHost.ProfileImageAlias, value);
             }
         }
 
@@ -181,12 +208,29 @@ namespace Wonderland.Logic.Models.Members
             }
         }
 
+        public decimal SuggestedDonation
+        {
+            get
+            {
+                return this.GetPropertyValue<decimal>(PartyHost.SuggestedDonationAlias);
+            }
+            set
+            {
+                this.SetPropertyValue(PartyHost.SuggestedDonationAlias, value.ToString());
+            }
+        }
+
         public string PersonName
         {
             get
             {
                 return this.FirstName + " " + this.LastName;
             }
+        }
+
+        public string GetProfileImageUrl()
+        {
+            return "/Uploads/ProfileImages/" + this.ProfileImage;
         }
 
         public string GetPartyUrl()

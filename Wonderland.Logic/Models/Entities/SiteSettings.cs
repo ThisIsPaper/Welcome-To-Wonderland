@@ -9,8 +9,9 @@ namespace Wonderland.Logic.Models.Entities
     {
         internal SiteSettings(Home home)
         {
-            this.HeaderNavigationLeft = home.HeaderNavigation.Take(home.HeaderNavigation.Count() / 2);
-            this.HeaderNavigationRight = home.HeaderNavigation.Skip(home.HeaderNavigation.Count() / 2);
+            this.HeaderNavigation = home.HeaderNavigation;
+            this.HeaderNavigationLeft = this.HeaderNavigation.Take(home.HeaderNavigation.Count() / 2);
+            this.HeaderNavigationRight = this.HeaderNavigation.Skip(home.HeaderNavigation.Count() / 2);
             this.FooterNavigation = home.FooterNavigation;
             this.LegalNavigation = home.LegalNavigation;
             this.CampaignHashtag = home.CampaignHashtag;
@@ -19,6 +20,8 @@ namespace Wonderland.Logic.Models.Entities
             this.GooglePlusUrl = home.GooglePlusUrl;
             this.FooterCopy = home.FooterCopy;
         }
+
+        public IEnumerable<SitePage> HeaderNavigation { get; private set; }
 
         public IEnumerable<SitePage> HeaderNavigationLeft { get; private set; }
 
