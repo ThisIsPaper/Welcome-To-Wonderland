@@ -3,60 +3,87 @@
     Layout = "~/Views/SitePage.cshtml";
 }
 
-<br /><br /><br /><br /><br /><br /><br /><br />
+
+<div class="page-bg">
+
+    <div class="container gutter" ng-controller="PartyCtrl" ng-init="init()">
+
+        <div class="wgrid-main wgrid-no-bottom-margin parent">
+
+            <div class="wgrid-full">
+                <div class="boxx">
+                    @* image *@
+
+                    <h1>@this.Model.Heading</h1>
+
+                    @* time *@
+
+                    <p>
+                        @Model.PartyHost.PartyAddress.Address1,
+                        @Model.PartyHost.PartyAddress.Address2,
+                        @Model.PartyHost.PartyAddress.TownCity,
+                        @Model.PartyHost.PartyAddress.Postcode
+                    </p>
 
 
-<h1>the current user is the host for this party</h1>
-
-@*<div ng-controller="ctrl" ng-init="init()"></div>*@
-
-<pre>
-@Json.Encode(
-        new 
-        {
-            partyHeading = Model.Heading,
-            partyCopy = Model.Copy
-        }
-)
-</pre>
-
-@* image *@
-
-<h1 ng-bind="var1">@(this.Model.PartyHost.FirstName)'s Wonderland party</h1>
-
-@* time *@
-<p>
-    @Model.PartyHost.PartyAddress.Address1, 
-    @Model.PartyHost.PartyAddress.Address2, 
-    @Model.PartyHost.PartyAddress.TownCity, 
-    @Model.PartyHost.PartyAddress.Postcode
-</p>
-
-<h2>@this.Model.Heading</h2>
-<p>@this.Model.Copy</p>
+                </div>
+            </div>
 
 
-@(Html.Action<PartySurfaceController>("RenderPartyCopyForm"))
+            <div class="wgrid-full">
+                <div class="boxx">
+                    <h2>Join the Wonderland Party</h2>
+                    <p ng-bind="partyCopyData.Copy">@this.Model.Copy</p>
+                    <div ng-click="openPageModal('partials/partyCopyData.html')">Edit</div>
+                </div>
+            </div>
 
+        </div>
+
+
+        <div class="wgrid-side wgrid-no-bottom-margin parent">
+
+            <div class="wgrid-full"><div class="boxx"><h2>Set my target</h2></div></div>
+            <div class="wgrid-full"><div class="boxx"><h2>Change ticket price</h2></div></div>
+            <div class="wgrid-full"><div class="boxx"><h2>Pay in money</h2></div></div>
+
+            <div class="wgrid-full">
+                <div class="boxx">
+                    <h2>Who's Coming (@this.Model.Partiers.Count())</h2>
+                    <ul>
+                        @foreach (IPartier partier in this.Model.Partiers)
+                        {
+                            <li>
+                                @partier.PersonName
+                            </li>
+                        }
+                    </ul>
+                </div>
+            </div>
+
+            <div class="wgrid-full"><div class="boxx"><h2>Badges</h2></div></div>
+
+        </div>
+
+
+        <div class="wgrid-main"><div class="boxx"><h2>Wall</h2></div></div>
+
+
+        @(Html.Action<PartySurfaceController>("RenderPartyCopyForm"))
+
+    </div>
+
+</div>
+
+@*
 @(Html.Action<PartySurfaceController>("RenderProfileImageForm"))
 
 @(Html.Action<PartySurfaceController>("RenderPartyDetailsForm"))
 
 @(Html.Action<PartySurfaceController>("RenderSuggestedDonationForm"))
-
+*@
 
 
 @* wall *@
 @* totaliser *@
-
-<h2>Who's Coming (@this.Model.Partiers.Count())</h2>
-<ul>
-    @foreach (IPartier partier in this.Model.Partiers)
-    {
-        <li>
-            @partier.PersonName
-        </li>
-    }
-</ul>
-
 @* badges *@

@@ -18,7 +18,8 @@
         
     @{ 
         Html.RequiresCss("~/css/main.css"); 
-    } 
+        Html.RequiresCss("~/scripts/bower_components/ocModal/dist/css/ocModal.full.css");
+    }
     @Html.RenderCssHere()
   
     <script type="text/javascript">window.slimmage = { verbose: false };</script>
@@ -46,9 +47,14 @@
     @{
         Html.RequiresJs("~/scripts/vendor/jquery-1.10.2.js"); // maybe use jquery... not sure yet
         Html.RequiresJs("~/scripts/bower_components/angular/angular.js");
+        Html.RequiresJs("~/scripts/bower_components/ocModal/dist/ocModal.js");
         Html.RequiresJs("~/scripts/app/app.js");
+        Html.RequiresJs("~/scripts/app/controllers/modelPartyCopyCtrl.js");
         Html.RequiresJs("~/scripts/app/controllers/pageCtrl.js");
+        Html.RequiresJs("~/scripts/app/controllers/partyCtrl.js");
+        Html.RequiresJs("~/scripts/app/directives/postOnSubmit.js");
         Html.RequiresJs("~/scripts/app/services/debounce.js");
+        Html.RequiresJs("~/scripts/app/services/safeApply.js");
     }
     @Html.Raw(Html.RenderJsHere());
 

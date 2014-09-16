@@ -210,3 +210,11 @@ footer [class*="grid-"] {
 .footer-menu.single-line.icon-list li a span {
     display: none;
 }
+
+.footer-snow-brush-overlay {
+  @extend %row-width;
+  background: image-url('footer_texture.png') repeat-x center;
+  padding-top: 1.2rem;
+  height: 4rem;
+  margin-top: -4rem;
+}

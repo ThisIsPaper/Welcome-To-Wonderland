@@ -13,12 +13,16 @@ wonderlandApp.directive('postOnSubmit', ['safeApply', '$http', '$parse', functio
                 serialized = attrs.hasOwnProperty('wSerialized'),
                 onSuccessfulPost = attrs.mOnSuccessfulPost && $parse(attrs.mOnSuccessfulPost);
 
+                var hiddenFields = {
+                    'ufprt': element.find("[name='ufprt']")[0].value,
+                    '__RequestVerificationToken': element.find("[name='__RequestVerificationToken']")[0].value
+                };
+
 
 //            setProgressState('ready');
 
             element.on('submit', function() {
                 safeApply(scope, function() {
-                    console.log('submit', dataVar);
 //                    if (serialized && mHttp.isInProgress(formSubmitRequest)) {
 //                        return;
 //                    }
@@ -29,11 +33,18 @@ wonderlandApp.directive('postOnSubmit', ['safeApply', '$http', '$parse', functio
 //                    if (data.MAX_NUM_FORMS) {  // formset
 //                        data = formset.fromJsonForm(data);
 //                    }
+                    console.log('submit1', data);
+
+                    angular.extend(data, hiddenFields);
+
+                    console.log('submit2', data);
+
 //
 
                     formSubmitRequest = $http.post(attrs.action, {
                         data: data,
-                        dataType: 'json'
+                        dataType: 'json',
+                        headers: {'Content-Type': 'application/x-www-form-urlencoded'}
                     });
 
                     formSubmitRequest.then(function (response) {

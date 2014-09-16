@@ -1,1 +1,1 @@
-var wonderlandApp = angular.module('wonderlandApp', []);
+var wonderlandApp = angular.module('wonderlandApp', ['oc.modal']);

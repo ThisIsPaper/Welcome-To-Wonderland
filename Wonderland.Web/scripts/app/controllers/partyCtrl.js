@@ -1,27 +1,27 @@
-wonderlandApp.controller('PartyCtrl', ['$http', '$scope', function ($http, $scope) {
+wonderlandApp.controller('PartyCtrl', ['$http', '$ocModal', '$scope', function ($http, $ocModal, $scope) {
 
-    $scope.basicModel = null;
-    $scope.basicModelEditable = null;
-
+    $scope.partyCopyData = null;
 
 
-    $scope.init = function (basicModel) {
+    $scope.partyCopyDataInit = function (partyCopyData) {
+        console.log(partyCopyData);
 
-        $scope.basicModel = angular.fromJson(basicModel);
-        $scope.basicModelEditable = {
-            'partyHeading': '1',
-            'partyCopy': '2'
-        };//angular.copy($scope.basicModel);
-
+        $scope.partyCopyData = partyCopyData;
     };
 
+    $scope.openPageModal = function (partial) {
 
-    $scope.submitBasicModel = function () {
-
-
+        $ocModal.open({
+                          id: 'partyCopyModel',
+                          url: partial,
+                          controller: 'ModelPartyCopyCtrl',
+                          init: {
+                              partyCopyData: $scope.partyCopyData
+                          },
+                          onOpen: function (a, b, c, d, e, f) {console.log('onOpoen', a, b, c, d, e, f)},
+                          onClose: function (a, b, c, d, e, f) { console.log('onClose', a, b, c, d, e, f)}
+                      });
 
     };
-
-
 
 }]);
