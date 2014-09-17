@@ -1,10 +1,12 @@
 ﻿
 namespace Wonderland.Logic.Models.Content
 {
+    using System.Collections.Generic;
+    using System.Linq;
     using Umbraco.Core.Models;
     using Umbraco.Web;
+    using Wonderland.Logic.Interfaces;
     using Wonderland.Logic.Models.Members;
-    using System.Collections.Generic;
     
     public class Party : SitePage
     {
@@ -20,6 +22,7 @@ namespace Wonderland.Logic.Models.Content
         {
             this.Heading = this.DefaultHeading;
             this.Copy = this.DefaultCopy;
+            this.Partiers = Enumerable.Empty<IPartier>();
         }
 
         private string DefaultHeading

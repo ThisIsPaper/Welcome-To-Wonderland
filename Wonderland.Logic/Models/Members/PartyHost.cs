@@ -8,6 +8,7 @@ namespace Wonderland.Logic.Models.Members
     using Umbraco.Core.Models;
     using Umbraco.Web;
     using Umbraco.Web.Security;
+    using Wonderland.Logic.Interfaces;
     using Wonderland.Logic.Models.Content;
     using Wonderland.Logic.Models.Entities;
 

@@ -252,7 +252,7 @@
     <Content Include="scripts\vendor\jquery-1.10.2.js" />
     <Content Include="scripts\vendor\jquery-1.10.2.min.js" />
     <Content Include="scripts\vendor\modernizr-2.6.2.min.js" />
-    <Content Include="Views\RegisterHostPartyKitSurface\RegisterHostPartyKitForm.cshtml" />
+    <Content Include="Views\RegisterHostSurface\RegisterHostPartyKitForm.cshtml" />
     <Content Include="Views\LoginSurface\LoginForm.cshtml" />
     <Content Include="Views\PageNotFound.cshtml" />
     <Content Include="Views\Party\Anonymous.cshtml" />
@@ -389,11 +389,11 @@
     <Content Include="Views\ForgottenPassword.cshtml" />
     <Content Include="Views\Login.cshtml" />
     <Content Include="Views\ResetPassword.cshtml" />
-    <Content Include="Views\RegisterGuest.cshtml" />
-    <Content Include="Views\RegisterGuestConfirmation.cshtml" />
-    <Content Include="Views\RegisterHost.cshtml" />
-    <Content Include="Views\RegisterHostPartyKit.cshtml" />
-    <Content Include="Views\RegisterHostPartyUrl.cshtml" />
+    <Content Include="Views\RegisterGuest\RegisterGuest.cshtml" />
+    <Content Include="Views\RegisterGuest\RegisterGuestConfirmation.cshtml" />
+    <Content Include="Views\RegisterHost\RegisterHost.cshtml" />
+    <Content Include="Views\RegisterHost\RegisterHostPartyKit.cshtml" />
+    <Content Include="Views\RegisterHost\RegisterHostPartyUrl.cshtml" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>

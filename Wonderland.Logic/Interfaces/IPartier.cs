@@ -1,5 +1,5 @@
 ﻿
-namespace Wonderland.Logic.Models.Members
+namespace Wonderland.Logic.Interfaces
 {
     /// <summary>
     /// common methods on both the PartyHost and PartyGuest

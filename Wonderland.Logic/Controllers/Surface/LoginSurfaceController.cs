@@ -3,9 +3,9 @@ namespace Wonderland.Logic.Controllers.Surface
 {
     using System.Web.Mvc;
     using Umbraco.Web.Mvc;
-    using Wonderland.Logic.Models.Forms;
-    using Wonderland.Logic.Models.Members;
+    using Wonderland.Logic.Interfaces;
     using Wonderland.Logic.Models.Content;
+    using Wonderland.Logic.Models.Forms;
 
     public class LoginSurfaceController : SurfaceController
     {

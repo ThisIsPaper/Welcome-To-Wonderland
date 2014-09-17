@@ -7,7 +7,7 @@ namespace Wonderland.Logic.Models.Content
     using Umbraco.Web;
     using Wonderland.Logic.Models.Entities;
 
-    public class SitePage : PublishedContentModel
+    public class SitePage : BaseContentType
     {
         // Document Type
         public const string Alias = "SitePage";

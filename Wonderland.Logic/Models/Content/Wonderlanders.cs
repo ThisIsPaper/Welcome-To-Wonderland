@@ -5,6 +5,8 @@ namespace Wonderland.Logic.Models.Content
     using System.Linq;
     using Umbraco.Core.Models;
     using Umbraco.Web;
+    using Wonderland.Logic.Enums;
+    using Wonderland.Logic.Extensions;
     using Wonderland.Logic.Models.Members;
 
     public class Wonderlanders : SitePage
@@ -100,15 +102,15 @@ namespace Wonderland.Logic.Models.Content
         {
             get
             {
-                return Enumerable.Empty<PartyHost>();
-            }            
+                return this.Members.GetTopPartyHosts(LeaderboardType.TopFundraisers, 10);
+            }
         }
 
         public IEnumerable<PartyHost> MostGuests
-        {  
+        {
             get
             {
-                return Enumerable.Empty<PartyHost>();
+                return this.Members.GetTopPartyHosts(LeaderboardType.MostGuests, 10);
             }
         }
 

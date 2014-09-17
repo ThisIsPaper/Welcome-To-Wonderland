@@ -15,10 +15,6 @@ namespace Wonderland.Logic.Models.Database
             this.PartyGuid = partyGuid;
         }
 
-        //public MemberParty()
-        //{
-        //}
-
         [Column("MemberId")]
         public int MemberId { get; set; }
 
