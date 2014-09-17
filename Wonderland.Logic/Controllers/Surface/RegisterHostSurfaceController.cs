@@ -103,7 +103,7 @@ namespace Wonderland.Logic.Controllers.Surface
             Guid partyGuid = Guid.NewGuid();
 
             // update database with member and party guid (duplicated data, but never changes)
-            this.ApplicationContext.DatabaseContext.Database.Insert(new MemberParty(partyHost.Id, partyGuid));
+            this.DatabaseContext.Database.Insert(new MemberParty(partyHost.Id, partyGuid));
 
             // (duplicate data) store party guid in cms cache
             partyHost.PartyGuid = partyGuid;

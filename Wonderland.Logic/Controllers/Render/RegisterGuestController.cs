@@ -4,15 +4,16 @@ namespace Wonderland.Logic.Controllers.Render
     using System;
     using System.Linq;
     using System.Web.Mvc;
+    using Umbraco.Web.Models;
     using Wonderland.Logic.Extensions;
     using Wonderland.Logic.Models.Content;
     using Wonderland.Logic.Models.Members;
 
     public class RegisterGuestController : BaseRenderMvcController
     {
-        public ActionResult RegisterGuest()
+        public override ActionResult Index(RenderModel renderModel)        
         {
-            RegisterGuest model = (RegisterGuest)this.CurrentPage;
+            RegisterGuest model = (RegisterGuest)renderModel.Content;
 
             Guid partyGuid;
 
@@ -25,12 +26,26 @@ namespace Wonderland.Logic.Controllers.Render
 
                 if (model.PartyHost != null)
                 {
-                    return this.CurrentTemplate(model);
+                    if (this.Members.IsLoggedIn())
+                    {
+                        if (this.Members.GetCurrentMember() is PartyGuest)
+                        {
+                            // TODO: check to see if they have done the payment step
+
+                            return View("RegisterGuest/RegisterGuestConfirmation", model);
+                        }
+                        else
+                        {
+                            return this.Redirect(Home.GetCurrentHome(model).Url);
+                        }
+                    }
+
+                    return View("RegisterGuest/RegisterGuest", model);
                 }
             }
 
             // fallback
-            return this.Redirect("/");            
+            return this.Redirect(Home.GetCurrentHome(model).Url);       
         }
     }
 }
