@@ -3,6 +3,7 @@ namespace Wonderland.Logic.Models.Content
 {
     using Umbraco.Core.Models;
     using Umbraco.Web;
+    using Wonderland.Logic.Interfaces;
     using Wonderland.Logic.Models.Members;
     using System.Collections.Generic;
     

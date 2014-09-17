@@ -1,13 +1,12 @@
 ﻿
 namespace Wonderland.Logic.Controllers.Render
 {
-    using System.Collections.Generic;
     using System.Web.Mvc;
-    using Umbraco.Core.Models;
     using Umbraco.Web.Models;
+    using Wonderland.Logic.Extensions;
+    using Wonderland.Logic.Interfaces;
     using Wonderland.Logic.Models.Content;
     using Wonderland.Logic.Models.Members;
-    using Wonderland.Logic.Extensions;
 
     public class PartyController : BaseRenderMvcController
     {
