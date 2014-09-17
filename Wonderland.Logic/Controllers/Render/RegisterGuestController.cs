@@ -30,9 +30,14 @@ namespace Wonderland.Logic.Controllers.Render
                     {
                         if (this.Members.GetCurrentMember() is PartyGuest)
                         {
+                            PartyGuest partyGuest = (PartyGuest)this.Members.GetCurrentMember();
+
+                            return this.View("RegisterGuest/RegisterGuestBilling", model);
+
+
                             // TODO: check to see if they have done the payment step
 
-                            return View("RegisterGuest/RegisterGuestConfirmation", model);
+                            //return View("RegisterGuest/RegisterGuestConfirmation", model);
                         }
                         else
                         {

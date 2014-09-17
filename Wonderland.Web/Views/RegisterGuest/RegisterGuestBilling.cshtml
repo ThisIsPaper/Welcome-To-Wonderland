@@ -1,0 +1,8 @@
+﻿@inherits UmbracoViewPage<RegisterGuest>
+@{
+    Layout = "~/Views/SitePage.cshtml";
+}
+
+<h1>Register Guest Billing</h1>
+
+@(Html.Action<RegisterGuestSurfaceController>("RenderRegisterGuestBillingForm"))

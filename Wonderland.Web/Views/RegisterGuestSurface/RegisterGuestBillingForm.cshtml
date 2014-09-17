@@ -1,0 +1,12 @@
+﻿@model RegisterGuestBillingForm
+
+<h1>Register Guest - Billing</h1>
+
+@using (Html.BeginUmbracoForm<RegisterGuestSurfaceController>("HandleRegisterGuestBillingForm"))
+{
+    @Html.AntiForgeryToken()
+
+    @Html.EditorForModel()
+
+    <button type="submit">Submit</button>
+}
