@@ -208,13 +208,11 @@
     <Compile Include="Controllers\Render\PlaylistTileController.cs" />
     <Compile Include="Controllers\Render\RegisterGuestController.cs" />
     <Compile Include="Controllers\Render\RegisterHostController.cs" />
-    <Compile Include="Controllers\Render\RegisterHostPartyKitController.cs" />
     <Compile Include="Controllers\Render\WonderlandersController.cs" />
     <Compile Include="Controllers\Surface\LoginSurfaceController.cs" />
     <Compile Include="Controllers\Surface\LogoutSurfaceController.cs" />
     <Compile Include="Controllers\Surface\PartySurfaceController.cs" />
     <Compile Include="Controllers\Surface\RegisterGuestSurfaceController.cs" />
-    <Compile Include="Controllers\Surface\RegisterHostPartyKitSurfaceController.cs" />
     <Compile Include="Controllers\Surface\RegisterHostSurfaceController.cs" />
     <Compile Include="Enums\LeaderboardType.cs" />
     <Compile Include="Enums\PartyIdeaTileSize.cs" />
@@ -238,7 +236,6 @@
     <Compile Include="Models\Content\Home.cs" />
     <Compile Include="Models\Content\PageNotFound.cs" />
     <Compile Include="Models\Content\RegisterGuestConfirmation.cs" />
-    <Compile Include="Models\Content\RegisterHostPartyUrl.cs" />
     <Compile Include="Models\Content\Leaderboard.cs" />
     <Compile Include="Models\Content\Legal.cs" />
     <Compile Include="Models\Content\Login.cs" />
@@ -252,7 +249,6 @@
     <Compile Include="Models\Content\RecipeTile.cs" />
     <Compile Include="Models\Content\RegisterGuest.cs" />
     <Compile Include="Models\Content\RegisterHost.cs" />
-    <Compile Include="Models\Content\RegisterHostPartyKit.cs" />
     <Compile Include="Models\Content\ResetPassword.cs" />
     <Compile Include="Models\Content\SitePage.cs" />
     <Compile Include="Models\Content\PlaylistTile.cs" />

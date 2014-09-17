@@ -47,7 +47,7 @@ namespace Wonderland.Logic.Controllers.Surface
         public ActionResult HandleRegisterGuestForm(RegisterGuestForm registerGuestForm)
         {
             if (!this.ModelState.IsValid)
-            {
+            {                
                 return this.CurrentUmbracoPage();
             }
 

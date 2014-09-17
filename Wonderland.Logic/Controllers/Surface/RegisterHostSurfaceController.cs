@@ -11,6 +11,7 @@ namespace Wonderland.Logic.Controllers.Surface
     using Umbraco.Web.Mvc;
     using Wonderland.Logic.Models.Content;
     using Wonderland.Logic.Models.Database;
+    using Wonderland.Logic.Models.Entities;
     using Wonderland.Logic.Models.Forms;
     using Wonderland.Logic.Models.Members;
 
@@ -60,7 +61,7 @@ namespace Wonderland.Logic.Controllers.Surface
         {
             if (!this.ModelState.IsValid)
             {
-                return this.CurrentUmbracoPage();
+                return View("RegisterHost/RegisterHost");
             }
 
             // no helper method on this.Members to register a user with a given memberType, so calling provider directly
@@ -91,7 +92,7 @@ namespace Wonderland.Logic.Controllers.Surface
                         break;
                 }
 
-                return this.CurrentUmbracoPage();
+                return View("RegisterHost/RegisterHost");
             }            
 
             // cast from MembershipUser rather than use this.Members.GetCurrentMember() helper (which needs a round trip for the login)
@@ -113,7 +114,49 @@ namespace Wonderland.Logic.Controllers.Surface
             // send cookie
             FormsAuthentication.SetAuthCookie(partyHost.Username, true);
 
-            return this.RedirectToUmbracoPage(this.CurrentPage.Children.Single(x => x.DocumentTypeAlias == RegisterHostPartyKit.Alias));
+            return View("RegisterHost/RegisterHostPartyKit");
+            //return this.CurrentUmbracoPage();
+            //return this.RedirectToUmbracoPage(this.CurrentPage.Children.Single(x => x.DocumentTypeAlias == RegisterHostPartyKit.Alias));
+        }
+
+        [ChildActionOnly]
+        [MemberAuthorize(AllowType = PartyHost.Alias)]
+        public ActionResult RenderRegisterHostPartyKitForm()
+        {
+            return this.PartialView("RegisterHostPartyKitForm", new RegisterHostPartyKitForm());
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [MemberAuthorize(AllowType = PartyHost.Alias)]
+        public ActionResult HandleRegisterHostPartyKitForm(RegisterHostPartyKitForm registerHostPartyKitForm)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View("RegisterHost/RegisterHostPartyKit");
+            }
+
+            PartyHost partyHost = (PartyHost)this.Members.GetCurrentMember();
+
+            partyHost.FirstName = registerHostPartyKitForm.FirstName;
+            partyHost.LastName = registerHostPartyKitForm.LastName;
+
+            Address address = new Address()
+                                    {
+                                        Address1 = registerHostPartyKitForm.Address1.Replace(Environment.NewLine, string.Empty),
+                                        Address2 = registerHostPartyKitForm.Address2.Replace(Environment.NewLine, string.Empty),
+                                        TownCity = registerHostPartyKitForm.TownCity.Replace(Environment.NewLine, string.Empty),
+                                        Postcode = registerHostPartyKitForm.PostCode.Replace(Environment.NewLine, string.Empty)
+                                    };
+
+            partyHost.PartyKitAddress = address;
+            partyHost.PartyAddress = address;
+
+            partyHost.HasRequestedPartyKit = true;
+
+            return View("RegisterHost/RegisterHostPartyUrl");
+            //return this.CurrentUmbracoPage();
+            //return this.RedirectToUmbracoPage(this.CurrentPage.Parent.Children.Single(x => x.DocumentTypeAlias == RegisterHostPartyUrl.Alias));
         }
     }
 }
