@@ -9,6 +9,11 @@ namespace Wonderland.Logic.Controllers.Render
 
     public class RegisterHostController : BaseRenderMvcController
     {
+        /// <summary>
+        /// NOTE: specified controller folder, as this may have been triggered by the surface controller
+        /// </summary>
+        /// <param name="renderModel"></param>
+        /// <returns></returns>
         public override ActionResult Index(RenderModel renderModel)
         {
             RegisterHost model = (RegisterHost)renderModel.Content;
@@ -21,11 +26,12 @@ namespace Wonderland.Logic.Controllers.Render
 
                     if (!partyHost.HasRequestedPartyKit)
                     {
-                        return View("RegisterHostPartyKit", model);
+
+                        return View("RegisterHost/RegisterHostPartyKit", model);
                     }
 
                     // TODO: flag so that the final view can only be rendered once
-                    return View("RegisterHostPartyUrl", model);
+                    return View("RegisterHost/RegisterHostPartyUrl", model);
                 }
                 else
                 {
@@ -34,7 +40,8 @@ namespace Wonderland.Logic.Controllers.Render
                 }
             }
            
-            return View("RegisterHost", model);
+            //return View("RegisterHost", model);
+            return View("RegisterHost/RegisterHost", model); 
         }
     }
 }

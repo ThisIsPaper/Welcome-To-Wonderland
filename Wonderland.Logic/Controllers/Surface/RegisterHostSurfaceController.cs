@@ -61,7 +61,7 @@ namespace Wonderland.Logic.Controllers.Surface
         {
             if (!this.ModelState.IsValid)
             {
-                return View("RegisterHost/RegisterHost");
+                return this.CurrentUmbracoPage();
             }
 
             // no helper method on this.Members to register a user with a given memberType, so calling provider directly
@@ -92,7 +92,7 @@ namespace Wonderland.Logic.Controllers.Surface
                         break;
                 }
 
-                return View("RegisterHost/RegisterHost");
+                return this.CurrentUmbracoPage();
             }            
 
             // cast from MembershipUser rather than use this.Members.GetCurrentMember() helper (which needs a round trip for the login)
@@ -114,9 +114,8 @@ namespace Wonderland.Logic.Controllers.Surface
             // send cookie
             FormsAuthentication.SetAuthCookie(partyHost.Username, true);
 
-            return View("RegisterHost/RegisterHostPartyKit");
-            //return this.CurrentUmbracoPage();
-            //return this.RedirectToUmbracoPage(this.CurrentPage.Children.Single(x => x.DocumentTypeAlias == RegisterHostPartyKit.Alias));
+            // cause redirect, so that the login takes effect
+            return this.RedirectToCurrentUmbracoPage();
         }
 
         [ChildActionOnly]
@@ -133,7 +132,7 @@ namespace Wonderland.Logic.Controllers.Surface
         {
             if (!ModelState.IsValid)
             {
-                return View("RegisterHost/RegisterHostPartyKit");
+                return this.CurrentUmbracoPage();
             }
 
             PartyHost partyHost = (PartyHost)this.Members.GetCurrentMember();
@@ -154,9 +153,8 @@ namespace Wonderland.Logic.Controllers.Surface
 
             partyHost.HasRequestedPartyKit = true;
 
-            return View("RegisterHost/RegisterHostPartyUrl");
             //return this.CurrentUmbracoPage();
-            //return this.RedirectToUmbracoPage(this.CurrentPage.Parent.Children.Single(x => x.DocumentTypeAlias == RegisterHostPartyUrl.Alias));
+            return this.RedirectToCurrentUmbracoPage();
         }
     }
 }
