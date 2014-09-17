@@ -219,6 +219,7 @@
     <Compile Include="Enums\LeaderboardType.cs" />
     <Compile Include="Enums\PartyIdeaTileSize.cs" />
     <Compile Include="Enums\PartyWallItemType.cs" />
+    <Compile Include="Events\ForceJsonFormatter.cs" />
     <Compile Include="Events\SetPageNotFoundContentFinder.cs" />
     <Compile Include="Events\SetPartyContentFinder.cs" />
     <Compile Include="Events\SetPublishedContentModelFactory.cs" />
