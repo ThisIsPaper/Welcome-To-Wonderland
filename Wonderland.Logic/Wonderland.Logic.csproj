@@ -279,7 +279,7 @@
     <Compile Include="Models\Forms\SuggestedDonationForm.cs" />
     <Compile Include="Models\Media\Image.cs" />
     <Compile Include="Models\Members\BaseMemberType.cs" />
-    <Compile Include="Models\Members\IPartier.cs" />
+    <Compile Include="Interfaces\IPartier.cs" />
     <Compile Include="Models\Members\PartyGuest.cs" />
     <Compile Include="Models\Members\PartyHost.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -288,9 +288,7 @@
     <None Include="app.config" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Interfaces\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

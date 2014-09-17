@@ -10,6 +10,7 @@ namespace Wonderland.Logic.Extensions
     using Umbraco.Web.Security;
     using UmbracoExamine;
     using Wonderland.Logic.Enums;
+    using Wonderland.Logic.Interfaces;
     using Wonderland.Logic.Models.Members;
 
     public static class MembershipHelperExtensions
@@ -33,6 +34,8 @@ namespace Wonderland.Logic.Extensions
         {
             return Enumerable.Empty<PartyHost>();
         }
+
+        
 
     }
 }
