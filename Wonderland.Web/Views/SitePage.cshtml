@@ -49,12 +49,13 @@
         Html.RequiresJs("~/scripts/bower_components/angular/angular.js");
         Html.RequiresJs("~/scripts/bower_components/ocModal/dist/ocModal.js");
         Html.RequiresJs("~/scripts/app/app.js");
-        Html.RequiresJs("~/scripts/app/controllers/modelPartyCopyCtrl.js");
         Html.RequiresJs("~/scripts/app/controllers/pageCtrl.js");
         Html.RequiresJs("~/scripts/app/controllers/partyCtrl.js");
-        Html.RequiresJs("~/scripts/app/directives/postOnSubmit.js");
+        Html.RequiresJs("~/scripts/app/directives/mPostOnSubmit.js");
         Html.RequiresJs("~/scripts/app/services/debounce.js");
+        Html.RequiresJs("~/scripts/app/services/mHttp.js");
         Html.RequiresJs("~/scripts/app/services/safeApply.js");
+        Html.RequiresJs("~/scripts/app/services/uniqueId.js");
     }
     @Html.Raw(Html.RenderJsHere());
 
