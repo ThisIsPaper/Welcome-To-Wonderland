@@ -35,6 +35,7 @@ wonderlandApp.directive('mPostOnSubmit', ['safeApply', 'mHttp', '$parse', '$root
                         sendData['ufprt'] = ufprtElement[0].value;
                     }
 
+                    console.log('mPostOnSubmit::data', sendData);
 
                     formSubmitRequest = mHttp.post(attrs.action, {
                         formData: sendData,

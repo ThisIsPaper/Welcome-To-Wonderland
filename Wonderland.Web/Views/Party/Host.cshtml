@@ -6,7 +6,7 @@
 
 <div class="page-bg">
 
-    <div class="container gutter" ng-controller="PartyCtrl" ng-init="init()">
+    <div class="container gutter" ng-controller="PartyCtrl">
 
         <div class="wgrid-main wgrid-no-bottom-margin parent">
 
@@ -14,18 +14,19 @@
                 <div class="boxx">
                     @* image *@
 
-                    <h1>@this.Model.Heading</h1>
+                    <h1 ng-bind="partyDetailsData.PartyHeading">@this.Model.Heading</h1>
 
-                    @* time *@
+                    <span ng-bind="partyDetailsData.Date"></span>
+                    <span ng-bind="partyDetailsData.Time"></span>
 
                     <p>
-                        @Model.PartyHost.PartyAddress.Address1,
-                        @Model.PartyHost.PartyAddress.Address2,
-                        @Model.PartyHost.PartyAddress.TownCity,
-                        @Model.PartyHost.PartyAddress.Postcode
+                        <span ng-bind="partyDetailsData.Address1">@Model.PartyHost.PartyAddress.Address1</span>
+                        <span ng-bind="partyDetailsData.Address2">@Model.PartyHost.PartyAddress.Address2</span>
+                        <span ng-bind="partyDetailsData.TownCity">@Model.PartyHost.PartyAddress.TownCity</span>
+                        <span ng-bind="partyDetailsData.Postcode">@Model.PartyHost.PartyAddress.Postcode</span>
                     </p>
 
-
+                    <div ng-click="openPageModal('partials/partyDetailsForm.html', 'partyDetailsModal', {'partyDetailsData': partyDetailsDataForForm})">Edit</div>
                 </div>
             </div>
 
@@ -33,8 +34,8 @@
             <div class="wgrid-full">
                 <div class="boxx">
                     <h2>Join the Wonderland Party</h2>
-                    <p ng-bind="partyCopyData.Copy">@this.Model.Copy</p>
-                    <div ng-click="openPageModal('partials/partyCopyData.html')">Edit</div>
+                    <pre ng-bind-html="partyCopyData.CopyHtmlSafe">@this.Model.Copy</pre>
+                    <div ng-click="openPageModal('partials/partyCopyForm.html', 'partyCopyModal', {'partyCopyData': partyCopyDataForForm})">Edit</div>
                 </div>
             </div>
 
@@ -71,17 +72,16 @@
 
         @(Html.Action<PartySurfaceController>("RenderPartyCopyForm"))
 
+        @(Html.Action<PartySurfaceController>("RenderPartyDetailsForm"))
+
     </div>
 
 </div>
 
-@*
-@(Html.Action<PartySurfaceController>("RenderProfileImageForm"))
 
-@(Html.Action<PartySurfaceController>("RenderPartyDetailsForm"))
+@*@(Html.Action<PartySurfaceController>("RenderProfileImageForm"))*@
 
-@(Html.Action<PartySurfaceController>("RenderSuggestedDonationForm"))
-*@
+@*@(Html.Action<PartySurfaceController>("RenderSuggestedDonationForm"))*@
 
 
 @* wall *@

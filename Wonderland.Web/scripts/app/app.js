@@ -19,3 +19,27 @@ wonderlandApp.config(['$provide', function($provide){
     }]);
 
 }]);
+
+
+wonderlandApp.run(['$rootScope', '$ocModal', function ($rootScope, $ocModal) {
+
+    $rootScope.openPageModal = function (partial, modalId, initVars) {
+
+        if (!partial) {
+            return;
+        }
+
+        var modal = {
+            url: partial,
+            init: initVars
+        };
+
+        if (modalId) {
+            modal['id'] = modalId;
+        }
+
+        $ocModal.open(modal);
+
+    };
+
+}]);
