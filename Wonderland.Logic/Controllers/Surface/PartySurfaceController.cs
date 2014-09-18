@@ -34,11 +34,7 @@ namespace Wonderland.Logic.Controllers.Surface
         {
             FormResponse formResponse = new FormResponse();
 
-            if (!this.ModelState.IsValid)
-            {
-                formResponse.Success = false;
-            }
-            else
+            if (this.ModelState.IsValid)
             {
                 // change copy for current party host
                 PartyHost partyHost = (PartyHost)this.Members.GetCurrentMember();
@@ -65,11 +61,7 @@ namespace Wonderland.Logic.Controllers.Surface
         {
             FormResponse formResponse = new FormResponse();
 
-            if (!this.ModelState.IsValid)
-            {
-                formResponse.Success = false;
-            }
-            else
+            if (this.ModelState.IsValid)
             {                
                 if (profileImageForm.ProfileImage.ContentLength > 0 && profileImageForm.ProfileImage.InputStream.IsImage())
                 {
@@ -118,11 +110,7 @@ namespace Wonderland.Logic.Controllers.Surface
         {
             FormResponse formResponse = new FormResponse();
 
-            if (!this.ModelState.IsValid)
-            {
-                formResponse.Success = false;
-            }
-            else
+            if (this.ModelState.IsValid)
             {
                 PartyHost partyHost = (PartyHost)this.Members.GetCurrentMember();
 
@@ -166,11 +154,7 @@ namespace Wonderland.Logic.Controllers.Surface
         {
             FormResponse formResponse = new FormResponse();
 
-            if (!this.ModelState.IsValid)
-            {
-                formResponse.Success = false;
-            }
-            else
+            if (this.ModelState.IsValid)
             {
                 ((PartyHost)this.Members.GetCurrentMember()).SuggestedDonation = suggestedDonationForm.SuggestedDonation;
 
