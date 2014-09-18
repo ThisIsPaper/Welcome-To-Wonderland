@@ -235,7 +235,7 @@
     <Compile Include="Models\Content\FundraisingIdeas.cs" />
     <Compile Include="Models\Content\Home.cs" />
     <Compile Include="Models\Content\PageNotFound.cs" />
-    <Compile Include="Models\Content\RegisterGuestConfirmation.cs" />
+    <Compile Include="Models\Content\Donate.cs" />
     <Compile Include="Models\Content\Leaderboard.cs" />
     <Compile Include="Models\Content\Legal.cs" />
     <Compile Include="Models\Content\Login.cs" />

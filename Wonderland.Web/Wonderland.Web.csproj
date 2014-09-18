@@ -341,6 +341,7 @@
     <Content Include="Views\PartySurface\PartyWallForm.cshtml" />
     <Content Include="Views\RegisterGuest\RegisterGuestBilling.cshtml" />
     <Content Include="Views\RegisterGuestSurface\RegisterGuestBillingForm.cshtml" />
+    <Content Include="Views\Donate.cshtml" />
     <None Include="Views\RegisterHostSurface\RegisterHostForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
