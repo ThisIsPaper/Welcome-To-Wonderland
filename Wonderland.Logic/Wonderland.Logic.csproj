@@ -268,6 +268,7 @@
     <Compile Include="Models\Entities\Reward.cs" />
     <Compile Include="Models\Entities\SiteSettings.cs" />
     <Compile Include="Models\Forms\FormResponse.cs" />
+    <Compile Include="Models\Forms\FundraisingTargetForm.cs" />
     <Compile Include="Models\Forms\LoginForm.cs" />
     <Compile Include="Models\Forms\PartyCopyForm.cs" />
     <Compile Include="Models\Forms\PartyDetailsForm.cs" />

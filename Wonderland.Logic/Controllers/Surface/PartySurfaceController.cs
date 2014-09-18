@@ -165,6 +165,61 @@ namespace Wonderland.Logic.Controllers.Surface
         }
 
         [ChildActionOnly]
+        [MemberAuthorize(AllowType = PartyHost.Alias)]
+        public ActionResult RenderFundraisingTargetForm()
+        {
+            FundraisingTargetForm fundraisingTargetForm = new FundraisingTargetForm();
+
+            PartyHost partyHost = (PartyHost)this.Members.GetCurrentMember();
+
+            fundraisingTargetForm.FundraisingTarget = partyHost.FundraisingTarget;
+
+            return this.PartialView("FundraisingTargetForm", fundraisingTargetForm);
+        }
+
+        [HttpPost]
+        //[ValidateAntiForgeryToken]
+        [MemberAuthorize(AllowType = PartyHost.Alias)]
+        public JsonResult HandleFundraisingTargetForm(FundraisingTargetForm fundraisingTargetForm)
+        {
+            FormResponse formResponse = new FormResponse();
+
+            if (this.ModelState.IsValid)
+            {
+                ((PartyHost)this.Members.GetCurrentMember()).FundraisingTarget = fundraisingTargetForm.FundraisingTarget;
+
+                formResponse.Success = true;
+            }
+
+            return Json(formResponse);
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        [ChildActionOnly]
         [MemberAuthorize]
         public ActionResult RenderPartyWallMessageForm()
         {
