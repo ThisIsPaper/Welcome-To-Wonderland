@@ -11,10 +11,11 @@
 
         @Html.EditorForModel()
 
-        <input type="radio" name="SuggestedDonation" value="10" ng-model="suggestedDonationData.SuggestedDonation">10 <br/></input>
-        <input type="radio" name="SuggestedDonation" value="15" ng-model="suggestedDonationData.SuggestedDonation">15 <br/></input>
-        <input type="radio" name="SuggestedDonation" value="20" ng-model="suggestedDonationData.SuggestedDonation">20 <br/></input>
-        <input type="radio" name="SuggestedDonation" value="25" ng-model="suggestedDonationData.SuggestedDonation">25 <br/></input>
+        <label><input type="radio" name="SuggestedDonation" value="10" ng-model="suggestedDonationData.SuggestedDonation" /><span>10</span></label>
+        <label><input type="radio" name="SuggestedDonation" value="15" ng-model="suggestedDonationData.SuggestedDonation" /><span>15</span></label>
+        <label><input type="radio" name="SuggestedDonation" value="20" ng-model="suggestedDonationData.SuggestedDonation" /><span>20</span></label>
+        <label><input type="radio" name="SuggestedDonation" value="25" ng-model="suggestedDonationData.SuggestedDonation" /><span>25</span></label>
+
 
         <button type="submit">Save Changes (suggested donation)</button>
     }

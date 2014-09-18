@@ -89,4 +89,24 @@ wonderlandApp.controller('PartyCtrl', ['safeApply', '$ocModal', '$sce', '$scope'
     });
 
 
+
+    /**********************/
+    /* FUNDRAISING TARGET */
+    /**********************/
+    $scope.fundraisingTargetData = null;
+    $scope.fundraisingTargetDataForForm = null;
+
+    $scope.fundraisingTargetDataInit = function (fundraisingTargetData) {
+        console.log('fundraisingTargetDataInit', fundraisingTargetData);
+        $scope.fundraisingTargetData = fundraisingTargetData;
+        $scope.fundraisingTargetDataForForm = angular.copy($scope.fundraisingTargetData);
+    };
+
+    $scope.$onRootScope('fundraisingTargetDataUpdated', function(event, response, dataObject) {
+        console.log('fundraisingTargetDataUpdated', response, dataObject);
+        $scope.fundraisingTargetDataInit(dataObject);
+        $ocModal.close('fundraisingTargetDataModal');
+    });
+
+
 }]);
