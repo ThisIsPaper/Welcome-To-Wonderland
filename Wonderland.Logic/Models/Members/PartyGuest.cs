@@ -7,6 +7,7 @@ namespace Wonderland.Logic.Models.Members
     using Umbraco.Core.Models;
     using Umbraco.Web;
     using Umbraco.Web.Security;
+    using Wonderland.Logic.Extensions;
     using Wonderland.Logic.Interfaces;
     using Wonderland.Logic.Models.Content;
     using Wonderland.Logic.Models.Entities;
@@ -108,25 +109,11 @@ namespace Wonderland.Logic.Models.Members
             }
         }
 
-        /// <summary>
-        /// using the PartyGuid, finds the host to get the PartyUrlIdentification property
-        /// </summary>
-        /// <returns></returns>
         public string PartyUrl
         {
             get
             {
-                //PartyHost partyhost = PartyHost.GetByPartyGuid(this.PartyGuid);
-
-                // WARNING: Hits DB
-                IMember partyHost = this.MemberService
-                                        .GetMembersByMemberType(PartyHost.Alias)
-                                        .Single(x => x.GetValue<Guid>(PartyHost.PartyGuidAlias) == this.PartyGuid);
-
-                // Jeavons suggestion to get published members:
-                // this.Members.GetCurrentMember().Parent.Children; (this is null)
-            
-                return UmbracoContext.Current.ContentCache.GetSingleByXPath("//" + Party.Alias).Url + partyHost.GetValue<string>(PartyHost.PartyUrlIdentifierAlias);
+                return UmbracoContext.Current.ContentCache.GetSingleByXPath("//" + Party.Alias).Url + this.Members.GetPartyHost(this.PartyGuid).PartyUrlIdentifier;
             }
         }
 

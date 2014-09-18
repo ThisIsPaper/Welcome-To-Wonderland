@@ -342,6 +342,7 @@
     <Content Include="Views\RegisterGuest\RegisterGuestBilling.cshtml" />
     <Content Include="Views\RegisterGuestSurface\RegisterGuestBillingForm.cshtml" />
     <Content Include="Views\Donate.cshtml" />
+    <Content Include="Views\Donate\Macmillan.cshtml" />
     <None Include="Views\RegisterHostSurface\RegisterHostForm.cshtml" />
   </ItemGroup>
   <ItemGroup>

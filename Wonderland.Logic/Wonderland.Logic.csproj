@@ -202,6 +202,7 @@
     <Compile Include="Controllers\Api\SagePayApiController.cs" />
     <Compile Include="Controllers\Render\BaseRenderMvcController.cs" />
     <Compile Include="Controllers\Render\DecorationTileController.cs" />
+    <Compile Include="Controllers\Render\DonateController.cs" />
     <Compile Include="Controllers\Render\FashionTileController.cs" />
     <Compile Include="Controllers\Render\LeaderboardController.cs" />
     <Compile Include="Controllers\Render\PartyController.cs" />

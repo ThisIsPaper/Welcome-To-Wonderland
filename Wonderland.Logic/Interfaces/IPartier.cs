@@ -1,6 +1,9 @@
 ﻿
 namespace Wonderland.Logic.Interfaces
 {
+    using System;
+    using Wonderland.Logic.Models.Members;
+
     /// <summary>
     /// common methods on both the PartyHost and PartyGuest
     /// this allows for (IPartier)this.Members.GetCurrentMember();
@@ -27,5 +30,10 @@ namespace Wonderland.Logic.Interfaces
         /// </summary>
         /// <returns></returns>
         string PartyUrl { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        Guid PartyGuid { get; }
     }
 }
