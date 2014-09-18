@@ -1,7 +1,5 @@
 ﻿@model ProfileImageForm
 
-<div ng-init="profileImageDataInit(@Html.Raw(Json.Encode(Model)))"></div>
-
 <script type="text/ng-template" id="partials/profileImageForm.html">
     <div m-image-upload m-on-success-event="profileImageUrlUpdated">
         @using (Html.BeginUmbracoForm<PartySurfaceController>("HandleProfileImageForm", FormMethod.Post, new { enctype = "multipart/form-data" }))

@@ -1,13 +1,13 @@
 ﻿@model PartyWallImageForm
 
-<h2>Upload image</h2>
+<div m-image-upload m-on-success-event="wallImageUrlUploaded">
+    @using (Html.BeginUmbracoForm<PartySurfaceController>("HandlePartyWallImageForm", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @Html.AntiForgeryToken()
 
-@using (Html.BeginUmbracoForm<PartySurfaceController>("HandlePartyWallImageForm", FormMethod.Post, new { enctype = "multipart/form-data" }))
-{
-    @Html.AntiForgeryToken()
+        <label for="partyWallImage">Upload image</label>
+        <input type="file" name="partyWallImage" accept="image/jpeg,image/gif,image/png" m-file-selected="submit()" />
 
-    <label for="partyWallImage">Upload image</label>
-    <input type="file" name="partyWallImage" accept="image/jpeg,image/gif,image/png" />
-
-    <button type="submit">Upload</button>
-}
+        @*<button type="submit">Upload</button>*@
+    }
+</div>

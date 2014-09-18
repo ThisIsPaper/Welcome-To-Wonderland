@@ -105,7 +105,11 @@
 
                 <h2>Wall</h2>
 
-                <div>@(Html.Action<PartySurfaceController>("RenderPartyWallMessageForm"))</div>
+                <div>
+                    @(Html.Action<PartySurfaceController>("RenderPartyWallMessageForm"))
+                    <hr/>
+                    @(Html.Action<PartySurfaceController>("RenderPartyWallImageForm"))
+                </div>
 
                 <hr/>
 

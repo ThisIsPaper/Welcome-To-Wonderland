@@ -43,4 +43,19 @@ wonderlandApp.controller('WallCtrl', ['mHttp', '$scope', function (mHttp, $scope
         console.log('wallMessagePosted', response, dataObject);
     });
 
+    $scope.$onRootScope('wallImageUrlUploaded', function(event, response) {
+        if (response && response.Success === true && response.Message) {
+            console.log('wallImageUrlUploaded::response', response);
+
+            var url = response.Message;
+
+            // TODO - remove this work around once the returned data is valid
+            if (url.indexOf("PartyImage") < 0) {
+                url = '/Uploads/PartyWall/' + url;
+            }
+
+            $scope.wall.formModel.PartyWallImage = url;
+        }
+    });
+
 }]);
