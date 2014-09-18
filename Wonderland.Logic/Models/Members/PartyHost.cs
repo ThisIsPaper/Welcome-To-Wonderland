@@ -245,24 +245,6 @@ namespace Wonderland.Logic.Models.Members
             }
         }
 
-        public static PartyHost GetByPartyGuid(Guid partyGuid)
-        {
-            // WARNING: hits db            
-            IMember partyHost = ApplicationContext
-                                .Current
-                                .Services
-                                .MemberService
-                                .GetMembersByMemberType(PartyHost.Alias)
-                                .SingleOrDefault(x => x.GetValue<Guid>(PartyHost.PartyGuidAlias) == partyGuid);
-
-            if (partyHost != null)
-            {
-                return new PartyHost(new MembershipHelper(UmbracoContext.Current).GetByUsername(partyHost.Username));
-            }
-
-            return null;
-        }
-
         /// <summary>
         /// 
         /// </summary>

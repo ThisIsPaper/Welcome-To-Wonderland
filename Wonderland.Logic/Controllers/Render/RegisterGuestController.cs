@@ -18,11 +18,8 @@ namespace Wonderland.Logic.Controllers.Render
             Guid partyGuid;
 
             if (Guid.TryParse(this.Request.QueryString["partyGuid"], out partyGuid))
-            {
-                // TODO: swap over to using the membership helper
-                // model.PartyHost = this.Members.GetPartyHost(partyGuid);
-
-                model.PartyHost = PartyHost.GetByPartyGuid(partyGuid);
+            {                
+                model.PartyHost = this.Members.GetPartyHost(partyGuid);
 
                 if (model.PartyHost != null)
                 {
