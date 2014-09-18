@@ -99,10 +99,23 @@
 
         <div class="wgrid-main">
             <div class="boxx" ng-controller="WallCtrl" ng-init="init(
-                '@(Url.GetUmbracoApiService<PartyApiController>("GetPartyWallItems"))',
-                '@Model.PartyHost.PartyGuid.ToString()'
-            )">
+                    '@(Url.GetUmbracoApiService<PartyApiController>("GetPartyWallItems"))',
+                    '@Model.PartyHost.PartyGuid.ToString()'
+                )">
+
                 <h2>Wall</h2>
+
+                <div>
+                    @(Html.Action<PartySurfaceController>("RenderPartyWallMessageForm"))
+                    <hr/>
+                    @(Html.Action<PartySurfaceController>("RenderPartyWallImageForm"))
+                </div>
+
+                <hr/>
+
+                <div ng-repeat="feedItem in wallModel.feed">ITEM!</div>
+                <div ng-show="!wallModel.feed.length">Currently there are no wall posts. Write one now!</div>
+
             </div>
         </div>
 

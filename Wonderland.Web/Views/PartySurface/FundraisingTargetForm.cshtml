@@ -9,8 +9,9 @@
     <label><input type="radio" name="selectar" ng-click="showChoose=false" ng-model="fundraisingTargetData.FundraisingTarget" value="100" />£100</label>
     <label><input type="radio" name="selectar" ng-click="showChoose=false" ng-model="fundraisingTargetData.FundraisingTarget" value="250" />£250</label>
     <label><input type="radio" name="selectar" ng-click="showChoose=false" ng-model="fundraisingTargetData.FundraisingTarget" value="300" />£300</label>
-    <label><input type="radio" name="chooser" ng-click="fundraisingTargetData.FundraisingTarget=0" ng-model="showChoose" value="true" ng-init="showChoose=false"  />I'll choose</label>
+    <label><input type="radio" name="chooser" ng-checked="showChoose" m-fund-target-chooser="showChoose" m-fund-target-chooser-value="fundraisingTargetData.FundraisingTarget" />I'll choose</label>
     <input type="text" ng-model="fundraisingTargetData.FundraisingTarget" ng-show="showChoose" />
+
 
     @using (Html.BeginUmbracoForm<PartySurfaceController>("HandleFundraisingTargetForm", FormMethod.Post, new { m_serialized="", m_post_on_submit="fundraisingTargetData", m_on_success_event="fundraisingTargetDataUpdated" }))
     {
