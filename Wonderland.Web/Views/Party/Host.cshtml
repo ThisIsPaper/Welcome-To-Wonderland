@@ -6,7 +6,7 @@
 
 <div class="page-bg">
 
-    <div class="container gutter" ng-controller="PartyCtrl">
+    <div class="container gutter" ng-controller="PartyCtrl" ng-init="profileImageUrlInit('@Model.PartyHost.ProfileImageUrl')">
 
         <div class="wgrid-main wgrid-no-bottom-margin parent">
 
@@ -15,6 +15,11 @@
                     @* image *@
 
                     <h1 ng-bind="partyDetailsData.PartyHeading">@this.Model.Heading</h1>
+
+                    <div>
+                        <img ng-src="{{ profileImageUrl }}" width="50" height="50" />
+                        <div ng-click="openPageModal('partials/profileImageForm.html', 'profileImageModal')">Edit</div>
+                    </div>
 
                     <span ng-bind="partyDetailsData.PartyDate"></span>
                     <span ng-bind="partyDetailsData.PartyTime"></span>
@@ -74,12 +79,12 @@
 
         @(Html.Action<PartySurfaceController>("RenderPartyDetailsForm"))
 
+        @(Html.Action<PartySurfaceController>("RenderProfileImageForm"))
+
     </div>
 
 </div>
 
-
-@*@(Html.Action<PartySurfaceController>("RenderProfileImageForm"))*@
 
 @*@(Html.Action<PartySurfaceController>("RenderSuggestedDonationForm"))*@
 

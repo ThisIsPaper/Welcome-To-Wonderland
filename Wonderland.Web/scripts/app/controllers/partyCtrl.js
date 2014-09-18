@@ -25,7 +25,7 @@ wonderlandApp.controller('PartyCtrl', ['safeApply', '$ocModal', '$sce', '$scope'
     /* PARTY DETAILS */
     /**********************/
     $scope.partyDetailsData = null;
-    $scope.partyDetailsForForm = null;
+    $scope.partyDetailsDataForForm = null;
 
     $scope.partyDetailsDataInit = function (partyDetailsData) {
 
@@ -36,9 +36,32 @@ wonderlandApp.controller('PartyCtrl', ['safeApply', '$ocModal', '$sce', '$scope'
     };
 
     $scope.$onRootScope('partyDetailsDataUpdated', function(event, response, dataObject) {
-        $scope.partyDetailsDataInit('partyDetailsDataUpdated', response, dataObject);
         $scope.partyDetailsDataInit(dataObject);
         $ocModal.close('partyDetailsModal');
+    });
+
+
+
+    /**********************/
+    /* PROFILE IMAGE DETAILS */
+    /**********************/
+    $scope.profileImageUrl = null;
+
+    $scope.profileImageUrlInit = function (profileImageUrl) {
+
+        console.log('profileImageUrlInit', profileImageUrl);
+
+        $scope.profileImageUrl = profileImageUrl;
+    };
+
+    $scope.$onRootScope('profileImageUrlUpdated', function(event, response) {
+        console.log('profileImageUrlUpdated', response);
+
+        if (response && response.Success === true && response.Message) {
+            $scope.profileImageUrlInit(response.Message);
+        }
+
+        $ocModal.close('profileImageModal');
     });
 
 
