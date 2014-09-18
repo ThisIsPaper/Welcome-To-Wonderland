@@ -5,9 +5,7 @@
 <script type="text/ng-template" id="partials/suggestedDonationForm.html">
     @using (Html.BeginUmbracoForm<PartySurfaceController>("HandleSuggestedDonationForm", FormMethod.Post, new { m_serialized="", m_post_on_submit="suggestedDonationData", m_on_success_event="suggestedDonationDataUpdated" }))
     {
-        @*@Html.AntiForgeryToken()*@
-
-        // TODO: UI for 10 / 15/ 20 / 25 selection
+        @Html.AntiForgeryToken()
 
         @Html.EditorForModel()
 
