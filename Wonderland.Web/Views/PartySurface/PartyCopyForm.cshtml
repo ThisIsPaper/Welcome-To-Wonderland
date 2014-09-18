@@ -2,7 +2,7 @@
 
 @using (Html.BeginUmbracoForm<PartySurfaceController>("HandlePartyCopyForm"))
 {
-    @*@Html.AntiForgeryToken()*@
+    @Html.AntiForgeryToken()
     
     @Html.EditorForModel()
     

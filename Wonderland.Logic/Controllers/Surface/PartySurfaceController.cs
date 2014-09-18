@@ -28,7 +28,7 @@ namespace Wonderland.Logic.Controllers.Surface
         }
 
         [HttpPost]
-        //[ValidateAntiForgeryToken]
+        [ValidateAntiForgeryToken]
         [MemberAuthorize(AllowType=PartyHost.Alias)]
         public JsonResult HandlePartyCopyForm(PartyCopyForm partyCopyForm)
         {
