@@ -35,6 +35,12 @@ wonderlandApp.directive('mPostOnSubmit', ['safeApply', 'mHttp', '$parse', '$root
                         sendData['ufprt'] = ufprtElement[0].value;
                     }
 
+                    // check for ufprt as hidden value
+                    var rvtElement = element.find("[name='__RequestVerificationToken']");
+                    if (rvtElement) {
+                        sendData['__RequestVerificationToken'] = rvtElement[0].value;
+                    }
+
                     console.log('mPostOnSubmit::data', sendData);
 
                     formSubmitRequest = mHttp.post(attrs.action, {

@@ -49,19 +49,29 @@
         <div class="wgrid-side wgrid-no-bottom-margin parent">
 
 
-            <div class="wgrid-full"><div class="boxx"><h2>Set my target</h2></div></div>
+
+
+            <div class="wgrid-full">
+                <div class="boxx">
+                    <h2>Fundraising target</h2>
+                    <h1>£<span ng-bind="fundraisingTargetData.FundraisingTarget"></span></h1>
+                    <div ng-click="openPageModal('partials/fundraisingTargetForm.html', 'suggestedDonationModal', {'fundraisingTargetData': fundraisingTargetDataForForm})">Edit</div>
+                </div>
+            </div>
+
 
 
             <div class="wgrid-full">
                 <div class="boxx">
                     <h2>Change ticket price</h2>
-
+                    <h1>£<span ng-bind="suggestedDonationData.SuggestedDonation"></span></h1>
                     <div ng-click="openPageModal('partials/suggestedDonationForm.html', 'suggestedDonationModal', {'suggestedDonationData': suggestedDonationDataForForm})">Edit</div>
                 </div>
             </div>
 
 
             <div class="wgrid-full"><div class="boxx"><h2>Pay in money</h2></div></div>
+
 
             <div class="wgrid-full">
                 <div class="boxx">
@@ -70,8 +80,7 @@
                         @foreach (IPartier partier in this.Model.Partiers)
                         {
                             <li>
-                                <img src="@partier.ProfileImageUrl" />
-                                @partier.PersonName
+                                <img src="@partier.ProfileImageUrl" width="50" height="50" alt="@partier.PersonName" title="@partier.PersonName"/>
                             </li>
                         }
                     </ul>
@@ -83,7 +92,14 @@
         </div>
 
 
-        <div class="wgrid-main"><div class="boxx"><h2>Wall</h2></div></div>
+        <div class="wgrid-main">
+            <div class="boxx" ng-controller="WallCtrl" ng-init="init(
+                '@(Url.GetUmbracoApiService<PartyApiController>("GetPartyWallItems"))',
+                '@Model.PartyHost.PartyGuid.ToString()'
+            )">
+                <h2>Wall</h2>
+            </div>
+        </div>
 
 
         @(Html.Action<PartySurfaceController>("RenderPartyCopyForm"))
@@ -102,22 +118,18 @@
 </div>
 
 
-@Html.ActionLink("Donate", "NavigateToDonateUrl", "DonateSurface", new { partyGuid = Model.PartyHost.PartyGuid }, new { @class = "" })
-
-
-
 
 
 
 @* wall *@
-@(Html.Action<PartySurfaceController>("RenderPartyWallMessageForm"))
-@(Html.Action<PartySurfaceController>("RenderPartyWallImageForm"))
+@*@(Html.Action<PartySurfaceController>("RenderPartyWallMessageForm"))*@
+@*@(Html.Action<PartySurfaceController>("RenderPartyWallImageForm"))*@
 
 @*call the following url to the json collection of party wall items*@
-<p>
+@*<p>
     URL to call for party wall items (don't pass the beforeDateTime param and the server will use the current server time)
-    @(Url.GetUmbracoApiService<PartyApiController>("GetPartyWallItems"))?PartyGuid=@Model.PartyHost.PartyGuid.ToString()&beforeDateTime=12/12/12&take=10
-</p>
+    ?PartyGuid=&beforeDateTime=12/12/12&take=10
+</p>*@
 
 
 @* totaliser *@
