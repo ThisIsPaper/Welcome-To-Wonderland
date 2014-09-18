@@ -2,12 +2,10 @@
 
 <div ng-init="partyCopyDataInit(@Html.Raw(Json.Encode(Model)))"></div>
 
-<script type="text/ng-template" id="partials/partyCopyData.html">
-    @using (Html.BeginUmbracoForm<PartySurfaceController>("HandlePartyCopyForm", FormMethod.Post, new { post_on_submit="partyCopyData" }))
+<script type="text/ng-template" id="partials/partyCopyForm.html">
+    @using (Html.BeginUmbracoForm<PartySurfaceController>("HandlePartyCopyForm", FormMethod.Post, new { m_serialized="", m_post_on_submit="partyCopyData", m_on_success_event="partyCopyDataUpdated" }))
     {
-        @*@Html.AntiForgeryToken()*@
-
-        @*@Html.EditorForModel()*@
+        @Html.AntiForgeryToken()
 
         <textarea name="Copy" ng-model="partyCopyData.Copy"></textarea>
 

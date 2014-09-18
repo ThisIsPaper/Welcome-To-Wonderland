@@ -1,13 +1,17 @@
 ﻿@model ProfileImageForm
 
-@using (Html.BeginUmbracoForm<PartySurfaceController>("HandleProfileImageForm", FormMethod.Post, new { enctype = "multipart/form-data" }))
-{
-    @*@Html.AntiForgeryToken()*@
+<div ng-init="profileImageDataInit(@Html.Raw(Json.Encode(Model)))"></div>
 
-    @*@Html.EditorForModel() // doesn't render upload field*@
-    
-    <label for="profileImage">Upload image</label>
-    <input type="file" name="profileImage" id="profileImage" />
-        
-    <button type="submit">Save Changes (upload profile image)</button>
-}
+<script type="text/ng-template" id="partials/profileImageForm.html">
+    <div m-image-upload m-on-success-event="profileImageUrlUpdated">
+        @using (Html.BeginUmbracoForm<PartySurfaceController>("HandleProfileImageForm", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            @*@Html.AntiForgeryToken()*@
+
+            <label for="profileImage">Upload image</label>
+            <input type="file" name="profileImage" accept="image/jpeg,image/gif,image/png" m-file-selected="submit()"  />
+
+            @*<button type="submit">Save Changes (upload profile image)</button>*@
+        }
+    </div>
+</script>

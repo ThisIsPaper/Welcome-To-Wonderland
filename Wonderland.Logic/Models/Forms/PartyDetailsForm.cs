@@ -1,6 +1,7 @@
 ﻿
 namespace Wonderland.Logic.Models.Forms
 {
+    using System;
     using System.ComponentModel;
     using System.ComponentModel.DataAnnotations;
 
@@ -14,12 +15,14 @@ namespace Wonderland.Logic.Models.Forms
         [Required]
         [DisplayName("Party Date")]
         [DataType(DataType.Date)]
-        public string PartyDate { get; set; }
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
+        public DateTime PartyDate { get; set; }
 
         [Required]
         [DisplayName("Party Time")]
         [DataType(DataType.Time)]
-        public string PartyTime { get; set; }
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:H:mm}")]
+        public DateTime PartyTime { get; set; }
 
         [Required]
         [DisplayName("Address Line 1")]

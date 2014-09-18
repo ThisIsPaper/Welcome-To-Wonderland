@@ -1,9 +1,8 @@
 ﻿@inherits UmbracoViewPage<RegisterGuest>
 @{
-    Layout = "SitePage.cshtml";
+    Layout = "~/Views/SitePage.cshtml";
 }
 
-<br /><br /><br /><br /><br /><br /><br /><br />
 <h1>Join @Model.PartyHost.FirstName's Party</h1>
 
 @(Html.Action<RegisterGuestSurfaceController>("RenderRegisterGuestForm"))

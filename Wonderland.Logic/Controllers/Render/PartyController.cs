@@ -1,13 +1,12 @@
 ﻿
 namespace Wonderland.Logic.Controllers.Render
 {
-    using System.Collections.Generic;
     using System.Web.Mvc;
-    using Umbraco.Core.Models;
     using Umbraco.Web.Models;
+    using Wonderland.Logic.Extensions;
+    using Wonderland.Logic.Interfaces;
     using Wonderland.Logic.Models.Content;
     using Wonderland.Logic.Models.Members;
-    using Wonderland.Logic.Extensions;
 
     public class PartyController : BaseRenderMvcController
     {
@@ -16,8 +15,6 @@ namespace Wonderland.Logic.Controllers.Render
             Party model = (Party)renderModel.Content;
 
             PartyHost partyHost;
-
-            #region Redirect if party host unknown (see: Events/SetPartyContentFinder)
 
             try
             {
@@ -39,8 +36,6 @@ namespace Wonderland.Logic.Controllers.Render
                 return this.Redirect(Home.GetCurrentHome(model).Url);
             }
 
-            #endregion
-
             // known host, so build the renderModel renderModel
             model.PartyHost = partyHost;
 
@@ -60,7 +55,7 @@ namespace Wonderland.Logic.Controllers.Render
                 model.Copy = partyHost.PartyCopy;
             }
 
-            // wall - TODO: hit db ?
+            // wall - will be ajax only
 
             // totaliser
 

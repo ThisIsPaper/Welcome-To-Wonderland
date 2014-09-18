@@ -2301,10 +2301,15 @@ body {
   font-size: 1.8rem;
 }
 
+/* line 44, sass/partials/_base.scss */
+pre {
+  white-space: pre-wrap;
+}
+
 /* =============================================================================
 Shadows
 ========================================================================== */
-/* line 46, sass/partials/_base.scss */
+/* line 51, sass/partials/_base.scss */
 .shadowed {
   -moz-box-shadow: 0 0 3rem rgba(102, 102, 102, 0.7);
   -webkit-box-shadow: 0 0 3rem rgba(102, 102, 102, 0.7);
@@ -2314,7 +2319,7 @@ Shadows
 /* =============================================================================
 images
 ========================================================================== */
-/* line 53, sass/partials/_base.scss */
+/* line 58, sass/partials/_base.scss */
 img, object, embed {
   max-width: 100%;
 }
@@ -2322,7 +2327,7 @@ img, object, embed {
 /* =============================================================================
 Base page structure
 ========================================================================== */
-/* line 60, sass/partials/_base.scss */
+/* line 65, sass/partials/_base.scss */
 .page-container {
   position: relative;
   width: 100%;
@@ -2341,12 +2346,12 @@ Base page structure
   transition-timing-function: ease-in-out;
 }
 
-/* line 71, sass/partials/_base.scss */
+/* line 76, sass/partials/_base.scss */
 main {
   padding-top: 8.4rem;
 }
 
-/* line 75, sass/partials/_base.scss */
+/* line 80, sass/partials/_base.scss */
 .page-bg {
   background: #FF0000;
   padding: 4rem 0 6rem;
@@ -2355,12 +2360,12 @@ main {
 /* =============================================================================
 One-off uses
 ========================================================================== */
-/* line 84, sass/partials/_base.scss */
+/* line 89, sass/partials/_base.scss */
 #twitter-widget-0 {
   width: 100% !important;
 }
 
-/* line 88, sass/partials/_base.scss */
+/* line 93, sass/partials/_base.scss */
 .home-twitter-boxx {
   height: 35.6rem;
 }
@@ -2738,43 +2743,43 @@ Media query variables
 }
 /* line 160, sass/main.scss */
 .frame:nth-child(1) {
-  -moz-transform: rotate(-2.2deg);
-  -ms-transform: rotate(-2.2deg);
-  -webkit-transform: rotate(-2.2deg);
-  transform: rotate(-2.2deg);
+  -moz-transform: rotate(-0.4deg);
+  -ms-transform: rotate(-0.4deg);
+  -webkit-transform: rotate(-0.4deg);
+  transform: rotate(-0.4deg);
 }
 /* line 160, sass/main.scss */
 .frame:nth-child(2) {
-  -moz-transform: rotate(1.3deg);
-  -ms-transform: rotate(1.3deg);
-  -webkit-transform: rotate(1.3deg);
-  transform: rotate(1.3deg);
+  -moz-transform: rotate(0.1deg);
+  -ms-transform: rotate(0.1deg);
+  -webkit-transform: rotate(0.1deg);
+  transform: rotate(0.1deg);
 }
 /* line 160, sass/main.scss */
 .frame:nth-child(3) {
-  -moz-transform: rotate(-2.2deg);
-  -ms-transform: rotate(-2.2deg);
-  -webkit-transform: rotate(-2.2deg);
-  transform: rotate(-2.2deg);
+  -moz-transform: rotate(-1.9deg);
+  -ms-transform: rotate(-1.9deg);
+  -webkit-transform: rotate(-1.9deg);
+  transform: rotate(-1.9deg);
 }
 /* line 160, sass/main.scss */
 .frame:nth-child(4) {
-  -moz-transform: rotate(0.5deg);
-  -ms-transform: rotate(0.5deg);
-  -webkit-transform: rotate(0.5deg);
-  transform: rotate(0.5deg);
+  -moz-transform: rotate(1.6deg);
+  -ms-transform: rotate(1.6deg);
+  -webkit-transform: rotate(1.6deg);
+  transform: rotate(1.6deg);
 }
 /* line 160, sass/main.scss */
 .frame:nth-child(5) {
-  -moz-transform: rotate(-0.3deg);
-  -ms-transform: rotate(-0.3deg);
-  -webkit-transform: rotate(-0.3deg);
-  transform: rotate(-0.3deg);
+  -moz-transform: rotate(-0.5deg);
+  -ms-transform: rotate(-0.5deg);
+  -webkit-transform: rotate(-0.5deg);
+  transform: rotate(-0.5deg);
 }
 /* line 160, sass/main.scss */
 .frame:nth-child(6) {
-  -moz-transform: rotate(1.4deg);
-  -ms-transform: rotate(1.4deg);
-  -webkit-transform: rotate(1.4deg);
-  transform: rotate(1.4deg);
+  -moz-transform: rotate(0.8deg);
+  -ms-transform: rotate(0.8deg);
+  -webkit-transform: rotate(0.8deg);
+  transform: rotate(0.8deg);
 }

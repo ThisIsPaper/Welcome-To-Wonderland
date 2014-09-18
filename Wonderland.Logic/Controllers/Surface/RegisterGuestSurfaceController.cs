@@ -47,7 +47,7 @@ namespace Wonderland.Logic.Controllers.Surface
         public ActionResult HandleRegisterGuestForm(RegisterGuestForm registerGuestForm)
         {
             if (!this.ModelState.IsValid)
-            {
+            {                
                 return this.CurrentUmbracoPage();
             }
 
@@ -86,7 +86,7 @@ namespace Wonderland.Logic.Controllers.Surface
             PartyGuest partyGuest = (PartyGuest)membershipUser;
 
             // update database with member and party guid (duplicated data, but never changes)
-            this.ApplicationContext.DatabaseContext.Database.Insert(new MemberParty(partyGuest.Id, registerGuestForm.PartyGuid));
+            this.DatabaseContext.Database.Insert(new MemberParty(partyGuest.Id, registerGuestForm.PartyGuid));
 
             // (duplicate data) store party guid in cms cache
             partyGuest.PartyGuid = registerGuestForm.PartyGuid;
@@ -94,7 +94,33 @@ namespace Wonderland.Logic.Controllers.Surface
             // send cookie
             FormsAuthentication.SetAuthCookie(partyGuest.Username, true);
 
-            return this.RedirectToUmbracoPage(this.CurrentPage.Children.Single(x => x.DocumentTypeAlias == RegisterGuestConfirmation.Alias));
+            return this.NavigateToRegisterGuestUrl(registerGuestForm.PartyGuid);
+            //return this.RedirectToCurrentUmbracoPage();
+        }
+
+        [MemberAuthorize(AllowType=PartyGuest.Alias)]
+        [ChildActionOnly]
+        public ActionResult RenderRegisterGuestBillingForm()
+        {
+            return this.PartialView("RegisterGuestForm", new RegisterGuestBillingForm());
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [MemberAuthorize(AllowType = PartyGuest.Alias)]
+        public ActionResult HandleRegisterGuestBillingForm(RegisterGuestBillingForm registerGuestBillingForm)
+        {
+            if (!this.ModelState.IsValid)
+            {
+                return this.CurrentUmbracoPage();
+            }
+
+            // we have enough details to initiate the sage pay process
+            
+            // 1) post to sagepay, get response, and then redirect user
+
+
+            return this.CurrentUmbracoPage();
         }
     }
 }

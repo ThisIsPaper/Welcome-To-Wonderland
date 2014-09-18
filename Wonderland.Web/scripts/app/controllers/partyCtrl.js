@@ -1,27 +1,86 @@
-wonderlandApp.controller('PartyCtrl', ['$http', '$ocModal', '$scope', function ($http, $ocModal, $scope) {
+wonderlandApp.controller('PartyCtrl', ['safeApply', '$ocModal', '$sce', '$scope',
+                                        function (safeApply, $ocModal, $sce, $scope) {
 
+    /**********************/
+    /* PARTY COPY */
+    /**********************/
     $scope.partyCopyData = null;
-
+    $scope.partyCopyDataForForm = null;
 
     $scope.partyCopyDataInit = function (partyCopyData) {
-        console.log(partyCopyData);
-
         $scope.partyCopyData = partyCopyData;
+        $scope.partyCopyDataForForm = angular.copy($scope.partyCopyData);
+        $scope.partyCopyData.CopyHtmlSafe = $sce.trustAsHtml($scope.partyCopyData.Copy);
     };
 
-    $scope.openPageModal = function (partial) {
+    $scope.$onRootScope('partyCopyDataUpdated', function(event, response, dataObject) {
+        console.log('partyCopyDataUpdated', response, dataObject);
+        $scope.partyCopyDataInit(dataObject);
+        $ocModal.close('partyCopyModal');
+    });
 
-        $ocModal.open({
-                          id: 'partyCopyModel',
-                          url: partial,
-                          controller: 'ModelPartyCopyCtrl',
-                          init: {
-                              partyCopyData: $scope.partyCopyData
-                          },
-                          onOpen: function (a, b, c, d, e, f) {console.log('onOpoen', a, b, c, d, e, f)},
-                          onClose: function (a, b, c, d, e, f) { console.log('onClose', a, b, c, d, e, f)}
-                      });
 
+
+    /**********************/
+    /* PARTY DETAILS */
+    /**********************/
+    $scope.partyDetailsData = null;
+    $scope.partyDetailsDataForForm = null;
+
+    $scope.partyDetailsDataInit = function (partyDetailsData) {
+
+        // TODO - date and time not working, need to wait for backend
+        console.log('partyDetailsDataInit', partyDetailsData);
+
+        $scope.partyDetailsData = partyDetailsData;
+        $scope.partyDetailsDataForForm = angular.copy($scope.partyDetailsData);
     };
+
+    $scope.$onRootScope('partyDetailsDataUpdated', function(event, response, dataObject) {
+
+        console.log('partyDetailsDataUpdated', response, dataObject);
+
+        $scope.partyDetailsDataInit(dataObject);
+        $ocModal.close('partyDetailsModal');
+    });
+
+
+
+    /**********************/
+    /* PROFILE IMAGE DETAILS */
+    /**********************/
+    $scope.profileImageUrl = null;
+
+    $scope.profileImageUrlInit = function (profileImageUrl) {
+        $scope.profileImageUrl = profileImageUrl;
+    };
+
+    $scope.$onRootScope('profileImageUrlUpdated', function(event, response) {
+        if (response && response.Success === true && response.Message) {
+            $scope.profileImageUrlInit(response.Message);
+        }
+
+        $ocModal.close('profileImageModal');
+    });
+
+
+
+    /**********************/
+    /* SUGGESTED DONATION */
+    /**********************/
+    $scope.suggestedDonationData = null;
+    $scope.suggestedDonationDataForForm = null;
+
+    $scope.suggestedDonationDataInit = function (suggestedDonationData) {
+        $scope.suggestedDonationData = suggestedDonationData;
+        $scope.suggestedDonationDataForForm = angular.copy($scope.suggestedDonationData);
+    };
+
+    $scope.$onRootScope('suggestedDonationDataUpdated', function(event, response, dataObject) {
+        console.log('partyCopyDataUpdated', response, dataObject);
+        $scope.suggestedDonationDataInit(dataObject);
+        $ocModal.close('suggestedDonationModal');
+    });
+
 
 }]);

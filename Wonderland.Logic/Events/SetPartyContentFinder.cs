@@ -2,11 +2,12 @@
 namespace Wonderland.Logic.Events
 {
     using System;
-    using System.Linq;
     using System.Web;
     using Umbraco.Core;
-    using Umbraco.Core.Models;
+    using Umbraco.Web;
     using Umbraco.Web.Routing;
+    using Umbraco.Web.Security;
+    using Wonderland.Logic.Extensions;
     using Wonderland.Logic.Models.Content;
     using Wonderland.Logic.Models.Members;
 
@@ -33,22 +34,15 @@ namespace Wonderland.Logic.Events
             // if we're looking for the renderModel page with an id
             if (urlParts.Length == 2 && urlParts[0].ToLower() == "party")
             {
-                string partyUrlIdentifier = urlParts[1].ToLower();
-
-                // WARNING: this will hit the db
-                IMember partyHost = ApplicationContext
-                                        .Current
-                                        .Services
-                                        .MemberService
-                                        .GetMembersByMemberType(PartyHost.Alias)
-                                        .SingleOrDefault(x => x.GetValue<string>(PartyHost.PartyUrlIdentifierAlias).ToLower() == partyUrlIdentifier);
+                // attempt to get party host from the url identifier
+                PartyHost partyHost = new MembershipHelper(UmbracoContext.Current).GetPartyHost(urlParts[1]);
 
                 if (partyHost != null)
                 {
                     // add to httpContext for consumption in the hijack controller
                     HttpContext.Current.Items["partyHostId"] = partyHost.Id;
 
-                    // set to use the renderModel page
+                    // set to use the party page
                     contentRequest.PublishedContent = contentRequest.RoutingContext.UmbracoContext.ContentCache.GetSingleByXPath("//" + Party.Alias);
 
                     // indicate suitable content has been found

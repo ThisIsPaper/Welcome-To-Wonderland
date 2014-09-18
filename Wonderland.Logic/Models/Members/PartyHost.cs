@@ -8,6 +8,7 @@ namespace Wonderland.Logic.Models.Members
     using Umbraco.Core.Models;
     using Umbraco.Web;
     using Umbraco.Web.Security;
+    using Wonderland.Logic.Interfaces;
     using Wonderland.Logic.Models.Content;
     using Wonderland.Logic.Models.Entities;
 
@@ -242,24 +243,6 @@ namespace Wonderland.Logic.Models.Members
             {
                 return UmbracoContext.Current.ContentCache.GetSingleByXPath("//" + Party.Alias).Url + this.PartyUrlIdentifier;
             }
-        }
-
-        public static PartyHost GetByPartyGuid(Guid partyGuid)
-        {
-            // WARNING: hits db            
-            IMember partyHost = ApplicationContext
-                                .Current
-                                .Services
-                                .MemberService
-                                .GetMembersByMemberType(PartyHost.Alias)
-                                .SingleOrDefault(x => x.GetValue<Guid>(PartyHost.PartyGuidAlias) == partyGuid);
-
-            if (partyHost != null)
-            {
-                return new PartyHost(new MembershipHelper(UmbracoContext.Current).GetByUsername(partyHost.Username));
-            }
-
-            return null;
         }
 
         /// <summary>
