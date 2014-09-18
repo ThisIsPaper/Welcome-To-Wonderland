@@ -111,6 +111,9 @@ namespace Wonderland.Logic.Controllers.Surface
             // set the default custom url to be the party guid
             partyHost.PartyUrlIdentifier = partyGuid.ToString();
 
+            // set default party date
+            partyHost.PartyDateTime = new DateTime(2014, 12, 5, 20, 0, 0);
+
             // send cookie
             FormsAuthentication.SetAuthCookie(partyHost.Username, true);
 
