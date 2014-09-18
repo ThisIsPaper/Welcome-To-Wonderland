@@ -1,0 +1,18 @@
+﻿@model PartyImageForm
+
+<h2>Party Image Form</h2>
+
+
+@foreach(Image defaultImage in Model.DefaultImages)
+{
+    <img src="@defaultImage.Url" />
+}
+
+@using (Html.BeginUmbracoForm<PartySurfaceController>("HandlePartyImageForm"))
+{
+    @Html.AntiForgeryToken()
+
+    @Html.EditorForModel()
+
+    <button type="submit">Save Party Image</button>
+}

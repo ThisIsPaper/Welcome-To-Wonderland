@@ -17,6 +17,29 @@ namespace Wonderland.Logic.Controllers.Surface
     public class PartySurfaceController : SurfaceController
     {
         [ChildActionOnly]
+        [MemberAuthorize(AllowType = PartyHost.Alias)]
+        public ActionResult RenderPartyImageForm()
+        {
+            PartyImageForm partyImageForm = new PartyImageForm();
+
+            partyImageForm.DefaultImages = ((Party)this.CurrentPage).DefaultImages;
+
+            return this.PartialView("PartyImageForm", partyImageForm);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [MemberAuthorize(AllowType = PartyHost.Alias)]
+        public JsonResult HandlePartyImageForm(PartyImageForm partyImageForm)
+        {
+            FormResponse formResponse = new FormResponse();
+
+            // TODO:
+
+            return Json(formResponse);
+        }
+
+        [ChildActionOnly]
         [MemberAuthorize(AllowType=PartyHost.Alias)]
         public ActionResult RenderPartyCopyForm()
         {
