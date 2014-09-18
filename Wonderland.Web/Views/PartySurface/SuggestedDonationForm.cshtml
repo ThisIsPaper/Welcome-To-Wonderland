@@ -1,5 +1,7 @@
 ﻿@model SuggestedDonationForm
 
+<div ng-init="suggestedDonationDataInit(@Html.Raw(Json.Encode(Model)))"></div>
+
 @using (Html.BeginUmbracoForm<PartySurfaceController>("HandleSuggestedDonationForm"))
 {
     @*@Html.AntiForgeryToken()*@

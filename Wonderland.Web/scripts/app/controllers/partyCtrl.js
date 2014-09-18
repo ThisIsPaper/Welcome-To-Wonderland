@@ -29,6 +29,7 @@ wonderlandApp.controller('PartyCtrl', ['safeApply', '$ocModal', '$sce', '$scope'
 
     $scope.partyDetailsDataInit = function (partyDetailsData) {
 
+        // TODO - date and time not working, need to wait for backend
         console.log('partyDetailsDataInit', partyDetailsData);
 
         $scope.partyDetailsData = partyDetailsData;
@@ -36,6 +37,9 @@ wonderlandApp.controller('PartyCtrl', ['safeApply', '$ocModal', '$sce', '$scope'
     };
 
     $scope.$onRootScope('partyDetailsDataUpdated', function(event, response, dataObject) {
+
+        console.log('partyDetailsDataUpdated', response, dataObject);
+
         $scope.partyDetailsDataInit(dataObject);
         $ocModal.close('partyDetailsModal');
     });
@@ -48,20 +52,34 @@ wonderlandApp.controller('PartyCtrl', ['safeApply', '$ocModal', '$sce', '$scope'
     $scope.profileImageUrl = null;
 
     $scope.profileImageUrlInit = function (profileImageUrl) {
-
-        console.log('profileImageUrlInit', profileImageUrl);
-
         $scope.profileImageUrl = profileImageUrl;
     };
 
     $scope.$onRootScope('profileImageUrlUpdated', function(event, response) {
-        console.log('profileImageUrlUpdated', response);
-
         if (response && response.Success === true && response.Message) {
             $scope.profileImageUrlInit(response.Message);
         }
 
         $ocModal.close('profileImageModal');
+    });
+
+
+
+    /**********************/
+    /* SUGGESTED DONATION */
+    /**********************/
+    $scope.suggestedDonationData = null;
+    $scope.suggestedDonationDataForForm = null;
+
+    $scope.suggestedDonationDataInit = function (suggestedDonationData) {
+        $scope.suggestedDonationData = suggestedDonationData;
+        $scope.suggestedDonationDataForForm = angular.copy($scope.suggestedDonationData);
+    };
+
+    $scope.$onRootScope('suggestedDonationDataUpdated', function(event, response, dataObject) {
+        console.log('partyCopyDataUpdated', response, dataObject);
+        $scope.suggestedDonationDataInit(dataObject);
+        $ocModal.close('suggestedDonationModal');
     });
 
 
