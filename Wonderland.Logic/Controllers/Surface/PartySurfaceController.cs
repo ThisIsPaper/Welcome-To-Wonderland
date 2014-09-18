@@ -34,6 +34,30 @@ namespace Wonderland.Logic.Controllers.Surface
         {
             FormResponse formResponse = new FormResponse();
 
+            if (this.ModelState.IsValid)
+            {
+                ((PartyHost)this.Members.GetCurrentMember()).PartyImage = partyImageForm.PartyImage;
+
+                formResponse.Success = true;
+            }
+
+            return Json(formResponse);
+        }
+
+        [ChildActionOnly]
+        [MemberAuthorize(AllowType = PartyHost.Alias)]
+        public ActionResult RenderCustomPartyImageForm()
+        {
+            return this.PartialView("CustomPartyImageForm", new CustomPartyImageForm());
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [MemberAuthorize(AllowType = PartyHost.Alias)]
+        public JsonResult HandleCustomPartyImageForm(CustomPartyImageForm customPartyImageForm)
+        {
+            FormResponse formResponse = new FormResponse();
+
             // TODO:
 
             return Json(formResponse);

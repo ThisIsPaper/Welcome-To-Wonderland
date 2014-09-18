@@ -30,6 +30,7 @@ namespace Wonderland.Logic.Models.Members
         public const string PartyDateTimeAlias = "partyDateTime";
         public const string HasRequestedPartyKitAlias = "hasRequestedPartyKit";        
         public const string PartyUrlIdentifierAlias = "partyUrlIdentifier";
+        public const string PartyImageAlias = "partyImage";
         public const string PartyHeadingAlias = "partyHeading";
         public const string PartyCopyAlias = "partyCopy";
         public const string SuggestedDonationAlias = "suggestedDonation";
@@ -183,6 +184,26 @@ namespace Wonderland.Logic.Models.Members
             set
             {
                 this.SetPropertyValue(PartyHost.PartyUrlIdentifierAlias, value);
+            }
+        }
+
+        public string PartyImage
+        {
+            get
+            {
+                return this.GetPropertyValue<string>(PartyHost.PartyImageAlias);
+            }
+            set
+            {
+                this.SetPropertyValue(PartyHost.PartyImageAlias, value);
+            }
+        }
+
+        public string PartyImageUrl
+        {
+            get
+            {
+                return "/Uploads/PartyImage/" + this.PartyImage;
             }
         }
 
