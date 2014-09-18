@@ -3,12 +3,7 @@
     Layout = "~/Views/SitePage.cshtml";
 }
 
-<br /><br /><br /><br /><br /><br /><br /><br />
-
-
 <h1>the current user is a guest at this party</h1>
-
-
 
 @* image *@
 
@@ -38,6 +33,7 @@
     @foreach (IPartier partier in this.Model.Partiers)
     {
         <li>
+            <img src="@partier.ProfileImageUrl" />
             @partier.PersonName
         </li>
     }

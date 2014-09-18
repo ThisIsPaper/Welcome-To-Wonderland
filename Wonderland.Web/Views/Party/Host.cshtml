@@ -70,6 +70,7 @@
                         @foreach (IPartier partier in this.Model.Partiers)
                         {
                             <li>
+                                <img src="@partier.ProfileImageUrl" />
                                 @partier.PersonName
                             </li>
                         }
