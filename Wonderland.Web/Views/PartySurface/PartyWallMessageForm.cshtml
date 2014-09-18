@@ -1,0 +1,12 @@
+﻿@model PartyWallMessageForm
+
+<h2>Leave a message on the party wall</h2>
+
+@using (Html.BeginUmbracoForm<PartySurfaceController>("HandlePartyWallMessageForm"))
+{
+    @*@Html.AntiForgeryToken()*@
+
+    @Html.EditorForModel()
+    
+    <button type="submit">Post Message</button>
+}

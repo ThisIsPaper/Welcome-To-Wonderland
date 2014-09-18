@@ -41,7 +41,6 @@ namespace Wonderland.Logic.Controllers.Surface
             else
             {
                 // change copy for current party host
-
                 PartyHost partyHost = (PartyHost)this.Members.GetCurrentMember();
 
                 partyHost.PartyCopy = partyCopyForm.Copy;
@@ -183,39 +182,65 @@ namespace Wonderland.Logic.Controllers.Surface
 
         [ChildActionOnly]
         [MemberAuthorize]
-        public ActionResult RenderPartyWallForm()
+        public ActionResult RenderPartyWallMessageForm()
         {
             // TODO: safety check that current member is associated with this party ?
 
-            return this.PartialView("PartyWallForm", new PartyWallForm());
+            return this.PartialView("PartyWallMessageForm", new PartyWallMessageForm());
         }
 
         [HttpPost]
         //[ValidateAntiForgeryToken]
         [MemberAuthorize]
-        public JsonResult HandlePartyWallForm(PartyWallForm partyWallForm)
+        public JsonResult HandlePartyWallMessageForm(PartyWallMessageForm partyWallMessageForm)
         {
             // TODO: safety check that current member is associated with this party
 
             FormResponse formResponse = new FormResponse();
 
-            if (!this.ModelState.IsValid || (string.IsNullOrWhiteSpace(partyWallForm.Message) && partyWallForm.WallImage.ContentLength == 0))
+            if (this.ModelState.IsValid && (!string.IsNullOrWhiteSpace(partyWallMessageForm.Message) || !string.IsNullOrWhiteSpace(partyWallMessageForm.PartyWallImage)))
             {
-                formResponse.Success = false;
-            }
-            else
-            {
-                Guid partyGuid = ((Party)this.Umbraco.AssignedContentItem).PartyHost.PartyGuid;
+                //Guid partyGuid = ((Party)this.Umbraco.AssignedContentItem).PartyHost.PartyGuid;
 
-                // TODO: upload any image 
-                
-                // insert message into DB
-                //this.DatabaseContext.Database.Insert(new Wall() 
-                //                                            { 
+                //// insert message into DB
+                //this.DatabaseContext.Database.Insert(new Message()
+                //                                            {
                 //                                                MemberId = this.Members.GetCurrentMemberId(),
-                //                                                Message = partyWallForm.Message
-                //                                                // Image
+                //                                                Text = partyWallMessageForm.Message,
+                //                                                Image = partyWallMessageForm.PartyWallImage
                 //                                            });
+
+                formResponse.Success = true;
+            }
+
+            return Json(formResponse);
+        }
+
+        [ChildActionOnly]
+        [MemberAuthorize]
+        public ActionResult RenderPartyWallImageForm()
+        {
+            // TODO: safety check that current member is associated with this party ?
+
+            return this.PartialView("PartyWallImageForm", new PartyWallImageForm());
+        }
+
+        [HttpPost]
+        //[ValidateAntiForgeryToken]
+        [MemberAuthorize]
+        public JsonResult HandlePartyWallImageForm(PartyWallImageForm partyWallImageForm)
+        {
+            FormResponse formResponse = new FormResponse();
+
+            // TODO: safety check that current member is associated with this party
+
+            if (this.ModelState.IsValid && partyWallImageForm.PartyWallImage.ContentLength > 0 && partyWallImageForm.PartyWallImage.InputStream.IsImage())
+            {
+                string fileName = Guid.NewGuid().ToString() + "." + partyWallImageForm.PartyWallImage.ContentType.Split('/')[1];
+
+                partyWallImageForm.PartyWallImage.SaveAs(Server.MapPath("~/Uploads/PartyWall/" + fileName));
+
+                formResponse.Message = fileName;
 
                 formResponse.Success = true;
             }

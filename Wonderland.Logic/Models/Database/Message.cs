@@ -15,7 +15,7 @@ namespace Wonderland.Logic.Models.Database
         internal string Text { get; set; }
 
         [Column("Image")]
-        internal Guid Image { get; set; }
+        internal string Image { get; set; }
 
         [Column("Timestamp")]
         internal DateTime Timestamp { get; set; }
