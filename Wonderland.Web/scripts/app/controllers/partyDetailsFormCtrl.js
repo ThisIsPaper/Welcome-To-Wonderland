@@ -4,19 +4,8 @@ wonderlandApp.controller('PartyDetailsFormCtrl', ['$scope', function ($scope) {
         dateTime: null
     };
 
-
-
-
-    $scope.$watch('partyDetailsData.PartyDateTime', function (newVal, oldVal) {
-
-        console.log('PartyDetailsFormCtrl::PartyDateTime', newVal, oldVal);
-
-    }, true);
-
-    $scope.$watch('tempModel.dateTime', function (newVal, oldVal) {
-
-        console.log('tempModel.dateTime', newVal, oldVal);
-
+    $scope.$watch('tempModel.dateTime', function (newVal) {
+        
         if (!newVal) {
             return;
         }

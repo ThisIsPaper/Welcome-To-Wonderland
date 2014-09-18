@@ -92,7 +92,14 @@
         </div>
 
 
-        <div class="wgrid-main"><div class="boxx"><h2>Wall</h2></div></div>
+        <div class="wgrid-main">
+            <div class="boxx" ng-controller="WallCtrl" ng-init="init(
+                '@(Url.GetUmbracoApiService<PartyApiController>("GetPartyWallItems"))',
+                '@Model.PartyHost.PartyGuid.ToString()'
+            )">
+                <h2>Wall</h2>
+            </div>
+        </div>
 
 
         @(Html.Action<PartySurfaceController>("RenderPartyCopyForm"))
@@ -121,7 +128,7 @@
 @*call the following url to the json collection of party wall items*@
 @*<p>
     URL to call for party wall items (don't pass the beforeDateTime param and the server will use the current server time)
-    @(Url.GetUmbracoApiService<PartyApiController>("GetPartyWallItems"))?PartyGuid=@Model.PartyHost.PartyGuid.ToString()&beforeDateTime=12/12/12&take=10
+    ?PartyGuid=&beforeDateTime=12/12/12&take=10
 </p>*@
 
 
