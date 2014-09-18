@@ -325,7 +325,7 @@ namespace Wonderland.Logic.Controllers.Surface
 
                 partyWallImageForm.PartyWallImage.SaveAs(Server.MapPath("~/Uploads/PartyWall/" + fileName));
 
-                formResponse.Message = fileName;
+                formResponse.Message = "/Uploads/PartyWall/" + fileName;
 
                 formResponse.Success = true;
             }
