@@ -1,12 +1,15 @@
 ﻿@model PartyWallMessageForm
 
-<h2>Leave a message on the party wall</h2>
+<div ng-init="wallFormModelInit(@Html.Raw(Json.Encode(Model)))"></div>
 
+@*@using (Html.BeginUmbracoForm<PartySurfaceController>("HandlePartyWallMessageForm", FormMethod.Post, new { m_serialized="", m_post_on_submit="wall.formModel", m_on_success_event="wallMessagePosted" }))*@
 @using (Html.BeginUmbracoForm<PartySurfaceController>("HandlePartyWallMessageForm"))
 {
-    @*@Html.AntiForgeryToken()*@
+    @Html.AntiForgeryToken()
 
     @Html.EditorForModel()
+
+    @*<textarea name="Message" ng-model="wall.formModel.Message"></textarea>*@
     
     <button type="submit">Post Message</button>
 }
