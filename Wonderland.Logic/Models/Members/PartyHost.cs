@@ -155,7 +155,7 @@ namespace Wonderland.Logic.Models.Members
             }
             set
             {
-                this.SetPropertyValue(PartyHost.PartyDateTimeAlias, value);
+                this.SetPropertyValue(PartyHost.PartyDateTimeAlias, value.ToString());
             }
         }
 
