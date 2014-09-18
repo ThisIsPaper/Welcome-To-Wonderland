@@ -92,8 +92,7 @@ namespace Wonderland.Logic.Controllers.Surface
             PartyHost partyHost = (PartyHost)this.Members.GetCurrentMember();
 
             partyDetailsForm.PartyHeading = partyHost.PartyHeading;
-            partyDetailsForm.PartyDate = partyHost.PartyDateTime;
-            partyDetailsForm.PartyTime = partyHost.PartyDateTime;
+            partyDetailsForm.PartyDateTime = partyHost.PartyDateTime;
 
             partyDetailsForm.Address1 = partyHost.PartyAddress.Address1;
             partyDetailsForm.Address2 = partyHost.PartyAddress.Address2;
@@ -116,7 +115,7 @@ namespace Wonderland.Logic.Controllers.Surface
 
                 partyHost.PartyHeading = partyDetailsForm.PartyHeading;
 
-                partyHost.PartyDateTime = partyDetailsForm.PartyDate.Add(partyDetailsForm.PartyTime.TimeOfDay);
+                partyHost.PartyDateTime = partyDetailsForm.PartyDateTime;
 
                 Address address = new Address()
                 {

@@ -13,16 +13,10 @@ namespace Wonderland.Logic.Models.Forms
         public string PartyHeading { get; set; }
 
         [Required]
-        [DisplayName("Party Date")]
-        [DataType(DataType.Date)]
-        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
-        public DateTime PartyDate { get; set; }
-
-        [Required]
-        [DisplayName("Party Time")]
-        [DataType(DataType.Time)]
-        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:H:mm}")]
-        public DateTime PartyTime { get; set; }
+        [DisplayName("Party Date and Time")]
+        [DataType(DataType.DateTime)]
+        //[DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
+        public DateTime PartyDateTime { get; set; }
 
         [Required]
         [DisplayName("Address Line 1")]
