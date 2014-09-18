@@ -40,6 +40,11 @@ nav, nav li, .toolbar, .toolbar li, .btn-group {
   }
 }
 
+
+pre {
+    white-space: pre-wrap;
+}
+
 /* =============================================================================
 Shadows
 ========================================================================== */
@@ -70,4 +75,21 @@ Base page structure
 
 main {
     padding-top: 8.4rem;
+}
+
+.page-bg {
+    background: #FF0000;
+    padding: 4rem 0 6rem;
+}
+
+
+/* =============================================================================
+One-off uses
+========================================================================== */
+#twitter-widget-0 {
+  width:100% !important;
+}
+
+.home-twitter-boxx {
+    height: 35.6rem; // includes 1.8rem padding
 }

@@ -18,7 +18,8 @@
         
     @{ 
         Html.RequiresCss("~/css/main.css"); 
-    } 
+        Html.RequiresCss("~/scripts/bower_components/ocModal/dist/css/ocModal.full.css");
+    }
     @Html.RenderCssHere()
   
     <script type="text/javascript">window.slimmage = { verbose: false };</script>
@@ -29,6 +30,8 @@
     @Html.RenderJsHere("HeadRenderer")
 </head>
 <body>
+
+
 
     <div class="page-container" ng-controller="PageCtrl" ng-class="{'showing-side-nav-menu': pageShowingSideNavMenu, 'showing-side-account-menu': pageShowingSideAccountMenu}">
         <!--[if lt IE 7]>
@@ -43,14 +46,27 @@
 
     </div>
 
+
+
     @{
         Html.RequiresJs("~/scripts/vendor/jquery-1.10.2.js"); // maybe use jquery... not sure yet
         Html.RequiresJs("~/scripts/bower_components/angular/angular.js");
+        Html.RequiresJs("~/scripts/bower_components/ocModal/dist/ocModal.js");
         Html.RequiresJs("~/scripts/app/app.js");
         Html.RequiresJs("~/scripts/app/controllers/pageCtrl.js");
+        Html.RequiresJs("~/scripts/app/controllers/partyCtrl.js");
+        Html.RequiresJs("~/scripts/app/directives/mImageUpload.js");
+        Html.RequiresJs("~/scripts/app/directives/mFileSelected.js");
+        Html.RequiresJs("~/scripts/app/directives/mPostOnSubmit.js");
         Html.RequiresJs("~/scripts/app/services/debounce.js");
+        Html.RequiresJs("~/scripts/app/services/fileUpload.js");
+        Html.RequiresJs("~/scripts/app/services/mHttp.js");
+        Html.RequiresJs("~/scripts/app/services/safeApply.js");
+        Html.RequiresJs("~/scripts/app/services/uniqueId.js");
     }
     @Html.Raw(Html.RenderJsHere());
+
+
 
     <script>angular.bootstrap(document.getElementsByTagName("html")[0], ['wonderlandApp']);</script>
 

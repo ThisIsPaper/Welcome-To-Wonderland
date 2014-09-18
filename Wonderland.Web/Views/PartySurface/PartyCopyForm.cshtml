@@ -1,10 +1,14 @@
 ﻿@model PartyCopyForm
 
-@using (Html.BeginUmbracoForm<PartySurfaceController>("HandlePartyCopyForm"))
-{
-    @Html.AntiForgeryToken()
-    
-    @Html.EditorForModel()
-    
-    <button type="submit">Save Changes</button>
-}
+<div ng-init="partyCopyDataInit(@Html.Raw(Json.Encode(Model)))"></div>
+
+<script type="text/ng-template" id="partials/partyCopyForm.html">
+    @using (Html.BeginUmbracoForm<PartySurfaceController>("HandlePartyCopyForm", FormMethod.Post, new { m_serialized="", m_post_on_submit="partyCopyData", m_on_success_event="partyCopyDataUpdated" }))
+    {
+        @Html.AntiForgeryToken()
+
+        <textarea name="Copy" ng-model="partyCopyData.Copy"></textarea>
+
+        <button type="submit">Save Changes</button>
+    }
+</script>

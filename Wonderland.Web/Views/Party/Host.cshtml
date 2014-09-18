@@ -3,62 +3,99 @@
     Layout = "~/Views/SitePage.cshtml";
 }
 
-<h1>the current user is the host for this party</h1>
 
-@*<div ng-controller="ctrl" ng-init="init()"></div>*@
+<div class="page-bg">
 
-<pre>
-@Json.Encode(
-        new 
-        {
-            partyHeading = Model.Heading,
-            partyCopy = Model.Copy
-        }
-)
-</pre>
+    <div class="container gutter" ng-controller="PartyCtrl" ng-init="profileImageUrlInit('@Model.PartyHost.ProfileImageUrl')">
 
-@* image *@
+        <div class="wgrid-main wgrid-no-bottom-margin parent">
 
-<h1 ng-bind="var1">@(this.Model.PartyHost.FirstName)'s Wonderland party</h1>
+            <div class="wgrid-full">
+                <div class="boxx">
+                    @* image *@
 
-@* time *@
-<p>
-    @Model.PartyHost.PartyAddress.Address1, 
-    @Model.PartyHost.PartyAddress.Address2, 
-    @Model.PartyHost.PartyAddress.TownCity, 
-    @Model.PartyHost.PartyAddress.Postcode
-</p>
+                    <h1 ng-bind="partyDetailsData.PartyHeading">@this.Model.Heading</h1>
 
-<h2>@this.Model.Heading</h2>
-<p>@this.Model.Copy</p>
+                    <div>
+                        <img ng-src="{{ profileImageUrl }}" width="50" height="50" />
+                        <div ng-click="openPageModal('partials/profileImageForm.html', 'profileImageModal')">Edit</div>
+                    </div>
+
+                    <span ng-bind="partyDetailsData.PartyDate"></span>
+                    <span ng-bind="partyDetailsData.PartyTime"></span>
+
+                    <p>
+                        <span ng-bind="partyDetailsData.Address1">@Model.PartyHost.PartyAddress.Address1</span>
+                        <span ng-bind="partyDetailsData.Address2">@Model.PartyHost.PartyAddress.Address2</span>
+                        <span ng-bind="partyDetailsData.TownCity">@Model.PartyHost.PartyAddress.TownCity</span>
+                        <span ng-bind="partyDetailsData.Postcode">@Model.PartyHost.PartyAddress.Postcode</span>
+                    </p>
+
+                    <div ng-click="openPageModal('partials/partyDetailsForm.html', 'partyDetailsModal', {'partyDetailsData': partyDetailsDataForForm})">Edit</div>
+                </div>
+            </div>
 
 
-@(Html.Action<PartySurfaceController>("RenderPartyCopyForm"))
+            <div class="wgrid-full">
+                <div class="boxx">
+                    <h2>Join the Wonderland Party</h2>
+                    <pre ng-bind-html="partyCopyData.CopyHtmlSafe">@this.Model.Copy</pre>
+                    <div ng-click="openPageModal('partials/partyCopyForm.html', 'partyCopyModal', {'partyCopyData': partyCopyDataForForm})">Edit</div>
+                </div>
+            </div>
 
-@(Html.Action<PartySurfaceController>("RenderProfileImageForm"))
+        </div>
 
-@(Html.Action<PartySurfaceController>("RenderPartyDetailsForm"))
 
-@(Html.Action<PartySurfaceController>("RenderSuggestedDonationForm"))
+        <div class="wgrid-side wgrid-no-bottom-margin parent">
+
+            <div class="wgrid-full"><div class="boxx"><h2>Set my target</h2></div></div>
+            <div class="wgrid-full"><div class="boxx"><h2>Change ticket price</h2></div></div>
+            <div class="wgrid-full"><div class="boxx"><h2>Pay in money</h2></div></div>
+
+            <div class="wgrid-full">
+                <div class="boxx">
+                    <h2>Who's Coming (@this.Model.Partiers.Count())</h2>
+                    <ul>
+                        @foreach (IPartier partier in this.Model.Partiers)
+                        {
+                            <li>
+                                @partier.PersonName
+                            </li>
+                        }
+                    </ul>
+                </div>
+            </div>
+
+            <div class="wgrid-full"><div class="boxx"><h2>Badges</h2></div></div>
+
+        </div>
+
+
+        <div class="wgrid-main"><div class="boxx"><h2>Wall</h2></div></div>
+
+
+        @(Html.Action<PartySurfaceController>("RenderPartyCopyForm"))
+
+        @(Html.Action<PartySurfaceController>("RenderPartyDetailsForm"))
+
+        @(Html.Action<PartySurfaceController>("RenderProfileImageForm"))
+
+        @(Html.Action<PartySurfaceController>("RenderSuggestedDonationForm"))
+
+    </div>
+
+</div>
+
+
 
 
 
 @* wall *@
-@(Html.Action<PartySurfaceController>("RenderPartyWallForm"))
+@*@(Html.Action<PartySurfaceController>("RenderPartyWallForm"))*@
 
 @*call the following url to the json collection of party wall items*@
-@(Url.GetUmbracoApiService<PartyApiController>("GetPartyWallItems"))?PartyGuid=@Model.PartyHost.PartyGuid.ToString()&skip=0&take=10
+@*@(Url.GetUmbracoApiService<PartyApiController>("GetPartyWallItems"))?PartyGuid=@Model.PartyHost.PartyGuid.ToString()&skip=0&take=10*@
 
 @* totaliser *@
-
-<h2>Who's Coming (@this.Model.Partiers.Count())</h2>
-<ul>
-    @foreach (IPartier partier in this.Model.Partiers)
-    {
-        <li>
-            @partier.PersonName
-        </li>
-    }
-</ul>
-
 @* badges *@
