@@ -210,6 +210,7 @@
     <Compile Include="Controllers\Render\RegisterGuestController.cs" />
     <Compile Include="Controllers\Render\RegisterHostController.cs" />
     <Compile Include="Controllers\Render\WonderlandersController.cs" />
+    <Compile Include="Controllers\Surface\DonateSurfaceController.cs" />
     <Compile Include="Controllers\Surface\LoginSurfaceController.cs" />
     <Compile Include="Controllers\Surface\LogoutSurfaceController.cs" />
     <Compile Include="Controllers\Surface\PartySurfaceController.cs" />

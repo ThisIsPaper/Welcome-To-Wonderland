@@ -25,6 +25,9 @@
 <h2>@this.Model.Heading</h2>
 <p>@this.Model.Copy</p>
 
+@Html.ActionLink("Donate", "NavigateToDonateUrl", "DonateSurface", new { partyGuid = Model.PartyHost.PartyGuid }, new { @class = "" })
+
+
 @* wall *@
 @(Html.Action<PartySurfaceController>("RenderPartyWallForm"))
 
