@@ -6,19 +6,28 @@ namespace Wonderland.Logic.Models.Database
 
     [TableName("wonderlandMessage")]
     [ExplicitColumns]
+    [PrimaryKey("MessageId", autoIncrement=true)]
     public class Message
     {
+        public Message()
+        {
+            this.Timestamp = DateTime.Now;
+        }
+
+        [Column("MessageId")]
+        public int MessageId { get; set; }
+
         [Column("MemberId")]
-        internal int MemberId { get; set; }
+        public int MemberId { get; set; }
 
         [Column("Text")]
-        internal string Text { get; set; }
+        public string Text { get; set; }
 
         [Column("Image")]
-        internal Guid Image { get; set; }
+        public string Image { get; set; }
 
         [Column("Timestamp")]
-        internal DateTime Timestamp { get; set; }
+        public DateTime Timestamp { get; set; }
 
         public static explicit operator Message(Donation_Message donation_Message)
         {

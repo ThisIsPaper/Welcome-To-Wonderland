@@ -93,6 +93,9 @@
 
         @(Html.Action<PartySurfaceController>("RenderSuggestedDonationForm"))
 
+        @(Html.Action<PartySurfaceController>("RenderFundraisingTargetForm"))
+
+
     </div>
 
 </div>
@@ -102,10 +105,15 @@
 
 
 @* wall *@
-@*@(Html.Action<PartySurfaceController>("RenderPartyWallForm"))*@
+@(Html.Action<PartySurfaceController>("RenderPartyWallMessageForm"))
+@(Html.Action<PartySurfaceController>("RenderPartyWallImageForm"))
 
 @*call the following url to the json collection of party wall items*@
-@*@(Url.GetUmbracoApiService<PartyApiController>("GetPartyWallItems"))?PartyGuid=@Model.PartyHost.PartyGuid.ToString()&skip=0&take=10*@
+<p>
+    URL to call for party wall items (don't pass the beforeDateTime param and the server will use the current server time)
+    @(Url.GetUmbracoApiService<PartyApiController>("GetPartyWallItems"))?PartyGuid=@Model.PartyHost.PartyGuid.ToString()&beforeDateTime=12/12/12&take=10
+</p>
+
 
 @* totaliser *@
 @* badges *@
