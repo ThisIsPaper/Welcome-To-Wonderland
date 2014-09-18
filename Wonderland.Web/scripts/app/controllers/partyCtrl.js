@@ -1,5 +1,5 @@
-wonderlandApp.controller('PartyCtrl', ['safeApply', '$ocModal', '$sce', '$scope',
-                                        function (safeApply, $ocModal, $sce, $scope) {
+wonderlandApp.controller('PartyCtrl', ['safeApply', '$ocModal', '$sce', '$scope', function (safeApply, $ocModal, $sce, $scope) {
+
 
     /**********************/
     /* PARTY COPY */
@@ -9,6 +9,7 @@ wonderlandApp.controller('PartyCtrl', ['safeApply', '$ocModal', '$sce', '$scope'
 
     $scope.partyCopyDataInit = function (partyCopyData) {
         $scope.partyCopyData = partyCopyData;
+
         $scope.partyCopyDataForForm = angular.copy($scope.partyCopyData);
         $scope.partyCopyData.CopyHtmlSafe = $sce.trustAsHtml($scope.partyCopyData.Copy);
     };
@@ -29,7 +30,11 @@ wonderlandApp.controller('PartyCtrl', ['safeApply', '$ocModal', '$sce', '$scope'
 
     $scope.partyDetailsDataInit = function (partyDetailsData) {
 
-        // TODO - date and time not working, need to wait for backend
+        // convert date to javascript Date
+        if (partyDetailsData && partyDetailsData.PartyDateTime) {
+            partyDetailsData.PartyDateTime = moment(partyDetailsData.PartyDateTime).format('YYYY/MM/DD');
+        }
+
         console.log('partyDetailsDataInit', partyDetailsData);
 
         $scope.partyDetailsData = partyDetailsData;
@@ -72,6 +77,7 @@ wonderlandApp.controller('PartyCtrl', ['safeApply', '$ocModal', '$sce', '$scope'
     $scope.suggestedDonationDataForForm = null;
 
     $scope.suggestedDonationDataInit = function (suggestedDonationData) {
+        console.log('suggestedDonationDataInit', suggestedDonationData);
         $scope.suggestedDonationData = suggestedDonationData;
         $scope.suggestedDonationDataForForm = angular.copy($scope.suggestedDonationData);
     };

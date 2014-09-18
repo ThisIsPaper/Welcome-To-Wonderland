@@ -21,8 +21,7 @@
                         <div ng-click="openPageModal('partials/profileImageForm.html', 'profileImageModal')">Edit</div>
                     </div>
 
-                    <span ng-bind="partyDetailsData.PartyDate"></span>
-                    <span ng-bind="partyDetailsData.PartyTime"></span>
+                    <span ng-bind="partyDetailsData.PartyDateTime"></span>
 
                     <p>
                         <span ng-bind="partyDetailsData.Address1">@Model.PartyHost.PartyAddress.Address1</span>
@@ -49,8 +48,19 @@
 
         <div class="wgrid-side wgrid-no-bottom-margin parent">
 
+
             <div class="wgrid-full"><div class="boxx"><h2>Set my target</h2></div></div>
-            <div class="wgrid-full"><div class="boxx"><h2>Change ticket price</h2></div></div>
+
+
+            <div class="wgrid-full">
+                <div class="boxx">
+                    <h2>Change ticket price</h2>
+
+                    <div ng-click="openPageModal('partials/suggestedDonationForm.html', 'suggestedDonationModal', {'suggestedDonationData': suggestedDonationDataForForm})">Edit</div>
+                </div>
+            </div>
+
+
             <div class="wgrid-full"><div class="boxx"><h2>Pay in money</h2></div></div>
 
             <div class="wgrid-full">
@@ -83,6 +93,9 @@
 
         @(Html.Action<PartySurfaceController>("RenderSuggestedDonationForm"))
 
+        @(Html.Action<PartySurfaceController>("RenderFundraisingTargetForm"))
+
+
     </div>
 
 </div>
@@ -92,10 +105,15 @@
 
 
 @* wall *@
-@*@(Html.Action<PartySurfaceController>("RenderPartyWallForm"))*@
+@(Html.Action<PartySurfaceController>("RenderPartyWallMessageForm"))
+@(Html.Action<PartySurfaceController>("RenderPartyWallImageForm"))
 
 @*call the following url to the json collection of party wall items*@
-@*@(Url.GetUmbracoApiService<PartyApiController>("GetPartyWallItems"))?PartyGuid=@Model.PartyHost.PartyGuid.ToString()&skip=0&take=10*@
+<p>
+    URL to call for party wall items (don't pass the beforeDateTime param and the server will use the current server time)
+    @(Url.GetUmbracoApiService<PartyApiController>("GetPartyWallItems"))?PartyGuid=@Model.PartyHost.PartyGuid.ToString()&beforeDateTime=12/12/12&take=10
+</p>
+
 
 @* totaliser *@
 @* badges *@

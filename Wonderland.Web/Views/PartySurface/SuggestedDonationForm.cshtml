@@ -2,13 +2,20 @@
 
 <div ng-init="suggestedDonationDataInit(@Html.Raw(Json.Encode(Model)))"></div>
 
-@using (Html.BeginUmbracoForm<PartySurfaceController>("HandleSuggestedDonationForm"))
-{
-    @*@Html.AntiForgeryToken()*@
+<script type="text/ng-template" id="partials/suggestedDonationForm.html">
+    @using (Html.BeginUmbracoForm<PartySurfaceController>("HandleSuggestedDonationForm", FormMethod.Post, new { m_serialized="", m_post_on_submit="suggestedDonationData", m_on_success_event="suggestedDonationDataUpdated" }))
+    {
+        @*@Html.AntiForgeryToken()*@
 
-    // TODO: UI for 10 / 15/ 20 / 25 selection
-    
-    @Html.EditorForModel()
+        // TODO: UI for 10 / 15/ 20 / 25 selection
 
-    <button type="submit">Save Changes (suggested donation)</button>
-}
+        @Html.EditorForModel()
+
+        <input type="radio" name="SuggestedDonation" value="10" ng-model="suggestedDonationData.SuggestedDonation" />
+        <input type="radio" name="SuggestedDonation" value="15" ng-model="suggestedDonationData.SuggestedDonation" />
+        <input type="radio" name="SuggestedDonation" value="20" ng-model="suggestedDonationData.SuggestedDonation" />
+        <input type="radio" name="SuggestedDonation" value="25" ng-model="suggestedDonationData.SuggestedDonation" />
+
+        <button type="submit">Save Changes (suggested donation)</button>
+    }
+</script>

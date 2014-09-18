@@ -9,13 +9,13 @@ namespace Wonderland.Logic.Models.Database
     public class Donation
     {
         [Column("MemberId")]
-        internal int MemberId { get; set; }
+        public int MemberId { get; set; }
 
         [Column("Amount")]
-        internal decimal Amount { get; set; }
+        public decimal Amount { get; set; }
 
         [Column("Timestamp")]
-        internal DateTime Timestamp { get; set; }
+        public DateTime Timestamp { get; set; }
 
         public static explicit operator Donation(Donation_Message donation_Message)
         {

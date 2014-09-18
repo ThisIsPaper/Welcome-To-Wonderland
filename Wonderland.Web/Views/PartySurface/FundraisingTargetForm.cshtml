@@ -1,0 +1,12 @@
+﻿@model FundraisingTargetForm
+
+<div ng-init="fundraisingTargetInit(@Html.Raw(Json.Encode(Model)))"></div>
+
+@using (Html.BeginUmbracoForm<PartySurfaceController>("HandleFundraisingTargetForm"))
+{
+    @*@Html.AntiForgeryToken()*@
+
+    @Html.EditorForModel()
+
+    <button type="submit">Save Changes (fundraising target)</button>
+}

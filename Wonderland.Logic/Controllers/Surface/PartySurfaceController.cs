@@ -34,14 +34,9 @@ namespace Wonderland.Logic.Controllers.Surface
         {
             FormResponse formResponse = new FormResponse();
 
-            if (!this.ModelState.IsValid)
-            {
-                formResponse.Success = false;
-            }
-            else
+            if (this.ModelState.IsValid)
             {
                 // change copy for current party host
-
                 PartyHost partyHost = (PartyHost)this.Members.GetCurrentMember();
 
                 partyHost.PartyCopy = partyCopyForm.Copy;
@@ -66,11 +61,7 @@ namespace Wonderland.Logic.Controllers.Surface
         {
             FormResponse formResponse = new FormResponse();
 
-            if (!this.ModelState.IsValid)
-            {
-                formResponse.Success = false;
-            }
-            else
+            if (this.ModelState.IsValid)
             {                
                 if (profileImageForm.ProfileImage.ContentLength > 0 && profileImageForm.ProfileImage.InputStream.IsImage())
                 {
@@ -101,8 +92,7 @@ namespace Wonderland.Logic.Controllers.Surface
             PartyHost partyHost = (PartyHost)this.Members.GetCurrentMember();
 
             partyDetailsForm.PartyHeading = partyHost.PartyHeading;
-            partyDetailsForm.PartyDate = partyHost.PartyDateTime;
-            partyDetailsForm.PartyTime = partyHost.PartyDateTime;
+            partyDetailsForm.PartyDateTime = partyHost.PartyDateTime;
 
             partyDetailsForm.Address1 = partyHost.PartyAddress.Address1;
             partyDetailsForm.Address2 = partyHost.PartyAddress.Address2;
@@ -119,17 +109,13 @@ namespace Wonderland.Logic.Controllers.Surface
         {
             FormResponse formResponse = new FormResponse();
 
-            if (!this.ModelState.IsValid)
-            {
-                formResponse.Success = false;
-            }
-            else
+            if (this.ModelState.IsValid)
             {
                 PartyHost partyHost = (PartyHost)this.Members.GetCurrentMember();
 
                 partyHost.PartyHeading = partyDetailsForm.PartyHeading;
 
-                partyHost.PartyDateTime = partyDetailsForm.PartyDate.Add(partyDetailsForm.PartyTime.TimeOfDay);
+                partyHost.PartyDateTime = partyDetailsForm.PartyDateTime;
 
                 Address address = new Address()
                 {
@@ -167,11 +153,7 @@ namespace Wonderland.Logic.Controllers.Surface
         {
             FormResponse formResponse = new FormResponse();
 
-            if (!this.ModelState.IsValid)
-            {
-                formResponse.Success = false;
-            }
-            else
+            if (this.ModelState.IsValid)
             {
                 ((PartyHost)this.Members.GetCurrentMember()).SuggestedDonation = suggestedDonationForm.SuggestedDonation;
 
@@ -182,40 +164,121 @@ namespace Wonderland.Logic.Controllers.Surface
         }
 
         [ChildActionOnly]
+        [MemberAuthorize(AllowType = PartyHost.Alias)]
+        public ActionResult RenderFundraisingTargetForm()
+        {
+            FundraisingTargetForm fundraisingTargetForm = new FundraisingTargetForm();
+
+            PartyHost partyHost = (PartyHost)this.Members.GetCurrentMember();
+
+            fundraisingTargetForm.FundraisingTarget = partyHost.FundraisingTarget;
+
+            return this.PartialView("FundraisingTargetForm", fundraisingTargetForm);
+        }
+
+        [HttpPost]
+        //[ValidateAntiForgeryToken]
+        [MemberAuthorize(AllowType = PartyHost.Alias)]
+        public JsonResult HandleFundraisingTargetForm(FundraisingTargetForm fundraisingTargetForm)
+        {
+            FormResponse formResponse = new FormResponse();
+
+            if (this.ModelState.IsValid)
+            {
+                ((PartyHost)this.Members.GetCurrentMember()).FundraisingTarget = fundraisingTargetForm.FundraisingTarget;
+
+                formResponse.Success = true;
+            }
+
+            return Json(formResponse);
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        [ChildActionOnly]
         [MemberAuthorize]
-        public ActionResult RenderPartyWallForm()
+        public ActionResult RenderPartyWallMessageForm()
         {
             // TODO: safety check that current member is associated with this party ?
 
-            return this.PartialView("PartyWallForm", new PartyWallForm());
+            return this.PartialView("PartyWallMessageForm", new PartyWallMessageForm());
         }
 
         [HttpPost]
         //[ValidateAntiForgeryToken]
         [MemberAuthorize]
-        public JsonResult HandlePartyWallForm(PartyWallForm partyWallForm)
+        public JsonResult HandlePartyWallMessageForm(PartyWallMessageForm partyWallMessageForm)
         {
             // TODO: safety check that current member is associated with this party
 
             FormResponse formResponse = new FormResponse();
 
-            if (!this.ModelState.IsValid || (string.IsNullOrWhiteSpace(partyWallForm.Message) && partyWallForm.WallImage.ContentLength == 0))
+            if (this.ModelState.IsValid && (!string.IsNullOrWhiteSpace(partyWallMessageForm.Message) || !string.IsNullOrWhiteSpace(partyWallMessageForm.PartyWallImage)))
             {
-                formResponse.Success = false;
-            }
-            else
-            {
-                Guid partyGuid = ((Party)this.Umbraco.AssignedContentItem).PartyHost.PartyGuid;
+                //Guid partyGuid = ((Party)this.Umbraco.AssignedContentItem).PartyHost.PartyGuid;
 
-                // TODO: upload any image 
-                
-                // insert message into DB
-                //this.DatabaseContext.Database.Insert(new Wall() 
-                //                                            { 
-                //                                                MemberId = this.Members.GetCurrentMemberId(),
-                //                                                Message = partyWallForm.Message
-                //                                                // Image
-                //                                            });
+                //// insert message into DB
+                this.DatabaseContext.Database.Insert(new Message()
+                                                            {
+                                                                MemberId = this.Members.GetCurrentMemberId(),
+                                                                Text = partyWallMessageForm.Message,
+                                                                Image = partyWallMessageForm.PartyWallImage
+                                                            });
+
+                formResponse.Success = true;
+            }
+
+            return Json(formResponse);
+        }
+
+        [ChildActionOnly]
+        [MemberAuthorize]
+        public ActionResult RenderPartyWallImageForm()
+        {
+            // TODO: safety check that current member is associated with this party ?
+
+            return this.PartialView("PartyWallImageForm", new PartyWallImageForm());
+        }
+
+        [HttpPost]
+        //[ValidateAntiForgeryToken]
+        [MemberAuthorize]
+        public JsonResult HandlePartyWallImageForm(PartyWallImageForm partyWallImageForm)
+        {
+            FormResponse formResponse = new FormResponse();
+
+            // TODO: safety check that current member is associated with this party
+
+            if (this.ModelState.IsValid && partyWallImageForm.PartyWallImage.ContentLength > 0 && partyWallImageForm.PartyWallImage.InputStream.IsImage())
+            {
+                string fileName = Guid.NewGuid().ToString() + "." + partyWallImageForm.PartyWallImage.ContentType.Split('/')[1];
+
+                partyWallImageForm.PartyWallImage.SaveAs(Server.MapPath("~/Uploads/PartyWall/" + fileName));
+
+                formResponse.Message = fileName;
 
                 formResponse.Success = true;
             }

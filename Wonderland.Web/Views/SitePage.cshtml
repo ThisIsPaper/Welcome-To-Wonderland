@@ -19,6 +19,7 @@
     @{ 
         Html.RequiresCss("~/css/main.css"); 
         Html.RequiresCss("~/scripts/bower_components/ocModal/dist/css/ocModal.full.css");
+        Html.RequiresCss("~/scripts/bower_components/pikaday/css/pikaday.css");
     }
     @Html.RenderCssHere()
   
@@ -52,9 +53,14 @@
         Html.RequiresJs("~/scripts/vendor/jquery-1.10.2.js"); // maybe use jquery... not sure yet
         Html.RequiresJs("~/scripts/bower_components/angular/angular.js");
         Html.RequiresJs("~/scripts/bower_components/ocModal/dist/ocModal.js");
+        Html.RequiresJs("~/scripts/bower_components/moment/moment.js");
+        Html.RequiresJs("~/scripts/bower_components/pikaday/pikaday.js");
         Html.RequiresJs("~/scripts/app/app.js");
+
         Html.RequiresJs("~/scripts/app/controllers/pageCtrl.js");
         Html.RequiresJs("~/scripts/app/controllers/partyCtrl.js");
+        Html.RequiresJs("~/scripts/app/controllers/partyDetailsFormCtrl.js");
+        Html.RequiresJs("~/scripts/app/directives/mDateTimePicker.js");
         Html.RequiresJs("~/scripts/app/directives/mImageUpload.js");
         Html.RequiresJs("~/scripts/app/directives/mFileSelected.js");
         Html.RequiresJs("~/scripts/app/directives/mPostOnSubmit.js");
