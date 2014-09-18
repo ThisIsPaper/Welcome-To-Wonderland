@@ -14,7 +14,7 @@
 
     @using (Html.BeginUmbracoForm<PartySurfaceController>("HandleFundraisingTargetForm", FormMethod.Post, new { m_serialized="", m_post_on_submit="fundraisingTargetData", m_on_success_event="fundraisingTargetDataUpdated" }))
     {
-        @*@Html.AntiForgeryToken()*@
+        @Html.AntiForgeryToken()
 
         <input type="text" name="fundraisingTarget" ng-model="fundraisingTargetData.FundraisingTarget" />
 

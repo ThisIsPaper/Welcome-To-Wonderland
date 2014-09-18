@@ -6,7 +6,7 @@
     <div ng-controller="PartyDetailsFormCtrl">
         @using (Html.BeginUmbracoForm<PartySurfaceController>("HandlePartyDetailsForm", FormMethod.Post, new { m_serialized="", m_post_on_submit="partyDetailsData", m_on_success_event="partyDetailsDataUpdated" }))
         {
-            @*@Html.AntiForgeryToken()*@
+            @Html.AntiForgeryToken()
 
             <h2>Your Party Details</h2>
 

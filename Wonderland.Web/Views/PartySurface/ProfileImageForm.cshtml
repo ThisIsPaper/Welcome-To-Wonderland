@@ -6,7 +6,7 @@
     <div m-image-upload m-on-success-event="profileImageUrlUpdated">
         @using (Html.BeginUmbracoForm<PartySurfaceController>("HandleProfileImageForm", FormMethod.Post, new { enctype = "multipart/form-data" }))
         {
-            @*@Html.AntiForgeryToken()*@
+            @Html.AntiForgeryToken()
 
             <label for="profileImage">Upload image</label>
             <input type="file" name="profileImage" accept="image/jpeg,image/gif,image/png" m-file-selected="submit()"  />

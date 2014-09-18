@@ -96,8 +96,7 @@ namespace Wonderland.Logic.Models.Members
         {
             get
             {
-                // TODO:
-                return "unknown guest";
+                return this.FirstName + " " + this.LastName;
             }
         }
 

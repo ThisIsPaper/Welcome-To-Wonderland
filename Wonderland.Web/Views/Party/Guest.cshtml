@@ -3,12 +3,7 @@
     Layout = "~/Views/SitePage.cshtml";
 }
 
-<br /><br /><br /><br /><br /><br /><br /><br />
-
-
 <h1>the current user is a guest at this party</h1>
-
-
 
 @* image *@
 
@@ -25,6 +20,9 @@
 <h2>@this.Model.Heading</h2>
 <p>@this.Model.Copy</p>
 
+@Html.ActionLink("Donate", "NavigateToDonateUrl", "DonateSurface", new { partyGuid = Model.PartyHost.PartyGuid }, new { @class = "" })
+
+
 @* wall *@
 @(Html.Action<PartySurfaceController>("RenderPartyWallForm"))
 
@@ -35,6 +33,7 @@
     @foreach (IPartier partier in this.Model.Partiers)
     {
         <li>
+            <img src="@partier.ProfileImageUrl" />
             @partier.PersonName
         </li>
     }

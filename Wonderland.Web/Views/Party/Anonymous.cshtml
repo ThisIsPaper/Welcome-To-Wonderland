@@ -22,6 +22,10 @@
 <h2>@this.Model.Heading</h2>
 <p>@this.Model.Copy</p>
 
+
+@Html.ActionLink("Donate", "NavigateToDonateUrl", "DonateSurface", new { partyGuid = Model.PartyHost.PartyGuid }, new { @class = "" })
+
+
 @* wall (no form)*@
 
 
@@ -31,8 +35,7 @@
 @if (!this.Members.IsLoggedIn())
 {
     @* only users who don't already have a party can 'join the party' *@ 
-    @Html.ActionLink("Join the party", "NavigateToRegisterGuestUrl", "RegisterGuestSurface", new { partyGuid = Model.PartyHost.PartyGuid }, new { @class = "" })
-
+    @Html.ActionLink("Join the party", "NavigateToRegisterGuestUrl", "RegisterGuestSurface", new { partyGuid = Model.PartyHost.PartyGuid }, new { @class = "" })    
 }
 
 <h2>Who's Coming (@this.Model.Partiers.Count())</h2>
@@ -40,7 +43,9 @@
     @foreach (IPartier partier in this.Model.Partiers)
     {
         <li>
+            <img src="@partier.ProfileImageUrl" />
             @partier.PersonName
+
         </li>
     }
 </ul>

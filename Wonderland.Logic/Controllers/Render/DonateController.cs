@@ -31,14 +31,15 @@ namespace Wonderland.Logic.Controllers.Render
                 partyHost = this.Members.GetPartyHost(((IPartier)this.Members.GetCurrentMember()).PartyGuid);
             }
 
-            if (partyHost == null)
+            if (partyHost != null)
             {
-                // couldn't find a party host for this donation, so redirect to Macmillan
-                return this.View("Macmillan", model);
-            }
-            
+                model.PartyHost = partyHost;
 
-            return this.CurrentTemplate(model);
+                return this.View("Donate", model);
+            }
+
+            // couldn't find a party host for this donation, so go to Macmillan
+            return this.View("Macmillan", model);
         }
     }
 }

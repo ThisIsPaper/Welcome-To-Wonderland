@@ -70,7 +70,12 @@
             </div>
 
 
-            <div class="wgrid-full"><div class="boxx"><h2>Pay in money</h2></div></div>
+            <div class="wgrid-full">
+                <div class="boxx">
+                    <h2>Pay in money</h2>
+                    @Html.ActionLink("Pay in Money", "NavigateToDonateUrl", "DonateSurface", new { partyGuid = Model.PartyHost.PartyGuid }, new { @class = "" })
+                </div>
+            </div>
 
 
             <div class="wgrid-full">
