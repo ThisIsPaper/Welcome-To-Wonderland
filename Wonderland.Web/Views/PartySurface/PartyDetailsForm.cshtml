@@ -3,36 +3,35 @@
 <div ng-init="partyDetailsDataInit(@Html.Raw(Json.Encode(Model)))"></div>
 
 <script type="text/ng-template" id="partials/partyDetailsForm.html">
-@using (Html.BeginUmbracoForm<PartySurfaceController>("HandlePartyDetailsForm", FormMethod.Post, new { m_serialized="", m_post_on_submit="partyDetailsData", m_on_success_event="partyDetailsDataUpdated" }))
-{
-    @*@Html.AntiForgeryToken()*@
+    <div ng-controller="PartyDetailsFormCtrl">
+        @using (Html.BeginUmbracoForm<PartySurfaceController>("HandlePartyDetailsForm", FormMethod.Post, new { m_serialized="", m_post_on_submit="partyDetailsData", m_on_success_event="partyDetailsDataUpdated" }))
+        {
+            @*@Html.AntiForgeryToken()*@
 
-    <h2>Your Party Details</h2>
+            <h2>Your Party Details</h2>
 
-    <label for="PartyHeading">Your Party Heading</label>
-    <input name="PartyHeading" type="text" ng-model="partyDetailsData.PartyHeading"/>
+            <label for="PartyHeading">Your Party Heading</label>
+            <input name="PartyHeading" type="text" ng-model="partyDetailsData.PartyHeading"/>
 
-    <label for="PartyDate">Date</label>
-    <input name="PartyDate" type="text" ng-model="partyDetailsData.PartyDate"/>
+            <label for="PartyDate">Date</label>
+            <input name="PartyDate" type="text" m-date-time-picker="tempModel.dateTime" />
 
-    <label for="PartyTime">Time</label>
-    <input name="PartyTime" type="text" ng-model="partyDetailsData.PartyTime"/>
+            <h2>Your Party Address</h2>
 
-    <h2>Your Party Address</h2>
+            <label for="Address1">Address 1</label>
+            <input name="Address1" type="text" ng-model="partyDetailsData.Address1"/>
 
-    <label for="Address1">Address 1</label>
-    <input name="Address1" type="text" ng-model="partyDetailsData.Address1"/>
+            <label for="Address2">Address 2</label>
+            <input name="Address2" type="text" ng-model="partyDetailsData.Address2"/>
 
-    <label for="Address2">Address 2</label>
-    <input name="Address2" type="text" ng-model="partyDetailsData.Address2"/>
+            <label for="TownCity">Town/City</label>
+            <input name="TownCity" type="text" ng-model="partyDetailsData.TownCity"/>
 
-    <label for="TownCity">Town/City</label>
-    <input name="TownCity" type="text" ng-model="partyDetailsData.TownCity"/>
-
-    <label for="Postcode">Postcode</label>
-    <input name="Postcode" type="text" ng-model="partyDetailsData.Postcode"/>
+            <label for="Postcode">Postcode</label>
+            <input name="Postcode" type="text" ng-model="partyDetailsData.Postcode"/>
 
 
-    <button type="submit">Save Changes</button>
-}
+            <button type="submit">Save Changes</button>
+        }
+    </div>
 </script>

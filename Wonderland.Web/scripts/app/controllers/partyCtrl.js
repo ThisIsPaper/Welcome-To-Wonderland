@@ -1,5 +1,5 @@
-wonderlandApp.controller('PartyCtrl', ['safeApply', '$ocModal', '$sce', '$scope',
-                                        function (safeApply, $ocModal, $sce, $scope) {
+wonderlandApp.controller('PartyCtrl', ['safeApply', '$ocModal', '$sce', '$scope', function (safeApply, $ocModal, $sce, $scope) {
+
 
     /**********************/
     /* PARTY COPY */
@@ -9,6 +9,7 @@ wonderlandApp.controller('PartyCtrl', ['safeApply', '$ocModal', '$sce', '$scope'
 
     $scope.partyCopyDataInit = function (partyCopyData) {
         $scope.partyCopyData = partyCopyData;
+
         $scope.partyCopyDataForForm = angular.copy($scope.partyCopyData);
         $scope.partyCopyData.CopyHtmlSafe = $sce.trustAsHtml($scope.partyCopyData.Copy);
     };
@@ -29,8 +30,14 @@ wonderlandApp.controller('PartyCtrl', ['safeApply', '$ocModal', '$sce', '$scope'
 
     $scope.partyDetailsDataInit = function (partyDetailsData) {
 
-        // TODO - date and time not working, need to wait for backend
-        console.log('partyDetailsDataInit', partyDetailsData);
+        console.log('partyDetailsDataInit1', partyDetailsData);
+
+        // convert date to javascript Date
+        if (partyDetailsData && partyDetailsData.PartyDate) {
+            partyDetailsData.PartyDate = moment(partyDetailsData.PartyDate).format('YYYY/MM/DD');
+        }
+
+        console.log('partyDetailsDataInit2', partyDetailsData);
 
         $scope.partyDetailsData = partyDetailsData;
         $scope.partyDetailsDataForForm = angular.copy($scope.partyDetailsData);
