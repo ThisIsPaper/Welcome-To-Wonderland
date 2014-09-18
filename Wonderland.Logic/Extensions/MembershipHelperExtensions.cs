@@ -9,7 +9,6 @@ namespace Wonderland.Logic.Extensions
     using System.Linq;
     using Umbraco.Core;
     using Umbraco.Core.Models;
-    using Umbraco.Web;
     using Umbraco.Web.Security;
     using UmbracoExamine;
     using Wonderland.Logic.Enums;
@@ -45,7 +44,25 @@ namespace Wonderland.Logic.Extensions
 
             if (partyHost != null)
             {
-                return new PartyHost(new MembershipHelper(UmbracoContext.Current).GetByUsername(partyHost.Username));
+                return new PartyHost(members.GetByUsername(partyHost.Username));
+            }
+
+            return null;
+        }
+
+        public static PartyHost GetPartyHost(this MembershipHelper members, string partyUrlIdentifier)
+        {
+            // WARNING: hits db
+            IMember partyHost = ApplicationContext
+                                    .Current
+                                    .Services
+                                    .MemberService
+                                    .GetMembersByMemberType(PartyHost.Alias)
+                                    .SingleOrDefault(x => x.GetValue<string>(PartyHost.PartyUrlIdentifierAlias).ToLower() == partyUrlIdentifier.ToLower());
+
+            if (partyHost != null)
+            {
+                return new PartyHost(members.GetByUsername(partyHost.Username));
             }
 
             return null;

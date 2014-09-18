@@ -16,8 +16,6 @@ namespace Wonderland.Logic.Controllers.Render
 
             PartyHost partyHost;
 
-            #region Redirect if party host unknown (see: Events/SetPartyContentFinder)
-
             try
             {
                 partyHost = (PartyHost)this.Members.GetById(int.Parse(this.HttpContext.Items["partyHostId"].ToString()));
@@ -38,8 +36,6 @@ namespace Wonderland.Logic.Controllers.Render
                 return this.Redirect(Home.GetCurrentHome(model).Url);
             }
 
-            #endregion
-
             // known host, so build the renderModel renderModel
             model.PartyHost = partyHost;
 
@@ -59,7 +55,7 @@ namespace Wonderland.Logic.Controllers.Render
                 model.Copy = partyHost.PartyCopy;
             }
 
-            // wall - TODO: hit db ?
+            // wall - will be ajax only
 
             // totaliser
 
