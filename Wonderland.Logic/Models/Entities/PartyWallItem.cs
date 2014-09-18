@@ -21,7 +21,6 @@ namespace Wonderland.Logic.Models.Entities
             this.ThumbnailUrl = partier.ProfileImageUrl;
             this.Name = partier.PersonName;
             this.Text = donation.Amount.ToString();
-            //this.ImageUrl = null;
             this.Timestamp = donation.Timestamp;
         }
 
@@ -36,30 +35,34 @@ namespace Wonderland.Logic.Models.Entities
             
             if (message.Image != null)
             {
-                this.ImageUrl = "/Uploads/Wall/TODO/";
+                this.ImageUrl = "/Uploads/PartyWall/" + message.Image;
             }
             
             this.Timestamp = message.Timestamp;
         }
 
+        [JsonIgnore]
         public PartyWallItemType PartyWallItemType
         {
             get;
             private set;
         }
 
+        [JsonProperty("thumbnailUrl")]
         public string ThumbnailUrl
         {
             get;
             private set;
         }
 
+        [JsonProperty("name")]
         public string Name
         {
             get;
             private set;
         }
 
+        [JsonProperty("text")]
         public string Text
         {
             get;
@@ -67,6 +70,7 @@ namespace Wonderland.Logic.Models.Entities
         }
 
         [DefaultValue(null)]
+        [JsonProperty("imageUrl")]
         public string ImageUrl
         {
             get;
