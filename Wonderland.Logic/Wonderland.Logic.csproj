@@ -202,6 +202,7 @@
     <Compile Include="Controllers\Api\SagePayApiController.cs" />
     <Compile Include="Controllers\Render\BaseRenderMvcController.cs" />
     <Compile Include="Controllers\Render\DecorationTileController.cs" />
+    <Compile Include="Controllers\Render\DonateController.cs" />
     <Compile Include="Controllers\Render\FashionTileController.cs" />
     <Compile Include="Controllers\Render\LeaderboardController.cs" />
     <Compile Include="Controllers\Render\PartyController.cs" />
@@ -235,7 +236,7 @@
     <Compile Include="Models\Content\FundraisingIdeas.cs" />
     <Compile Include="Models\Content\Home.cs" />
     <Compile Include="Models\Content\PageNotFound.cs" />
-    <Compile Include="Models\Content\RegisterGuestConfirmation.cs" />
+    <Compile Include="Models\Content\Donate.cs" />
     <Compile Include="Models\Content\Leaderboard.cs" />
     <Compile Include="Models\Content\Legal.cs" />
     <Compile Include="Models\Content\Login.cs" />
