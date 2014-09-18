@@ -7,9 +7,9 @@ wonderlandApp.controller('PartyDetailsFormCtrl', ['$scope', function ($scope) {
 
 
 
-    $scope.$watch('partyDetailsData.PartyDate', function (newVal, oldVal) {
+    $scope.$watch('partyDetailsData.PartyDateTime', function (newVal, oldVal) {
 
-        console.log('PartyDetailsFormCtrl::PartyDate', newVal, oldVal);
+        console.log('PartyDetailsFormCtrl::PartyDateTime', newVal, oldVal);
 
     }, true);
 
@@ -21,7 +21,7 @@ wonderlandApp.controller('PartyDetailsFormCtrl', ['$scope', function ($scope) {
             return;
         }
 
-        $scope.partyDetailsData.PartyDate = newVal.format('YYYY/MM/DD');
+        $scope.partyDetailsData.PartyDateTime = newVal.format('YYYY/MM/DD');
 
     }, true);
 

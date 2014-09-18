@@ -21,7 +21,7 @@
                         <div ng-click="openPageModal('partials/profileImageForm.html', 'profileImageModal')">Edit</div>
                     </div>
 
-                    <span ng-bind="partyDetailsData.PartyDate"></span>
+                    <span ng-bind="partyDetailsData.PartyDateTime"></span>
 
                     <p>
                         <span ng-bind="partyDetailsData.Address1">@Model.PartyHost.PartyAddress.Address1</span>
@@ -48,8 +48,19 @@
 
         <div class="wgrid-side wgrid-no-bottom-margin parent">
 
+
             <div class="wgrid-full"><div class="boxx"><h2>Set my target</h2></div></div>
-            <div class="wgrid-full"><div class="boxx"><h2>Change ticket price</h2></div></div>
+
+
+            <div class="wgrid-full">
+                <div class="boxx">
+                    <h2>Change ticket price</h2>
+
+                    <div ng-click="openPageModal('partials/suggestedDonationForm.html', 'suggestedDonationModal', {'suggestedDonationData': suggestedDonationDataForForm})">Edit</div>
+                </div>
+            </div>
+
+
             <div class="wgrid-full"><div class="boxx"><h2>Pay in money</h2></div></div>
 
             <div class="wgrid-full">

@@ -30,14 +30,12 @@ wonderlandApp.controller('PartyCtrl', ['safeApply', '$ocModal', '$sce', '$scope'
 
     $scope.partyDetailsDataInit = function (partyDetailsData) {
 
-        console.log('partyDetailsDataInit1', partyDetailsData);
-
         // convert date to javascript Date
-        if (partyDetailsData && partyDetailsData.PartyDate) {
-            partyDetailsData.PartyDate = moment(partyDetailsData.PartyDate).format('YYYY/MM/DD');
+        if (partyDetailsData && partyDetailsData.PartyDateTime) {
+            partyDetailsData.PartyDateTime = moment(partyDetailsData.PartyDateTime).format('YYYY/MM/DD');
         }
 
-        console.log('partyDetailsDataInit2', partyDetailsData);
+        console.log('partyDetailsDataInit', partyDetailsData);
 
         $scope.partyDetailsData = partyDetailsData;
         $scope.partyDetailsDataForForm = angular.copy($scope.partyDetailsData);
@@ -79,6 +77,7 @@ wonderlandApp.controller('PartyCtrl', ['safeApply', '$ocModal', '$sce', '$scope'
     $scope.suggestedDonationDataForForm = null;
 
     $scope.suggestedDonationDataInit = function (suggestedDonationData) {
+        console.log('suggestedDonationDataInit', suggestedDonationData);
         $scope.suggestedDonationData = suggestedDonationData;
         $scope.suggestedDonationDataForForm = angular.copy($scope.suggestedDonationData);
     };
