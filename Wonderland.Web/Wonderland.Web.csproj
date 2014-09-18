@@ -350,6 +350,7 @@
     <Content Include="Views\Donate\Macmillan.cshtml" />
     <Content Include="Views\PartySurface\PartyWallMessageForm.cshtml" />
     <Content Include="Views\PartySurface\FundraisingTargetForm.cshtml" />
+    <Content Include="Views\Donate\Donate.cshtml" />
     <None Include="Views\RegisterHostSurface\RegisterHostForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
