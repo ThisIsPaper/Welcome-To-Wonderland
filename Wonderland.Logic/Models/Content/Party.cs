@@ -7,6 +7,7 @@ namespace Wonderland.Logic.Models.Content
     using Umbraco.Web;
     using Wonderland.Logic.Interfaces;
     using Wonderland.Logic.Models.Members;
+    using Wonderland.Logic.Models.Media;
     
     public class Party : SitePage
     {
@@ -14,6 +15,7 @@ namespace Wonderland.Logic.Models.Content
         public new const string Alias = "Party";
 
         // Properties
+        public const string DefaultImagesAlias = "defaultImages";
         public const string DefaultHeadingAlias = "defaultHeading";
         public const string DefaultCopyAlias = "defaultCopy";
 
@@ -23,6 +25,14 @@ namespace Wonderland.Logic.Models.Content
             this.Heading = this.DefaultHeading;
             this.Copy = this.DefaultCopy;
             this.Partiers = Enumerable.Empty<IPartier>();
+        }
+
+        public IEnumerable<Image> DefaultImages
+        {
+            get
+            {
+                return this.GetPropertyValue<IEnumerable<IPublishedContent>>(Party.DefaultImagesAlias, Enumerable.Empty<IPublishedContent>()).Select(x => new Image(x));
+            }
         }
 
         private string DefaultHeading

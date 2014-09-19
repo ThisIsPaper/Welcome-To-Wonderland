@@ -351,6 +351,8 @@
     <Content Include="Views\PartySurface\PartyWallMessageForm.cshtml" />
     <Content Include="Views\PartySurface\FundraisingTargetForm.cshtml" />
     <Content Include="Views\Donate\Donate.cshtml" />
+    <Content Include="Views\PartySurface\PartyImageForm.cshtml" />
+    <Content Include="Views\PartySurface\CustomPartyImageForm.cshtml" />
     <None Include="Views\RegisterHostSurface\RegisterHostForm.cshtml" />
   </ItemGroup>
   <ItemGroup>

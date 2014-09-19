@@ -17,6 +17,62 @@ namespace Wonderland.Logic.Controllers.Surface
     public class PartySurfaceController : SurfaceController
     {
         [ChildActionOnly]
+        [MemberAuthorize(AllowType = PartyHost.Alias)]
+        public ActionResult RenderPartyImageForm()
+        {
+            PartyImageForm partyImageForm = new PartyImageForm();
+
+            partyImageForm.DefaultImages = ((Party)this.CurrentPage).DefaultImages;
+
+            return this.PartialView("PartyImageForm", partyImageForm);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [MemberAuthorize(AllowType = PartyHost.Alias)]
+        public JsonResult HandlePartyImageForm(PartyImageForm partyImageForm)
+        {
+            FormResponse formResponse = new FormResponse();
+
+            if (this.ModelState.IsValid)
+            {
+                ((PartyHost)this.Members.GetCurrentMember()).PartyImage = partyImageForm.PartyImage;
+
+                formResponse.Success = true;
+            }
+
+            return Json(formResponse);
+        }
+
+        [ChildActionOnly]
+        [MemberAuthorize(AllowType = PartyHost.Alias)]
+        public ActionResult RenderCustomPartyImageForm()
+        {
+            return this.PartialView("CustomPartyImageForm", new CustomPartyImageForm());
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [MemberAuthorize(AllowType = PartyHost.Alias)]
+        public JsonResult HandleCustomPartyImageForm(CustomPartyImageForm customPartyImageForm)
+        {
+            FormResponse formResponse = new FormResponse();
+
+            if (this.ModelState.IsValid && customPartyImageForm.CustomPartyImage.ContentLength > 0 && customPartyImageForm.CustomPartyImage.InputStream.IsImage())
+            {
+                string fileName = Guid.NewGuid().ToString() + "." + customPartyImageForm.CustomPartyImage.ContentType.Split('/')[1];
+
+                customPartyImageForm.CustomPartyImage.SaveAs(Server.MapPath("~/Uploads/PartyImage/" + fileName));
+
+                formResponse.Message = "/Uploads/PartyImage/" + fileName;
+
+                formResponse.Success = true;
+            }
+
+            return Json(formResponse);
+        }
+
+        [ChildActionOnly]
         [MemberAuthorize(AllowType=PartyHost.Alias)]
         public ActionResult RenderPartyCopyForm()
         {
@@ -193,31 +249,6 @@ namespace Wonderland.Logic.Controllers.Surface
             return Json(formResponse);
         }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         [ChildActionOnly]
         [MemberAuthorize]
         public ActionResult RenderPartyWallMessageForm()
@@ -278,7 +309,7 @@ namespace Wonderland.Logic.Controllers.Surface
 
                 partyWallImageForm.PartyWallImage.SaveAs(Server.MapPath("~/Uploads/PartyWall/" + fileName));
 
-                formResponse.Message = fileName;
+                formResponse.Message = "/Uploads/PartyWall/" + fileName;
 
                 formResponse.Success = true;
             }
