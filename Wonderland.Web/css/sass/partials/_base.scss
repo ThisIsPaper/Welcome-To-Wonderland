@@ -13,6 +13,7 @@
  --------------------------------------------------------------------------------------------------------------------- */
 
 @import "compass/css3";
+@import "partials/variables";
 
 
 html {
@@ -78,10 +79,81 @@ main {
 }
 
 .page-bg {
-    background: #FF0000;
-    padding: 4rem 0 6rem;
+    background-color: $greyReallyLight;
+    background-image: image-url('bg_simple.png');
+    background-repeat: repeat-x;
+    background-position: top center;
+    padding: 13rem 0 6rem;
 }
 
+
+/* =============================================================================
+Event Page specific - move these out of here eventually
+========================================================================== */
+.party-main-image {
+    background-position: center center;
+    background-size: cover;
+    height: 37.2rem;
+}
+
+.edit-trigger {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    cursor: pointer;
+    color: $PrimaryColour;
+    font-size: 6rem;
+
+    span {
+        display: none;
+    }
+
+    //&:before {
+    //    z-index: 2;
+    //}
+    //
+    //
+    //&:after {
+    //    content: " ";
+    //    position: absolute;
+    //    top: 1.5rem;
+    //    left: 1.5rem;
+    //    width: 3rem;
+    //    height: 3rem;
+    //    @include border-radius(1.5rem);
+    //    background-color: white;
+    //    z-index: 1;
+    //}
+}
+
+.party-image-selecter {
+    width: 10rem;
+    height: 6rem;
+    background-size: cover;
+    float: left;
+    cursor: pointer;
+    position: relative;
+
+    &.selected:after {
+        content: " ";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 10rem;
+        height: 6rem;
+        border: .5rem solid $PrimaryColour;
+    }
+}
+
+.image-selecter-holder {
+
+    min-height: 12rem;
+
+    input[type="radio"] {
+        display: none;
+    }
+
+}
 
 /* =============================================================================
 One-off uses

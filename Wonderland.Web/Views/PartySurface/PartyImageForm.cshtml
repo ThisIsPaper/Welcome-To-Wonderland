@@ -5,7 +5,7 @@
 
 <script type="text/ng-template" id="partials/partyImageForm.html">
 
-    <div>
+    <div class="image-selecter-holder">
         <h2>Default Images</h2>
 
         @* Dynamic defaults *@
@@ -17,27 +17,36 @@
 
         @* hardcoded defaults *@
         <label>
-            <input type="radio" name="urlSelectar" ng-model="partyImageData.PartyImage" value="test1"  />
-            <span>test1</span>
+            <input type="radio" name="urlSelectar" ng-model="partyImageData.PartyImage" value="/img/test_default_image_1.jpg"  />
+            <div class="party-image-selecter" style="background-image: url(/img/test_default_image_1.jpg)" ng-class="{'selected': partyImageData.PartyImage=='/img/test_default_image_1.jpg'}"></div>
         </label>
+
         <label>
-            <input type="radio" name="urlSelectar" ng-model="partyImageData.PartyImage" value="test2"  />
-            <span>test2</span>
+            <input type="radio" name="urlSelectar" ng-model="partyImageData.PartyImage" value="/img/test_default_image_2.jpg"  />
+            <div class="party-image-selecter" style="background-image: url(/img/test_default_image_2.jpg)" ng-class="{'selected': partyImageData.PartyImage=='/img/test_default_image_2.jpg'}"></div>
+        </label>
+
+        <label>
+            <input type="radio" name="urlSelectar" ng-model="partyImageData.PartyImage" value="/img/test_default_image_3.jpg"  />
+            <div class="party-image-selecter" style="background-image: url(/img/test_default_image_3.jpg)" ng-class="{'selected': partyImageData.PartyImage=='/img/test_default_image_3.jpg'}"></div>
         </label>
 
     </div>
 
-    <div>
+
+    <div class="image-selecter-holder">
         <h2>Custom Image</h2>
-        <label>
-            <input type="radio" name="urlSelectar" ng-model="partyImageData.PartyImage" value="{{ partyCustomImage.url }}"  />
-            <img ng-src="{{ partyCustomImage.url }}" alt="" width="50" height="50"/>
-        </label>
-        <div ng-show="!partyCustomImage.url">No custom images uploaded</div>
-    </div>
 
-    <div>
-        @(Html.Action<PartySurfaceController>("RenderCustomPartyImageForm"))
+        <div ng-show="partyCustomImage.url">
+            <label>
+                <input type="radio" name="urlSelectar" ng-model="partyImageData.PartyImage" value="{{ partyCustomImage.url }}"  />
+                <div class="party-image-selecter" ng-style="{'background-image': 'url(' + partyCustomImage.url + ')'}" ng-class="{'selected': partyImageData.PartyImage==partyCustomImage.url}"></div>
+            </label>
+        </div>
+
+        <div>
+            @(Html.Action<PartySurfaceController>("RenderCustomPartyImageForm"))
+        </div>
     </div>
 
     <hr/>
@@ -49,7 +58,7 @@
 
             @*@Html.EditorForModel()*@
 
-            <input name="PartyImage" type="text" ng-model="partyImageData.PartyImage">
+            <input name="PartyImage" type="hidden" ng-model="partyImageData.PartyImage">
 
             <button type="submit">Save Party Image</button>
         }

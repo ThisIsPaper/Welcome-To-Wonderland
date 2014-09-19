@@ -109,6 +109,7 @@ wonderlandApp.controller('PartyCtrl', ['safeApply', '$ocModal', '$sce', '$scope'
     /**********************/
     /* PARTY IMAGE DETAILS */
     /**********************/
+    var initUrl = null;
     $scope.partyImageData = null;
     $scope.partyImageDataForForm = null;
     $scope.partyCustomImage = {
@@ -122,7 +123,7 @@ wonderlandApp.controller('PartyCtrl', ['safeApply', '$ocModal', '$sce', '$scope'
         $scope.partyImageDataForForm = angular.copy(partyImageData);
 
         // TODO - remove
-        hardCodedFixForRedundantInitialImage();
+        hardCodedFixForRedundantInitialImage(initUrl);
     };
 
     $scope.$onRootScope('partyImageUpdated', function(event, response) {
@@ -133,8 +134,10 @@ wonderlandApp.controller('PartyCtrl', ['safeApply', '$ocModal', '$sce', '$scope'
 //            $scope.partyImageDataInit(response.Message);
         }
 
+        $scope.partyImageData.PartyImage = $scope.partyImageDataForForm.PartyImage;
+
         // TODO - need this to work before remove the hardcoded fix
-        hardCodedFixForRedundantInitialImage();
+//        hardCodedFixForRedundantInitialImage();
 
         $ocModal.close('partyImageModal');
     });
@@ -154,20 +157,26 @@ wonderlandApp.controller('PartyCtrl', ['safeApply', '$ocModal', '$sce', '$scope'
 
     $scope.hardCodedCurrentPartyImageUrlInit = function (url) {
         console.log('hardCodedCurrentPartyImageUrlInit', url);
-        $scope.partyCustomImage.url = url;
 
-        // TODO - remove
-        hardCodedFixForRedundantInitialImage();
+        // TODO - remove 2 lines
+        initUrl = url;
+        hardCodedFixForRedundantInitialImage(url);
+
+        if (url && url.indexOf('test_') >= 0) {
+            return;
+        }
+
+        $scope.partyCustomImage.url = url;
     };
 
 
     // TODO - remove: eurgh - hardcoding this before it is put back into form
-    var hardCodedFixForRedundantInitialImage = function () {
+    var hardCodedFixForRedundantInitialImage = function (url) {
         safeApply($scope, function () {
 
-            if ($scope.partyCustomImage.url && angular.isObject($scope.partyImageData) && angular.isObject($scope.partyImageDataForForm)) {
-                $scope.partyImageData.PartyImage = $scope.partyCustomImage.url;
-                $scope.partyImageDataForForm.PartyImage = $scope.partyCustomImage.url;
+            if (url && angular.isObject($scope.partyImageData) && angular.isObject($scope.partyImageDataForForm)) {
+                $scope.partyImageData.PartyImage = url;
+                $scope.partyImageDataForForm.PartyImage = url;
             }
 
         });

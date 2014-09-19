@@ -102,6 +102,14 @@ $BodyBackground: #fff !default;
 /* Links */
 $LinkColour: contrast-color($TextColour, lighten($TextColour, 30), darken($TextColour, 30));
 
+
+/* Greys */
+$greyReallyDark: #474740;
+$greyDark: #7B7A6D;
+$greyMid: #A19F91;
+$greyLight: #D4D3CC;
+$greyReallyLight: #ECECEC;
+
 /* =============================================================================
 Borders
 ========================================================================== */

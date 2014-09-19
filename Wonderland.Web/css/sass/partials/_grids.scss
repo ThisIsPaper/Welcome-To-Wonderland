@@ -50,6 +50,7 @@ $settings : (
 .container {
 	max-width : 114rem;
 	margin : 0 auto;
+    position: relative;
 }
 
 
@@ -98,5 +99,9 @@ $settings : (
     @extend %rounded-skew-one;
     padding: $FontSizeMedium;
     background: #ffffff;
-  
+    overflow: hidden;
+}
+
+.boxx.collapse {
+    padding: 0;
 }
