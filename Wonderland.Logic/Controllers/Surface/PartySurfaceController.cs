@@ -58,7 +58,16 @@ namespace Wonderland.Logic.Controllers.Surface
         {
             FormResponse formResponse = new FormResponse();
 
-            // TODO:
+            if (this.ModelState.IsValid && customPartyImageForm.CustomPartyImage.ContentLength > 0 && customPartyImageForm.CustomPartyImage.InputStream.IsImage())
+            {
+                string fileName = Guid.NewGuid().ToString() + "." + customPartyImageForm.CustomPartyImage.ContentType.Split('/')[1];
+
+                customPartyImageForm.CustomPartyImage.SaveAs(Server.MapPath("~/Uploads/PartyImage/" + fileName));
+
+                formResponse.Message = "/Uploads/PartyImage/" + fileName;
+
+                formResponse.Success = true;
+            }
 
             return Json(formResponse);
         }
@@ -239,31 +248,6 @@ namespace Wonderland.Logic.Controllers.Surface
 
             return Json(formResponse);
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
         [ChildActionOnly]
         [MemberAuthorize]
