@@ -18,8 +18,6 @@ wonderlandApp.controller('WallCtrl', ['mHttp', '$scope', function (mHttp, $scope
 
     $scope.getFeed = function () {
 
-        console.log('GET FEED!');
-
         feedRequest = mHttp.get(wallFeed, {
             data: {
                 'partyGuid': partyGuid,
@@ -29,16 +27,14 @@ wonderlandApp.controller('WallCtrl', ['mHttp', '$scope', function (mHttp, $scope
         });
 
         feedRequest.then(function (response) {
-            console.log('Wall::feed', response);
             $scope.wall.hasDoneFirstLoad = true;
             $scope.wall.feed = response;
         });
 
     };
 
-    $scope.wallFormModelInit = function (m) {
-        console.log('wallModelInit', m);
-        $scope.wall.formModel = m;
+    $scope.wallFormModelInit = function (formModel) {
+        $scope.wall.formModel = formModel;
     };
 
     $scope.$onRootScope('wallMessagePosted', function(event, response, dataObject) {
@@ -47,7 +43,6 @@ wonderlandApp.controller('WallCtrl', ['mHttp', '$scope', function (mHttp, $scope
 
     $scope.$onRootScope('wallImageUrlUploaded', function(event, response) {
         if (response && response.Success === true && response.Message) {
-            console.log('wallImageUrlUploaded::response', response);
 
             var url = response.Message;
 

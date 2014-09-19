@@ -12,7 +12,12 @@
 
             <div class="wgrid-full">
                 <div class="boxx">
-                    @* image *@
+
+                    <img ng-init="hardCodedCurrentPartyImageUrlInit('@Model.PartyHost.PartyImage')" ng-src="{{ partyImageData.PartyImage }}" width="200" height="150"/>
+
+                    <div ng-click="openPageModal('partials/partyImageForm.html', 'partyImageModal', {'partyImageData': partyImageDataForForm, 'partyCustomImage': partyCustomImage})">Edit</div>
+
+                    <hr/>
 
                     <h1 ng-bind="partyDetailsData.PartyHeading">@this.Model.Heading</h1>
 
@@ -126,8 +131,6 @@
 
         @(Html.Action<PartySurfaceController>("RenderPartyImageForm"))
 
-        @(Html.Action<PartySurfaceController>("RenderCustomPartyImageForm"))
-
         @(Html.Action<PartySurfaceController>("RenderPartyCopyForm"))
 
         @(Html.Action<PartySurfaceController>("RenderPartyDetailsForm"))
@@ -145,11 +148,6 @@
 
 
 
-
-
-@* wall *@
-@*@(Html.Action<PartySurfaceController>("RenderPartyWallMessageForm"))*@
-@*@(Html.Action<PartySurfaceController>("RenderPartyWallImageForm"))*@
 
 @*call the following url to the json collection of party wall items*@
 @*<p>

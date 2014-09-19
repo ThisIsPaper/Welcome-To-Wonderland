@@ -1,18 +1,57 @@
 ﻿@model PartyImageForm
 
-<h2>Party Image Form</h2>
+<div ng-init="partyImageDataInit(@Html.Raw(Json.Encode(Model)))"></div>
 
 
-@foreach(Image defaultImage in Model.DefaultImages)
-{
-    <img src="@defaultImage.Url" />
-}
+<script type="text/ng-template" id="partials/partyImageForm.html">
 
-@using (Html.BeginUmbracoForm<PartySurfaceController>("HandlePartyImageForm"))
-{
-    @Html.AntiForgeryToken()
+    <div>
+        <h2>Default Images</h2>
 
-    @Html.EditorForModel()
+        @* Dynamic defaults *@
+        @*<label ng-repeat="defaultImage in partyImageData.DefaultImages">
+            <input type="radio" name="urlSelectar" ng-model="partyImageData.PartyImage" value="defaultImage"  />
+            <img ng-src="{{ defaultImage }}" alt="" width="50" height="50"/>
+        </label>
+        <div ng-show="partyImageData.DefaultImages.length<=0">No default images... yet</div>@*
 
-    <button type="submit">Save Party Image</button>
-}
+        @* hardcoded defaults *@
+        <label>
+            <input type="radio" name="urlSelectar" ng-model="partyImageData.PartyImage" value="test1"  />
+            <span>test1</span>
+        </label>
+        <label>
+            <input type="radio" name="urlSelectar" ng-model="partyImageData.PartyImage" value="test2"  />
+            <span>test2</span>
+        </label>
+
+    </div>
+
+    <div>
+        <h2>Custom Image</h2>
+        <label>
+            <input type="radio" name="urlSelectar" ng-model="partyImageData.PartyImage" value="{{ partyCustomImage.url }}"  />
+            <img ng-src="{{ partyCustomImage.url }}" alt="" width="50" height="50"/>
+        </label>
+        <div ng-show="!partyCustomImage.url">No custom images uploaded</div>
+    </div>
+
+    <div>
+        @(Html.Action<PartySurfaceController>("RenderCustomPartyImageForm"))
+    </div>
+
+    <hr/>
+
+    <div>
+        @using (Html.BeginUmbracoForm<PartySurfaceController>("HandlePartyImageForm", FormMethod.Post, new { m_serialized="", m_post_on_submit="partyImageData", m_on_success_event="partyImageUpdated" }))
+        {
+            @Html.AntiForgeryToken()
+
+            @*@Html.EditorForModel()*@
+
+            <input name="PartyImage" type="text" ng-model="partyImageData.PartyImage">
+
+            <button type="submit">Save Party Image</button>
+        }
+    </div>
+</script>

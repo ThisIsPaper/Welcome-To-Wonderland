@@ -77,13 +77,11 @@ wonderlandApp.controller('PartyCtrl', ['safeApply', '$ocModal', '$sce', '$scope'
     $scope.suggestedDonationDataForForm = null;
 
     $scope.suggestedDonationDataInit = function (suggestedDonationData) {
-        console.log('suggestedDonationDataInit', suggestedDonationData);
         $scope.suggestedDonationData = suggestedDonationData;
         $scope.suggestedDonationDataForForm = angular.copy($scope.suggestedDonationData);
     };
 
     $scope.$onRootScope('suggestedDonationDataUpdated', function(event, response, dataObject) {
-        console.log('partyCopyDataUpdated', response, dataObject);
         $scope.suggestedDonationDataInit(dataObject);
         $ocModal.close('suggestedDonationModal');
     });
@@ -97,16 +95,83 @@ wonderlandApp.controller('PartyCtrl', ['safeApply', '$ocModal', '$sce', '$scope'
     $scope.fundraisingTargetDataForForm = null;
 
     $scope.fundraisingTargetDataInit = function (fundraisingTargetData) {
-        console.log('fundraisingTargetDataInit', fundraisingTargetData);
         $scope.fundraisingTargetData = fundraisingTargetData;
         $scope.fundraisingTargetDataForForm = angular.copy($scope.fundraisingTargetData);
     };
 
     $scope.$onRootScope('fundraisingTargetDataUpdated', function(event, response, dataObject) {
-        console.log('fundraisingTargetDataUpdated', response, dataObject);
         $scope.fundraisingTargetDataInit(dataObject);
         $ocModal.close('fundraisingTargetDataModal');
     });
+
+
+
+    /**********************/
+    /* PARTY IMAGE DETAILS */
+    /**********************/
+    $scope.partyImageData = null;
+    $scope.partyImageDataForForm = null;
+    $scope.partyCustomImage = {
+        url: null
+    };
+
+    $scope.partyImageDataInit = function (partyImageData) {
+
+        console.log('partyImageDataInit', partyImageData);
+        $scope.partyImageData = partyImageData;
+        $scope.partyImageDataForForm = angular.copy(partyImageData);
+
+        // TODO - remove
+        hardCodedFixForRedundantInitialImage();
+    };
+
+    $scope.$onRootScope('partyImageUpdated', function(event, response) {
+        if (response && response.Success === true && response.Message) {
+
+            // might have to only update a certain part of the $scope.partyImageData due to return data
+
+//            $scope.partyImageDataInit(response.Message);
+        }
+
+        // TODO - need this to work before remove the hardcoded fix
+        hardCodedFixForRedundantInitialImage();
+
+        $ocModal.close('partyImageModal');
+    });
+
+    $scope.$onRootScope('partyImageUrlUpdated', function(event, response) {
+        if (response && response.Success === true && response.Message) {
+
+            console.log('partyImageUrlUpdated', response.Message);
+            safeApply($scope, function () {
+                $scope.partyCustomImage.url = response.Message;
+                $scope.partyImageDataForForm.PartyImage = $scope.partyCustomImage.url;
+            });
+        }
+    });
+
+
+
+    $scope.hardCodedCurrentPartyImageUrlInit = function (url) {
+        console.log('hardCodedCurrentPartyImageUrlInit', url);
+        $scope.partyCustomImage.url = url;
+
+        // TODO - remove
+        hardCodedFixForRedundantInitialImage();
+    };
+
+
+    // TODO - remove: eurgh - hardcoding this before it is put back into form
+    var hardCodedFixForRedundantInitialImage = function () {
+        safeApply($scope, function () {
+
+            if ($scope.partyCustomImage.url && angular.isObject($scope.partyImageData) && angular.isObject($scope.partyImageDataForForm)) {
+                $scope.partyImageData.PartyImage = $scope.partyCustomImage.url;
+                $scope.partyImageDataForForm.PartyImage = $scope.partyCustomImage.url;
+            }
+
+        });
+    };
 
 
 }]);

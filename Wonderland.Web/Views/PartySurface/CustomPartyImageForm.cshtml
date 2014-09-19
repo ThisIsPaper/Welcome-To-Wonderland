@@ -1,11 +1,13 @@
 ﻿@model CustomPartyImageForm
 
-@using (Html.BeginUmbracoForm<PartySurfaceController>("HandleCustomPartyImageForm", FormMethod.Post, new { enctype = "multipart/form-data" }))
-{
-    @Html.AntiForgeryToken()
 
-    <label for="customPartyImage">Upload image</label>
-    <input type="file" name="customPartyImage" accept="image/jpeg,image/gif,image/png" />
+<div m-image-upload m-on-success-event="partyImageUrlUpdated">
+    @using (Html.BeginUmbracoForm<PartySurfaceController>("HandleCustomPartyImageForm", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        @Html.AntiForgeryToken()
 
-    <button type="submit">Upload custom party image</button>
-}
+        <input type="file" name="customPartyImage" accept="image/jpeg,image/gif,image/png" m-file-selected="submit()" />
+
+        @*<button type="submit">Upload custom party image</button>*@
+    }
+</div>
