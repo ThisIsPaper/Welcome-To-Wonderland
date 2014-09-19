@@ -113,8 +113,13 @@
 
                 <hr/>
 
-                <div ng-repeat="feedItem in wallModel.feed">ITEM!</div>
-                <div ng-show="!wallModel.feed.length">Currently there are no wall posts. Write one now!</div>
+                <div style="margin-bottom: 2rem;" ng-repeat="feedItem in wall.feed">
+                    <img style="float:left;" ng-src="{{ feedItem.thumbnailUrl }}" alt="{{ feedItem.name }}" title="{{ feedItem.name }}" width="50" height="50"/>
+                    <span ng-bind="feedItem.name"></span><br/>
+                    <span ng-bind="feedItem.text"></span>
+                </div>
+                <div ng-show="!wall.hasDoneFirstLoad">Loading wall...</div>
+                <div ng-show="!wall.feed.length && wall.hasDoneFirstLoad">Currently there are no wall posts. Write one now!</div>
 
             </div>
         </div>
