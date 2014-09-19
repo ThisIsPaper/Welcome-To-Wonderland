@@ -8,12 +8,14 @@
     <div class="image-selecter-holder">
         <h2>Default Images</h2>
 
+
         @* Dynamic defaults *@
         @*<label ng-repeat="defaultImage in partyImageData.DefaultImages">
             <input type="radio" name="urlSelectar" ng-model="partyImageData.PartyImage" value="defaultImage"  />
             <img ng-src="{{ defaultImage }}" alt="" width="50" height="50"/>
         </label>
         <div ng-show="partyImageData.DefaultImages.length<=0">No default images... yet</div>@*
+
 
         @* hardcoded defaults *@
         <label>

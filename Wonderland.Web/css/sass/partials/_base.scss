@@ -14,6 +14,7 @@
 
 @import "compass/css3";
 @import "partials/variables";
+@import "partials/helpers";
 
 
 html {
@@ -124,6 +125,13 @@ Event Page specific - move these out of here eventually
     //    background-color: white;
     //    z-index: 1;
     //}
+}
+
+.profile-image {
+    width: 6rem;
+    height: 6rem;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .party-image-selecter {
