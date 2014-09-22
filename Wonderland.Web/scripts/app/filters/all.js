@@ -15,3 +15,24 @@ wonderlandApp.filter('datePreviewFormat', [function () {
     };
 
 }]);
+
+
+
+wonderlandApp.filter('charsRemaining', [function () {
+
+    return function (count, total) {
+
+        var remaining = 0;
+
+        if (angular.isNumber(count) && angular.isNumber(total)) {
+
+            remaining = total - count;
+            remaining = remaining < 0 ? 0 : remaining;
+
+        }
+
+        return remaining;
+
+    };
+
+}]);

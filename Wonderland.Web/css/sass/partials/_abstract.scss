@@ -19,10 +19,23 @@ $padMediumValue: 1.8rem;
 .pad-medium { padding: $padMediumValue; }
 .pad-large { padding: $padMediumValue * $multiplierLarge; }
 
+.pad-right-small { padding-right: $padMediumValue * $multiplierSmall; }
+.pad-right-medium { padding-right: $padMediumValue; }
+.pad-right-large { padding-right: $padMediumValue * $multiplierLarge; }
+
+.pad-left-small { padding-left: $padMediumValue * $multiplierSmall; }
+.pad-left-medium { padding-left: $padMediumValue; }
+.pad-left-large { padding-left: $padMediumValue * $multiplierLarge; }
+
 .pad-right-1 { padding-right: 1rem;}
 .pad-right-2 { padding-right: 2rem;}
 .pad-right-3 { padding-right: 3rem;}
 .pad-right-4 { padding-right: 4rem;}
+
+.pad-left-1 { padding-left: 1rem;}
+.pad-left-2 { padding-left: 2rem;}
+.pad-left-3 { padding-left: 3rem;}
+.pad-left-4 { padding-left: 4rem;}
 
 //**************************************** MARGIN
 $marginMediumValue: 1.8rem;

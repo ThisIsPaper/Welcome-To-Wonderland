@@ -3,35 +3,36 @@
 <div ng-init="partyDetailsDataInit(@Html.Raw(Json.Encode(Model)))"></div>
 
 <script type="text/ng-template" id="partials/partyDetailsForm.html">
-    <div ng-controller="PartyDetailsFormCtrl">
+    <div class="form-holder" ng-controller="PartyDetailsFormCtrl">
         @using (Html.BeginUmbracoForm<PartySurfaceController>("HandlePartyDetailsForm", FormMethod.Post, new { m_serialized="", m_post_on_submit="partyDetailsData", m_on_success_event="partyDetailsDataUpdated" }))
         {
             @Html.AntiForgeryToken()
 
-            <h2>Your Party Details</h2>
+            <h4>Your Party Details</h4>
 
-            <label for="PartyHeading">Your Party Heading</label>
-            <input name="PartyHeading" type="text" ng-model="partyDetailsData.PartyHeading"/>
+            <label for="PartyHeading">Your party heading</label>
+            <input name="PartyHeading" type="text" ng-model="partyDetailsData.PartyHeading" m-radius-picker="small"/>
 
             <label for="PartyDate">Date</label>
-            <input name="PartyDate" type="text" m-date-time-picker="tempModel.dateTime" />
+            <input name="PartyDate" type="text" m-date-time-picker="tempModel.dateTime" m-radius-picker="small" />
 
-            <h2>Your Party Address</h2>
+            <h4>Your Party Address</h4>
 
             <label for="Address1">Address 1</label>
-            <input name="Address1" type="text" ng-model="partyDetailsData.Address1"/>
+            <input name="Address1" type="text" ng-model="partyDetailsData.Address1" m-radius-picker="small"/>
 
             <label for="Address2">Address 2</label>
-            <input name="Address2" type="text" ng-model="partyDetailsData.Address2"/>
+            <input name="Address2" type="text" ng-model="partyDetailsData.Address2" m-radius-picker="small"/>
 
             <label for="TownCity">Town/City</label>
-            <input name="TownCity" type="text" ng-model="partyDetailsData.TownCity"/>
+            <input name="TownCity" type="text" ng-model="partyDetailsData.TownCity" m-radius-picker="small"/>
 
             <label for="Postcode">Postcode</label>
-            <input name="Postcode" type="text" ng-model="partyDetailsData.Postcode"/>
+            <input class="margin-bottom-3" name="Postcode" type="text" ng-model="partyDetailsData.Postcode" m-radius-picker="small"/>
 
 
-            <button type="submit">Save Changes</button>
+            <button type="submit" class="btn-primary float-right">Save changes</button>
+            <span class="cancel margin-right-1 float-right">Cancel</span>
         }
     </div>
 </script>

@@ -19,6 +19,8 @@ Imports
 ========================================================================== */
 /* Base imports */
 @import url("http://fonts.googleapis.com/css?family=Open+Sans:400,300");
+@import url("http://fonts.googleapis.com/css?family=Open+Sans:400,300");
+@import url("http://fonts.googleapis.com/css?family=Open+Sans:400,300");
 /* line 1, sass/partials/init.scss */
 html {
   font-size: 62.5%;
@@ -219,7 +221,7 @@ Font Sizes
 }
 
 /* line 507, sass/partials/_helpers.scss */
-.body-small, .file-upload-info {
+.body-small, .form-info, .warning, .file-upload-info {
   font-size: 1.4rem;
 }
 
@@ -1754,8 +1756,8 @@ Media query variables
 
 @font-face {
   font-family: 'icomoon';
-  src: url("/fonts/icomoon.eot?q3l262");
-  src: url("/fonts/icomoon.eot?#iefixq3l262") format("embedded-opentype"), url("/fonts/icomoon.woff?q3l262") format("woff"), url("/fonts/icomoon.ttf?q3l262") format("truetype"), url("/fonts/icomoon.svg?q3l262#icomoon") format("svg");
+  src: url("/fonts/icomoon.eot?ee8aqw");
+  src: url("/fonts/icomoon.eot?#iefixee8aqw") format("embedded-opentype"), url("/fonts/icomoon.woff?ee8aqw") format("woff"), url("/fonts/icomoon.ttf?ee8aqw") format("truetype"), url("/fonts/icomoon.svg?ee8aqw#icomoon") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -1773,162 +1775,172 @@ Media query variables
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* line 26, sass/partials/icomoon/_icomoon.scss */
+/* line 27, sass/partials/icomoon/_icomoon.scss */
+.icon-icon_alert:before {
+  content: "\e620";
+}
+
+/* line 30, sass/partials/icomoon/_icomoon.scss */
+.icon-icon_gift:before {
+  content: "\e621";
+}
+
+/* line 33, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_back:before {
   content: "\e61e";
 }
 
-/* line 29, sass/partials/icomoon/_icomoon.scss */
+/* line 36, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_tick:before {
   content: "\e61f";
 }
 
-/* line 32, sass/partials/icomoon/_icomoon.scss */
+/* line 39, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_anon_user:before {
   content: "\e61b";
 }
 
-/* line 35, sass/partials/icomoon/_icomoon.scss */
+/* line 42, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_piggy:before {
   content: "\e61c";
 }
 
-/* line 38, sass/partials/icomoon/_icomoon.scss */
+/* line 45, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_question_mark:before {
   content: "\e61d";
 }
 
-/* line 41, sass/partials/icomoon/_icomoon.scss */
+/* line 48, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_envelope:before {
   content: "\e618";
 }
 
-/* line 44, sass/partials/icomoon/_icomoon.scss */
+/* line 51, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_facebook_f:before {
   content: "\e619";
 }
 
-/* line 47, sass/partials/icomoon/_icomoon.scss */
+/* line 54, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_twitter_bird:before {
   content: "\e61a";
 }
 
-/* line 50, sass/partials/icomoon/_icomoon.scss */
+/* line 57, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_chevron_left:before {
   content: "\e600";
 }
 
-/* line 53, sass/partials/icomoon/_icomoon.scss */
+/* line 60, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_chevron_right:before {
   content: "\e601";
 }
 
-/* line 56, sass/partials/icomoon/_icomoon.scss */
+/* line 63, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_chevron_up:before {
   content: "\e602";
 }
 
-/* line 59, sass/partials/icomoon/_icomoon.scss */
+/* line 66, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_chevron_down:before {
   content: "\e603";
 }
 
-/* line 62, sass/partials/icomoon/_icomoon.scss */
+/* line 69, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_hamburger_menu:before {
   content: "\e604";
 }
 
-/* line 65, sass/partials/icomoon/_icomoon.scss */
+/* line 72, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_home:before {
   content: "\e605";
 }
 
-/* line 68, sass/partials/icomoon/_icomoon.scss */
+/* line 75, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_camera:before {
   content: "\e606";
 }
 
-/* line 71, sass/partials/icomoon/_icomoon.scss */
+/* line 78, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_clock:before {
   content: "\e607";
 }
 
-/* line 74, sass/partials/icomoon/_icomoon.scss */
+/* line 81, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_cog:before {
   content: "\e608";
 }
 
-/* line 77, sass/partials/icomoon/_icomoon.scss */
+/* line 84, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_crown:before {
   content: "\e609";
 }
 
-/* line 80, sass/partials/icomoon/_icomoon.scss */
+/* line 87, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_cutlery:before {
   content: "\e60a";
 }
 
-/* line 83, sass/partials/icomoon/_icomoon.scss */
+/* line 90, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_edit:before {
   content: "\e60b";
 }
 
-/* line 86, sass/partials/icomoon/_icomoon.scss */
+/* line 93, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_fingerpost:before {
   content: "\e60c";
 }
 
-/* line 89, sass/partials/icomoon/_icomoon.scss */
+/* line 96, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_padlock_unlocked:before {
   content: "\e60d";
 }
 
-/* line 92, sass/partials/icomoon/_icomoon.scss */
+/* line 99, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_padlock:before {
   content: "\e60e";
 }
 
-/* line 95, sass/partials/icomoon/_icomoon.scss */
+/* line 102, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_person:before {
   content: "\e60f";
 }
 
-/* line 98, sass/partials/icomoon/_icomoon.scss */
+/* line 105, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_question:before {
   content: "\e610";
 }
 
-/* line 101, sass/partials/icomoon/_icomoon.scss */
+/* line 108, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_snowflake:before {
   content: "\e611";
 }
 
-/* line 104, sass/partials/icomoon/_icomoon.scss */
+/* line 111, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_star:before {
   content: "\e612";
 }
 
-/* line 107, sass/partials/icomoon/_icomoon.scss */
+/* line 114, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_t-shirt:before {
   content: "\e613";
 }
 
-/* line 110, sass/partials/icomoon/_icomoon.scss */
+/* line 117, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_twitter:before {
   content: "\e614";
 }
 
-/* line 113, sass/partials/icomoon/_icomoon.scss */
+/* line 120, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_facebook:before {
   content: "\e615";
 }
 
-/* line 116, sass/partials/icomoon/_icomoon.scss */
+/* line 123, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_google_plus:before {
   content: "\e616";
 }
 
-/* line 119, sass/partials/icomoon/_icomoon.scss */
+/* line 126, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_x:before {
   content: "\e617";
 }
@@ -1967,7 +1979,7 @@ ul, ol, dl {
 }
 
 @font-face {
-  font-family: 'macmillan';
+  font-family: "macmillan";
   src: url("/fonts/macmillan_headline_02_12-webfont.eot?-a7b8pb");
   src: url("/fonts/macmillan_headline_02_12-webfont.eot?#iefix-a7b8pb") format("embedded-opentype"), url("/fonts/macmillan_headline_02_12-webfont.woff?-a7b8pb") format("woff"), url("/fonts/macmillan_headline_02_12-webfont.ttf?-a7b8pb") format("truetype"), url("/fonts/macmillan_headline_02_12-webfont.svg?-a7b8pb#icomoon") format("svg");
   font-weight: normal;
@@ -1978,17 +1990,37 @@ ul, ol, dl {
   src: url("/fonts/17fe4ab4-6e45-4ea2-bb53-2123063911c3.eot?#iefix");
   src: url("/fonts/17fe4ab4-6e45-4ea2-bb53-2123063911c3.eot?#iefix") format("eot"), url("/fonts/142b09e6-c245-4ff7-b01c-325fa824c99e.woff") format("woff"), url("/fonts/e4509cd4-7aa0-4068-89bd-95ffd0bfb6d4.ttf") format("truetype"), url("/fonts/d37fcd2f-d43f-4eae-b192-c48028c02797.svg#d37fcd2f-d43f-4eae-b192-c48028c02797") format("svg");
 }
-/* line 242, sass/partials/_type.scss */
+/* line 241, sass/partials/_type.scss */
+.font-macmillan {
+  font-family: "macmillan";
+}
+
+/* line 245, sass/partials/_type.scss */
+.font-futura {
+  font-family: "Futura BT W01 Book";
+}
+
+/* line 249, sass/partials/_type.scss */
 .heading-large {
   font-size: 4.7rem;
 }
 
-/* line 246, sass/partials/_type.scss */
+/* line 253, sass/partials/_type.scss */
 .heading-small {
   font-size: 2.9rem;
 }
 
-/* line 266, sass/partials/_type.scss */
+/* line 273, sass/partials/_type.scss */
+h1 {
+  font-family: 'macmillan';
+  color: #025b45;
+  font-size: 4.7rem;
+  margin: 0;
+  width: 100%;
+  text-align: center;
+}
+
+/* line 282, sass/partials/_type.scss */
 h2 {
   font-family: 'macmillan';
   color: #007eac;
@@ -1996,7 +2028,7 @@ h2 {
   margin: .5rem 0;
 }
 
-/* line 273, sass/partials/_type.scss */
+/* line 289, sass/partials/_type.scss */
 h3 {
   color: #025b45;
   font-size: 2.3rem;
@@ -2004,7 +2036,7 @@ h3 {
   font-weight: bold;
 }
 
-/* line 280, sass/partials/_type.scss */
+/* line 296, sass/partials/_type.scss */
 h4 {
   color: #474740;
   font-size: 2.3rem;
@@ -2031,7 +2063,7 @@ h4 {
 abstract
 ========================================================================== */
 /* line 18, sass/partials/_abstract.scss */
-.pad-small {
+.pad-small, textarea {
   padding: 1.26rem;
 }
 
@@ -2046,146 +2078,196 @@ abstract
 }
 
 /* line 22, sass/partials/_abstract.scss */
+.pad-right-small, input[type='text'] {
+  padding-right: 1.26rem;
+}
+
+/* line 23, sass/partials/_abstract.scss */
+.pad-right-medium {
+  padding-right: 1.8rem;
+}
+
+/* line 24, sass/partials/_abstract.scss */
+.pad-right-large {
+  padding-right: 2.34rem;
+}
+
+/* line 26, sass/partials/_abstract.scss */
+.pad-left-small, input[type='text'] {
+  padding-left: 1.26rem;
+}
+
+/* line 27, sass/partials/_abstract.scss */
+.pad-left-medium {
+  padding-left: 1.8rem;
+}
+
+/* line 28, sass/partials/_abstract.scss */
+.pad-left-large {
+  padding-left: 2.34rem;
+}
+
+/* line 30, sass/partials/_abstract.scss */
 .pad-right-1 {
   padding-right: 1rem;
 }
 
-/* line 23, sass/partials/_abstract.scss */
+/* line 31, sass/partials/_abstract.scss */
 .pad-right-2 {
   padding-right: 2rem;
 }
 
-/* line 24, sass/partials/_abstract.scss */
+/* line 32, sass/partials/_abstract.scss */
 .pad-right-3 {
   padding-right: 3rem;
 }
 
-/* line 25, sass/partials/_abstract.scss */
+/* line 33, sass/partials/_abstract.scss */
 .pad-right-4 {
   padding-right: 4rem;
 }
 
-/* line 30, sass/partials/_abstract.scss */
+/* line 35, sass/partials/_abstract.scss */
+.pad-left-1 {
+  padding-left: 1rem;
+}
+
+/* line 36, sass/partials/_abstract.scss */
+.pad-left-2 {
+  padding-left: 2rem;
+}
+
+/* line 37, sass/partials/_abstract.scss */
+.pad-left-3 {
+  padding-left: 3rem;
+}
+
+/* line 38, sass/partials/_abstract.scss */
+.pad-left-4 {
+  padding-left: 4rem;
+}
+
+/* line 43, sass/partials/_abstract.scss */
 .margin-small {
   margin: 1.26rem;
 }
 
-/* line 31, sass/partials/_abstract.scss */
+/* line 44, sass/partials/_abstract.scss */
 .margin-medium {
   margin: 1.8rem;
 }
 
-/* line 32, sass/partials/_abstract.scss */
+/* line 45, sass/partials/_abstract.scss */
 .margin-large {
   margin: 2.34rem;
 }
 
-/* line 34, sass/partials/_abstract.scss */
+/* line 47, sass/partials/_abstract.scss */
 .margin-right-small, .party-image-selecter {
   margin-right: 1.26rem;
 }
 
-/* line 35, sass/partials/_abstract.scss */
+/* line 48, sass/partials/_abstract.scss */
 .margin-right-medium {
   margin-right: 1.8rem;
 }
 
-/* line 36, sass/partials/_abstract.scss */
+/* line 49, sass/partials/_abstract.scss */
 .margin-right-large {
   margin-right: 2.34rem;
 }
 
-/* line 38, sass/partials/_abstract.scss */
-.margin-bottom-small, .warning {
+/* line 51, sass/partials/_abstract.scss */
+.margin-bottom-small, .form-info, .warning {
   margin-bottom: 1.26rem;
 }
 
-/* line 39, sass/partials/_abstract.scss */
+/* line 52, sass/partials/_abstract.scss */
 .margin-bottom-medium, .party-image-container {
   margin-bottom: 1.8rem;
 }
 
-/* line 40, sass/partials/_abstract.scss */
+/* line 53, sass/partials/_abstract.scss */
 .margin-bottom-large {
   margin-bottom: 2.34rem;
 }
 
-/* line 42, sass/partials/_abstract.scss */
-.margin-top-small, .warning {
+/* line 55, sass/partials/_abstract.scss */
+.margin-top-small, .form-info, .warning {
   margin-top: 1.26rem;
 }
 
-/* line 43, sass/partials/_abstract.scss */
+/* line 56, sass/partials/_abstract.scss */
 .margin-top-medium {
   margin-top: 1.8rem;
 }
 
-/* line 44, sass/partials/_abstract.scss */
+/* line 57, sass/partials/_abstract.scss */
 .margin-top-large {
   margin-top: 2.34rem;
 }
 
-/* line 46, sass/partials/_abstract.scss */
+/* line 59, sass/partials/_abstract.scss */
 .margin-right-0 {
   margin-right: 0;
 }
 
-/* line 47, sass/partials/_abstract.scss */
+/* line 60, sass/partials/_abstract.scss */
 .margin-right-1 {
   margin-right: 1rem;
 }
 
-/* line 48, sass/partials/_abstract.scss */
+/* line 61, sass/partials/_abstract.scss */
 .margin-right-2 {
   margin-right: 2rem;
 }
 
-/* line 49, sass/partials/_abstract.scss */
+/* line 62, sass/partials/_abstract.scss */
 .margin-right-3 {
   margin-right: 3rem;
 }
 
-/* line 50, sass/partials/_abstract.scss */
+/* line 63, sass/partials/_abstract.scss */
 .margin-right-4 {
   margin-right: 4rem;
 }
 
-/* line 52, sass/partials/_abstract.scss */
+/* line 65, sass/partials/_abstract.scss */
 .margin-bottom-0 {
   margin-bottom: 0;
 }
 
-/* line 53, sass/partials/_abstract.scss */
+/* line 66, sass/partials/_abstract.scss */
 .margin-bottom-1 {
   margin-bottom: 1rem;
 }
 
-/* line 54, sass/partials/_abstract.scss */
+/* line 67, sass/partials/_abstract.scss */
 .margin-bottom-2 {
   margin-bottom: 2rem;
 }
 
-/* line 55, sass/partials/_abstract.scss */
+/* line 68, sass/partials/_abstract.scss */
 .margin-bottom-3 {
   margin-bottom: 3rem;
 }
 
-/* line 56, sass/partials/_abstract.scss */
+/* line 69, sass/partials/_abstract.scss */
 .margin-bottom-4 {
   margin-bottom: 4rem;
 }
 
-/* line 59, sass/partials/_abstract.scss */
+/* line 72, sass/partials/_abstract.scss */
 .float-left {
   float: left;
 }
 
-/* line 60, sass/partials/_abstract.scss */
+/* line 73, sass/partials/_abstract.scss */
 .float-right {
   float: right;
 }
 
-/* line 65, sass/partials/_abstract.scss */
+/* line 78, sass/partials/_abstract.scss */
 .radius-v1-small {
   -moz-border-radius-topleft: 1.64rem 1.1rem;
   -webkit-border-top-left-radius: 1.64rem 1.1rem;
@@ -2201,7 +2283,7 @@ abstract
   border-bottom-left-radius: 0.9rem 1.3rem;
 }
 
-/* line 66, sass/partials/_abstract.scss */
+/* line 79, sass/partials/_abstract.scss */
 .radius-v1-medium {
   -moz-border-radius-topleft: 4.92rem 3.3rem;
   -webkit-border-top-left-radius: 4.92rem 3.3rem;
@@ -2217,7 +2299,7 @@ abstract
   border-bottom-left-radius: 2.7rem 3.9rem;
 }
 
-/* line 67, sass/partials/_abstract.scss */
+/* line 80, sass/partials/_abstract.scss */
 .radius-v1-large {
   -moz-border-radius-topleft: 9.84rem 6.6rem;
   -webkit-border-top-left-radius: 9.84rem 6.6rem;
@@ -2233,7 +2315,7 @@ abstract
   border-bottom-left-radius: 5.4rem 7.8rem;
 }
 
-/* line 69, sass/partials/_abstract.scss */
+/* line 82, sass/partials/_abstract.scss */
 .radius-v2-small {
   -moz-border-radius-topleft: 0.7rem 0.6rem;
   -webkit-border-top-left-radius: 0.7rem 0.6rem;
@@ -2249,7 +2331,7 @@ abstract
   border-bottom-left-radius: 1.6rem 1rem;
 }
 
-/* line 70, sass/partials/_abstract.scss */
+/* line 83, sass/partials/_abstract.scss */
 .radius-v2-medium {
   -moz-border-radius-topleft: 2.1rem 1.8rem;
   -webkit-border-top-left-radius: 2.1rem 1.8rem;
@@ -2265,7 +2347,7 @@ abstract
   border-bottom-left-radius: 4.8rem 3rem;
 }
 
-/* line 71, sass/partials/_abstract.scss */
+/* line 84, sass/partials/_abstract.scss */
 .radius-v2-large {
   -moz-border-radius-topleft: 4.2rem 3.6rem;
   -webkit-border-top-left-radius: 4.2rem 3.6rem;
@@ -2281,7 +2363,7 @@ abstract
   border-bottom-left-radius: 9.6rem 6rem;
 }
 
-/* line 73, sass/partials/_abstract.scss */
+/* line 86, sass/partials/_abstract.scss */
 .radius-v3-small {
   -moz-border-radius-topleft: 0.9rem 1.4rem;
   -webkit-border-top-left-radius: 0.9rem 1.4rem;
@@ -2297,7 +2379,7 @@ abstract
   border-bottom-left-radius: 0.9rem 0.8rem;
 }
 
-/* line 74, sass/partials/_abstract.scss */
+/* line 87, sass/partials/_abstract.scss */
 .radius-v3-medium {
   -moz-border-radius-topleft: 2.7rem 4.2rem;
   -webkit-border-top-left-radius: 2.7rem 4.2rem;
@@ -2313,7 +2395,7 @@ abstract
   border-bottom-left-radius: 2.7rem 2.4rem;
 }
 
-/* line 75, sass/partials/_abstract.scss */
+/* line 88, sass/partials/_abstract.scss */
 .radius-v3-large {
   -moz-border-radius-topleft: 5.4rem 8.4rem;
   -webkit-border-top-left-radius: 5.4rem 8.4rem;
@@ -2329,11 +2411,105 @@ abstract
   border-bottom-left-radius: 5.4rem 4.8rem;
 }
 
-/* =============================================================================
-Buttons
-========================================================================== */
-/* Skewed buttons */
-/* line 25, sass/partials/_forms.scss */
+/*------------------------------------------------------------------------------------------------------------------------
+ @package: Macmillan - Wonderland (app)
+
+ @author: Sam Latif
+ @www: http://www.samlatif.co.uk
+ @github: samlatif
+
+ @twitter: samlatifuk
+
+ @copyright: COPYRIGHT 8-21-2014 On behalf of Paper Partnerships Ltd
+ =============================================================================
+ Filename: _type.scss
+ =============================================================================
+ This file is responsible for typographic elements on the Macmillan - Wonderland app.  Styles should be compiled using compass and sass.
+ --------------------------------------------------------------------------------------------------------------------- */
+/* Type */
+/* line 189, sass/partials/_type.scss */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 300;
+}
+
+/* line 199, sass/partials/_type.scss */
+a {
+  color: #999999;
+  text-decoration: none;
+}
+
+/* line 205, sass/partials/_type.scss */
+ul, ol, dl {
+  padding-left: 2.028rem;
+}
+
+@font-face {
+  font-family: "macmillan";
+  src: url("/fonts/macmillan_headline_02_12-webfont.eot?-a7b8pb");
+  src: url("/fonts/macmillan_headline_02_12-webfont.eot?#iefix-a7b8pb") format("embedded-opentype"), url("/fonts/macmillan_headline_02_12-webfont.woff?-a7b8pb") format("woff"), url("/fonts/macmillan_headline_02_12-webfont.ttf?-a7b8pb") format("truetype"), url("/fonts/macmillan_headline_02_12-webfont.svg?-a7b8pb#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Futura BT W01 Book";
+  src: url("/fonts/17fe4ab4-6e45-4ea2-bb53-2123063911c3.eot?#iefix");
+  src: url("/fonts/17fe4ab4-6e45-4ea2-bb53-2123063911c3.eot?#iefix") format("eot"), url("/fonts/142b09e6-c245-4ff7-b01c-325fa824c99e.woff") format("woff"), url("/fonts/e4509cd4-7aa0-4068-89bd-95ffd0bfb6d4.ttf") format("truetype"), url("/fonts/d37fcd2f-d43f-4eae-b192-c48028c02797.svg#d37fcd2f-d43f-4eae-b192-c48028c02797") format("svg");
+}
+/* line 241, sass/partials/_type.scss */
+.font-macmillan {
+  font-family: "macmillan";
+}
+
+/* line 245, sass/partials/_type.scss */
+.font-futura {
+  font-family: "Futura BT W01 Book";
+}
+
+/* line 249, sass/partials/_type.scss */
+.heading-large {
+  font-size: 4.7rem;
+}
+
+/* line 253, sass/partials/_type.scss */
+.heading-small {
+  font-size: 2.9rem;
+}
+
+/* line 273, sass/partials/_type.scss */
+h1 {
+  font-family: 'macmillan';
+  color: #025b45;
+  font-size: 4.7rem;
+  margin: 0;
+  width: 100%;
+  text-align: center;
+}
+
+/* line 282, sass/partials/_type.scss */
+h2 {
+  font-family: 'macmillan';
+  color: #007eac;
+  font-size: 1.8rem;
+  margin: .5rem 0;
+}
+
+/* line 289, sass/partials/_type.scss */
+h3 {
+  color: #025b45;
+  font-size: 2.3rem;
+  margin: 0;
+  font-weight: bold;
+}
+
+/* line 296, sass/partials/_type.scss */
+h4 {
+  color: #474740;
+  font-size: 2.3rem;
+  margin: 2rem 0;
+  font-weight: bold;
+}
+
+/* line 24, sass/partials/_forms.scss */
 .btn-primary, .btn-secondary, .choose-file-wrapper:after {
   cursor: pointer;
   font-weight: 500;
@@ -2345,44 +2521,78 @@ Buttons
   font-size: 1.8rem;
   border: none;
 }
-/* line 38, sass/partials/_forms.scss */
+/* line 37, sass/partials/_forms.scss */
 .btn-primary:hover, .btn-secondary:hover, .choose-file-wrapper:hover:after, .btn-primary:focus, .btn-secondary:focus, .choose-file-wrapper:focus:after {
   background: #4b2061;
 }
 
-/* line 42, sass/partials/_forms.scss */
+/* line 41, sass/partials/_forms.scss */
 .btn-secondary, .choose-file-wrapper:after {
   background: #007eac;
   padding: 0.82308rem 2.1rem;
 }
-/* line 47, sass/partials/_forms.scss */
+/* line 46, sass/partials/_forms.scss */
 .btn-secondary:hover, .choose-file-wrapper:hover:after, .btn-secondary:focus, .choose-file-wrapper:focus:after {
   background: #005979;
 }
 
-/* line 52, sass/partials/_forms.scss */
+/* line 51, sass/partials/_forms.scss */
 .btn-mini {
   font-size: 1.1rem;
 }
 
-/* line 56, sass/partials/_forms.scss */
+/* line 55, sass/partials/_forms.scss */
 .btn-small {
   font-size: 1.4rem;
 }
 
-/* line 60, sass/partials/_forms.scss */
+/* line 59, sass/partials/_forms.scss */
 .btn-large {
   font-size: 2.3rem;
 }
 
-/* line 65, sass/partials/_forms.scss */
-input[type='text'] {
-  width: 40rem;
-  height: 10rem;
-  display: block;
+/* line 63, sass/partials/_forms.scss */
+.cancel {
+  line-height: 4rem;
+  color: #007eac;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+/* line 69, sass/partials/_forms.scss */
+.cancel:hover {
+  color: #005979;
 }
 
-/* line 71, sass/partials/_forms.scss */
+/* line 80, sass/partials/_forms.scss */
+.warning {
+  color: red;
+}
+
+/* line 89, sass/partials/_forms.scss */
+.form-holder {
+  max-width: 50rem;
+}
+
+/* line 95, sass/partials/_forms.scss */
+textarea {
+  width: 100%;
+  height: 15rem;
+  resize: none;
+}
+
+/* line 102, sass/partials/_forms.scss */
+input[type='text'] {
+  width: 100%;
+  height: 5rem;
+  line-height: 5rem;
+}
+
+/* line 110, sass/partials/_forms.scss */
+input[type='text'], textarea {
+  border: 0.1rem solid #D4D3CC;
+}
+
+/* line 114, sass/partials/_forms.scss */
 input[type=submit][disabled=disabled],
 input[type=submit][disabled=disabled]:hover,
 button[disabled=disabled],
@@ -2390,23 +2600,6 @@ button[disabled=disabled]:hover {
   background-color: #ECECEC;
   color: #D4D3CC;
   cursor: default;
-}
-
-/* line 81, sass/partials/_forms.scss */
-.cancel {
-  line-height: 4rem;
-  color: #007eac;
-  font-size: 1.8rem;
-  cursor: pointer;
-}
-/* line 87, sass/partials/_forms.scss */
-.cancel:hover {
-  color: #005979;
-}
-
-/* line 93, sass/partials/_forms.scss */
-.warning {
-  color: red;
 }
 
 /* line 1, sass/partials/_nav.scss */
@@ -2867,7 +3060,7 @@ Font Sizes
 }
 
 /* line 507, sass/partials/_helpers.scss */
-.body-small, .file-upload-info {
+.body-small, .form-info, .warning, .file-upload-info {
   font-size: 1.4rem;
 }
 
@@ -2949,7 +3142,7 @@ Project Specific helpers
 abstract
 ========================================================================== */
 /* line 18, sass/partials/_abstract.scss */
-.pad-small {
+.pad-small, textarea {
   padding: 1.26rem;
 }
 
@@ -2964,146 +3157,196 @@ abstract
 }
 
 /* line 22, sass/partials/_abstract.scss */
+.pad-right-small, input[type='text'] {
+  padding-right: 1.26rem;
+}
+
+/* line 23, sass/partials/_abstract.scss */
+.pad-right-medium {
+  padding-right: 1.8rem;
+}
+
+/* line 24, sass/partials/_abstract.scss */
+.pad-right-large {
+  padding-right: 2.34rem;
+}
+
+/* line 26, sass/partials/_abstract.scss */
+.pad-left-small, input[type='text'] {
+  padding-left: 1.26rem;
+}
+
+/* line 27, sass/partials/_abstract.scss */
+.pad-left-medium {
+  padding-left: 1.8rem;
+}
+
+/* line 28, sass/partials/_abstract.scss */
+.pad-left-large {
+  padding-left: 2.34rem;
+}
+
+/* line 30, sass/partials/_abstract.scss */
 .pad-right-1 {
   padding-right: 1rem;
 }
 
-/* line 23, sass/partials/_abstract.scss */
+/* line 31, sass/partials/_abstract.scss */
 .pad-right-2 {
   padding-right: 2rem;
 }
 
-/* line 24, sass/partials/_abstract.scss */
+/* line 32, sass/partials/_abstract.scss */
 .pad-right-3 {
   padding-right: 3rem;
 }
 
-/* line 25, sass/partials/_abstract.scss */
+/* line 33, sass/partials/_abstract.scss */
 .pad-right-4 {
   padding-right: 4rem;
 }
 
-/* line 30, sass/partials/_abstract.scss */
+/* line 35, sass/partials/_abstract.scss */
+.pad-left-1 {
+  padding-left: 1rem;
+}
+
+/* line 36, sass/partials/_abstract.scss */
+.pad-left-2 {
+  padding-left: 2rem;
+}
+
+/* line 37, sass/partials/_abstract.scss */
+.pad-left-3 {
+  padding-left: 3rem;
+}
+
+/* line 38, sass/partials/_abstract.scss */
+.pad-left-4 {
+  padding-left: 4rem;
+}
+
+/* line 43, sass/partials/_abstract.scss */
 .margin-small {
   margin: 1.26rem;
 }
 
-/* line 31, sass/partials/_abstract.scss */
+/* line 44, sass/partials/_abstract.scss */
 .margin-medium {
   margin: 1.8rem;
 }
 
-/* line 32, sass/partials/_abstract.scss */
+/* line 45, sass/partials/_abstract.scss */
 .margin-large {
   margin: 2.34rem;
 }
 
-/* line 34, sass/partials/_abstract.scss */
+/* line 47, sass/partials/_abstract.scss */
 .margin-right-small, .party-image-selecter {
   margin-right: 1.26rem;
 }
 
-/* line 35, sass/partials/_abstract.scss */
+/* line 48, sass/partials/_abstract.scss */
 .margin-right-medium {
   margin-right: 1.8rem;
 }
 
-/* line 36, sass/partials/_abstract.scss */
+/* line 49, sass/partials/_abstract.scss */
 .margin-right-large {
   margin-right: 2.34rem;
 }
 
-/* line 38, sass/partials/_abstract.scss */
-.margin-bottom-small, .warning {
+/* line 51, sass/partials/_abstract.scss */
+.margin-bottom-small, .form-info, .warning {
   margin-bottom: 1.26rem;
 }
 
-/* line 39, sass/partials/_abstract.scss */
+/* line 52, sass/partials/_abstract.scss */
 .margin-bottom-medium, .party-image-container {
   margin-bottom: 1.8rem;
 }
 
-/* line 40, sass/partials/_abstract.scss */
+/* line 53, sass/partials/_abstract.scss */
 .margin-bottom-large {
   margin-bottom: 2.34rem;
 }
 
-/* line 42, sass/partials/_abstract.scss */
-.margin-top-small, .warning {
+/* line 55, sass/partials/_abstract.scss */
+.margin-top-small, .form-info, .warning {
   margin-top: 1.26rem;
 }
 
-/* line 43, sass/partials/_abstract.scss */
+/* line 56, sass/partials/_abstract.scss */
 .margin-top-medium {
   margin-top: 1.8rem;
 }
 
-/* line 44, sass/partials/_abstract.scss */
+/* line 57, sass/partials/_abstract.scss */
 .margin-top-large {
   margin-top: 2.34rem;
 }
 
-/* line 46, sass/partials/_abstract.scss */
+/* line 59, sass/partials/_abstract.scss */
 .margin-right-0 {
   margin-right: 0;
 }
 
-/* line 47, sass/partials/_abstract.scss */
+/* line 60, sass/partials/_abstract.scss */
 .margin-right-1 {
   margin-right: 1rem;
 }
 
-/* line 48, sass/partials/_abstract.scss */
+/* line 61, sass/partials/_abstract.scss */
 .margin-right-2 {
   margin-right: 2rem;
 }
 
-/* line 49, sass/partials/_abstract.scss */
+/* line 62, sass/partials/_abstract.scss */
 .margin-right-3 {
   margin-right: 3rem;
 }
 
-/* line 50, sass/partials/_abstract.scss */
+/* line 63, sass/partials/_abstract.scss */
 .margin-right-4 {
   margin-right: 4rem;
 }
 
-/* line 52, sass/partials/_abstract.scss */
+/* line 65, sass/partials/_abstract.scss */
 .margin-bottom-0 {
   margin-bottom: 0;
 }
 
-/* line 53, sass/partials/_abstract.scss */
+/* line 66, sass/partials/_abstract.scss */
 .margin-bottom-1 {
   margin-bottom: 1rem;
 }
 
-/* line 54, sass/partials/_abstract.scss */
+/* line 67, sass/partials/_abstract.scss */
 .margin-bottom-2 {
   margin-bottom: 2rem;
 }
 
-/* line 55, sass/partials/_abstract.scss */
+/* line 68, sass/partials/_abstract.scss */
 .margin-bottom-3 {
   margin-bottom: 3rem;
 }
 
-/* line 56, sass/partials/_abstract.scss */
+/* line 69, sass/partials/_abstract.scss */
 .margin-bottom-4 {
   margin-bottom: 4rem;
 }
 
-/* line 59, sass/partials/_abstract.scss */
+/* line 72, sass/partials/_abstract.scss */
 .float-left {
   float: left;
 }
 
-/* line 60, sass/partials/_abstract.scss */
+/* line 73, sass/partials/_abstract.scss */
 .float-right {
   float: right;
 }
 
-/* line 65, sass/partials/_abstract.scss */
+/* line 78, sass/partials/_abstract.scss */
 .radius-v1-small {
   -moz-border-radius-topleft: 1.64rem 1.1rem;
   -webkit-border-top-left-radius: 1.64rem 1.1rem;
@@ -3119,7 +3362,7 @@ abstract
   border-bottom-left-radius: 0.9rem 1.3rem;
 }
 
-/* line 66, sass/partials/_abstract.scss */
+/* line 79, sass/partials/_abstract.scss */
 .radius-v1-medium {
   -moz-border-radius-topleft: 4.92rem 3.3rem;
   -webkit-border-top-left-radius: 4.92rem 3.3rem;
@@ -3135,7 +3378,7 @@ abstract
   border-bottom-left-radius: 2.7rem 3.9rem;
 }
 
-/* line 67, sass/partials/_abstract.scss */
+/* line 80, sass/partials/_abstract.scss */
 .radius-v1-large {
   -moz-border-radius-topleft: 9.84rem 6.6rem;
   -webkit-border-top-left-radius: 9.84rem 6.6rem;
@@ -3151,7 +3394,7 @@ abstract
   border-bottom-left-radius: 5.4rem 7.8rem;
 }
 
-/* line 69, sass/partials/_abstract.scss */
+/* line 82, sass/partials/_abstract.scss */
 .radius-v2-small {
   -moz-border-radius-topleft: 0.7rem 0.6rem;
   -webkit-border-top-left-radius: 0.7rem 0.6rem;
@@ -3167,7 +3410,7 @@ abstract
   border-bottom-left-radius: 1.6rem 1rem;
 }
 
-/* line 70, sass/partials/_abstract.scss */
+/* line 83, sass/partials/_abstract.scss */
 .radius-v2-medium {
   -moz-border-radius-topleft: 2.1rem 1.8rem;
   -webkit-border-top-left-radius: 2.1rem 1.8rem;
@@ -3183,7 +3426,7 @@ abstract
   border-bottom-left-radius: 4.8rem 3rem;
 }
 
-/* line 71, sass/partials/_abstract.scss */
+/* line 84, sass/partials/_abstract.scss */
 .radius-v2-large {
   -moz-border-radius-topleft: 4.2rem 3.6rem;
   -webkit-border-top-left-radius: 4.2rem 3.6rem;
@@ -3199,7 +3442,7 @@ abstract
   border-bottom-left-radius: 9.6rem 6rem;
 }
 
-/* line 73, sass/partials/_abstract.scss */
+/* line 86, sass/partials/_abstract.scss */
 .radius-v3-small {
   -moz-border-radius-topleft: 0.9rem 1.4rem;
   -webkit-border-top-left-radius: 0.9rem 1.4rem;
@@ -3215,7 +3458,7 @@ abstract
   border-bottom-left-radius: 0.9rem 0.8rem;
 }
 
-/* line 74, sass/partials/_abstract.scss */
+/* line 87, sass/partials/_abstract.scss */
 .radius-v3-medium {
   -moz-border-radius-topleft: 2.7rem 4.2rem;
   -webkit-border-top-left-radius: 2.7rem 4.2rem;
@@ -3231,7 +3474,7 @@ abstract
   border-bottom-left-radius: 2.7rem 2.4rem;
 }
 
-/* line 75, sass/partials/_abstract.scss */
+/* line 88, sass/partials/_abstract.scss */
 .radius-v3-large {
   -moz-border-radius-topleft: 5.4rem 8.4rem;
   -webkit-border-top-left-radius: 5.4rem 8.4rem;
@@ -3266,7 +3509,7 @@ abstract
 abstract
 ========================================================================== */
 /* line 18, sass/partials/_abstract.scss */
-.pad-small {
+.pad-small, textarea {
   padding: 1.26rem;
 }
 
@@ -3281,146 +3524,196 @@ abstract
 }
 
 /* line 22, sass/partials/_abstract.scss */
+.pad-right-small, input[type='text'] {
+  padding-right: 1.26rem;
+}
+
+/* line 23, sass/partials/_abstract.scss */
+.pad-right-medium {
+  padding-right: 1.8rem;
+}
+
+/* line 24, sass/partials/_abstract.scss */
+.pad-right-large {
+  padding-right: 2.34rem;
+}
+
+/* line 26, sass/partials/_abstract.scss */
+.pad-left-small, input[type='text'] {
+  padding-left: 1.26rem;
+}
+
+/* line 27, sass/partials/_abstract.scss */
+.pad-left-medium {
+  padding-left: 1.8rem;
+}
+
+/* line 28, sass/partials/_abstract.scss */
+.pad-left-large {
+  padding-left: 2.34rem;
+}
+
+/* line 30, sass/partials/_abstract.scss */
 .pad-right-1 {
   padding-right: 1rem;
 }
 
-/* line 23, sass/partials/_abstract.scss */
+/* line 31, sass/partials/_abstract.scss */
 .pad-right-2 {
   padding-right: 2rem;
 }
 
-/* line 24, sass/partials/_abstract.scss */
+/* line 32, sass/partials/_abstract.scss */
 .pad-right-3 {
   padding-right: 3rem;
 }
 
-/* line 25, sass/partials/_abstract.scss */
+/* line 33, sass/partials/_abstract.scss */
 .pad-right-4 {
   padding-right: 4rem;
 }
 
-/* line 30, sass/partials/_abstract.scss */
+/* line 35, sass/partials/_abstract.scss */
+.pad-left-1 {
+  padding-left: 1rem;
+}
+
+/* line 36, sass/partials/_abstract.scss */
+.pad-left-2 {
+  padding-left: 2rem;
+}
+
+/* line 37, sass/partials/_abstract.scss */
+.pad-left-3 {
+  padding-left: 3rem;
+}
+
+/* line 38, sass/partials/_abstract.scss */
+.pad-left-4 {
+  padding-left: 4rem;
+}
+
+/* line 43, sass/partials/_abstract.scss */
 .margin-small {
   margin: 1.26rem;
 }
 
-/* line 31, sass/partials/_abstract.scss */
+/* line 44, sass/partials/_abstract.scss */
 .margin-medium {
   margin: 1.8rem;
 }
 
-/* line 32, sass/partials/_abstract.scss */
+/* line 45, sass/partials/_abstract.scss */
 .margin-large {
   margin: 2.34rem;
 }
 
-/* line 34, sass/partials/_abstract.scss */
+/* line 47, sass/partials/_abstract.scss */
 .margin-right-small, .party-image-selecter {
   margin-right: 1.26rem;
 }
 
-/* line 35, sass/partials/_abstract.scss */
+/* line 48, sass/partials/_abstract.scss */
 .margin-right-medium {
   margin-right: 1.8rem;
 }
 
-/* line 36, sass/partials/_abstract.scss */
+/* line 49, sass/partials/_abstract.scss */
 .margin-right-large {
   margin-right: 2.34rem;
 }
 
-/* line 38, sass/partials/_abstract.scss */
-.margin-bottom-small, .warning {
+/* line 51, sass/partials/_abstract.scss */
+.margin-bottom-small, .form-info, .warning {
   margin-bottom: 1.26rem;
 }
 
-/* line 39, sass/partials/_abstract.scss */
+/* line 52, sass/partials/_abstract.scss */
 .margin-bottom-medium, .party-image-container {
   margin-bottom: 1.8rem;
 }
 
-/* line 40, sass/partials/_abstract.scss */
+/* line 53, sass/partials/_abstract.scss */
 .margin-bottom-large {
   margin-bottom: 2.34rem;
 }
 
-/* line 42, sass/partials/_abstract.scss */
-.margin-top-small, .warning {
+/* line 55, sass/partials/_abstract.scss */
+.margin-top-small, .form-info, .warning {
   margin-top: 1.26rem;
 }
 
-/* line 43, sass/partials/_abstract.scss */
+/* line 56, sass/partials/_abstract.scss */
 .margin-top-medium {
   margin-top: 1.8rem;
 }
 
-/* line 44, sass/partials/_abstract.scss */
+/* line 57, sass/partials/_abstract.scss */
 .margin-top-large {
   margin-top: 2.34rem;
 }
 
-/* line 46, sass/partials/_abstract.scss */
+/* line 59, sass/partials/_abstract.scss */
 .margin-right-0 {
   margin-right: 0;
 }
 
-/* line 47, sass/partials/_abstract.scss */
+/* line 60, sass/partials/_abstract.scss */
 .margin-right-1 {
   margin-right: 1rem;
 }
 
-/* line 48, sass/partials/_abstract.scss */
+/* line 61, sass/partials/_abstract.scss */
 .margin-right-2 {
   margin-right: 2rem;
 }
 
-/* line 49, sass/partials/_abstract.scss */
+/* line 62, sass/partials/_abstract.scss */
 .margin-right-3 {
   margin-right: 3rem;
 }
 
-/* line 50, sass/partials/_abstract.scss */
+/* line 63, sass/partials/_abstract.scss */
 .margin-right-4 {
   margin-right: 4rem;
 }
 
-/* line 52, sass/partials/_abstract.scss */
+/* line 65, sass/partials/_abstract.scss */
 .margin-bottom-0 {
   margin-bottom: 0;
 }
 
-/* line 53, sass/partials/_abstract.scss */
+/* line 66, sass/partials/_abstract.scss */
 .margin-bottom-1 {
   margin-bottom: 1rem;
 }
 
-/* line 54, sass/partials/_abstract.scss */
+/* line 67, sass/partials/_abstract.scss */
 .margin-bottom-2 {
   margin-bottom: 2rem;
 }
 
-/* line 55, sass/partials/_abstract.scss */
+/* line 68, sass/partials/_abstract.scss */
 .margin-bottom-3 {
   margin-bottom: 3rem;
 }
 
-/* line 56, sass/partials/_abstract.scss */
+/* line 69, sass/partials/_abstract.scss */
 .margin-bottom-4 {
   margin-bottom: 4rem;
 }
 
-/* line 59, sass/partials/_abstract.scss */
+/* line 72, sass/partials/_abstract.scss */
 .float-left {
   float: left;
 }
 
-/* line 60, sass/partials/_abstract.scss */
+/* line 73, sass/partials/_abstract.scss */
 .float-right {
   float: right;
 }
 
-/* line 65, sass/partials/_abstract.scss */
+/* line 78, sass/partials/_abstract.scss */
 .radius-v1-small {
   -moz-border-radius-topleft: 1.64rem 1.1rem;
   -webkit-border-top-left-radius: 1.64rem 1.1rem;
@@ -3436,7 +3729,7 @@ abstract
   border-bottom-left-radius: 0.9rem 1.3rem;
 }
 
-/* line 66, sass/partials/_abstract.scss */
+/* line 79, sass/partials/_abstract.scss */
 .radius-v1-medium {
   -moz-border-radius-topleft: 4.92rem 3.3rem;
   -webkit-border-top-left-radius: 4.92rem 3.3rem;
@@ -3452,7 +3745,7 @@ abstract
   border-bottom-left-radius: 2.7rem 3.9rem;
 }
 
-/* line 67, sass/partials/_abstract.scss */
+/* line 80, sass/partials/_abstract.scss */
 .radius-v1-large {
   -moz-border-radius-topleft: 9.84rem 6.6rem;
   -webkit-border-top-left-radius: 9.84rem 6.6rem;
@@ -3468,7 +3761,7 @@ abstract
   border-bottom-left-radius: 5.4rem 7.8rem;
 }
 
-/* line 69, sass/partials/_abstract.scss */
+/* line 82, sass/partials/_abstract.scss */
 .radius-v2-small {
   -moz-border-radius-topleft: 0.7rem 0.6rem;
   -webkit-border-top-left-radius: 0.7rem 0.6rem;
@@ -3484,7 +3777,7 @@ abstract
   border-bottom-left-radius: 1.6rem 1rem;
 }
 
-/* line 70, sass/partials/_abstract.scss */
+/* line 83, sass/partials/_abstract.scss */
 .radius-v2-medium {
   -moz-border-radius-topleft: 2.1rem 1.8rem;
   -webkit-border-top-left-radius: 2.1rem 1.8rem;
@@ -3500,7 +3793,7 @@ abstract
   border-bottom-left-radius: 4.8rem 3rem;
 }
 
-/* line 71, sass/partials/_abstract.scss */
+/* line 84, sass/partials/_abstract.scss */
 .radius-v2-large {
   -moz-border-radius-topleft: 4.2rem 3.6rem;
   -webkit-border-top-left-radius: 4.2rem 3.6rem;
@@ -3516,7 +3809,7 @@ abstract
   border-bottom-left-radius: 9.6rem 6rem;
 }
 
-/* line 73, sass/partials/_abstract.scss */
+/* line 86, sass/partials/_abstract.scss */
 .radius-v3-small {
   -moz-border-radius-topleft: 0.9rem 1.4rem;
   -webkit-border-top-left-radius: 0.9rem 1.4rem;
@@ -3532,7 +3825,7 @@ abstract
   border-bottom-left-radius: 0.9rem 0.8rem;
 }
 
-/* line 74, sass/partials/_abstract.scss */
+/* line 87, sass/partials/_abstract.scss */
 .radius-v3-medium {
   -moz-border-radius-topleft: 2.7rem 4.2rem;
   -webkit-border-top-left-radius: 2.7rem 4.2rem;
@@ -3548,7 +3841,7 @@ abstract
   border-bottom-left-radius: 2.7rem 2.4rem;
 }
 
-/* line 75, sass/partials/_abstract.scss */
+/* line 88, sass/partials/_abstract.scss */
 .radius-v3-large {
   -moz-border-radius-topleft: 5.4rem 8.4rem;
   -webkit-border-top-left-radius: 5.4rem 8.4rem;
@@ -3564,11 +3857,105 @@ abstract
   border-bottom-left-radius: 5.4rem 4.8rem;
 }
 
-/* =============================================================================
-Buttons
-========================================================================== */
-/* Skewed buttons */
-/* line 25, sass/partials/_forms.scss */
+/*------------------------------------------------------------------------------------------------------------------------
+ @package: Macmillan - Wonderland (app)
+
+ @author: Sam Latif
+ @www: http://www.samlatif.co.uk
+ @github: samlatif
+
+ @twitter: samlatifuk
+
+ @copyright: COPYRIGHT 8-21-2014 On behalf of Paper Partnerships Ltd
+ =============================================================================
+ Filename: _type.scss
+ =============================================================================
+ This file is responsible for typographic elements on the Macmillan - Wonderland app.  Styles should be compiled using compass and sass.
+ --------------------------------------------------------------------------------------------------------------------- */
+/* Type */
+/* line 189, sass/partials/_type.scss */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 300;
+}
+
+/* line 199, sass/partials/_type.scss */
+a {
+  color: #999999;
+  text-decoration: none;
+}
+
+/* line 205, sass/partials/_type.scss */
+ul, ol, dl {
+  padding-left: 2.028rem;
+}
+
+@font-face {
+  font-family: "macmillan";
+  src: url("/fonts/macmillan_headline_02_12-webfont.eot?-a7b8pb");
+  src: url("/fonts/macmillan_headline_02_12-webfont.eot?#iefix-a7b8pb") format("embedded-opentype"), url("/fonts/macmillan_headline_02_12-webfont.woff?-a7b8pb") format("woff"), url("/fonts/macmillan_headline_02_12-webfont.ttf?-a7b8pb") format("truetype"), url("/fonts/macmillan_headline_02_12-webfont.svg?-a7b8pb#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Futura BT W01 Book";
+  src: url("/fonts/17fe4ab4-6e45-4ea2-bb53-2123063911c3.eot?#iefix");
+  src: url("/fonts/17fe4ab4-6e45-4ea2-bb53-2123063911c3.eot?#iefix") format("eot"), url("/fonts/142b09e6-c245-4ff7-b01c-325fa824c99e.woff") format("woff"), url("/fonts/e4509cd4-7aa0-4068-89bd-95ffd0bfb6d4.ttf") format("truetype"), url("/fonts/d37fcd2f-d43f-4eae-b192-c48028c02797.svg#d37fcd2f-d43f-4eae-b192-c48028c02797") format("svg");
+}
+/* line 241, sass/partials/_type.scss */
+.font-macmillan {
+  font-family: "macmillan";
+}
+
+/* line 245, sass/partials/_type.scss */
+.font-futura {
+  font-family: "Futura BT W01 Book";
+}
+
+/* line 249, sass/partials/_type.scss */
+.heading-large {
+  font-size: 4.7rem;
+}
+
+/* line 253, sass/partials/_type.scss */
+.heading-small {
+  font-size: 2.9rem;
+}
+
+/* line 273, sass/partials/_type.scss */
+h1 {
+  font-family: 'macmillan';
+  color: #025b45;
+  font-size: 4.7rem;
+  margin: 0;
+  width: 100%;
+  text-align: center;
+}
+
+/* line 282, sass/partials/_type.scss */
+h2 {
+  font-family: 'macmillan';
+  color: #007eac;
+  font-size: 1.8rem;
+  margin: .5rem 0;
+}
+
+/* line 289, sass/partials/_type.scss */
+h3 {
+  color: #025b45;
+  font-size: 2.3rem;
+  margin: 0;
+  font-weight: bold;
+}
+
+/* line 296, sass/partials/_type.scss */
+h4 {
+  color: #474740;
+  font-size: 2.3rem;
+  margin: 2rem 0;
+  font-weight: bold;
+}
+
+/* line 24, sass/partials/_forms.scss */
 .btn-primary, .btn-secondary, .choose-file-wrapper:after {
   cursor: pointer;
   font-weight: 500;
@@ -3580,44 +3967,78 @@ Buttons
   font-size: 1.8rem;
   border: none;
 }
-/* line 38, sass/partials/_forms.scss */
+/* line 37, sass/partials/_forms.scss */
 .btn-primary:hover, .btn-secondary:hover, .choose-file-wrapper:hover:after, .btn-primary:focus, .btn-secondary:focus, .choose-file-wrapper:focus:after {
   background: #4b2061;
 }
 
-/* line 42, sass/partials/_forms.scss */
+/* line 41, sass/partials/_forms.scss */
 .btn-secondary, .choose-file-wrapper:after {
   background: #007eac;
   padding: 0.82308rem 2.1rem;
 }
-/* line 47, sass/partials/_forms.scss */
+/* line 46, sass/partials/_forms.scss */
 .btn-secondary:hover, .choose-file-wrapper:hover:after, .btn-secondary:focus, .choose-file-wrapper:focus:after {
   background: #005979;
 }
 
-/* line 52, sass/partials/_forms.scss */
+/* line 51, sass/partials/_forms.scss */
 .btn-mini {
   font-size: 1.1rem;
 }
 
-/* line 56, sass/partials/_forms.scss */
+/* line 55, sass/partials/_forms.scss */
 .btn-small {
   font-size: 1.4rem;
 }
 
-/* line 60, sass/partials/_forms.scss */
+/* line 59, sass/partials/_forms.scss */
 .btn-large {
   font-size: 2.3rem;
 }
 
-/* line 65, sass/partials/_forms.scss */
-input[type='text'] {
-  width: 40rem;
-  height: 10rem;
-  display: block;
+/* line 63, sass/partials/_forms.scss */
+.cancel {
+  line-height: 4rem;
+  color: #007eac;
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+/* line 69, sass/partials/_forms.scss */
+.cancel:hover {
+  color: #005979;
 }
 
-/* line 71, sass/partials/_forms.scss */
+/* line 80, sass/partials/_forms.scss */
+.warning {
+  color: red;
+}
+
+/* line 89, sass/partials/_forms.scss */
+.form-holder {
+  max-width: 50rem;
+}
+
+/* line 95, sass/partials/_forms.scss */
+textarea {
+  width: 100%;
+  height: 15rem;
+  resize: none;
+}
+
+/* line 102, sass/partials/_forms.scss */
+input[type='text'] {
+  width: 100%;
+  height: 5rem;
+  line-height: 5rem;
+}
+
+/* line 110, sass/partials/_forms.scss */
+input[type='text'], textarea {
+  border: 0.1rem solid #D4D3CC;
+}
+
+/* line 114, sass/partials/_forms.scss */
 input[type=submit][disabled=disabled],
 input[type=submit][disabled=disabled]:hover,
 button[disabled=disabled],
@@ -3625,23 +4046,6 @@ button[disabled=disabled]:hover {
   background-color: #ECECEC;
   color: #D4D3CC;
   cursor: default;
-}
-
-/* line 81, sass/partials/_forms.scss */
-.cancel {
-  line-height: 4rem;
-  color: #007eac;
-  font-size: 1.8rem;
-  cursor: pointer;
-}
-/* line 87, sass/partials/_forms.scss */
-.cancel:hover {
-  color: #005979;
-}
-
-/* line 93, sass/partials/_forms.scss */
-.warning {
-  color: red;
 }
 
 /* line 23, sass/partials/_base.scss */
@@ -3757,18 +4161,19 @@ Event Page specific - move these out of here eventually
 .edit-trigger .edit-label {
   display: none;
   margin-right: 1rem;
+  text-transform: uppercase;
 }
-/* line 123, sass/partials/_base.scss */
+/* line 124, sass/partials/_base.scss */
 .edit-trigger:hover {
   padding: 0 .95rem;
   width: auto;
 }
-/* line 126, sass/partials/_base.scss */
+/* line 127, sass/partials/_base.scss */
 .edit-trigger:hover .edit-label {
   display: inline;
 }
 
-/* line 133, sass/partials/_base.scss */
+/* line 134, sass/partials/_base.scss */
 .profile-image {
   width: 6rem;
   height: 6rem;
@@ -3776,32 +4181,32 @@ Event Page specific - move these out of here eventually
   background-size: cover;
 }
 
-/* line 140, sass/partials/_base.scss */
+/* line 141, sass/partials/_base.scss */
 .party-details {
   margin: -6rem 0 0 7.8rem;
   color: #A19F91;
 }
-/* line 144, sass/partials/_base.scss */
+/* line 145, sass/partials/_base.scss */
 .party-details [class^="icon-"], .party-details [class*=" icon-"] {
   color: #D4D3CC;
 }
 
 /*******************************/
-/* line 151, sass/partials/_base.scss */
+/* line 152, sass/partials/_base.scss */
 .party-image-container {
   float: left;
 }
-/* line 156, sass/partials/_base.scss */
+/* line 157, sass/partials/_base.scss */
 .party-image-container input[type="radio"] {
   display: none;
 }
-/* line 160, sass/partials/_base.scss */
+/* line 161, sass/partials/_base.scss */
 .party-image-container .warning {
   width: 16rem;
   text-align: center;
   display: none;
 }
-/* line 168, sass/partials/_base.scss */
+/* line 169, sass/partials/_base.scss */
 .party-image-container.selected .party-image-selecter:after {
   content: "\e61f";
   font-family: "icomoon";
@@ -3812,18 +4217,18 @@ Event Page specific - move these out of here eventually
   opacity: .8;
   line-height: 8rem;
 }
-/* line 179, sass/partials/_base.scss */
+/* line 180, sass/partials/_base.scss */
 .party-image-container.selected .party-image-selecter:before {
   content: "";
   margin-left: 0;
 }
-/* line 184, sass/partials/_base.scss */
+/* line 185, sass/partials/_base.scss */
 .party-image-container.selected .warning {
   display: block;
   cursor: pointer;
 }
 
-/* line 191, sass/partials/_base.scss */
+/* line 192, sass/partials/_base.scss */
 .party-image-selecter {
   width: 16rem;
   height: 7.5rem;
@@ -3833,30 +4238,30 @@ Event Page specific - move these out of here eventually
   position: relative;
   overflow: hidden;
 }
-/* line 202, sass/partials/_base.scss */
+/* line 203, sass/partials/_base.scss */
 .party-image-selecter:before {
   color: white;
   font-size: 4.7rem;
   line-height: 7.5rem;
   margin-left: 6.8rem;
 }
-/* line 209, sass/partials/_base.scss */
+/* line 210, sass/partials/_base.scss */
 .party-image-selecter.image-unset {
   cursor: default;
 }
-/* line 213, sass/partials/_base.scss */
+/* line 214, sass/partials/_base.scss */
 .party-image-selecter.image-set:before {
   content: "";
 }
 
-/* line 218, sass/partials/_base.scss */
+/* line 219, sass/partials/_base.scss */
 .choose-file-wrapper {
   width: 16rem;
   overflow: hidden;
   position: relative;
   cursor: pointer;
 }
-/* line 225, sass/partials/_base.scss */
+/* line 226, sass/partials/_base.scss */
 .choose-file-wrapper:before {
   position: relative;
   z-index: 10;
@@ -3866,7 +4271,7 @@ Event Page specific - move these out of here eventually
   font-size: 1.4rem;
   line-height: 3rem;
 }
-/* line 235, sass/partials/_base.scss */
+/* line 236, sass/partials/_base.scss */
 .choose-file-wrapper:after {
   content: "Upload file";
   position: absolute;
@@ -3879,7 +4284,7 @@ Event Page specific - move these out of here eventually
   padding-right: 5rem;
 }
 
-/* line 254, sass/partials/_base.scss */
+/* line 255, sass/partials/_base.scss */
 .choose-file {
   width: 200%;
   height: 100%;
@@ -3893,7 +4298,7 @@ Event Page specific - move these out of here eventually
   opacity: 0;
 }
 
-/* line 267, sass/partials/_base.scss */
+/* line 268, sass/partials/_base.scss */
 .file-upload-info {
   margin-left: 17.2rem;
 }
@@ -3901,12 +4306,12 @@ Event Page specific - move these out of here eventually
 /* =============================================================================
 One-off uses
 ========================================================================== */
-/* line 277, sass/partials/_base.scss */
+/* line 278, sass/partials/_base.scss */
 #twitter-widget-0 {
   width: 100% !important;
 }
 
-/* line 281, sass/partials/_base.scss */
+/* line 282, sass/partials/_base.scss */
 .home-twitter-boxx {
   height: 35.6rem;
 }
@@ -4295,43 +4700,43 @@ Media query variables
 }
 /* line 160, sass/main.scss */
 .frame:nth-child(1) {
-  -moz-transform: rotate(-0.1deg);
-  -ms-transform: rotate(-0.1deg);
-  -webkit-transform: rotate(-0.1deg);
-  transform: rotate(-0.1deg);
+  -moz-transform: rotate(-0.3deg);
+  -ms-transform: rotate(-0.3deg);
+  -webkit-transform: rotate(-0.3deg);
+  transform: rotate(-0.3deg);
 }
 /* line 160, sass/main.scss */
 .frame:nth-child(2) {
-  -moz-transform: rotate(1deg);
-  -ms-transform: rotate(1deg);
-  -webkit-transform: rotate(1deg);
-  transform: rotate(1deg);
+  -moz-transform: rotate(1.5deg);
+  -ms-transform: rotate(1.5deg);
+  -webkit-transform: rotate(1.5deg);
+  transform: rotate(1.5deg);
 }
 /* line 160, sass/main.scss */
 .frame:nth-child(3) {
-  -moz-transform: rotate(-1.2deg);
-  -ms-transform: rotate(-1.2deg);
-  -webkit-transform: rotate(-1.2deg);
-  transform: rotate(-1.2deg);
+  -moz-transform: rotate(-1.6deg);
+  -ms-transform: rotate(-1.6deg);
+  -webkit-transform: rotate(-1.6deg);
+  transform: rotate(-1.6deg);
 }
 /* line 160, sass/main.scss */
 .frame:nth-child(4) {
-  -moz-transform: rotate(0.1deg);
-  -ms-transform: rotate(0.1deg);
-  -webkit-transform: rotate(0.1deg);
-  transform: rotate(0.1deg);
+  -moz-transform: rotate(0.2deg);
+  -ms-transform: rotate(0.2deg);
+  -webkit-transform: rotate(0.2deg);
+  transform: rotate(0.2deg);
 }
 /* line 160, sass/main.scss */
 .frame:nth-child(5) {
-  -moz-transform: rotate(-1.4deg);
-  -ms-transform: rotate(-1.4deg);
-  -webkit-transform: rotate(-1.4deg);
-  transform: rotate(-1.4deg);
+  -moz-transform: rotate(-0.3deg);
+  -ms-transform: rotate(-0.3deg);
+  -webkit-transform: rotate(-0.3deg);
+  transform: rotate(-0.3deg);
 }
 /* line 160, sass/main.scss */
 .frame:nth-child(6) {
-  -moz-transform: rotate(2.1deg);
-  -ms-transform: rotate(2.1deg);
-  -webkit-transform: rotate(2.1deg);
-  transform: rotate(2.1deg);
+  -moz-transform: rotate(0.8deg);
+  -ms-transform: rotate(0.8deg);
+  -webkit-transform: rotate(0.8deg);
+  transform: rotate(0.8deg);
 }

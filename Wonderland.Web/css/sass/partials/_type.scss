@@ -218,7 +218,7 @@ ul, ol, dl {
 //  Further by Matt Rawson | 2014.09.08
 //
 @font-face {
-	font-family: 'macmillan';
+	font-family: $fontFaceMacmillan;
 	src:url('/fonts/macmillan_headline_02_12-webfont.eot?-a7b8pb');
 	src:url('/fonts/macmillan_headline_02_12-webfont.eot?#iefix-a7b8pb') format('embedded-opentype'),
 		url('/fonts/macmillan_headline_02_12-webfont.woff?-a7b8pb') format('woff'),
@@ -229,7 +229,7 @@ ul, ol, dl {
 }
 
 @font-face{
-    font-family:"Futura BT W01 Book";
+    font-family:$fontFaceFutura;
     src:url("/fonts/17fe4ab4-6e45-4ea2-bb53-2123063911c3.eot?#iefix");
     src:url("/fonts/17fe4ab4-6e45-4ea2-bb53-2123063911c3.eot?#iefix") format("eot"),
         url("/fonts/142b09e6-c245-4ff7-b01c-325fa824c99e.woff") format("woff"),
@@ -238,6 +238,13 @@ ul, ol, dl {
 }
 
 
+.font-macmillan {
+    font-family: $fontFaceMacmillan;
+}
+
+.font-futura {
+    font-family: $fontFaceFutura;
+}
 
 .heading-large {
   font-size: $HeadingFontSizeLarge;
@@ -261,6 +268,15 @@ ul, ol, dl {
 
 .body-mini {
   @extend %mini;
+}
+
+h1 {
+    font-family: 'macmillan';
+    color: $FourthColour;
+    font-size: $HeadingFontSizeLarge;
+    margin: 0;
+    width: 100%;
+    text-align: center;
 }
 
 h2 {

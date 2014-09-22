@@ -39,9 +39,9 @@
 
             <div class="wgrid-full">
                 <div class="boxx" m-radius-picker="medium large">
-                    <h2>Join the Wonderland Party</h2>
-                    <pre ng-bind-html="partyCopyData.CopyHtmlSafe">@this.Model.Copy</pre>
-                    <div ng-click="openPageModal('partials/partyCopyForm.html', 'partyCopyModal', {'partyCopyData': partyCopyDataForForm})">Edit</div>
+                    <h1 class="padding-right-3 padding-left-3">Join the Wonderland Party</h1>
+                    <pre class="body-medium font-futura" ng-bind-html="partyCopyData.CopyHtmlSafe">@this.Model.Copy</pre>
+                    <div class="edit-trigger" ng-click="openPageModal('partials/partyCopyForm.html', 'partyCopyModal', {'partyCopyData': partyCopyDataForForm})"><span class="edit-label">Edit</span><span class="icon-icon_edit"></span></div>
                 </div>
             </div>
 

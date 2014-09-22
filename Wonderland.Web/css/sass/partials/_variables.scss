@@ -69,6 +69,9 @@ $Breakpoint-ie-output: true;
 /* =============================================================================
 Type
 ========================================================================== */
+$fontFaceMacmillan: 'macmillan';
+$fontFaceFutura: 'Futura BT W01 Book';
+
 $FontURL: "http://fonts.googleapis.com/css?family=Open+Sans:400,300"; //google font url.  Imported at _type.scss
 $Em: 1.8rem !default;
 $BaseFontSize: 62.5% !default;
@@ -79,6 +82,7 @@ $FontSizeMedium: 1.8rem !default;
 $FontSizeLarge: 2.3rem !default;
 $HeadingFontSizeSmall: 2.9rem !default;
 $HeadingFontSizeLarge: 4.7rem !default;
+$HeadingFontSizeExtraLarge: 7.2rem !default;
 $FontSizeMini: ($BaseFontSize / $MultiplierLarge) !default;
 $LineHeight: 1.4 !default;
 
