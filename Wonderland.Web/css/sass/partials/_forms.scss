@@ -17,9 +17,11 @@
 
 @import "partials/abstract";
 @import "partials/type";
+@import "partials/variables";
 
 
 //********************************************** Buttons
+
 
 .btn-primary {
   @extend %rounded-skew-one;
@@ -91,6 +93,20 @@
 }
 
 //********************************************** Inputs
+
+label {
+    @extend .body-small;
+    text-transform: uppercase;
+    color: $greyDark;
+    font-weight: bold;
+    line-height: 3rem;
+
+    span {
+        text-transform: none;
+        color: $greyMedium;
+    }
+}
+
 
 textarea {
     @extend .pad-small;
