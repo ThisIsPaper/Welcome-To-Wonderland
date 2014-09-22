@@ -15,7 +15,7 @@
 
                     <div class="wgrid-full wgrid-no-bottom-margin">
                         <div class="grid-12 party-main-image" ng-init="hardCodedCurrentPartyImageUrlInit('@Model.PartyHost.PartyImage')" ng-style="{'background-image': 'url(' + partyImageData.PartyImage +')'}"></div>
-                        <div class="edit-trigger icon-icon_edit" ng-click="openPageModal('partials/partyImageForm.html', 'partyImageModal', {'partyImageData': partyImageDataForForm, 'partyCustomImage': partyCustomImage})"><span>Edit</span></div>
+                        <div class="edit-trigger" ng-click="openPageModal('partials/partyImageForm.html', 'partyImageModal', {'partyImageData': partyImageDataForForm, 'partyCustomImage': partyCustomImage})"><span class="edit-label">Edit</span><span class="icon-icon_edit"></span></div>
                     </div>
 
                     <div class="wgrid-full pad-large">
@@ -31,7 +31,7 @@
                                 <span ng-bind="partyDetailsFormattedAddress">@Model.PartyHost.PartyAddress.Address1</span>
                             </div>
                         </div>
-                        <div class="edit-trigger icon-icon_edit" ng-click="openPageModal('partials/partyDetailsForm.html', 'partyDetailsModal', {'partyDetailsData': partyDetailsDataForForm})"><span>Edit</span></div>
+                        <div class="edit-trigger" ng-click="openPageModal('partials/partyDetailsForm.html', 'partyDetailsModal', {'partyDetailsData': partyDetailsDataForForm})"><span class="edit-label">Edit</span><span class="icon-icon_edit"></span></div>
                     </div>
                 </div>
             </div>

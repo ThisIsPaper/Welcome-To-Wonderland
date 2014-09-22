@@ -219,7 +219,7 @@ Font Sizes
 }
 
 /* line 507, sass/partials/_helpers.scss */
-.body-small {
+.body-small, .file-upload-info {
   font-size: 1.4rem;
 }
 
@@ -2867,7 +2867,7 @@ Font Sizes
 }
 
 /* line 507, sass/partials/_helpers.scss */
-.body-small {
+.body-small, .file-upload-info {
   font-size: 1.4rem;
 }
 
@@ -3644,12 +3644,12 @@ button[disabled=disabled]:hover {
   color: red;
 }
 
-/* line 22, sass/partials/_base.scss */
+/* line 23, sass/partials/_base.scss */
 html {
   font-size: 62.5%;
 }
 
-/* line 26, sass/partials/_base.scss */
+/* line 27, sass/partials/_base.scss */
 body {
   color: #666;
   background: #fff;
@@ -3658,7 +3658,7 @@ body {
   font-size: 1.8rem;
 }
 
-/* line 48, sass/partials/_base.scss */
+/* line 49, sass/partials/_base.scss */
 pre {
   white-space: pre-wrap;
 }
@@ -3666,7 +3666,7 @@ pre {
 /* =============================================================================
 Shadows
 ========================================================================== */
-/* line 55, sass/partials/_base.scss */
+/* line 56, sass/partials/_base.scss */
 .shadowed {
   -moz-box-shadow: 0 0 3rem rgba(102, 102, 102, 0.7);
   -webkit-box-shadow: 0 0 3rem rgba(102, 102, 102, 0.7);
@@ -3676,7 +3676,7 @@ Shadows
 /* =============================================================================
 images
 ========================================================================== */
-/* line 62, sass/partials/_base.scss */
+/* line 63, sass/partials/_base.scss */
 img, object, embed {
   max-width: 100%;
 }
@@ -3684,7 +3684,7 @@ img, object, embed {
 /* =============================================================================
 Base page structure
 ========================================================================== */
-/* line 69, sass/partials/_base.scss */
+/* line 70, sass/partials/_base.scss */
 .page-container {
   position: relative;
   width: 100%;
@@ -3703,12 +3703,12 @@ Base page structure
   transition-timing-function: ease-in-out;
 }
 
-/* line 80, sass/partials/_base.scss */
+/* line 81, sass/partials/_base.scss */
 main {
   padding-top: 8.4rem;
 }
 
-/* line 84, sass/partials/_base.scss */
+/* line 85, sass/partials/_base.scss */
 .page-bg {
   background-color: #ECECEC;
   background-image: url('/img/bg_simple.png?1411126422');
@@ -3720,28 +3720,55 @@ main {
 /* =============================================================================
 Event Page specific - move these out of here eventually
 ========================================================================== */
-/* line 96, sass/partials/_base.scss */
+/* line 97, sass/partials/_base.scss */
 .party-main-image {
   background-position: center center;
   background-size: cover;
   height: 37.2rem;
 }
 
-/* line 102, sass/partials/_base.scss */
+/* line 103, sass/partials/_base.scss */
 .edit-trigger {
   position: absolute;
   top: 2rem;
   right: 2rem;
   cursor: pointer;
-  color: #007eac;
-  font-size: 3rem;
+  color: white;
+  font-size: 1.4rem;
+  line-height: 3rem;
+  text-align: center;
+  width: 3rem;
+  height: 3rem;
+  background-color: #007eac;
+  -moz-border-radius-topleft: 3rem 3rem;
+  -webkit-border-top-left-radius: 3rem 3rem;
+  border-top-left-radius: 3rem 3rem;
+  -moz-border-radius-topright: 3rem 3rem;
+  -webkit-border-top-right-radius: 3rem 3rem;
+  border-top-right-radius: 3rem 3rem;
+  -moz-border-radius-bottomright: 3rem 3rem;
+  -webkit-border-bottom-right-radius: 3rem 3rem;
+  border-bottom-right-radius: 3rem 3rem;
+  -moz-border-radius-bottomleft: 3rem 3rem;
+  -webkit-border-bottom-left-radius: 3rem 3rem;
+  border-bottom-left-radius: 3rem 3rem;
 }
-/* line 110, sass/partials/_base.scss */
-.edit-trigger span {
+/* line 118, sass/partials/_base.scss */
+.edit-trigger .edit-label {
   display: none;
+  margin-right: 1rem;
+}
+/* line 123, sass/partials/_base.scss */
+.edit-trigger:hover {
+  padding: 0 .95rem;
+  width: auto;
+}
+/* line 126, sass/partials/_base.scss */
+.edit-trigger:hover .edit-label {
+  display: inline;
 }
 
-/* line 132, sass/partials/_base.scss */
+/* line 133, sass/partials/_base.scss */
 .profile-image {
   width: 6rem;
   height: 6rem;
@@ -3749,32 +3776,32 @@ Event Page specific - move these out of here eventually
   background-size: cover;
 }
 
-/* line 139, sass/partials/_base.scss */
+/* line 140, sass/partials/_base.scss */
 .party-details {
   margin: -6rem 0 0 7.8rem;
   color: #A19F91;
 }
-/* line 143, sass/partials/_base.scss */
+/* line 144, sass/partials/_base.scss */
 .party-details [class^="icon-"], .party-details [class*=" icon-"] {
   color: #D4D3CC;
 }
 
 /*******************************/
-/* line 150, sass/partials/_base.scss */
+/* line 151, sass/partials/_base.scss */
 .party-image-container {
   float: left;
 }
-/* line 155, sass/partials/_base.scss */
+/* line 156, sass/partials/_base.scss */
 .party-image-container input[type="radio"] {
   display: none;
 }
-/* line 159, sass/partials/_base.scss */
+/* line 160, sass/partials/_base.scss */
 .party-image-container .warning {
   width: 16rem;
   text-align: center;
   display: none;
 }
-/* line 167, sass/partials/_base.scss */
+/* line 168, sass/partials/_base.scss */
 .party-image-container.selected .party-image-selecter:after {
   content: "\e61f";
   font-family: "icomoon";
@@ -3785,17 +3812,18 @@ Event Page specific - move these out of here eventually
   opacity: .8;
   line-height: 8rem;
 }
-/* line 178, sass/partials/_base.scss */
+/* line 179, sass/partials/_base.scss */
 .party-image-container.selected .party-image-selecter:before {
   content: "";
   margin-left: 0;
 }
-/* line 183, sass/partials/_base.scss */
+/* line 184, sass/partials/_base.scss */
 .party-image-container.selected .warning {
   display: block;
+  cursor: pointer;
 }
 
-/* line 189, sass/partials/_base.scss */
+/* line 191, sass/partials/_base.scss */
 .party-image-selecter {
   width: 16rem;
   height: 7.5rem;
@@ -3805,30 +3833,30 @@ Event Page specific - move these out of here eventually
   position: relative;
   overflow: hidden;
 }
-/* line 200, sass/partials/_base.scss */
+/* line 202, sass/partials/_base.scss */
 .party-image-selecter:before {
   color: white;
   font-size: 4.7rem;
   line-height: 7.5rem;
   margin-left: 6.8rem;
 }
-/* line 207, sass/partials/_base.scss */
+/* line 209, sass/partials/_base.scss */
 .party-image-selecter.image-unset {
   cursor: default;
 }
-/* line 211, sass/partials/_base.scss */
+/* line 213, sass/partials/_base.scss */
 .party-image-selecter.image-set:before {
   content: "";
 }
 
-/* line 216, sass/partials/_base.scss */
+/* line 218, sass/partials/_base.scss */
 .choose-file-wrapper {
   width: 16rem;
   overflow: hidden;
   position: relative;
   cursor: pointer;
 }
-/* line 223, sass/partials/_base.scss */
+/* line 225, sass/partials/_base.scss */
 .choose-file-wrapper:before {
   position: relative;
   z-index: 10;
@@ -3838,7 +3866,7 @@ Event Page specific - move these out of here eventually
   font-size: 1.4rem;
   line-height: 3rem;
 }
-/* line 233, sass/partials/_base.scss */
+/* line 235, sass/partials/_base.scss */
 .choose-file-wrapper:after {
   content: "Upload file";
   position: absolute;
@@ -3851,7 +3879,7 @@ Event Page specific - move these out of here eventually
   padding-right: 5rem;
 }
 
-/* line 252, sass/partials/_base.scss */
+/* line 254, sass/partials/_base.scss */
 .choose-file {
   width: 200%;
   height: 100%;
@@ -3865,15 +3893,20 @@ Event Page specific - move these out of here eventually
   opacity: 0;
 }
 
+/* line 267, sass/partials/_base.scss */
+.file-upload-info {
+  margin-left: 17.2rem;
+}
+
 /* =============================================================================
 One-off uses
 ========================================================================== */
-/* line 269, sass/partials/_base.scss */
+/* line 277, sass/partials/_base.scss */
 #twitter-widget-0 {
   width: 100% !important;
 }
 
-/* line 273, sass/partials/_base.scss */
+/* line 281, sass/partials/_base.scss */
 .home-twitter-boxx {
   height: 35.6rem;
 }
@@ -4125,6 +4158,16 @@ Media query variables
   .site-header.compress .menu li a {
     line-height: normal;
   }
+
+  /* line 193, sass/partials/_media-queries.scss */
+  .file-upload-info {
+    margin-left: 0;
+  }
+
+  /* line 197, sass/partials/_media-queries.scss */
+  .party-image-container {
+    float: none;
+  }
 }
 /* line 39, sass/main.scss */
 #homeBg {
@@ -4252,43 +4295,43 @@ Media query variables
 }
 /* line 160, sass/main.scss */
 .frame:nth-child(1) {
-  -moz-transform: rotate(-2.1deg);
-  -ms-transform: rotate(-2.1deg);
-  -webkit-transform: rotate(-2.1deg);
-  transform: rotate(-2.1deg);
+  -moz-transform: rotate(-0.1deg);
+  -ms-transform: rotate(-0.1deg);
+  -webkit-transform: rotate(-0.1deg);
+  transform: rotate(-0.1deg);
 }
 /* line 160, sass/main.scss */
 .frame:nth-child(2) {
-  -moz-transform: rotate(1.5deg);
-  -ms-transform: rotate(1.5deg);
-  -webkit-transform: rotate(1.5deg);
-  transform: rotate(1.5deg);
+  -moz-transform: rotate(1deg);
+  -ms-transform: rotate(1deg);
+  -webkit-transform: rotate(1deg);
+  transform: rotate(1deg);
 }
 /* line 160, sass/main.scss */
 .frame:nth-child(3) {
-  -moz-transform: rotate(-0.4deg);
-  -ms-transform: rotate(-0.4deg);
-  -webkit-transform: rotate(-0.4deg);
-  transform: rotate(-0.4deg);
-}
-/* line 160, sass/main.scss */
-.frame:nth-child(4) {
-  -moz-transform: rotate(2.3deg);
-  -ms-transform: rotate(2.3deg);
-  -webkit-transform: rotate(2.3deg);
-  transform: rotate(2.3deg);
-}
-/* line 160, sass/main.scss */
-.frame:nth-child(5) {
   -moz-transform: rotate(-1.2deg);
   -ms-transform: rotate(-1.2deg);
   -webkit-transform: rotate(-1.2deg);
   transform: rotate(-1.2deg);
 }
 /* line 160, sass/main.scss */
+.frame:nth-child(4) {
+  -moz-transform: rotate(0.1deg);
+  -ms-transform: rotate(0.1deg);
+  -webkit-transform: rotate(0.1deg);
+  transform: rotate(0.1deg);
+}
+/* line 160, sass/main.scss */
+.frame:nth-child(5) {
+  -moz-transform: rotate(-1.4deg);
+  -ms-transform: rotate(-1.4deg);
+  -webkit-transform: rotate(-1.4deg);
+  transform: rotate(-1.4deg);
+}
+/* line 160, sass/main.scss */
 .frame:nth-child(6) {
-  -moz-transform: rotate(1.8deg);
-  -ms-transform: rotate(1.8deg);
-  -webkit-transform: rotate(1.8deg);
-  transform: rotate(1.8deg);
+  -moz-transform: rotate(2.1deg);
+  -ms-transform: rotate(2.1deg);
+  -webkit-transform: rotate(2.1deg);
+  transform: rotate(2.1deg);
 }
