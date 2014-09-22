@@ -14,7 +14,7 @@
             <textarea name="Copy" ng-model="partyCopyData.Copy" m-radius-picker="small"></textarea>
 
             <div class="form-info" ng-show="partyCopyData.Copy.length<=600">
-                <span ng-bind="partyCopyData.Copy.length|charsRemaining:600"></span>
+                <span ng-bind="600-partyCopyData.Copy.length"></span>
                 <ng-pluralize count="600-partyCopyData.Copy.length" when="{'one': 'character', 'other': 'characters'}"></ng-pluralize>
                 <span> remaining</span>
             </div>
