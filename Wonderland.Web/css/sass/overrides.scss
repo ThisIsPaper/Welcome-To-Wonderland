@@ -1,0 +1,18 @@
+/* =============================================================================
+overrides
+========================================================================== */
+
+
+@import "partials/abstract";
+
+
+
+.modal-backdrop {
+    background-color: black !important;
+}
+
+.modal .modal-dialog .modal-content {
+    @extend .pad-large;
+    @extend .radius-v1-medium;
+    width: auto;
+}

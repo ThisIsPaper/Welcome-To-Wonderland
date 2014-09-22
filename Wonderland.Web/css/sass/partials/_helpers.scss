@@ -494,24 +494,6 @@ Border radius
 
 
 /* =============================================================================
-Matt's radius
-========================================================================== */
-
-.radius-v1-small { @include m-border-radius(1.64rem, 1.1rem, .9rem, .8rem, .9rem, 1.4rem, .9rem, 1.3rem); }
-.radius-v1-medium { @include m-border-radius(1.64rem, 1.1rem, .9rem, .8rem, .9rem, 1.4rem, .9rem, 1.3rem, 3); }
-.radius-v1-large { @include m-border-radius(1.64rem, 1.1rem, .9rem, .8rem, .9rem, 1.4rem, .9rem, 1.3rem, 6); }
-
-.radius-v2-small { @include m-border-radius(.7rem, .6rem, 1.2rem, .7rem, 1.7rem, 1.1rem, 1.6rem, 1rem); }
-.radius-v2-medium { @include m-border-radius(.7rem, .6rem, 1.2rem, .7rem, 1.7rem, 1.1rem, 1.6rem, 1rem, 3); }
-.radius-v2-large { @include m-border-radius(.7rem, .6rem, 1.2rem, .7rem, 1.7rem, 1.1rem, 1.6rem, 1rem, 6); }
-
-.radius-v3-small { @include m-border-radius(.9rem, 1.4rem, 1.4rem, 1rem, .9rem, 1.7rem, .9rem, .8rem); }
-.radius-v3-medium { @include m-border-radius(.9rem, 1.4rem, 1.4rem, 1rem, .9rem, 1.7rem, .9rem, .8rem, 3); }
-.radius-v3-large { @include m-border-radius(.9rem, 1.4rem, 1.4rem, 1rem, .9rem, 1.7rem, .9rem, .8rem, 6); }
-
-
-
-/* =============================================================================
 Font Sizes
 ========================================================================== */
 %large {

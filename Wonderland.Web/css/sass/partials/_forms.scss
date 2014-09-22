@@ -14,6 +14,10 @@
  This file is responsible for all form styles in the Macmillan - Wonderland app.
  --------------------------------------------------------------------------------------------------------------------- */
 
+
+@import "partials/abstract";
+
+
 /* =============================================================================
 Buttons
 ========================================================================== */
@@ -30,6 +34,7 @@ Buttons
   text-transform: uppercase;
   background: $SecondaryColour;
   font-size: 1.8rem;
+  border: none;
   &:hover, &:focus {
     background: darken($SecondaryColour, 10%);
   }
@@ -61,4 +66,32 @@ input[type='text'] {
     width: 40rem;
     height: 10rem;
     display: block;
+}
+
+input[type=submit][disabled=disabled],
+input[type=submit][disabled=disabled]:hover,
+button[disabled=disabled],
+button[disabled=disabled]:hover {
+    background-color: $greyReallyLight;
+    color: $greyLight;
+    cursor: default;
+}
+
+
+.cancel {
+    line-height: 4rem;
+    color: $PrimaryColour;
+    font-size: $FontSizeMedium;
+    cursor: pointer;
+
+    &:hover {
+        color: darken($PrimaryColour, 10%);
+    }
+}
+
+
+.warning {
+    @extend .margin-top-small;
+    @extend .margin-bottom-small;
+    color: red;
 }

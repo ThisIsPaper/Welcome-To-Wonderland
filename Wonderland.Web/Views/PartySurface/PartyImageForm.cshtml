@@ -5,8 +5,8 @@
 
 <script type="text/ng-template" id="partials/partyImageForm.html">
 
-    <div class="image-selecter-holder">
-        <h2>Default Images</h2>
+    <div class="">
+        <h4>Choose a party image from our gallery</h4>
 
 
         @* Dynamic defaults *@
@@ -18,51 +18,62 @@
 
 
         @* hardcoded defaults *@
-        <label>
-            <input type="radio" name="urlSelectar" ng-model="partyImageData.PartyImage" value="/img/test_default_image_1.jpg"  />
-            <div class="party-image-selecter" style="background-image: url(/img/test_default_image_1.jpg)" ng-class="{'selected': partyImageData.PartyImage=='/img/test_default_image_1.jpg'}"></div>
-        </label>
-
-        <label>
-            <input type="radio" name="urlSelectar" ng-model="partyImageData.PartyImage" value="/img/test_default_image_2.jpg"  />
-            <div class="party-image-selecter" style="background-image: url(/img/test_default_image_2.jpg)" ng-class="{'selected': partyImageData.PartyImage=='/img/test_default_image_2.jpg'}"></div>
-        </label>
-
-        <label>
-            <input type="radio" name="urlSelectar" ng-model="partyImageData.PartyImage" value="/img/test_default_image_3.jpg"  />
-            <div class="party-image-selecter" style="background-image: url(/img/test_default_image_3.jpg)" ng-class="{'selected': partyImageData.PartyImage=='/img/test_default_image_3.jpg'}"></div>
-        </label>
-
-    </div>
-
-
-    <div class="image-selecter-holder">
-        <h2>Custom Image</h2>
-
-        <div ng-show="partyCustomImage.url">
+        <div class="party-image-container" ng-class="{'selected': partyImageData.PartyImage=='/img/test_default_image_1.jpg'}">
             <label>
-                <input type="radio" name="urlSelectar" ng-model="partyImageData.PartyImage" value="{{ partyCustomImage.url }}"  />
-                <div class="party-image-selecter" ng-style="{'background-image': 'url(' + partyCustomImage.url + ')'}" ng-class="{'selected': partyImageData.PartyImage==partyCustomImage.url}"></div>
+                <input type="radio" name="urlSelectar" ng-model="partyImageData.PartyImage" value="/img/test_default_image_1.jpg"  />
+                <div class="party-image-selecter" style="background-image: url(/img/test_default_image_1.jpg)" m-radius-picker="small"></div>
             </label>
+            <div class="body-small warning" ng-click="partyImageData.PartyImage=null">Deselect image <span class="icon-icon_x"></span></div>
         </div>
 
-        <div>
-            @(Html.Action<PartySurfaceController>("RenderCustomPartyImageForm"))
+        <div class="party-image-container" ng-class="{'selected': partyImageData.PartyImage=='/img/test_default_image_2.jpg'}">
+            <label>
+                <input type="radio" name="urlSelectar" ng-model="partyImageData.PartyImage" value="/img/test_default_image_2.jpg"  />
+                <div class="party-image-selecter" style="background-image: url(/img/test_default_image_2.jpg)" m-radius-picker="small"></div>
+            </label>
+            <div class="body-small warning" ng-click="partyImageData.PartyImage=null">Deselect image <span class="icon-icon_x"></span></div>
         </div>
+
+        <div class="party-image-container" ng-class="{'selected': partyImageData.PartyImage=='/img/test_default_image_3.jpg'}">
+            <label>
+                <input type="radio" name="urlSelectar" ng-model="partyImageData.PartyImage" value="/img/test_default_image_3.jpg"  />
+                <div class="party-image-selecter margin-right-0" style="background-image: url(/img/test_default_image_3.jpg)" m-radius-picker="small"><span></span></div>
+            </label>
+            <div class="body-small warning" ng-click="partyImageData.PartyImage=null">Deselect image <span class="icon-icon_x"></span></div>
+        </div>
+
+        <div class="clear"></div>
     </div>
 
-    <hr/>
+
+    <h4>Or upload your own</h4>
+
+
+    <div class="boxx internal margin-bottom-medium" m-radius-picker="small">
+
+        <div class="party-image-container"ng-class="{'selected': (partyImageData.PartyImage==partyCustomImage.url && partyCustomImage.url)}">
+            <label>
+                <input type="radio" name="urlSelectar" ng-model="partyImageData.PartyImage" value="{{ partyCustomImage.url }}" ng-disabled="!partyCustomImage.url"  />
+                <div class="party-image-selecter icon-icon_question_mark" ng-style="{'background-image': 'url(' + partyCustomImage.url + ')'}" ng-class="{'image-set': partyCustomImage.url, 'image-unset': !partyCustomImage.url}" m-radius-picker="small"></div>
+            </label>
+            <div class="body-small warning" ng-click="partyImageData.PartyImage=null">Deselect image <span class="icon-icon_x"></span></div>
+        </div>
+
+        @(Html.Action<PartySurfaceController>("RenderCustomPartyImageForm"))
+
+        <div class="body-small">Recommended dimensions of 500x500</div>
+        <div class="body-small">Maximum file size of 1MB</div>
+    </div>
 
     <div>
         @using (Html.BeginUmbracoForm<PartySurfaceController>("HandlePartyImageForm", FormMethod.Post, new { m_serialized="", m_post_on_submit="partyImageData", m_on_success_event="partyImageUpdated" }))
         {
             @Html.AntiForgeryToken()
 
-            @*@Html.EditorForModel()*@
-
             <input name="PartyImage" type="hidden" ng-model="partyImageData.PartyImage">
 
-            <button type="submit">Save Party Image</button>
+            <button type="submit" class="btn-primary float-right" ng-disabled="!partyImageData.PartyImage">Save changes</button>
+            <span class="cancel margin-right-1 float-right">Cancel</span>
         }
     </div>
 </script>

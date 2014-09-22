@@ -15,6 +15,8 @@
 @import "compass/css3";
 @import "partials/variables";
 @import "partials/helpers";
+@import "partials/abstract";
+@import "partials/forms";
 
 
 html {
@@ -145,33 +147,119 @@ Event Page specific - move these out of here eventually
 
 
 /*******************************/// party image modal
-.party-image-selecter {
-    width: 10rem;
-    height: 6rem;
-    background-size: cover;
+.party-image-container {
+    @extend .margin-bottom-medium;
+
     float: left;
-    cursor: pointer;
-    position: relative;
-
-    &.selected:after {
-        content: " ";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 10rem;
-        height: 6rem;
-        border: .5rem solid $PrimaryColour;
-    }
-}
-
-.image-selecter-holder {
-
-    min-height: 12rem;
 
     input[type="radio"] {
         display: none;
     }
 
+    .warning {
+        width: 16rem;
+        text-align: center;
+        display: none;
+    }
+
+    &.selected {
+
+        .party-image-selecter:after {
+            content: "\e61f"; // tick
+            font-family: "icomoon";
+            background-color: $PrimaryColour;
+            color: white;
+            font-size: 4rem;
+            padding: 2rem 7rem 2rem 5.8rem;
+            opacity: .8;
+            line-height: 8rem;
+        }
+
+        .party-image-selecter:before {
+            content: "";
+            margin-left: 0;
+        }
+
+        .warning {
+            display: block;
+        }
+    }
+}
+
+.party-image-selecter {
+    @extend .margin-right-small;
+    width: 16rem;
+    height: 7.5rem;
+    background-size: cover;
+    background-color: $greyLight;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+
+
+    &:before {
+        color: white;
+        font-size: $HeadingFontSizeLarge;
+        line-height: 7.5rem;
+        margin-left: 6.8rem;
+    }
+
+    &.image-unset {
+        cursor: default;
+    }
+
+    &.image-set:before {
+        content: "";
+    }
+}
+
+.choose-file-wrapper {
+
+    width: 16rem;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+
+    &:before {
+        position: relative;
+        z-index: 10;
+        color: white;
+        float: right;
+        margin-right: 2rem;
+        font-size: 1.4rem;
+        line-height: 3rem;
+    }
+
+    &:after {
+
+        @extend .btn-secondary;
+
+        //display: block;
+        content: "Upload file";
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        cursor: pointer;
+
+        color: white;
+        font-family: Futura BT W01 Book;
+        font-size: 1.4rem;
+        padding-right: 5rem;
+    }
+}
+
+.choose-file {
+    width: 200%;
+    height: 100%;
+    display: block;
+    overflow: hidden;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: -100%;
+    z-index: 10;
+    opacity: 0;
 }
 
 
@@ -185,43 +273,3 @@ One-off uses
 .home-twitter-boxx {
     height: 35.6rem; // includes 1.8rem padding
 }
-
-
-
-/* =============================================================================
-abstract
-========================================================================== */
-
-//**************************************** PADDING
-$padMediumValue: 1.8rem;
-$multiplierSmall: .7;
-$multiplierLarge: 1.3;
-
-.pad-small { padding: $padMediumValue * $multiplierSmall; }
-.pad-medium { padding: $padMediumValue; }
-.pad-large { padding: $padMediumValue * $multiplierLarge; }
-
-.pad-right-1 { padding-right: 1rem;}
-.pad-right-2 { padding-right: 2rem;}
-.pad-right-3 { padding-right: 3rem;}
-.pad-right-4 { padding-right: 4rem;}
-
-//**************************************** MARGIN
-$marginMediumValue: 1.8rem;
-
-.margin-small { margin: $marginMediumValue * $multiplierSmall; }
-.margin-medium { margin: $marginMediumValue; }
-.margin-large { margin: $marginMediumValue * $multiplierLarge; }
-
-.margin-right-small { margin-right: $marginMediumValue * $multiplierSmall; }
-.margin-right-medium { margin-right: $marginMediumValue; }
-.margin-right-large { margin-right: $marginMediumValue * $multiplierLarge; }
-
-.margin-right-1 { margin-right: 1rem;}
-.margin-right-2 { margin-right: 2rem;}
-.margin-right-3 { margin-right: 3rem;}
-.margin-right-4 { margin-right: 4rem;}
-
-//**************************************** FLOATS
-.float-left { float: left; }
-.float-right { float: right; }

@@ -102,8 +102,13 @@ $settings : (
     padding: $FontSizeMedium;
     background: #ffffff;
     overflow: hidden;
-}
 
-.boxx.collapse {
-    padding: 0;
+    &.collapse {
+        padding: 0;
+    }
+
+    &.internal {
+        background: $greyReallyLight;
+    }
+
 }

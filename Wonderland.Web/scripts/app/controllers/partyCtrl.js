@@ -42,7 +42,7 @@ wonderlandApp.controller('PartyCtrl', ['safeApply', '$ocModal', '$sce', '$scope'
         if (partyDetailsData.Address2) address.push(partyDetailsData.Address2);
         if (partyDetailsData.TownCity) address.push(partyDetailsData.TownCity);
         if (partyDetailsData.Postcode) address.push(partyDetailsData.Postcode);
-        $scope.partyDetailsFormattedAddress = address.join(",");
+        $scope.partyDetailsFormattedAddress = address.join(", ");
 
         console.log('partyDetailsDataInit', partyDetailsData);
 
