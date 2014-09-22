@@ -57,7 +57,7 @@
     text-decoration: underline;
 }
 
-.menu li a[class^="icon-"]:before, .menu li a[class*=" icon-"]:before {
+.menu li span[class^="icon-"]:before, .menu li span[class*=" icon-"]:before {
     display: none;
 }
 

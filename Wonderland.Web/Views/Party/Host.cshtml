@@ -13,31 +13,26 @@
             <div class="wgrid-full parent">
                 <div class="boxx collapse" m-radius-picker="large">
 
-                    <div class="wgrid-full">
+                    <div class="wgrid-full wgrid-no-bottom-margin">
                         <div class="grid-12 party-main-image" ng-init="hardCodedCurrentPartyImageUrlInit('@Model.PartyHost.PartyImage')" ng-style="{'background-image': 'url(' + partyImageData.PartyImage +')'}"></div>
                         <div class="edit-trigger icon-icon_edit" ng-click="openPageModal('partials/partyImageForm.html', 'partyImageModal', {'partyImageData': partyImageDataForForm, 'partyCustomImage': partyCustomImage})"><span>Edit</span></div>
                     </div>
 
-                    <div class="wgrid-full">
-                        <div class="profile-image" ng-style="{'background-image': 'url(' + profileImageUrl + ')'}" m-radius-picker="medium"></div>
-                        <h1 ng-bind="partyDetailsData.PartyHeading">@this.Model.Heading</h1>
+                    <div class="wgrid-full pad-large">
+                        <div class="profile-image" ng-style="{'background-image': 'url(' + profileImageUrl + ')'}" m-radius-picker="small" ng-click="openPageModal('partials/profileImageForm.html', 'profileImageModal')"></div>
+                        <div class="party-details">
+                            <h3 class="pad-right-3" ng-bind="partyDetailsData.PartyHeading">@this.Model.Heading</h3>
+                            <div class="body-small float-left margin-right-medium">
+                                <span class="icon-icon_clock"></span>
+                                <span ng-bind="partyDetailsData.PartyDateTime|datePreviewFormat"></span>
+                            </div>
+                            <div class="body-small float-left">
+                                <span class="icon-icon_fingerpost"></span>
+                                <span ng-bind="partyDetailsFormattedAddress">@Model.PartyHost.PartyAddress.Address1</span>
+                            </div>
+                        </div>
+                        <div class="edit-trigger icon-icon_edit" ng-click="openPageModal('partials/partyDetailsForm.html', 'partyDetailsModal', {'partyDetailsData': partyDetailsDataForForm})"><span>Edit</span></div>
                     </div>
-
-                    <div>
-
-                        <div ng-click="openPageModal('partials/profileImageForm.html', 'profileImageModal')">Edit</div>
-                    </div>
-
-                    <span ng-bind="partyDetailsData.PartyDateTime"></span>
-
-                    <p>
-                        <span ng-bind="partyDetailsData.Address1">@Model.PartyHost.PartyAddress.Address1</span>
-                        <span ng-bind="partyDetailsData.Address2">@Model.PartyHost.PartyAddress.Address2</span>
-                        <span ng-bind="partyDetailsData.TownCity">@Model.PartyHost.PartyAddress.TownCity</span>
-                        <span ng-bind="partyDetailsData.Postcode">@Model.PartyHost.PartyAddress.Postcode</span>
-                    </p>
-
-                    <div ng-click="openPageModal('partials/partyDetailsForm.html', 'partyDetailsModal', {'partyDetailsData': partyDetailsDataForForm})">Edit</div>
                 </div>
             </div>
 

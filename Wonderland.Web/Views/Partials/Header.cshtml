@@ -45,11 +45,11 @@
             <ul>
                 <li class="menu left-side">
                     <ul>
-                        <li class="side-only"><a class="icon-icon_home" href="/">Home</a></li>
-                        <li class="side-only"><a class="icon-icon_star" href="#">My Party</a></li>
+                        <li class="side-only"><a class="" href="/"><span class="icon-icon_home"></span>Home</a></li>
+                        <li class="side-only"><a class="" href="#"><span class="icon-icon_person"></span>My Party</a></li>
                         @foreach (SitePage sitePage in Model.HeaderNavigationLeft)
                         {
-                            <li><a class="icon-icon_fingerpost" href="@sitePage.Url">@sitePage.Name</a></li>
+                            <li><a class="" href="@sitePage.Url"><span class="icon-icon_fingerpost"></span>@sitePage.Name</a></li>
                         }
                     </ul>
                 </li>
@@ -57,7 +57,7 @@
                     <ul>
                         @foreach (SitePage sitePage in Model.HeaderNavigationRight)
                         {
-                            <li><a class="icon-icon_fingerpost" href="@sitePage.Url">@sitePage.Name</a></li>
+                            <li><a class="" href="@sitePage.Url"><span class="icon-icon_fingerpost"></span>@sitePage.Name</a></li>
                         }
                     </ul>
                 </li>
@@ -74,9 +74,9 @@
         <div class="account-menu">
             <div class="menu">
                 <ul>
-                    <li><a class="icon-icon_person" href="#">My Party</a></li>
-                    <li><a class="icon-icon_person" href="#">My Profile</a></li>
-                    <li><a class="icon-icon_person" href="#">Logout</a></li>
+                    <li><a class="" href="#"><span class="icon-icon_person"></span>My Party</a></li>
+                    <li><a class="" href="#"><span class="icon-icon_person"></span>My Profile</a></li>
+                    <li><a class="" href="#"><span class="icon-icon_person"></span>Logout</a></li>
                 </ul>
             </div>
         </div>

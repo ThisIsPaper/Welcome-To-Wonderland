@@ -26,6 +26,7 @@ wonderlandApp.controller('PartyCtrl', ['safeApply', '$ocModal', '$sce', '$scope'
     /* PARTY DETAILS */
     /**********************/
     $scope.partyDetailsData = null;
+    $scope.partyDetailsFormattedAddress = null;
     $scope.partyDetailsDataForForm = null;
 
     $scope.partyDetailsDataInit = function (partyDetailsData) {
@@ -34,6 +35,14 @@ wonderlandApp.controller('PartyCtrl', ['safeApply', '$ocModal', '$sce', '$scope'
         if (partyDetailsData && partyDetailsData.PartyDateTime) {
             partyDetailsData.PartyDateTime = moment(partyDetailsData.PartyDateTime).format('YYYY/MM/DD');
         }
+
+        //*** format address
+        var address = [];
+        if (partyDetailsData.Address1) address.push(partyDetailsData.Address1);
+        if (partyDetailsData.Address2) address.push(partyDetailsData.Address2);
+        if (partyDetailsData.TownCity) address.push(partyDetailsData.TownCity);
+        if (partyDetailsData.Postcode) address.push(partyDetailsData.Postcode);
+        $scope.partyDetailsFormattedAddress = address.join(",");
 
         console.log('partyDetailsDataInit', partyDetailsData);
 

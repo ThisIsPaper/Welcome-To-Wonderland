@@ -168,7 +168,7 @@
 
     }
 
-    .menu li a[class^="icon-"]:before, .menu li a[class*=" icon-"]:before {
+    .menu li span[class^="icon-"]:before, .menu li span[class*=" icon-"]:before {
         color: #7b7a6d;
         margin-right: 1rem;
         display: inline;

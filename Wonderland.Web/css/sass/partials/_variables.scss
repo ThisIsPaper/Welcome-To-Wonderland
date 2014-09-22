@@ -65,13 +65,14 @@ $Container-style: fluid;
 
 //Turn off media-query fallback output for non-IE stylesheets.
 $Breakpoint-ie-output: true;
+
 /* =============================================================================
 Type
 ========================================================================== */
 $FontURL: "http://fonts.googleapis.com/css?family=Open+Sans:400,300"; //google font url.  Imported at _type.scss
 $Em: 1.8rem !default;
 $BaseFontSize: 62.5% !default;
-$BaseFontFamily: "Open Sans", "sans-serif", "arial" !default;
+$BaseFontFamily: "Futura BT W01 Book"; // this is the embeded font in _type.scss // old - "Open Sans", "sans-serif", "arial" !default;
 $FontSizeMini: 1.1rem !default;
 $FontSizeSmall: 1.4rem !default;
 $FontSizeMedium: 1.8rem !default;
@@ -96,6 +97,7 @@ $InverseTextColour: invert($TextColour) !default;
 $PrimaryColour: #007eac !default; // colour of text and main colour overall
 $SecondaryColour: #682c88 !default; // colour of any components, backgrounds, etc.
 $TertiaryColour: #7c7c7c !default; //special colour to complement secondary colour
+$FourthColour: #025b45 !default; //brand colour
 //background colour.  Should be the opposite of primary colour for good results
 $BodyBackground: #fff !default;
 
@@ -106,7 +108,7 @@ $LinkColour: contrast-color($TextColour, lighten($TextColour, 30), darken($TextC
 /* Greys */
 $greyReallyDark: #474740;
 $greyDark: #7B7A6D;
-$greyMid: #A19F91;
+$greyMedium: #A19F91;
 $greyLight: #D4D3CC;
 $greyReallyLight: #ECECEC;
 
@@ -126,3 +128,4 @@ $BreakpointTablet: (screen) (max-width 788px);
 $QueryMobile: (only screen) (min-device-width 320px) (max-device-width 480px) (1 -webkit-device-pixel-ratio);
 $QueryMobilePortrait: (only screen) (min-device-width 320px) (max-device-width 480px) (1 -webkit-device-pixel-ratio) (orientation portrait);
 $QueryMobileLandscape: (only screen) (min-device-width 320px) (max-device-width 480px) (1 -webkit-device-pixel-ratio) (orientation landscape);
+
