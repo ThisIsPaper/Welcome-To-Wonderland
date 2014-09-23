@@ -132,14 +132,19 @@ Event Page specific - move these out of here eventually
 
 
 .profile-image {
-    width: 6rem;
-    height: 6rem;
+    width: $profileImageSize;
+    height: $profileImageSize;
     background-repeat: no-repeat;
     background-size: cover;
+    float: left;
+}
+
+.image-shift-details {
+    margin-left: $profileImageSize + $padSmallValue;
 }
 
 .party-details {
-    margin: -6rem 0 0 6rem + 1.8rem;
+    @extend .image-shift-details;
     color: $greyMedium;
 
     [class^="icon-"], [class*=" icon-"] {
@@ -216,59 +221,27 @@ Event Page specific - move these out of here eventually
     }
 }
 
-.choose-file-wrapper {
-
-    width: 16rem;
-    overflow: hidden;
-    position: relative;
-    cursor: pointer;
-
-    &:before {
-        position: relative;
-        z-index: 10;
-        color: white;
-        float: right;
-        margin-right: 2rem;
-        font-size: 1.4rem;
-        line-height: 3rem;
-    }
-
-    &:after {
-
-        @extend .btn-secondary;
-
-        //display: block;
-        content: "Upload file";
-
-        position: absolute;
-        top: 0;
-        left: 0;
-        cursor: pointer;
-
-        color: white;
-        font-family: Futura BT W01 Book;
-        font-size: 1.4rem;
-        padding-right: 5rem;
-    }
-}
-
-.choose-file {
-    width: 200%;
-    height: 100%;
-    display: block;
-    overflow: hidden;
-    cursor: pointer;
-    position: absolute;
-    top: 0;
-    left: -100%;
-    z-index: 10;
-    opacity: 0;
-}
-
 .file-upload-info {
     @extend .body-small;
 
     margin-left: 17.2rem;
+}
+
+/*******************************/// wall
+.wall-details {
+    @extend .image-shift-details;
+    @extend .body-small;
+    color: $greyMedium;
+    min-height: 6rem;
+}
+
+.wall-name {
+    font-weight: bold;
+    color: $greyDark;
+}
+
+.wall-time {
+    color: $greyLight;
 }
 
 
@@ -280,5 +253,5 @@ One-off uses
 }
 
 .home-twitter-boxx {
-    height: 35.6rem; // includes 1.8rem padding
+    height: 35.6rem; // includes 1.8rem padding // TODO - might need to change this
 }

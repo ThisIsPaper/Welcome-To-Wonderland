@@ -21,32 +21,42 @@
 
 
 //********************************************** Buttons
+$btnPaddingMedium: 1.2rem;
+$btnPaddingSmall: $btnPaddingMedium/2;
+$btnPaddingLarge: $btnPaddingMedium*2;
 
 
 .btn-primary {
-  @extend %rounded-skew-one;
   @extend %border-box;
   cursor: pointer;
   font-weight: $BaseFontWeight;
-  //margin: ($MarginMini + 1.2) ($MarginLarge * .6) 0;
   color: #fff;
-  padding: ($PaddingSmall - 0.2) ($Padding - .1);
   text-decoration: none;
   text-transform: uppercase;
-  background: $SecondaryColour;
-  font-size: 1.8rem;
-  border: none;
-  &:hover, &:focus {
-    background: darken($SecondaryColour, 10%);
-  }
-}
-.btn-secondary {
-  @extend .btn-primary;
-  @extend %rounded-skew-two;
   background: $PrimaryColour;
-  padding: $PaddingSmall - .1 2.1rem;
+  font-size: $FontSizeSmall;
+  border: none;
+
+  padding: $btnPaddingMedium;
+  margin: 0;
+
   &:hover, &:focus {
     background: darken($PrimaryColour, 10%);
+  }
+
+  .disabled {
+    background-color: $greyLight;
+    color: $greyMedium;
+    cursor: default;
+  }
+}
+
+.btn-secondary {
+  @extend .btn-primary;
+  background: $SecondaryColour;
+
+  &:hover, &:focus {
+    background: darken($SecondaryColour, 10%);
   }
 }
 
@@ -131,7 +141,60 @@ input[type=submit][disabled=disabled],
 input[type=submit][disabled=disabled]:hover,
 button[disabled=disabled],
 button[disabled=disabled]:hover {
-    background-color: $greyReallyLight;
-    color: $greyLight;
+    background-color: $greyLight;
+    color: $greyMedium;
     cursor: default;
+}
+
+//********************************************** File upload
+
+.choose-file-wrapper {
+
+    width: 14rem;
+    height: 4rem;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+
+    &:before {
+        position: relative;
+        z-index: 10;
+        color: white;
+        float: right;
+        margin-right: 1.2rem;
+        font-size: 1.4rem;
+        line-height: 3.8rem;
+    }
+
+    &:after {
+
+        @extend .btn-secondary;
+        @extend .radius-v3-small;
+
+        content: "Upload file";
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        cursor: pointer;
+
+        color: white;
+        font-family: $fontFaceFutura;
+        padding-right: 4.4rem;
+        line-height: 1.6rem;
+    }
+}
+
+
+.choose-file {
+    width: 200%;
+    height: 100%;
+    display: block;
+    overflow: hidden;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: -100%;
+    z-index: 10;
+    opacity: 0;
 }

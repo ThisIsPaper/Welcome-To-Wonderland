@@ -13,11 +13,11 @@
 
     @if (!this.Members.IsLoggedIn())
     {
-        @Html.ActionLink("Host a party >", "NavigateToRegisterHostUrl", "RegisterHostSurface", null, new { @class = "btn-primary btn-small nav-end-block" })
+        @Html.ActionLink("Host a party >", "NavigateToRegisterHostUrl", "RegisterHostSurface", null, new { @class = "btn-primary btn-small nav-end-block",  m_radius_picker="small" })
     }
     else
     {
-        <a href="@(((IPartier)this.Members.GetCurrentMember()).PartyUrl)" class="btn-primary btn-small nav-end-block">My party</a>
+        <a href="@(((IPartier)this.Members.GetCurrentMember()).PartyUrl)" class="btn-primary btn-small nav-end-block" m-radius-picker="small">My party</a>
     }
 
 
@@ -25,13 +25,13 @@
     @if (!this.Members.IsLoggedIn())
     {
         <div class="nav-end-block end-block-right">
-            @Html.ActionLink("Login", "NavigateToLoginUrl", "LoginSurface", null, new { @class = "btn-secondary btn-small" })
+            @Html.ActionLink("Login", "NavigateToLoginUrl", "LoginSurface", null, new { @class = "btn-secondary btn-small",  m_radius_picker="small" })
         </div>
     }
     else
     {
         <div class="nav-end-block end-block-right">
-            @Html.ActionLink("Logout", "Logout", "LogoutSurface", null, new { @class = "btn-secondary btn-small" })
+            @Html.ActionLink("Logout", "Logout", "LogoutSurface", null, new { @class = "btn-secondary btn-small",  m_radius_picker="small" })
         </div>
     }
 

@@ -105,23 +105,29 @@
                     '@Model.PartyHost.PartyGuid.ToString()'
                 )" m-radius-picker="large medium">
 
-                <h2>Wall</h2>
+                <h4>Leave a message on the party wall</h4>
 
-                <div>
+                <div class="boxx internal" m-radius-picker="small">
+
+                    @* TODO - make this user image not host *@
+                    <div class="profile-image" ng-style="{'background-image': 'url(' + profileImageUrl + ')'}" m-radius-picker="small"></div>
+
                     @(Html.Action<PartySurfaceController>("RenderPartyWallMessageForm"))
-                    <hr/>
+
                     @(Html.Action<PartySurfaceController>("RenderPartyWallImageForm"))
                 </div>
 
-                <hr/>
 
-                <div style="margin-bottom: 2rem;" ng-repeat="feedItem in wall.feed">
-                    <img style="float:left;" ng-src="{{ feedItem.thumbnailUrl }}" alt="{{ feedItem.name }}" title="{{ feedItem.name }}" width="50" height="50"/>
-                    <span ng-bind="feedItem.name"></span><br/>
-                    <span ng-bind="feedItem.text"></span>
+                <div class="margin-top-small" ng-repeat="feedItem in wall.feed">
+                    <div class="profile-image" ng-style="{'background-image': 'url(' + feedItem.thumbnailUrl + ')'}" m-radius-picker="small"></div>
+                    <div class="wall-details">
+                        <div>
+                            <span class="wall-name" ng-bind="feedItem.name"></span>
+                            <span class="wall-time">3h</span>
+                        </div>
+                        <div ng-bind="feedItem.text"></div>
+                    </div>
                 </div>
-                <div ng-show="!wall.hasDoneFirstLoad">Loading wall...</div>
-                <div ng-show="!wall.feed.length && wall.hasDoneFirstLoad">Currently there are no wall posts. Write one now!</div>
 
             </div>
         </div>
