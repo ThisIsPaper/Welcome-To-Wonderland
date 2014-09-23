@@ -345,12 +345,12 @@ abstract
 }
 
 /* line 29, sass/partials/_abstract.scss */
-.pad-right-small, input[type='text'], .ticket .stub .price {
+.pad-right-small, input[type='text'] {
   padding-right: 1.2rem;
 }
 
 /* line 30, sass/partials/_abstract.scss */
-.pad-right-medium {
+.pad-right-medium, .ticket .stub .price {
   padding-right: 1.8rem;
 }
 
@@ -365,12 +365,12 @@ abstract
 }
 
 /* line 34, sass/partials/_abstract.scss */
-.pad-left-small, input[type='text'], .ticket .stub .price {
+.pad-left-small, input[type='text'] {
   padding-left: 1.2rem;
 }
 
 /* line 35, sass/partials/_abstract.scss */
-.pad-left-medium {
+.pad-left-medium, .ticket .stub .price {
   padding-left: 1.8rem;
 }
 
@@ -2521,12 +2521,12 @@ abstract
 }
 
 /* line 29, sass/partials/_abstract.scss */
-.pad-right-small, input[type='text'], .ticket .stub .price {
+.pad-right-small, input[type='text'] {
   padding-right: 1.2rem;
 }
 
 /* line 30, sass/partials/_abstract.scss */
-.pad-right-medium {
+.pad-right-medium, .ticket .stub .price {
   padding-right: 1.8rem;
 }
 
@@ -2541,12 +2541,12 @@ abstract
 }
 
 /* line 34, sass/partials/_abstract.scss */
-.pad-left-small, input[type='text'], .ticket .stub .price {
+.pad-left-small, input[type='text'] {
   padding-left: 1.2rem;
 }
 
 /* line 35, sass/partials/_abstract.scss */
-.pad-left-medium {
+.pad-left-medium, .ticket .stub .price {
   padding-left: 1.8rem;
 }
 
@@ -3816,12 +3816,12 @@ abstract
 }
 
 /* line 29, sass/partials/_abstract.scss */
-.pad-right-small, input[type='text'], .ticket .stub .price {
+.pad-right-small, input[type='text'] {
   padding-right: 1.2rem;
 }
 
 /* line 30, sass/partials/_abstract.scss */
-.pad-right-medium {
+.pad-right-medium, .ticket .stub .price {
   padding-right: 1.8rem;
 }
 
@@ -3836,12 +3836,12 @@ abstract
 }
 
 /* line 34, sass/partials/_abstract.scss */
-.pad-left-small, input[type='text'], .ticket .stub .price {
+.pad-left-small, input[type='text'] {
   padding-left: 1.2rem;
 }
 
 /* line 35, sass/partials/_abstract.scss */
-.pad-left-medium {
+.pad-left-medium, .ticket .stub .price {
   padding-left: 1.8rem;
 }
 
@@ -4298,12 +4298,12 @@ abstract
 }
 
 /* line 29, sass/partials/_abstract.scss */
-.pad-right-small, input[type='text'], .ticket .stub .price {
+.pad-right-small, input[type='text'] {
   padding-right: 1.2rem;
 }
 
 /* line 30, sass/partials/_abstract.scss */
-.pad-right-medium {
+.pad-right-medium, .ticket .stub .price {
   padding-right: 1.8rem;
 }
 
@@ -4318,12 +4318,12 @@ abstract
 }
 
 /* line 34, sass/partials/_abstract.scss */
-.pad-left-small, input[type='text'], .ticket .stub .price {
+.pad-left-small, input[type='text'] {
   padding-left: 1.2rem;
 }
 
 /* line 35, sass/partials/_abstract.scss */
-.pad-left-medium {
+.pad-left-medium, .ticket .stub .price {
   padding-left: 1.8rem;
 }
 
@@ -5456,21 +5456,29 @@ Event Page specific - move these out of here eventually
   border: .1rem solid white;
   text-align: center;
 }
+/* line 310, sass/partials/_base.scss */
+.ticket.selected .stub {
+  background-color: #007eac;
+}
+/* line 313, sass/partials/_base.scss */
+.ticket.selected .stub .price {
+  color: white;
+}
 
 /* =============================================================================
 One-off uses
 ========================================================================== */
-/* line 315, sass/partials/_base.scss */
+/* line 327, sass/partials/_base.scss */
 #twitter-widget-0 {
   width: 100% !important;
 }
 
-/* line 319, sass/partials/_base.scss */
+/* line 331, sass/partials/_base.scss */
 .home-twitter-boxx {
   height: 35.6rem;
 }
 
-/* line 323, sass/partials/_base.scss */
+/* line 335, sass/partials/_base.scss */
 .piggy-donater:after {
   content: "\e61c";
   font-family: "icomoon";
@@ -5863,43 +5871,43 @@ Media query variables
 }
 /* line 160, sass/main.scss */
 .frame:nth-child(1) {
-  -moz-transform: rotate(-0.5deg);
-  -ms-transform: rotate(-0.5deg);
-  -webkit-transform: rotate(-0.5deg);
-  transform: rotate(-0.5deg);
+  -moz-transform: rotate(-0.2deg);
+  -ms-transform: rotate(-0.2deg);
+  -webkit-transform: rotate(-0.2deg);
+  transform: rotate(-0.2deg);
 }
 /* line 160, sass/main.scss */
 .frame:nth-child(2) {
-  -moz-transform: rotate(0.5deg);
-  -ms-transform: rotate(0.5deg);
-  -webkit-transform: rotate(0.5deg);
-  transform: rotate(0.5deg);
+  -moz-transform: rotate(2.1deg);
+  -ms-transform: rotate(2.1deg);
+  -webkit-transform: rotate(2.1deg);
+  transform: rotate(2.1deg);
 }
 /* line 160, sass/main.scss */
 .frame:nth-child(3) {
-  -moz-transform: rotate(-0.8deg);
-  -ms-transform: rotate(-0.8deg);
-  -webkit-transform: rotate(-0.8deg);
-  transform: rotate(-0.8deg);
+  -moz-transform: rotate(-1.6deg);
+  -ms-transform: rotate(-1.6deg);
+  -webkit-transform: rotate(-1.6deg);
+  transform: rotate(-1.6deg);
 }
 /* line 160, sass/main.scss */
 .frame:nth-child(4) {
-  -moz-transform: rotate(1.4deg);
-  -ms-transform: rotate(1.4deg);
-  -webkit-transform: rotate(1.4deg);
-  transform: rotate(1.4deg);
+  -moz-transform: rotate(0.2deg);
+  -ms-transform: rotate(0.2deg);
+  -webkit-transform: rotate(0.2deg);
+  transform: rotate(0.2deg);
 }
 /* line 160, sass/main.scss */
 .frame:nth-child(5) {
-  -moz-transform: rotate(-2deg);
-  -ms-transform: rotate(-2deg);
-  -webkit-transform: rotate(-2deg);
-  transform: rotate(-2deg);
+  -moz-transform: rotate(-2.1deg);
+  -ms-transform: rotate(-2.1deg);
+  -webkit-transform: rotate(-2.1deg);
+  transform: rotate(-2.1deg);
 }
 /* line 160, sass/main.scss */
 .frame:nth-child(6) {
-  -moz-transform: rotate(0.9deg);
-  -ms-transform: rotate(0.9deg);
-  -webkit-transform: rotate(0.9deg);
-  transform: rotate(0.9deg);
+  -moz-transform: rotate(0.2deg);
+  -ms-transform: rotate(0.2deg);
+  -webkit-transform: rotate(0.2deg);
+  transform: rotate(0.2deg);
 }

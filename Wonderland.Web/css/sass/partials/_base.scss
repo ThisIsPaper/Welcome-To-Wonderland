@@ -305,6 +305,18 @@ Event Page specific - move these out of here eventually
 
     }
 
+
+    &.selected {
+        .stub {
+            background-color: $SecondaryColour;
+
+            .price {
+                color: white;
+            }
+
+        }
+    }
+
 }
 
 
