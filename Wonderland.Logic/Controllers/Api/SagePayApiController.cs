@@ -4,6 +4,7 @@ namespace Wonderland.Logic.Controllers.Api
     using Newtonsoft.Json.Linq;
     using System.Web.Http;
     using Umbraco.Web.WebApi;
+    using Wonderland.Logic.SagePay;
 
     public class SagePayApiController : UmbracoApiController
     {
@@ -15,6 +16,13 @@ namespace Wonderland.Logic.Controllers.Api
         [HttpPost]
         public object Notifcation([FromBody] JObject data)
         {
+            
+            // using post data, deserialize inot notification request;
+            // based on request data, create a new notification response
+            // return notification response
+
+
+
             //This POST contains a Status field that holds either:
             //OK          if the transaction was authorised.
             //PENDING     (for European Payment Types only), if the transaction has yet to be accepted or rejected
