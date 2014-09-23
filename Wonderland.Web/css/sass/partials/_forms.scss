@@ -36,6 +36,8 @@ $btnPaddingLarge: $btnPaddingMedium*2;
   background: $PrimaryColour;
   font-size: $FontSizeSmall;
   border: none;
+  display: block;
+  text-align: center;
 
   padding: $btnPaddingMedium;
   margin: 0;

@@ -55,9 +55,8 @@
 
             <div class="wgrid-full">
                 <div class="boxx" m-radius-picker>
-                    <h2>Fundraising target</h2>
                     <h1>£<span ng-bind="fundraisingTargetData.FundraisingTarget"></span></h1>
-                    <div ng-click="openPageModal('partials/fundraisingTargetForm.html', 'suggestedDonationModal', {'fundraisingTargetData': fundraisingTargetDataForForm})">Edit</div>
+                    <div class="edit-trigger" ng-click="openPageModal('partials/fundraisingTargetForm.html', 'suggestedDonationModal', {'fundraisingTargetData': fundraisingTargetDataForForm})"><span class="edit-label">Edit</span><span class="icon-icon_edit"></span></div>
                 </div>
             </div>
 
@@ -65,24 +64,21 @@
 
             <div class="wgrid-full">
                 <div class="boxx" m-radius-picker>
-                    <h2>Change ticket price</h2>
+                    <h4 class="top">Suggested ticket price</h4>
                     <h1>£<span ng-bind="suggestedDonationData.SuggestedDonation"></span></h1>
-                    <div ng-click="openPageModal('partials/suggestedDonationForm.html', 'suggestedDonationModal', {'suggestedDonationData': suggestedDonationDataForForm})">Edit</div>
+                    <div class="edit-trigger" ng-click="openPageModal('partials/suggestedDonationForm.html', 'suggestedDonationModal', {'suggestedDonationData': suggestedDonationDataForForm})"><span class="edit-label">Edit</span><span class="icon-icon_edit"></span></div>
                 </div>
             </div>
 
 
             <div class="wgrid-full">
-                <div class="boxx" m-radius-picker>
-                    <h2>Pay in money</h2>
-                    @Html.ActionLink("Pay in Money", "NavigateToDonateUrl", "DonateSurface", new { partyGuid = Model.PartyHost.PartyGuid }, new { @class = "" })
-                </div>
+                @Html.ActionLink("Donate", "NavigateToDonateUrl", "DonateSurface", new { partyGuid = Model.PartyHost.PartyGuid }, new { @class = "btn-primary btn-large", @m_radius_picker="small medium" })
             </div>
 
 
             <div class="wgrid-full">
                 <div class="boxx" m-radius-picker>
-                    <h2>Who's Coming (@this.Model.Partiers.Count())</h2>
+                    <h4 class="top">Who's Coming <span>(@this.Model.Partiers.Count())</span></h4>
                     <ul>
                         @foreach (IPartier partier in this.Model.Partiers)
                         {
@@ -94,7 +90,11 @@
                 </div>
             </div>
 
-            <div class="wgrid-full"><div class="boxx" m-radius-picker><h2>Badges</h2></div></div>
+            <div class="wgrid-full">
+                <div class="boxx" m-radius-picker>
+                    <h4 class="top">Badges <span>(0 of 6)</span></h4>
+                </div>
+            </div>
 
         </div>
 
@@ -105,7 +105,7 @@
                     '@Model.PartyHost.PartyGuid.ToString()'
                 )" m-radius-picker="large medium">
 
-                <h4>Leave a message on the party wall</h4>
+                <h4 class="top">Leave a message on the party wall</h4>
 
                 <div class="boxx internal" m-radius-picker="small">
 
@@ -158,6 +158,4 @@
     ?PartyGuid=&beforeDateTime=12/12/12&take=10
 </p>*@
 
-
-@* totaliser *@
 @* badges *@

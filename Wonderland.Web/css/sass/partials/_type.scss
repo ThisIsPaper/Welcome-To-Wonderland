@@ -296,4 +296,13 @@ h4 {
     font-size: $FontSizeLarge;
     margin: 2rem 0;
     font-weight: bold;
+
+    span {
+        color: $greyDark;
+        font-weight: normal;
+    }
+
+    &.top {
+        @extend .margin-top-0;
+    }
 }
