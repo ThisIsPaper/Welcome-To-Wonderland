@@ -38,6 +38,7 @@ wonderlandApp.controller('WallCtrl', ['mHttp', '$scope', function (mHttp, $scope
     };
 
     $scope.$onRootScope('wallMessagePosted', function(event, response, dataObject) {
+        $scope.wallFormModelInit();
         $scope.getFeed();
     });
 
