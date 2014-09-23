@@ -111,7 +111,7 @@ Event Page specific - move these out of here eventually
     text-align: center;
     width: 3rem;
     height: 3rem;
-    background-color: $PrimaryColour;
+    background-color: $SecondaryColour;
     @include m-border-radius(3rem, 3rem, 3rem, 3rem, 3rem, 3rem, 3rem, 3rem);
 
 
@@ -174,7 +174,7 @@ Event Page specific - move these out of here eventually
         .party-image-selecter:after {
             content: "\e61f"; // tick
             font-family: "icomoon";
-            background-color: $PrimaryColour;
+            background-color: $SecondaryColour;
             color: white;
             font-size: 4rem;
             padding: 2rem 7rem 2rem 5.8rem;

@@ -74,12 +74,12 @@ $btnPaddingLarge: $btnPaddingMedium*2;
 
 .cancel {
     line-height: 4rem;
-    color: $PrimaryColour;
+    color: $SecondaryColour;
     font-size: $FontSizeMedium;
     cursor: pointer;
 
     &:hover {
-        color: darken($PrimaryColour, 10%);
+        color: darken($SecondaryColour, 10%);
     }
 }
 
@@ -135,6 +135,10 @@ input[type='text'] {
 
 input[type='text'], textarea {
     border: .1rem solid $greyLight;
+}
+
+input[type="text"][readonly] {
+    cursor: pointer;
 }
 
 input[type=submit][disabled=disabled],

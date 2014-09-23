@@ -2307,34 +2307,34 @@ abstract
 
 /* line 99, sass/partials/_abstract.scss */
 .radius-v1-medium {
-  -moz-border-radius-topleft: 4.92rem 3.3rem;
-  -webkit-border-top-left-radius: 4.92rem 3.3rem;
-  border-top-left-radius: 4.92rem 3.3rem;
-  -moz-border-radius-topright: 2.7rem 2.4rem;
-  -webkit-border-top-right-radius: 2.7rem 2.4rem;
-  border-top-right-radius: 2.7rem 2.4rem;
-  -moz-border-radius-bottomright: 2.7rem 4.2rem;
-  -webkit-border-bottom-right-radius: 2.7rem 4.2rem;
-  border-bottom-right-radius: 2.7rem 4.2rem;
-  -moz-border-radius-bottomleft: 2.7rem 3.9rem;
-  -webkit-border-bottom-left-radius: 2.7rem 3.9rem;
-  border-bottom-left-radius: 2.7rem 3.9rem;
+  -moz-border-radius-topleft: 3.28rem 2.2rem;
+  -webkit-border-top-left-radius: 3.28rem 2.2rem;
+  border-top-left-radius: 3.28rem 2.2rem;
+  -moz-border-radius-topright: 1.8rem 1.6rem;
+  -webkit-border-top-right-radius: 1.8rem 1.6rem;
+  border-top-right-radius: 1.8rem 1.6rem;
+  -moz-border-radius-bottomright: 1.8rem 2.8rem;
+  -webkit-border-bottom-right-radius: 1.8rem 2.8rem;
+  border-bottom-right-radius: 1.8rem 2.8rem;
+  -moz-border-radius-bottomleft: 1.8rem 2.6rem;
+  -webkit-border-bottom-left-radius: 1.8rem 2.6rem;
+  border-bottom-left-radius: 1.8rem 2.6rem;
 }
 
 /* line 100, sass/partials/_abstract.scss */
 .radius-v1-large {
-  -moz-border-radius-topleft: 9.84rem 6.6rem;
-  -webkit-border-top-left-radius: 9.84rem 6.6rem;
-  border-top-left-radius: 9.84rem 6.6rem;
-  -moz-border-radius-topright: 5.4rem 4.8rem;
-  -webkit-border-top-right-radius: 5.4rem 4.8rem;
-  border-top-right-radius: 5.4rem 4.8rem;
-  -moz-border-radius-bottomright: 5.4rem 8.4rem;
-  -webkit-border-bottom-right-radius: 5.4rem 8.4rem;
-  border-bottom-right-radius: 5.4rem 8.4rem;
-  -moz-border-radius-bottomleft: 5.4rem 7.8rem;
-  -webkit-border-bottom-left-radius: 5.4rem 7.8rem;
-  border-bottom-left-radius: 5.4rem 7.8rem;
+  -moz-border-radius-topleft: 6.56rem 4.4rem;
+  -webkit-border-top-left-radius: 6.56rem 4.4rem;
+  border-top-left-radius: 6.56rem 4.4rem;
+  -moz-border-radius-topright: 3.6rem 3.2rem;
+  -webkit-border-top-right-radius: 3.6rem 3.2rem;
+  border-top-right-radius: 3.6rem 3.2rem;
+  -moz-border-radius-bottomright: 3.6rem 5.6rem;
+  -webkit-border-bottom-right-radius: 3.6rem 5.6rem;
+  border-bottom-right-radius: 3.6rem 5.6rem;
+  -moz-border-radius-bottomleft: 3.6rem 5.2rem;
+  -webkit-border-bottom-left-radius: 3.6rem 5.2rem;
+  border-bottom-left-radius: 3.6rem 5.2rem;
 }
 
 /* line 102, sass/partials/_abstract.scss */
@@ -2355,34 +2355,34 @@ abstract
 
 /* line 103, sass/partials/_abstract.scss */
 .radius-v2-medium {
-  -moz-border-radius-topleft: 2.1rem 1.8rem;
-  -webkit-border-top-left-radius: 2.1rem 1.8rem;
-  border-top-left-radius: 2.1rem 1.8rem;
-  -moz-border-radius-topright: 3.6rem 2.1rem;
-  -webkit-border-top-right-radius: 3.6rem 2.1rem;
-  border-top-right-radius: 3.6rem 2.1rem;
-  -moz-border-radius-bottomright: 5.1rem 3.3rem;
-  -webkit-border-bottom-right-radius: 5.1rem 3.3rem;
-  border-bottom-right-radius: 5.1rem 3.3rem;
-  -moz-border-radius-bottomleft: 4.8rem 3rem;
-  -webkit-border-bottom-left-radius: 4.8rem 3rem;
-  border-bottom-left-radius: 4.8rem 3rem;
+  -moz-border-radius-topleft: 1.4rem 1.2rem;
+  -webkit-border-top-left-radius: 1.4rem 1.2rem;
+  border-top-left-radius: 1.4rem 1.2rem;
+  -moz-border-radius-topright: 2.4rem 1.4rem;
+  -webkit-border-top-right-radius: 2.4rem 1.4rem;
+  border-top-right-radius: 2.4rem 1.4rem;
+  -moz-border-radius-bottomright: 3.4rem 2.2rem;
+  -webkit-border-bottom-right-radius: 3.4rem 2.2rem;
+  border-bottom-right-radius: 3.4rem 2.2rem;
+  -moz-border-radius-bottomleft: 3.2rem 2rem;
+  -webkit-border-bottom-left-radius: 3.2rem 2rem;
+  border-bottom-left-radius: 3.2rem 2rem;
 }
 
 /* line 104, sass/partials/_abstract.scss */
 .radius-v2-large {
-  -moz-border-radius-topleft: 4.2rem 3.6rem;
-  -webkit-border-top-left-radius: 4.2rem 3.6rem;
-  border-top-left-radius: 4.2rem 3.6rem;
-  -moz-border-radius-topright: 7.2rem 4.2rem;
-  -webkit-border-top-right-radius: 7.2rem 4.2rem;
-  border-top-right-radius: 7.2rem 4.2rem;
-  -moz-border-radius-bottomright: 10.2rem 6.6rem;
-  -webkit-border-bottom-right-radius: 10.2rem 6.6rem;
-  border-bottom-right-radius: 10.2rem 6.6rem;
-  -moz-border-radius-bottomleft: 9.6rem 6rem;
-  -webkit-border-bottom-left-radius: 9.6rem 6rem;
-  border-bottom-left-radius: 9.6rem 6rem;
+  -moz-border-radius-topleft: 2.8rem 2.4rem;
+  -webkit-border-top-left-radius: 2.8rem 2.4rem;
+  border-top-left-radius: 2.8rem 2.4rem;
+  -moz-border-radius-topright: 4.8rem 2.8rem;
+  -webkit-border-top-right-radius: 4.8rem 2.8rem;
+  border-top-right-radius: 4.8rem 2.8rem;
+  -moz-border-radius-bottomright: 6.8rem 4.4rem;
+  -webkit-border-bottom-right-radius: 6.8rem 4.4rem;
+  border-bottom-right-radius: 6.8rem 4.4rem;
+  -moz-border-radius-bottomleft: 6.4rem 4rem;
+  -webkit-border-bottom-left-radius: 6.4rem 4rem;
+  border-bottom-left-radius: 6.4rem 4rem;
 }
 
 /* line 106, sass/partials/_abstract.scss */
@@ -2403,34 +2403,34 @@ abstract
 
 /* line 107, sass/partials/_abstract.scss */
 .radius-v3-medium {
-  -moz-border-radius-topleft: 2.7rem 4.2rem;
-  -webkit-border-top-left-radius: 2.7rem 4.2rem;
-  border-top-left-radius: 2.7rem 4.2rem;
-  -moz-border-radius-topright: 4.2rem 3rem;
-  -webkit-border-top-right-radius: 4.2rem 3rem;
-  border-top-right-radius: 4.2rem 3rem;
-  -moz-border-radius-bottomright: 2.7rem 5.1rem;
-  -webkit-border-bottom-right-radius: 2.7rem 5.1rem;
-  border-bottom-right-radius: 2.7rem 5.1rem;
-  -moz-border-radius-bottomleft: 2.7rem 2.4rem;
-  -webkit-border-bottom-left-radius: 2.7rem 2.4rem;
-  border-bottom-left-radius: 2.7rem 2.4rem;
+  -moz-border-radius-topleft: 1.8rem 2.8rem;
+  -webkit-border-top-left-radius: 1.8rem 2.8rem;
+  border-top-left-radius: 1.8rem 2.8rem;
+  -moz-border-radius-topright: 2.8rem 2rem;
+  -webkit-border-top-right-radius: 2.8rem 2rem;
+  border-top-right-radius: 2.8rem 2rem;
+  -moz-border-radius-bottomright: 1.8rem 3.4rem;
+  -webkit-border-bottom-right-radius: 1.8rem 3.4rem;
+  border-bottom-right-radius: 1.8rem 3.4rem;
+  -moz-border-radius-bottomleft: 1.8rem 1.6rem;
+  -webkit-border-bottom-left-radius: 1.8rem 1.6rem;
+  border-bottom-left-radius: 1.8rem 1.6rem;
 }
 
 /* line 108, sass/partials/_abstract.scss */
 .radius-v3-large {
-  -moz-border-radius-topleft: 5.4rem 8.4rem;
-  -webkit-border-top-left-radius: 5.4rem 8.4rem;
-  border-top-left-radius: 5.4rem 8.4rem;
-  -moz-border-radius-topright: 8.4rem 6rem;
-  -webkit-border-top-right-radius: 8.4rem 6rem;
-  border-top-right-radius: 8.4rem 6rem;
-  -moz-border-radius-bottomright: 5.4rem 10.2rem;
-  -webkit-border-bottom-right-radius: 5.4rem 10.2rem;
-  border-bottom-right-radius: 5.4rem 10.2rem;
-  -moz-border-radius-bottomleft: 5.4rem 4.8rem;
-  -webkit-border-bottom-left-radius: 5.4rem 4.8rem;
-  border-bottom-left-radius: 5.4rem 4.8rem;
+  -moz-border-radius-topleft: 3.6rem 5.6rem;
+  -webkit-border-top-left-radius: 3.6rem 5.6rem;
+  border-top-left-radius: 3.6rem 5.6rem;
+  -moz-border-radius-topright: 5.6rem 4rem;
+  -webkit-border-top-right-radius: 5.6rem 4rem;
+  border-top-right-radius: 5.6rem 4rem;
+  -moz-border-radius-bottomright: 3.6rem 6.8rem;
+  -webkit-border-bottom-right-radius: 3.6rem 6.8rem;
+  border-bottom-right-radius: 3.6rem 6.8rem;
+  -moz-border-radius-bottomleft: 3.6rem 3.2rem;
+  -webkit-border-bottom-left-radius: 3.6rem 3.2rem;
+  border-bottom-left-radius: 3.6rem 3.2rem;
 }
 
 /*------------------------------------------------------------------------------------------------------------------------
@@ -2578,7 +2578,7 @@ Media query variables
   color: #fff;
   text-decoration: none;
   text-transform: uppercase;
-  background: #007eac;
+  background: #682c88;
   font-size: 1.4rem;
   border: none;
   padding: 1.2rem;
@@ -2586,7 +2586,7 @@ Media query variables
 }
 /* line 43, sass/partials/_forms.scss */
 .btn-primary:hover, .btn-secondary:hover, .choose-file-wrapper:hover:after, .btn-primary:focus, .btn-secondary:focus, .choose-file-wrapper:focus:after {
-  background: #005979;
+  background: #4b2061;
 }
 /* line 47, sass/partials/_forms.scss */
 .btn-primary .disabled, .btn-secondary .disabled, .choose-file-wrapper:after .disabled {
@@ -2597,11 +2597,11 @@ Media query variables
 
 /* line 54, sass/partials/_forms.scss */
 .btn-secondary, .choose-file-wrapper:after {
-  background: #682c88;
+  background: #007eac;
 }
 /* line 58, sass/partials/_forms.scss */
 .btn-secondary:hover, .choose-file-wrapper:hover:after, .btn-secondary:focus, .choose-file-wrapper:focus:after {
-  background: #4b2061;
+  background: #005979;
 }
 
 /* line 63, sass/partials/_forms.scss */
@@ -2674,6 +2674,11 @@ input[type='text'], textarea {
 }
 
 /* line 140, sass/partials/_forms.scss */
+input[type="text"][readonly] {
+  cursor: pointer;
+}
+
+/* line 144, sass/partials/_forms.scss */
 input[type=submit][disabled=disabled],
 input[type=submit][disabled=disabled]:hover,
 button[disabled=disabled],
@@ -2683,7 +2688,7 @@ button[disabled=disabled]:hover {
   cursor: default;
 }
 
-/* line 151, sass/partials/_forms.scss */
+/* line 155, sass/partials/_forms.scss */
 .choose-file-wrapper {
   width: 14rem;
   height: 4rem;
@@ -2691,7 +2696,7 @@ button[disabled=disabled]:hover {
   position: relative;
   cursor: pointer;
 }
-/* line 159, sass/partials/_forms.scss */
+/* line 163, sass/partials/_forms.scss */
 .choose-file-wrapper:before {
   position: relative;
   z-index: 10;
@@ -2701,7 +2706,7 @@ button[disabled=disabled]:hover {
   font-size: 1.4rem;
   line-height: 3.8rem;
 }
-/* line 169, sass/partials/_forms.scss */
+/* line 173, sass/partials/_forms.scss */
 .choose-file-wrapper:after {
   content: "Upload file";
   position: absolute;
@@ -2714,7 +2719,7 @@ button[disabled=disabled]:hover {
   line-height: 1.6rem;
 }
 
-/* line 189, sass/partials/_forms.scss */
+/* line 193, sass/partials/_forms.scss */
 .choose-file {
   width: 200%;
   height: 100%;
@@ -3515,34 +3520,34 @@ abstract
 
 /* line 99, sass/partials/_abstract.scss */
 .radius-v1-medium {
-  -moz-border-radius-topleft: 4.92rem 3.3rem;
-  -webkit-border-top-left-radius: 4.92rem 3.3rem;
-  border-top-left-radius: 4.92rem 3.3rem;
-  -moz-border-radius-topright: 2.7rem 2.4rem;
-  -webkit-border-top-right-radius: 2.7rem 2.4rem;
-  border-top-right-radius: 2.7rem 2.4rem;
-  -moz-border-radius-bottomright: 2.7rem 4.2rem;
-  -webkit-border-bottom-right-radius: 2.7rem 4.2rem;
-  border-bottom-right-radius: 2.7rem 4.2rem;
-  -moz-border-radius-bottomleft: 2.7rem 3.9rem;
-  -webkit-border-bottom-left-radius: 2.7rem 3.9rem;
-  border-bottom-left-radius: 2.7rem 3.9rem;
+  -moz-border-radius-topleft: 3.28rem 2.2rem;
+  -webkit-border-top-left-radius: 3.28rem 2.2rem;
+  border-top-left-radius: 3.28rem 2.2rem;
+  -moz-border-radius-topright: 1.8rem 1.6rem;
+  -webkit-border-top-right-radius: 1.8rem 1.6rem;
+  border-top-right-radius: 1.8rem 1.6rem;
+  -moz-border-radius-bottomright: 1.8rem 2.8rem;
+  -webkit-border-bottom-right-radius: 1.8rem 2.8rem;
+  border-bottom-right-radius: 1.8rem 2.8rem;
+  -moz-border-radius-bottomleft: 1.8rem 2.6rem;
+  -webkit-border-bottom-left-radius: 1.8rem 2.6rem;
+  border-bottom-left-radius: 1.8rem 2.6rem;
 }
 
 /* line 100, sass/partials/_abstract.scss */
 .radius-v1-large {
-  -moz-border-radius-topleft: 9.84rem 6.6rem;
-  -webkit-border-top-left-radius: 9.84rem 6.6rem;
-  border-top-left-radius: 9.84rem 6.6rem;
-  -moz-border-radius-topright: 5.4rem 4.8rem;
-  -webkit-border-top-right-radius: 5.4rem 4.8rem;
-  border-top-right-radius: 5.4rem 4.8rem;
-  -moz-border-radius-bottomright: 5.4rem 8.4rem;
-  -webkit-border-bottom-right-radius: 5.4rem 8.4rem;
-  border-bottom-right-radius: 5.4rem 8.4rem;
-  -moz-border-radius-bottomleft: 5.4rem 7.8rem;
-  -webkit-border-bottom-left-radius: 5.4rem 7.8rem;
-  border-bottom-left-radius: 5.4rem 7.8rem;
+  -moz-border-radius-topleft: 6.56rem 4.4rem;
+  -webkit-border-top-left-radius: 6.56rem 4.4rem;
+  border-top-left-radius: 6.56rem 4.4rem;
+  -moz-border-radius-topright: 3.6rem 3.2rem;
+  -webkit-border-top-right-radius: 3.6rem 3.2rem;
+  border-top-right-radius: 3.6rem 3.2rem;
+  -moz-border-radius-bottomright: 3.6rem 5.6rem;
+  -webkit-border-bottom-right-radius: 3.6rem 5.6rem;
+  border-bottom-right-radius: 3.6rem 5.6rem;
+  -moz-border-radius-bottomleft: 3.6rem 5.2rem;
+  -webkit-border-bottom-left-radius: 3.6rem 5.2rem;
+  border-bottom-left-radius: 3.6rem 5.2rem;
 }
 
 /* line 102, sass/partials/_abstract.scss */
@@ -3563,34 +3568,34 @@ abstract
 
 /* line 103, sass/partials/_abstract.scss */
 .radius-v2-medium {
-  -moz-border-radius-topleft: 2.1rem 1.8rem;
-  -webkit-border-top-left-radius: 2.1rem 1.8rem;
-  border-top-left-radius: 2.1rem 1.8rem;
-  -moz-border-radius-topright: 3.6rem 2.1rem;
-  -webkit-border-top-right-radius: 3.6rem 2.1rem;
-  border-top-right-radius: 3.6rem 2.1rem;
-  -moz-border-radius-bottomright: 5.1rem 3.3rem;
-  -webkit-border-bottom-right-radius: 5.1rem 3.3rem;
-  border-bottom-right-radius: 5.1rem 3.3rem;
-  -moz-border-radius-bottomleft: 4.8rem 3rem;
-  -webkit-border-bottom-left-radius: 4.8rem 3rem;
-  border-bottom-left-radius: 4.8rem 3rem;
+  -moz-border-radius-topleft: 1.4rem 1.2rem;
+  -webkit-border-top-left-radius: 1.4rem 1.2rem;
+  border-top-left-radius: 1.4rem 1.2rem;
+  -moz-border-radius-topright: 2.4rem 1.4rem;
+  -webkit-border-top-right-radius: 2.4rem 1.4rem;
+  border-top-right-radius: 2.4rem 1.4rem;
+  -moz-border-radius-bottomright: 3.4rem 2.2rem;
+  -webkit-border-bottom-right-radius: 3.4rem 2.2rem;
+  border-bottom-right-radius: 3.4rem 2.2rem;
+  -moz-border-radius-bottomleft: 3.2rem 2rem;
+  -webkit-border-bottom-left-radius: 3.2rem 2rem;
+  border-bottom-left-radius: 3.2rem 2rem;
 }
 
 /* line 104, sass/partials/_abstract.scss */
 .radius-v2-large {
-  -moz-border-radius-topleft: 4.2rem 3.6rem;
-  -webkit-border-top-left-radius: 4.2rem 3.6rem;
-  border-top-left-radius: 4.2rem 3.6rem;
-  -moz-border-radius-topright: 7.2rem 4.2rem;
-  -webkit-border-top-right-radius: 7.2rem 4.2rem;
-  border-top-right-radius: 7.2rem 4.2rem;
-  -moz-border-radius-bottomright: 10.2rem 6.6rem;
-  -webkit-border-bottom-right-radius: 10.2rem 6.6rem;
-  border-bottom-right-radius: 10.2rem 6.6rem;
-  -moz-border-radius-bottomleft: 9.6rem 6rem;
-  -webkit-border-bottom-left-radius: 9.6rem 6rem;
-  border-bottom-left-radius: 9.6rem 6rem;
+  -moz-border-radius-topleft: 2.8rem 2.4rem;
+  -webkit-border-top-left-radius: 2.8rem 2.4rem;
+  border-top-left-radius: 2.8rem 2.4rem;
+  -moz-border-radius-topright: 4.8rem 2.8rem;
+  -webkit-border-top-right-radius: 4.8rem 2.8rem;
+  border-top-right-radius: 4.8rem 2.8rem;
+  -moz-border-radius-bottomright: 6.8rem 4.4rem;
+  -webkit-border-bottom-right-radius: 6.8rem 4.4rem;
+  border-bottom-right-radius: 6.8rem 4.4rem;
+  -moz-border-radius-bottomleft: 6.4rem 4rem;
+  -webkit-border-bottom-left-radius: 6.4rem 4rem;
+  border-bottom-left-radius: 6.4rem 4rem;
 }
 
 /* line 106, sass/partials/_abstract.scss */
@@ -3611,34 +3616,34 @@ abstract
 
 /* line 107, sass/partials/_abstract.scss */
 .radius-v3-medium {
-  -moz-border-radius-topleft: 2.7rem 4.2rem;
-  -webkit-border-top-left-radius: 2.7rem 4.2rem;
-  border-top-left-radius: 2.7rem 4.2rem;
-  -moz-border-radius-topright: 4.2rem 3rem;
-  -webkit-border-top-right-radius: 4.2rem 3rem;
-  border-top-right-radius: 4.2rem 3rem;
-  -moz-border-radius-bottomright: 2.7rem 5.1rem;
-  -webkit-border-bottom-right-radius: 2.7rem 5.1rem;
-  border-bottom-right-radius: 2.7rem 5.1rem;
-  -moz-border-radius-bottomleft: 2.7rem 2.4rem;
-  -webkit-border-bottom-left-radius: 2.7rem 2.4rem;
-  border-bottom-left-radius: 2.7rem 2.4rem;
+  -moz-border-radius-topleft: 1.8rem 2.8rem;
+  -webkit-border-top-left-radius: 1.8rem 2.8rem;
+  border-top-left-radius: 1.8rem 2.8rem;
+  -moz-border-radius-topright: 2.8rem 2rem;
+  -webkit-border-top-right-radius: 2.8rem 2rem;
+  border-top-right-radius: 2.8rem 2rem;
+  -moz-border-radius-bottomright: 1.8rem 3.4rem;
+  -webkit-border-bottom-right-radius: 1.8rem 3.4rem;
+  border-bottom-right-radius: 1.8rem 3.4rem;
+  -moz-border-radius-bottomleft: 1.8rem 1.6rem;
+  -webkit-border-bottom-left-radius: 1.8rem 1.6rem;
+  border-bottom-left-radius: 1.8rem 1.6rem;
 }
 
 /* line 108, sass/partials/_abstract.scss */
 .radius-v3-large {
-  -moz-border-radius-topleft: 5.4rem 8.4rem;
-  -webkit-border-top-left-radius: 5.4rem 8.4rem;
-  border-top-left-radius: 5.4rem 8.4rem;
-  -moz-border-radius-topright: 8.4rem 6rem;
-  -webkit-border-top-right-radius: 8.4rem 6rem;
-  border-top-right-radius: 8.4rem 6rem;
-  -moz-border-radius-bottomright: 5.4rem 10.2rem;
-  -webkit-border-bottom-right-radius: 5.4rem 10.2rem;
-  border-bottom-right-radius: 5.4rem 10.2rem;
-  -moz-border-radius-bottomleft: 5.4rem 4.8rem;
-  -webkit-border-bottom-left-radius: 5.4rem 4.8rem;
-  border-bottom-left-radius: 5.4rem 4.8rem;
+  -moz-border-radius-topleft: 3.6rem 5.6rem;
+  -webkit-border-top-left-radius: 3.6rem 5.6rem;
+  border-top-left-radius: 3.6rem 5.6rem;
+  -moz-border-radius-topright: 5.6rem 4rem;
+  -webkit-border-top-right-radius: 5.6rem 4rem;
+  border-top-right-radius: 5.6rem 4rem;
+  -moz-border-radius-bottomright: 3.6rem 6.8rem;
+  -webkit-border-bottom-right-radius: 3.6rem 6.8rem;
+  border-bottom-right-radius: 3.6rem 6.8rem;
+  -moz-border-radius-bottomleft: 3.6rem 3.2rem;
+  -webkit-border-bottom-left-radius: 3.6rem 3.2rem;
+  border-bottom-left-radius: 3.6rem 3.2rem;
 }
 
 /*------------------------------------------------------------------------------------------------------------------------
@@ -3947,34 +3952,34 @@ abstract
 
 /* line 99, sass/partials/_abstract.scss */
 .radius-v1-medium {
-  -moz-border-radius-topleft: 4.92rem 3.3rem;
-  -webkit-border-top-left-radius: 4.92rem 3.3rem;
-  border-top-left-radius: 4.92rem 3.3rem;
-  -moz-border-radius-topright: 2.7rem 2.4rem;
-  -webkit-border-top-right-radius: 2.7rem 2.4rem;
-  border-top-right-radius: 2.7rem 2.4rem;
-  -moz-border-radius-bottomright: 2.7rem 4.2rem;
-  -webkit-border-bottom-right-radius: 2.7rem 4.2rem;
-  border-bottom-right-radius: 2.7rem 4.2rem;
-  -moz-border-radius-bottomleft: 2.7rem 3.9rem;
-  -webkit-border-bottom-left-radius: 2.7rem 3.9rem;
-  border-bottom-left-radius: 2.7rem 3.9rem;
+  -moz-border-radius-topleft: 3.28rem 2.2rem;
+  -webkit-border-top-left-radius: 3.28rem 2.2rem;
+  border-top-left-radius: 3.28rem 2.2rem;
+  -moz-border-radius-topright: 1.8rem 1.6rem;
+  -webkit-border-top-right-radius: 1.8rem 1.6rem;
+  border-top-right-radius: 1.8rem 1.6rem;
+  -moz-border-radius-bottomright: 1.8rem 2.8rem;
+  -webkit-border-bottom-right-radius: 1.8rem 2.8rem;
+  border-bottom-right-radius: 1.8rem 2.8rem;
+  -moz-border-radius-bottomleft: 1.8rem 2.6rem;
+  -webkit-border-bottom-left-radius: 1.8rem 2.6rem;
+  border-bottom-left-radius: 1.8rem 2.6rem;
 }
 
 /* line 100, sass/partials/_abstract.scss */
 .radius-v1-large {
-  -moz-border-radius-topleft: 9.84rem 6.6rem;
-  -webkit-border-top-left-radius: 9.84rem 6.6rem;
-  border-top-left-radius: 9.84rem 6.6rem;
-  -moz-border-radius-topright: 5.4rem 4.8rem;
-  -webkit-border-top-right-radius: 5.4rem 4.8rem;
-  border-top-right-radius: 5.4rem 4.8rem;
-  -moz-border-radius-bottomright: 5.4rem 8.4rem;
-  -webkit-border-bottom-right-radius: 5.4rem 8.4rem;
-  border-bottom-right-radius: 5.4rem 8.4rem;
-  -moz-border-radius-bottomleft: 5.4rem 7.8rem;
-  -webkit-border-bottom-left-radius: 5.4rem 7.8rem;
-  border-bottom-left-radius: 5.4rem 7.8rem;
+  -moz-border-radius-topleft: 6.56rem 4.4rem;
+  -webkit-border-top-left-radius: 6.56rem 4.4rem;
+  border-top-left-radius: 6.56rem 4.4rem;
+  -moz-border-radius-topright: 3.6rem 3.2rem;
+  -webkit-border-top-right-radius: 3.6rem 3.2rem;
+  border-top-right-radius: 3.6rem 3.2rem;
+  -moz-border-radius-bottomright: 3.6rem 5.6rem;
+  -webkit-border-bottom-right-radius: 3.6rem 5.6rem;
+  border-bottom-right-radius: 3.6rem 5.6rem;
+  -moz-border-radius-bottomleft: 3.6rem 5.2rem;
+  -webkit-border-bottom-left-radius: 3.6rem 5.2rem;
+  border-bottom-left-radius: 3.6rem 5.2rem;
 }
 
 /* line 102, sass/partials/_abstract.scss */
@@ -3995,34 +4000,34 @@ abstract
 
 /* line 103, sass/partials/_abstract.scss */
 .radius-v2-medium {
-  -moz-border-radius-topleft: 2.1rem 1.8rem;
-  -webkit-border-top-left-radius: 2.1rem 1.8rem;
-  border-top-left-radius: 2.1rem 1.8rem;
-  -moz-border-radius-topright: 3.6rem 2.1rem;
-  -webkit-border-top-right-radius: 3.6rem 2.1rem;
-  border-top-right-radius: 3.6rem 2.1rem;
-  -moz-border-radius-bottomright: 5.1rem 3.3rem;
-  -webkit-border-bottom-right-radius: 5.1rem 3.3rem;
-  border-bottom-right-radius: 5.1rem 3.3rem;
-  -moz-border-radius-bottomleft: 4.8rem 3rem;
-  -webkit-border-bottom-left-radius: 4.8rem 3rem;
-  border-bottom-left-radius: 4.8rem 3rem;
+  -moz-border-radius-topleft: 1.4rem 1.2rem;
+  -webkit-border-top-left-radius: 1.4rem 1.2rem;
+  border-top-left-radius: 1.4rem 1.2rem;
+  -moz-border-radius-topright: 2.4rem 1.4rem;
+  -webkit-border-top-right-radius: 2.4rem 1.4rem;
+  border-top-right-radius: 2.4rem 1.4rem;
+  -moz-border-radius-bottomright: 3.4rem 2.2rem;
+  -webkit-border-bottom-right-radius: 3.4rem 2.2rem;
+  border-bottom-right-radius: 3.4rem 2.2rem;
+  -moz-border-radius-bottomleft: 3.2rem 2rem;
+  -webkit-border-bottom-left-radius: 3.2rem 2rem;
+  border-bottom-left-radius: 3.2rem 2rem;
 }
 
 /* line 104, sass/partials/_abstract.scss */
 .radius-v2-large {
-  -moz-border-radius-topleft: 4.2rem 3.6rem;
-  -webkit-border-top-left-radius: 4.2rem 3.6rem;
-  border-top-left-radius: 4.2rem 3.6rem;
-  -moz-border-radius-topright: 7.2rem 4.2rem;
-  -webkit-border-top-right-radius: 7.2rem 4.2rem;
-  border-top-right-radius: 7.2rem 4.2rem;
-  -moz-border-radius-bottomright: 10.2rem 6.6rem;
-  -webkit-border-bottom-right-radius: 10.2rem 6.6rem;
-  border-bottom-right-radius: 10.2rem 6.6rem;
-  -moz-border-radius-bottomleft: 9.6rem 6rem;
-  -webkit-border-bottom-left-radius: 9.6rem 6rem;
-  border-bottom-left-radius: 9.6rem 6rem;
+  -moz-border-radius-topleft: 2.8rem 2.4rem;
+  -webkit-border-top-left-radius: 2.8rem 2.4rem;
+  border-top-left-radius: 2.8rem 2.4rem;
+  -moz-border-radius-topright: 4.8rem 2.8rem;
+  -webkit-border-top-right-radius: 4.8rem 2.8rem;
+  border-top-right-radius: 4.8rem 2.8rem;
+  -moz-border-radius-bottomright: 6.8rem 4.4rem;
+  -webkit-border-bottom-right-radius: 6.8rem 4.4rem;
+  border-bottom-right-radius: 6.8rem 4.4rem;
+  -moz-border-radius-bottomleft: 6.4rem 4rem;
+  -webkit-border-bottom-left-radius: 6.4rem 4rem;
+  border-bottom-left-radius: 6.4rem 4rem;
 }
 
 /* line 106, sass/partials/_abstract.scss */
@@ -4043,34 +4048,34 @@ abstract
 
 /* line 107, sass/partials/_abstract.scss */
 .radius-v3-medium {
-  -moz-border-radius-topleft: 2.7rem 4.2rem;
-  -webkit-border-top-left-radius: 2.7rem 4.2rem;
-  border-top-left-radius: 2.7rem 4.2rem;
-  -moz-border-radius-topright: 4.2rem 3rem;
-  -webkit-border-top-right-radius: 4.2rem 3rem;
-  border-top-right-radius: 4.2rem 3rem;
-  -moz-border-radius-bottomright: 2.7rem 5.1rem;
-  -webkit-border-bottom-right-radius: 2.7rem 5.1rem;
-  border-bottom-right-radius: 2.7rem 5.1rem;
-  -moz-border-radius-bottomleft: 2.7rem 2.4rem;
-  -webkit-border-bottom-left-radius: 2.7rem 2.4rem;
-  border-bottom-left-radius: 2.7rem 2.4rem;
+  -moz-border-radius-topleft: 1.8rem 2.8rem;
+  -webkit-border-top-left-radius: 1.8rem 2.8rem;
+  border-top-left-radius: 1.8rem 2.8rem;
+  -moz-border-radius-topright: 2.8rem 2rem;
+  -webkit-border-top-right-radius: 2.8rem 2rem;
+  border-top-right-radius: 2.8rem 2rem;
+  -moz-border-radius-bottomright: 1.8rem 3.4rem;
+  -webkit-border-bottom-right-radius: 1.8rem 3.4rem;
+  border-bottom-right-radius: 1.8rem 3.4rem;
+  -moz-border-radius-bottomleft: 1.8rem 1.6rem;
+  -webkit-border-bottom-left-radius: 1.8rem 1.6rem;
+  border-bottom-left-radius: 1.8rem 1.6rem;
 }
 
 /* line 108, sass/partials/_abstract.scss */
 .radius-v3-large {
-  -moz-border-radius-topleft: 5.4rem 8.4rem;
-  -webkit-border-top-left-radius: 5.4rem 8.4rem;
-  border-top-left-radius: 5.4rem 8.4rem;
-  -moz-border-radius-topright: 8.4rem 6rem;
-  -webkit-border-top-right-radius: 8.4rem 6rem;
-  border-top-right-radius: 8.4rem 6rem;
-  -moz-border-radius-bottomright: 5.4rem 10.2rem;
-  -webkit-border-bottom-right-radius: 5.4rem 10.2rem;
-  border-bottom-right-radius: 5.4rem 10.2rem;
-  -moz-border-radius-bottomleft: 5.4rem 4.8rem;
-  -webkit-border-bottom-left-radius: 5.4rem 4.8rem;
-  border-bottom-left-radius: 5.4rem 4.8rem;
+  -moz-border-radius-topleft: 3.6rem 5.6rem;
+  -webkit-border-top-left-radius: 3.6rem 5.6rem;
+  border-top-left-radius: 3.6rem 5.6rem;
+  -moz-border-radius-topright: 5.6rem 4rem;
+  -webkit-border-top-right-radius: 5.6rem 4rem;
+  border-top-right-radius: 5.6rem 4rem;
+  -moz-border-radius-bottomright: 3.6rem 6.8rem;
+  -webkit-border-bottom-right-radius: 3.6rem 6.8rem;
+  border-bottom-right-radius: 3.6rem 6.8rem;
+  -moz-border-radius-bottomleft: 3.6rem 3.2rem;
+  -webkit-border-bottom-left-radius: 3.6rem 3.2rem;
+  border-bottom-left-radius: 3.6rem 3.2rem;
 }
 
 /*------------------------------------------------------------------------------------------------------------------------
@@ -4218,7 +4223,7 @@ Media query variables
   color: #fff;
   text-decoration: none;
   text-transform: uppercase;
-  background: #007eac;
+  background: #682c88;
   font-size: 1.4rem;
   border: none;
   padding: 1.2rem;
@@ -4226,7 +4231,7 @@ Media query variables
 }
 /* line 43, sass/partials/_forms.scss */
 .btn-primary:hover, .btn-secondary:hover, .choose-file-wrapper:hover:after, .btn-primary:focus, .btn-secondary:focus, .choose-file-wrapper:focus:after {
-  background: #005979;
+  background: #4b2061;
 }
 /* line 47, sass/partials/_forms.scss */
 .btn-primary .disabled, .btn-secondary .disabled, .choose-file-wrapper:after .disabled {
@@ -4237,11 +4242,11 @@ Media query variables
 
 /* line 54, sass/partials/_forms.scss */
 .btn-secondary, .choose-file-wrapper:after {
-  background: #682c88;
+  background: #007eac;
 }
 /* line 58, sass/partials/_forms.scss */
 .btn-secondary:hover, .choose-file-wrapper:hover:after, .btn-secondary:focus, .choose-file-wrapper:focus:after {
-  background: #4b2061;
+  background: #005979;
 }
 
 /* line 63, sass/partials/_forms.scss */
@@ -4314,6 +4319,11 @@ input[type='text'], textarea {
 }
 
 /* line 140, sass/partials/_forms.scss */
+input[type="text"][readonly] {
+  cursor: pointer;
+}
+
+/* line 144, sass/partials/_forms.scss */
 input[type=submit][disabled=disabled],
 input[type=submit][disabled=disabled]:hover,
 button[disabled=disabled],
@@ -4323,7 +4333,7 @@ button[disabled=disabled]:hover {
   cursor: default;
 }
 
-/* line 151, sass/partials/_forms.scss */
+/* line 155, sass/partials/_forms.scss */
 .choose-file-wrapper {
   width: 14rem;
   height: 4rem;
@@ -4331,7 +4341,7 @@ button[disabled=disabled]:hover {
   position: relative;
   cursor: pointer;
 }
-/* line 159, sass/partials/_forms.scss */
+/* line 163, sass/partials/_forms.scss */
 .choose-file-wrapper:before {
   position: relative;
   z-index: 10;
@@ -4341,7 +4351,7 @@ button[disabled=disabled]:hover {
   font-size: 1.4rem;
   line-height: 3.8rem;
 }
-/* line 169, sass/partials/_forms.scss */
+/* line 173, sass/partials/_forms.scss */
 .choose-file-wrapper:after {
   content: "Upload file";
   position: absolute;
@@ -4354,7 +4364,7 @@ button[disabled=disabled]:hover {
   line-height: 1.6rem;
 }
 
-/* line 189, sass/partials/_forms.scss */
+/* line 193, sass/partials/_forms.scss */
 .choose-file {
   width: 200%;
   height: 100%;
@@ -4764,7 +4774,7 @@ Media query variables
   .nav-end-block {
     display: none;
     left: 1.5rem;
-    color: #007eac;
+    color: #682c88;
   }
 
   /* line 108, sass/partials/_media-queries.scss */
@@ -4939,7 +4949,7 @@ Media query variables
 }
 /* line 98, sass/main.scss */
 .banner h1 {
-  color: #007eac;
+  color: #682c88;
   font-weight: bold;
   text-transform: uppercase;
   font-size: 2.36667rem;
@@ -4999,43 +5009,43 @@ Media query variables
 }
 /* line 160, sass/main.scss */
 .frame:nth-child(1) {
-  -moz-transform: rotate(-1.1deg);
-  -ms-transform: rotate(-1.1deg);
-  -webkit-transform: rotate(-1.1deg);
-  transform: rotate(-1.1deg);
+  -moz-transform: rotate(-0.5deg);
+  -ms-transform: rotate(-0.5deg);
+  -webkit-transform: rotate(-0.5deg);
+  transform: rotate(-0.5deg);
 }
 /* line 160, sass/main.scss */
 .frame:nth-child(2) {
-  -moz-transform: rotate(2.3deg);
-  -ms-transform: rotate(2.3deg);
-  -webkit-transform: rotate(2.3deg);
-  transform: rotate(2.3deg);
+  -moz-transform: rotate(1deg);
+  -ms-transform: rotate(1deg);
+  -webkit-transform: rotate(1deg);
+  transform: rotate(1deg);
 }
 /* line 160, sass/main.scss */
 .frame:nth-child(3) {
-  -moz-transform: rotate(-0.2deg);
-  -ms-transform: rotate(-0.2deg);
-  -webkit-transform: rotate(-0.2deg);
-  transform: rotate(-0.2deg);
+  -moz-transform: rotate(-1.4deg);
+  -ms-transform: rotate(-1.4deg);
+  -webkit-transform: rotate(-1.4deg);
+  transform: rotate(-1.4deg);
 }
 /* line 160, sass/main.scss */
 .frame:nth-child(4) {
-  -moz-transform: rotate(1.7deg);
-  -ms-transform: rotate(1.7deg);
-  -webkit-transform: rotate(1.7deg);
-  transform: rotate(1.7deg);
+  -moz-transform: rotate(1deg);
+  -ms-transform: rotate(1deg);
+  -webkit-transform: rotate(1deg);
+  transform: rotate(1deg);
 }
 /* line 160, sass/main.scss */
 .frame:nth-child(5) {
-  -moz-transform: rotate(-1.1deg);
-  -ms-transform: rotate(-1.1deg);
-  -webkit-transform: rotate(-1.1deg);
-  transform: rotate(-1.1deg);
+  -moz-transform: rotate(-0.6deg);
+  -ms-transform: rotate(-0.6deg);
+  -webkit-transform: rotate(-0.6deg);
+  transform: rotate(-0.6deg);
 }
 /* line 160, sass/main.scss */
 .frame:nth-child(6) {
-  -moz-transform: rotate(0.8deg);
-  -ms-transform: rotate(0.8deg);
-  -webkit-transform: rotate(0.8deg);
-  transform: rotate(0.8deg);
+  -moz-transform: rotate(1.1deg);
+  -ms-transform: rotate(1.1deg);
+  -webkit-transform: rotate(1.1deg);
+  transform: rotate(1.1deg);
 }

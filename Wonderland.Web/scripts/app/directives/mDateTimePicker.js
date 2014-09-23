@@ -8,35 +8,65 @@ wonderlandApp.directive('mDateTimePicker', ['safeApply', function (safeApply) {
 
         link: function (scope, element) {
 
-            var pikaday = new Pikaday({
+            var hasSetInitialValue = false,
+                pikaday = null;
 
-                field: element[0],
-                firstDay: 1,
-                format: "dddd Do MMMM, YYYY",
-//                defaultDate: moment().toDate(),
-//                setDefaultDate: true,
-                minDate: moment().toDate(),
-                maxDate: new Date('2015-12-31'),
-                yearRange: [2014,2015],
 
-                onSelect: function (date) {
+            scope.$watch('theDate', function (newVal, oldVal) {
 
-                    safeApply(scope, function () {
-                        scope.theDate = moment(date);
-                    });
-
+                if (hasSetInitialValue) {
+                    return;
                 }
-            });
 
-//            scope.$watch('theDate', function (newVal, oldVal) {
-//
-//                console.log('theDate change', newVal, oldVal);
-//
-//                if (newVal.isValid()) {
-//                    pikaday.setDate(newVal.toDate());
-//                }
-//
-//            }, true);
+                hasSetInitialValue = true;
+
+                var initialDate = null;
+
+                if (moment(newVal).isValid()) {
+                    initialDate = newVal;
+                }
+
+                if (!pikaday) {
+                    createPicker(initialDate);
+                }
+
+            }, true);
+
+
+
+            var createPicker = function (initialDate) {
+
+                var basePicka = {
+
+                    field: element[0],
+                    firstDay: 1,
+                    format: "dddd Do MMMM, YYYY",
+                    minDate: moment().toDate(),
+                    maxDate: new Date('2015-12-31'),
+                    yearRange: [2014,2015],
+
+                    onSelect: function (date) {
+
+                        safeApply(scope, function () {
+                            scope.theDate = moment(date);
+                        });
+
+                    }
+                };
+
+                if (initialDate) {
+                    angular.extend(basePicka, {
+                        defaultDate: initialDate.toDate(),
+                        setDefaultDate: true
+                    });
+                }
+
+
+                console.log('createPika', basePicka, initialDate);
+
+                pikaday = new Pikaday(basePicka);
+
+            };
 
         }
 

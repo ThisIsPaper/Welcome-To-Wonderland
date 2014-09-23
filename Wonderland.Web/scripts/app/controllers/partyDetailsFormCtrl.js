@@ -1,10 +1,27 @@
+/*
+
+TODO - NEED THIS TO SPLIT OUT DATE AND TIME
+
+ */
+
 wonderlandApp.controller('PartyDetailsFormCtrl', ['$scope', function ($scope) {
 
+    var hasSetInitialDate = false;
+
     $scope.tempModel = {
-        dateTime: null
+        PartyDateTime: null
     };
 
-    $scope.$watch('tempModel.dateTime', function (newVal) {
+    $scope.$watch('partyDetailsData.PartyDateTime', function (newVal, oldVal) {
+
+        if (!hasSetInitialDate) {
+            hasSetInitialDate = true;
+            $scope.tempModel.PartyDateTime = moment(newVal);
+        }
+
+    });
+
+    $scope.$watch('tempModel.PartyDateTime', function (newVal) {
         
         if (!newVal) {
             return;
