@@ -334,6 +334,23 @@ label .ticket {
 }
 
 
+/*******************************/// totaliser
+
+.totaliser {
+    @extend .pad-tiny;
+    @include border-radius($padSmallValue/2);
+    background-color: $greyLight;
+
+
+    .current-total {
+    @include border-radius($padSmallValue/2);
+        background-color: $SecondaryColour;
+        max-width: 100%;
+        height: 3rem;
+    }
+}
+
+
 /* =============================================================================
 One-off uses
 ========================================================================== */

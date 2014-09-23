@@ -270,6 +270,12 @@ ul, ol, dl {
 
 
 
+.body-mega {
+    @extend .heading-large;
+    color: $SecondaryColour;
+    text-decoration: none;
+}
+
 .body-highlight {
     color: $SecondaryColour;
     text-decoration: none;
