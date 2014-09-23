@@ -6,15 +6,14 @@ namespace Wonderland.Logic.SagePay
     /// </summary>
     public enum StatusType
     {
-        Unknown,
-        Ok,
-        NotAuthed,
-        Abort,
-        Rejected,
-        Authenticated,
-        Registered,
-        Malformed,
-        Error,
-        Invalid,
+        OK,
+
+        OK_REPEATED,
+
+        MALFORMED,
+
+        INVALID,
+
+        ERROR
     }
 }

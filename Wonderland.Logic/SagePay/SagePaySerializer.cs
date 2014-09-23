@@ -59,7 +59,7 @@ namespace Wonderland.Logic.SagePay
 
                     if (propertyInfo.PropertyType == typeof(StatusType))
                     {
-                        //TODO: handle enum
+                        convertedValue = Enum.Parse(typeof(StatusType), value);
                     }
                     else
                     {                     
