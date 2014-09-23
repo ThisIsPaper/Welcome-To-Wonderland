@@ -136,7 +136,23 @@ Event Page specific - move these out of here eventually
     height: $profileImageSize;
     background-repeat: no-repeat;
     background-size: cover;
+    background-color: $greyMedium;
     float: left;
+
+    &:before {
+        font-family: $fontFaceIcomoon;
+        content: " ";
+        color: white;
+        font-size: 5rem;
+        line-height: 7rem;
+        width: 100%;
+        text-align: center;
+        display: block;
+    }
+
+    &.profile-image-notset:before {
+        content: "\e61b";
+    }
 }
 
 .image-shift-details {
@@ -163,7 +179,8 @@ Event Page specific - move these out of here eventually
         display: none;
     }
 
-    .warning {
+    .warner {
+        @extend .warning;
         width: 16rem;
         text-align: center;
         display: none;
@@ -187,7 +204,7 @@ Event Page specific - move these out of here eventually
             margin-left: 0;
         }
 
-        .warning {
+        .warner {
             display: block;
             cursor: pointer;
         }

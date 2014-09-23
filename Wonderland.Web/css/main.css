@@ -57,6 +57,8 @@ Colours
 ========================================================================== */
 /* Links */
 /* Greys */
+/* Reds */
+/* Green */
 /* =============================================================================
 Borders
 ========================================================================== */
@@ -178,7 +180,7 @@ Font Sizes
 }
 
 /* line 507, sass/partials/_helpers.scss */
-.body-small, .form-info, .warning, label, .file-upload-info, .wall-details {
+.body-small, .form-info, .warning, .party-image-container .warner, .successful, .errorred, label, .file-upload-info, .wall-details {
   font-size: 1.4rem;
 }
 
@@ -306,6 +308,8 @@ Colours
 ========================================================================== */
 /* Links */
 /* Greys */
+/* Reds */
+/* Green */
 /* =============================================================================
 Borders
 ========================================================================== */
@@ -316,277 +320,327 @@ Media query variables
 abstract
 ========================================================================== */
 /* line 23, sass/partials/_abstract.scss */
+.pad-tiny, .successful, .errorred {
+  padding: 0.6rem;
+}
+
+/* line 24, sass/partials/_abstract.scss */
 .pad-small, textarea {
   padding: 1.2rem;
 }
 
-/* line 24, sass/partials/_abstract.scss */
+/* line 25, sass/partials/_abstract.scss */
 .pad-medium {
   padding: 1.8rem;
 }
 
-/* line 25, sass/partials/_abstract.scss */
+/* line 26, sass/partials/_abstract.scss */
 .pad-large {
   padding: 2.4rem;
 }
 
-/* line 27, sass/partials/_abstract.scss */
+/* line 28, sass/partials/_abstract.scss */
+.pad-right-tiny {
+  padding-right: 0.6rem;
+}
+
+/* line 29, sass/partials/_abstract.scss */
 .pad-right-small, input[type='text'] {
   padding-right: 1.2rem;
 }
 
-/* line 28, sass/partials/_abstract.scss */
+/* line 30, sass/partials/_abstract.scss */
 .pad-right-medium {
   padding-right: 1.8rem;
 }
 
-/* line 29, sass/partials/_abstract.scss */
+/* line 31, sass/partials/_abstract.scss */
 .pad-right-large {
   padding-right: 2.4rem;
 }
 
-/* line 31, sass/partials/_abstract.scss */
+/* line 33, sass/partials/_abstract.scss */
+.pad-left-tiny {
+  padding-left: 0.6rem;
+}
+
+/* line 34, sass/partials/_abstract.scss */
 .pad-left-small, input[type='text'] {
   padding-left: 1.2rem;
 }
 
-/* line 32, sass/partials/_abstract.scss */
+/* line 35, sass/partials/_abstract.scss */
 .pad-left-medium {
   padding-left: 1.8rem;
 }
 
-/* line 33, sass/partials/_abstract.scss */
+/* line 36, sass/partials/_abstract.scss */
 .pad-left-large {
   padding-left: 2.4rem;
 }
 
-/* line 35, sass/partials/_abstract.scss */
+/* line 38, sass/partials/_abstract.scss */
+.pad-right-0 {
+  padding-right: 0;
+}
+
+/* line 39, sass/partials/_abstract.scss */
 .pad-right-1 {
   padding-right: 1rem;
 }
 
-/* line 36, sass/partials/_abstract.scss */
+/* line 40, sass/partials/_abstract.scss */
 .pad-right-2 {
   padding-right: 2rem;
 }
 
-/* line 37, sass/partials/_abstract.scss */
+/* line 41, sass/partials/_abstract.scss */
 .pad-right-3 {
   padding-right: 3rem;
 }
 
-/* line 38, sass/partials/_abstract.scss */
+/* line 42, sass/partials/_abstract.scss */
 .pad-right-4 {
   padding-right: 4rem;
 }
 
-/* line 40, sass/partials/_abstract.scss */
+/* line 44, sass/partials/_abstract.scss */
+.pad-left-0 {
+  padding-left: 0;
+}
+
+/* line 45, sass/partials/_abstract.scss */
 .pad-left-1 {
   padding-left: 1rem;
 }
 
-/* line 41, sass/partials/_abstract.scss */
+/* line 46, sass/partials/_abstract.scss */
 .pad-left-2 {
   padding-left: 2rem;
 }
 
-/* line 42, sass/partials/_abstract.scss */
+/* line 47, sass/partials/_abstract.scss */
 .pad-left-3 {
   padding-left: 3rem;
 }
 
-/* line 43, sass/partials/_abstract.scss */
+/* line 48, sass/partials/_abstract.scss */
 .pad-left-4 {
   padding-left: 4rem;
 }
 
-/* line 47, sass/partials/_abstract.scss */
+/* line 52, sass/partials/_abstract.scss */
+.margin-tiny {
+  margin: 0.6rem;
+}
+
+/* line 53, sass/partials/_abstract.scss */
 .margin-small {
   margin: 1.2rem;
 }
 
-/* line 48, sass/partials/_abstract.scss */
+/* line 54, sass/partials/_abstract.scss */
 .margin-medium {
   margin: 1.8rem;
 }
 
-/* line 49, sass/partials/_abstract.scss */
+/* line 55, sass/partials/_abstract.scss */
 .margin-large {
   margin: 2.4rem;
 }
 
-/* line 51, sass/partials/_abstract.scss */
+/* line 57, sass/partials/_abstract.scss */
+.margin-right-tiny, .successful span, .errorred span, .successful:before, .errorred:before {
+  margin-right: 0.6rem;
+}
+
+/* line 58, sass/partials/_abstract.scss */
 .margin-right-small, .party-image-selecter {
   margin-right: 1.2rem;
 }
 
-/* line 52, sass/partials/_abstract.scss */
+/* line 59, sass/partials/_abstract.scss */
 .margin-right-medium {
   margin-right: 1.8rem;
 }
 
-/* line 53, sass/partials/_abstract.scss */
+/* line 60, sass/partials/_abstract.scss */
 .margin-right-large {
   margin-right: 2.4rem;
 }
 
-/* line 55, sass/partials/_abstract.scss */
+/* line 62, sass/partials/_abstract.scss */
+.margin-left-tiny {
+  margin-left: 0.6rem;
+}
+
+/* line 63, sass/partials/_abstract.scss */
 .margin-left-small {
   margin-left: 1.2rem;
 }
 
-/* line 56, sass/partials/_abstract.scss */
+/* line 64, sass/partials/_abstract.scss */
 .margin-left-medium {
   margin-left: 1.8rem;
 }
 
-/* line 57, sass/partials/_abstract.scss */
+/* line 65, sass/partials/_abstract.scss */
 .margin-left-large {
   margin-left: 2.4rem;
 }
 
-/* line 59, sass/partials/_abstract.scss */
-.margin-bottom-small, .form-info, .warning {
+/* line 67, sass/partials/_abstract.scss */
+.margin-bottom-tiny {
+  margin-bottom: 0.6rem;
+}
+
+/* line 68, sass/partials/_abstract.scss */
+.margin-bottom-small, .form-info, .warning, .party-image-container .warner, .successful, .errorred {
   margin-bottom: 1.2rem;
 }
 
-/* line 60, sass/partials/_abstract.scss */
+/* line 69, sass/partials/_abstract.scss */
 .margin-bottom-medium, .party-image-container {
   margin-bottom: 1.8rem;
 }
 
-/* line 61, sass/partials/_abstract.scss */
+/* line 70, sass/partials/_abstract.scss */
 .margin-bottom-large {
   margin-bottom: 2.4rem;
 }
 
-/* line 63, sass/partials/_abstract.scss */
-.margin-top-small, .form-info, .warning {
+/* line 72, sass/partials/_abstract.scss */
+.margin-top-tiny {
+  margin-top: 0.6rem;
+}
+
+/* line 73, sass/partials/_abstract.scss */
+.margin-top-small, .form-info, .warning, .party-image-container .warner, .successful, .errorred {
   margin-top: 1.2rem;
 }
 
-/* line 64, sass/partials/_abstract.scss */
+/* line 74, sass/partials/_abstract.scss */
 .margin-top-medium {
   margin-top: 1.8rem;
 }
 
-/* line 65, sass/partials/_abstract.scss */
+/* line 75, sass/partials/_abstract.scss */
 .margin-top-large {
   margin-top: 2.4rem;
 }
 
-/* line 67, sass/partials/_abstract.scss */
+/* line 77, sass/partials/_abstract.scss */
 .margin-right-0 {
   margin-right: 0;
 }
 
-/* line 68, sass/partials/_abstract.scss */
+/* line 78, sass/partials/_abstract.scss */
 .margin-right-1 {
   margin-right: 1rem;
 }
 
-/* line 69, sass/partials/_abstract.scss */
+/* line 79, sass/partials/_abstract.scss */
 .margin-right-2 {
   margin-right: 2rem;
 }
 
-/* line 70, sass/partials/_abstract.scss */
+/* line 80, sass/partials/_abstract.scss */
 .margin-right-3 {
   margin-right: 3rem;
 }
 
-/* line 71, sass/partials/_abstract.scss */
+/* line 81, sass/partials/_abstract.scss */
 .margin-right-4 {
   margin-right: 4rem;
 }
 
-/* line 73, sass/partials/_abstract.scss */
+/* line 83, sass/partials/_abstract.scss */
 .margin-left-0 {
   margin-left: 0;
 }
 
-/* line 74, sass/partials/_abstract.scss */
+/* line 84, sass/partials/_abstract.scss */
 .margin-left-1 {
   margin-left: 1rem;
 }
 
-/* line 75, sass/partials/_abstract.scss */
+/* line 85, sass/partials/_abstract.scss */
 .margin-left-2 {
   margin-left: 2rem;
 }
 
-/* line 76, sass/partials/_abstract.scss */
+/* line 86, sass/partials/_abstract.scss */
 .margin-left-3 {
   margin-left: 3rem;
 }
 
-/* line 77, sass/partials/_abstract.scss */
+/* line 87, sass/partials/_abstract.scss */
 .margin-left-4 {
   margin-left: 4rem;
 }
 
-/* line 79, sass/partials/_abstract.scss */
+/* line 89, sass/partials/_abstract.scss */
 .margin-bottom-0 {
   margin-bottom: 0;
 }
 
-/* line 80, sass/partials/_abstract.scss */
+/* line 90, sass/partials/_abstract.scss */
 .margin-bottom-1 {
   margin-bottom: 1rem;
 }
 
-/* line 81, sass/partials/_abstract.scss */
+/* line 91, sass/partials/_abstract.scss */
 .margin-bottom-2 {
   margin-bottom: 2rem;
 }
 
-/* line 82, sass/partials/_abstract.scss */
+/* line 92, sass/partials/_abstract.scss */
 .margin-bottom-3 {
   margin-bottom: 3rem;
 }
 
-/* line 83, sass/partials/_abstract.scss */
+/* line 93, sass/partials/_abstract.scss */
 .margin-bottom-4 {
   margin-bottom: 4rem;
 }
 
-/* line 85, sass/partials/_abstract.scss */
+/* line 95, sass/partials/_abstract.scss */
 .margin-top-0, h4.top {
   margin-top: 0;
 }
 
-/* line 86, sass/partials/_abstract.scss */
+/* line 96, sass/partials/_abstract.scss */
 .margin-top-1 {
   margin-top: 1rem;
 }
 
-/* line 87, sass/partials/_abstract.scss */
+/* line 97, sass/partials/_abstract.scss */
 .margin-top-2 {
   margin-top: 2rem;
 }
 
-/* line 88, sass/partials/_abstract.scss */
+/* line 98, sass/partials/_abstract.scss */
 .margin-top-3 {
   margin-top: 3rem;
 }
 
-/* line 89, sass/partials/_abstract.scss */
+/* line 99, sass/partials/_abstract.scss */
 .margin-top-4 {
   margin-top: 4rem;
 }
 
-/* line 92, sass/partials/_abstract.scss */
+/* line 102, sass/partials/_abstract.scss */
 .m-float-left {
   float: left;
 }
 
-/* line 93, sass/partials/_abstract.scss */
+/* line 103, sass/partials/_abstract.scss */
 .m-float-right {
   float: right;
 }
 
-/* line 98, sass/partials/_abstract.scss */
-.radius-v1-small {
+/* line 108, sass/partials/_abstract.scss */
+.radius-v1-small, .successful, .errorred {
   -moz-border-radius-topleft: 1.64rem 1.1rem;
   -webkit-border-top-left-radius: 1.64rem 1.1rem;
   border-top-left-radius: 1.64rem 1.1rem;
@@ -601,7 +655,7 @@ abstract
   border-bottom-left-radius: 0.9rem 1.3rem;
 }
 
-/* line 99, sass/partials/_abstract.scss */
+/* line 109, sass/partials/_abstract.scss */
 .radius-v1-medium {
   -moz-border-radius-topleft: 3.28rem 2.2rem;
   -webkit-border-top-left-radius: 3.28rem 2.2rem;
@@ -617,7 +671,7 @@ abstract
   border-bottom-left-radius: 1.8rem 2.6rem;
 }
 
-/* line 100, sass/partials/_abstract.scss */
+/* line 110, sass/partials/_abstract.scss */
 .radius-v1-large {
   -moz-border-radius-topleft: 6.56rem 4.4rem;
   -webkit-border-top-left-radius: 6.56rem 4.4rem;
@@ -633,7 +687,7 @@ abstract
   border-bottom-left-radius: 3.6rem 5.2rem;
 }
 
-/* line 102, sass/partials/_abstract.scss */
+/* line 112, sass/partials/_abstract.scss */
 .radius-v2-small {
   -moz-border-radius-topleft: 0.7rem 0.6rem;
   -webkit-border-top-left-radius: 0.7rem 0.6rem;
@@ -649,7 +703,7 @@ abstract
   border-bottom-left-radius: 1.6rem 1rem;
 }
 
-/* line 103, sass/partials/_abstract.scss */
+/* line 113, sass/partials/_abstract.scss */
 .radius-v2-medium {
   -moz-border-radius-topleft: 1.4rem 1.2rem;
   -webkit-border-top-left-radius: 1.4rem 1.2rem;
@@ -665,7 +719,7 @@ abstract
   border-bottom-left-radius: 3.2rem 2rem;
 }
 
-/* line 104, sass/partials/_abstract.scss */
+/* line 114, sass/partials/_abstract.scss */
 .radius-v2-large {
   -moz-border-radius-topleft: 2.8rem 2.4rem;
   -webkit-border-top-left-radius: 2.8rem 2.4rem;
@@ -681,7 +735,7 @@ abstract
   border-bottom-left-radius: 6.4rem 4rem;
 }
 
-/* line 106, sass/partials/_abstract.scss */
+/* line 116, sass/partials/_abstract.scss */
 .radius-v3-small, .choose-file-wrapper:after {
   -moz-border-radius-topleft: 0.9rem 1.4rem;
   -webkit-border-top-left-radius: 0.9rem 1.4rem;
@@ -697,7 +751,7 @@ abstract
   border-bottom-left-radius: 0.9rem 0.8rem;
 }
 
-/* line 107, sass/partials/_abstract.scss */
+/* line 117, sass/partials/_abstract.scss */
 .radius-v3-medium {
   -moz-border-radius-topleft: 1.8rem 2.8rem;
   -webkit-border-top-left-radius: 1.8rem 2.8rem;
@@ -713,7 +767,7 @@ abstract
   border-bottom-left-radius: 1.8rem 1.6rem;
 }
 
-/* line 108, sass/partials/_abstract.scss */
+/* line 118, sass/partials/_abstract.scss */
 .radius-v3-large {
   -moz-border-radius-topleft: 3.6rem 5.6rem;
   -webkit-border-top-left-radius: 3.6rem 5.6rem;
@@ -2442,277 +2496,327 @@ h4 span {
 abstract
 ========================================================================== */
 /* line 23, sass/partials/_abstract.scss */
+.pad-tiny, .successful, .errorred {
+  padding: 0.6rem;
+}
+
+/* line 24, sass/partials/_abstract.scss */
 .pad-small, textarea {
   padding: 1.2rem;
 }
 
-/* line 24, sass/partials/_abstract.scss */
+/* line 25, sass/partials/_abstract.scss */
 .pad-medium {
   padding: 1.8rem;
 }
 
-/* line 25, sass/partials/_abstract.scss */
+/* line 26, sass/partials/_abstract.scss */
 .pad-large {
   padding: 2.4rem;
 }
 
-/* line 27, sass/partials/_abstract.scss */
+/* line 28, sass/partials/_abstract.scss */
+.pad-right-tiny {
+  padding-right: 0.6rem;
+}
+
+/* line 29, sass/partials/_abstract.scss */
 .pad-right-small, input[type='text'] {
   padding-right: 1.2rem;
 }
 
-/* line 28, sass/partials/_abstract.scss */
+/* line 30, sass/partials/_abstract.scss */
 .pad-right-medium {
   padding-right: 1.8rem;
 }
 
-/* line 29, sass/partials/_abstract.scss */
+/* line 31, sass/partials/_abstract.scss */
 .pad-right-large {
   padding-right: 2.4rem;
 }
 
-/* line 31, sass/partials/_abstract.scss */
+/* line 33, sass/partials/_abstract.scss */
+.pad-left-tiny {
+  padding-left: 0.6rem;
+}
+
+/* line 34, sass/partials/_abstract.scss */
 .pad-left-small, input[type='text'] {
   padding-left: 1.2rem;
 }
 
-/* line 32, sass/partials/_abstract.scss */
+/* line 35, sass/partials/_abstract.scss */
 .pad-left-medium {
   padding-left: 1.8rem;
 }
 
-/* line 33, sass/partials/_abstract.scss */
+/* line 36, sass/partials/_abstract.scss */
 .pad-left-large {
   padding-left: 2.4rem;
 }
 
-/* line 35, sass/partials/_abstract.scss */
+/* line 38, sass/partials/_abstract.scss */
+.pad-right-0 {
+  padding-right: 0;
+}
+
+/* line 39, sass/partials/_abstract.scss */
 .pad-right-1 {
   padding-right: 1rem;
 }
 
-/* line 36, sass/partials/_abstract.scss */
+/* line 40, sass/partials/_abstract.scss */
 .pad-right-2 {
   padding-right: 2rem;
 }
 
-/* line 37, sass/partials/_abstract.scss */
+/* line 41, sass/partials/_abstract.scss */
 .pad-right-3 {
   padding-right: 3rem;
 }
 
-/* line 38, sass/partials/_abstract.scss */
+/* line 42, sass/partials/_abstract.scss */
 .pad-right-4 {
   padding-right: 4rem;
 }
 
-/* line 40, sass/partials/_abstract.scss */
+/* line 44, sass/partials/_abstract.scss */
+.pad-left-0 {
+  padding-left: 0;
+}
+
+/* line 45, sass/partials/_abstract.scss */
 .pad-left-1 {
   padding-left: 1rem;
 }
 
-/* line 41, sass/partials/_abstract.scss */
+/* line 46, sass/partials/_abstract.scss */
 .pad-left-2 {
   padding-left: 2rem;
 }
 
-/* line 42, sass/partials/_abstract.scss */
+/* line 47, sass/partials/_abstract.scss */
 .pad-left-3 {
   padding-left: 3rem;
 }
 
-/* line 43, sass/partials/_abstract.scss */
+/* line 48, sass/partials/_abstract.scss */
 .pad-left-4 {
   padding-left: 4rem;
 }
 
-/* line 47, sass/partials/_abstract.scss */
+/* line 52, sass/partials/_abstract.scss */
+.margin-tiny {
+  margin: 0.6rem;
+}
+
+/* line 53, sass/partials/_abstract.scss */
 .margin-small {
   margin: 1.2rem;
 }
 
-/* line 48, sass/partials/_abstract.scss */
+/* line 54, sass/partials/_abstract.scss */
 .margin-medium {
   margin: 1.8rem;
 }
 
-/* line 49, sass/partials/_abstract.scss */
+/* line 55, sass/partials/_abstract.scss */
 .margin-large {
   margin: 2.4rem;
 }
 
-/* line 51, sass/partials/_abstract.scss */
+/* line 57, sass/partials/_abstract.scss */
+.margin-right-tiny, .successful span, .errorred span, .successful:before, .errorred:before {
+  margin-right: 0.6rem;
+}
+
+/* line 58, sass/partials/_abstract.scss */
 .margin-right-small, .party-image-selecter {
   margin-right: 1.2rem;
 }
 
-/* line 52, sass/partials/_abstract.scss */
+/* line 59, sass/partials/_abstract.scss */
 .margin-right-medium {
   margin-right: 1.8rem;
 }
 
-/* line 53, sass/partials/_abstract.scss */
+/* line 60, sass/partials/_abstract.scss */
 .margin-right-large {
   margin-right: 2.4rem;
 }
 
-/* line 55, sass/partials/_abstract.scss */
+/* line 62, sass/partials/_abstract.scss */
+.margin-left-tiny {
+  margin-left: 0.6rem;
+}
+
+/* line 63, sass/partials/_abstract.scss */
 .margin-left-small {
   margin-left: 1.2rem;
 }
 
-/* line 56, sass/partials/_abstract.scss */
+/* line 64, sass/partials/_abstract.scss */
 .margin-left-medium {
   margin-left: 1.8rem;
 }
 
-/* line 57, sass/partials/_abstract.scss */
+/* line 65, sass/partials/_abstract.scss */
 .margin-left-large {
   margin-left: 2.4rem;
 }
 
-/* line 59, sass/partials/_abstract.scss */
-.margin-bottom-small, .form-info, .warning {
+/* line 67, sass/partials/_abstract.scss */
+.margin-bottom-tiny {
+  margin-bottom: 0.6rem;
+}
+
+/* line 68, sass/partials/_abstract.scss */
+.margin-bottom-small, .form-info, .warning, .party-image-container .warner, .successful, .errorred {
   margin-bottom: 1.2rem;
 }
 
-/* line 60, sass/partials/_abstract.scss */
+/* line 69, sass/partials/_abstract.scss */
 .margin-bottom-medium, .party-image-container {
   margin-bottom: 1.8rem;
 }
 
-/* line 61, sass/partials/_abstract.scss */
+/* line 70, sass/partials/_abstract.scss */
 .margin-bottom-large {
   margin-bottom: 2.4rem;
 }
 
-/* line 63, sass/partials/_abstract.scss */
-.margin-top-small, .form-info, .warning {
+/* line 72, sass/partials/_abstract.scss */
+.margin-top-tiny {
+  margin-top: 0.6rem;
+}
+
+/* line 73, sass/partials/_abstract.scss */
+.margin-top-small, .form-info, .warning, .party-image-container .warner, .successful, .errorred {
   margin-top: 1.2rem;
 }
 
-/* line 64, sass/partials/_abstract.scss */
+/* line 74, sass/partials/_abstract.scss */
 .margin-top-medium {
   margin-top: 1.8rem;
 }
 
-/* line 65, sass/partials/_abstract.scss */
+/* line 75, sass/partials/_abstract.scss */
 .margin-top-large {
   margin-top: 2.4rem;
 }
 
-/* line 67, sass/partials/_abstract.scss */
+/* line 77, sass/partials/_abstract.scss */
 .margin-right-0 {
   margin-right: 0;
 }
 
-/* line 68, sass/partials/_abstract.scss */
+/* line 78, sass/partials/_abstract.scss */
 .margin-right-1 {
   margin-right: 1rem;
 }
 
-/* line 69, sass/partials/_abstract.scss */
+/* line 79, sass/partials/_abstract.scss */
 .margin-right-2 {
   margin-right: 2rem;
 }
 
-/* line 70, sass/partials/_abstract.scss */
+/* line 80, sass/partials/_abstract.scss */
 .margin-right-3 {
   margin-right: 3rem;
 }
 
-/* line 71, sass/partials/_abstract.scss */
+/* line 81, sass/partials/_abstract.scss */
 .margin-right-4 {
   margin-right: 4rem;
 }
 
-/* line 73, sass/partials/_abstract.scss */
+/* line 83, sass/partials/_abstract.scss */
 .margin-left-0 {
   margin-left: 0;
 }
 
-/* line 74, sass/partials/_abstract.scss */
+/* line 84, sass/partials/_abstract.scss */
 .margin-left-1 {
   margin-left: 1rem;
 }
 
-/* line 75, sass/partials/_abstract.scss */
+/* line 85, sass/partials/_abstract.scss */
 .margin-left-2 {
   margin-left: 2rem;
 }
 
-/* line 76, sass/partials/_abstract.scss */
+/* line 86, sass/partials/_abstract.scss */
 .margin-left-3 {
   margin-left: 3rem;
 }
 
-/* line 77, sass/partials/_abstract.scss */
+/* line 87, sass/partials/_abstract.scss */
 .margin-left-4 {
   margin-left: 4rem;
 }
 
-/* line 79, sass/partials/_abstract.scss */
+/* line 89, sass/partials/_abstract.scss */
 .margin-bottom-0 {
   margin-bottom: 0;
 }
 
-/* line 80, sass/partials/_abstract.scss */
+/* line 90, sass/partials/_abstract.scss */
 .margin-bottom-1 {
   margin-bottom: 1rem;
 }
 
-/* line 81, sass/partials/_abstract.scss */
+/* line 91, sass/partials/_abstract.scss */
 .margin-bottom-2 {
   margin-bottom: 2rem;
 }
 
-/* line 82, sass/partials/_abstract.scss */
+/* line 92, sass/partials/_abstract.scss */
 .margin-bottom-3 {
   margin-bottom: 3rem;
 }
 
-/* line 83, sass/partials/_abstract.scss */
+/* line 93, sass/partials/_abstract.scss */
 .margin-bottom-4 {
   margin-bottom: 4rem;
 }
 
-/* line 85, sass/partials/_abstract.scss */
+/* line 95, sass/partials/_abstract.scss */
 .margin-top-0, h4.top {
   margin-top: 0;
 }
 
-/* line 86, sass/partials/_abstract.scss */
+/* line 96, sass/partials/_abstract.scss */
 .margin-top-1 {
   margin-top: 1rem;
 }
 
-/* line 87, sass/partials/_abstract.scss */
+/* line 97, sass/partials/_abstract.scss */
 .margin-top-2 {
   margin-top: 2rem;
 }
 
-/* line 88, sass/partials/_abstract.scss */
+/* line 98, sass/partials/_abstract.scss */
 .margin-top-3 {
   margin-top: 3rem;
 }
 
-/* line 89, sass/partials/_abstract.scss */
+/* line 99, sass/partials/_abstract.scss */
 .margin-top-4 {
   margin-top: 4rem;
 }
 
-/* line 92, sass/partials/_abstract.scss */
+/* line 102, sass/partials/_abstract.scss */
 .m-float-left {
   float: left;
 }
 
-/* line 93, sass/partials/_abstract.scss */
+/* line 103, sass/partials/_abstract.scss */
 .m-float-right {
   float: right;
 }
 
-/* line 98, sass/partials/_abstract.scss */
-.radius-v1-small {
+/* line 108, sass/partials/_abstract.scss */
+.radius-v1-small, .successful, .errorred {
   -moz-border-radius-topleft: 1.64rem 1.1rem;
   -webkit-border-top-left-radius: 1.64rem 1.1rem;
   border-top-left-radius: 1.64rem 1.1rem;
@@ -2727,7 +2831,7 @@ abstract
   border-bottom-left-radius: 0.9rem 1.3rem;
 }
 
-/* line 99, sass/partials/_abstract.scss */
+/* line 109, sass/partials/_abstract.scss */
 .radius-v1-medium {
   -moz-border-radius-topleft: 3.28rem 2.2rem;
   -webkit-border-top-left-radius: 3.28rem 2.2rem;
@@ -2743,7 +2847,7 @@ abstract
   border-bottom-left-radius: 1.8rem 2.6rem;
 }
 
-/* line 100, sass/partials/_abstract.scss */
+/* line 110, sass/partials/_abstract.scss */
 .radius-v1-large {
   -moz-border-radius-topleft: 6.56rem 4.4rem;
   -webkit-border-top-left-radius: 6.56rem 4.4rem;
@@ -2759,7 +2863,7 @@ abstract
   border-bottom-left-radius: 3.6rem 5.2rem;
 }
 
-/* line 102, sass/partials/_abstract.scss */
+/* line 112, sass/partials/_abstract.scss */
 .radius-v2-small {
   -moz-border-radius-topleft: 0.7rem 0.6rem;
   -webkit-border-top-left-radius: 0.7rem 0.6rem;
@@ -2775,7 +2879,7 @@ abstract
   border-bottom-left-radius: 1.6rem 1rem;
 }
 
-/* line 103, sass/partials/_abstract.scss */
+/* line 113, sass/partials/_abstract.scss */
 .radius-v2-medium {
   -moz-border-radius-topleft: 1.4rem 1.2rem;
   -webkit-border-top-left-radius: 1.4rem 1.2rem;
@@ -2791,7 +2895,7 @@ abstract
   border-bottom-left-radius: 3.2rem 2rem;
 }
 
-/* line 104, sass/partials/_abstract.scss */
+/* line 114, sass/partials/_abstract.scss */
 .radius-v2-large {
   -moz-border-radius-topleft: 2.8rem 2.4rem;
   -webkit-border-top-left-radius: 2.8rem 2.4rem;
@@ -2807,7 +2911,7 @@ abstract
   border-bottom-left-radius: 6.4rem 4rem;
 }
 
-/* line 106, sass/partials/_abstract.scss */
+/* line 116, sass/partials/_abstract.scss */
 .radius-v3-small, .choose-file-wrapper:after {
   -moz-border-radius-topleft: 0.9rem 1.4rem;
   -webkit-border-top-left-radius: 0.9rem 1.4rem;
@@ -2823,7 +2927,7 @@ abstract
   border-bottom-left-radius: 0.9rem 0.8rem;
 }
 
-/* line 107, sass/partials/_abstract.scss */
+/* line 117, sass/partials/_abstract.scss */
 .radius-v3-medium {
   -moz-border-radius-topleft: 1.8rem 2.8rem;
   -webkit-border-top-left-radius: 1.8rem 2.8rem;
@@ -2839,7 +2943,7 @@ abstract
   border-bottom-left-radius: 1.8rem 1.6rem;
 }
 
-/* line 108, sass/partials/_abstract.scss */
+/* line 118, sass/partials/_abstract.scss */
 .radius-v3-large {
   -moz-border-radius-topleft: 3.6rem 5.6rem;
   -webkit-border-top-left-radius: 3.6rem 5.6rem;
@@ -2992,6 +3096,8 @@ Colours
 ========================================================================== */
 /* Links */
 /* Greys */
+/* Reds */
+/* Green */
 /* =============================================================================
 Borders
 ========================================================================== */
@@ -3061,53 +3167,76 @@ Media query variables
 }
 
 /* line 94, sass/partials/_forms.scss */
-.warning {
-  color: red;
+.warning, .party-image-container .warner {
+  color: #E32333;
 }
 
-/* line 103, sass/partials/_forms.scss */
+/* line 99, sass/partials/_forms.scss */
+.successful, .errorred {
+  color: #00A246;
+  background-color: #D1E8B2;
+  text-align: center;
+}
+/* line 110, sass/partials/_forms.scss */
+.successful:before, .errorred:before {
+  font-family: "icomoon";
+  content: "\e61f";
+}
+
+/* line 118, sass/partials/_forms.scss */
+.errorred {
+  color: #E32333;
+  background-color: #FCE9EA;
+}
+/* line 123, sass/partials/_forms.scss */
+.errorred:before {
+  font-family: "icomoon";
+  content: "\e620";
+}
+
+/* line 132, sass/partials/_forms.scss */
 .form-holder {
   max-width: 50rem;
 }
 
-/* line 109, sass/partials/_forms.scss */
+/* line 138, sass/partials/_forms.scss */
 label {
   text-transform: uppercase;
   color: #7B7A6D;
   font-weight: bold;
   line-height: 3rem;
 }
-/* line 116, sass/partials/_forms.scss */
+/* line 145, sass/partials/_forms.scss */
 label span {
   text-transform: none;
   color: #A19F91;
 }
 
-/* line 123, sass/partials/_forms.scss */
+/* line 152, sass/partials/_forms.scss */
 textarea {
   width: 100%;
   height: 15rem;
   resize: none;
 }
 
-/* line 130, sass/partials/_forms.scss */
+/* line 159, sass/partials/_forms.scss */
 input[type='text'] {
   width: 100%;
   height: 5rem;
   line-height: 5rem;
 }
 
-/* line 138, sass/partials/_forms.scss */
+/* line 167, sass/partials/_forms.scss */
 input[type='text'], textarea {
   border: 0.1rem solid #D4D3CC;
 }
 
-/* line 142, sass/partials/_forms.scss */
+/* line 171, sass/partials/_forms.scss */
 input[type="text"][readonly] {
   cursor: pointer;
 }
 
-/* line 146, sass/partials/_forms.scss */
+/* line 175, sass/partials/_forms.scss */
 input[type=submit][disabled=disabled],
 input[type=submit][disabled=disabled]:hover,
 button[disabled=disabled],
@@ -3117,7 +3246,7 @@ button[disabled=disabled]:hover {
   cursor: default;
 }
 
-/* line 157, sass/partials/_forms.scss */
+/* line 186, sass/partials/_forms.scss */
 .choose-file-wrapper {
   width: 14rem;
   height: 4rem;
@@ -3125,7 +3254,7 @@ button[disabled=disabled]:hover {
   position: relative;
   cursor: pointer;
 }
-/* line 165, sass/partials/_forms.scss */
+/* line 194, sass/partials/_forms.scss */
 .choose-file-wrapper:before {
   position: relative;
   z-index: 10;
@@ -3135,7 +3264,7 @@ button[disabled=disabled]:hover {
   font-size: 1.4rem;
   line-height: 3.8rem;
 }
-/* line 175, sass/partials/_forms.scss */
+/* line 204, sass/partials/_forms.scss */
 .choose-file-wrapper:after {
   content: "Upload file";
   position: absolute;
@@ -3148,7 +3277,7 @@ button[disabled=disabled]:hover {
   line-height: 1.6rem;
 }
 
-/* line 195, sass/partials/_forms.scss */
+/* line 224, sass/partials/_forms.scss */
 .choose-file {
   width: 200%;
   height: 100%;
@@ -3459,6 +3588,8 @@ Colours
 ========================================================================== */
 /* Links */
 /* Greys */
+/* Reds */
+/* Green */
 /* =============================================================================
 Borders
 ========================================================================== */
@@ -3580,7 +3711,7 @@ Font Sizes
 }
 
 /* line 507, sass/partials/_helpers.scss */
-.body-small, .form-info, .warning, label, .file-upload-info, .wall-details {
+.body-small, .form-info, .warning, .party-image-container .warner, .successful, .errorred, label, .file-upload-info, .wall-details {
   font-size: 1.4rem;
 }
 
@@ -3662,277 +3793,327 @@ Project Specific helpers
 abstract
 ========================================================================== */
 /* line 23, sass/partials/_abstract.scss */
+.pad-tiny, .successful, .errorred {
+  padding: 0.6rem;
+}
+
+/* line 24, sass/partials/_abstract.scss */
 .pad-small, textarea {
   padding: 1.2rem;
 }
 
-/* line 24, sass/partials/_abstract.scss */
+/* line 25, sass/partials/_abstract.scss */
 .pad-medium {
   padding: 1.8rem;
 }
 
-/* line 25, sass/partials/_abstract.scss */
+/* line 26, sass/partials/_abstract.scss */
 .pad-large {
   padding: 2.4rem;
 }
 
-/* line 27, sass/partials/_abstract.scss */
+/* line 28, sass/partials/_abstract.scss */
+.pad-right-tiny {
+  padding-right: 0.6rem;
+}
+
+/* line 29, sass/partials/_abstract.scss */
 .pad-right-small, input[type='text'] {
   padding-right: 1.2rem;
 }
 
-/* line 28, sass/partials/_abstract.scss */
+/* line 30, sass/partials/_abstract.scss */
 .pad-right-medium {
   padding-right: 1.8rem;
 }
 
-/* line 29, sass/partials/_abstract.scss */
+/* line 31, sass/partials/_abstract.scss */
 .pad-right-large {
   padding-right: 2.4rem;
 }
 
-/* line 31, sass/partials/_abstract.scss */
+/* line 33, sass/partials/_abstract.scss */
+.pad-left-tiny {
+  padding-left: 0.6rem;
+}
+
+/* line 34, sass/partials/_abstract.scss */
 .pad-left-small, input[type='text'] {
   padding-left: 1.2rem;
 }
 
-/* line 32, sass/partials/_abstract.scss */
+/* line 35, sass/partials/_abstract.scss */
 .pad-left-medium {
   padding-left: 1.8rem;
 }
 
-/* line 33, sass/partials/_abstract.scss */
+/* line 36, sass/partials/_abstract.scss */
 .pad-left-large {
   padding-left: 2.4rem;
 }
 
-/* line 35, sass/partials/_abstract.scss */
+/* line 38, sass/partials/_abstract.scss */
+.pad-right-0 {
+  padding-right: 0;
+}
+
+/* line 39, sass/partials/_abstract.scss */
 .pad-right-1 {
   padding-right: 1rem;
 }
 
-/* line 36, sass/partials/_abstract.scss */
+/* line 40, sass/partials/_abstract.scss */
 .pad-right-2 {
   padding-right: 2rem;
 }
 
-/* line 37, sass/partials/_abstract.scss */
+/* line 41, sass/partials/_abstract.scss */
 .pad-right-3 {
   padding-right: 3rem;
 }
 
-/* line 38, sass/partials/_abstract.scss */
+/* line 42, sass/partials/_abstract.scss */
 .pad-right-4 {
   padding-right: 4rem;
 }
 
-/* line 40, sass/partials/_abstract.scss */
+/* line 44, sass/partials/_abstract.scss */
+.pad-left-0 {
+  padding-left: 0;
+}
+
+/* line 45, sass/partials/_abstract.scss */
 .pad-left-1 {
   padding-left: 1rem;
 }
 
-/* line 41, sass/partials/_abstract.scss */
+/* line 46, sass/partials/_abstract.scss */
 .pad-left-2 {
   padding-left: 2rem;
 }
 
-/* line 42, sass/partials/_abstract.scss */
+/* line 47, sass/partials/_abstract.scss */
 .pad-left-3 {
   padding-left: 3rem;
 }
 
-/* line 43, sass/partials/_abstract.scss */
+/* line 48, sass/partials/_abstract.scss */
 .pad-left-4 {
   padding-left: 4rem;
 }
 
-/* line 47, sass/partials/_abstract.scss */
+/* line 52, sass/partials/_abstract.scss */
+.margin-tiny {
+  margin: 0.6rem;
+}
+
+/* line 53, sass/partials/_abstract.scss */
 .margin-small {
   margin: 1.2rem;
 }
 
-/* line 48, sass/partials/_abstract.scss */
+/* line 54, sass/partials/_abstract.scss */
 .margin-medium {
   margin: 1.8rem;
 }
 
-/* line 49, sass/partials/_abstract.scss */
+/* line 55, sass/partials/_abstract.scss */
 .margin-large {
   margin: 2.4rem;
 }
 
-/* line 51, sass/partials/_abstract.scss */
+/* line 57, sass/partials/_abstract.scss */
+.margin-right-tiny, .successful span, .errorred span, .successful:before, .errorred:before {
+  margin-right: 0.6rem;
+}
+
+/* line 58, sass/partials/_abstract.scss */
 .margin-right-small, .party-image-selecter {
   margin-right: 1.2rem;
 }
 
-/* line 52, sass/partials/_abstract.scss */
+/* line 59, sass/partials/_abstract.scss */
 .margin-right-medium {
   margin-right: 1.8rem;
 }
 
-/* line 53, sass/partials/_abstract.scss */
+/* line 60, sass/partials/_abstract.scss */
 .margin-right-large {
   margin-right: 2.4rem;
 }
 
-/* line 55, sass/partials/_abstract.scss */
+/* line 62, sass/partials/_abstract.scss */
+.margin-left-tiny {
+  margin-left: 0.6rem;
+}
+
+/* line 63, sass/partials/_abstract.scss */
 .margin-left-small {
   margin-left: 1.2rem;
 }
 
-/* line 56, sass/partials/_abstract.scss */
+/* line 64, sass/partials/_abstract.scss */
 .margin-left-medium {
   margin-left: 1.8rem;
 }
 
-/* line 57, sass/partials/_abstract.scss */
+/* line 65, sass/partials/_abstract.scss */
 .margin-left-large {
   margin-left: 2.4rem;
 }
 
-/* line 59, sass/partials/_abstract.scss */
-.margin-bottom-small, .form-info, .warning {
+/* line 67, sass/partials/_abstract.scss */
+.margin-bottom-tiny {
+  margin-bottom: 0.6rem;
+}
+
+/* line 68, sass/partials/_abstract.scss */
+.margin-bottom-small, .form-info, .warning, .party-image-container .warner, .successful, .errorred {
   margin-bottom: 1.2rem;
 }
 
-/* line 60, sass/partials/_abstract.scss */
+/* line 69, sass/partials/_abstract.scss */
 .margin-bottom-medium, .party-image-container {
   margin-bottom: 1.8rem;
 }
 
-/* line 61, sass/partials/_abstract.scss */
+/* line 70, sass/partials/_abstract.scss */
 .margin-bottom-large {
   margin-bottom: 2.4rem;
 }
 
-/* line 63, sass/partials/_abstract.scss */
-.margin-top-small, .form-info, .warning {
+/* line 72, sass/partials/_abstract.scss */
+.margin-top-tiny {
+  margin-top: 0.6rem;
+}
+
+/* line 73, sass/partials/_abstract.scss */
+.margin-top-small, .form-info, .warning, .party-image-container .warner, .successful, .errorred {
   margin-top: 1.2rem;
 }
 
-/* line 64, sass/partials/_abstract.scss */
+/* line 74, sass/partials/_abstract.scss */
 .margin-top-medium {
   margin-top: 1.8rem;
 }
 
-/* line 65, sass/partials/_abstract.scss */
+/* line 75, sass/partials/_abstract.scss */
 .margin-top-large {
   margin-top: 2.4rem;
 }
 
-/* line 67, sass/partials/_abstract.scss */
+/* line 77, sass/partials/_abstract.scss */
 .margin-right-0 {
   margin-right: 0;
 }
 
-/* line 68, sass/partials/_abstract.scss */
+/* line 78, sass/partials/_abstract.scss */
 .margin-right-1 {
   margin-right: 1rem;
 }
 
-/* line 69, sass/partials/_abstract.scss */
+/* line 79, sass/partials/_abstract.scss */
 .margin-right-2 {
   margin-right: 2rem;
 }
 
-/* line 70, sass/partials/_abstract.scss */
+/* line 80, sass/partials/_abstract.scss */
 .margin-right-3 {
   margin-right: 3rem;
 }
 
-/* line 71, sass/partials/_abstract.scss */
+/* line 81, sass/partials/_abstract.scss */
 .margin-right-4 {
   margin-right: 4rem;
 }
 
-/* line 73, sass/partials/_abstract.scss */
+/* line 83, sass/partials/_abstract.scss */
 .margin-left-0 {
   margin-left: 0;
 }
 
-/* line 74, sass/partials/_abstract.scss */
+/* line 84, sass/partials/_abstract.scss */
 .margin-left-1 {
   margin-left: 1rem;
 }
 
-/* line 75, sass/partials/_abstract.scss */
+/* line 85, sass/partials/_abstract.scss */
 .margin-left-2 {
   margin-left: 2rem;
 }
 
-/* line 76, sass/partials/_abstract.scss */
+/* line 86, sass/partials/_abstract.scss */
 .margin-left-3 {
   margin-left: 3rem;
 }
 
-/* line 77, sass/partials/_abstract.scss */
+/* line 87, sass/partials/_abstract.scss */
 .margin-left-4 {
   margin-left: 4rem;
 }
 
-/* line 79, sass/partials/_abstract.scss */
+/* line 89, sass/partials/_abstract.scss */
 .margin-bottom-0 {
   margin-bottom: 0;
 }
 
-/* line 80, sass/partials/_abstract.scss */
+/* line 90, sass/partials/_abstract.scss */
 .margin-bottom-1 {
   margin-bottom: 1rem;
 }
 
-/* line 81, sass/partials/_abstract.scss */
+/* line 91, sass/partials/_abstract.scss */
 .margin-bottom-2 {
   margin-bottom: 2rem;
 }
 
-/* line 82, sass/partials/_abstract.scss */
+/* line 92, sass/partials/_abstract.scss */
 .margin-bottom-3 {
   margin-bottom: 3rem;
 }
 
-/* line 83, sass/partials/_abstract.scss */
+/* line 93, sass/partials/_abstract.scss */
 .margin-bottom-4 {
   margin-bottom: 4rem;
 }
 
-/* line 85, sass/partials/_abstract.scss */
+/* line 95, sass/partials/_abstract.scss */
 .margin-top-0, h4.top {
   margin-top: 0;
 }
 
-/* line 86, sass/partials/_abstract.scss */
+/* line 96, sass/partials/_abstract.scss */
 .margin-top-1 {
   margin-top: 1rem;
 }
 
-/* line 87, sass/partials/_abstract.scss */
+/* line 97, sass/partials/_abstract.scss */
 .margin-top-2 {
   margin-top: 2rem;
 }
 
-/* line 88, sass/partials/_abstract.scss */
+/* line 98, sass/partials/_abstract.scss */
 .margin-top-3 {
   margin-top: 3rem;
 }
 
-/* line 89, sass/partials/_abstract.scss */
+/* line 99, sass/partials/_abstract.scss */
 .margin-top-4 {
   margin-top: 4rem;
 }
 
-/* line 92, sass/partials/_abstract.scss */
+/* line 102, sass/partials/_abstract.scss */
 .m-float-left {
   float: left;
 }
 
-/* line 93, sass/partials/_abstract.scss */
+/* line 103, sass/partials/_abstract.scss */
 .m-float-right {
   float: right;
 }
 
-/* line 98, sass/partials/_abstract.scss */
-.radius-v1-small {
+/* line 108, sass/partials/_abstract.scss */
+.radius-v1-small, .successful, .errorred {
   -moz-border-radius-topleft: 1.64rem 1.1rem;
   -webkit-border-top-left-radius: 1.64rem 1.1rem;
   border-top-left-radius: 1.64rem 1.1rem;
@@ -3947,7 +4128,7 @@ abstract
   border-bottom-left-radius: 0.9rem 1.3rem;
 }
 
-/* line 99, sass/partials/_abstract.scss */
+/* line 109, sass/partials/_abstract.scss */
 .radius-v1-medium {
   -moz-border-radius-topleft: 3.28rem 2.2rem;
   -webkit-border-top-left-radius: 3.28rem 2.2rem;
@@ -3963,7 +4144,7 @@ abstract
   border-bottom-left-radius: 1.8rem 2.6rem;
 }
 
-/* line 100, sass/partials/_abstract.scss */
+/* line 110, sass/partials/_abstract.scss */
 .radius-v1-large {
   -moz-border-radius-topleft: 6.56rem 4.4rem;
   -webkit-border-top-left-radius: 6.56rem 4.4rem;
@@ -3979,7 +4160,7 @@ abstract
   border-bottom-left-radius: 3.6rem 5.2rem;
 }
 
-/* line 102, sass/partials/_abstract.scss */
+/* line 112, sass/partials/_abstract.scss */
 .radius-v2-small {
   -moz-border-radius-topleft: 0.7rem 0.6rem;
   -webkit-border-top-left-radius: 0.7rem 0.6rem;
@@ -3995,7 +4176,7 @@ abstract
   border-bottom-left-radius: 1.6rem 1rem;
 }
 
-/* line 103, sass/partials/_abstract.scss */
+/* line 113, sass/partials/_abstract.scss */
 .radius-v2-medium {
   -moz-border-radius-topleft: 1.4rem 1.2rem;
   -webkit-border-top-left-radius: 1.4rem 1.2rem;
@@ -4011,7 +4192,7 @@ abstract
   border-bottom-left-radius: 3.2rem 2rem;
 }
 
-/* line 104, sass/partials/_abstract.scss */
+/* line 114, sass/partials/_abstract.scss */
 .radius-v2-large {
   -moz-border-radius-topleft: 2.8rem 2.4rem;
   -webkit-border-top-left-radius: 2.8rem 2.4rem;
@@ -4027,7 +4208,7 @@ abstract
   border-bottom-left-radius: 6.4rem 4rem;
 }
 
-/* line 106, sass/partials/_abstract.scss */
+/* line 116, sass/partials/_abstract.scss */
 .radius-v3-small, .choose-file-wrapper:after {
   -moz-border-radius-topleft: 0.9rem 1.4rem;
   -webkit-border-top-left-radius: 0.9rem 1.4rem;
@@ -4043,7 +4224,7 @@ abstract
   border-bottom-left-radius: 0.9rem 0.8rem;
 }
 
-/* line 107, sass/partials/_abstract.scss */
+/* line 117, sass/partials/_abstract.scss */
 .radius-v3-medium {
   -moz-border-radius-topleft: 1.8rem 2.8rem;
   -webkit-border-top-left-radius: 1.8rem 2.8rem;
@@ -4059,7 +4240,7 @@ abstract
   border-bottom-left-radius: 1.8rem 1.6rem;
 }
 
-/* line 108, sass/partials/_abstract.scss */
+/* line 118, sass/partials/_abstract.scss */
 .radius-v3-large {
   -moz-border-radius-topleft: 3.6rem 5.6rem;
   -webkit-border-top-left-radius: 3.6rem 5.6rem;
@@ -4094,277 +4275,327 @@ abstract
 abstract
 ========================================================================== */
 /* line 23, sass/partials/_abstract.scss */
+.pad-tiny, .successful, .errorred {
+  padding: 0.6rem;
+}
+
+/* line 24, sass/partials/_abstract.scss */
 .pad-small, textarea {
   padding: 1.2rem;
 }
 
-/* line 24, sass/partials/_abstract.scss */
+/* line 25, sass/partials/_abstract.scss */
 .pad-medium {
   padding: 1.8rem;
 }
 
-/* line 25, sass/partials/_abstract.scss */
+/* line 26, sass/partials/_abstract.scss */
 .pad-large {
   padding: 2.4rem;
 }
 
-/* line 27, sass/partials/_abstract.scss */
+/* line 28, sass/partials/_abstract.scss */
+.pad-right-tiny {
+  padding-right: 0.6rem;
+}
+
+/* line 29, sass/partials/_abstract.scss */
 .pad-right-small, input[type='text'] {
   padding-right: 1.2rem;
 }
 
-/* line 28, sass/partials/_abstract.scss */
+/* line 30, sass/partials/_abstract.scss */
 .pad-right-medium {
   padding-right: 1.8rem;
 }
 
-/* line 29, sass/partials/_abstract.scss */
+/* line 31, sass/partials/_abstract.scss */
 .pad-right-large {
   padding-right: 2.4rem;
 }
 
-/* line 31, sass/partials/_abstract.scss */
+/* line 33, sass/partials/_abstract.scss */
+.pad-left-tiny {
+  padding-left: 0.6rem;
+}
+
+/* line 34, sass/partials/_abstract.scss */
 .pad-left-small, input[type='text'] {
   padding-left: 1.2rem;
 }
 
-/* line 32, sass/partials/_abstract.scss */
+/* line 35, sass/partials/_abstract.scss */
 .pad-left-medium {
   padding-left: 1.8rem;
 }
 
-/* line 33, sass/partials/_abstract.scss */
+/* line 36, sass/partials/_abstract.scss */
 .pad-left-large {
   padding-left: 2.4rem;
 }
 
-/* line 35, sass/partials/_abstract.scss */
+/* line 38, sass/partials/_abstract.scss */
+.pad-right-0 {
+  padding-right: 0;
+}
+
+/* line 39, sass/partials/_abstract.scss */
 .pad-right-1 {
   padding-right: 1rem;
 }
 
-/* line 36, sass/partials/_abstract.scss */
+/* line 40, sass/partials/_abstract.scss */
 .pad-right-2 {
   padding-right: 2rem;
 }
 
-/* line 37, sass/partials/_abstract.scss */
+/* line 41, sass/partials/_abstract.scss */
 .pad-right-3 {
   padding-right: 3rem;
 }
 
-/* line 38, sass/partials/_abstract.scss */
+/* line 42, sass/partials/_abstract.scss */
 .pad-right-4 {
   padding-right: 4rem;
 }
 
-/* line 40, sass/partials/_abstract.scss */
+/* line 44, sass/partials/_abstract.scss */
+.pad-left-0 {
+  padding-left: 0;
+}
+
+/* line 45, sass/partials/_abstract.scss */
 .pad-left-1 {
   padding-left: 1rem;
 }
 
-/* line 41, sass/partials/_abstract.scss */
+/* line 46, sass/partials/_abstract.scss */
 .pad-left-2 {
   padding-left: 2rem;
 }
 
-/* line 42, sass/partials/_abstract.scss */
+/* line 47, sass/partials/_abstract.scss */
 .pad-left-3 {
   padding-left: 3rem;
 }
 
-/* line 43, sass/partials/_abstract.scss */
+/* line 48, sass/partials/_abstract.scss */
 .pad-left-4 {
   padding-left: 4rem;
 }
 
-/* line 47, sass/partials/_abstract.scss */
+/* line 52, sass/partials/_abstract.scss */
+.margin-tiny {
+  margin: 0.6rem;
+}
+
+/* line 53, sass/partials/_abstract.scss */
 .margin-small {
   margin: 1.2rem;
 }
 
-/* line 48, sass/partials/_abstract.scss */
+/* line 54, sass/partials/_abstract.scss */
 .margin-medium {
   margin: 1.8rem;
 }
 
-/* line 49, sass/partials/_abstract.scss */
+/* line 55, sass/partials/_abstract.scss */
 .margin-large {
   margin: 2.4rem;
 }
 
-/* line 51, sass/partials/_abstract.scss */
+/* line 57, sass/partials/_abstract.scss */
+.margin-right-tiny, .successful span, .errorred span, .successful:before, .errorred:before {
+  margin-right: 0.6rem;
+}
+
+/* line 58, sass/partials/_abstract.scss */
 .margin-right-small, .party-image-selecter {
   margin-right: 1.2rem;
 }
 
-/* line 52, sass/partials/_abstract.scss */
+/* line 59, sass/partials/_abstract.scss */
 .margin-right-medium {
   margin-right: 1.8rem;
 }
 
-/* line 53, sass/partials/_abstract.scss */
+/* line 60, sass/partials/_abstract.scss */
 .margin-right-large {
   margin-right: 2.4rem;
 }
 
-/* line 55, sass/partials/_abstract.scss */
+/* line 62, sass/partials/_abstract.scss */
+.margin-left-tiny {
+  margin-left: 0.6rem;
+}
+
+/* line 63, sass/partials/_abstract.scss */
 .margin-left-small {
   margin-left: 1.2rem;
 }
 
-/* line 56, sass/partials/_abstract.scss */
+/* line 64, sass/partials/_abstract.scss */
 .margin-left-medium {
   margin-left: 1.8rem;
 }
 
-/* line 57, sass/partials/_abstract.scss */
+/* line 65, sass/partials/_abstract.scss */
 .margin-left-large {
   margin-left: 2.4rem;
 }
 
-/* line 59, sass/partials/_abstract.scss */
-.margin-bottom-small, .form-info, .warning {
+/* line 67, sass/partials/_abstract.scss */
+.margin-bottom-tiny {
+  margin-bottom: 0.6rem;
+}
+
+/* line 68, sass/partials/_abstract.scss */
+.margin-bottom-small, .form-info, .warning, .party-image-container .warner, .successful, .errorred {
   margin-bottom: 1.2rem;
 }
 
-/* line 60, sass/partials/_abstract.scss */
+/* line 69, sass/partials/_abstract.scss */
 .margin-bottom-medium, .party-image-container {
   margin-bottom: 1.8rem;
 }
 
-/* line 61, sass/partials/_abstract.scss */
+/* line 70, sass/partials/_abstract.scss */
 .margin-bottom-large {
   margin-bottom: 2.4rem;
 }
 
-/* line 63, sass/partials/_abstract.scss */
-.margin-top-small, .form-info, .warning {
+/* line 72, sass/partials/_abstract.scss */
+.margin-top-tiny {
+  margin-top: 0.6rem;
+}
+
+/* line 73, sass/partials/_abstract.scss */
+.margin-top-small, .form-info, .warning, .party-image-container .warner, .successful, .errorred {
   margin-top: 1.2rem;
 }
 
-/* line 64, sass/partials/_abstract.scss */
+/* line 74, sass/partials/_abstract.scss */
 .margin-top-medium {
   margin-top: 1.8rem;
 }
 
-/* line 65, sass/partials/_abstract.scss */
+/* line 75, sass/partials/_abstract.scss */
 .margin-top-large {
   margin-top: 2.4rem;
 }
 
-/* line 67, sass/partials/_abstract.scss */
+/* line 77, sass/partials/_abstract.scss */
 .margin-right-0 {
   margin-right: 0;
 }
 
-/* line 68, sass/partials/_abstract.scss */
+/* line 78, sass/partials/_abstract.scss */
 .margin-right-1 {
   margin-right: 1rem;
 }
 
-/* line 69, sass/partials/_abstract.scss */
+/* line 79, sass/partials/_abstract.scss */
 .margin-right-2 {
   margin-right: 2rem;
 }
 
-/* line 70, sass/partials/_abstract.scss */
+/* line 80, sass/partials/_abstract.scss */
 .margin-right-3 {
   margin-right: 3rem;
 }
 
-/* line 71, sass/partials/_abstract.scss */
+/* line 81, sass/partials/_abstract.scss */
 .margin-right-4 {
   margin-right: 4rem;
 }
 
-/* line 73, sass/partials/_abstract.scss */
+/* line 83, sass/partials/_abstract.scss */
 .margin-left-0 {
   margin-left: 0;
 }
 
-/* line 74, sass/partials/_abstract.scss */
+/* line 84, sass/partials/_abstract.scss */
 .margin-left-1 {
   margin-left: 1rem;
 }
 
-/* line 75, sass/partials/_abstract.scss */
+/* line 85, sass/partials/_abstract.scss */
 .margin-left-2 {
   margin-left: 2rem;
 }
 
-/* line 76, sass/partials/_abstract.scss */
+/* line 86, sass/partials/_abstract.scss */
 .margin-left-3 {
   margin-left: 3rem;
 }
 
-/* line 77, sass/partials/_abstract.scss */
+/* line 87, sass/partials/_abstract.scss */
 .margin-left-4 {
   margin-left: 4rem;
 }
 
-/* line 79, sass/partials/_abstract.scss */
+/* line 89, sass/partials/_abstract.scss */
 .margin-bottom-0 {
   margin-bottom: 0;
 }
 
-/* line 80, sass/partials/_abstract.scss */
+/* line 90, sass/partials/_abstract.scss */
 .margin-bottom-1 {
   margin-bottom: 1rem;
 }
 
-/* line 81, sass/partials/_abstract.scss */
+/* line 91, sass/partials/_abstract.scss */
 .margin-bottom-2 {
   margin-bottom: 2rem;
 }
 
-/* line 82, sass/partials/_abstract.scss */
+/* line 92, sass/partials/_abstract.scss */
 .margin-bottom-3 {
   margin-bottom: 3rem;
 }
 
-/* line 83, sass/partials/_abstract.scss */
+/* line 93, sass/partials/_abstract.scss */
 .margin-bottom-4 {
   margin-bottom: 4rem;
 }
 
-/* line 85, sass/partials/_abstract.scss */
+/* line 95, sass/partials/_abstract.scss */
 .margin-top-0, h4.top {
   margin-top: 0;
 }
 
-/* line 86, sass/partials/_abstract.scss */
+/* line 96, sass/partials/_abstract.scss */
 .margin-top-1 {
   margin-top: 1rem;
 }
 
-/* line 87, sass/partials/_abstract.scss */
+/* line 97, sass/partials/_abstract.scss */
 .margin-top-2 {
   margin-top: 2rem;
 }
 
-/* line 88, sass/partials/_abstract.scss */
+/* line 98, sass/partials/_abstract.scss */
 .margin-top-3 {
   margin-top: 3rem;
 }
 
-/* line 89, sass/partials/_abstract.scss */
+/* line 99, sass/partials/_abstract.scss */
 .margin-top-4 {
   margin-top: 4rem;
 }
 
-/* line 92, sass/partials/_abstract.scss */
+/* line 102, sass/partials/_abstract.scss */
 .m-float-left {
   float: left;
 }
 
-/* line 93, sass/partials/_abstract.scss */
+/* line 103, sass/partials/_abstract.scss */
 .m-float-right {
   float: right;
 }
 
-/* line 98, sass/partials/_abstract.scss */
-.radius-v1-small {
+/* line 108, sass/partials/_abstract.scss */
+.radius-v1-small, .successful, .errorred {
   -moz-border-radius-topleft: 1.64rem 1.1rem;
   -webkit-border-top-left-radius: 1.64rem 1.1rem;
   border-top-left-radius: 1.64rem 1.1rem;
@@ -4379,7 +4610,7 @@ abstract
   border-bottom-left-radius: 0.9rem 1.3rem;
 }
 
-/* line 99, sass/partials/_abstract.scss */
+/* line 109, sass/partials/_abstract.scss */
 .radius-v1-medium {
   -moz-border-radius-topleft: 3.28rem 2.2rem;
   -webkit-border-top-left-radius: 3.28rem 2.2rem;
@@ -4395,7 +4626,7 @@ abstract
   border-bottom-left-radius: 1.8rem 2.6rem;
 }
 
-/* line 100, sass/partials/_abstract.scss */
+/* line 110, sass/partials/_abstract.scss */
 .radius-v1-large {
   -moz-border-radius-topleft: 6.56rem 4.4rem;
   -webkit-border-top-left-radius: 6.56rem 4.4rem;
@@ -4411,7 +4642,7 @@ abstract
   border-bottom-left-radius: 3.6rem 5.2rem;
 }
 
-/* line 102, sass/partials/_abstract.scss */
+/* line 112, sass/partials/_abstract.scss */
 .radius-v2-small {
   -moz-border-radius-topleft: 0.7rem 0.6rem;
   -webkit-border-top-left-radius: 0.7rem 0.6rem;
@@ -4427,7 +4658,7 @@ abstract
   border-bottom-left-radius: 1.6rem 1rem;
 }
 
-/* line 103, sass/partials/_abstract.scss */
+/* line 113, sass/partials/_abstract.scss */
 .radius-v2-medium {
   -moz-border-radius-topleft: 1.4rem 1.2rem;
   -webkit-border-top-left-radius: 1.4rem 1.2rem;
@@ -4443,7 +4674,7 @@ abstract
   border-bottom-left-radius: 3.2rem 2rem;
 }
 
-/* line 104, sass/partials/_abstract.scss */
+/* line 114, sass/partials/_abstract.scss */
 .radius-v2-large {
   -moz-border-radius-topleft: 2.8rem 2.4rem;
   -webkit-border-top-left-radius: 2.8rem 2.4rem;
@@ -4459,7 +4690,7 @@ abstract
   border-bottom-left-radius: 6.4rem 4rem;
 }
 
-/* line 106, sass/partials/_abstract.scss */
+/* line 116, sass/partials/_abstract.scss */
 .radius-v3-small, .choose-file-wrapper:after {
   -moz-border-radius-topleft: 0.9rem 1.4rem;
   -webkit-border-top-left-radius: 0.9rem 1.4rem;
@@ -4475,7 +4706,7 @@ abstract
   border-bottom-left-radius: 0.9rem 0.8rem;
 }
 
-/* line 107, sass/partials/_abstract.scss */
+/* line 117, sass/partials/_abstract.scss */
 .radius-v3-medium {
   -moz-border-radius-topleft: 1.8rem 2.8rem;
   -webkit-border-top-left-radius: 1.8rem 2.8rem;
@@ -4491,7 +4722,7 @@ abstract
   border-bottom-left-radius: 1.8rem 1.6rem;
 }
 
-/* line 108, sass/partials/_abstract.scss */
+/* line 118, sass/partials/_abstract.scss */
 .radius-v3-large {
   -moz-border-radius-topleft: 3.6rem 5.6rem;
   -webkit-border-top-left-radius: 3.6rem 5.6rem;
@@ -4644,6 +4875,8 @@ Colours
 ========================================================================== */
 /* Links */
 /* Greys */
+/* Reds */
+/* Green */
 /* =============================================================================
 Borders
 ========================================================================== */
@@ -4713,53 +4946,76 @@ Media query variables
 }
 
 /* line 94, sass/partials/_forms.scss */
-.warning {
-  color: red;
+.warning, .party-image-container .warner {
+  color: #E32333;
 }
 
-/* line 103, sass/partials/_forms.scss */
+/* line 99, sass/partials/_forms.scss */
+.successful, .errorred {
+  color: #00A246;
+  background-color: #D1E8B2;
+  text-align: center;
+}
+/* line 110, sass/partials/_forms.scss */
+.successful:before, .errorred:before {
+  font-family: "icomoon";
+  content: "\e61f";
+}
+
+/* line 118, sass/partials/_forms.scss */
+.errorred {
+  color: #E32333;
+  background-color: #FCE9EA;
+}
+/* line 123, sass/partials/_forms.scss */
+.errorred:before {
+  font-family: "icomoon";
+  content: "\e620";
+}
+
+/* line 132, sass/partials/_forms.scss */
 .form-holder {
   max-width: 50rem;
 }
 
-/* line 109, sass/partials/_forms.scss */
+/* line 138, sass/partials/_forms.scss */
 label {
   text-transform: uppercase;
   color: #7B7A6D;
   font-weight: bold;
   line-height: 3rem;
 }
-/* line 116, sass/partials/_forms.scss */
+/* line 145, sass/partials/_forms.scss */
 label span {
   text-transform: none;
   color: #A19F91;
 }
 
-/* line 123, sass/partials/_forms.scss */
+/* line 152, sass/partials/_forms.scss */
 textarea {
   width: 100%;
   height: 15rem;
   resize: none;
 }
 
-/* line 130, sass/partials/_forms.scss */
+/* line 159, sass/partials/_forms.scss */
 input[type='text'] {
   width: 100%;
   height: 5rem;
   line-height: 5rem;
 }
 
-/* line 138, sass/partials/_forms.scss */
+/* line 167, sass/partials/_forms.scss */
 input[type='text'], textarea {
   border: 0.1rem solid #D4D3CC;
 }
 
-/* line 142, sass/partials/_forms.scss */
+/* line 171, sass/partials/_forms.scss */
 input[type="text"][readonly] {
   cursor: pointer;
 }
 
-/* line 146, sass/partials/_forms.scss */
+/* line 175, sass/partials/_forms.scss */
 input[type=submit][disabled=disabled],
 input[type=submit][disabled=disabled]:hover,
 button[disabled=disabled],
@@ -4769,7 +5025,7 @@ button[disabled=disabled]:hover {
   cursor: default;
 }
 
-/* line 157, sass/partials/_forms.scss */
+/* line 186, sass/partials/_forms.scss */
 .choose-file-wrapper {
   width: 14rem;
   height: 4rem;
@@ -4777,7 +5033,7 @@ button[disabled=disabled]:hover {
   position: relative;
   cursor: pointer;
 }
-/* line 165, sass/partials/_forms.scss */
+/* line 194, sass/partials/_forms.scss */
 .choose-file-wrapper:before {
   position: relative;
   z-index: 10;
@@ -4787,7 +5043,7 @@ button[disabled=disabled]:hover {
   font-size: 1.4rem;
   line-height: 3.8rem;
 }
-/* line 175, sass/partials/_forms.scss */
+/* line 204, sass/partials/_forms.scss */
 .choose-file-wrapper:after {
   content: "Upload file";
   position: absolute;
@@ -4800,7 +5056,7 @@ button[disabled=disabled]:hover {
   line-height: 1.6rem;
 }
 
-/* line 195, sass/partials/_forms.scss */
+/* line 224, sass/partials/_forms.scss */
 .choose-file {
   width: 200%;
   height: 100%;
@@ -4945,39 +5201,55 @@ Event Page specific - move these out of here eventually
   height: 6rem;
   background-repeat: no-repeat;
   background-size: cover;
+  background-color: #A19F91;
   float: left;
 }
-
 /* line 142, sass/partials/_base.scss */
+.profile-image:before {
+  font-family: "icomoon";
+  content: " ";
+  color: white;
+  font-size: 5rem;
+  line-height: 7rem;
+  width: 100%;
+  text-align: center;
+  display: block;
+}
+/* line 153, sass/partials/_base.scss */
+.profile-image.profile-image-notset:before {
+  content: "\e61b";
+}
+
+/* line 158, sass/partials/_base.scss */
 .image-shift-details, .party-details, .wall-details {
   margin-left: 7.2rem;
 }
 
-/* line 146, sass/partials/_base.scss */
+/* line 162, sass/partials/_base.scss */
 .party-details {
   color: #A19F91;
 }
-/* line 150, sass/partials/_base.scss */
+/* line 166, sass/partials/_base.scss */
 .party-details [class^="icon-"], .party-details [class*=" icon-"] {
   color: #D4D3CC;
 }
 
 /*******************************/
-/* line 157, sass/partials/_base.scss */
+/* line 173, sass/partials/_base.scss */
 .party-image-container {
   float: left;
 }
-/* line 162, sass/partials/_base.scss */
+/* line 178, sass/partials/_base.scss */
 .party-image-container input[type="radio"] {
   display: none;
 }
-/* line 166, sass/partials/_base.scss */
-.party-image-container .warning {
+/* line 182, sass/partials/_base.scss */
+.party-image-container .warner {
   width: 16rem;
   text-align: center;
   display: none;
 }
-/* line 174, sass/partials/_base.scss */
+/* line 191, sass/partials/_base.scss */
 .party-image-container.selected .party-image-selecter:after {
   content: "\e61f";
   font-family: "icomoon";
@@ -4988,18 +5260,18 @@ Event Page specific - move these out of here eventually
   opacity: .8;
   line-height: 8rem;
 }
-/* line 185, sass/partials/_base.scss */
+/* line 202, sass/partials/_base.scss */
 .party-image-container.selected .party-image-selecter:before {
   content: "";
   margin-left: 0;
 }
-/* line 190, sass/partials/_base.scss */
-.party-image-container.selected .warning {
+/* line 207, sass/partials/_base.scss */
+.party-image-container.selected .warner {
   display: block;
   cursor: pointer;
 }
 
-/* line 197, sass/partials/_base.scss */
+/* line 214, sass/partials/_base.scss */
 .party-image-selecter {
   width: 16rem;
   height: 7.5rem;
@@ -5009,41 +5281,41 @@ Event Page specific - move these out of here eventually
   position: relative;
   overflow: hidden;
 }
-/* line 208, sass/partials/_base.scss */
+/* line 225, sass/partials/_base.scss */
 .party-image-selecter:before {
   color: white;
   font-size: 4.7rem;
   line-height: 7.5rem;
   margin-left: 6.8rem;
 }
-/* line 215, sass/partials/_base.scss */
+/* line 232, sass/partials/_base.scss */
 .party-image-selecter.image-unset {
   cursor: default;
 }
-/* line 219, sass/partials/_base.scss */
+/* line 236, sass/partials/_base.scss */
 .party-image-selecter.image-set:before {
   content: "";
 }
 
-/* line 224, sass/partials/_base.scss */
+/* line 241, sass/partials/_base.scss */
 .file-upload-info {
   margin-left: 17.2rem;
 }
 
 /*******************************/
-/* line 231, sass/partials/_base.scss */
+/* line 248, sass/partials/_base.scss */
 .wall-details {
   color: #A19F91;
   min-height: 6rem;
 }
 
-/* line 238, sass/partials/_base.scss */
+/* line 255, sass/partials/_base.scss */
 .wall-name {
   font-weight: bold;
   color: #7B7A6D;
 }
 
-/* line 243, sass/partials/_base.scss */
+/* line 260, sass/partials/_base.scss */
 .wall-time {
   color: #D4D3CC;
 }
@@ -5051,12 +5323,12 @@ Event Page specific - move these out of here eventually
 /* =============================================================================
 One-off uses
 ========================================================================== */
-/* line 251, sass/partials/_base.scss */
+/* line 268, sass/partials/_base.scss */
 #twitter-widget-0 {
   width: 100% !important;
 }
 
-/* line 255, sass/partials/_base.scss */
+/* line 272, sass/partials/_base.scss */
 .home-twitter-boxx {
   height: 35.6rem;
 }
@@ -5095,6 +5367,8 @@ Colours
 ========================================================================== */
 /* Links */
 /* Greys */
+/* Reds */
+/* Green */
 /* =============================================================================
 Borders
 ========================================================================== */
@@ -5445,43 +5719,43 @@ Media query variables
 }
 /* line 160, sass/main.scss */
 .frame:nth-child(1) {
-  -moz-transform: rotate(-1.6deg);
-  -ms-transform: rotate(-1.6deg);
-  -webkit-transform: rotate(-1.6deg);
-  transform: rotate(-1.6deg);
+  -moz-transform: rotate(-0.4deg);
+  -ms-transform: rotate(-0.4deg);
+  -webkit-transform: rotate(-0.4deg);
+  transform: rotate(-0.4deg);
 }
 /* line 160, sass/main.scss */
 .frame:nth-child(2) {
-  -moz-transform: rotate(1.5deg);
-  -ms-transform: rotate(1.5deg);
-  -webkit-transform: rotate(1.5deg);
-  transform: rotate(1.5deg);
+  -moz-transform: rotate(2.1deg);
+  -ms-transform: rotate(2.1deg);
+  -webkit-transform: rotate(2.1deg);
+  transform: rotate(2.1deg);
 }
 /* line 160, sass/main.scss */
 .frame:nth-child(3) {
-  -moz-transform: rotate(-1.8deg);
-  -ms-transform: rotate(-1.8deg);
-  -webkit-transform: rotate(-1.8deg);
-  transform: rotate(-1.8deg);
+  -moz-transform: rotate(-1deg);
+  -ms-transform: rotate(-1deg);
+  -webkit-transform: rotate(-1deg);
+  transform: rotate(-1deg);
 }
 /* line 160, sass/main.scss */
 .frame:nth-child(4) {
-  -moz-transform: rotate(1deg);
-  -ms-transform: rotate(1deg);
-  -webkit-transform: rotate(1deg);
-  transform: rotate(1deg);
+  -moz-transform: rotate(1.2deg);
+  -ms-transform: rotate(1.2deg);
+  -webkit-transform: rotate(1.2deg);
+  transform: rotate(1.2deg);
 }
 /* line 160, sass/main.scss */
 .frame:nth-child(5) {
-  -moz-transform: rotate(-0.1deg);
-  -ms-transform: rotate(-0.1deg);
-  -webkit-transform: rotate(-0.1deg);
-  transform: rotate(-0.1deg);
+  -moz-transform: rotate(-0.8deg);
+  -ms-transform: rotate(-0.8deg);
+  -webkit-transform: rotate(-0.8deg);
+  transform: rotate(-0.8deg);
 }
 /* line 160, sass/main.scss */
 .frame:nth-child(6) {
-  -moz-transform: rotate(0.8deg);
-  -ms-transform: rotate(0.8deg);
-  -webkit-transform: rotate(0.8deg);
-  transform: rotate(0.8deg);
+  -moz-transform: rotate(1.7deg);
+  -ms-transform: rotate(1.7deg);
+  -webkit-transform: rotate(1.7deg);
+  transform: rotate(1.7deg);
 }

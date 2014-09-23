@@ -1,4 +1,4 @@
-wonderlandApp.controller('PartyCtrl', ['safeApply', '$ocModal', '$sce', '$scope', function (safeApply, $ocModal, $sce, $scope) {
+wonderlandApp.controller('PartyCtrl', ['safeApply', '$ocModal', '$sce', '$scope', '$timeout', function (safeApply, $ocModal, $sce, $scope, $timeout) {
 
 
     /**********************/
@@ -63,18 +63,39 @@ wonderlandApp.controller('PartyCtrl', ['safeApply', '$ocModal', '$sce', '$scope'
     /**********************/
     /* PROFILE IMAGE DETAILS */
     /**********************/
-    $scope.profileImageUrl = null;
+    $scope.profileImage = {
+        url: null,
+        showFeedbackSuccess: false,
+        showFeedbackError: false
+    };
+
 
     $scope.profileImageUrlInit = function (profileImageUrl) {
-        $scope.profileImageUrl = profileImageUrl;
+        $scope.profileImage.url = profileImageUrl;
     };
 
     $scope.$onRootScope('profileImageUrlUpdated', function(event, response) {
+
+        var timeoutTime = 3000;
+
         if (response && response.Success === true && response.Message) {
-            $scope.profileImageUrlInit(response.Message);
+            $scope.profileImage.url = response.Message;
+            $scope.profileImage.showFeedbackSuccess = true;
+
+            // close modal
+            $timeout(function () {
+                $ocModal.close('profileImageModal');
+            }, timeoutTime);
+
+        } else {
+            $scope.profileImage.showFeedbackError = true;
         }
 
-        $ocModal.close('profileImageModal');
+        // hide feedback
+        $timeout(function () {
+            $scope.profileImage.showFeedbackSuccess = false;
+            $scope.profileImage.showFeedbackError = false;
+        }, timeoutTime);
     });
 
 

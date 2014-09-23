@@ -15,9 +15,9 @@
  --------------------------------------------------------------------------------------------------------------------- */
 
 
-@import "partials/abstract";
-@import "partials/type";
-@import "partials/variables";
+@import "abstract";
+@import "type";
+@import "variables";
 
 
 //********************************************** Buttons
@@ -93,9 +93,38 @@ $btnPaddingLarge: $btnPaddingMedium*2;
 
 .warning {
     @extend .form-info;
-    color: red;
+    color: $redDark;
 }
 
+.successful {
+    @extend .form-info;
+    @extend .pad-tiny;
+    @extend .radius-v1-small;
+    color: $greenDark;
+    background-color: $greenLight;
+    text-align: center;
+    span {
+        @extend .margin-right-tiny;
+    }
+
+    &:before {
+        @extend .margin-right-tiny;
+        font-family: $fontFaceIcomoon;
+        content: "\e61f";
+    }
+}
+
+
+.errorred {
+    @extend .successful;
+    color: $redDark;
+    background-color: $redLight;
+
+    &:before {
+        font-family: $fontFaceIcomoon;
+        content: "\e620";
+    }
+}
 
 
 //********************************************** Inputs

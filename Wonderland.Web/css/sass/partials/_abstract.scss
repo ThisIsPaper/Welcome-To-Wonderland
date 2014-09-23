@@ -20,23 +20,28 @@ $multiplierLarge: 2;
 
 //**************************************** PADDING
 
+.pad-tiny { padding: $padSmallValue/2; }
 .pad-small { padding: $padSmallValue; }
 .pad-medium { padding: $padSmallValue * $multiplierMedium; }
 .pad-large { padding: $padSmallValue * $multiplierLarge; }
 
+.pad-right-tiny { padding-right: $padSmallValue/2; }
 .pad-right-small { padding-right: $padSmallValue; }
 .pad-right-medium { padding-right: $padSmallValue * $multiplierMedium; }
 .pad-right-large { padding-right: $padSmallValue * $multiplierLarge; }
 
+.pad-left-tiny { padding-left: $padSmallValue/2; }
 .pad-left-small { padding-left: $padSmallValue; }
 .pad-left-medium { padding-left: $padSmallValue * $multiplierMedium; }
 .pad-left-large { padding-left: $padSmallValue * $multiplierLarge; }
 
+.pad-right-0 { padding-right: 0;}
 .pad-right-1 { padding-right: 1rem;}
 .pad-right-2 { padding-right: 2rem;}
 .pad-right-3 { padding-right: 3rem;}
 .pad-right-4 { padding-right: 4rem;}
 
+.pad-left-0 { padding-left: 0;}
 .pad-left-1 { padding-left: 1rem;}
 .pad-left-2 { padding-left: 2rem;}
 .pad-left-3 { padding-left: 3rem;}
@@ -44,22 +49,27 @@ $multiplierLarge: 2;
 
 //**************************************** MARGIN
 
+.margin-tiny { margin: $marginSmallValue/2; }
 .margin-small { margin: $marginSmallValue; }
 .margin-medium { margin: $marginSmallValue * $multiplierMedium; }
 .margin-large { margin: $marginSmallValue * $multiplierLarge; }
 
+.margin-right-tiny { margin-right: $marginSmallValue/2; }
 .margin-right-small { margin-right: $marginSmallValue; }
 .margin-right-medium { margin-right: $marginSmallValue * $multiplierMedium; }
 .margin-right-large { margin-right: $marginSmallValue * $multiplierLarge; }
 
+.margin-left-tiny { margin-left: $marginSmallValue/2; }
 .margin-left-small { margin-left: $marginSmallValue; }
 .margin-left-medium { margin-left: $marginSmallValue * $multiplierMedium; }
 .margin-left-large { margin-left: $marginSmallValue * $multiplierLarge; }
 
+.margin-bottom-tiny { margin-bottom: $marginSmallValue/2; }
 .margin-bottom-small { margin-bottom: $marginSmallValue; }
 .margin-bottom-medium { margin-bottom: $marginSmallValue * $multiplierMedium; }
 .margin-bottom-large { margin-bottom: $marginSmallValue * $multiplierLarge; }
 
+.margin-top-tiny { margin-top: $marginSmallValue/2; }
 .margin-top-small { margin-top: $marginSmallValue; }
 .margin-top-medium { margin-top: $marginSmallValue * $multiplierMedium; }
 .margin-top-large { margin-top: $marginSmallValue * $multiplierLarge; }

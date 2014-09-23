@@ -19,7 +19,7 @@
                     </div>
 
                     <div class="wgrid-full pad-large">
-                        <div class="profile-image" ng-style="{'background-image': 'url(' + profileImageUrl + ')'}" m-radius-picker="small" ng-click="openPageModal('partials/profileImageForm.html', 'profileImageModal')"></div>
+                        <div m-profile-image="{{ profileImage.url }}" m-radius-picker="small" ng-click="openPageModal('partials/profileImageForm.html', 'profileImageModal', {'profileImage': profileImage})"></div>
                         <div class="party-details">
                             <h3 class="pad-right-3" ng-bind="partyDetailsData.PartyHeading">@this.Model.Heading</h3>
                             <div class="body-small float-left margin-right-medium">
@@ -110,7 +110,7 @@
                 <div class="boxx internal" m-radius-picker="small">
 
                     @* TODO - make this user image not host *@
-                    <div class="profile-image" ng-style="{'background-image': 'url(' + profileImageUrl + ')'}" m-radius-picker="small"></div>
+                    <div m-profile-image="{{ profileImage.url }}" m-radius-picker="small"></div>
 
                     @(Html.Action<PartySurfaceController>("RenderPartyWallMessageForm"))
 
@@ -119,7 +119,7 @@
 
 
                 <div class="margin-top-small" ng-repeat="feedItem in wall.feed">
-                    <div class="profile-image" ng-style="{'background-image': 'url(' + feedItem.thumbnailUrl + ')'}" m-radius-picker="small"></div>
+                    <div m-profile-image="{{ feedItem.thumbnailUrl }}" m-radius-picker="small"></div>
                     <div class="wall-details">
                         <div>
                             <span class="wall-name" ng-bind="feedItem.name"></span>
