@@ -65,7 +65,15 @@
             <div class="wgrid-full">
                 <div class="boxx" m-radius-picker>
                     <h4 class="top">Suggested ticket price</h4>
-                    <h1>£<span ng-bind="suggestedDonationData.SuggestedDonation"></span></h1>
+
+                    <div class="ticket centered">
+                        <div class="stub">
+                            <div class="holes"></div>
+                            <div class="holes-right"></div>
+                            <div class="price">£<span ng-bind="suggestedDonationData.SuggestedDonation"></span></div>
+                        </div>
+                    </div>
+
                     <div class="edit-trigger" ng-click="openPageModal('partials/suggestedDonationForm.html', 'suggestedDonationModal', {'suggestedDonationData': suggestedDonationDataForForm})"><span class="edit-label">Edit</span><span class="icon-icon_edit"></span></div>
                 </div>
             </div>

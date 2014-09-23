@@ -330,7 +330,7 @@ abstract
 }
 
 /* line 25, sass/partials/_abstract.scss */
-.pad-medium {
+.pad-medium, .ticket .stub {
   padding: 1.8rem;
 }
 
@@ -345,7 +345,7 @@ abstract
 }
 
 /* line 29, sass/partials/_abstract.scss */
-.pad-right-small, input[type='text'] {
+.pad-right-small, input[type='text'], .ticket .stub .price {
   padding-right: 1.2rem;
 }
 
@@ -365,7 +365,7 @@ abstract
 }
 
 /* line 34, sass/partials/_abstract.scss */
-.pad-left-small, input[type='text'] {
+.pad-left-small, input[type='text'], .ticket .stub .price {
   padding-left: 1.2rem;
 }
 
@@ -2429,7 +2429,7 @@ ul, ol, dl {
 }
 
 /* line 247, sass/partials/_type.scss */
-.heading-large {
+.heading-large, .ticket .stub .price {
   font-size: 4.7rem;
 }
 
@@ -2506,7 +2506,7 @@ abstract
 }
 
 /* line 25, sass/partials/_abstract.scss */
-.pad-medium {
+.pad-medium, .ticket .stub {
   padding: 1.8rem;
 }
 
@@ -2521,7 +2521,7 @@ abstract
 }
 
 /* line 29, sass/partials/_abstract.scss */
-.pad-right-small, input[type='text'] {
+.pad-right-small, input[type='text'], .ticket .stub .price {
   padding-right: 1.2rem;
 }
 
@@ -2541,7 +2541,7 @@ abstract
 }
 
 /* line 34, sass/partials/_abstract.scss */
-.pad-left-small, input[type='text'] {
+.pad-left-small, input[type='text'], .ticket .stub .price {
   padding-left: 1.2rem;
 }
 
@@ -3014,7 +3014,7 @@ ul, ol, dl {
 }
 
 /* line 247, sass/partials/_type.scss */
-.heading-large {
+.heading-large, .ticket .stub .price {
   font-size: 4.7rem;
 }
 
@@ -3801,7 +3801,7 @@ abstract
 }
 
 /* line 25, sass/partials/_abstract.scss */
-.pad-medium {
+.pad-medium, .ticket .stub {
   padding: 1.8rem;
 }
 
@@ -3816,7 +3816,7 @@ abstract
 }
 
 /* line 29, sass/partials/_abstract.scss */
-.pad-right-small, input[type='text'] {
+.pad-right-small, input[type='text'], .ticket .stub .price {
   padding-right: 1.2rem;
 }
 
@@ -3836,7 +3836,7 @@ abstract
 }
 
 /* line 34, sass/partials/_abstract.scss */
-.pad-left-small, input[type='text'] {
+.pad-left-small, input[type='text'], .ticket .stub .price {
   padding-left: 1.2rem;
 }
 
@@ -4283,7 +4283,7 @@ abstract
 }
 
 /* line 25, sass/partials/_abstract.scss */
-.pad-medium {
+.pad-medium, .ticket .stub {
   padding: 1.8rem;
 }
 
@@ -4298,7 +4298,7 @@ abstract
 }
 
 /* line 29, sass/partials/_abstract.scss */
-.pad-right-small, input[type='text'] {
+.pad-right-small, input[type='text'], .ticket .stub .price {
   padding-right: 1.2rem;
 }
 
@@ -4318,7 +4318,7 @@ abstract
 }
 
 /* line 34, sass/partials/_abstract.scss */
-.pad-left-small, input[type='text'] {
+.pad-left-small, input[type='text'], .ticket .stub .price {
   padding-left: 1.2rem;
 }
 
@@ -4791,7 +4791,7 @@ ul, ol, dl {
 }
 
 /* line 247, sass/partials/_type.scss */
-.heading-large {
+.heading-large, .ticket .stub .price {
   font-size: 4.7rem;
 }
 
@@ -5066,12 +5066,115 @@ button[disabled=disabled]:hover {
   opacity: 0;
 }
 
-/* line 23, sass/partials/_base.scss */
+/*------------------------------------------------------------------------------------------------------------------------
+ @package: Macmillan - Wonderland (app)
+
+ @author: Sam Latif
+ @www: http://www.samlatif.co.uk
+ @github: samlatif
+
+ @twitter: samlatifuk
+
+ @copyright: COPYRIGHT 8-21-2014 On behalf of Paper Partnerships Ltd
+ =============================================================================
+ Filename: _type.scss
+ =============================================================================
+ This file is responsible for typographic elements on the Macmillan - Wonderland app.  Styles should be compiled using compass and sass.
+ --------------------------------------------------------------------------------------------------------------------- */
+/* Type */
+/* line 187, sass/partials/_type.scss */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 300;
+}
+
+/* line 197, sass/partials/_type.scss */
+a {
+  color: #999999;
+  text-decoration: none;
+}
+
+/* line 203, sass/partials/_type.scss */
+ul, ol, dl {
+  padding-left: 2.028rem;
+}
+
+@font-face {
+  font-family: "macmillan";
+  src: url("/fonts/macmillan_headline_02_12-webfont.eot?-a7b8pb");
+  src: url("/fonts/macmillan_headline_02_12-webfont.eot?#iefix-a7b8pb") format("embedded-opentype"), url("/fonts/macmillan_headline_02_12-webfont.woff?-a7b8pb") format("woff"), url("/fonts/macmillan_headline_02_12-webfont.ttf?-a7b8pb") format("truetype"), url("/fonts/macmillan_headline_02_12-webfont.svg?-a7b8pb#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Futura BT W01 Book";
+  src: url("/fonts/17fe4ab4-6e45-4ea2-bb53-2123063911c3.eot?#iefix");
+  src: url("/fonts/17fe4ab4-6e45-4ea2-bb53-2123063911c3.eot?#iefix") format("eot"), url("/fonts/142b09e6-c245-4ff7-b01c-325fa824c99e.woff") format("woff"), url("/fonts/e4509cd4-7aa0-4068-89bd-95ffd0bfb6d4.ttf") format("truetype"), url("/fonts/d37fcd2f-d43f-4eae-b192-c48028c02797.svg#d37fcd2f-d43f-4eae-b192-c48028c02797") format("svg");
+}
+/* line 239, sass/partials/_type.scss */
+.font-macmillan {
+  font-family: "macmillan";
+}
+
+/* line 243, sass/partials/_type.scss */
+.font-futura {
+  font-family: "Futura BT W01 Book";
+}
+
+/* line 247, sass/partials/_type.scss */
+.heading-large, .ticket .stub .price {
+  font-size: 4.7rem;
+}
+
+/* line 251, sass/partials/_type.scss */
+.heading-small {
+  font-size: 2.9rem;
+}
+
+/* line 271, sass/partials/_type.scss */
+h1 {
+  font-family: 'macmillan';
+  color: #025b45;
+  font-size: 4.7rem;
+  margin: 0;
+  width: 100%;
+  text-align: center;
+}
+
+/* line 280, sass/partials/_type.scss */
+h2 {
+  font-family: 'macmillan';
+  color: #007eac;
+  font-size: 1.8rem;
+  margin: .5rem 0;
+}
+
+/* line 287, sass/partials/_type.scss */
+h3 {
+  color: #025b45;
+  font-size: 2.3rem;
+  margin: 0;
+  font-weight: bold;
+}
+
+/* line 294, sass/partials/_type.scss */
+h4 {
+  color: #474740;
+  font-size: 2.3rem;
+  margin: 2rem 0;
+  font-weight: bold;
+}
+/* line 300, sass/partials/_type.scss */
+h4 span {
+  color: #7B7A6D;
+  font-weight: normal;
+}
+
+/* line 24, sass/partials/_base.scss */
 html {
   font-size: 62.5%;
 }
 
-/* line 27, sass/partials/_base.scss */
+/* line 28, sass/partials/_base.scss */
 body {
   color: #666;
   background: #fff;
@@ -5080,7 +5183,7 @@ body {
   font-size: 1.8rem;
 }
 
-/* line 49, sass/partials/_base.scss */
+/* line 50, sass/partials/_base.scss */
 pre {
   white-space: pre-wrap;
 }
@@ -5088,7 +5191,7 @@ pre {
 /* =============================================================================
 Shadows
 ========================================================================== */
-/* line 56, sass/partials/_base.scss */
+/* line 57, sass/partials/_base.scss */
 .shadowed {
   -moz-box-shadow: 0 0 3rem rgba(102, 102, 102, 0.7);
   -webkit-box-shadow: 0 0 3rem rgba(102, 102, 102, 0.7);
@@ -5098,7 +5201,7 @@ Shadows
 /* =============================================================================
 images
 ========================================================================== */
-/* line 63, sass/partials/_base.scss */
+/* line 64, sass/partials/_base.scss */
 img, object, embed {
   max-width: 100%;
 }
@@ -5106,7 +5209,7 @@ img, object, embed {
 /* =============================================================================
 Base page structure
 ========================================================================== */
-/* line 70, sass/partials/_base.scss */
+/* line 71, sass/partials/_base.scss */
 .page-container {
   position: relative;
   width: 100%;
@@ -5125,12 +5228,12 @@ Base page structure
   transition-timing-function: ease-in-out;
 }
 
-/* line 81, sass/partials/_base.scss */
+/* line 82, sass/partials/_base.scss */
 main {
   padding-top: 8.4rem;
 }
 
-/* line 85, sass/partials/_base.scss */
+/* line 86, sass/partials/_base.scss */
 .page-bg {
   background-color: #ECECEC;
   background-image: url('/img/bg_simple.png?1411126422');
@@ -5142,14 +5245,14 @@ main {
 /* =============================================================================
 Event Page specific - move these out of here eventually
 ========================================================================== */
-/* line 97, sass/partials/_base.scss */
+/* line 98, sass/partials/_base.scss */
 .party-main-image {
   background-position: center center;
   background-size: cover;
   height: 37.2rem;
 }
 
-/* line 103, sass/partials/_base.scss */
+/* line 104, sass/partials/_base.scss */
 .edit-trigger {
   position: absolute;
   top: 2rem;
@@ -5175,23 +5278,23 @@ Event Page specific - move these out of here eventually
   -webkit-border-bottom-left-radius: 3rem 3rem;
   border-bottom-left-radius: 3rem 3rem;
 }
-/* line 118, sass/partials/_base.scss */
+/* line 119, sass/partials/_base.scss */
 .edit-trigger .edit-label {
   display: none;
   margin-right: 1rem;
   text-transform: uppercase;
 }
-/* line 124, sass/partials/_base.scss */
+/* line 125, sass/partials/_base.scss */
 .edit-trigger:hover {
   padding: 0 .95rem;
   width: auto;
 }
-/* line 127, sass/partials/_base.scss */
+/* line 128, sass/partials/_base.scss */
 .edit-trigger:hover .edit-label {
   display: inline;
 }
 
-/* line 134, sass/partials/_base.scss */
+/* line 135, sass/partials/_base.scss */
 .profile-image {
   width: 6rem;
   height: 6rem;
@@ -5200,7 +5303,7 @@ Event Page specific - move these out of here eventually
   background-color: #A19F91;
   float: left;
 }
-/* line 142, sass/partials/_base.scss */
+/* line 143, sass/partials/_base.scss */
 .profile-image:before {
   font-family: "icomoon";
   content: " ";
@@ -5211,41 +5314,41 @@ Event Page specific - move these out of here eventually
   text-align: center;
   display: block;
 }
-/* line 153, sass/partials/_base.scss */
+/* line 154, sass/partials/_base.scss */
 .profile-image.profile-image-notset:before {
   content: "\e61b";
 }
 
-/* line 158, sass/partials/_base.scss */
+/* line 159, sass/partials/_base.scss */
 .image-shift-details, .party-details, .wall-details {
   margin-left: 7.2rem;
 }
 
-/* line 162, sass/partials/_base.scss */
+/* line 163, sass/partials/_base.scss */
 .party-details {
   color: #A19F91;
 }
-/* line 166, sass/partials/_base.scss */
+/* line 167, sass/partials/_base.scss */
 .party-details [class^="icon-"], .party-details [class*=" icon-"] {
   color: #D4D3CC;
 }
 
 /*******************************/
-/* line 173, sass/partials/_base.scss */
+/* line 174, sass/partials/_base.scss */
 .party-image-container {
   float: left;
 }
-/* line 178, sass/partials/_base.scss */
+/* line 179, sass/partials/_base.scss */
 .party-image-container input[type="radio"] {
   display: none;
 }
-/* line 182, sass/partials/_base.scss */
+/* line 183, sass/partials/_base.scss */
 .party-image-container .warner {
   width: 16rem;
   text-align: center;
   display: none;
 }
-/* line 191, sass/partials/_base.scss */
+/* line 192, sass/partials/_base.scss */
 .party-image-container.selected .party-image-selecter:after {
   content: "\e61f";
   font-family: "icomoon";
@@ -5256,18 +5359,18 @@ Event Page specific - move these out of here eventually
   opacity: .8;
   line-height: 8rem;
 }
-/* line 202, sass/partials/_base.scss */
+/* line 203, sass/partials/_base.scss */
 .party-image-container.selected .party-image-selecter:before {
   content: "";
   margin-left: 0;
 }
-/* line 207, sass/partials/_base.scss */
+/* line 208, sass/partials/_base.scss */
 .party-image-container.selected .warner {
   display: block;
   cursor: pointer;
 }
 
-/* line 214, sass/partials/_base.scss */
+/* line 215, sass/partials/_base.scss */
 .party-image-selecter {
   width: 16rem;
   height: 7.5rem;
@@ -5277,59 +5380,97 @@ Event Page specific - move these out of here eventually
   position: relative;
   overflow: hidden;
 }
-/* line 225, sass/partials/_base.scss */
+/* line 226, sass/partials/_base.scss */
 .party-image-selecter:before {
   color: white;
   font-size: 4.7rem;
   line-height: 7.5rem;
   margin-left: 6.8rem;
 }
-/* line 232, sass/partials/_base.scss */
+/* line 233, sass/partials/_base.scss */
 .party-image-selecter.image-unset {
   cursor: default;
 }
-/* line 236, sass/partials/_base.scss */
+/* line 237, sass/partials/_base.scss */
 .party-image-selecter.image-set:before {
   content: "";
 }
 
-/* line 241, sass/partials/_base.scss */
+/* line 242, sass/partials/_base.scss */
 .file-upload-info {
   margin-left: 17.2rem;
 }
 
 /*******************************/
-/* line 248, sass/partials/_base.scss */
+/* line 249, sass/partials/_base.scss */
 .wall-details {
   color: #A19F91;
   min-height: 6rem;
 }
 
-/* line 255, sass/partials/_base.scss */
+/* line 256, sass/partials/_base.scss */
 .wall-name {
   font-weight: bold;
   color: #7B7A6D;
 }
 
-/* line 260, sass/partials/_base.scss */
+/* line 261, sass/partials/_base.scss */
 .wall-time {
   color: #D4D3CC;
+}
+
+/*******************************/
+/* line 267, sass/partials/_base.scss */
+.ticket {
+  position: relative;
+  float: left;
+  max-width: 20rem;
+}
+/* line 272, sass/partials/_base.scss */
+.ticket .stub {
+  background-color: #D4D3CC;
+}
+/* line 276, sass/partials/_base.scss */
+.ticket .stub .holes, .ticket .stub .holes-right {
+  position: absolute;
+  left: -.1rem;
+  top: -.1rem;
+  width: 1.2rem;
+  height: 101%;
+  background-image: url('/img/raffle.svg?1411490329');
+  background-repeat: no-repeat;
+}
+/* line 286, sass/partials/_base.scss */
+.ticket .stub .holes-right {
+  left: auto;
+  right: -.1rem;
+  background-image: url('/img/raffle_r.svg?1411491819');
+}
+/* line 292, sass/partials/_base.scss */
+.ticket .stub .price {
+  -moz-border-radius: 1rem;
+  -webkit-border-radius: 1rem;
+  border-radius: 1rem;
+  font-family: "macmillan";
+  color: #007eac;
+  border: .1rem solid white;
+  text-align: center;
 }
 
 /* =============================================================================
 One-off uses
 ========================================================================== */
-/* line 270, sass/partials/_base.scss */
+/* line 315, sass/partials/_base.scss */
 #twitter-widget-0 {
   width: 100% !important;
 }
 
-/* line 274, sass/partials/_base.scss */
+/* line 319, sass/partials/_base.scss */
 .home-twitter-boxx {
   height: 35.6rem;
 }
 
-/* line 278, sass/partials/_base.scss */
+/* line 323, sass/partials/_base.scss */
 .piggy-donater:after {
   content: "\e61c";
   font-family: "icomoon";
@@ -5722,43 +5863,43 @@ Media query variables
 }
 /* line 160, sass/main.scss */
 .frame:nth-child(1) {
-  -moz-transform: rotate(-2.2deg);
-  -ms-transform: rotate(-2.2deg);
-  -webkit-transform: rotate(-2.2deg);
-  transform: rotate(-2.2deg);
-}
-/* line 160, sass/main.scss */
-.frame:nth-child(2) {
-  -moz-transform: rotate(1deg);
-  -ms-transform: rotate(1deg);
-  -webkit-transform: rotate(1deg);
-  transform: rotate(1deg);
-}
-/* line 160, sass/main.scss */
-.frame:nth-child(3) {
   -moz-transform: rotate(-0.5deg);
   -ms-transform: rotate(-0.5deg);
   -webkit-transform: rotate(-0.5deg);
   transform: rotate(-0.5deg);
 }
 /* line 160, sass/main.scss */
+.frame:nth-child(2) {
+  -moz-transform: rotate(0.5deg);
+  -ms-transform: rotate(0.5deg);
+  -webkit-transform: rotate(0.5deg);
+  transform: rotate(0.5deg);
+}
+/* line 160, sass/main.scss */
+.frame:nth-child(3) {
+  -moz-transform: rotate(-0.8deg);
+  -ms-transform: rotate(-0.8deg);
+  -webkit-transform: rotate(-0.8deg);
+  transform: rotate(-0.8deg);
+}
+/* line 160, sass/main.scss */
 .frame:nth-child(4) {
-  -moz-transform: rotate(1.5deg);
-  -ms-transform: rotate(1.5deg);
-  -webkit-transform: rotate(1.5deg);
-  transform: rotate(1.5deg);
+  -moz-transform: rotate(1.4deg);
+  -ms-transform: rotate(1.4deg);
+  -webkit-transform: rotate(1.4deg);
+  transform: rotate(1.4deg);
 }
 /* line 160, sass/main.scss */
 .frame:nth-child(5) {
-  -moz-transform: rotate(-1deg);
-  -ms-transform: rotate(-1deg);
-  -webkit-transform: rotate(-1deg);
-  transform: rotate(-1deg);
+  -moz-transform: rotate(-2deg);
+  -ms-transform: rotate(-2deg);
+  -webkit-transform: rotate(-2deg);
+  transform: rotate(-2deg);
 }
 /* line 160, sass/main.scss */
 .frame:nth-child(6) {
-  -moz-transform: rotate(2.2deg);
-  -ms-transform: rotate(2.2deg);
-  -webkit-transform: rotate(2.2deg);
-  transform: rotate(2.2deg);
+  -moz-transform: rotate(0.9deg);
+  -ms-transform: rotate(0.9deg);
+  -webkit-transform: rotate(0.9deg);
+  transform: rotate(0.9deg);
 }
