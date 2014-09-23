@@ -39,7 +39,7 @@
 
             <div class="wgrid-full">
                 <div class="boxx" m-radius-picker="medium large">
-                    <h1 class="padding-right-3 padding-left-3">Join the Wonderland Party</h1>
+                    <h1 class="pad-right-3 pad-left-3">Join the Wonderland Party</h1>
                     <pre class="body-medium font-futura" ng-bind-html="partyCopyData.CopyHtmlSafe">@this.Model.Copy</pre>
                     <div class="edit-trigger" ng-click="openPageModal('partials/partyCopyForm.html', 'partyCopyModal', {'partyCopyData': partyCopyDataForForm})"><span class="edit-label">Edit</span><span class="icon-icon_edit"></span></div>
                 </div>
@@ -72,7 +72,7 @@
 
 
             <div class="wgrid-full">
-                @Html.ActionLink("Donate", "NavigateToDonateUrl", "DonateSurface", new { partyGuid = Model.PartyHost.PartyGuid }, new { @class = "btn-primary btn-large", @m_radius_picker="small medium" })
+                @Html.ActionLink("Pay in money", "NavigateToDonateUrl", "DonateSurface", new { partyGuid = Model.PartyHost.PartyGuid }, new { @class = "btn-primary btn-large piggy-donater", @m_radius_picker="small medium" })
             </div>
 
 

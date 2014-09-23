@@ -262,13 +262,22 @@ Event Page specific - move these out of here eventually
 }
 
 
+
 /* =============================================================================
 One-off uses
 ========================================================================== */
+
 #twitter-widget-0 {
   width:100% !important;
 }
 
 .home-twitter-boxx {
     height: 35.6rem; // includes 1.8rem padding // TODO - might need to change this
+}
+
+.piggy-donater:after {
+    @extend .margin-left-small;
+    content: "\e61c";
+    font-family: $fontFaceIcomoon;
+    color: white;
 }
