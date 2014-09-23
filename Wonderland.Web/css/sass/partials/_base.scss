@@ -268,10 +268,12 @@ Event Page specific - move these out of here eventually
     position: relative;
     float: left;
     max-width: 20rem;
+    min-width: 17rem;
 
     .stub {
         @extend .pad-medium;
         background-color: $greyLight;
+        overflow: hidden;
 
         .holes, .holes-right {
             position: absolute;
@@ -301,6 +303,7 @@ Event Page specific - move these out of here eventually
             border: .1rem solid white;
             text-align: center;
 
+            line-height: 7.3rem;
         }
 
     }
@@ -311,12 +314,23 @@ Event Page specific - move these out of here eventually
             background-color: $SecondaryColour;
 
             .price {
-                color: white;
+                color: white !important;
             }
 
         }
     }
 
+    input[type="radio"] {
+        display: none;
+    }
+
+}
+
+
+label .ticket {
+    span {
+      color: inherit;
+    }
 }
 
 

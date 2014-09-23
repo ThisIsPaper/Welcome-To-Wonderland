@@ -135,6 +135,10 @@ $btnPaddingLarge: $btnPaddingMedium*2;
 
 .form-holder {
     max-width: 50rem;
+
+    &.wide {
+        max-width: 70rem;
+    }
 }
 
 //********************************************** Inputs

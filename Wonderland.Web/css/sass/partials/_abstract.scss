@@ -116,3 +116,14 @@ $multiplierLarge: 2;
 .radius-v3-small { @include m-border-radius(.9rem, 1.4rem, 1.4rem, 1rem, .9rem, 1.7rem, .9rem, .8rem); }
 .radius-v3-medium { @include m-border-radius(.9rem, 1.4rem, 1.4rem, 1rem, .9rem, 1.7rem, .9rem, .8rem, 2); }
 .radius-v3-large { @include m-border-radius(.9rem, 1.4rem, 1.4rem, 1rem, .9rem, 1.7rem, .9rem, .8rem, 4); }
+
+
+//**************************************** TEXT
+
+.text-align-center {
+    text-align: center;
+}
+
+.clickable {
+    cursor: pointer;
+}

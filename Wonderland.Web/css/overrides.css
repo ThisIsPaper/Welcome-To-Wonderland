@@ -468,6 +468,16 @@ abstract
   border-bottom-left-radius: 3.6rem 3.2rem;
 }
 
+/* line 123, sass/partials/_abstract.scss */
+.text-align-center {
+  text-align: center;
+}
+
+/* line 127, sass/partials/_abstract.scss */
+.clickable {
+  cursor: pointer;
+}
+
 /* line 10, sass/overrides.scss */
 .modal-backdrop {
   background-color: black !important;
