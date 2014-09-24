@@ -7,9 +7,9 @@ namespace Wonderland.Logic.Models.Database
     [TableName("wonderlandMessage")]
     [ExplicitColumns]
     [PrimaryKey("MessageId", autoIncrement=true)]
-    public class Message
+    public class MessageRow
     {
-        public Message()
+        public MessageRow()
         {
             this.Timestamp = DateTime.Now;
         }
@@ -29,9 +29,9 @@ namespace Wonderland.Logic.Models.Database
         [Column("Timestamp")]
         public DateTime Timestamp { get; set; }
 
-        public static explicit operator Message(Donation_Message donation_Message)
+        public static explicit operator MessageRow(Donation_Message donation_Message)
         {
-            return new Message()
+            return new MessageRow()
                         {
                             MemberId = donation_Message.MemberId,
                             Text = donation_Message.Text,

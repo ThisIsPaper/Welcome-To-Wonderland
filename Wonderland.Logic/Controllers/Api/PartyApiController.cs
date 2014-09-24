@@ -87,12 +87,12 @@ namespace Wonderland.Logic.Controllers.Api
                 {
                     case PartyWallItemType.Donation:
 
-                        partyWallItems.Add(new PartyWallItem((Donation)donation_Message));
+                        partyWallItems.Add(new PartyWallItem((DonationRow)donation_Message));
                         break;
 
                     case PartyWallItemType.Message:
 
-                        partyWallItems.Add(new PartyWallItem((Message)donation_Message));                        
+                        partyWallItems.Add(new PartyWallItem((MessageRow)donation_Message));                        
                         break;
                 }
             }

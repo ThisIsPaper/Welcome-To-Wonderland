@@ -13,7 +13,7 @@ namespace Wonderland.Logic.Models.Entities
 
     public class PartyWallItem
     {
-        internal PartyWallItem(Donation donation)
+        internal PartyWallItem(DonationRow donation)
         {
             IPartier partier = (IPartier)new MembershipHelper(UmbracoContext.Current).GetById(donation.MemberId);   
             
@@ -24,7 +24,7 @@ namespace Wonderland.Logic.Models.Entities
             this.Timestamp = donation.Timestamp;
         }
 
-        internal PartyWallItem(Message message)
+        internal PartyWallItem(MessageRow message)
         {
             IPartier partier = (IPartier)new MembershipHelper(UmbracoContext.Current).GetById(message.MemberId);   
 

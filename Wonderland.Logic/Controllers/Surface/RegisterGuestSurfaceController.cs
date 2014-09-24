@@ -85,7 +85,7 @@ namespace Wonderland.Logic.Controllers.Surface
             PartyGuest partyGuest = (PartyGuest)membershipUser;
 
             // update database with member and party guid (duplicated data, but never changes)
-            this.DatabaseContext.Database.Insert(new MemberParty(partyGuest.Id, registerGuestForm.PartyGuid));
+            this.DatabaseContext.Database.Insert(new MemberPartyRow(partyGuest.Id, registerGuestForm.PartyGuid));
 
             // (duplicate data) store party guid in cms cache
             partyGuest.PartyGuid = registerGuestForm.PartyGuid;
@@ -118,6 +118,7 @@ namespace Wonderland.Logic.Controllers.Surface
             
             // 1) post to sagepay, get response, and then redirect user
 
+            // See: DonateSurfaceController HandleDonateForm()
 
             return this.CurrentUmbracoPage();
         }
