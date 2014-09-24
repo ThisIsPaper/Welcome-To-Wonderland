@@ -373,12 +373,41 @@ One-off uses
 
 /*******************************/// home page
 
+
 .hero {
-  height: 40rem;
+  height: 45rem;
   background-image: image-url('hero-ph.jpg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   margin: 0;
   padding-top: 10rem;
+}
+
+.planking {
+  background: image-url('wood_texture.jpg') repeat top left;
+  background-size: 100% 150%;
+}
+
+.home-content-adjust {
+    margin-top: -8rem;
+}
+
+.hero-explain {
+    margin-right: 35rem;
+    text-align: left;
+}
+
+.money-raised {
+    position: absolute;
+    top: $padSmallValue * 2;
+    right: $padSmallValue * 2;
+    background: image-url('amount-raised-ph.png') no-repeat center right transparent;
+    height: 15rem;
+    width: 34rem;
+}
+
+.raised-amount {
+    color: white;
+    width: 27.5rem;
 }

@@ -36,41 +36,6 @@ Imports
 
 // TODO : abstract out into partials and replace hardcoded values with vars
 
-#homeBg {
-  background: image-url('wood_texture.jpg') repeat top left;
-  background-size: 100% 150%;
-  margin-top: -1.2rem;
-  padding-bottom: 9rem;
-
-}
-
-#heroGraphic {
-  @extend %centred;
-  @extend %row-width;
-  height: 56.5rem;
-  background-image: image-url('hero-ph.jpg');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  margin: 0;
-  
-  .actions {
-    @extend %row-width;
-    margin: 2rem -0.5rem
-  }
-
-}
-
-.banner {
-  @extend %rounded-skew-three;
-  @include container();
-  background: white;
-  min-height: 13.5rem;
-  padding: 0 2.2rem;
-  position: absolute;
-  margin: -2rem 1.5rem;
-  max-width: 67rem;
-
   .banner-info {
     @extend %pull-left;  
     padding: 0.5rem 0.2rem;
@@ -84,31 +49,12 @@ Imports
     height: 14rem;
     width: 21rem
   }
-
-  h1 {
-    color: $PrimaryColour;
-    font-weight: bold;
-    text-transform: uppercase;
-    font-size: 2.36667rem;
-    line-height: 2.18885;
-    letter-spacing: 0.05rem;
-    margin: 0;
-  }
-
-  p {
-    font-size: 1.13333rem;
-    line-height: 1.79443;
-    font-weight: bold;
-    margin-top: -0.5rem;
     
-    &.amount {
-      color: white;
-      font-size: 3rem;  
-      margin: 2.5rem;
-    }
+  p.amount {
+    color: white;
+    font-size: 3rem;
+    margin: 2.5rem;
   }
-
-}
 
 
 .promo-tiles {
