@@ -3,6 +3,6 @@
     Layout = "~/Views/SitePage.cshtml";
 }
 
-<p>Donate to '@Model.PartyHost.PersonName'</p>
+<p>Donate to '@Model.PartyHost.FirstName @Model.PartyHost.LastName'</p>
 
 @(Html.Action<DonateSurfaceController>("RenderDonateForm"))

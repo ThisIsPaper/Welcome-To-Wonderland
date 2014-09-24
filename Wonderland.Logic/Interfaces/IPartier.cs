@@ -16,11 +16,6 @@ namespace Wonderland.Logic.Interfaces
         /// </summary>
         int Id { get; }
 
-        /// <summary>
-        /// rendered name
-        /// </summary>
-        string PersonName { get; }
-
         string FirstName { get; }
 
         string LastName { get; }

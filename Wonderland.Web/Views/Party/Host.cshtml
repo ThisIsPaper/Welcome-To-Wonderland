@@ -108,7 +108,7 @@
                         @foreach (IPartier partier in this.Model.Partiers)
                         {
                             <li>
-                                <img src="@partier.ProfileImageUrl" width="50" height="50" alt="@partier.PersonName" title="@partier.PersonName"/>
+                                <img src="@partier.ProfileImageUrl" width="50" height="50" alt="@Model.PartyHost.FirstName @Model.PartyHost.LastName" title="@Model.PartyHost.FirstName @Model.PartyHost.LastName" />
                             </li>
                         }
                     </ul>

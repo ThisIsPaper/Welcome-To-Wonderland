@@ -255,14 +255,6 @@ namespace Wonderland.Logic.Models.Members
             }
         }
 
-        public string PersonName
-        {
-            get
-            {
-                return this.FirstName + " " + this.LastName;
-            }
-        }
-
         public string ProfileImageUrl
         {
             get
