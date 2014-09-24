@@ -27,13 +27,19 @@ namespace Wonderland.Logic.Controllers.Surface
         public ActionResult RenderDonateForm()
         {
             DonateForm donateForm = new DonateForm();
-
+            
             // set hidden field with party guid
             donateForm.PartyGuid = ((Donate)this.CurrentPage).PartyHost.PartyGuid;
+
+            // set the default amount to the party host's suggested donation
+            donateForm.Amount = this.Members.GetPartyHost(donateForm.PartyGuid).SuggestedDonation;
 
             if (this.Members.IsLoggedIn())
             {
                 IPartier partier = (IPartier)this.Members.GetCurrentMember();
+
+                donateForm.FirstName = partier.FirstName;
+                donateForm.LastName = partier.LastName;
 
                 donateForm.Address1 = partier.BillingAddress.Address1;
                 donateForm.Address2 = partier.BillingAddress.Address2;
@@ -59,7 +65,8 @@ namespace Wonderland.Logic.Controllers.Surface
             {
                 memberId = this.Members.GetCurrentMemberId();
 
-                // TODO: set the billing address for the current member ? (default billing = last used)
+                // if it's a party host, their billing address defaults to the party / partykit address,
+                // so setting billing here, such that it's always the last used
                 Address address = new Address()
                                     {
                                         Address1 = donateForm.Address1,
