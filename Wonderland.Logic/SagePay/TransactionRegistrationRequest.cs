@@ -1,17 +1,14 @@
 ﻿
 namespace Wonderland.Logic.SagePay
 {
-    using System.ComponentModel;
-    using Wonderland.Logic.Models.Entities;
-    using Wonderland.Logic.Models.Database;
+    using System.Web.Configuration;
     using Umbraco.Web;
-    using Umbraco.Web.Mvc;
     using Umbraco.Web.Security;
     using Wonderland.Logic.Interfaces;
+    using Wonderland.Logic.Models.Database;
 
     /// <summary>
     /// See appendix A in docs
-    /// this will be serialized by a custom serializer for 'posting' to SagePay
     /// this class represents the data sent to sage pay to register a transaction
     /// </summary>
     public class TransactionRegistrationRequest
@@ -40,20 +37,18 @@ namespace Wonderland.Logic.SagePay
             this.DeliveryCountry = "UK";
             this.DeliveryPostCode = donationRow.Postcode;
 
-            // if member known, then add custer email
+            // if member known, then populate customer email
             if (donationRow.MemberId.HasValue)
             {
                 this.CustomerEmail = ((IPartier)new MembershipHelper(UmbracoContext.Current).GetById((int)donationRow.MemberId)).Email;
             }
-
         }
 
         public string VPSProtocol { get { return "2.23"; } } //3.00
 
         public string TxType { get { return "PAYMENT"; } }
 
-        // using the simulator account
-        public string Vendor { get { return "macmillancanceS"; } } // live / test = macmillancance3
+        public string Vendor { get { return WebConfigurationManager.AppSettings["SagePay:Vendor"]; } }
 
         public int VendorTxCode { get; private set; }
 
@@ -63,14 +58,7 @@ namespace Wonderland.Logic.SagePay
 
         public string Description { get { return "Wonderland Donation"; } }
 
-        //[Unencoded]
-        public string NotificationUrl
-        {
-            get
-            {
-                return "http://TODO_GET_FROM_CONFIG";
-            }
-        }
+        public string NotificationUrl { get { return WebConfigurationManager.AppSettings["SagePay:NotificationUrl"]; } }
 
         // Token
 

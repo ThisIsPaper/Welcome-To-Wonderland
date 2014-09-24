@@ -5,6 +5,7 @@ namespace Wonderland.Logic.SagePay
     using System.IO;
     using System.Net;
     using System.Text;
+    using System.Web.Configuration;
 
     /// <summary>
     /// static helper used to send data to sage pay to register a new transaction
@@ -17,7 +18,7 @@ namespace Wonderland.Logic.SagePay
             string postData = SagePaySerializer.Serialize(transactionRegistrationRequest);
             byte[] postDataBytes = new UTF8Encoding().GetBytes(postData);
 
-            Uri uri = new Uri("https://test.sagepay.com/simulator/VSPServerGateway.asp?Service=VendorRegisterTx");
+            Uri uri = new Uri(WebConfigurationManager.AppSettings["SagePay:TransactionRegistrationUrl"]);
             WebRequest webRequest = WebRequest.Create(uri);
             webRequest.Method = "POST";
             webRequest.Timeout = (300 * 1000);
@@ -32,14 +33,14 @@ namespace Wonderland.Logic.SagePay
             // post to SagePay and get response
             WebResponse webResponse = webRequest.GetResponse();
 
-            string result;
+            string response;
 
             using (var reader = new StreamReader(webResponse.GetResponseStream(), Encoding.ASCII))
             {
-                result = reader.ReadToEnd();
+                response = reader.ReadToEnd();
             }
 
-            return SagePaySerializer.Deserialize<TransactionRegistrationResponse>(result);
+            return SagePaySerializer.Deserialize<TransactionRegistrationResponse>(response);
         }
     }
 }

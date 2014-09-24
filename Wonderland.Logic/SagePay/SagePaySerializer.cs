@@ -11,13 +11,17 @@ namespace Wonderland.Logic.SagePay
 
     internal static class SagePaySerializer
     {
+        /// <summary>
+        /// Serialize obj for http posting to Sage Pay
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <returns></returns>
         internal static string Serialize(object obj)
         {
             Type type = obj.GetType();
             Dictionary<string, string> dictionary = new Dictionary<string,string>();
 
-            foreach(PropertyInfo propertyInfo in type.GetProperties(BindingFlags.Instance | BindingFlags.Public | BindingFlags.InvokeMethod)
-                                                     .Where(x => x.CanRead))
+            foreach(PropertyInfo propertyInfo in type.GetProperties(BindingFlags.Instance | BindingFlags.Public | BindingFlags.InvokeMethod).Where(x => x.CanRead))
             {
                 object rawValue = propertyInfo.GetValue(obj, null);
                 if(rawValue != null)
@@ -48,8 +52,12 @@ namespace Wonderland.Logic.SagePay
             return string.Join("&", dictionary.Select(x => x.Key + "=" + x.Value).ToArray());
         }
 
-
-        // we are expecting T to be TransactionRegistrationResponse (and later NotificationRequest)
+        /// <summary>
+        /// Deserialize data from Sage Pay back into an obj
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="input"></param>
+        /// <returns></returns>
         internal static T Deserialize<T>(string input) where T : new() // TODO: add interface
         {
             T output = new T();
