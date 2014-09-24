@@ -7,8 +7,10 @@ namespace Wonderland.Logic.Controllers.Surface
     using Wonderland.Logic.Interfaces;
     using Wonderland.Logic.Models.Content;
     using Wonderland.Logic.Models.Database;
+    using Wonderland.Logic.Models.Entities;
     using Wonderland.Logic.Models.Forms;
     using Wonderland.Logic.SagePay;
+    using Wonderland.Logic.Extensions;
 
     public class DonateSurfaceController : SurfaceController
     {
@@ -56,6 +58,17 @@ namespace Wonderland.Logic.Controllers.Surface
             if (this.Members.IsLoggedIn())
             {
                 memberId = this.Members.GetCurrentMemberId();
+
+                // TODO: set the billing address for the current member ? (default billing = last used)
+                Address address = new Address()
+                                    {
+                                        Address1 = donateForm.Address1,
+                                        Address2 = donateForm.Address2,
+                                        TownCity = donateForm.TownCity,
+                                        Postcode = donateForm.Postcode
+                                    };
+
+                ((IPartier)this.Members.GetCurrentMember()).BillingAddress = address;                
             }
 
             DonationRow donationRow = new DonationRow()
@@ -93,7 +106,11 @@ namespace Wonderland.Logic.Controllers.Surface
                 this.DatabaseContext.Database.Update(donationRow);
 
                 return this.Redirect(transactionRegistrationResponse.NextURL);
-            }            
+            }
+            else
+            {
+                // delete row ? (as transaction will never happen)
+            }
 
             return this.CurrentUmbracoPage(); // TODO: return a view indicating failure
         }

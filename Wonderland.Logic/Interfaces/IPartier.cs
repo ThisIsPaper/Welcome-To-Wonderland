@@ -40,7 +40,7 @@ namespace Wonderland.Logic.Interfaces
         /// <summary>
         /// 
         /// </summary>
-        Address BillingAddress { get; }
+        Address BillingAddress { get; set; }
 
         /// <summary>
         /// common property in BaseMemberType
