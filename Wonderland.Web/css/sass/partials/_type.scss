@@ -306,7 +306,7 @@ h1 {
     text-align: center;
     line-height: 4.2rem;
 
-    &.lighter {
+    &.lighter, .lighter {
         color: $greenDark;
     }
 

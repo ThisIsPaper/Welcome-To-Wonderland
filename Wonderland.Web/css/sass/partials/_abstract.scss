@@ -192,11 +192,12 @@ $multiplierLarge: 2;
 }
 
 
-//**************************************** POSITION
+//**************************************** OPACITY
 
 .opacity-0 {
     @include opacity(0);
 }
+
 
 
 //**************************************** POSITION
@@ -215,4 +216,12 @@ $multiplierLarge: 2;
 
 .only-on-mobile {
     display: none;
+}
+
+.pos-top-0 {
+    top: 0;
+}
+
+.pos-right-0 {
+    right: 0;
 }

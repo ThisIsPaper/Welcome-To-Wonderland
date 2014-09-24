@@ -872,24 +872,34 @@ abstract
   opacity: 0;
 }
 
-/* line 204, sass/partials/_abstract.scss */
+/* line 205, sass/partials/_abstract.scss */
 .pos-relative {
   position: relative;
 }
 
-/* line 208, sass/partials/_abstract.scss */
+/* line 209, sass/partials/_abstract.scss */
 .pos-absolute {
   position: absolute;
 }
 
-/* line 212, sass/partials/_abstract.scss */
+/* line 213, sass/partials/_abstract.scss */
 .pos-static {
   position: static;
 }
 
-/* line 216, sass/partials/_abstract.scss */
+/* line 217, sass/partials/_abstract.scss */
 .only-on-mobile {
   display: none;
+}
+
+/* line 221, sass/partials/_abstract.scss */
+.pos-top-0 {
+  top: 0;
+}
+
+/* line 225, sass/partials/_abstract.scss */
+.pos-right-0 {
+  right: 0;
 }
 
 /* line 10, sass/overrides.scss */
