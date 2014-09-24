@@ -4,6 +4,10 @@ namespace Wonderland.Logic.SagePay
     using System.ComponentModel;
     using Wonderland.Logic.Models.Entities;
     using Wonderland.Logic.Models.Database;
+    using Umbraco.Web;
+    using Umbraco.Web.Mvc;
+    using Umbraco.Web.Security;
+    using Wonderland.Logic.Interfaces;
 
     /// <summary>
     /// See appendix A in docs
@@ -35,32 +39,14 @@ namespace Wonderland.Logic.SagePay
             this.DeliveryCity = donationRow.TownCity;
             this.DeliveryCountry = "UK";
             this.DeliveryPostCode = donationRow.Postcode;
+
+            // if member known, then add custer email
+            if (donationRow.MemberId.HasValue)
+            {
+                this.CustomerEmail = ((IPartier)new MembershipHelper(UmbracoContext.Current).GetById((int)donationRow.MemberId)).Email;
+            }
+
         }
-
-        //public TransactionRegistrationRequest(int vendorTxCode, decimal amount, bool allowGiftAid, string firstName, string lastName, Address address)
-        //{
-        //    this.VendorTxCode = vendorTxCode;
-        //    this.Amount = amount;
-        //    this.AllowGiftAid = allowGiftAid;
-
-        //    this.BillingSurname = lastName;
-        //    this.BillingFirstnames = firstName;
-
-        //    this.BillingAddress1 = address.Address1;
-        //    this.BillingAddress2 = address.Address2;
-        //    this.BillingCity = address.TownCity;
-        //    this.BillingCountry = "UK";
-        //    this.BillingPostCode = address.Postcode;
-
-        //    this.DeliverySurname = lastName;
-        //    this.DeliveryFirstnames = firstName;
-
-        //    this.DeliveryAddress1 = address.Address1;
-        //    this.DeliveryAddress2 = address.Address2;
-        //    this.DeliveryCity = address.TownCity;
-        //    this.DeliveryCountry = "UK";
-        //    this.DeliveryPostCode = address.Postcode;
-        //}
 
         public string VPSProtocol { get { return "2.23"; } } //3.00
 
@@ -124,7 +110,7 @@ namespace Wonderland.Logic.SagePay
 
         // Delivery Phone
 
-        // Customer Email
+        public string CustomerEmail { get; private set; }
 
         // Basket
 

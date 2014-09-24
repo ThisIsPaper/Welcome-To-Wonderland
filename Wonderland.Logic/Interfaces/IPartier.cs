@@ -41,5 +41,10 @@ namespace Wonderland.Logic.Interfaces
         /// 
         /// </summary>
         Address BillingAddress { get; }
+
+        /// <summary>
+        /// common property in BaseMemberType
+        /// </summary>
+        string Email { get; }
     }
 }

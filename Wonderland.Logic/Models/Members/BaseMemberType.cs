@@ -71,6 +71,14 @@ namespace Wonderland.Logic.Models.Members
             }
         }
 
+        public string Email
+        {
+            get
+            {
+                return this.Member.Email;
+            }
+        }
+
         protected void SetPropertyValue(string propertyAlias, object propertyValue)
         {
             this.Member.SetValue(propertyAlias, propertyValue);
