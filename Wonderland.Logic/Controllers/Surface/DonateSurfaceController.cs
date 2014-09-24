@@ -67,15 +67,15 @@ namespace Wonderland.Logic.Controllers.Surface
 
                 // if it's a party host, their billing address defaults to the party / partykit address,
                 // so setting billing here, such that it's always the last used
-                Address address = new Address()
-                                    {
-                                        Address1 = donateForm.Address1,
-                                        Address2 = donateForm.Address2,
-                                        TownCity = donateForm.TownCity,
-                                        Postcode = donateForm.Postcode
-                                    };
+                //Address address = new Address()
+                //                    {
+                //                        Address1 = donateForm.Address1,
+                //                        Address2 = donateForm.Address2,
+                //                        TownCity = donateForm.TownCity,
+                //                        Postcode = donateForm.Postcode
+                //                    };
 
-                ((IPartier)this.Members.GetCurrentMember()).BillingAddress = address;                
+                //((IPartier)this.Members.GetCurrentMember()).BillingAddress = address;                
             }
 
             DonationRow donationRow = new DonationRow()
@@ -119,7 +119,9 @@ namespace Wonderland.Logic.Controllers.Surface
                 // delete row ? (as transaction will never happen)
             }
 
-            return this.CurrentUmbracoPage(); // TODO: return a view indicating failure
+            this.ViewData["errorMessage"] = transactionRegistrationResponse.StatusDetail;
+
+            return this.View("Donate/Failed", this.CurrentPage);
         }
     }
 }
