@@ -276,9 +276,18 @@ ul, ol, dl {
     text-decoration: none;
 }
 
+.body-emphasize {
+    font-weight: bold;
+}
+
 .body-highlight {
     color: $SecondaryColour;
     text-decoration: none;
+}
+
+.body-h1 {
+    font-family: 'macmillan';
+    color: $FourthColour;
 }
 
 
@@ -319,5 +328,18 @@ h4 {
 
     &.top {
         @extend .margin-top-0;
+    }
+}
+
+
+
+.back {
+    @extend .body-medium;
+    text-transform: uppercase;
+    color: white;
+    font-weight: bold;
+
+    [class^="icon-"], [class*=" icon-"] {
+        @extend .margin-right-small;
     }
 }

@@ -169,8 +169,8 @@ Event Page specific - move these out of here eventually
     }
 }
 
-
-/*******************************/// party image modal
+dal
+/*******************************/// party image mo
 .party-image-container {
     @extend .margin-bottom-medium;
 
@@ -456,4 +456,25 @@ One-off uses
     bottom: 0;
     left: 0;
     max-width: 80%;
+}
+
+
+
+/*******************************/// spotfiy
+
+.spotify-holder {
+    width: 35.6rem;
+    margin-top: -7rem;
+}
+
+.spotify-info-holder {
+    @extend .pad-right-large;
+    position: absolute;
+    top: 12rem;
+    color: white;
+    text-align: center;
+
+    h1 {
+        color: white;
+    }
 }
