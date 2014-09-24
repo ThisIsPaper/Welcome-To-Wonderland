@@ -26,9 +26,8 @@ namespace Wonderland.Logic.SagePay
                 stream.Write(postDataBytes, 0, postDataBytes.Length);
             }
 
+            // post to SagePay and get response
             WebResponse webResponse = webRequest.GetResponse();
-
-            // TODO: post request to sage pay, and then deserialize any response
 
             string result;
 

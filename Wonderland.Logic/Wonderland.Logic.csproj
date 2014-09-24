@@ -289,8 +289,11 @@
     <Compile Include="Models\Members\PartyGuest.cs" />
     <Compile Include="Models\Members\PartyHost.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SagePay\NotificationRequest.cs" />
+    <Compile Include="SagePay\NotificationResponse.cs" />
+    <Compile Include="SagePay\NotificationStatus.cs" />
     <Compile Include="SagePay\SagePaySerializer.cs" />
-    <Compile Include="SagePay\StatusType.cs">
+    <Compile Include="SagePay\TransactionRegistrationStatus.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="SagePay\TransactionRegistration.cs" />

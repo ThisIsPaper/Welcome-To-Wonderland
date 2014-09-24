@@ -54,12 +54,11 @@ namespace Wonderland.Logic.SagePay
                 PropertyInfo propertyInfo = type.GetProperty(name, BindingFlags.Public | BindingFlags.Instance);
                 if (propertyInfo != null)
                 {
-
                     object convertedValue = null;
 
-                    if (propertyInfo.PropertyType == typeof(StatusType))
+                    if (propertyInfo.PropertyType == typeof(TransactionRegistrationStatus))
                     {
-                        convertedValue = Enum.Parse(typeof(StatusType), value);
+                        convertedValue = Enum.Parse(typeof(TransactionRegistrationStatus), value.Replace(" ", string.Empty)); // removing spaces to account for "OK REPEATED"
                     }
                     else
                     {                     

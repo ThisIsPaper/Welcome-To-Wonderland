@@ -20,7 +20,7 @@ namespace Wonderland.Logic.SagePay
         ///// <summary>
         ///// Status
         ///// </summary>
-        public StatusType Status { get; set; }
+        public TransactionRegistrationStatus Status { get; set; }
 
         /// <summary>
         /// Additional status details
