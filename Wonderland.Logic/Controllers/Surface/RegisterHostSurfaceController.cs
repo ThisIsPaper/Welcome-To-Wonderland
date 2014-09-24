@@ -155,6 +155,7 @@ namespace Wonderland.Logic.Controllers.Surface
 
             partyHost.PartyKitAddress = address;
             partyHost.PartyAddress = address;
+            partyHost.BillingAddress = address;
 
             partyHost.HasRequestedPartyKit = true;
 
