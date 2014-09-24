@@ -22,7 +22,7 @@ namespace Wonderland.Logic.Models.Database
         public bool GiftAid { get; set; }
 
         [Column("MemberId")]
-        public int MemberId { get; set; }
+        public int? MemberId { get; set; }
 
         [Column("FirstName")]
         public string FirstName { get; set; }

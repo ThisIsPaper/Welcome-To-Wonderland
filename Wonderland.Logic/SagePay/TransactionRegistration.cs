@@ -6,6 +6,9 @@ namespace Wonderland.Logic.SagePay
     using System.Net;
     using System.Text;
 
+    /// <summary>
+    /// static helper used to send data to sage pay to register a new transaction
+    /// </summary>
     internal static class TransactionRegistration
     {        
         internal static TransactionRegistrationResponse Send(TransactionRegistrationRequest transactionRegistrationRequest)

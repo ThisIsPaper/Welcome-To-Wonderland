@@ -1,12 +1,6 @@
 ﻿
 namespace Wonderland.Logic.SagePay
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
-
     /// <summary>
     /// Response received from a transaction registration
     /// </summary>

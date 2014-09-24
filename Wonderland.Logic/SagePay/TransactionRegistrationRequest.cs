@@ -1,9 +1,9 @@
 ﻿
-
 namespace Wonderland.Logic.SagePay
 {
     using System.ComponentModel;
     using Wonderland.Logic.Models.Entities;
+    using Wonderland.Logic.Models.Database;
 
     /// <summary>
     /// See appendix A in docs
@@ -12,30 +12,55 @@ namespace Wonderland.Logic.SagePay
     /// </summary>
     public class TransactionRegistrationRequest
     {
-        public TransactionRegistrationRequest(int vendorTxCode, decimal amount, bool allowGiftAid, string firstName, string lastName, Address address)
+        public TransactionRegistrationRequest(DonationRow donationRow)
         {
-            this.VendorTxCode = vendorTxCode;
-            this.Amount = amount;
-            this.AllowGiftAid = allowGiftAid;
+            this.VendorTxCode = donationRow.VendorTxCode;
+            this.Amount = donationRow.Amount;
+            this.AllowGiftAid = donationRow.GiftAid;
 
-            this.BillingSurname = lastName;
-            this.BillingFirstnames = firstName;
+            this.BillingSurname = donationRow.LastName;
+            this.BillingFirstnames = donationRow.FirstName;
 
-            this.BillingAddress1 = address.Address1;
-            this.BillingAddress2 = address.Address2;
-            this.BillingCity = address.TownCity;
+            this.BillingAddress1 = donationRow.Address1;
+            this.BillingAddress2 = donationRow.Address2;
+            this.BillingCity = donationRow.TownCity;
             this.BillingCountry = "UK";
-            this.BillingPostCode = address.Postcode;
+            this.BillingPostCode = donationRow.Postcode;
 
-            this.DeliverySurname = lastName;
-            this.DeliveryFirstnames = firstName;
+            this.DeliverySurname = donationRow.LastName;
+            this.DeliveryFirstnames = donationRow.FirstName;
 
-            this.DeliveryAddress1 = address.Address1;
-            this.DeliveryAddress2 = address.Address2;
-            this.DeliveryCity = address.TownCity;
+            this.DeliveryAddress1 = donationRow.Address1;
+            this.DeliveryAddress2 = donationRow.Address2;
+            this.DeliveryCity = donationRow.TownCity;
             this.DeliveryCountry = "UK";
-            this.DeliveryPostCode = address.Postcode;
+            this.DeliveryPostCode = donationRow.Postcode;
         }
+
+        //public TransactionRegistrationRequest(int vendorTxCode, decimal amount, bool allowGiftAid, string firstName, string lastName, Address address)
+        //{
+        //    this.VendorTxCode = vendorTxCode;
+        //    this.Amount = amount;
+        //    this.AllowGiftAid = allowGiftAid;
+
+        //    this.BillingSurname = lastName;
+        //    this.BillingFirstnames = firstName;
+
+        //    this.BillingAddress1 = address.Address1;
+        //    this.BillingAddress2 = address.Address2;
+        //    this.BillingCity = address.TownCity;
+        //    this.BillingCountry = "UK";
+        //    this.BillingPostCode = address.Postcode;
+
+        //    this.DeliverySurname = lastName;
+        //    this.DeliveryFirstnames = firstName;
+
+        //    this.DeliveryAddress1 = address.Address1;
+        //    this.DeliveryAddress2 = address.Address2;
+        //    this.DeliveryCity = address.TownCity;
+        //    this.DeliveryCountry = "UK";
+        //    this.DeliveryPostCode = address.Postcode;
+        //}
 
         public string VPSProtocol { get { return "2.23"; } } //3.00
 
@@ -141,5 +166,4 @@ namespace Wonderland.Logic.SagePay
 
         // FIRecipientDoB
     }
-
 }

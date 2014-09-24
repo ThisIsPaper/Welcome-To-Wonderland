@@ -1,7 +1,9 @@
 ﻿
 namespace Wonderland.Logic.Models.Forms
 {
+    using System;
     using System.ComponentModel.DataAnnotations;
+    using System.Web.Mvc;
 
     public class DonateForm
     {
@@ -36,6 +38,10 @@ namespace Wonderland.Logic.Models.Forms
 
         [Required]
         [MaxLength(10)]
-        public string PostCode { get; set; }
+        public string Postcode { get; set; }
+
+        [Required]
+        [HiddenInput(DisplayValue = false)]
+        public Guid PartyGuid { get; set; }
     }
 }

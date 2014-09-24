@@ -4,11 +4,11 @@ namespace Wonderland.Logic.Controllers.Surface
     using System;
     using System.Web.Mvc;
     using Umbraco.Web.Mvc;
+    using Wonderland.Logic.Interfaces;
     using Wonderland.Logic.Models.Content;
+    using Wonderland.Logic.Models.Database;
     using Wonderland.Logic.Models.Forms;
     using Wonderland.Logic.SagePay;
-    using Wonderland.Logic.Models.Entities;
-    using Wonderland.Logic.Interfaces;
 
     public class DonateSurfaceController : SurfaceController
     {
@@ -17,33 +17,32 @@ namespace Wonderland.Logic.Controllers.Surface
         /// </summary>
         /// <returns></returns>
         [HttpGet]
-        //[MemberAuthorize]
         public ActionResult NavigateToDonateUrl(Guid partyGuid)
         {
-            // TODO: if not logged in, then redirect to login page first ?
-
             return this.Redirect(this.Umbraco.TypedContentSingleAtXPath("//" + Donate.Alias).Url + "?partyGuid=" + partyGuid.ToString());
         }
 
-        [MemberAuthorize]
         public ActionResult RenderDonateForm()
         {
-            // TODO: check member is logged in
-
             DonateForm donateForm = new DonateForm();
 
-            IPartier partier = (IPartier)this.Members.GetCurrentMember();
+            // set hidden field with party guid
+            donateForm.PartyGuid = ((Donate)this.CurrentPage).PartyHost.PartyGuid;
 
-            donateForm.Address1 = partier.BillingAddress.Address1;
-            donateForm.Address2 = partier.BillingAddress.Address2;
-            donateForm.TownCity = partier.BillingAddress.TownCity;
-            donateForm.PostCode = partier.BillingAddress.Postcode;
+            if (this.Members.IsLoggedIn())
+            {
+                IPartier partier = (IPartier)this.Members.GetCurrentMember();
+
+                donateForm.Address1 = partier.BillingAddress.Address1;
+                donateForm.Address2 = partier.BillingAddress.Address2;
+                donateForm.TownCity = partier.BillingAddress.TownCity;
+                donateForm.Postcode = partier.BillingAddress.Postcode;
+            }
 
             return this.PartialView("DonateForm", donateForm);
         }
 
         [HttpPost]
-        [MemberAuthorize]
         [ValidateAntiForgeryToken]
         public ActionResult HandleDonateForm(DonateForm donateForm)
         {
@@ -52,27 +51,51 @@ namespace Wonderland.Logic.Controllers.Surface
                 return this.CurrentUmbracoPage();
             }
 
-            // TODO: insert into db here to get the vendorTxCode...
+            int? memberId = null;
 
-            int vendorTxCode = 10000;
-            decimal amount = donateForm.Amount;
-            bool allowGiftAid = donateForm.AllowGiftAid;
-            string firstName = donateForm.FirstName;
-            string lastName = donateForm.LastName;
-            Address address = new Address()
-                                    {
-                                        Address1 = donateForm.Address1,
-                                        Address2 = donateForm.Address2,
-                                        TownCity = donateForm.TownCity,
-                                        Postcode = donateForm.PostCode
-                                    };
+            if (this.Members.IsLoggedIn())
+            {
+                memberId = this.Members.GetCurrentMemberId();
+            }
 
-            // build data to send to sage pay in preparation for a transaction, and get the sage pay response
-            TransactionRegistrationResponse transactionRegistrationResponse = TransactionRegistration.Send(new TransactionRegistrationRequest(vendorTxCode, amount, allowGiftAid, firstName, lastName, address));
+            DonationRow donationRow = new DonationRow()
+                                        {
+                                            PartyGuid = donateForm.PartyGuid,
+                                            Amount = donateForm.Amount,
+                                            GiftAid = donateForm.AllowGiftAid,
+                                            MemberId = memberId, 
+                                            FirstName = donateForm.FirstName,
+                                            LastName = donateForm.LastName,
+                                            Address1 = donateForm.Address1,
+                                            Address2 = donateForm.Address2,
+                                            TownCity = donateForm.TownCity,
+                                            Postcode = donateForm.Postcode,
+                                            Timestamp = DateTime.Now,
+                                            Success = false
+                                        };
+
+            // insert new record
+            this.DatabaseContext.Database.Insert(donationRow);
+
+            // build new obj containing data for sage pay
+            TransactionRegistrationRequest transactionRegistrationRequest = new TransactionRegistrationRequest(donationRow);
+
+            // send to sage pay and get respone
+            TransactionRegistrationResponse transactionRegistrationResponse = TransactionRegistration.Send(transactionRegistrationRequest);
 
             // based on response, we redirect the user to...
+            if (transactionRegistrationResponse.Status ==TransactionRegistrationStatus.OK)
+            {
+                // update database
+                donationRow.VPSTxId = transactionRegistrationResponse.VPSTxId;
+                donationRow.SecurityKey = transactionRegistrationResponse.SecurityKey;
 
-            return this.CurrentUmbracoPage();
+                this.DatabaseContext.Database.Update(donationRow);
+
+                return this.Redirect(transactionRegistrationResponse.NextURL);
+            }            
+
+            return this.CurrentUmbracoPage(); // TODO: return a view indicating failure
         }
     }
 }
