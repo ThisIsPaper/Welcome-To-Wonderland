@@ -71,6 +71,7 @@ Type
 ========================================================================== */
 $fontFaceMacmillan: 'macmillan';
 $fontFaceFutura: 'Futura BT W01 Book';
+$fontFaceIcomoon: 'icomoon';
 
 $Em: 1.8rem !default;
 $BaseFontSize: 62.5% !default;
@@ -97,8 +98,8 @@ Colours
 ========================================================================== */
 $TextColour: #666 !default;
 $InverseTextColour: invert($TextColour) !default;
-$PrimaryColour: #007eac !default; // colour of text and main colour overall
-$SecondaryColour: #682c88 !default; // colour of any components, backgrounds, etc.
+$PrimaryColour: #682c88 !default; // colour of text and main colour overall
+$SecondaryColour: #007eac !default; // colour of any components, backgrounds, etc.
 $TertiaryColour: #7c7c7c !default; //special colour to complement secondary colour
 $FourthColour: #025b45 !default; //brand colour
 //background colour.  Should be the opposite of primary colour for good results
@@ -114,6 +115,14 @@ $greyDark: #7B7A6D;
 $greyMedium: #A19F91;
 $greyLight: #D4D3CC;
 $greyReallyLight: #ECECEC;
+
+/* Reds */
+$redLight: #FCE9EA;
+$redDark: #E32333;
+
+/* Green */
+$greenLight: #D1E8B2;
+$greenDark: #00A246;
 
 /* =============================================================================
 Borders

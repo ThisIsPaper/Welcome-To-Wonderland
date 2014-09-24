@@ -29,7 +29,7 @@
                 <input type="radio" name="urlSelectar" ng-model="partyImageData.PartyImage" value="/img/test_default_image_1.jpg"  />
                 <div class="party-image-selecter" style="background-image: url(/img/test_default_image_1.jpg)" m-radius-picker="small"></div>
             </label>
-            <div class="warning" ng-click="partyImageData.PartyImage=null">Deselect image <span class="icon-icon_x"></span></div>
+            <div class="warner" ng-click="partyImageData.PartyImage=null">Deselect image <span class="icon-icon_x"></span></div>
         </div>
 
         <div class="party-image-container" ng-class="{'selected': partyImageData.PartyImage=='/img/test_default_image_2.jpg'}">
@@ -37,7 +37,7 @@
                 <input type="radio" name="urlSelectar" ng-model="partyImageData.PartyImage" value="/img/test_default_image_2.jpg"  />
                 <div class="party-image-selecter" style="background-image: url(/img/test_default_image_2.jpg)" m-radius-picker="small"></div>
             </label>
-            <div class="warning" ng-click="partyImageData.PartyImage=null">Deselect image <span class="icon-icon_x"></span></div>
+            <div class="warner" ng-click="partyImageData.PartyImage=null">Deselect image <span class="icon-icon_x"></span></div>
         </div>
 
         <div class="party-image-container" ng-class="{'selected': partyImageData.PartyImage=='/img/test_default_image_3.jpg'}">
@@ -45,7 +45,7 @@
                 <input type="radio" name="urlSelectar" ng-model="partyImageData.PartyImage" value="/img/test_default_image_3.jpg"  />
                 <div class="party-image-selecter margin-right-0" style="background-image: url(/img/test_default_image_3.jpg)" m-radius-picker="small"><span></span></div>
             </label>
-            <div class="warning" ng-click="partyImageData.PartyImage=null">Deselect image <span class="icon-icon_x"></span></div>
+            <div class="warner" ng-click="partyImageData.PartyImage=null">Deselect image <span class="icon-icon_x"></span></div>
         </div>
 
         <div class="clear"></div>
@@ -62,7 +62,7 @@
                 <input type="radio" name="urlSelectar" ng-model="partyImageData.PartyImage" value="{{ partyCustomImage.url }}" ng-disabled="!partyCustomImage.url"  />
                 <div class="party-image-selecter icon-icon_question_mark" ng-style="{'background-image': 'url(' + partyCustomImage.url + ')'}" ng-class="{'image-set': partyCustomImage.url, 'image-unset': !partyCustomImage.url}" m-radius-picker="small"></div>
             </label>
-            <div class="warning" ng-click="partyImageData.PartyImage=null">Deselect image <span class="icon-icon_x"></span></div>
+            <div class="warner" ng-click="partyImageData.PartyImage=null">Deselect image <span class="icon-icon_x"></span></div>
         </div>
 
         @(Html.Action<PartySurfaceController>("RenderCustomPartyImageForm"))
@@ -78,7 +78,7 @@
 
             <input name="PartyImage" type="hidden" ng-model="partyImageData.PartyImage">
 
-            <button type="submit" class="btn-primary float-right" ng-disabled="!partyImageData.PartyImage">Save changes</button>
+            <button type="submit" class="btn-primary float-right" ng-disabled="!partyImageData.PartyImage" m-radius-picker="small medium">Save changes</button>
             <span class="cancel margin-right-1 float-right">Cancel</span>
         }
     </div>

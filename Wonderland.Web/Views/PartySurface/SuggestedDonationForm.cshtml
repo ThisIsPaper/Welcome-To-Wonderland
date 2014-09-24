@@ -3,18 +3,47 @@
 <div ng-init="suggestedDonationDataInit(@Html.Raw(Json.Encode(Model)))"></div>
 
 <script type="text/ng-template" id="partials/suggestedDonationForm.html">
-    @using (Html.BeginUmbracoForm<PartySurfaceController>("HandleSuggestedDonationForm", FormMethod.Post, new { m_serialized="", m_post_on_submit="suggestedDonationData", m_on_success_event="suggestedDonationDataUpdated" }))
-    {
-        @Html.AntiForgeryToken()
 
-        @Html.EditorForModel()
+    <div class="form-holder wide" ng-controller="SuggestedDonationFormCtrl">
 
-        <label><input type="radio" name="SuggestedDonation" value="10" ng-model="suggestedDonationData.SuggestedDonation" /><span>10</span></label>
-        <label><input type="radio" name="SuggestedDonation" value="15" ng-model="suggestedDonationData.SuggestedDonation" /><span>15</span></label>
-        <label><input type="radio" name="SuggestedDonation" value="20" ng-model="suggestedDonationData.SuggestedDonation" /><span>20</span></label>
-        <label><input type="radio" name="SuggestedDonation" value="25" ng-model="suggestedDonationData.SuggestedDonation" /><span>25</span></label>
+        <h4>Suggest a ticket donation amount</h4>
+        <p class="body-medium margin-bottom-medium">
+            You're a ski-tastic host so suggest a donation to your guests for your Wonderland Eggnog-anza! Every penny will go to support the two million people living  with cancer in the UK, and help  them to take back control and live their lives to the fullest. That's cooler than an Alpine stream.
+        </p>
+
+        @using (Html.BeginUmbracoForm<PartySurfaceController>("HandleSuggestedDonationForm", FormMethod.Post, new { m_serialized="", m_post_on_submit="suggestedDonationData", m_on_success_event="suggestedDonationDataUpdated" }))
+        {
+            @Html.AntiForgeryToken()
+
+            @Html.EditorForModel()
+
+            <div class="margin-bottom-medium">
+
+                <label ng-repeat="donation in hardcodedDonationSuggestions">
+
+                    <div class="ticket clickable" ng-class="{'selected': suggestedDonationData.SuggestedDonation==donation.amount}">
+
+                        <div class="stub">
+                            <div class="holes"></div>
+                            <div class="holes-right"></div>
+                            <div class="price">£<span ng-bind="donation.amount"></span></div>
+                        </div>
+
+                        <div class="body-highlight text-align-center" ng-bind="donation.label"></div>
+
+                        <input type="radio" name="SuggestedDonation" ng-value="donation.amount" ng-model="suggestedDonationData.SuggestedDonation" />
+
+                    </div>
+
+                </label>
+
+                <div class="clear"></div>
+            </div>
 
 
-        <button type="submit">Save Changes (suggested donation)</button>
-    }
+            <button type="submit" class="btn-primary float-right" m-radius-picker="small">Save changes</button>
+            <span class="cancel margin-right-1 float-right">Cancel</span>
+        }
+
+    </div>
 </script>

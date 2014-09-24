@@ -18,6 +18,7 @@
 @import "partials/abstract";
 @import "partials/mixins";
 @import "partials/forms";
+@import "partials/type";
 
 
 html {
@@ -111,7 +112,7 @@ Event Page specific - move these out of here eventually
     text-align: center;
     width: 3rem;
     height: 3rem;
-    background-color: $PrimaryColour;
+    background-color: $SecondaryColour;
     @include m-border-radius(3rem, 3rem, 3rem, 3rem, 3rem, 3rem, 3rem, 3rem);
 
 
@@ -136,11 +137,32 @@ Event Page specific - move these out of here eventually
     height: $profileImageSize;
     background-repeat: no-repeat;
     background-size: cover;
+    background-color: $greyMedium;
     float: left;
+
+    &:before {
+        font-family: $fontFaceIcomoon;
+        content: " ";
+        color: white;
+        font-size: 5rem;
+        line-height: 7rem;
+        width: 100%;
+        text-align: center;
+        display: block;
+    }
+
+    &.profile-image-notset:before {
+        content: "\e61b";
+    }
 }
 
 .image-shift-details {
     margin-left: $profileImageSize + $padSmallValue;
+
+    &.bigger {
+        margin-left: $profileImageSize + $padSmallValue + 5rem;
+    }
+
 }
 
 .party-details {
@@ -152,8 +174,8 @@ Event Page specific - move these out of here eventually
     }
 }
 
-
-/*******************************/// party image modal
+dal
+/*******************************/// party image mo
 .party-image-container {
     @extend .margin-bottom-medium;
 
@@ -163,7 +185,8 @@ Event Page specific - move these out of here eventually
         display: none;
     }
 
-    .warning {
+    .warner {
+        @extend .warning;
         width: 16rem;
         text-align: center;
         display: none;
@@ -174,7 +197,7 @@ Event Page specific - move these out of here eventually
         .party-image-selecter:after {
             content: "\e61f"; // tick
             font-family: "icomoon";
-            background-color: $PrimaryColour;
+            background-color: $SecondaryColour;
             color: white;
             font-size: 4rem;
             padding: 2rem 7rem 2rem 5.8rem;
@@ -187,7 +210,7 @@ Event Page specific - move these out of here eventually
             margin-left: 0;
         }
 
-        .warning {
+        .warner {
             display: block;
             cursor: pointer;
         }
@@ -244,14 +267,234 @@ Event Page specific - move these out of here eventually
     color: $greyLight;
 }
 
+/*******************************/// ticket
+
+.ticket {
+    position: relative;
+    float: left;
+    max-width: 20rem;
+    min-width: 17rem;
+
+    .stub {
+        @extend .pad-medium;
+        background-color: $greyLight;
+        overflow: hidden;
+
+        .holes, .holes-right {
+            position: absolute;
+            left: -.1rem;
+            top: -.1rem;
+            width: 1.2rem;
+            height: 101%;
+            background-image: image-url('raffle.svg');
+            background-repeat: no-repeat;
+        }
+
+        .holes-right {
+            left: auto;
+            right: -.1rem;
+            background-image: image-url('raffle_r.svg');
+        }
+
+        .price {
+            @extend .pad-left-medium;
+            @extend .pad-right-medium;
+            @extend .heading-large;
+            @include border-radius(1rem);
+
+            font-family: $fontFaceMacmillan;
+            color: $SecondaryColour;
+
+            border: .1rem solid white;
+            text-align: center;
+
+            line-height: 7.3rem;
+        }
+
+    }
+
+
+    &.selected {
+        .stub {
+            background-color: $SecondaryColour;
+
+            .price {
+                color: white !important;
+            }
+
+        }
+    }
+
+    input[type="radio"] {
+        display: none;
+    }
+
+}
+
+
+label .ticket {
+    span {
+      color: inherit;
+    }
+}
+
+
+/*******************************/// totaliser
+
+.totaliser {
+    @extend .pad-tiny;
+    @include border-radius($padSmallValue/2);
+    background-color: $greyLight;
+
+
+    .current-total {
+    @include border-radius($padSmallValue/2);
+        background-color: $SecondaryColour;
+        max-width: 100%;
+        height: 3rem;
+    }
+}
+
 
 /* =============================================================================
 One-off uses
 ========================================================================== */
+
 #twitter-widget-0 {
   width:100% !important;
 }
 
 .home-twitter-boxx {
     height: 35.6rem; // includes 1.8rem padding // TODO - might need to change this
+}
+
+.piggy-donater:after {
+    @extend .margin-left-small;
+    content: "\e61c";
+    font-family: $fontFaceIcomoon;
+    color: white;
+}
+
+
+/*******************************/// home page
+
+
+.hero {
+  height: 45rem;
+  background-image: image-url('hero-ph.jpg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  margin: 0;
+  padding-top: 10rem;
+}
+
+.planking {
+  background: image-url('wood_texture.jpg') repeat top left;
+  background-size: 100% 100%;
+}
+
+.home-content-adjust {
+    margin-top: -8rem;
+}
+
+.hero-explain {
+    margin-right: 35rem;
+    text-align: left;
+}
+
+.money-raised {
+    position: absolute;
+    top: $padSmallValue * 2;
+    right: $padSmallValue * 2;
+    background: image-url('amount-raised-ph.png') no-repeat center right transparent;
+    height: 15rem;
+    width: 34rem;
+}
+
+.raised-amount {
+    color: white;
+    width: 27.5rem;
+}
+
+.home-tile-repeater {
+
+
+    // Calc a random rotate degree value for each frame tile
+  @for $i from 1 through 6 {
+    &:nth-child( #{ $i } ) {
+      .home-tile {
+        @if $i % 2 == 0 {
+          $rand: (random( 23 ) * 0.1) + deg; // generate positive random number (converted to float)
+          @include transform( rotate( $rand ) );
+        }
+        @else {
+          $rand: ( (random( 23 ) * 0.1 ) * - 1 )  + deg;  // generate negative random number
+          @include transform( rotate( $rand ) );
+        }
+      }
+    }
+  }
+
+}
+
+.home-tile {
+    @extend .pad-small;
+    @extend .margin-bottom-large;
+    background-color: white;
+    position: relative;
+    overflow: hidden;
+
+
+
+}
+
+.home-tile-image {
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.home-tile-label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    max-width: 80%;
+}
+
+
+
+/*******************************/// spotfiy
+
+.spotify-holder {
+    width: 35.6rem;
+    margin-top: -7rem;
+}
+
+.spotify-info-holder {
+    @extend .pad-right-large;
+    position: absolute;
+    top: 12rem;
+    color: white;
+    text-align: center;
+
+    h1 {
+        color: white;
+    }
+}
+
+
+/*******************************/// wonderlanders
+
+.scoreboard-place {
+    float: left;
+    width: 5rem;
+}
+
+.scoreboard-value {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: $SecondaryColour;
 }

@@ -14,7 +14,7 @@
             <input name="PartyHeading" type="text" ng-model="partyDetailsData.PartyHeading" m-radius-picker="small"/>
 
             <label for="PartyDate">Date</label>
-            <input name="PartyDate" type="text" m-date-time-picker="tempModel.dateTime" m-radius-picker="small" />
+            <input name="PartyDate" type="text" m-date-time-picker="tempModel.PartyDateTime" m-radius-picker="small" readonly />
 
             <h4>Your Party Address</h4>
             <div class="form-info margin-bottom-3">Only guests who have joined your party will be able to view your full address</div>
@@ -32,7 +32,7 @@
             <input class="margin-bottom-3" name="Postcode" type="text" ng-model="partyDetailsData.Postcode" m-radius-picker="small"/>
 
 
-            <button type="submit" class="btn-primary float-right">Save changes</button>
+            <button type="submit" class="btn-primary float-right" m-radius-picker="small">Save changes</button>
             <span class="cancel margin-right-1 float-right">Cancel</span>
         }
     </div>

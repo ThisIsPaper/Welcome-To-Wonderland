@@ -19,7 +19,7 @@
                     </div>
 
                     <div class="wgrid-full pad-large">
-                        <div class="profile-image" ng-style="{'background-image': 'url(' + profileImageUrl + ')'}" m-radius-picker="small" ng-click="openPageModal('partials/profileImageForm.html', 'profileImageModal')"></div>
+                        <div m-profile-image="{{ profileImage.url }}" m-radius-picker="small" ng-click="openPageModal('partials/profileImageForm.html', 'profileImageModal', {'profileImage': profileImage})"></div>
                         <div class="party-details">
                             <h3 class="pad-right-3" ng-bind="partyDetailsData.PartyHeading">@this.Model.Heading</h3>
                             <div class="body-small float-left margin-right-medium">
@@ -39,7 +39,7 @@
 
             <div class="wgrid-full">
                 <div class="boxx" m-radius-picker="medium large">
-                    <h1 class="padding-right-3 padding-left-3">Join the Wonderland Party</h1>
+                    <h1 class="pad-right-3 pad-left-3">Join the Wonderland Party</h1>
                     <pre class="body-medium font-futura" ng-bind-html="partyCopyData.CopyHtmlSafe">@this.Model.Copy</pre>
                     <div class="edit-trigger" ng-click="openPageModal('partials/partyCopyForm.html', 'partyCopyModal', {'partyCopyData': partyCopyDataForForm})"><span class="edit-label">Edit</span><span class="icon-icon_edit"></span></div>
                 </div>
@@ -55,9 +55,25 @@
 
             <div class="wgrid-full">
                 <div class="boxx" m-radius-picker>
-                    <h2>Fundraising target</h2>
-                    <h1>£<span ng-bind="fundraisingTargetData.FundraisingTarget"></span></h1>
-                    <div ng-click="openPageModal('partials/fundraisingTargetForm.html', 'suggestedDonationModal', {'fundraisingTargetData': fundraisingTargetDataForForm})">Edit</div>
+
+                    <div>
+                        <span class="body-mega">£<span>0</span></span>
+                        <span>raised of the </span>
+                        <span class="body-highlight">£<span ng-bind="fundraisingTargetData.FundraisingTarget"></span></span>
+                        <span>target</span>
+                    </div>
+
+                    <div class="totaliser">
+                        <div class="current-total" style="width: 50%"></div>
+                    </div>
+
+                    <div class="form-info">
+                        <span class="float-left">50%</span>
+                        <span class="float-right">Ranked #423 of 423 parties</span>
+                    </div>
+
+                    <div class="edit-trigger" ng-click="openPageModal('partials/fundraisingTargetForm.html', 'suggestedDonationModal', {'fundraisingTargetData': fundraisingTargetDataForForm})"><span class="edit-label">Edit</span><span class="icon-icon_edit"></span></div>
+
                 </div>
             </div>
 
@@ -65,24 +81,29 @@
 
             <div class="wgrid-full">
                 <div class="boxx" m-radius-picker>
-                    <h2>Change ticket price</h2>
-                    <h1>£<span ng-bind="suggestedDonationData.SuggestedDonation"></span></h1>
-                    <div ng-click="openPageModal('partials/suggestedDonationForm.html', 'suggestedDonationModal', {'suggestedDonationData': suggestedDonationDataForForm})">Edit</div>
+                    <h4 class="top">Suggested ticket price</h4>
+
+                    <div class="ticket centered selected">
+                        <div class="stub">
+                            <div class="holes"></div>
+                            <div class="holes-right"></div>
+                            <div class="price">£<span ng-bind="suggestedDonationData.SuggestedDonation"></span></div>
+                        </div>
+                    </div>
+
+                    <div class="edit-trigger" ng-click="openPageModal('partials/suggestedDonationForm.html', 'suggestedDonationModal', {'suggestedDonationData': suggestedDonationDataForForm})"><span class="edit-label">Edit</span><span class="icon-icon_edit"></span></div>
                 </div>
             </div>
 
 
             <div class="wgrid-full">
-                <div class="boxx" m-radius-picker>
-                    <h2>Pay in money</h2>
-                    @Html.ActionLink("Pay in Money", "NavigateToDonateUrl", "DonateSurface", new { partyGuid = Model.PartyHost.PartyGuid }, new { @class = "" })
-                </div>
+                @Html.ActionLink("Pay in money", "NavigateToDonateUrl", "DonateSurface", new { partyGuid = Model.PartyHost.PartyGuid }, new { @class = "btn-primary btn-large piggy-donater", @m_radius_picker="small medium" })
             </div>
 
 
             <div class="wgrid-full">
                 <div class="boxx" m-radius-picker>
-                    <h2>Who's Coming (@this.Model.Partiers.Count())</h2>
+                    <h4 class="top">Who's Coming <span>(@this.Model.Partiers.Count())</span></h4>
                     <ul>
                         @foreach (IPartier partier in this.Model.Partiers)
                         {
@@ -94,7 +115,11 @@
                 </div>
             </div>
 
-            <div class="wgrid-full"><div class="boxx" m-radius-picker><h2>Badges</h2></div></div>
+            <div class="wgrid-full">
+                <div class="boxx" m-radius-picker>
+                    <h4 class="top">Badges <span>(0 of 6)</span></h4>
+                </div>
+            </div>
 
         </div>
 
@@ -105,12 +130,12 @@
                     '@Model.PartyHost.PartyGuid.ToString()'
                 )" m-radius-picker="large medium">
 
-                <h4>Leave a message on the party wall</h4>
+                <h4 class="top">Leave a message on the party wall</h4>
 
                 <div class="boxx internal" m-radius-picker="small">
 
                     @* TODO - make this user image not host *@
-                    <div class="profile-image" ng-style="{'background-image': 'url(' + profileImageUrl + ')'}" m-radius-picker="small"></div>
+                    <div m-profile-image="{{ profileImage.url }}" m-radius-picker="small"></div>
 
                     @(Html.Action<PartySurfaceController>("RenderPartyWallMessageForm"))
 
@@ -119,7 +144,7 @@
 
 
                 <div class="margin-top-small" ng-repeat="feedItem in wall.feed">
-                    <div class="profile-image" ng-style="{'background-image': 'url(' + feedItem.thumbnailUrl + ')'}" m-radius-picker="small"></div>
+                    <div m-profile-image="{{ feedItem.thumbnailUrl }}" m-radius-picker="small"></div>
                     <div class="wall-details">
                         <div>
                             <span class="wall-name" ng-bind="feedItem.name"></span>
@@ -158,6 +183,4 @@
     ?PartyGuid=&beforeDateTime=12/12/12&take=10
 </p>*@
 
-
-@* totaliser *@
 @* badges *@

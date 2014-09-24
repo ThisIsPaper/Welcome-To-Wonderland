@@ -268,6 +268,35 @@ ul, ol, dl {
   @extend %mini;
 }
 
+
+
+.body-mega {
+    @extend .heading-large;
+    color: $SecondaryColour;
+    text-decoration: none;
+}
+
+.body-emphasize {
+    color: $greyReallyDark;
+    font-weight: bold;
+}
+
+.body-dephasize {
+    color: $greyLight;
+}
+
+.body-highlight {
+    color: $SecondaryColour;
+    text-decoration: none;
+}
+
+.body-h1 {
+    font-family: 'macmillan';
+    color: $FourthColour;
+}
+
+
+
 h1 {
     font-family: 'macmillan';
     color: $FourthColour;
@@ -275,11 +304,20 @@ h1 {
     margin: 0;
     width: 100%;
     text-align: center;
+    line-height: 4.2rem;
+
+    &.lighter {
+        color: $greenDark;
+    }
+
+    &.bigger, .bigger {
+        font-size: $HeadingFontSizeExtraLarge;
+    }
 }
 
 h2 {
     font-family: 'macmillan';
-    color: $PrimaryColour;
+    color: $SecondaryColour;
     font-size: $FontSizeMedium;
     margin: .5rem 0;
 }
@@ -296,4 +334,30 @@ h4 {
     font-size: $FontSizeLarge;
     margin: 2rem 0;
     font-weight: bold;
+
+    span {
+        color: $greyDark;
+        font-weight: normal;
+    }
+
+    &.top {
+        @extend .margin-top-0;
+    }
+}
+
+hr {
+    border: none;
+    border-bottom: .1rem solid $greyReallyLight;
+    margin: $padSmallValue 0;
+}
+
+.back {
+    @extend .body-medium;
+    text-transform: uppercase;
+    color: white;
+    font-weight: bold;
+
+    [class^="icon-"], [class*=" icon-"] {
+        @extend .margin-right-small;
+    }
 }

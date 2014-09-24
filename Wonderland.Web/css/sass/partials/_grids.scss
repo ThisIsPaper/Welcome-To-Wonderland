@@ -16,6 +16,7 @@
  --------------------------------------------------------------------------------------------------------------------- */
 @import "compass/css3";
 @import "variables";
+@import "abstract";
 @import "susy";
 @import "../../scripts/bower_components/gridle/sass/gridle/gridle";
 
@@ -26,20 +27,17 @@
 
 
 $settings : (
-    context : 12,             // number of columns in your grid
-    gutter-width : 6rem,        // size of the gutters
-    direction : ltr,             // direction
-    name-multiplicator : 1     // to generate like grid-5, grid-10, etc...
-    // and more... (see in advanced settings section)
+    context : 12,                     // number of columns in your grid
+    gutter-width : $padSmallValue*4,  // size of the gutters
+    direction : ltr,                  // direction
+    name-multiplicator : 1            // to generate like grid-5, grid-10, etc...
 );
 
 @include gridle_setup($settings);
 
 @include gridle_register_state( mobile , (
-    max-width : 40rem,
-    gutter-width : 6rem
+    max-width : 40rem
 ));
-
 
 @include gridle_generate_classes();
 
@@ -77,6 +75,16 @@ $settings : (
     @include gridle_no_gutter(left right, mobile);
 }
 
+.wgrid-half {
+    @extend %relative;
+    @include gridle(6);
+    @include gridle(12, mobile);
+    @include gridle_gutter(bottom);
+    @include gridle_gutter(bottom, mobile);
+    @include gridle_no_gutter(left);
+    @include gridle_no_gutter(left right, mobile);
+}
+
 .wgrid-side {
     @extend %relative;
     @include gridle(4);
@@ -93,6 +101,12 @@ $settings : (
     @include gridle_no_gutter(bottom);
     @include gridle_no_gutter(bottom, mobile);
 }
+
+.wgrid-no-right-margin {
+    @include gridle_no_gutter(right);
+    @include gridle_no_gutter(right, mobile);
+}
+
 
 /**********************************/
 // BOXX

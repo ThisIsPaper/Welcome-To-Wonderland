@@ -15,9 +15,9 @@
  --------------------------------------------------------------------------------------------------------------------- */
 
 
-@import "partials/abstract";
-@import "partials/type";
-@import "partials/variables";
+@import "abstract";
+@import "type";
+@import "variables";
 
 
 //********************************************** Buttons
@@ -27,59 +27,65 @@ $btnPaddingLarge: $btnPaddingMedium*2;
 
 
 .btn-primary {
-  @extend %border-box;
-  cursor: pointer;
-  font-weight: $BaseFontWeight;
-  color: #fff;
-  text-decoration: none;
-  text-transform: uppercase;
-  background: $PrimaryColour;
-  font-size: $FontSizeSmall;
-  border: none;
+    @extend %border-box;
+    cursor: pointer;
+    font-weight: $BaseFontWeight;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    background: $PrimaryColour;
+    font-size: $FontSizeSmall;
+    border: none;
+    text-align: center;
 
-  padding: $btnPaddingMedium;
-  margin: 0;
+    padding: $btnPaddingMedium;
+    margin: 0;
 
-  &:hover, &:focus {
-    background: darken($PrimaryColour, 10%);
-  }
+    &:hover, &:focus {
+        background: darken($PrimaryColour, 10%);
+    }
 
-  .disabled {
-    background-color: $greyLight;
-    color: $greyMedium;
-    cursor: default;
-  }
+    .disabled {
+        background-color: $greyLight;
+        color: $greyMedium;
+        cursor: default;
+    }
+
+    &.btn-mini {
+        @extend .pad-tiny;
+        font-size: 1.1rem;
+    }
+
+    &.btn-small {
+        @extend .pad-small;
+        font-size: 1.4rem;
+    }
+
+    &.btn-large {
+        @extend .pad-large;
+        font-size: 2.3rem;
+        letter-spacing: .3rem;
+    }
 }
+
 
 .btn-secondary {
-  @extend .btn-primary;
-  background: $SecondaryColour;
+    @extend .btn-primary;
+    background: $SecondaryColour;
 
-  &:hover, &:focus {
-    background: darken($SecondaryColour, 10%);
-  }
-}
-
-.btn-mini {
-  font-size: 1.1rem;
-}
-
-.btn-small {
-  font-size: 1.4rem;
-}
-
-.btn-large {
-  font-size: 2.3rem;
+    &:hover, &:focus {
+        background: darken($SecondaryColour, 10%);
+    }
 }
 
 .cancel {
     line-height: 4rem;
-    color: $PrimaryColour;
+    color: $SecondaryColour;
     font-size: $FontSizeMedium;
     cursor: pointer;
 
     &:hover {
-        color: darken($PrimaryColour, 10%);
+        color: darken($SecondaryColour, 10%);
     }
 }
 
@@ -91,15 +97,48 @@ $btnPaddingLarge: $btnPaddingMedium*2;
 
 .warning {
     @extend .form-info;
-    color: red;
+    color: $redDark;
 }
 
+.successful {
+    @extend .form-info;
+    @extend .pad-tiny;
+    @extend .radius-v1-small;
+    color: $greenDark;
+    background-color: $greenLight;
+    text-align: center;
+    span {
+        @extend .margin-right-tiny;
+    }
+
+    &:before {
+        @extend .margin-right-tiny;
+        font-family: $fontFaceIcomoon;
+        content: "\e61f";
+    }
+}
+
+
+.errorred {
+    @extend .successful;
+    color: $redDark;
+    background-color: $redLight;
+
+    &:before {
+        font-family: $fontFaceIcomoon;
+        content: "\e620";
+    }
+}
 
 
 //********************************************** Inputs
 
 .form-holder {
     max-width: 50rem;
+
+    &.wide {
+        max-width: 70rem;
+    }
 }
 
 //********************************************** Inputs
@@ -135,6 +174,10 @@ input[type='text'] {
 
 input[type='text'], textarea {
     border: .1rem solid $greyLight;
+}
+
+input[type="text"][readonly] {
+    cursor: pointer;
 }
 
 input[type=submit][disabled=disabled],
