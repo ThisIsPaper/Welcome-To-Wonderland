@@ -867,24 +867,29 @@ abstract
 }
 
 /* line 197, sass/partials/_abstract.scss */
+.opacity-0 {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+}
+
+/* line 204, sass/partials/_abstract.scss */
 .pos-relative {
   position: relative;
 }
 
-/* line 201, sass/partials/_abstract.scss */
+/* line 208, sass/partials/_abstract.scss */
 .pos-absolute {
   position: absolute;
 }
 
-/* line 205, sass/partials/_abstract.scss */
+/* line 212, sass/partials/_abstract.scss */
 .pos-static {
   position: static;
 }
 
-/* line 209, sass/partials/_abstract.scss */
+/* line 216, sass/partials/_abstract.scss */
 .only-on-mobile {
   display: none;
-  display: block;
 }
 
 /* line 10, sass/overrides.scss */

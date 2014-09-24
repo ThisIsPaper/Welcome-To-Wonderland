@@ -194,6 +194,13 @@ $multiplierLarge: 2;
 
 //**************************************** POSITION
 
+.opacity-0 {
+    @include opacity(0);
+}
+
+
+//**************************************** POSITION
+
 .pos-relative {
     position: relative;
 }
@@ -208,7 +215,4 @@ $multiplierLarge: 2;
 
 .only-on-mobile {
     display: none;
-    @include gridle_state(mobile) {
-        display: block;
-    }
 }
