@@ -277,7 +277,12 @@ ul, ol, dl {
 }
 
 .body-emphasize {
+    color: $greyReallyDark;
     font-weight: bold;
+}
+
+.body-dephasize {
+    color: $greyLight;
 }
 
 .body-highlight {
@@ -299,6 +304,15 @@ h1 {
     margin: 0;
     width: 100%;
     text-align: center;
+    line-height: 4.2rem;
+
+    &.lighter {
+        color: $greenDark;
+    }
+
+    &.bigger, .bigger {
+        font-size: $HeadingFontSizeExtraLarge;
+    }
 }
 
 h2 {
@@ -331,7 +345,11 @@ h4 {
     }
 }
 
-
+hr {
+    border: none;
+    border-bottom: .1rem solid $greyReallyLight;
+    margin: $padSmallValue 0;
+}
 
 .back {
     @extend .body-medium;

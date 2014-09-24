@@ -75,6 +75,16 @@ $settings : (
     @include gridle_no_gutter(left right, mobile);
 }
 
+.wgrid-half {
+    @extend %relative;
+    @include gridle(6);
+    @include gridle(12, mobile);
+    @include gridle_gutter(bottom);
+    @include gridle_gutter(bottom, mobile);
+    @include gridle_no_gutter(left);
+    @include gridle_no_gutter(left right, mobile);
+}
+
 .wgrid-side {
     @extend %relative;
     @include gridle(4);
@@ -91,6 +101,12 @@ $settings : (
     @include gridle_no_gutter(bottom);
     @include gridle_no_gutter(bottom, mobile);
 }
+
+.wgrid-no-right-margin {
+    @include gridle_no_gutter(right);
+    @include gridle_no_gutter(right, mobile);
+}
+
 
 /**********************************/
 // BOXX

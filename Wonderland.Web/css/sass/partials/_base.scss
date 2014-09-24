@@ -158,6 +158,11 @@ Event Page specific - move these out of here eventually
 
 .image-shift-details {
     margin-left: $profileImageSize + $padSmallValue;
+
+    &.bigger {
+        margin-left: $profileImageSize + $padSmallValue + 5rem;
+    }
+
 }
 
 .party-details {
@@ -477,4 +482,19 @@ One-off uses
     h1 {
         color: white;
     }
+}
+
+
+/*******************************/// wonderlanders
+
+.scoreboard-place {
+    float: left;
+    width: 5rem;
+}
+
+.scoreboard-value {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: $SecondaryColour;
 }
