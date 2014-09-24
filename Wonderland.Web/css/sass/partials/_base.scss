@@ -411,3 +411,49 @@ One-off uses
     color: white;
     width: 27.5rem;
 }
+
+.home-tile-repeater {
+
+
+    // Calc a random rotate degree value for each frame tile
+  @for $i from 1 through 6 {
+    &:nth-child( #{ $i } ) {
+      .home-tile {
+        @if $i % 2 == 0 {
+          $rand: (random( 23 ) * 0.1) + deg; // generate positive random number (converted to float)
+          @include transform( rotate( $rand ) );
+        }
+        @else {
+          $rand: ( (random( 23 ) * 0.1 ) * - 1 )  + deg;  // generate negative random number
+          @include transform( rotate( $rand ) );
+        }
+      }
+    }
+  }
+
+}
+
+.home-tile {
+    @extend .pad-small;
+    @extend .margin-bottom-large;
+    background-color: white;
+    position: relative;
+    overflow: hidden;
+
+
+
+}
+
+.home-tile-image {
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.home-tile-label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    max-width: 80%;
+}

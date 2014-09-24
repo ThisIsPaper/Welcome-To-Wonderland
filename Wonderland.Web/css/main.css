@@ -300,7 +300,7 @@ abstract
 }
 
 /* line 24, sass/partials/_abstract.scss */
-.pad-small, .btn-primary.btn-small, .btn-small.btn-secondary, .btn-small.choose-file-wrapper:after, textarea {
+.pad-small, .btn-primary.btn-small, .btn-small.btn-secondary, .btn-small.choose-file-wrapper:after, textarea, .home-tile {
   padding: 1.2rem;
 }
 
@@ -630,7 +630,7 @@ abstract
 }
 
 /* line 104, sass/partials/_abstract.scss */
-.margin-bottom-large {
+.margin-bottom-large, .home-tile {
   margin-bottom: 2.4rem;
 }
 
@@ -2713,7 +2713,7 @@ abstract
 }
 
 /* line 24, sass/partials/_abstract.scss */
-.pad-small, .btn-primary.btn-small, .btn-small.btn-secondary, .btn-small.choose-file-wrapper:after, textarea {
+.pad-small, .btn-primary.btn-small, .btn-small.btn-secondary, .btn-small.choose-file-wrapper:after, textarea, .home-tile {
   padding: 1.2rem;
 }
 
@@ -3043,7 +3043,7 @@ abstract
 }
 
 /* line 104, sass/partials/_abstract.scss */
-.margin-bottom-large {
+.margin-bottom-large, .home-tile {
   margin-bottom: 2.4rem;
 }
 
@@ -4223,7 +4223,7 @@ abstract
 }
 
 /* line 24, sass/partials/_abstract.scss */
-.pad-small, .btn-primary.btn-small, .btn-small.btn-secondary, .btn-small.choose-file-wrapper:after, textarea {
+.pad-small, .btn-primary.btn-small, .btn-small.btn-secondary, .btn-small.choose-file-wrapper:after, textarea, .home-tile {
   padding: 1.2rem;
 }
 
@@ -4553,7 +4553,7 @@ abstract
 }
 
 /* line 104, sass/partials/_abstract.scss */
-.margin-bottom-large {
+.margin-bottom-large, .home-tile {
   margin-bottom: 2.4rem;
 }
 
@@ -4930,7 +4930,7 @@ abstract
 }
 
 /* line 24, sass/partials/_abstract.scss */
-.pad-small, .btn-primary.btn-small, .btn-small.btn-secondary, .btn-small.choose-file-wrapper:after, textarea {
+.pad-small, .btn-primary.btn-small, .btn-small.btn-secondary, .btn-small.choose-file-wrapper:after, textarea, .home-tile {
   padding: 1.2rem;
 }
 
@@ -5260,7 +5260,7 @@ abstract
 }
 
 /* line 104, sass/partials/_abstract.scss */
-.margin-bottom-large {
+.margin-bottom-large, .home-tile {
   margin-bottom: 2.4rem;
 }
 
@@ -6464,6 +6464,72 @@ One-off uses
   width: 27.5rem;
 }
 
+/* line 421, sass/partials/_base.scss */
+.home-tile-repeater:nth-child(1) .home-tile {
+  -moz-transform: rotate(-1.1deg);
+  -ms-transform: rotate(-1.1deg);
+  -webkit-transform: rotate(-1.1deg);
+  transform: rotate(-1.1deg);
+}
+/* line 421, sass/partials/_base.scss */
+.home-tile-repeater:nth-child(2) .home-tile {
+  -moz-transform: rotate(1.7deg);
+  -ms-transform: rotate(1.7deg);
+  -webkit-transform: rotate(1.7deg);
+  transform: rotate(1.7deg);
+}
+/* line 421, sass/partials/_base.scss */
+.home-tile-repeater:nth-child(3) .home-tile {
+  -moz-transform: rotate(-0.7deg);
+  -ms-transform: rotate(-0.7deg);
+  -webkit-transform: rotate(-0.7deg);
+  transform: rotate(-0.7deg);
+}
+/* line 421, sass/partials/_base.scss */
+.home-tile-repeater:nth-child(4) .home-tile {
+  -moz-transform: rotate(0.2deg);
+  -ms-transform: rotate(0.2deg);
+  -webkit-transform: rotate(0.2deg);
+  transform: rotate(0.2deg);
+}
+/* line 421, sass/partials/_base.scss */
+.home-tile-repeater:nth-child(5) .home-tile {
+  -moz-transform: rotate(-1.3deg);
+  -ms-transform: rotate(-1.3deg);
+  -webkit-transform: rotate(-1.3deg);
+  transform: rotate(-1.3deg);
+}
+/* line 421, sass/partials/_base.scss */
+.home-tile-repeater:nth-child(6) .home-tile {
+  -moz-transform: rotate(1.2deg);
+  -ms-transform: rotate(1.2deg);
+  -webkit-transform: rotate(1.2deg);
+  transform: rotate(1.2deg);
+}
+
+/* line 436, sass/partials/_base.scss */
+.home-tile {
+  background-color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+/* line 447, sass/partials/_base.scss */
+.home-tile-image {
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+}
+
+/* line 454, sass/partials/_base.scss */
+.home-tile-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  max-width: 80%;
+}
+
 /*------------------------------------------------------------------------------------------------------------------------
  @package: Macmillan - Wonderland (app)
 
@@ -6791,43 +6857,43 @@ p.amount {
 }
 /* line 96, sass/main.scss */
 .frame:nth-child(1) {
-  -moz-transform: rotate(-2.3deg);
-  -ms-transform: rotate(-2.3deg);
-  -webkit-transform: rotate(-2.3deg);
-  transform: rotate(-2.3deg);
+  -moz-transform: rotate(-0.1deg);
+  -ms-transform: rotate(-0.1deg);
+  -webkit-transform: rotate(-0.1deg);
+  transform: rotate(-0.1deg);
 }
 /* line 96, sass/main.scss */
 .frame:nth-child(2) {
-  -moz-transform: rotate(0.3deg);
-  -ms-transform: rotate(0.3deg);
-  -webkit-transform: rotate(0.3deg);
-  transform: rotate(0.3deg);
+  -moz-transform: rotate(0.2deg);
+  -ms-transform: rotate(0.2deg);
+  -webkit-transform: rotate(0.2deg);
+  transform: rotate(0.2deg);
 }
 /* line 96, sass/main.scss */
 .frame:nth-child(3) {
-  -moz-transform: rotate(-1.6deg);
-  -ms-transform: rotate(-1.6deg);
-  -webkit-transform: rotate(-1.6deg);
-  transform: rotate(-1.6deg);
+  -moz-transform: rotate(-2.1deg);
+  -ms-transform: rotate(-2.1deg);
+  -webkit-transform: rotate(-2.1deg);
+  transform: rotate(-2.1deg);
 }
 /* line 96, sass/main.scss */
 .frame:nth-child(4) {
-  -moz-transform: rotate(1.2deg);
-  -ms-transform: rotate(1.2deg);
-  -webkit-transform: rotate(1.2deg);
-  transform: rotate(1.2deg);
+  -moz-transform: rotate(1.8deg);
+  -ms-transform: rotate(1.8deg);
+  -webkit-transform: rotate(1.8deg);
+  transform: rotate(1.8deg);
 }
 /* line 96, sass/main.scss */
 .frame:nth-child(5) {
-  -moz-transform: rotate(-0.7deg);
-  -ms-transform: rotate(-0.7deg);
-  -webkit-transform: rotate(-0.7deg);
-  transform: rotate(-0.7deg);
+  -moz-transform: rotate(-1.4deg);
+  -ms-transform: rotate(-1.4deg);
+  -webkit-transform: rotate(-1.4deg);
+  transform: rotate(-1.4deg);
 }
 /* line 96, sass/main.scss */
 .frame:nth-child(6) {
-  -moz-transform: rotate(0.3deg);
-  -ms-transform: rotate(0.3deg);
-  -webkit-transform: rotate(0.3deg);
-  transform: rotate(0.3deg);
+  -moz-transform: rotate(0.7deg);
+  -ms-transform: rotate(0.7deg);
+  -webkit-transform: rotate(0.7deg);
+  transform: rotate(0.7deg);
 }
