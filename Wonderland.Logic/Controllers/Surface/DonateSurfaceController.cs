@@ -8,6 +8,7 @@ namespace Wonderland.Logic.Controllers.Surface
     using Wonderland.Logic.Models.Forms;
     using Wonderland.Logic.SagePay;
     using Wonderland.Logic.Models.Entities;
+    using Wonderland.Logic.Interfaces;
 
     public class DonateSurfaceController : SurfaceController
     {
@@ -31,7 +32,12 @@ namespace Wonderland.Logic.Controllers.Surface
 
             DonateForm donateForm = new DonateForm();
 
-            //donateForm.FirstName = 
+            IPartier partier = (IPartier)this.Members.GetCurrentMember();
+
+            donateForm.Address1 = partier.BillingAddress.Address1;
+            donateForm.Address2 = partier.BillingAddress.Address2;
+            donateForm.TownCity = partier.BillingAddress.TownCity;
+            donateForm.PostCode = partier.BillingAddress.Postcode;
 
             return this.PartialView("DonateForm", donateForm);
         }

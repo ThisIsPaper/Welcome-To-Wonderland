@@ -35,11 +35,11 @@ namespace Wonderland.Logic.Controllers.Render
             {
                 model.PartyHost = partyHost;
 
-                return this.View("Donate", model);
+                return this.View("Donate/Donate", model);
             }
 
             // couldn't find a party host for this donation, so go to Macmillan
-            return this.View("Macmillan", model);
+            return this.View("Donate/Macmillan", model);
         }
     }
 }

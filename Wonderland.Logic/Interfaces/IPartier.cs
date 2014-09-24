@@ -2,6 +2,7 @@
 namespace Wonderland.Logic.Interfaces
 {
     using System;
+    using Wonderland.Logic.Models.Entities;
     using Wonderland.Logic.Models.Members;
 
     /// <summary>
@@ -35,5 +36,10 @@ namespace Wonderland.Logic.Interfaces
         /// 
         /// </summary>
         Guid PartyGuid { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        Address BillingAddress { get; }
     }
 }

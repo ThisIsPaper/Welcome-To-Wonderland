@@ -28,7 +28,7 @@ namespace Wonderland.Logic.SagePay
             this.BillingPostCode = address.Postcode;
 
             this.DeliverySurname = lastName;
-            this.DeliverFirstnames = firstName;
+            this.DeliveryFirstnames = firstName;
 
             this.DeliveryAddress1 = address.Address1;
             this.DeliveryAddress2 = address.Address2;
@@ -37,11 +37,12 @@ namespace Wonderland.Logic.SagePay
             this.DeliveryPostCode = address.Postcode;
         }
 
-        public string VPSProtocol { get { return "3.00"; } }
+        public string VPSProtocol { get { return "2.23"; } } //3.00
 
         public string TxType { get { return "PAYMENT"; } }
 
-        public string Vendor { get { return "macmillancance3"; } }
+        // using the simulator account
+        public string Vendor { get { return "macmillancanceS"; } } // live / test = macmillancance3
 
         public int VendorTxCode { get; private set; }
 
@@ -82,7 +83,7 @@ namespace Wonderland.Logic.SagePay
 
         public string DeliverySurname { get; private set; }
 
-        public string DeliverFirstnames { get; private set; }
+        public string DeliveryFirstnames { get; private set; }
 
         public string DeliveryAddress1 { get; private set; }
 

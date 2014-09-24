@@ -3,6 +3,7 @@ namespace Wonderland.Logic.SagePay
 {
     using System;
     using System.Collections.Generic;
+    using System.Globalization;
     using System.Linq;
     using System.Reflection;
     using System.Text;
@@ -21,9 +22,20 @@ namespace Wonderland.Logic.SagePay
                 object rawValue = propertyInfo.GetValue(obj, null);
                 if(rawValue != null)
                 {                   
-                    string convertedValue = rawValue.ToString();
-                    
-                    // TODO: format for decimal...
+                    string format = "{0}";
+
+                    if (propertyInfo.PropertyType == typeof(decimal))
+                    {
+                        // custom formatting for decimal (limit decimal value to two decimal places)
+                        format = "{0:f2}";
+                    }
+                    else if (propertyInfo.PropertyType == typeof(bool))
+                    {
+                        // TODO: convert bools to 1 or 0
+                        rawValue = Convert.ToInt32(rawValue);
+                    }
+
+                    string convertedValue = string.Format(CultureInfo.InvariantCulture, format, rawValue);
 
                     // TODO: exclude NotificationUrl from being url encoded ?
                     
