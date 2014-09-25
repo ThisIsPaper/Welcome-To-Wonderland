@@ -330,8 +330,9 @@ h2 {
 h3 {
     color: $FourthColour;
     font-size: $FontSizeLarge;
-    margin: 0;
+    margin: 2rem 0;
     font-weight: bold;
+    line-height: 2.6rem;
 }
 
 h4 {
@@ -346,7 +347,7 @@ h4 {
     }
 
     &.top {
-        @extend .margin-top-0;
+        margin-top: 0;
     }
 }
 

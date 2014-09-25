@@ -4137,31 +4137,32 @@ h2 {
 h3 {
   color: #025b45;
   font-size: 2.3rem;
-  margin: 0;
+  margin: 2rem 0;
   font-weight: bold;
+  line-height: 2.6rem;
 }
 
-/* line 337, sass/partials/_type.scss */
+/* line 338, sass/partials/_type.scss */
 h4 {
   color: #474740;
   font-size: 2.3rem;
   margin: 2rem 0;
   font-weight: bold;
 }
-/* line 343, sass/partials/_type.scss */
+/* line 344, sass/partials/_type.scss */
 h4 span {
   color: #7B7A6D;
   font-weight: normal;
 }
 
-/* line 353, sass/partials/_type.scss */
+/* line 354, sass/partials/_type.scss */
 hr {
   border: none;
   border-bottom: 0.1rem solid #ECECEC;
   margin: 1.2rem 0;
 }
 
-/* line 359, sass/partials/_type.scss */
+/* line 360, sass/partials/_type.scss */
 .back {
   text-transform: uppercase;
   color: white;
@@ -5363,31 +5364,32 @@ h2 {
 h3 {
   color: #025b45;
   font-size: 2.3rem;
-  margin: 0;
+  margin: 2rem 0;
   font-weight: bold;
+  line-height: 2.6rem;
 }
 
-/* line 337, sass/partials/_type.scss */
+/* line 338, sass/partials/_type.scss */
 h4 {
   color: #474740;
   font-size: 2.3rem;
   margin: 2rem 0;
   font-weight: bold;
 }
-/* line 343, sass/partials/_type.scss */
+/* line 344, sass/partials/_type.scss */
 h4 span {
   color: #7B7A6D;
   font-weight: normal;
 }
 
-/* line 353, sass/partials/_type.scss */
+/* line 354, sass/partials/_type.scss */
 hr {
   border: none;
   border-bottom: 0.1rem solid #ECECEC;
   margin: 1.2rem 0;
 }
 
-/* line 359, sass/partials/_type.scss */
+/* line 360, sass/partials/_type.scss */
 .back {
   text-transform: uppercase;
   color: white;
@@ -8344,31 +8346,36 @@ h2 {
 h3 {
   color: #025b45;
   font-size: 2.3rem;
-  margin: 0;
+  margin: 2rem 0;
   font-weight: bold;
+  line-height: 2.6rem;
 }
 
-/* line 337, sass/partials/_type.scss */
+/* line 338, sass/partials/_type.scss */
 h4 {
   color: #474740;
   font-size: 2.3rem;
   margin: 2rem 0;
   font-weight: bold;
 }
-/* line 343, sass/partials/_type.scss */
+/* line 344, sass/partials/_type.scss */
 h4 span {
   color: #7B7A6D;
   font-weight: normal;
 }
+/* line 349, sass/partials/_type.scss */
+h4.top {
+  margin-top: 0;
+}
 
-/* line 353, sass/partials/_type.scss */
+/* line 354, sass/partials/_type.scss */
 hr {
   border: none;
   border-bottom: 0.1rem solid #ECECEC;
   margin: 1.2rem 0;
 }
 
-/* line 359, sass/partials/_type.scss */
+/* line 360, sass/partials/_type.scss */
 .back {
   text-transform: uppercase;
   color: white;
@@ -8753,31 +8760,36 @@ h2 {
 h3 {
   color: #025b45;
   font-size: 2.3rem;
-  margin: 0;
+  margin: 2rem 0;
   font-weight: bold;
+  line-height: 2.6rem;
 }
 
-/* line 337, sass/partials/_type.scss */
+/* line 338, sass/partials/_type.scss */
 h4 {
   color: #474740;
   font-size: 2.3rem;
   margin: 2rem 0;
   font-weight: bold;
 }
-/* line 343, sass/partials/_type.scss */
+/* line 344, sass/partials/_type.scss */
 h4 span {
   color: #7B7A6D;
   font-weight: normal;
 }
+/* line 349, sass/partials/_type.scss */
+h4.top {
+  margin-top: 0;
+}
 
-/* line 353, sass/partials/_type.scss */
+/* line 354, sass/partials/_type.scss */
 hr {
   border: none;
   border-bottom: 0.1rem solid #ECECEC;
   margin: 1.2rem 0;
 }
 
-/* line 359, sass/partials/_type.scss */
+/* line 360, sass/partials/_type.scss */
 .back {
   text-transform: uppercase;
   color: white;
@@ -9192,45 +9204,45 @@ One-off uses
 
 /* line 433, sass/partials/_base.scss */
 .home-tile-repeater:nth-child(1) .home-tile {
-  -moz-transform: rotate(-1deg);
-  -ms-transform: rotate(-1deg);
-  -webkit-transform: rotate(-1deg);
-  transform: rotate(-1deg);
+  -moz-transform: rotate(-1.8deg);
+  -ms-transform: rotate(-1.8deg);
+  -webkit-transform: rotate(-1.8deg);
+  transform: rotate(-1.8deg);
 }
 /* line 433, sass/partials/_base.scss */
 .home-tile-repeater:nth-child(2) .home-tile {
-  -moz-transform: rotate(1deg);
-  -ms-transform: rotate(1deg);
-  -webkit-transform: rotate(1deg);
-  transform: rotate(1deg);
+  -moz-transform: rotate(0.1deg);
+  -ms-transform: rotate(0.1deg);
+  -webkit-transform: rotate(0.1deg);
+  transform: rotate(0.1deg);
 }
 /* line 433, sass/partials/_base.scss */
 .home-tile-repeater:nth-child(3) .home-tile {
-  -moz-transform: rotate(-1.9deg);
-  -ms-transform: rotate(-1.9deg);
-  -webkit-transform: rotate(-1.9deg);
-  transform: rotate(-1.9deg);
+  -moz-transform: rotate(-0.3deg);
+  -ms-transform: rotate(-0.3deg);
+  -webkit-transform: rotate(-0.3deg);
+  transform: rotate(-0.3deg);
 }
 /* line 433, sass/partials/_base.scss */
 .home-tile-repeater:nth-child(4) .home-tile {
-  -moz-transform: rotate(1.7deg);
-  -ms-transform: rotate(1.7deg);
-  -webkit-transform: rotate(1.7deg);
-  transform: rotate(1.7deg);
+  -moz-transform: rotate(0.7deg);
+  -ms-transform: rotate(0.7deg);
+  -webkit-transform: rotate(0.7deg);
+  transform: rotate(0.7deg);
 }
 /* line 433, sass/partials/_base.scss */
 .home-tile-repeater:nth-child(5) .home-tile {
-  -moz-transform: rotate(-1.7deg);
-  -ms-transform: rotate(-1.7deg);
-  -webkit-transform: rotate(-1.7deg);
-  transform: rotate(-1.7deg);
+  -moz-transform: rotate(-0.4deg);
+  -ms-transform: rotate(-0.4deg);
+  -webkit-transform: rotate(-0.4deg);
+  transform: rotate(-0.4deg);
 }
 /* line 433, sass/partials/_base.scss */
 .home-tile-repeater:nth-child(6) .home-tile {
-  -moz-transform: rotate(0.2deg);
-  -ms-transform: rotate(0.2deg);
-  -webkit-transform: rotate(0.2deg);
-  transform: rotate(0.2deg);
+  -moz-transform: rotate(0.5deg);
+  -ms-transform: rotate(0.5deg);
+  -webkit-transform: rotate(0.5deg);
+  transform: rotate(0.5deg);
 }
 
 /* line 448, sass/partials/_base.scss */
