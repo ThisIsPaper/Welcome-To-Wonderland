@@ -6,7 +6,7 @@ namespace Wonderland.Logic.SagePay
     // data sent from wonderland as a reply to the inbound notification request
     public class NotificationResponse
     {
-        public string Status { get; set; }
+        public NotificationStatus Status { get; set; }
 
         public string RedirectURL { get; set; }
 

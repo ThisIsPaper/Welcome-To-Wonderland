@@ -2,9 +2,12 @@
 namespace Wonderland.Logic.Controllers.Api
 {
     using Newtonsoft.Json.Linq;
+    using System.Net.Http;
+    using System.Text;
     using System.Web.Http;
     using Umbraco.Web.WebApi;
     using Wonderland.Logic.SagePay;
+    
 
     public class SagePayApiController : UmbracoApiController
     {
@@ -12,31 +15,25 @@ namespace Wonderland.Logic.Controllers.Api
         /// see: Step 9: Sage Pay contacts your NotificationURL
         /// ~/Umbraco/Api/SagePayApi/Notifcation/
         /// </summary>
-        /// <param name="data"></param>
+        /// <param name="notificationRequest"></param>
         [HttpPost]
-        public object Notifcation([FromBody] JObject data)
+        public HttpResponseMessage Notifcation([FromBody] NotificationRequest notificationRequest)
         {
-            
-            // using post data, deserialize inot notification request;
-            // based on request data, create a new notification response
-            // return notification response
+            NotificationResponse notificationResponse = new NotificationResponse();
 
+            // find transaction in db, and update status
+            var t = notificationRequest.VendorTxCode;
 
+            if (notificationRequest.Status == NotificationStatus.OK)
+            {
+                notificationResponse.Status = NotificationStatus.OK;
+                notificationResponse.RedirectURL = "http://wonderland.local/";
 
-            //This POST contains a Status field that holds either:
-            //OK          if the transaction was authorised.
-            //PENDING     (for European Payment Types only), if the transaction has yet to be accepted or rejected
-            //NOTAUTHED   if the authorisation was failed by the bank. 
-            //ABORT       if the user decided to cancel the transaction whilst on our payment pages.
-            //REJECTED    if your fraud screening rules were not met.
-            //ERROR       if an error has occurred at Sage Pay. These are very infrequent, but your site should handle them anyway. They normally indicate a problem with bank connectivity. 
+            }            
+            else
+            {
 
-            //The StatusDetail field of the POST contains further human readable details about the Status field, explaining why a certain status was returned.
-
-
-
-
-            // TODO: update wonderlandDonation
+            }
 
 
             //Your notification script should reply to the Sage Pay Server POST with three fields: Status, which 
@@ -50,7 +47,14 @@ namespace Wonderland.Logic.Controllers.Api
             //  party page - success
             //  party page - fail
 
-            return null;
+            // HACK: to ensure the return type is plain text
+            return new HttpResponseMessage(System.Net.HttpStatusCode.OK)
+            {
+                Content = new StringContent(
+                                    SagePaySerializer.SerializeResponse(notificationResponse),
+                                    Encoding.UTF8,
+                                    "text/plain")
+            };
         }
     }
 }

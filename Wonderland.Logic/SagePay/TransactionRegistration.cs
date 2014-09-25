@@ -15,7 +15,7 @@ namespace Wonderland.Logic.SagePay
         internal static TransactionRegistrationResponse Send(TransactionRegistrationRequest transactionRegistrationRequest)
         {
             // serialize data into a url encoded querystring format for posting to sage pay
-            string postData = SagePaySerializer.Serialize(transactionRegistrationRequest);
+            string postData = SagePaySerializer.SerializeRequest(transactionRegistrationRequest);
             byte[] postDataBytes = new UTF8Encoding().GetBytes(postData);
 
             Uri uri = new Uri(WebConfigurationManager.AppSettings["SagePay:TransactionRegistrationUrl"]);
@@ -40,7 +40,7 @@ namespace Wonderland.Logic.SagePay
                 response = reader.ReadToEnd();
             }
 
-            return SagePaySerializer.Deserialize<TransactionRegistrationResponse>(response);
+            return SagePaySerializer.DeserializeResponse<TransactionRegistrationResponse>(response);
         }
     }
 }

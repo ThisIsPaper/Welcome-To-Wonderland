@@ -12,18 +12,19 @@ namespace Wonderland.Logic.SagePay
     internal static class SagePaySerializer
     {
         /// <summary>
-        /// Serialize obj for http posting to Sage Pay
+        /// Serialize request for http posting to Sage Pay
+        /// request posts use a query string format
         /// </summary>
-        /// <param name="obj"></param>
+        /// <param name="request"></param>
         /// <returns></returns>
-        internal static string Serialize(object obj)
+        internal static string SerializeRequest(object request)
         {
-            Type type = obj.GetType();
+            Type type = request.GetType();
             Dictionary<string, string> dictionary = new Dictionary<string,string>();
 
             foreach(PropertyInfo propertyInfo in type.GetProperties(BindingFlags.Instance | BindingFlags.Public | BindingFlags.InvokeMethod).Where(x => x.CanRead))
             {
-                object rawValue = propertyInfo.GetValue(obj, null);
+                object rawValue = propertyInfo.GetValue(request, null);
                 if(rawValue != null)
                 {                   
                     string format = "{0}";
@@ -52,18 +53,39 @@ namespace Wonderland.Logic.SagePay
             return string.Join("&", dictionary.Select(x => x.Key + "=" + x.Value).ToArray());
         }
 
+        internal static string SerializeResponse(object response)
+        {
+            Type type = response.GetType();
+            Dictionary<string, string> dictionary = new Dictionary<string, string>();
+
+            foreach (PropertyInfo propertyInfo in type.GetProperties(BindingFlags.Instance | BindingFlags.Public | BindingFlags.InvokeMethod).Where(x => x.CanRead))
+            {
+                object rawValue = propertyInfo.GetValue(response, null);
+                if (rawValue != null)
+                {
+                    string convertedValue = string.Format(CultureInfo.InvariantCulture, "{0}", rawValue);
+                    
+                    //convertedValue = HttpUtility.UrlEncode(convertedValue, Encoding.GetEncoding("ISO-8859-15"));
+
+                    dictionary.Add(propertyInfo.Name, convertedValue);
+                }
+            }
+            
+            return string.Join(Environment.NewLine, dictionary.Select(x => x.Key + "=" + x.Value).ToArray());
+        }
+
         /// <summary>
-        /// Deserialize data from Sage Pay back into an obj
+        /// DeserializeResponse data from Sage Pay back into an request
         /// </summary>
         /// <typeparam name="T"></typeparam>
-        /// <param name="input"></param>
+        /// <param name="response"></param>
         /// <returns></returns>
-        internal static T Deserialize<T>(string input) where T : new() // TODO: add interface
+        internal static T DeserializeResponse<T>(string response) where T : new() // TODO: add interface
         {
             T output = new T();
             Type type = typeof(T);
 
-            string[] nameValuePairs = input.Split(new[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
+            string[] nameValuePairs = response.Split(new[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
 
             foreach(string nameValuePair in nameValuePairs)
             {

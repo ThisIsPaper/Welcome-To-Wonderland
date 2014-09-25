@@ -119,6 +119,7 @@
       <HintPath>..\packages\UmbracoCms.Core.7.1.5\lib\System.Data.SqlServerCe.Entity.dll</HintPath>
     </Reference>
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
     <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.30506.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
     </Reference>
@@ -219,7 +220,6 @@
     <Compile Include="Enums\LeaderboardType.cs" />
     <Compile Include="Enums\PartyIdeaTileSize.cs" />
     <Compile Include="Enums\PartyWallItemType.cs" />
-    <Compile Include="Events\ForceJsonFormatter.cs" />
     <Compile Include="Events\SetPageNotFoundContentFinder.cs" />
     <Compile Include="Events\SetPartyContentFinder.cs" />
     <Compile Include="Events\SetPublishedContentModelFactory.cs" />
