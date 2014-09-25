@@ -902,6 +902,11 @@ abstract
   right: 0;
 }
 
+/* line 233, sass/partials/_abstract.scss */
+.width-50p {
+  width: 50%;
+}
+
 /* line 10, sass/overrides.scss */
 .modal-backdrop {
   background-color: black !important;

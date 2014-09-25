@@ -329,6 +329,12 @@ dal
         display: none;
     }
 
+    &.scale-to-width {
+        min-width: 14rem;
+        max-width: none;
+        width: 25%;
+    }
+
 }
 
 

@@ -59,6 +59,7 @@ Colours
 /* Greys */
 /* Reds */
 /* Green */
+/* Blue */
 /* =============================================================================
 Borders
 ========================================================================== */
@@ -156,7 +157,7 @@ Font Sizes
 
 /* line 507, sass/partials/_helpers.scss */
 .body-small, .form-info, .warning, dal
-.party-image-container .warner, .successful, .errorred, label, .file-upload-info, .wall-details {
+.party-image-container .warner, .successful, .errorred, .extra-info-block, label, .file-upload-info, .wall-details {
   font-size: 1.4rem;
 }
 
@@ -286,6 +287,7 @@ Colours
 /* Greys */
 /* Reds */
 /* Green */
+/* Blue */
 /* =============================================================================
 Borders
 ========================================================================== */
@@ -458,7 +460,7 @@ abstract
  * @param 	list 	$statesNames 		The states names to generate
  */
 /* line 24, sass/partials/_abstract.scss */
-.pad-tiny, .btn-primary.btn-mini, .btn-mini.btn-secondary, .btn-mini.choose-file-wrapper:after, .successful, .errorred, .totaliser {
+.pad-tiny, .btn-primary.btn-mini, .btn-mini.btn-secondary, .btn-mini.choose-file-wrapper:after, .successful, .errorred, .extra-info-block, .totaliser {
   padding: 0.6rem;
 }
 
@@ -738,12 +740,12 @@ abstract
 }
 
 /* line 92, sass/partials/_abstract.scss */
-.margin-right-tiny, .successful span, .errorred span, .successful:before, .errorred:before {
+.margin-right-tiny, .successful span[class^="icon-"], .errorred span[class^="icon-"], .extra-info-block span[class^="icon-"], .successful span[class*=" icon-"], .errorred span[class*=" icon-"], .extra-info-block span[class*=" icon-"], .successful:before, .errorred:before, .extra-info-block:before {
   margin-right: 0.6rem;
 }
 
 /* line 93, sass/partials/_abstract.scss */
-.margin-right-small, .back [class^="icon-"], .back [class*=" icon-"], .party-image-selecter {
+.margin-right-small, .back [class^="icon-"], .back [class*=" icon-"], label.radio-form, .party-image-selecter {
   margin-right: 1.2rem;
 }
 
@@ -784,7 +786,7 @@ abstract
 
 /* line 103, sass/partials/_abstract.scss */
 .margin-bottom-small, .form-info, .warning, dal
-.party-image-container .warner, .successful, .errorred {
+.party-image-container .warner, .successful, .errorred, .extra-info-block, label.radio-form {
   margin-bottom: 1.2rem;
 }
 
@@ -806,7 +808,7 @@ abstract
 
 /* line 108, sass/partials/_abstract.scss */
 .margin-top-small, .form-info, .warning, dal
-.party-image-container .warner, .successful, .errorred {
+.party-image-container .warner, .successful, .errorred, .extra-info-block {
   margin-top: 1.2rem;
 }
 
@@ -1051,7 +1053,7 @@ abstract
 }
 
 /* line 167, sass/partials/_abstract.scss */
-.radius-v1-small, .successful, .errorred {
+.radius-v1-small, .successful, .errorred, .extra-info-block {
   -moz-border-radius-topleft: 1.64rem 1.1rem;
   -webkit-border-top-left-radius: 1.64rem 1.1rem;
   border-top-left-radius: 1.64rem 1.1rem;
@@ -1243,6 +1245,11 @@ abstract
 /* line 225, sass/partials/_abstract.scss */
 .pos-right-0 {
   right: 0;
+}
+
+/* line 233, sass/partials/_abstract.scss */
+.width-50p {
+  width: 50%;
 }
 
 /* line 30, ../scripts/bower_components/gridle/sass/gridle/_silent-classes.scss */
@@ -2975,29 +2982,34 @@ ul, ol, dl {
 }
 
 /* line 279, sass/partials/_type.scss */
+.body-bold {
+  font-weight: bold;
+}
+
+/* line 283, sass/partials/_type.scss */
 .body-emphasize {
   color: #474740;
   font-weight: bold;
 }
 
-/* line 284, sass/partials/_type.scss */
+/* line 288, sass/partials/_type.scss */
 .body-dephasize {
   color: #D4D3CC;
 }
 
-/* line 288, sass/partials/_type.scss */
+/* line 292, sass/partials/_type.scss */
 .body-highlight {
   color: #007eac;
   text-decoration: none;
 }
 
-/* line 293, sass/partials/_type.scss */
+/* line 297, sass/partials/_type.scss */
 .body-h1 {
   font-family: 'macmillan';
   color: #025b45;
 }
 
-/* line 300, sass/partials/_type.scss */
+/* line 304, sass/partials/_type.scss */
 h1 {
   font-family: 'macmillan';
   color: #025b45;
@@ -3007,16 +3019,16 @@ h1 {
   text-align: center;
   line-height: 4.2rem;
 }
-/* line 309, sass/partials/_type.scss */
+/* line 313, sass/partials/_type.scss */
 h1.lighter, h1 .lighter {
   color: #00A246;
 }
-/* line 313, sass/partials/_type.scss */
+/* line 317, sass/partials/_type.scss */
 h1.bigger, h1 .bigger {
   font-size: 7.2rem;
 }
 
-/* line 318, sass/partials/_type.scss */
+/* line 322, sass/partials/_type.scss */
 h2 {
   font-family: 'macmillan';
   color: #007eac;
@@ -3024,7 +3036,7 @@ h2 {
   margin: .5rem 0;
 }
 
-/* line 325, sass/partials/_type.scss */
+/* line 329, sass/partials/_type.scss */
 h3 {
   color: #025b45;
   font-size: 2.3rem;
@@ -3032,27 +3044,27 @@ h3 {
   font-weight: bold;
 }
 
-/* line 332, sass/partials/_type.scss */
+/* line 336, sass/partials/_type.scss */
 h4 {
   color: #474740;
   font-size: 2.3rem;
   margin: 2rem 0;
   font-weight: bold;
 }
-/* line 338, sass/partials/_type.scss */
+/* line 342, sass/partials/_type.scss */
 h4 span {
   color: #7B7A6D;
   font-weight: normal;
 }
 
-/* line 348, sass/partials/_type.scss */
+/* line 352, sass/partials/_type.scss */
 hr {
   border: none;
   border-bottom: 0.1rem solid #ECECEC;
   margin: 1.2rem 0;
 }
 
-/* line 354, sass/partials/_type.scss */
+/* line 358, sass/partials/_type.scss */
 .back {
   text-transform: uppercase;
   color: white;
@@ -3240,7 +3252,7 @@ abstract
  * @param 	list 	$statesNames 		The states names to generate
  */
 /* line 24, sass/partials/_abstract.scss */
-.pad-tiny, .btn-primary.btn-mini, .btn-mini.btn-secondary, .btn-mini.choose-file-wrapper:after, .successful, .errorred, .totaliser {
+.pad-tiny, .btn-primary.btn-mini, .btn-mini.btn-secondary, .btn-mini.choose-file-wrapper:after, .successful, .errorred, .extra-info-block, .totaliser {
   padding: 0.6rem;
 }
 
@@ -3520,12 +3532,12 @@ abstract
 }
 
 /* line 92, sass/partials/_abstract.scss */
-.margin-right-tiny, .successful span, .errorred span, .successful:before, .errorred:before {
+.margin-right-tiny, .successful span[class^="icon-"], .errorred span[class^="icon-"], .extra-info-block span[class^="icon-"], .successful span[class*=" icon-"], .errorred span[class*=" icon-"], .extra-info-block span[class*=" icon-"], .successful:before, .errorred:before, .extra-info-block:before {
   margin-right: 0.6rem;
 }
 
 /* line 93, sass/partials/_abstract.scss */
-.margin-right-small, .back [class^="icon-"], .back [class*=" icon-"], .party-image-selecter {
+.margin-right-small, .back [class^="icon-"], .back [class*=" icon-"], label.radio-form, .party-image-selecter {
   margin-right: 1.2rem;
 }
 
@@ -3566,7 +3578,7 @@ abstract
 
 /* line 103, sass/partials/_abstract.scss */
 .margin-bottom-small, .form-info, .warning, dal
-.party-image-container .warner, .successful, .errorred {
+.party-image-container .warner, .successful, .errorred, .extra-info-block, label.radio-form {
   margin-bottom: 1.2rem;
 }
 
@@ -3588,7 +3600,7 @@ abstract
 
 /* line 108, sass/partials/_abstract.scss */
 .margin-top-small, .form-info, .warning, dal
-.party-image-container .warner, .successful, .errorred {
+.party-image-container .warner, .successful, .errorred, .extra-info-block {
   margin-top: 1.2rem;
 }
 
@@ -3833,7 +3845,7 @@ abstract
 }
 
 /* line 167, sass/partials/_abstract.scss */
-.radius-v1-small, .successful, .errorred {
+.radius-v1-small, .successful, .errorred, .extra-info-block {
   -moz-border-radius-topleft: 1.64rem 1.1rem;
   -webkit-border-top-left-radius: 1.64rem 1.1rem;
   border-top-left-radius: 1.64rem 1.1rem;
@@ -4027,6 +4039,11 @@ abstract
   right: 0;
 }
 
+/* line 233, sass/partials/_abstract.scss */
+.width-50p {
+  width: 50%;
+}
+
 /*------------------------------------------------------------------------------------------------------------------------
  @package: Macmillan - Wonderland (app)
 
@@ -4098,29 +4115,34 @@ ul, ol, dl {
 }
 
 /* line 279, sass/partials/_type.scss */
+.body-bold {
+  font-weight: bold;
+}
+
+/* line 283, sass/partials/_type.scss */
 .body-emphasize {
   color: #474740;
   font-weight: bold;
 }
 
-/* line 284, sass/partials/_type.scss */
+/* line 288, sass/partials/_type.scss */
 .body-dephasize {
   color: #D4D3CC;
 }
 
-/* line 288, sass/partials/_type.scss */
+/* line 292, sass/partials/_type.scss */
 .body-highlight {
   color: #007eac;
   text-decoration: none;
 }
 
-/* line 293, sass/partials/_type.scss */
+/* line 297, sass/partials/_type.scss */
 .body-h1 {
   font-family: 'macmillan';
   color: #025b45;
 }
 
-/* line 300, sass/partials/_type.scss */
+/* line 304, sass/partials/_type.scss */
 h1 {
   font-family: 'macmillan';
   color: #025b45;
@@ -4130,16 +4152,16 @@ h1 {
   text-align: center;
   line-height: 4.2rem;
 }
-/* line 309, sass/partials/_type.scss */
+/* line 313, sass/partials/_type.scss */
 h1.lighter, h1 .lighter {
   color: #00A246;
 }
-/* line 313, sass/partials/_type.scss */
+/* line 317, sass/partials/_type.scss */
 h1.bigger, h1 .bigger {
   font-size: 7.2rem;
 }
 
-/* line 318, sass/partials/_type.scss */
+/* line 322, sass/partials/_type.scss */
 h2 {
   font-family: 'macmillan';
   color: #007eac;
@@ -4147,7 +4169,7 @@ h2 {
   margin: .5rem 0;
 }
 
-/* line 325, sass/partials/_type.scss */
+/* line 329, sass/partials/_type.scss */
 h3 {
   color: #025b45;
   font-size: 2.3rem;
@@ -4155,27 +4177,27 @@ h3 {
   font-weight: bold;
 }
 
-/* line 332, sass/partials/_type.scss */
+/* line 336, sass/partials/_type.scss */
 h4 {
   color: #474740;
   font-size: 2.3rem;
   margin: 2rem 0;
   font-weight: bold;
 }
-/* line 338, sass/partials/_type.scss */
+/* line 342, sass/partials/_type.scss */
 h4 span {
   color: #7B7A6D;
   font-weight: normal;
 }
 
-/* line 348, sass/partials/_type.scss */
+/* line 352, sass/partials/_type.scss */
 hr {
   border: none;
   border-bottom: 0.1rem solid #ECECEC;
   margin: 1.2rem 0;
 }
 
-/* line 354, sass/partials/_type.scss */
+/* line 358, sass/partials/_type.scss */
 .back {
   text-transform: uppercase;
   color: white;
@@ -4218,6 +4240,7 @@ Colours
 /* Greys */
 /* Reds */
 /* Green */
+/* Blue */
 /* =============================================================================
 Borders
 ========================================================================== */
@@ -4290,75 +4313,91 @@ Media query variables
 }
 
 /* line 103, sass/partials/_forms.scss */
-.successful, .errorred {
+.successful, .errorred, .extra-info-block {
   color: #00A246;
   background-color: #D1E8B2;
   text-align: center;
 }
-/* line 114, sass/partials/_forms.scss */
-.successful:before, .errorred:before {
+/* line 115, sass/partials/_forms.scss */
+.successful:before, .errorred:before, .extra-info-block:before {
   font-family: "icomoon";
   content: "\e61f";
 }
 
-/* line 122, sass/partials/_forms.scss */
+/* line 123, sass/partials/_forms.scss */
 .errorred {
   color: #E32333;
   background-color: #FCE9EA;
 }
-/* line 127, sass/partials/_forms.scss */
+/* line 128, sass/partials/_forms.scss */
 .errorred:before {
   font-family: "icomoon";
   content: "\e620";
 }
 
-/* line 136, sass/partials/_forms.scss */
+/* line 135, sass/partials/_forms.scss */
+.extra-info-block {
+  color: #007ea7;
+  background-color: #e4f2f7;
+}
+/* line 140, sass/partials/_forms.scss */
+.extra-info-block:before {
+  font-family: "icomoon";
+  content: "\e620";
+}
+
+/* line 149, sass/partials/_forms.scss */
 .form-holder {
   max-width: 50rem;
 }
-/* line 139, sass/partials/_forms.scss */
+/* line 152, sass/partials/_forms.scss */
 .form-holder.wide {
   max-width: 70rem;
 }
 
-/* line 146, sass/partials/_forms.scss */
+/* line 159, sass/partials/_forms.scss */
 label {
   text-transform: uppercase;
   color: #7B7A6D;
   font-weight: bold;
   line-height: 3rem;
 }
-/* line 153, sass/partials/_forms.scss */
+/* line 166, sass/partials/_forms.scss */
 label span {
   text-transform: none;
   color: #A19F91;
 }
+/* line 172, sass/partials/_forms.scss */
+label.radio-form {
+  text-transform: none;
+  display: inline-block;
+}
 
-/* line 160, sass/partials/_forms.scss */
+/* line 184, sass/partials/_forms.scss */
 textarea {
   width: 100%;
   height: 15rem;
   resize: none;
 }
 
-/* line 167, sass/partials/_forms.scss */
+/* line 191, sass/partials/_forms.scss */
 input[type='text'] {
   width: 100%;
   height: 5rem;
   line-height: 5rem;
 }
 
-/* line 175, sass/partials/_forms.scss */
+/* line 199, sass/partials/_forms.scss */
 input[type='text'], textarea {
   border: 0.1rem solid #D4D3CC;
 }
 
-/* line 179, sass/partials/_forms.scss */
+/* line 203, sass/partials/_forms.scss */
 input[type="text"][readonly] {
   cursor: pointer;
 }
 
-/* line 183, sass/partials/_forms.scss */
+/* line 207, sass/partials/_forms.scss */
 input[type=submit][disabled=disabled],
 input[type=submit][disabled=disabled]:hover,
 button[disabled=disabled],
@@ -4368,7 +4407,7 @@ button[disabled=disabled]:hover {
   cursor: default;
 }
 
-/* line 194, sass/partials/_forms.scss */
+/* line 218, sass/partials/_forms.scss */
 .choose-file-wrapper {
   width: 14rem;
   height: 4rem;
@@ -4376,7 +4415,7 @@ button[disabled=disabled]:hover {
   position: relative;
   cursor: pointer;
 }
-/* line 202, sass/partials/_forms.scss */
+/* line 226, sass/partials/_forms.scss */
 .choose-file-wrapper:before {
   position: relative;
   z-index: 10;
@@ -4386,7 +4425,7 @@ button[disabled=disabled]:hover {
   font-size: 1.4rem;
   line-height: 3.8rem;
 }
-/* line 212, sass/partials/_forms.scss */
+/* line 236, sass/partials/_forms.scss */
 .choose-file-wrapper:after {
   content: "Upload file";
   position: absolute;
@@ -4399,7 +4438,7 @@ button[disabled=disabled]:hover {
   line-height: 1.6rem;
 }
 
-/* line 232, sass/partials/_forms.scss */
+/* line 256, sass/partials/_forms.scss */
 .choose-file {
   width: 200%;
   height: 100%;
@@ -4707,6 +4746,7 @@ Colours
 /* Greys */
 /* Reds */
 /* Green */
+/* Blue */
 /* =============================================================================
 Borders
 ========================================================================== */
@@ -4804,7 +4844,7 @@ Font Sizes
 
 /* line 507, sass/partials/_helpers.scss */
 .body-small, .form-info, .warning, dal
-.party-image-container .warner, .successful, .errorred, label, .file-upload-info, .wall-details {
+.party-image-container .warner, .successful, .errorred, .extra-info-block, label, .file-upload-info, .wall-details {
   font-size: 1.4rem;
 }
 
@@ -5048,7 +5088,7 @@ abstract
  * @param 	list 	$statesNames 		The states names to generate
  */
 /* line 24, sass/partials/_abstract.scss */
-.pad-tiny, .btn-primary.btn-mini, .btn-mini.btn-secondary, .btn-mini.choose-file-wrapper:after, .successful, .errorred, .totaliser {
+.pad-tiny, .btn-primary.btn-mini, .btn-mini.btn-secondary, .btn-mini.choose-file-wrapper:after, .successful, .errorred, .extra-info-block, .totaliser {
   padding: 0.6rem;
 }
 
@@ -5328,12 +5368,12 @@ abstract
 }
 
 /* line 92, sass/partials/_abstract.scss */
-.margin-right-tiny, .successful span, .errorred span, .successful:before, .errorred:before {
+.margin-right-tiny, .successful span[class^="icon-"], .errorred span[class^="icon-"], .extra-info-block span[class^="icon-"], .successful span[class*=" icon-"], .errorred span[class*=" icon-"], .extra-info-block span[class*=" icon-"], .successful:before, .errorred:before, .extra-info-block:before {
   margin-right: 0.6rem;
 }
 
 /* line 93, sass/partials/_abstract.scss */
-.margin-right-small, .back [class^="icon-"], .back [class*=" icon-"], .party-image-selecter {
+.margin-right-small, .back [class^="icon-"], .back [class*=" icon-"], label.radio-form, .party-image-selecter {
   margin-right: 1.2rem;
 }
 
@@ -5374,7 +5414,7 @@ abstract
 
 /* line 103, sass/partials/_abstract.scss */
 .margin-bottom-small, .form-info, .warning, dal
-.party-image-container .warner, .successful, .errorred {
+.party-image-container .warner, .successful, .errorred, .extra-info-block, label.radio-form {
   margin-bottom: 1.2rem;
 }
 
@@ -5396,7 +5436,7 @@ abstract
 
 /* line 108, sass/partials/_abstract.scss */
 .margin-top-small, .form-info, .warning, dal
-.party-image-container .warner, .successful, .errorred {
+.party-image-container .warner, .successful, .errorred, .extra-info-block {
   margin-top: 1.2rem;
 }
 
@@ -5641,7 +5681,7 @@ abstract
 }
 
 /* line 167, sass/partials/_abstract.scss */
-.radius-v1-small, .successful, .errorred {
+.radius-v1-small, .successful, .errorred, .extra-info-block {
   -moz-border-radius-topleft: 1.64rem 1.1rem;
   -webkit-border-top-left-radius: 1.64rem 1.1rem;
   border-top-left-radius: 1.64rem 1.1rem;
@@ -5833,6 +5873,11 @@ abstract
 /* line 225, sass/partials/_abstract.scss */
 .pos-right-0 {
   right: 0;
+}
+
+/* line 233, sass/partials/_abstract.scss */
+.width-50p {
+  width: 50%;
 }
 
 /*------------------------------------------------------------------------------------------------------------------------
@@ -6016,7 +6061,7 @@ abstract
  * @param 	list 	$statesNames 		The states names to generate
  */
 /* line 24, sass/partials/_abstract.scss */
-.pad-tiny, .btn-primary.btn-mini, .btn-mini.btn-secondary, .btn-mini.choose-file-wrapper:after, .successful, .errorred, .totaliser {
+.pad-tiny, .btn-primary.btn-mini, .btn-mini.btn-secondary, .btn-mini.choose-file-wrapper:after, .successful, .errorred, .extra-info-block, .totaliser {
   padding: 0.6rem;
 }
 
@@ -6296,12 +6341,12 @@ abstract
 }
 
 /* line 92, sass/partials/_abstract.scss */
-.margin-right-tiny, .successful span, .errorred span, .successful:before, .errorred:before {
+.margin-right-tiny, .successful span[class^="icon-"], .errorred span[class^="icon-"], .extra-info-block span[class^="icon-"], .successful span[class*=" icon-"], .errorred span[class*=" icon-"], .extra-info-block span[class*=" icon-"], .successful:before, .errorred:before, .extra-info-block:before {
   margin-right: 0.6rem;
 }
 
 /* line 93, sass/partials/_abstract.scss */
-.margin-right-small, .back [class^="icon-"], .back [class*=" icon-"], .party-image-selecter {
+.margin-right-small, .back [class^="icon-"], .back [class*=" icon-"], label.radio-form, .party-image-selecter {
   margin-right: 1.2rem;
 }
 
@@ -6342,7 +6387,7 @@ abstract
 
 /* line 103, sass/partials/_abstract.scss */
 .margin-bottom-small, .form-info, .warning, dal
-.party-image-container .warner, .successful, .errorred {
+.party-image-container .warner, .successful, .errorred, .extra-info-block, label.radio-form {
   margin-bottom: 1.2rem;
 }
 
@@ -6364,7 +6409,7 @@ abstract
 
 /* line 108, sass/partials/_abstract.scss */
 .margin-top-small, .form-info, .warning, dal
-.party-image-container .warner, .successful, .errorred {
+.party-image-container .warner, .successful, .errorred, .extra-info-block {
   margin-top: 1.2rem;
 }
 
@@ -6609,7 +6654,7 @@ abstract
 }
 
 /* line 167, sass/partials/_abstract.scss */
-.radius-v1-small, .successful, .errorred {
+.radius-v1-small, .successful, .errorred, .extra-info-block {
   -moz-border-radius-topleft: 1.64rem 1.1rem;
   -webkit-border-top-left-radius: 1.64rem 1.1rem;
   border-top-left-radius: 1.64rem 1.1rem;
@@ -6803,6 +6848,11 @@ abstract
   right: 0;
 }
 
+/* line 233, sass/partials/_abstract.scss */
+.width-50p {
+  width: 50%;
+}
+
 /*------------------------------------------------------------------------------------------------------------------------
  @package: Macmillan - Wonderland (app)
 
@@ -6874,29 +6924,34 @@ ul, ol, dl {
 }
 
 /* line 279, sass/partials/_type.scss */
+.body-bold {
+  font-weight: bold;
+}
+
+/* line 283, sass/partials/_type.scss */
 .body-emphasize {
   color: #474740;
   font-weight: bold;
 }
 
-/* line 284, sass/partials/_type.scss */
+/* line 288, sass/partials/_type.scss */
 .body-dephasize {
   color: #D4D3CC;
 }
 
-/* line 288, sass/partials/_type.scss */
+/* line 292, sass/partials/_type.scss */
 .body-highlight {
   color: #007eac;
   text-decoration: none;
 }
 
-/* line 293, sass/partials/_type.scss */
+/* line 297, sass/partials/_type.scss */
 .body-h1 {
   font-family: 'macmillan';
   color: #025b45;
 }
 
-/* line 300, sass/partials/_type.scss */
+/* line 304, sass/partials/_type.scss */
 h1 {
   font-family: 'macmillan';
   color: #025b45;
@@ -6906,16 +6961,16 @@ h1 {
   text-align: center;
   line-height: 4.2rem;
 }
-/* line 309, sass/partials/_type.scss */
+/* line 313, sass/partials/_type.scss */
 h1.lighter, h1 .lighter {
   color: #00A246;
 }
-/* line 313, sass/partials/_type.scss */
+/* line 317, sass/partials/_type.scss */
 h1.bigger, h1 .bigger {
   font-size: 7.2rem;
 }
 
-/* line 318, sass/partials/_type.scss */
+/* line 322, sass/partials/_type.scss */
 h2 {
   font-family: 'macmillan';
   color: #007eac;
@@ -6923,7 +6978,7 @@ h2 {
   margin: .5rem 0;
 }
 
-/* line 325, sass/partials/_type.scss */
+/* line 329, sass/partials/_type.scss */
 h3 {
   color: #025b45;
   font-size: 2.3rem;
@@ -6931,27 +6986,27 @@ h3 {
   font-weight: bold;
 }
 
-/* line 332, sass/partials/_type.scss */
+/* line 336, sass/partials/_type.scss */
 h4 {
   color: #474740;
   font-size: 2.3rem;
   margin: 2rem 0;
   font-weight: bold;
 }
-/* line 338, sass/partials/_type.scss */
+/* line 342, sass/partials/_type.scss */
 h4 span {
   color: #7B7A6D;
   font-weight: normal;
 }
 
-/* line 348, sass/partials/_type.scss */
+/* line 352, sass/partials/_type.scss */
 hr {
   border: none;
   border-bottom: 0.1rem solid #ECECEC;
   margin: 1.2rem 0;
 }
 
-/* line 354, sass/partials/_type.scss */
+/* line 358, sass/partials/_type.scss */
 .back {
   text-transform: uppercase;
   color: white;
@@ -6994,6 +7049,7 @@ Colours
 /* Greys */
 /* Reds */
 /* Green */
+/* Blue */
 /* =============================================================================
 Borders
 ========================================================================== */
@@ -7066,75 +7122,91 @@ Media query variables
 }
 
 /* line 103, sass/partials/_forms.scss */
-.successful, .errorred {
+.successful, .errorred, .extra-info-block {
   color: #00A246;
   background-color: #D1E8B2;
   text-align: center;
 }
-/* line 114, sass/partials/_forms.scss */
-.successful:before, .errorred:before {
+/* line 115, sass/partials/_forms.scss */
+.successful:before, .errorred:before, .extra-info-block:before {
   font-family: "icomoon";
   content: "\e61f";
 }
 
-/* line 122, sass/partials/_forms.scss */
+/* line 123, sass/partials/_forms.scss */
 .errorred {
   color: #E32333;
   background-color: #FCE9EA;
 }
-/* line 127, sass/partials/_forms.scss */
+/* line 128, sass/partials/_forms.scss */
 .errorred:before {
   font-family: "icomoon";
   content: "\e620";
 }
 
-/* line 136, sass/partials/_forms.scss */
+/* line 135, sass/partials/_forms.scss */
+.extra-info-block {
+  color: #007ea7;
+  background-color: #e4f2f7;
+}
+/* line 140, sass/partials/_forms.scss */
+.extra-info-block:before {
+  font-family: "icomoon";
+  content: "\e620";
+}
+
+/* line 149, sass/partials/_forms.scss */
 .form-holder {
   max-width: 50rem;
 }
-/* line 139, sass/partials/_forms.scss */
+/* line 152, sass/partials/_forms.scss */
 .form-holder.wide {
   max-width: 70rem;
 }
 
-/* line 146, sass/partials/_forms.scss */
+/* line 159, sass/partials/_forms.scss */
 label {
   text-transform: uppercase;
   color: #7B7A6D;
   font-weight: bold;
   line-height: 3rem;
 }
-/* line 153, sass/partials/_forms.scss */
+/* line 166, sass/partials/_forms.scss */
 label span {
   text-transform: none;
   color: #A19F91;
 }
+/* line 172, sass/partials/_forms.scss */
+label.radio-form {
+  text-transform: none;
+  display: inline-block;
+}
 
-/* line 160, sass/partials/_forms.scss */
+/* line 184, sass/partials/_forms.scss */
 textarea {
   width: 100%;
   height: 15rem;
   resize: none;
 }
 
-/* line 167, sass/partials/_forms.scss */
+/* line 191, sass/partials/_forms.scss */
 input[type='text'] {
   width: 100%;
   height: 5rem;
   line-height: 5rem;
 }
 
-/* line 175, sass/partials/_forms.scss */
+/* line 199, sass/partials/_forms.scss */
 input[type='text'], textarea {
   border: 0.1rem solid #D4D3CC;
 }
 
-/* line 179, sass/partials/_forms.scss */
+/* line 203, sass/partials/_forms.scss */
 input[type="text"][readonly] {
   cursor: pointer;
 }
 
-/* line 183, sass/partials/_forms.scss */
+/* line 207, sass/partials/_forms.scss */
 input[type=submit][disabled=disabled],
 input[type=submit][disabled=disabled]:hover,
 button[disabled=disabled],
@@ -7144,7 +7216,7 @@ button[disabled=disabled]:hover {
   cursor: default;
 }
 
-/* line 194, sass/partials/_forms.scss */
+/* line 218, sass/partials/_forms.scss */
 .choose-file-wrapper {
   width: 14rem;
   height: 4rem;
@@ -7152,7 +7224,7 @@ button[disabled=disabled]:hover {
   position: relative;
   cursor: pointer;
 }
-/* line 202, sass/partials/_forms.scss */
+/* line 226, sass/partials/_forms.scss */
 .choose-file-wrapper:before {
   position: relative;
   z-index: 10;
@@ -7162,7 +7234,7 @@ button[disabled=disabled]:hover {
   font-size: 1.4rem;
   line-height: 3.8rem;
 }
-/* line 212, sass/partials/_forms.scss */
+/* line 236, sass/partials/_forms.scss */
 .choose-file-wrapper:after {
   content: "Upload file";
   position: absolute;
@@ -7175,7 +7247,7 @@ button[disabled=disabled]:hover {
   line-height: 1.6rem;
 }
 
-/* line 232, sass/partials/_forms.scss */
+/* line 256, sass/partials/_forms.scss */
 .choose-file {
   width: 200%;
   height: 100%;
@@ -7260,29 +7332,34 @@ ul, ol, dl {
 }
 
 /* line 279, sass/partials/_type.scss */
+.body-bold {
+  font-weight: bold;
+}
+
+/* line 283, sass/partials/_type.scss */
 .body-emphasize {
   color: #474740;
   font-weight: bold;
 }
 
-/* line 284, sass/partials/_type.scss */
+/* line 288, sass/partials/_type.scss */
 .body-dephasize {
   color: #D4D3CC;
 }
 
-/* line 288, sass/partials/_type.scss */
+/* line 292, sass/partials/_type.scss */
 .body-highlight {
   color: #007eac;
   text-decoration: none;
 }
 
-/* line 293, sass/partials/_type.scss */
+/* line 297, sass/partials/_type.scss */
 .body-h1 {
   font-family: 'macmillan';
   color: #025b45;
 }
 
-/* line 300, sass/partials/_type.scss */
+/* line 304, sass/partials/_type.scss */
 h1 {
   font-family: 'macmillan';
   color: #025b45;
@@ -7292,16 +7369,16 @@ h1 {
   text-align: center;
   line-height: 4.2rem;
 }
-/* line 309, sass/partials/_type.scss */
+/* line 313, sass/partials/_type.scss */
 h1.lighter, h1 .lighter {
   color: #00A246;
 }
-/* line 313, sass/partials/_type.scss */
+/* line 317, sass/partials/_type.scss */
 h1.bigger, h1 .bigger {
   font-size: 7.2rem;
 }
 
-/* line 318, sass/partials/_type.scss */
+/* line 322, sass/partials/_type.scss */
 h2 {
   font-family: 'macmillan';
   color: #007eac;
@@ -7309,7 +7386,7 @@ h2 {
   margin: .5rem 0;
 }
 
-/* line 325, sass/partials/_type.scss */
+/* line 329, sass/partials/_type.scss */
 h3 {
   color: #025b45;
   font-size: 2.3rem;
@@ -7317,27 +7394,27 @@ h3 {
   font-weight: bold;
 }
 
-/* line 332, sass/partials/_type.scss */
+/* line 336, sass/partials/_type.scss */
 h4 {
   color: #474740;
   font-size: 2.3rem;
   margin: 2rem 0;
   font-weight: bold;
 }
-/* line 338, sass/partials/_type.scss */
+/* line 342, sass/partials/_type.scss */
 h4 span {
   color: #7B7A6D;
   font-weight: normal;
 }
 
-/* line 348, sass/partials/_type.scss */
+/* line 352, sass/partials/_type.scss */
 hr {
   border: none;
   border-bottom: 0.1rem solid #ECECEC;
   margin: 1.2rem 0;
 }
 
-/* line 354, sass/partials/_type.scss */
+/* line 358, sass/partials/_type.scss */
 .back {
   text-transform: uppercase;
   color: white;
@@ -7655,21 +7732,27 @@ dal
 .ticket input[type="radio"] {
   display: none;
 }
+/* line 332, sass/partials/_base.scss */
+.ticket.scale-to-width {
+  min-width: 14rem;
+  max-width: none;
+  width: 25%;
+}
 
-/* line 336, sass/partials/_base.scss */
+/* line 342, sass/partials/_base.scss */
 label .ticket span {
   color: inherit;
 }
 
 /*******************************/
-/* line 344, sass/partials/_base.scss */
+/* line 350, sass/partials/_base.scss */
 .totaliser {
   -moz-border-radius: 0.6rem;
   -webkit-border-radius: 0.6rem;
   border-radius: 0.6rem;
   background-color: #D4D3CC;
 }
-/* line 350, sass/partials/_base.scss */
+/* line 356, sass/partials/_base.scss */
 .totaliser .current-total {
   -moz-border-radius: 0.6rem;
   -webkit-border-radius: 0.6rem;
@@ -7682,17 +7765,17 @@ label .ticket span {
 /* =============================================================================
 One-off uses
 ========================================================================== */
-/* line 363, sass/partials/_base.scss */
+/* line 369, sass/partials/_base.scss */
 #twitter-widget-0 {
   width: 100% !important;
 }
 
-/* line 367, sass/partials/_base.scss */
+/* line 373, sass/partials/_base.scss */
 .home-twitter-boxx {
   height: 35.6rem;
 }
 
-/* line 371, sass/partials/_base.scss */
+/* line 377, sass/partials/_base.scss */
 .piggy-donater:after {
   content: "\e61c";
   font-family: "icomoon";
@@ -7700,7 +7783,7 @@ One-off uses
 }
 
 /*******************************/
-/* line 382, sass/partials/_base.scss */
+/* line 388, sass/partials/_base.scss */
 .hero {
   height: 45rem;
   background-image: url('/img/hero-ph.jpg?1411035906');
@@ -7711,24 +7794,24 @@ One-off uses
   padding-top: 10rem;
 }
 
-/* line 392, sass/partials/_base.scss */
+/* line 398, sass/partials/_base.scss */
 .planking {
   background: url('/img/wood_texture.jpg?1411035906') repeat top left;
   background-size: 100% 100%;
 }
 
-/* line 397, sass/partials/_base.scss */
+/* line 403, sass/partials/_base.scss */
 .home-content-adjust {
   margin-top: -8rem;
 }
 
-/* line 401, sass/partials/_base.scss */
+/* line 407, sass/partials/_base.scss */
 .hero-explain {
   margin-right: 35rem;
   text-align: left;
 }
 
-/* line 406, sass/partials/_base.scss */
+/* line 412, sass/partials/_base.scss */
 .money-raised {
   position: absolute;
   top: 2.4rem;
@@ -7738,63 +7821,63 @@ One-off uses
   width: 34rem;
 }
 
-/* line 415, sass/partials/_base.scss */
+/* line 421, sass/partials/_base.scss */
 .raised-amount {
   color: white;
   width: 27.5rem;
 }
 
-/* line 426, sass/partials/_base.scss */
+/* line 432, sass/partials/_base.scss */
 .home-tile-repeater:nth-child(1) .home-tile {
-  -moz-transform: rotate(-0.9deg);
-  -ms-transform: rotate(-0.9deg);
-  -webkit-transform: rotate(-0.9deg);
-  transform: rotate(-0.9deg);
+  -moz-transform: rotate(-2.3deg);
+  -ms-transform: rotate(-2.3deg);
+  -webkit-transform: rotate(-2.3deg);
+  transform: rotate(-2.3deg);
 }
-/* line 426, sass/partials/_base.scss */
+/* line 432, sass/partials/_base.scss */
 .home-tile-repeater:nth-child(2) .home-tile {
-  -moz-transform: rotate(0.5deg);
-  -ms-transform: rotate(0.5deg);
-  -webkit-transform: rotate(0.5deg);
-  transform: rotate(0.5deg);
+  -moz-transform: rotate(1.6deg);
+  -ms-transform: rotate(1.6deg);
+  -webkit-transform: rotate(1.6deg);
+  transform: rotate(1.6deg);
 }
-/* line 426, sass/partials/_base.scss */
+/* line 432, sass/partials/_base.scss */
 .home-tile-repeater:nth-child(3) .home-tile {
+  -moz-transform: rotate(-2.3deg);
+  -ms-transform: rotate(-2.3deg);
+  -webkit-transform: rotate(-2.3deg);
+  transform: rotate(-2.3deg);
+}
+/* line 432, sass/partials/_base.scss */
+.home-tile-repeater:nth-child(4) .home-tile {
+  -moz-transform: rotate(0.3deg);
+  -ms-transform: rotate(0.3deg);
+  -webkit-transform: rotate(0.3deg);
+  transform: rotate(0.3deg);
+}
+/* line 432, sass/partials/_base.scss */
+.home-tile-repeater:nth-child(5) .home-tile {
   -moz-transform: rotate(-1.9deg);
   -ms-transform: rotate(-1.9deg);
   -webkit-transform: rotate(-1.9deg);
   transform: rotate(-1.9deg);
 }
-/* line 426, sass/partials/_base.scss */
-.home-tile-repeater:nth-child(4) .home-tile {
-  -moz-transform: rotate(2.2deg);
-  -ms-transform: rotate(2.2deg);
-  -webkit-transform: rotate(2.2deg);
-  transform: rotate(2.2deg);
-}
-/* line 426, sass/partials/_base.scss */
-.home-tile-repeater:nth-child(5) .home-tile {
-  -moz-transform: rotate(-1.7deg);
-  -ms-transform: rotate(-1.7deg);
-  -webkit-transform: rotate(-1.7deg);
-  transform: rotate(-1.7deg);
-}
-/* line 426, sass/partials/_base.scss */
+/* line 432, sass/partials/_base.scss */
 .home-tile-repeater:nth-child(6) .home-tile {
-  -moz-transform: rotate(1.3deg);
-  -ms-transform: rotate(1.3deg);
-  -webkit-transform: rotate(1.3deg);
-  transform: rotate(1.3deg);
+  -moz-transform: rotate(0.9deg);
+  -ms-transform: rotate(0.9deg);
+  -webkit-transform: rotate(0.9deg);
+  transform: rotate(0.9deg);
 }
 
-/* line 441, sass/partials/_base.scss */
+/* line 447, sass/partials/_base.scss */
 .home-tile {
   background-color: white;
   position: relative;
   overflow: hidden;
 }
 
-/* line 452, sass/partials/_base.scss */
+/* line 458, sass/partials/_base.scss */
 .home-tile-image {
   background-repeat: no-repeat;
   background-size: cover;
@@ -7802,7 +7885,7 @@ One-off uses
   width: 100%;
 }
 
-/* line 459, sass/partials/_base.scss */
+/* line 465, sass/partials/_base.scss */
 .home-tile-label {
   position: absolute;
   bottom: 0;
@@ -7811,32 +7894,32 @@ One-off uses
 }
 
 /*******************************/
-/* line 470, sass/partials/_base.scss */
+/* line 476, sass/partials/_base.scss */
 .spotify-holder {
   width: 35.6rem;
   margin-top: -7rem;
 }
 
-/* line 475, sass/partials/_base.scss */
+/* line 481, sass/partials/_base.scss */
 .spotify-info-holder {
   position: absolute;
   top: 12rem;
   color: white;
   text-align: center;
 }
-/* line 482, sass/partials/_base.scss */
+/* line 488, sass/partials/_base.scss */
 .spotify-info-holder h1 {
   color: white;
 }
 
 /*******************************/
-/* line 490, sass/partials/_base.scss */
+/* line 496, sass/partials/_base.scss */
 .scoreboard-place {
   float: left;
   width: 5rem;
 }
 
-/* line 495, sass/partials/_base.scss */
+/* line 501, sass/partials/_base.scss */
 .scoreboard-value {
   position: absolute;
   top: 0;
@@ -7880,6 +7963,7 @@ Colours
 /* Greys */
 /* Reds */
 /* Green */
+/* Blue */
 /* =============================================================================
 Borders
 ========================================================================== */
@@ -8176,43 +8260,43 @@ p.amount {
 }
 /* line 96, sass/main.scss */
 .frame:nth-child(1) {
-  -moz-transform: rotate(-1.5deg);
-  -ms-transform: rotate(-1.5deg);
-  -webkit-transform: rotate(-1.5deg);
-  transform: rotate(-1.5deg);
+  -moz-transform: rotate(-0.9deg);
+  -ms-transform: rotate(-0.9deg);
+  -webkit-transform: rotate(-0.9deg);
+  transform: rotate(-0.9deg);
 }
 /* line 96, sass/main.scss */
 .frame:nth-child(2) {
-  -moz-transform: rotate(0.8deg);
-  -ms-transform: rotate(0.8deg);
-  -webkit-transform: rotate(0.8deg);
-  transform: rotate(0.8deg);
-}
-/* line 96, sass/main.scss */
-.frame:nth-child(3) {
-  -moz-transform: rotate(-1.3deg);
-  -ms-transform: rotate(-1.3deg);
-  -webkit-transform: rotate(-1.3deg);
-  transform: rotate(-1.3deg);
-}
-/* line 96, sass/main.scss */
-.frame:nth-child(4) {
-  -moz-transform: rotate(0.6deg);
-  -ms-transform: rotate(0.6deg);
-  -webkit-transform: rotate(0.6deg);
-  transform: rotate(0.6deg);
-}
-/* line 96, sass/main.scss */
-.frame:nth-child(5) {
-  -moz-transform: rotate(-1.1deg);
-  -ms-transform: rotate(-1.1deg);
-  -webkit-transform: rotate(-1.1deg);
-  transform: rotate(-1.1deg);
-}
-/* line 96, sass/main.scss */
-.frame:nth-child(6) {
   -moz-transform: rotate(1.7deg);
   -ms-transform: rotate(1.7deg);
   -webkit-transform: rotate(1.7deg);
   transform: rotate(1.7deg);
+}
+/* line 96, sass/main.scss */
+.frame:nth-child(3) {
+  -moz-transform: rotate(-1.6deg);
+  -ms-transform: rotate(-1.6deg);
+  -webkit-transform: rotate(-1.6deg);
+  transform: rotate(-1.6deg);
+}
+/* line 96, sass/main.scss */
+.frame:nth-child(4) {
+  -moz-transform: rotate(0.5deg);
+  -ms-transform: rotate(0.5deg);
+  -webkit-transform: rotate(0.5deg);
+  transform: rotate(0.5deg);
+}
+/* line 96, sass/main.scss */
+.frame:nth-child(5) {
+  -moz-transform: rotate(-0.5deg);
+  -ms-transform: rotate(-0.5deg);
+  -webkit-transform: rotate(-0.5deg);
+  transform: rotate(-0.5deg);
+}
+/* line 96, sass/main.scss */
+.frame:nth-child(6) {
+  -moz-transform: rotate(0.3deg);
+  -ms-transform: rotate(0.3deg);
+  -webkit-transform: rotate(0.3deg);
+  transform: rotate(0.3deg);
 }
