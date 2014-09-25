@@ -13,7 +13,9 @@ namespace Wonderland.Logic.Models.Content
 
         // Properties
         public const string RecipeNameAlias = "recipeName";
+        public const string IngredientsHeadingAlias = "ingredientsHeading"; 
         public const string IngredientsAlias = "ingredients";
+        public const string PreparationCopyAlias = "preparationCopy";
 
         public RecipeTile(IPublishedContent content)
             : base(content)
@@ -36,6 +38,14 @@ namespace Wonderland.Logic.Models.Content
             }
         }
 
+        public string IngredientsHeading
+        {
+            get
+            {
+                return this.GetPropertyValue<string>(RecipeTile.IngredientsHeadingAlias);
+            }
+        }
+
         public IEnumerable<string> Ingredients
         {
             get
@@ -43,5 +53,14 @@ namespace Wonderland.Logic.Models.Content
                 return this.GetPropertyValue<string[]>(RecipeTile.IngredientsAlias);
             }
         }
+
+        public string PreparationCopy
+        {
+            get
+            {
+                return this.GetPropertyValue<string>(RecipeTile.PreparationCopyAlias);
+            }
+        }
+
     }
 }
