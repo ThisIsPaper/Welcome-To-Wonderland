@@ -165,6 +165,17 @@ Event Page specific - move these out of here eventually
     }
 }
 
+.profile-image-remover {
+    color: $redDark;
+    font-size: $FontSizeMini;
+    cursor: pointer;
+
+    position: absolute;
+    top: $profileImageSize + .6rem;
+    left: .3rem;
+    width: $profileImageSize;
+}
+
 .image-shift-details {
     margin-left: $profileImageSize + $padSmallValue;
 
@@ -191,7 +202,7 @@ Event Page specific - move these out of here eventually
     }
 }
 
-dal
+
 /*******************************/// party image mo
 .party-image-container {
     @extend .margin-bottom-medium;
@@ -264,7 +275,7 @@ dal
 .file-upload-info {
     @extend .body-small;
 
-    margin-left: 17.2rem;
+    //margin-left: 17.2rem;
 }
 
 /*******************************/// wall

@@ -156,8 +156,7 @@ Font Sizes
 }
 
 /* line 507, sass/partials/_helpers.scss */
-.body-small, .form-info, .warning, dal
-.party-image-container .warner, .successful, .errorred, .extra-info-block, label, .file-upload-info, .wall-details {
+.body-small, .form-info, .warning, .party-image-container .warner, .successful, .errorred, .extra-info-block, label, .file-upload-info, .wall-details {
   font-size: 1.4rem;
 }
 
@@ -456,7 +455,7 @@ abstract
 }
 
 /* line 20, sass/partials/_abstract.scss */
-.pad-right-small, input[type='text'] {
+.pad-right-small, input[type='text'], input[type='password'] {
   padding-right: 1.2rem;
 }
 
@@ -476,7 +475,7 @@ abstract
 }
 
 /* line 25, sass/partials/_abstract.scss */
-.pad-left-small, input[type='text'] {
+.pad-left-small, input[type='text'], input[type='password'] {
   padding-left: 1.2rem;
 }
 
@@ -761,14 +760,12 @@ abstract
 }
 
 /* line 95, sass/partials/_abstract.scss */
-.margin-bottom-small, .form-info, .warning, dal
-.party-image-container .warner, .successful, .errorred, .extra-info-block, label.radio-form {
+.margin-bottom-small, .form-info, .warning, .party-image-container .warner, .successful, .errorred, .extra-info-block, label.radio-form {
   margin-bottom: 1.2rem;
 }
 
 /* line 96, sass/partials/_abstract.scss */
-.margin-bottom-medium, dal
-.party-image-container {
+.margin-bottom-medium, .party-image-container {
   margin-bottom: 1.8rem;
 }
 
@@ -783,8 +780,7 @@ abstract
 }
 
 /* line 100, sass/partials/_abstract.scss */
-.margin-top-small, .form-info, .warning, dal
-.party-image-container .warner, .successful, .errorred, .extra-info-block {
+.margin-top-small, .form-info, .warning, .party-image-container .warner, .successful, .errorred, .extra-info-block {
   margin-top: 1.2rem;
 }
 
@@ -4370,7 +4366,7 @@ abstract
 }
 
 /* line 20, sass/partials/_abstract.scss */
-.pad-right-small, input[type='text'] {
+.pad-right-small, input[type='text'], input[type='password'] {
   padding-right: 1.2rem;
 }
 
@@ -4390,7 +4386,7 @@ abstract
 }
 
 /* line 25, sass/partials/_abstract.scss */
-.pad-left-small, input[type='text'] {
+.pad-left-small, input[type='text'], input[type='password'] {
   padding-left: 1.2rem;
 }
 
@@ -4675,14 +4671,12 @@ abstract
 }
 
 /* line 95, sass/partials/_abstract.scss */
-.margin-bottom-small, .form-info, .warning, dal
-.party-image-container .warner, .successful, .errorred, .extra-info-block, label.radio-form {
+.margin-bottom-small, .form-info, .warning, .party-image-container .warner, .successful, .errorred, .extra-info-block, label.radio-form {
   margin-bottom: 1.2rem;
 }
 
 /* line 96, sass/partials/_abstract.scss */
-.margin-bottom-medium, dal
-.party-image-container {
+.margin-bottom-medium, .party-image-container {
   margin-bottom: 1.8rem;
 }
 
@@ -4697,8 +4691,7 @@ abstract
 }
 
 /* line 100, sass/partials/_abstract.scss */
-.margin-top-small, .form-info, .warning, dal
-.party-image-container .warner, .successful, .errorred, .extra-info-block {
+.margin-top-small, .form-info, .warning, .party-image-container .warner, .successful, .errorred, .extra-info-block {
   margin-top: 1.2rem;
 }
 
@@ -5489,8 +5482,7 @@ Media query variables
 }
 
 /* line 98, sass/partials/_forms.scss */
-.warning, dal
-.party-image-container .warner {
+.warning, .party-image-container .warner {
   color: #E32333;
 }
 
@@ -5563,23 +5555,29 @@ textarea {
 }
 
 /* line 191, sass/partials/_forms.scss */
-input[type='text'] {
+input[type='text'], input[type='password'] {
   width: 100%;
   height: 5rem;
+  font-size: 1.8rem;
   line-height: 5rem;
 }
 
-/* line 199, sass/partials/_forms.scss */
-input[type='text'], textarea {
+/* line 200, sass/partials/_forms.scss */
+input[type='text'], input[type='password'], textarea {
   border: 0.1rem solid #D4D3CC;
 }
 
-/* line 203, sass/partials/_forms.scss */
+/* line 204, sass/partials/_forms.scss */
 input[type="text"][readonly] {
   cursor: pointer;
 }
 
-/* line 207, sass/partials/_forms.scss */
+/* line 209, sass/partials/_forms.scss */
+input[type='password'] {
+  padding-left: 4rem;
+}
+
+/* line 214, sass/partials/_forms.scss */
 input[type=submit][disabled=disabled],
 input[type=submit][disabled=disabled]:hover,
 button[disabled=disabled],
@@ -5589,7 +5587,7 @@ button[disabled=disabled]:hover {
   cursor: default;
 }
 
-/* line 218, sass/partials/_forms.scss */
+/* line 225, sass/partials/_forms.scss */
 .choose-file-wrapper {
   width: 14rem;
   height: 4rem;
@@ -5597,7 +5595,7 @@ button[disabled=disabled]:hover {
   position: relative;
   cursor: pointer;
 }
-/* line 226, sass/partials/_forms.scss */
+/* line 233, sass/partials/_forms.scss */
 .choose-file-wrapper:before {
   position: relative;
   z-index: 10;
@@ -5607,7 +5605,7 @@ button[disabled=disabled]:hover {
   font-size: 1.4rem;
   line-height: 3.8rem;
 }
-/* line 236, sass/partials/_forms.scss */
+/* line 243, sass/partials/_forms.scss */
 .choose-file-wrapper:after {
   content: "Upload file";
   position: absolute;
@@ -5620,7 +5618,7 @@ button[disabled=disabled]:hover {
   line-height: 1.6rem;
 }
 
-/* line 256, sass/partials/_forms.scss */
+/* line 263, sass/partials/_forms.scss */
 .choose-file {
   width: 200%;
   height: 100%;
@@ -5632,6 +5630,15 @@ button[disabled=disabled]:hover {
   left: -100%;
   z-index: 10;
   opacity: 0;
+}
+
+/* line 276, sass/partials/_forms.scss */
+.form-field-ico {
+  position: absolute;
+  top: 0;
+  left: 1.2rem;
+  line-height: 5rem;
+  color: #D4D3CC;
 }
 
 /* line 1, sass/partials/_nav.scss */
@@ -6025,8 +6032,7 @@ Font Sizes
 }
 
 /* line 507, sass/partials/_helpers.scss */
-.body-small, .form-info, .warning, dal
-.party-image-container .warner, .successful, .errorred, .extra-info-block, label, .file-upload-info, .wall-details {
+.body-small, .form-info, .warning, .party-image-container .warner, .successful, .errorred, .extra-info-block, label, .file-upload-info, .wall-details {
   font-size: 1.4rem;
 }
 
@@ -6282,7 +6288,7 @@ abstract
 }
 
 /* line 20, sass/partials/_abstract.scss */
-.pad-right-small, input[type='text'] {
+.pad-right-small, input[type='text'], input[type='password'] {
   padding-right: 1.2rem;
 }
 
@@ -6302,7 +6308,7 @@ abstract
 }
 
 /* line 25, sass/partials/_abstract.scss */
-.pad-left-small, input[type='text'] {
+.pad-left-small, input[type='text'], input[type='password'] {
   padding-left: 1.2rem;
 }
 
@@ -6587,14 +6593,12 @@ abstract
 }
 
 /* line 95, sass/partials/_abstract.scss */
-.margin-bottom-small, .form-info, .warning, dal
-.party-image-container .warner, .successful, .errorred, .extra-info-block, label.radio-form {
+.margin-bottom-small, .form-info, .warning, .party-image-container .warner, .successful, .errorred, .extra-info-block, label.radio-form {
   margin-bottom: 1.2rem;
 }
 
 /* line 96, sass/partials/_abstract.scss */
-.margin-bottom-medium, dal
-.party-image-container {
+.margin-bottom-medium, .party-image-container {
   margin-bottom: 1.8rem;
 }
 
@@ -6609,8 +6613,7 @@ abstract
 }
 
 /* line 100, sass/partials/_abstract.scss */
-.margin-top-small, .form-info, .warning, dal
-.party-image-container .warner, .successful, .errorred, .extra-info-block {
+.margin-top-small, .form-info, .warning, .party-image-container .warner, .successful, .errorred, .extra-info-block {
   margin-top: 1.2rem;
 }
 
@@ -7337,7 +7340,7 @@ abstract
 }
 
 /* line 20, sass/partials/_abstract.scss */
-.pad-right-small, input[type='text'] {
+.pad-right-small, input[type='text'], input[type='password'] {
   padding-right: 1.2rem;
 }
 
@@ -7357,7 +7360,7 @@ abstract
 }
 
 /* line 25, sass/partials/_abstract.scss */
-.pad-left-small, input[type='text'] {
+.pad-left-small, input[type='text'], input[type='password'] {
   padding-left: 1.2rem;
 }
 
@@ -7642,14 +7645,12 @@ abstract
 }
 
 /* line 95, sass/partials/_abstract.scss */
-.margin-bottom-small, .form-info, .warning, dal
-.party-image-container .warner, .successful, .errorred, .extra-info-block, label.radio-form {
+.margin-bottom-small, .form-info, .warning, .party-image-container .warner, .successful, .errorred, .extra-info-block, label.radio-form {
   margin-bottom: 1.2rem;
 }
 
 /* line 96, sass/partials/_abstract.scss */
-.margin-bottom-medium, dal
-.party-image-container {
+.margin-bottom-medium, .party-image-container {
   margin-bottom: 1.8rem;
 }
 
@@ -7664,8 +7665,7 @@ abstract
 }
 
 /* line 100, sass/partials/_abstract.scss */
-.margin-top-small, .form-info, .warning, dal
-.party-image-container .warner, .successful, .errorred, .extra-info-block {
+.margin-top-small, .form-info, .warning, .party-image-container .warner, .successful, .errorred, .extra-info-block {
   margin-top: 1.2rem;
 }
 
@@ -8456,8 +8456,7 @@ Media query variables
 }
 
 /* line 98, sass/partials/_forms.scss */
-.warning, dal
-.party-image-container .warner {
+.warning, .party-image-container .warner {
   color: #E32333;
 }
 
@@ -8530,23 +8529,29 @@ textarea {
 }
 
 /* line 191, sass/partials/_forms.scss */
-input[type='text'] {
+input[type='text'], input[type='password'] {
   width: 100%;
   height: 5rem;
+  font-size: 1.8rem;
   line-height: 5rem;
 }
 
-/* line 199, sass/partials/_forms.scss */
-input[type='text'], textarea {
+/* line 200, sass/partials/_forms.scss */
+input[type='text'], input[type='password'], textarea {
   border: 0.1rem solid #D4D3CC;
 }
 
-/* line 203, sass/partials/_forms.scss */
+/* line 204, sass/partials/_forms.scss */
 input[type="text"][readonly] {
   cursor: pointer;
 }
 
-/* line 207, sass/partials/_forms.scss */
+/* line 209, sass/partials/_forms.scss */
+input[type='password'] {
+  padding-left: 4rem;
+}
+
+/* line 214, sass/partials/_forms.scss */
 input[type=submit][disabled=disabled],
 input[type=submit][disabled=disabled]:hover,
 button[disabled=disabled],
@@ -8556,7 +8561,7 @@ button[disabled=disabled]:hover {
   cursor: default;
 }
 
-/* line 218, sass/partials/_forms.scss */
+/* line 225, sass/partials/_forms.scss */
 .choose-file-wrapper {
   width: 14rem;
   height: 4rem;
@@ -8564,7 +8569,7 @@ button[disabled=disabled]:hover {
   position: relative;
   cursor: pointer;
 }
-/* line 226, sass/partials/_forms.scss */
+/* line 233, sass/partials/_forms.scss */
 .choose-file-wrapper:before {
   position: relative;
   z-index: 10;
@@ -8574,7 +8579,7 @@ button[disabled=disabled]:hover {
   font-size: 1.4rem;
   line-height: 3.8rem;
 }
-/* line 236, sass/partials/_forms.scss */
+/* line 243, sass/partials/_forms.scss */
 .choose-file-wrapper:after {
   content: "Upload file";
   position: absolute;
@@ -8587,7 +8592,7 @@ button[disabled=disabled]:hover {
   line-height: 1.6rem;
 }
 
-/* line 256, sass/partials/_forms.scss */
+/* line 263, sass/partials/_forms.scss */
 .choose-file {
   width: 200%;
   height: 100%;
@@ -8599,6 +8604,15 @@ button[disabled=disabled]:hover {
   left: -100%;
   z-index: 10;
   opacity: 0;
+}
+
+/* line 276, sass/partials/_forms.scss */
+.form-field-ico {
+  position: absolute;
+  top: 0;
+  left: 1.2rem;
+  line-height: 5rem;
+  color: #D4D3CC;
 }
 
 /*------------------------------------------------------------------------------------------------------------------------
@@ -8928,51 +8942,59 @@ Event Page specific - move these out of here eventually
 }
 
 /* line 168, sass/partials/_base.scss */
+.profile-image-remover {
+  color: #E32333;
+  font-size: 1.1rem;
+  cursor: pointer;
+  position: absolute;
+  top: 6.6rem;
+  left: .3rem;
+  width: 6rem;
+}
+
+/* line 179, sass/partials/_base.scss */
 .image-shift-details, .party-details, .wall-details {
   margin-left: 7.2rem;
 }
-/* line 171, sass/partials/_base.scss */
+/* line 182, sass/partials/_base.scss */
 .image-shift-details.bigger, .bigger.party-details, .bigger.wall-details {
   margin-left: 12.2rem;
 }
 
-/* line 177, sass/partials/_base.scss */
+/* line 188, sass/partials/_base.scss */
 .anti-image-shift-details {
   margin-left: -7.2rem;
 }
-/* line 180, sass/partials/_base.scss */
+/* line 191, sass/partials/_base.scss */
 .anti-image-shift-details.bigger {
   margin-left: -12.2rem;
 }
 
-/* line 185, sass/partials/_base.scss */
+/* line 196, sass/partials/_base.scss */
 .party-details {
   color: #A19F91;
 }
-/* line 189, sass/partials/_base.scss */
+/* line 200, sass/partials/_base.scss */
 .party-details [class^="icon-"], .party-details [class*=" icon-"] {
   color: #D4D3CC;
 }
 
-/* line 194, sass/partials/_base.scss */
-dal
+/*******************************/
+/* line 207, sass/partials/_base.scss */
 .party-image-container {
   float: left;
 }
-/* line 201, sass/partials/_base.scss */
-dal
+/* line 212, sass/partials/_base.scss */
 .party-image-container input[type="radio"] {
   display: none;
 }
-/* line 205, sass/partials/_base.scss */
-dal
+/* line 216, sass/partials/_base.scss */
 .party-image-container .warner {
   width: 16rem;
   text-align: center;
   display: none;
 }
-/* line 214, sass/partials/_base.scss */
-dal
+/* line 225, sass/partials/_base.scss */
 .party-image-container.selected .party-image-selecter:after {
   content: "\e61f";
   font-family: "icomoon";
@@ -8983,20 +9005,18 @@ dal
   opacity: .8;
   line-height: 8rem;
 }
-/* line 225, sass/partials/_base.scss */
-dal
+/* line 236, sass/partials/_base.scss */
 .party-image-container.selected .party-image-selecter:before {
   content: "";
   margin-left: 0;
 }
-/* line 230, sass/partials/_base.scss */
-dal
+/* line 241, sass/partials/_base.scss */
 .party-image-container.selected .warner {
   display: block;
   cursor: pointer;
 }
 
-/* line 237, sass/partials/_base.scss */
+/* line 248, sass/partials/_base.scss */
 .party-image-selecter {
   width: 16rem;
   height: 7.5rem;
@@ -9006,52 +9026,47 @@ dal
   position: relative;
   overflow: hidden;
 }
-/* line 248, sass/partials/_base.scss */
+/* line 259, sass/partials/_base.scss */
 .party-image-selecter:before {
   color: white;
   font-size: 4.7rem;
   line-height: 7.5rem;
   margin-left: 6.8rem;
 }
-/* line 255, sass/partials/_base.scss */
+/* line 266, sass/partials/_base.scss */
 .party-image-selecter.image-unset {
   cursor: default;
 }
-/* line 259, sass/partials/_base.scss */
+/* line 270, sass/partials/_base.scss */
 .party-image-selecter.image-set:before {
   content: "";
 }
 
-/* line 264, sass/partials/_base.scss */
-.file-upload-info {
-  margin-left: 17.2rem;
-}
-
 /*******************************/
-/* line 271, sass/partials/_base.scss */
+/* line 282, sass/partials/_base.scss */
 .wall-details {
   color: #A19F91;
   min-height: 6rem;
 }
 
-/* line 278, sass/partials/_base.scss */
+/* line 289, sass/partials/_base.scss */
 .wall-name {
   font-weight: bold;
   color: #7B7A6D;
 }
 
-/* line 283, sass/partials/_base.scss */
+/* line 294, sass/partials/_base.scss */
 .wall-time {
   color: #D4D3CC;
 }
 
 /*******************************/
-/* line 292, sass/partials/_base.scss */
+/* line 303, sass/partials/_base.scss */
 .ticket .stub {
   background-color: #D4D3CC;
   overflow: hidden;
 }
-/* line 297, sass/partials/_base.scss */
+/* line 308, sass/partials/_base.scss */
 .ticket .stub .holes, .ticket .stub .holes-right {
   position: absolute;
   left: -.1rem;
@@ -9061,13 +9076,13 @@ dal
   background-image: url('/img/raffle.svg?1411490329');
   background-repeat: no-repeat;
 }
-/* line 307, sass/partials/_base.scss */
+/* line 318, sass/partials/_base.scss */
 .ticket .stub .holes-right {
   left: auto;
   right: -.1rem;
   background-image: url('/img/raffle_r.svg?1411491819');
 }
-/* line 313, sass/partials/_base.scss */
+/* line 324, sass/partials/_base.scss */
 .ticket .stub .price {
   -moz-border-radius: 1rem;
   -webkit-border-radius: 1rem;
@@ -9078,33 +9093,33 @@ dal
   text-align: center;
   line-height: 7.3rem;
 }
-/* line 330, sass/partials/_base.scss */
+/* line 341, sass/partials/_base.scss */
 .ticket.selected .stub {
   background-color: #007eac;
 }
-/* line 333, sass/partials/_base.scss */
+/* line 344, sass/partials/_base.scss */
 .ticket.selected .stub .price {
   color: white !important;
 }
-/* line 340, sass/partials/_base.scss */
+/* line 351, sass/partials/_base.scss */
 .ticket input[type="radio"] {
   display: none;
 }
 
-/* line 348, sass/partials/_base.scss */
+/* line 359, sass/partials/_base.scss */
 label .ticket span {
   color: inherit;
 }
 
 /*******************************/
-/* line 356, sass/partials/_base.scss */
+/* line 367, sass/partials/_base.scss */
 .totaliser {
   -moz-border-radius: 0.6rem;
   -webkit-border-radius: 0.6rem;
   border-radius: 0.6rem;
   background-color: #D4D3CC;
 }
-/* line 362, sass/partials/_base.scss */
+/* line 373, sass/partials/_base.scss */
 .totaliser .current-total {
   -moz-border-radius: 0.6rem;
   -webkit-border-radius: 0.6rem;
@@ -9117,17 +9132,17 @@ label .ticket span {
 /* =============================================================================
 One-off uses
 ========================================================================== */
-/* line 375, sass/partials/_base.scss */
+/* line 386, sass/partials/_base.scss */
 #twitter-widget-0 {
   width: 100% !important;
 }
 
-/* line 379, sass/partials/_base.scss */
+/* line 390, sass/partials/_base.scss */
 .home-twitter-boxx {
   height: 35.6rem;
 }
 
-/* line 383, sass/partials/_base.scss */
+/* line 394, sass/partials/_base.scss */
 .piggy-donater:after {
   content: "\e61c";
   font-family: "icomoon";
@@ -9135,7 +9150,7 @@ One-off uses
 }
 
 /*******************************/
-/* line 394, sass/partials/_base.scss */
+/* line 405, sass/partials/_base.scss */
 .hero {
   height: 45rem;
   background-image: url('/img/hero-ph.jpg?1411035906');
@@ -9146,24 +9161,24 @@ One-off uses
   padding-top: 10rem;
 }
 
-/* line 404, sass/partials/_base.scss */
+/* line 415, sass/partials/_base.scss */
 .planking {
   background: url('/img/wood_texture.jpg?1411035906') repeat top left;
   background-size: 100% 100%;
 }
 
-/* line 409, sass/partials/_base.scss */
+/* line 420, sass/partials/_base.scss */
 .home-content-adjust {
   margin-top: -8rem;
 }
 
-/* line 413, sass/partials/_base.scss */
+/* line 424, sass/partials/_base.scss */
 .hero-explain {
   margin-right: 35rem;
   text-align: left;
 }
 
-/* line 418, sass/partials/_base.scss */
+/* line 429, sass/partials/_base.scss */
 .money-raised {
   position: absolute;
   top: 2.4rem;
@@ -9173,63 +9188,63 @@ One-off uses
   width: 34rem;
 }
 
-/* line 427, sass/partials/_base.scss */
+/* line 438, sass/partials/_base.scss */
 .raised-amount {
   color: white;
   width: 27.5rem;
 }
 
-/* line 438, sass/partials/_base.scss */
+/* line 449, sass/partials/_base.scss */
 .home-tile-repeater:nth-child(1) .home-tile {
-  -moz-transform: rotate(-1deg);
-  -ms-transform: rotate(-1deg);
-  -webkit-transform: rotate(-1deg);
-  transform: rotate(-1deg);
+  -moz-transform: rotate(-0.2deg);
+  -ms-transform: rotate(-0.2deg);
+  -webkit-transform: rotate(-0.2deg);
+  transform: rotate(-0.2deg);
 }
-/* line 438, sass/partials/_base.scss */
+/* line 449, sass/partials/_base.scss */
 .home-tile-repeater:nth-child(2) .home-tile {
-  -moz-transform: rotate(0.2deg);
-  -ms-transform: rotate(0.2deg);
-  -webkit-transform: rotate(0.2deg);
-  transform: rotate(0.2deg);
+  -moz-transform: rotate(1.9deg);
+  -ms-transform: rotate(1.9deg);
+  -webkit-transform: rotate(1.9deg);
+  transform: rotate(1.9deg);
 }
-/* line 438, sass/partials/_base.scss */
+/* line 449, sass/partials/_base.scss */
 .home-tile-repeater:nth-child(3) .home-tile {
-  -moz-transform: rotate(-0.1deg);
-  -ms-transform: rotate(-0.1deg);
-  -webkit-transform: rotate(-0.1deg);
-  transform: rotate(-0.1deg);
-}
-/* line 438, sass/partials/_base.scss */
-.home-tile-repeater:nth-child(4) .home-tile {
-  -moz-transform: rotate(0.9deg);
-  -ms-transform: rotate(0.9deg);
-  -webkit-transform: rotate(0.9deg);
-  transform: rotate(0.9deg);
-}
-/* line 438, sass/partials/_base.scss */
-.home-tile-repeater:nth-child(5) .home-tile {
   -moz-transform: rotate(-1.2deg);
   -ms-transform: rotate(-1.2deg);
   -webkit-transform: rotate(-1.2deg);
   transform: rotate(-1.2deg);
 }
-/* line 438, sass/partials/_base.scss */
+/* line 449, sass/partials/_base.scss */
+.home-tile-repeater:nth-child(4) .home-tile {
+  -moz-transform: rotate(1deg);
+  -ms-transform: rotate(1deg);
+  -webkit-transform: rotate(1deg);
+  transform: rotate(1deg);
+}
+/* line 449, sass/partials/_base.scss */
+.home-tile-repeater:nth-child(5) .home-tile {
+  -moz-transform: rotate(-2.3deg);
+  -ms-transform: rotate(-2.3deg);
+  -webkit-transform: rotate(-2.3deg);
+  transform: rotate(-2.3deg);
+}
+/* line 449, sass/partials/_base.scss */
 .home-tile-repeater:nth-child(6) .home-tile {
-  -moz-transform: rotate(1.6deg);
-  -ms-transform: rotate(1.6deg);
-  -webkit-transform: rotate(1.6deg);
-  transform: rotate(1.6deg);
+  -moz-transform: rotate(0.3deg);
+  -ms-transform: rotate(0.3deg);
+  -webkit-transform: rotate(0.3deg);
+  transform: rotate(0.3deg);
 }
 
-/* line 453, sass/partials/_base.scss */
+/* line 464, sass/partials/_base.scss */
 .home-tile {
   background-color: white;
   position: relative;
   overflow: hidden;
 }
 
-/* line 464, sass/partials/_base.scss */
+/* line 475, sass/partials/_base.scss */
 .home-tile-image {
   background-repeat: no-repeat;
   background-size: cover;
@@ -9237,7 +9252,7 @@ One-off uses
   width: 100%;
 }
 
-/* line 471, sass/partials/_base.scss */
+/* line 482, sass/partials/_base.scss */
 .home-tile-label {
   position: absolute;
   bottom: 0;
@@ -9246,32 +9261,32 @@ One-off uses
 }
 
 /*******************************/
-/* line 482, sass/partials/_base.scss */
+/* line 493, sass/partials/_base.scss */
 .spotify-holder {
   width: 35.6rem;
   margin-top: -7rem;
 }
 
-/* line 487, sass/partials/_base.scss */
+/* line 498, sass/partials/_base.scss */
 .spotify-info-holder {
   position: absolute;
   top: 12rem;
   color: white;
   text-align: center;
 }
-/* line 494, sass/partials/_base.scss */
+/* line 505, sass/partials/_base.scss */
 .spotify-info-holder h1 {
   color: white;
 }
 
 /*******************************/
-/* line 502, sass/partials/_base.scss */
+/* line 513, sass/partials/_base.scss */
 .scoreboard-place {
   float: left;
   width: 5rem;
 }
 
-/* line 507, sass/partials/_base.scss */
+/* line 518, sass/partials/_base.scss */
 .scoreboard-value {
   position: absolute;
   top: 0;
@@ -9554,11 +9569,6 @@ Media query variables
   /* line 206, sass/partials/_media-queries.scss */
   .site-header.compress .menu li a {
     line-height: normal;
-  }
-
-  /* line 211, sass/partials/_media-queries.scss */
-  .file-upload-info {
-    margin-left: 0;
   }
 
   /* line 215, sass/partials/_media-queries.scss */
