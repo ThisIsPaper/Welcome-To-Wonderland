@@ -1,8 +1,6 @@
 ﻿
 namespace Wonderland.Logic.SagePay
 {
-    using System.ComponentModel;
-
     public enum NotificationStatus
     {
         /// <summary>

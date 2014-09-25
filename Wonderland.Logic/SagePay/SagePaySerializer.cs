@@ -85,7 +85,7 @@ namespace Wonderland.Logic.SagePay
             T output = new T();
             Type type = typeof(T);
 
-            string[] nameValuePairs = response.Split(new[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
+            string[] nameValuePairs = response.Split(new[] { Environment.NewLine }, StringSplitOptions.RemoveEmptyEntries);
 
             foreach(string nameValuePair in nameValuePairs)
             {

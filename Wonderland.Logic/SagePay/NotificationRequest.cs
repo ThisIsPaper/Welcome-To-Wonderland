@@ -12,6 +12,8 @@ namespace Wonderland.Logic.SagePay
 
         public int VendorTxCode { get; set; } // NOTE: this may need to be a string
 
+        public string VPSTxId { get; set; } // added after examining supplied post
+
         public NotificationStatus Status { get; set; }
 
         public string StatusDetail { get; set; }
@@ -23,7 +25,7 @@ namespace Wonderland.Logic.SagePay
         public string AddressResult { get; set; }
 
         public string PostCodeResult { get; set; }
-
+        
         public string CV2Result { get; set; }
 
         public bool GiftAid { get; set; }
