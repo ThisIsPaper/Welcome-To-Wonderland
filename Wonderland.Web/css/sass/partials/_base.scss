@@ -99,6 +99,10 @@ Event Page specific - move these out of here eventually
     background-position: center center;
     background-size: cover;
     height: 37.2rem;
+
+    &.side {
+        height: 18rem;
+    }
 }
 
 .edit-trigger {
@@ -163,6 +167,14 @@ Event Page specific - move these out of here eventually
         margin-left: $profileImageSize + $padSmallValue + 5rem;
     }
 
+}
+
+.anti-image-shift-details {
+    margin-left: -($profileImageSize + $padSmallValue);
+
+    &.bigger {
+        margin-left: -($profileImageSize + $padSmallValue + 5rem);
+    }
 }
 
 .party-details {
@@ -269,11 +281,8 @@ dal
 
 /*******************************/// ticket
 
+
 .ticket {
-    position: relative;
-    float: left;
-    max-width: 20rem;
-    min-width: 17rem;
 
     .stub {
         @extend .pad-medium;
@@ -297,9 +306,7 @@ dal
         }
 
         .price {
-            @extend .pad-left-medium;
-            @extend .pad-right-medium;
-            @extend .heading-large;
+            @extend .heading-small;
             @include border-radius(1rem);
 
             font-family: $fontFaceMacmillan;

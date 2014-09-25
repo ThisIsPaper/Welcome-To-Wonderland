@@ -276,6 +276,10 @@ ul, ol, dl {
     text-decoration: none;
 }
 
+.body-bold {
+    font-weight: bold;
+}
+
 .body-emphasize {
     color: $greyReallyDark;
     font-weight: bold;
@@ -306,12 +310,13 @@ h1 {
     text-align: center;
     line-height: 4.2rem;
 
-    &.lighter {
+    &.lighter, .lighter {
         color: $greenDark;
     }
 
     &.bigger, .bigger {
         font-size: $HeadingFontSizeExtraLarge;
+        line-height: 5.5rem;
     }
 }
 
@@ -325,8 +330,9 @@ h2 {
 h3 {
     color: $FourthColour;
     font-size: $FontSizeLarge;
-    margin: 0;
+    margin: 2rem 0;
     font-weight: bold;
+    line-height: 2.6rem;
 }
 
 h4 {
@@ -339,9 +345,11 @@ h4 {
         color: $greyDark;
         font-weight: normal;
     }
+}
 
+h3, h4 {
     &.top {
-        @extend .margin-top-0;
+        margin-top: 0;
     }
 }
 

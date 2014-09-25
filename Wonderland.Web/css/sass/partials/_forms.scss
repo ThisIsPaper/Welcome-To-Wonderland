@@ -107,7 +107,8 @@ $btnPaddingLarge: $btnPaddingMedium*2;
     color: $greenDark;
     background-color: $greenLight;
     text-align: center;
-    span {
+
+    span[class^="icon-"], span[class*=" icon-"] {
         @extend .margin-right-tiny;
     }
 
@@ -127,6 +128,18 @@ $btnPaddingLarge: $btnPaddingMedium*2;
     &:before {
         font-family: $fontFaceIcomoon;
         content: "\e620";
+    }
+}
+
+
+.extra-info-block {
+    @extend .successful;
+    color: $blueDark;
+    background-color: $blueLight;
+
+    &:before {
+        font-family: $fontFaceIcomoon;
+        content: "\e621";
     }
 }
 
@@ -154,6 +167,17 @@ label {
         text-transform: none;
         color: $greyMedium;
     }
+
+
+    &.radio-form {
+
+        @extend .margin-right-small;
+        @extend .margin-bottom-small;
+        text-transform: none;
+        display: inline-block;
+
+    }
+
 }
 
 
