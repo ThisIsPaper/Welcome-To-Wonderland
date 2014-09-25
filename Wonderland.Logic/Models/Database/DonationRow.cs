@@ -3,6 +3,7 @@ namespace Wonderland.Logic.Models.Database
 {
     using System;
     using Umbraco.Core.Persistence;
+    using Wonderland.Logic.Enums;
 
     [TableName("wonderlandDonation")]
     [ExplicitColumns]
@@ -44,6 +45,9 @@ namespace Wonderland.Logic.Models.Database
 
         [Column("Timestamp")]
         public DateTime Timestamp { get; set; }
+
+        [Column("PaymentJourney")]
+        public PaymentJourney PaymentJourney { get; set; }
 
         [Column("VPSTxId")]
         public string VPSTxId { get; set; }

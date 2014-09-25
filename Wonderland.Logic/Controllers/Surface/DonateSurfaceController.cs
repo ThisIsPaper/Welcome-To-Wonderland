@@ -4,13 +4,13 @@ namespace Wonderland.Logic.Controllers.Surface
     using System;
     using System.Web.Mvc;
     using Umbraco.Web.Mvc;
+    using Wonderland.Logic.Enums;
+    using Wonderland.Logic.Extensions;
     using Wonderland.Logic.Interfaces;
     using Wonderland.Logic.Models.Content;
     using Wonderland.Logic.Models.Database;
-    using Wonderland.Logic.Models.Entities;
     using Wonderland.Logic.Models.Forms;
     using Wonderland.Logic.SagePay;
-    using Wonderland.Logic.Extensions;
 
     public class DonateSurfaceController : SurfaceController
     {
@@ -91,6 +91,7 @@ namespace Wonderland.Logic.Controllers.Surface
                                             TownCity = donateForm.TownCity,
                                             Postcode = donateForm.Postcode,
                                             Timestamp = DateTime.Now,
+                                            PaymentJourney = PaymentJourney.Donate,
                                             Success = false
                                         };
 

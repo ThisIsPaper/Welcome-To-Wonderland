@@ -2,12 +2,15 @@
 namespace Wonderland.Logic.Controllers.Api
 {
     using System;
+    using System.Linq;
     using System.Net.Http;
     using System.Text;
     using System.Web.Configuration;
     using System.Web.Http;
     using System.Web.Security;
     using Umbraco.Web.WebApi;
+    using Wonderland.Logic.Enums;
+    using Wonderland.Logic.Models.Content;
     using Wonderland.Logic.Models.Database;
     using Wonderland.Logic.SagePay;
     
@@ -25,7 +28,8 @@ namespace Wonderland.Logic.Controllers.Api
             notificationResponse.Status = NotificationStatus.ERROR;
 
             // get transaction details from the database via primary key
-            DonationRow donationRow = this.DatabaseContext.Database.Single<DonationRow>(notificationRequest.VendorTxCode);
+            // DonationRow donationRow = this.DatabaseContext.Database.Single<DonationRow>(notificationRequest.VendorTxCode); // doens't work with enums
+            DonationRow donationRow = this.DatabaseContext.Database.Fetch<DonationRow>("SELECT TOP 1 * FROM wonderlandDonation WHERE VendorTxCode = @0", notificationRequest.VendorTxCode).Single();
 
             // safety check
             if (notificationRequest.VPSTxId != donationRow.VPSTxId)
@@ -41,16 +45,26 @@ namespace Wonderland.Logic.Controllers.Api
                 //}
                 //else
                 //{
-                    //  set the redirection URL - could either be:
-                    //  guest registered - success
-                    //  guest registered - fail
-                    //  party page - success
-                    //  party page - fail
-
                     notificationResponse.Status = NotificationStatus.OK;
-                    notificationResponse.RedirectURL = "http://wonderland.local/";
                 //}
-            }            
+            }
+
+            // determine redirect url
+            string redirectUrl = WebConfigurationManager.AppSettings["SagePay:RedirectDomain"];
+
+            switch (donationRow.PaymentJourney)
+            {
+                case PaymentJourney.RegisterGuest:
+                    redirectUrl += this.Umbraco.TypedContentSingleAtXPath("//" + RegisterGuest.Alias).Url;
+                    break;
+
+                case PaymentJourney.Donate:
+                    redirectUrl += this.Umbraco.TypedContentSingleAtXPath("//" + Donate.Alias).Url;
+                    break;
+            }
+
+            notificationResponse.RedirectURL = redirectUrl + "?VendorTxCode=" + notificationRequest.VendorTxCode;
+
 
             // HACK: to ensure the return type is plain text
             return new HttpResponseMessage(System.Net.HttpStatusCode.OK)

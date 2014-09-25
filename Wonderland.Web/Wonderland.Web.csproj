@@ -355,6 +355,7 @@
     <Content Include="Views\PartySurface\CustomPartyImageForm.cshtml" />
     <Content Include="Views\DonateSurface\DonateForm.cshtml" />
     <Content Include="Views\Donate\Failed.cshtml" />
+    <Content Include="Views\Donate\Complete.cshtml" />
     <None Include="Views\RegisterHostSurface\RegisterHostForm.cshtml" />
   </ItemGroup>
   <ItemGroup>

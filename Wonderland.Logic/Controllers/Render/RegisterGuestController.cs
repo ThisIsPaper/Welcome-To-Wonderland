@@ -15,6 +15,8 @@ namespace Wonderland.Logic.Controllers.Render
         {
             RegisterGuest model = (RegisterGuest)renderModel.Content;
 
+            // TODO: check to see if VendorTxCode can be found in the querystring
+
             Guid partyGuid;
 
             if (Guid.TryParse(this.Request.QueryString["partyGuid"], out partyGuid))
