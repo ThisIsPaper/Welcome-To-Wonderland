@@ -19,6 +19,7 @@
 @import "partials/mixins";
 @import "partials/forms";
 @import "partials/type";
+@import "partials/vars";
 
 
 html {
@@ -49,6 +50,10 @@ nav, nav li, .toolbar, .toolbar li, .btn-group {
 
 pre {
     white-space: pre-wrap;
+}
+
+td {
+    padding-right: $padSmallValue * $multiplierLarge;
 }
 
 /* =============================================================================
