@@ -1,22 +1,3 @@
-/*------------------------------------------------------------------------------------------------------------------------
- @package: Macmillan - Wonderland (app)
-
- @author: Sam Latif
- @www: http://www.samlatif.co.uk
- @github: samlatif
-
- @twitter: samlatifuk
-
- @copyright: COPYRIGHT 8-21-2014 On behalf of Paper Partnerships Ltd
- =============================================================================
- Filename: main.scss
- =============================================================================
- This file is responsible for all styles on the Macmillan - Wonderland app.  Styles should be compiled using compass and sass.
-
- --------------------------------------------------------------------------------------------------------------------- */
-/* =============================================================================
-Imports
-========================================================================== */
 /* Base imports */
 /* line 1, sass/partials/init.scss */
 html {
@@ -174,16 +155,6 @@ Borders
 /* =============================================================================
 Floats
 ========================================================================== */
-/* line 560, sass/partials/_helpers.scss */
-.banner-info {
-  float: left;
-}
-
-/* line 563, sass/partials/_helpers.scss */
-.money-raised-info {
-  float: right;
-}
-
 /* =============================================================================
 Positions
 ========================================================================== */
@@ -1020,7 +991,7 @@ abstract
 }
 
 /* line 162, sass/partials/_abstract.scss */
-.radius-v1-small, .successful, .errorred, .extra-info-block {
+.radius-v1-small, .successful, .errorred, .extra-info-block, .idea-tile {
   -moz-border-radius-topleft: 1.64rem 1.1rem;
   -webkit-border-top-left-radius: 1.64rem 1.1rem;
   border-top-left-radius: 1.64rem 1.1rem;
@@ -3798,8 +3769,8 @@ abstract
 }
 @font-face {
   font-family: 'icomoon';
-  src: url("/fonts/icomoon.eot?-h4ln9l");
-  src: url("/fonts/icomoon.eot?#iefix-h4ln9l") format("embedded-opentype"), url("/fonts/icomoon.woff?-h4ln9l") format("woff"), url("/fonts/icomoon.ttf?-h4ln9l") format("truetype"), url("/fonts/icomoon.svg?-h4ln9l#icomoon") format("svg");
+  src: url("/fonts/icomoon.eot?1up521");
+  src: url("/fonts/icomoon.eot?#iefix1up521") format("embedded-opentype"), url("/fonts/icomoon.woff?1up521") format("woff"), url("/fonts/icomoon.ttf?1up521") format("truetype"), url("/fonts/icomoon.svg?1up521#icomoon") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -3818,63 +3789,63 @@ abstract
 }
 
 /* line 27, sass/partials/icomoon/_icomoon.scss */
+.icon-icon_pinterest:before {
+  content: "\e623";
+}
+
+/* line 30, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_trophy:before {
   content: "\e622";
 }
 
-/* line 30, sass/partials/icomoon/_icomoon.scss */
+/* line 33, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_alert:before {
   content: "\e620";
 }
 
-/* line 33, sass/partials/icomoon/_icomoon.scss */
+/* line 36, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_gift:before {
   content: "\e621";
 }
 
-/* line 36, sass/partials/icomoon/_icomoon.scss */
+/* line 39, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_back:before {
   content: "\e61e";
 }
 
-/* line 39, sass/partials/icomoon/_icomoon.scss */
+/* line 42, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_tick:before {
   content: "\e61f";
 }
 
-/* line 42, sass/partials/icomoon/_icomoon.scss */
+/* line 45, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_anon_user:before {
   content: "\e61b";
 }
 
-/* line 45, sass/partials/icomoon/_icomoon.scss */
+/* line 48, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_piggy:before {
   content: "\e61c";
 }
 
-/* line 48, sass/partials/icomoon/_icomoon.scss */
+/* line 51, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_question_mark:before {
   content: "\e61d";
 }
 
-/* line 51, sass/partials/icomoon/_icomoon.scss */
+/* line 54, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_envelope:before {
   content: "\e618";
 }
 
-/* line 54, sass/partials/icomoon/_icomoon.scss */
+/* line 57, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_facebook_f:before {
   content: "\e619";
 }
 
-/* line 57, sass/partials/icomoon/_icomoon.scss */
+/* line 60, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_twitter_bird:before {
   content: "\e61a";
-}
-
-/* line 60, sass/partials/icomoon/_icomoon.scss */
-.icon-icon_x:before {
-  content: "\e617";
 }
 
 /* line 63, sass/partials/icomoon/_icomoon.scss */
@@ -3990,6 +3961,11 @@ abstract
 /* line 129, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_google_plus:before {
   content: "\e616";
+}
+
+/* line 132, sass/partials/icomoon/_icomoon.scss */
+.icon-icon_x:before {
+  content: "\e617";
 }
 
 /* Optional imports */
@@ -4110,8 +4086,17 @@ h1.bigger, h1 .bigger {
   font-size: 7.2rem;
   line-height: 5.5rem;
 }
+/* line 322, sass/partials/_type.scss */
+h1.secondary, h1 .secondary {
+  color: #007eac;
+}
+/* line 326, sass/partials/_type.scss */
+h1.smaller, h1 .smaller {
+  font-size: 2.3rem;
+  line-height: 2.3rem;
+}
 
-/* line 323, sass/partials/_type.scss */
+/* line 332, sass/partials/_type.scss */
 h2 {
   font-family: 'macmillan';
   color: #007eac;
@@ -4119,7 +4104,7 @@ h2 {
   margin: .5rem 0;
 }
 
-/* line 330, sass/partials/_type.scss */
+/* line 339, sass/partials/_type.scss */
 h3 {
   color: #025b45;
   font-size: 2.3rem;
@@ -4128,32 +4113,32 @@ h3 {
   line-height: 2.6rem;
 }
 
-/* line 338, sass/partials/_type.scss */
+/* line 347, sass/partials/_type.scss */
 h4 {
   color: #474740;
   font-size: 2.3rem;
   margin: 2rem 0;
   font-weight: bold;
 }
-/* line 344, sass/partials/_type.scss */
+/* line 353, sass/partials/_type.scss */
 h4 span {
   color: #7B7A6D;
   font-weight: normal;
 }
 
-/* line 351, sass/partials/_type.scss */
+/* line 360, sass/partials/_type.scss */
 h3.top, h4.top {
   margin-top: 0;
 }
 
-/* line 356, sass/partials/_type.scss */
+/* line 365, sass/partials/_type.scss */
 hr {
   border: none;
   border-bottom: 0.1rem solid #ECECEC;
   margin: 1.2rem 0;
 }
 
-/* line 362, sass/partials/_type.scss */
+/* line 371, sass/partials/_type.scss */
 .back {
   text-transform: uppercase;
   color: white;
@@ -4931,7 +4916,7 @@ abstract
 }
 
 /* line 162, sass/partials/_abstract.scss */
-.radius-v1-small, .successful, .errorred, .extra-info-block {
+.radius-v1-small, .successful, .errorred, .extra-info-block, .idea-tile {
   -moz-border-radius-topleft: 1.64rem 1.1rem;
   -webkit-border-top-left-radius: 1.64rem 1.1rem;
   border-top-left-radius: 1.64rem 1.1rem;
@@ -5329,8 +5314,17 @@ h1.bigger, h1 .bigger {
   font-size: 7.2rem;
   line-height: 5.5rem;
 }
+/* line 322, sass/partials/_type.scss */
+h1.secondary, h1 .secondary {
+  color: #007eac;
+}
+/* line 326, sass/partials/_type.scss */
+h1.smaller, h1 .smaller {
+  font-size: 2.3rem;
+  line-height: 2.3rem;
+}
 
-/* line 323, sass/partials/_type.scss */
+/* line 332, sass/partials/_type.scss */
 h2 {
   font-family: 'macmillan';
   color: #007eac;
@@ -5338,7 +5332,7 @@ h2 {
   margin: .5rem 0;
 }
 
-/* line 330, sass/partials/_type.scss */
+/* line 339, sass/partials/_type.scss */
 h3 {
   color: #025b45;
   font-size: 2.3rem;
@@ -5347,32 +5341,32 @@ h3 {
   line-height: 2.6rem;
 }
 
-/* line 338, sass/partials/_type.scss */
+/* line 347, sass/partials/_type.scss */
 h4 {
   color: #474740;
   font-size: 2.3rem;
   margin: 2rem 0;
   font-weight: bold;
 }
-/* line 344, sass/partials/_type.scss */
+/* line 353, sass/partials/_type.scss */
 h4 span {
   color: #7B7A6D;
   font-weight: normal;
 }
 
-/* line 351, sass/partials/_type.scss */
+/* line 360, sass/partials/_type.scss */
 h3.top, h4.top {
   margin-top: 0;
 }
 
-/* line 356, sass/partials/_type.scss */
+/* line 365, sass/partials/_type.scss */
 hr {
   border: none;
   border-bottom: 0.1rem solid #ECECEC;
   margin: 1.2rem 0;
 }
 
-/* line 362, sass/partials/_type.scss */
+/* line 371, sass/partials/_type.scss */
 .back {
   text-transform: uppercase;
   color: white;
@@ -6050,16 +6044,6 @@ Borders
 /* =============================================================================
 Floats
 ========================================================================== */
-/* line 560, sass/partials/_helpers.scss */
-.banner-info {
-  float: left;
-}
-
-/* line 563, sass/partials/_helpers.scss */
-.money-raised-info {
-  float: right;
-}
-
 /* =============================================================================
 Positions
 ========================================================================== */
@@ -6853,7 +6837,7 @@ abstract
 }
 
 /* line 162, sass/partials/_abstract.scss */
-.radius-v1-small, .successful, .errorred, .extra-info-block {
+.radius-v1-small, .successful, .errorred, .extra-info-block, .idea-tile {
   -moz-border-radius-topleft: 1.64rem 1.1rem;
   -webkit-border-top-left-radius: 1.64rem 1.1rem;
   border-top-left-radius: 1.64rem 1.1rem;
@@ -7905,7 +7889,7 @@ abstract
 }
 
 /* line 162, sass/partials/_abstract.scss */
-.radius-v1-small, .successful, .errorred, .extra-info-block {
+.radius-v1-small, .successful, .errorred, .extra-info-block, .idea-tile {
   -moz-border-radius-topleft: 1.64rem 1.1rem;
   -webkit-border-top-left-radius: 1.64rem 1.1rem;
   border-top-left-radius: 1.64rem 1.1rem;
@@ -8303,8 +8287,17 @@ h1.bigger, h1 .bigger {
   font-size: 7.2rem;
   line-height: 5.5rem;
 }
+/* line 322, sass/partials/_type.scss */
+h1.secondary, h1 .secondary {
+  color: #007eac;
+}
+/* line 326, sass/partials/_type.scss */
+h1.smaller, h1 .smaller {
+  font-size: 2.3rem;
+  line-height: 2.3rem;
+}
 
-/* line 323, sass/partials/_type.scss */
+/* line 332, sass/partials/_type.scss */
 h2 {
   font-family: 'macmillan';
   color: #007eac;
@@ -8312,7 +8305,7 @@ h2 {
   margin: .5rem 0;
 }
 
-/* line 330, sass/partials/_type.scss */
+/* line 339, sass/partials/_type.scss */
 h3 {
   color: #025b45;
   font-size: 2.3rem;
@@ -8321,32 +8314,32 @@ h3 {
   line-height: 2.6rem;
 }
 
-/* line 338, sass/partials/_type.scss */
+/* line 347, sass/partials/_type.scss */
 h4 {
   color: #474740;
   font-size: 2.3rem;
   margin: 2rem 0;
   font-weight: bold;
 }
-/* line 344, sass/partials/_type.scss */
+/* line 353, sass/partials/_type.scss */
 h4 span {
   color: #7B7A6D;
   font-weight: normal;
 }
 
-/* line 351, sass/partials/_type.scss */
+/* line 360, sass/partials/_type.scss */
 h3.top, h4.top {
   margin-top: 0;
 }
 
-/* line 356, sass/partials/_type.scss */
+/* line 365, sass/partials/_type.scss */
 hr {
   border: none;
   border-bottom: 0.1rem solid #ECECEC;
   margin: 1.2rem 0;
 }
 
-/* line 362, sass/partials/_type.scss */
+/* line 371, sass/partials/_type.scss */
 .back {
   text-transform: uppercase;
   color: white;
@@ -8732,8 +8725,17 @@ h1.bigger, h1 .bigger {
   font-size: 7.2rem;
   line-height: 5.5rem;
 }
+/* line 322, sass/partials/_type.scss */
+h1.secondary, h1 .secondary {
+  color: #007eac;
+}
+/* line 326, sass/partials/_type.scss */
+h1.smaller, h1 .smaller {
+  font-size: 2.3rem;
+  line-height: 2.3rem;
+}
 
-/* line 323, sass/partials/_type.scss */
+/* line 332, sass/partials/_type.scss */
 h2 {
   font-family: 'macmillan';
   color: #007eac;
@@ -8741,7 +8743,7 @@ h2 {
   margin: .5rem 0;
 }
 
-/* line 330, sass/partials/_type.scss */
+/* line 339, sass/partials/_type.scss */
 h3 {
   color: #025b45;
   font-size: 2.3rem;
@@ -8750,32 +8752,32 @@ h3 {
   line-height: 2.6rem;
 }
 
-/* line 338, sass/partials/_type.scss */
+/* line 347, sass/partials/_type.scss */
 h4 {
   color: #474740;
   font-size: 2.3rem;
   margin: 2rem 0;
   font-weight: bold;
 }
-/* line 344, sass/partials/_type.scss */
+/* line 353, sass/partials/_type.scss */
 h4 span {
   color: #7B7A6D;
   font-weight: normal;
 }
 
-/* line 351, sass/partials/_type.scss */
+/* line 360, sass/partials/_type.scss */
 h3.top, h4.top {
   margin-top: 0;
 }
 
-/* line 356, sass/partials/_type.scss */
+/* line 365, sass/partials/_type.scss */
 hr {
   border: none;
   border-bottom: 0.1rem solid #ECECEC;
   margin: 1.2rem 0;
 }
 
-/* line 362, sass/partials/_type.scss */
+/* line 371, sass/partials/_type.scss */
 .back {
   text-transform: uppercase;
   color: white;
@@ -9153,7 +9155,7 @@ One-off uses
 /* line 405, sass/partials/_base.scss */
 .hero {
   height: 45rem;
-  background-image: url('/img/hero-ph.jpg?1411035906');
+  background-image: url('/img/hero-ph.jpg?1411655923');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -9164,7 +9166,7 @@ One-off uses
 /* line 415, sass/partials/_base.scss */
 .planking {
   background: url('/img/wood_texture.jpg?1411035906') repeat top left;
-  background-size: 100% 100%;
+  background-size: 100% auto;
 }
 
 /* line 420, sass/partials/_base.scss */
@@ -9194,57 +9196,17 @@ One-off uses
   width: 27.5rem;
 }
 
-/* line 449, sass/partials/_base.scss */
-.home-tile-repeater:nth-child(1) .home-tile {
-  -moz-transform: rotate(-0.2deg);
-  -ms-transform: rotate(-0.2deg);
-  -webkit-transform: rotate(-0.2deg);
-  transform: rotate(-0.2deg);
-}
-/* line 449, sass/partials/_base.scss */
-.home-tile-repeater:nth-child(2) .home-tile {
-  -moz-transform: rotate(1.9deg);
-  -ms-transform: rotate(1.9deg);
-  -webkit-transform: rotate(1.9deg);
-  transform: rotate(1.9deg);
-}
-/* line 449, sass/partials/_base.scss */
-.home-tile-repeater:nth-child(3) .home-tile {
-  -moz-transform: rotate(-1.2deg);
-  -ms-transform: rotate(-1.2deg);
-  -webkit-transform: rotate(-1.2deg);
-  transform: rotate(-1.2deg);
-}
-/* line 449, sass/partials/_base.scss */
-.home-tile-repeater:nth-child(4) .home-tile {
-  -moz-transform: rotate(1deg);
-  -ms-transform: rotate(1deg);
-  -webkit-transform: rotate(1deg);
-  transform: rotate(1deg);
-}
-/* line 449, sass/partials/_base.scss */
-.home-tile-repeater:nth-child(5) .home-tile {
-  -moz-transform: rotate(-2.3deg);
-  -ms-transform: rotate(-2.3deg);
-  -webkit-transform: rotate(-2.3deg);
-  transform: rotate(-2.3deg);
-}
-/* line 449, sass/partials/_base.scss */
-.home-tile-repeater:nth-child(6) .home-tile {
-  -moz-transform: rotate(0.3deg);
-  -ms-transform: rotate(0.3deg);
-  -webkit-transform: rotate(0.3deg);
-  transform: rotate(0.3deg);
-}
-
-/* line 464, sass/partials/_base.scss */
+/* line 443, sass/partials/_base.scss */
 .home-tile {
   background-color: white;
   position: relative;
   overflow: hidden;
+  -moz-box-shadow: 0px 14px 30px 0px rgba(0, 0, 0, 0.6);
+  -webkit-box-shadow: 0px 14px 30px 0px rgba(0, 0, 0, 0.6);
+  box-shadow: 0px 14px 30px 0px rgba(0, 0, 0, 0.6);
 }
 
-/* line 475, sass/partials/_base.scss */
+/* line 453, sass/partials/_base.scss */
 .home-tile-image {
   background-repeat: no-repeat;
   background-size: cover;
@@ -9252,7 +9214,7 @@ One-off uses
   width: 100%;
 }
 
-/* line 482, sass/partials/_base.scss */
+/* line 460, sass/partials/_base.scss */
 .home-tile-label {
   position: absolute;
   bottom: 0;
@@ -9261,37 +9223,98 @@ One-off uses
 }
 
 /*******************************/
-/* line 493, sass/partials/_base.scss */
+/* line 471, sass/partials/_base.scss */
 .spotify-holder {
   width: 35.6rem;
   margin-top: -7rem;
 }
 
-/* line 498, sass/partials/_base.scss */
+/* line 476, sass/partials/_base.scss */
 .spotify-info-holder {
   position: absolute;
   top: 12rem;
   color: white;
   text-align: center;
 }
-/* line 505, sass/partials/_base.scss */
+/* line 483, sass/partials/_base.scss */
 .spotify-info-holder h1 {
   color: white;
 }
 
 /*******************************/
-/* line 513, sass/partials/_base.scss */
+/* line 491, sass/partials/_base.scss */
 .scoreboard-place {
   float: left;
   width: 5rem;
 }
 
-/* line 518, sass/partials/_base.scss */
+/* line 496, sass/partials/_base.scss */
 .scoreboard-value {
   position: absolute;
   top: 0;
   right: 0;
   color: #007eac;
+}
+
+/*******************************/
+/* line 508, sass/partials/_base.scss */
+.idea-sizer {
+  width: 25%;
+}
+
+/* line 512, sass/partials/_base.scss */
+.idea-tile {
+  width: 25%;
+  padding: 1.2rem;
+}
+/* line 517, sass/partials/_base.scss */
+.idea-tile.wide {
+  width: 50%;
+}
+
+/* line 522, sass/partials/_base.scss */
+.idea {
+  padding: 1.2rem;
+  background-color: white;
+  text-transform: uppercase;
+  text-align: center;
+  -moz-box-shadow: 0px 14px 30px 0px rgba(0, 0, 0, 0.6);
+  -webkit-box-shadow: 0px 14px 30px 0px rgba(0, 0, 0, 0.6);
+  box-shadow: 0px 14px 30px 0px rgba(0, 0, 0, 0.6);
+}
+
+/* line 530, sass/partials/_base.scss */
+.idea-details {
+  width: 100%;
+  top: 23%;
+  left: 0;
+}
+/* line 535, sass/partials/_base.scss */
+.idea-details.over-the-top {
+  position: absolute;
+  color: white;
+}
+/* line 539, sass/partials/_base.scss */
+.idea-details.over-the-top h1 {
+  color: white;
+}
+
+/* line 545, sass/partials/_base.scss */
+.pinterest-ico:before {
+  content: "\e623";
+  font-family: "icomoon";
+  color: #E32333;
+}
+
+/* line 551, sass/partials/_base.scss */
+.spotify-logo {
+  width: 8rem;
+  height: 2.4rem;
+  background-image: url('/img/spotify_logo@2x.png?1411665616');
+  background-repeat: no-repeat;
+  background-size: 8rem 2.4rem;
+  overflow: hidden;
+  margin: 0 auto;
 }
 
 /*------------------------------------------------------------------------------------------------------------------------
@@ -9472,7 +9495,7 @@ Media query variables
   .nav-end-block {
     display: none;
     left: 1.5rem;
-    color: #682c88;
+    color: #007eac;
   }
 
   /* line 126, sass/partials/_media-queries.scss */
@@ -9586,26 +9609,9 @@ Media query variables
   .only-on-mobile {
     display: block !important;
   }
-}
-/* line 39, sass/main.scss */
-.banner-info {
-  padding: 0.5rem 0.2rem;
-  width: 65.51724%;
-  float: left;
-  margin-right: 3.44828%;
-  margin: 0;
-}
 
-/* line 46, sass/main.scss */
-.money-raised-info {
-  background: url('/img/amount-raised-ph.png?1411035906') no-repeat center right transparent;
-  height: 14rem;
-  width: 21rem;
-}
-
-/* line 53, sass/main.scss */
-p.amount {
-  color: white;
-  font-size: 3rem;
-  margin: 2.5rem;
+  /* line 237, sass/partials/_media-queries.scss */
+  .idea-sizer, .idea-tile, .idea-tile.wide {
+    width: 100%;
+  }
 }

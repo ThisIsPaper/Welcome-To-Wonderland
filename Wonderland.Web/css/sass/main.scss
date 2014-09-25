@@ -1,24 +1,4 @@
-/*------------------------------------------------------------------------------------------------------------------------
- @package: Macmillan - Wonderland (app)
 
- @author: Sam Latif
- @www: http://www.samlatif.co.uk
- @github: samlatif
-
- @twitter: samlatifuk
-
- @copyright: COPYRIGHT 8-21-2014 On behalf of Paper Partnerships Ltd
- =============================================================================
- Filename: main.scss
- =============================================================================
- This file is responsible for all styles on the Macmillan - Wonderland app.  Styles should be compiled using compass and sass.
-
- --------------------------------------------------------------------------------------------------------------------- */
-
-
-/* =============================================================================
-Imports
-========================================================================== */
 /* Base imports */
 @import "partials/init";
 @import "partials/variables";
@@ -33,25 +13,3 @@ Imports
 @import "partials/nav";
 @import "partials/base";
 @import "partials/media-queries";
-
-// TODO : abstract out into partials and replace hardcoded values with vars
-
-  .banner-info {
-    @extend %pull-left;  
-    padding: 0.5rem 0.2rem;
-    @include span(4 of 6);
-    margin: 0;
-  }
-
-  .money-raised-info {
-    @extend %pull-right;  
-    background: image-url('amount-raised-ph.png') no-repeat center right transparent;
-    height: 14rem;
-    width: 21rem
-  }
-    
-  p.amount {
-    color: white;
-    font-size: 3rem;
-    margin: 2.5rem;
-  }

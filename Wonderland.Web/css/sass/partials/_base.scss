@@ -414,7 +414,7 @@ One-off uses
 
 .planking {
   background: image-url('wood_texture.jpg') repeat top left;
-  background-size: 100% 100%;
+  background-size: 100% auto;
 }
 
 .home-content-adjust {
@@ -440,27 +440,6 @@ One-off uses
     width: 27.5rem;
 }
 
-.home-tile-repeater {
-
-
-    // Calc a random rotate degree value for each frame tile
-  @for $i from 1 through 6 {
-    &:nth-child( #{ $i } ) {
-      .home-tile {
-        @if $i % 2 == 0 {
-          $rand: (random( 23 ) * 0.1) + deg; // generate positive random number (converted to float)
-          @include transform( rotate( $rand ) );
-        }
-        @else {
-          $rand: ( (random( 23 ) * 0.1 ) * - 1 )  + deg;  // generate negative random number
-          @include transform( rotate( $rand ) );
-        }
-      }
-    }
-  }
-
-}
-
 .home-tile {
     @extend .pad-small;
     @extend .margin-bottom-large;
@@ -468,8 +447,7 @@ One-off uses
     position: relative;
     overflow: hidden;
 
-
-
+    @include box-shadow( 0px 14px 30px 0px rgba(0, 0, 0, 0.6) );
 }
 
 .home-tile-image {
@@ -520,4 +498,63 @@ One-off uses
     top: 0;
     right: 0;
     color: $SecondaryColour;
+}
+
+
+
+
+/*******************************/// party ideas
+
+.idea-sizer {
+    width: 25%;
+}
+
+.idea-tile {
+    @extend .radius-v1-small;
+    width: 25%;
+    padding: $padSmallValue;
+
+    &.wide {
+        width: 50%;
+    }
+}
+
+.idea {
+    padding: $padSmallValue;
+    background-color: white;
+    text-transform: uppercase;
+    text-align: center;
+    @include box-shadow( 0px 14px 30px 0px rgba(0, 0, 0, 0.6) );
+}
+
+.idea-details {
+    width: 100%;
+    top: 23%;
+    left: 0;
+
+    &.over-the-top {
+        position: absolute;
+        color: white;
+
+        h1 {
+            color: white;
+        }
+    }
+}
+
+.pinterest-ico:before {
+    content: "\e623";
+    font-family: $fontFaceIcomoon;
+    color: $redDark;
+}
+
+.spotify-logo {
+    width: 8rem;
+    height: 2.4rem;
+    background-image: image-url('spotify_logo@2x.png');
+    background-repeat: no-repeat;
+    background-size: 8rem 2.4rem;
+    overflow: hidden;
+
+    margin: 0 auto;
 }

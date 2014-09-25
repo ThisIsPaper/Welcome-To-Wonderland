@@ -318,6 +318,15 @@ h1 {
         font-size: $HeadingFontSizeExtraLarge;
         line-height: 5.5rem;
     }
+
+    &.secondary, .secondary {
+        color: $SecondaryColour;
+    }
+
+    &.smaller, .smaller {
+        font-size: $FontSizeLarge;
+        line-height: 2.3rem;
+    }
 }
 
 h2 {

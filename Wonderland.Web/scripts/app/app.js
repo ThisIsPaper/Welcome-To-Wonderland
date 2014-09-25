@@ -1,4 +1,4 @@
-var wonderlandApp = angular.module('wonderlandApp', ['oc.modal']);
+var wonderlandApp = angular.module('wonderlandApp', ['masonry', 'oc.modal']);
 
 
 wonderlandApp.config(['$provide', function($provide){

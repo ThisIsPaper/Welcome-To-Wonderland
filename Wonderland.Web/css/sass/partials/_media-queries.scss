@@ -120,7 +120,7 @@
     .nav-end-block {
         display: none;
         left: 1.5rem;
-        color: $PrimaryColour;
+        color: $SecondaryColour;
     }
 
     .nav-end-block.end-block-right {
@@ -228,6 +228,14 @@
 
     .only-on-mobile {
         display: block !important;
+    }
+
+
+
+    //***************************** Party Ideas
+
+    .idea-sizer, .idea-tile, .idea-tile.wide {
+        width: 100%;
     }
 
 }

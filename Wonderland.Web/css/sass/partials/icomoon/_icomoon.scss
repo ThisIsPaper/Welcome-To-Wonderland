@@ -1,10 +1,10 @@
 @font-face {
 	font-family: 'icomoon';
-	src:url('/fonts/icomoon.eot?-h4ln9l');
-	src:url('/fonts/icomoon.eot?#iefix-h4ln9l') format('embedded-opentype'),
-		url('/fonts/icomoon.woff?-h4ln9l') format('woff'),
-		url('/fonts/icomoon.ttf?-h4ln9l') format('truetype'),
-		url('/fonts/icomoon.svg?-h4ln9l#icomoon') format('svg');
+	src:url('/fonts/icomoon.eot?1up521');
+	src:url('/fonts/icomoon.eot?#iefix1up521') format('embedded-opentype'),
+		url('/fonts/icomoon.woff?1up521') format('woff'),
+		url('/fonts/icomoon.ttf?1up521') format('truetype'),
+		url('/fonts/icomoon.svg?1up521#icomoon') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -24,6 +24,9 @@
 }
 
 
+.icon-icon_pinterest:before {
+	content: "\e623";
+}
 .icon-icon_trophy:before {
 	content: "\e622";
 }
@@ -56,9 +59,6 @@
 }
 .icon-icon_twitter_bird:before {
 	content: "\e61a";
-}
-.icon-icon_x:before {
-	content: "\e617";
 }
 .icon-icon_chevron_left:before {
 	content: "\e600";
@@ -128,4 +128,7 @@
 }
 .icon-icon_google_plus:before {
 	content: "\e616";
+}
+.icon-icon_x:before {
+	content: "\e617";
 }
