@@ -7,6 +7,7 @@ namespace Wonderland.Logic.Models.Forms
     public class PartyWallMessageForm
     {
         [DataType(DataType.MultilineText)]
+        [MaxLength(600)]
         public string Message { get; set; }
 
         [HiddenInput(DisplayValue = false)]
