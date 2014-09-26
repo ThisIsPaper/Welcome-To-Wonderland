@@ -46,6 +46,11 @@ namespace Wonderland.Logic.Controllers.Api
                 //else
                 //{
                     notificationResponse.Status = NotificationStatus.OK;
+
+                    // set success flag in db
+                    donationRow.Success = true;
+
+                    this.DatabaseContext.Database.Update(donationRow);
                 //}
             }
 
