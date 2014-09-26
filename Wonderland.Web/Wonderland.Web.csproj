@@ -356,6 +356,8 @@
     <Content Include="Views\DonateSurface\DonateForm.cshtml" />
     <Content Include="Views\Donate\Failed.cshtml" />
     <Content Include="Views\Donate\Complete.cshtml" />
+    <Content Include="Views\PlaylistTile.cshtml" />
+    <Content Include="Views\RecipeTile.cshtml" />
     <None Include="Views\RegisterHostSurface\RegisterHostForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
