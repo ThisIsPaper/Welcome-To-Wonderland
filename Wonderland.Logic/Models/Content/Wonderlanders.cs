@@ -102,7 +102,7 @@ namespace Wonderland.Logic.Models.Content
         {
             get
             {
-                return this.Members.GetTopPartyHosts(LeaderboardType.TopFundraisers, 10);
+                return this.Members.GetTopPartyHosts(LeaderboardType.TopFundraisers, this.TopFundraisersCount);
             }
         }
 
@@ -110,24 +110,24 @@ namespace Wonderland.Logic.Models.Content
         {
             get
             {
-                return this.Members.GetTopPartyHosts(LeaderboardType.MostGuests, 10);
+                return this.Members.GetTopPartyHosts(LeaderboardType.MostGuests, this.MostGuestsCount);
             }
         }
 
-        public IEnumerable<PartyHost> BadgesToday
-        {  
-            get
-            {
-                return Enumerable.Empty<PartyHost>();
-            }
-        }
+        //public IEnumerable<PartyHost> BadgesToday
+        //{  
+        //    get
+        //    {
+        //        return Enumerable.Empty<PartyHost>();
+        //    }
+        //}
 
-        public IEnumerable<PartyHost> RecentHosts
-        {
-            get
-            {
-                return Enumerable.Empty<PartyHost>();
-            }
-        }
+        //public IEnumerable<PartyHost> RecentHosts
+        //{
+        //    get
+        //    {
+        //        return Enumerable.Empty<PartyHost>();
+        //    }
+        //}
     }
 }

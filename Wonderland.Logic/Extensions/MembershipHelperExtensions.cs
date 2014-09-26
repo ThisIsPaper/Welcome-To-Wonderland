@@ -14,6 +14,7 @@ namespace Wonderland.Logic.Extensions
     using Wonderland.Logic.Enums;
     using Wonderland.Logic.Interfaces;
     using Wonderland.Logic.Models.Members;
+    using Wonderland.Logic.Models.Database;
 
     public static class MembershipHelperExtensions
     {
@@ -70,18 +71,26 @@ namespace Wonderland.Logic.Extensions
 
         public static IEnumerable<PartyHost> GetTopPartyHosts(this MembershipHelper members, LeaderboardType leaderboardType, int take)
         {
-            //UmbracoContext.Current.Application.DatabaseContext.Database
+            List<PartyHost> partyHosts = new List<PartyHost>();
+
+            DatabaseContext databaseContext = ApplicationContext.Current.DatabaseContext;
 
             switch (leaderboardType)
             {
                 case LeaderboardType.MostGuests:
 
-                    //SELECT    TOP 123
-                    //          PartyGuid, 
-                    //          Count(MemberID) AS 'Partiers'
-                    //FROM		wonderlandMemberParty
-                    //GROUP BY	PartyGuid
-                    //ORDER BY	Partiers DESC
+                    List<dynamic> mostGuests = databaseContext.Database.Fetch<dynamic>(@"
+                                                                                            SELECT      TOP " + take + @"  
+                                                                                                        PartyGuid,
+                                                                                                        COUNT(MemberId) AS Partiers
+                                                                                            FROM        wonderlandMemberParty
+                                                                                            GROUP BY    PartyGuid
+                                                                                            ORDER BY    Partiers DESC
+                                                                                        ");
+                    foreach(dynamic partyGuests in mostGuests)
+                    {
+                        partyHosts.Add(members.GetPartyHost((Guid)partyGuests.PartyGuid));
+                    }
 
                     break;
 
@@ -95,8 +104,13 @@ namespace Wonderland.Logic.Extensions
             }
 
 
-            return Enumerable.Empty<PartyHost>();
+            return partyHosts;
         }
         
+        // TODO: use this
+        //public static IPartier GetCurrentPartier(this MembershipHelper members)
+        //{
+        //    return members.GetCurrentMember() as IPartier;
+        //}
     }
 }
