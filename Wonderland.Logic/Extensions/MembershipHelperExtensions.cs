@@ -107,6 +107,7 @@ namespace Wonderland.Logic.Extensions
                                                                                                             PartyGuid,
                                                                                                             SUM(Amount) AS Amount
                                                                                                 FROM        wonderlandDonation
+                                                                                                WHERE       Success = 1
                                                                                                 GROUP BY    PartyGuid
                                                                                                 ORDER BY    Amount DESC
                                                                                             "))
