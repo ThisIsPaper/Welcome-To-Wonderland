@@ -275,12 +275,19 @@ namespace Wonderland.Logic.Models.Members
         {
             get
             {
-                return this.DatabaseContext.Database.ExecuteScalar<decimal>(@"
-                                                                                SELECT  SUM(Amount)
-                                                                                FROM    wonderlandDonation
-                                                                                WHERE   PartyGuid = @0
-                                                                                        AND Success = 1
-                                                                            ", this.PartyGuid);
+                try
+                {
+                    return this.DatabaseContext.Database.ExecuteScalar<decimal>(@"
+                                                                                    SELECT  SUM(Amount)
+                                                                                    FROM    wonderlandDonation
+                                                                                    WHERE   PartyGuid = @0
+                                                                                            AND Success = 1
+                                                                                ", this.PartyGuid);
+                }
+                catch
+                {
+                    return 0;
+                }
             }
         }
 
