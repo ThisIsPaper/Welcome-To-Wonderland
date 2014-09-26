@@ -55,6 +55,15 @@ namespace Wonderland.Logic.Models.Content
             }
         }
 
+        /// <summary>
+        /// set in hijack render controller so as to cache the calculation
+        /// </summary>
+        public decimal TotalAmountRaised
+        {
+            get; 
+            internal set;
+        }
+
         internal IEnumerable<SitePage> HeaderNavigation
         {
             get
