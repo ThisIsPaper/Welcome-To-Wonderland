@@ -1,7 +1,7 @@
 ﻿@inherits UmbracoViewPage<SiteSettings> 
 
 
-    
+
 <header class="site-header" ng-class="{'compress': pageHeaderCompress}">
 
 
@@ -60,7 +60,7 @@
                 <li class="menu right-side">
                     <ul>
 
-                        @foreach (SitePage sitePage in Model.HeaderNavigationLeft)
+                        @foreach (SitePage sitePage in Model.HeaderNavigationRight)
                         {
                         <li>
                             <a href="@sitePage.Url"><span class="icon-icon_fingerpost"></span><span>@sitePage.Name</span></a>
