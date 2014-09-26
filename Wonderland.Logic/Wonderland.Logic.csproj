@@ -234,8 +234,10 @@
     <Compile Include="Models\Content\FashionCategory.cs" />
     <Compile Include="Models\Content\FashionTile.cs" />
     <Compile Include="Models\Content\ForgottenPassword.cs" />
+    <Compile Include="Models\Content\FundraisingCategory.cs" />
     <Compile Include="Models\Content\FundraisingIdea.cs" />
     <Compile Include="Models\Content\FundraisingIdeas.cs" />
+    <Compile Include="Models\Content\FundraisingTile.cs" />
     <Compile Include="Models\Content\Home.cs" />
     <Compile Include="Models\Content\PageNotFound.cs" />
     <Compile Include="Models\Content\Donate.cs" />
@@ -307,7 +309,6 @@
     <Compile Include="Models\Forms\CustomPartyImageForm.cs" />
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -2,7 +2,7 @@
 
 <h2>Party Idea Tiles (partial)</h2>
 
-<ul class="party-idea-tiles">
+<ul class="party-idea-tiles" ng-init="">
     <!--
         tile-size-large
         tile-size-medium
@@ -24,16 +24,12 @@
             
             @switch (partyIdeaTile.TileSize)
             {
-                case PartyIdeaTileSize.Large:
-                    <h3>Large Tile</h3>
+                case PartyIdeaTileSize.Narrow:
+                    <h3>Narrow Tile</h3>
                     break;
                     
-                case PartyIdeaTileSize.Medium:
-                    <h3>Medium Tile</h3>
-                    break;
-                    
-                case PartyIdeaTileSize.Small:
-                    <h3>Small Tile</h3>
+                case PartyIdeaTileSize.Wide:
+                    <h3>Wide Tile</h3>
                     break;
             }
 

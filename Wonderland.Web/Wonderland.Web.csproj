@@ -359,6 +359,7 @@
     <Content Include="Views\PlaylistTile.cshtml" />
     <Content Include="Views\RecipeTile.cshtml" />
     <Content Include="Views\RegisterGuest\Failed.cshtml" />
+    <Content Include="Views\FundraisingTile.cshtml" />
     <None Include="Views\RegisterHostSurface\RegisterHostForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
