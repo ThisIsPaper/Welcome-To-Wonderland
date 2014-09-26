@@ -10529,13 +10529,20 @@ One-off uses
 }
 
 /* line 551, sass/partials/_base.scss */
+.idea-polaroid {
+  -moz-border-radius: 0.7rem;
+  -webkit-border-radius: 0.7rem;
+  border-radius: 0.7rem;
+}
+
+/* line 555, sass/partials/_base.scss */
 .pinterest-ico:before {
   content: "\e623";
   font-family: "icomoon";
   color: #E32333;
 }
 
-/* line 557, sass/partials/_base.scss */
+/* line 561, sass/partials/_base.scss */
 .spotify-logo {
   width: 8rem;
   height: 2.4rem;
@@ -10546,7 +10553,7 @@ One-off uses
   margin: 0 auto;
 }
 
-/* line 568, sass/partials/_base.scss */
+/* line 572, sass/partials/_base.scss */
 .idea-link {
   position: absolute;
   top: 0;
@@ -10557,7 +10564,7 @@ One-off uses
   text-indent: -999rem;
 }
 
-/* line 580, sass/partials/_base.scss */
+/* line 584, sass/partials/_base.scss */
 .share-title {
   width: 27.8rem;
   height: 11.6rem;
@@ -10566,7 +10573,7 @@ One-off uses
   background-size: 27.8rem 11.6rem;
 }
 
-/* line 589, sass/partials/_base.scss */
+/* line 593, sass/partials/_base.scss */
 .share-facebook, .share-twitter, .share-email {
   background-color: #3c5898;
   font-family: "macmillan";
@@ -10575,44 +10582,44 @@ One-off uses
   padding: 1.2rem;
   line-height: 5.5rem;
 }
-/* line 597, sass/partials/_base.scss */
+/* line 601, sass/partials/_base.scss */
 .share-facebook:before, .share-twitter:before, .share-email:before {
   font-family: "icomoon";
   content: "\e619";
   margin-right: 1.2rem;
 }
 
-/* line 604, sass/partials/_base.scss */
+/* line 608, sass/partials/_base.scss */
 .share-twitter {
   background-color: #17abed;
 }
-/* line 606, sass/partials/_base.scss */
+/* line 610, sass/partials/_base.scss */
 .share-twitter:before {
   content: "\e61a";
 }
 
-/* line 612, sass/partials/_base.scss */
+/* line 616, sass/partials/_base.scss */
 .share-email {
   background-color: #007eac;
 }
-/* line 614, sass/partials/_base.scss */
+/* line 618, sass/partials/_base.scss */
 .share-email:before {
   content: "\e618";
   margin-right: 0;
 }
 
 /*******************************/
-/* line 624, sass/partials/_base.scss */
+/* line 628, sass/partials/_base.scss */
 .color-facebook {
   color: #3c5898 !important;
 }
 
-/* line 625, sass/partials/_base.scss */
+/* line 629, sass/partials/_base.scss */
 .color-twitter {
   color: #17abed !important;
 }
 
-/* line 626, sass/partials/_base.scss */
+/* line 630, sass/partials/_base.scss */
 .color-gplus {
   color: #cd3627 !important;
 }

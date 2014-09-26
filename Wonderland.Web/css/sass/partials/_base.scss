@@ -548,6 +548,10 @@ One-off uses
     }
 }
 
+.idea-polaroid {
+    @include border-radius(.7rem);
+}
+
 .pinterest-ico:before {
     content: "\e623";
     font-family: $fontFaceIcomoon;
