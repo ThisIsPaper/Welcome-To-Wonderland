@@ -7,9 +7,9 @@ namespace Wonderland.Logic.Models.Database
     [TableName("wonderlandMemberParty")]
     [PrimaryKey("MemberId", autoIncrement=false)]
     [ExplicitColumns]
-    public class MemberParty
+    public class MemberPartyRow
     {
-        internal MemberParty(int memberId, Guid partyGuid)
+        internal MemberPartyRow(int memberId, Guid partyGuid)
         {
             this.MemberId = memberId;
             this.PartyGuid = partyGuid;

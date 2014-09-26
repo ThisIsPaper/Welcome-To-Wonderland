@@ -272,7 +272,7 @@ namespace Wonderland.Logic.Controllers.Surface
                 //Guid partyGuid = ((Party)this.Umbraco.AssignedContentItem).PartyHost.PartyGuid;
 
                 //// insert message into DB
-                this.DatabaseContext.Database.Insert(new Message()
+                this.DatabaseContext.Database.Insert(new MessageRow()
                                                             {
                                                                 MemberId = this.Members.GetCurrentMemberId(),
                                                                 Text = partyWallMessageForm.Message,

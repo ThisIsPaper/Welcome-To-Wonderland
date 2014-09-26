@@ -13,24 +13,24 @@ namespace Wonderland.Logic.Models.Entities
 
     public class PartyWallItem
     {
-        internal PartyWallItem(Donation donation)
+        internal PartyWallItem(DonationRow donation)
         {
-            IPartier partier = (IPartier)new MembershipHelper(UmbracoContext.Current).GetById(donation.MemberId);   
+            IPartier partier = (IPartier)new MembershipHelper(UmbracoContext.Current).GetById((int)donation.MemberId);   // NOTE: exlicit cast from int? to int
             
             this.PartyWallItemType = PartyWallItemType.Donation;
             this.ThumbnailUrl = partier.ProfileImageUrl;
-            this.Name = partier.PersonName;
+            this.Name = partier.FirstName + partier.LastName;
             this.Text = donation.Amount.ToString();
             this.Timestamp = donation.Timestamp;
         }
 
-        internal PartyWallItem(Message message)
+        internal PartyWallItem(MessageRow message)
         {
             IPartier partier = (IPartier)new MembershipHelper(UmbracoContext.Current).GetById(message.MemberId);   
 
             this.PartyWallItemType = PartyWallItemType.Message; 
             this.ThumbnailUrl = partier.ProfileImageUrl;
-            this.Name = partier.PersonName;
+            this.Name = partier.FirstName + partier.LastName;
             this.Text = message.Text;
             
             if (message.Image != null)

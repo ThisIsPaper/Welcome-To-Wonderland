@@ -1,6 +1,12 @@
 ﻿@model PartyImageForm
 
-<div ng-init="partyImageDataInit(@Html.Raw(Json.Encode(Model)))"></div>
+<div ng-init="partyImageDataInit(@Html.Raw(Json.Encode(
+    new {
+        DefaultImages = Model.DefaultImages.Select(x => x.Url),
+        PartyImage = Model.PartyImage 
+    }
+)))"></div>
+
 
 
 <script type="text/ng-template" id="partials/partyImageForm.html">

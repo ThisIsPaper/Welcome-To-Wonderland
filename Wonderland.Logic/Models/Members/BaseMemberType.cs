@@ -19,6 +19,14 @@ namespace Wonderland.Logic.Models.Members
         {
         }
 
+        protected DatabaseContext DatabaseContext
+        {
+            get
+            {
+                return ApplicationContext.Current.DatabaseContext;
+            }
+        }
+
         /// <summary>
         /// to match the .Members property found in the SurfaceControllers and the Views
         /// </summary>
@@ -34,7 +42,6 @@ namespace Wonderland.Logic.Models.Members
                 return this.membershipHelper;
             }
         }
-
 
         /// <summary>
         /// helper to get at the MemberService
@@ -68,6 +75,14 @@ namespace Wonderland.Logic.Models.Members
             get
             {
                 return this.Member.Username;
+            }
+        }
+
+        public string Email
+        {
+            get
+            {
+                return this.Member.Email;
             }
         }
 

@@ -1,0 +1,19 @@
+﻿@inherits UmbracoViewPage<RecipeTile>
+@{
+    Layout = "SitePage.cshtml";
+}
+
+<h1>@Model.TileHeading</h1>
+<p>@Model.TileCopy</p>
+<img src="@Model.TileImage.Url" />
+
+
+<h2>@Model.IngredientsHeading</h2>
+<ul>
+    @foreach(string ingredient in Model.Ingredients)
+    {
+        <li>@ingredient</li>
+    }
+</ul>
+
+<p>@Model.PreparationCopy</p>

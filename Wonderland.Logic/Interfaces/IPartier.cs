@@ -2,6 +2,7 @@
 namespace Wonderland.Logic.Interfaces
 {
     using System;
+    using Wonderland.Logic.Models.Entities;
     using Wonderland.Logic.Models.Members;
 
     /// <summary>
@@ -15,10 +16,9 @@ namespace Wonderland.Logic.Interfaces
         /// </summary>
         int Id { get; }
 
-        /// <summary>
-        /// rendered name
-        /// </summary>
-        string PersonName { get; }
+        string FirstName { get; }
+
+        string LastName { get; }
 
         /// <summary>
         /// url to their profile image
@@ -35,5 +35,15 @@ namespace Wonderland.Logic.Interfaces
         /// 
         /// </summary>
         Guid PartyGuid { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        Address BillingAddress { get; set; }
+
+        /// <summary>
+        /// common property in BaseMemberType
+        /// </summary>
+        string Email { get; }
     }
 }

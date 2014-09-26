@@ -24,7 +24,10 @@
 
 
 @* wall *@
-@(Html.Action<PartySurfaceController>("RenderPartyWallForm"))
+@(Html.Action<PartySurfaceController>("RenderPartyWallMessageForm"))
+
+@(Html.Action<PartySurfaceController>("RenderPartyWallImageForm"))
+
 
 @* totaliser *@
 
@@ -34,7 +37,7 @@
     {
         <li>
             <img src="@partier.ProfileImageUrl" />
-            @partier.PersonName
+            @Model.PartyHost.FirstName @Model.PartyHost.LastName
         </li>
     }
 </ul>

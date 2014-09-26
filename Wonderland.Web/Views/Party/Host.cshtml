@@ -57,7 +57,7 @@
                 <div class="boxx" m-radius-picker>
 
                     <div>
-                        <span class="body-mega">£<span>0</span></span>
+                        <span class="body-mega">£<span>@Model.PartyHost.AmountRaised.ToString("F")</span></span>
                         <span>raised of the </span>
                         <span class="body-highlight">£<span ng-bind="fundraisingTargetData.FundraisingTarget"></span></span>
                         <span>target</span>
@@ -108,7 +108,7 @@
                         @foreach (IPartier partier in this.Model.Partiers)
                         {
                             <li>
-                                <img src="@partier.ProfileImageUrl" width="50" height="50" alt="@partier.PersonName" title="@partier.PersonName"/>
+                                <img src="@partier.ProfileImageUrl" width="50" height="50" alt="@Model.PartyHost.FirstName @Model.PartyHost.LastName" title="@Model.PartyHost.FirstName @Model.PartyHost.LastName" />
                             </li>
                         }
                     </ul>

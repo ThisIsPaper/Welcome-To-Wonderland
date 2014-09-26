@@ -7,10 +7,13 @@ namespace Wonderland.Logic.Controllers.Surface
     using Umbraco.Core;
     using Umbraco.Core.Security;
     using Umbraco.Web.Mvc;
+    using Wonderland.Logic.Enums;
+    using Wonderland.Logic.Extensions;
     using Wonderland.Logic.Models.Content;
     using Wonderland.Logic.Models.Database;
     using Wonderland.Logic.Models.Forms;
     using Wonderland.Logic.Models.Members;
+    using Wonderland.Logic.SagePay;
 
     public class RegisterGuestSurfaceController : SurfaceController
     {
@@ -85,7 +88,7 @@ namespace Wonderland.Logic.Controllers.Surface
             PartyGuest partyGuest = (PartyGuest)membershipUser;
 
             // update database with member and party guid (duplicated data, but never changes)
-            this.DatabaseContext.Database.Insert(new MemberParty(partyGuest.Id, registerGuestForm.PartyGuid));
+            this.DatabaseContext.Database.Insert(new MemberPartyRow(partyGuest.Id, registerGuestForm.PartyGuid));
 
             // (duplicate data) store party guid in cms cache
             partyGuest.PartyGuid = registerGuestForm.PartyGuid;
@@ -101,7 +104,15 @@ namespace Wonderland.Logic.Controllers.Surface
         [ChildActionOnly]
         public ActionResult RenderRegisterGuestBillingForm()
         {
-            return this.PartialView("RegisterGuestForm", new RegisterGuestBillingForm());
+            RegisterGuestBillingForm registerGuestBillingForm = new RegisterGuestBillingForm();
+
+            // set hidden field with party guid
+            registerGuestBillingForm.PartyGuid = ((RegisterGuest)this.CurrentPage).PartyHost.PartyGuid;
+
+            // set the default amount to the party host's suggested donation
+            registerGuestBillingForm.Amount = this.Members.GetPartyHost(registerGuestBillingForm.PartyGuid).SuggestedDonation;
+
+            return this.PartialView("RegisterGuestBillingForm", registerGuestBillingForm);
         }
 
         [HttpPost]
@@ -114,12 +125,61 @@ namespace Wonderland.Logic.Controllers.Surface
                 return this.CurrentUmbracoPage();
             }
 
-            // we have enough details to initiate the sage pay process
-            
-            // 1) post to sagepay, get response, and then redirect user
+            if (!string.IsNullOrWhiteSpace(registerGuestBillingForm.Message))
+            {
+                // post message to party wall
+                this.DatabaseContext.Database.Insert(new MessageRow()
+                                                        {
+                                                            MemberId = this.Members.GetCurrentMemberId(),
+                                                            Text = registerGuestBillingForm.Message,
+                                                            Image = null
+                                                        });
+            }
 
+            DonationRow donationRow = new DonationRow()
+            {
+                PartyGuid = registerGuestBillingForm.PartyGuid,
+                Amount = registerGuestBillingForm.Amount,
+                GiftAid = registerGuestBillingForm.AllowGiftAid,
+                MemberId = this.Members.GetCurrentMemberId(),
+                FirstName = registerGuestBillingForm.FirstName,
+                LastName = registerGuestBillingForm.LastName,
+                Address1 = registerGuestBillingForm.Address1,
+                Address2 = registerGuestBillingForm.Address2,
+                TownCity = registerGuestBillingForm.TownCity,
+                Postcode = registerGuestBillingForm.Postcode,
+                PaymentJourney = PaymentJourney.RegisterGuest,
+                Success = false
+            };
 
-            return this.CurrentUmbracoPage();
+            // insert new record
+            this.DatabaseContext.Database.Insert(donationRow);
+
+            // build new obj containing data for sage pay
+            TransactionRegistrationRequest transactionRegistrationRequest = new TransactionRegistrationRequest(donationRow);
+
+            // send to sage pay and get respone
+            TransactionRegistrationResponse transactionRegistrationResponse = TransactionRegistration.Send(transactionRegistrationRequest);
+
+            // based on response, we redirect the user to...
+            if (transactionRegistrationResponse.Status == TransactionRegistrationStatus.OK)
+            {
+                // update database
+                donationRow.VPSTxId = transactionRegistrationResponse.VPSTxId;
+                donationRow.SecurityKey = transactionRegistrationResponse.SecurityKey;
+
+                this.DatabaseContext.Database.Update(donationRow);
+
+                return this.Redirect(transactionRegistrationResponse.NextURL);
+            }
+            else
+            {
+                // delete row ? (as transaction will never happen)
+            }
+
+            this.ViewData["errorMessage"] = transactionRegistrationResponse.StatusDetail;
+
+            return this.View("RegisterGuest/Failed", this.CurrentPage);
         }
     }
 }

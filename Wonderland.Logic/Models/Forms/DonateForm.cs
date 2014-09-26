@@ -5,17 +5,14 @@ namespace Wonderland.Logic.Models.Forms
     using System.ComponentModel.DataAnnotations;
     using System.Web.Mvc;
 
-    public class RegisterGuestBillingForm
-    {        
+    public class DonateForm
+    {
         [Required]
         [DataType(DataType.Text)]
         [Range(1, 100000)]
         public decimal Amount { get; set; }
 
-        [DataType(DataType.MultilineText)]
-        [MaxLength(600)]
-        public string Message { get; set; }
-
+        //[Display("Allow Gift Aid")]
         public bool AllowGiftAid { get; set; }
 
         [Required]
@@ -46,6 +43,5 @@ namespace Wonderland.Logic.Models.Forms
         [Required]
         [HiddenInput(DisplayValue = false)]
         public Guid PartyGuid { get; set; }
-
     }
 }

@@ -1,0 +1,11 @@
+﻿@inherits UmbracoViewPage<PlaylistTile>
+@{
+    Layout = "SitePage.cshtml";
+}
+	
+<h1>@Model.TileHeading</h1>
+<p>@Model.TileCopy</p>
+
+<img src="@Model.TileImage.Url"/>
+
+<p>@Html.Raw(Model.SpotifyUrl)</p>

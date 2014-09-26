@@ -19,7 +19,7 @@
 }
 <a href="@Model.GetLeaderboard().MostGuestsLink">view all &gt;</a>
 
-<h2>@Model.BadgesTodayHeading</h2>
+@*<h2>@Model.BadgesTodayHeading</h2>
 @foreach (PartyHost partyHost in Model.BadgesToday)
 {
     @partyHost.Name
@@ -29,4 +29,4 @@
 @foreach (PartyHost partyHost in Model.RecentHosts)
 {
     @partyHost.Name
-}
+}*@

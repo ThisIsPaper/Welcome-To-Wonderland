@@ -1,0 +1,10 @@
+﻿@model DonateForm
+
+@using (Html.BeginUmbracoForm<DonateSurfaceController>("HandleDonateForm"))
+{
+    @Html.AntiForgeryToken()
+
+    @Html.EditorForModel()
+
+    <button type="submit">Submit</button>
+}

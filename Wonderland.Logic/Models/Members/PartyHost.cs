@@ -255,14 +255,6 @@ namespace Wonderland.Logic.Models.Members
             }
         }
 
-        public string PersonName
-        {
-            get
-            {
-                return this.FirstName + " " + this.LastName;
-            }
-        }
-
         public string ProfileImageUrl
         {
             get
@@ -276,6 +268,26 @@ namespace Wonderland.Logic.Models.Members
             get
             {
                 return UmbracoContext.Current.ContentCache.GetSingleByXPath("//" + Party.Alias).Url + this.PartyUrlIdentifier;
+            }
+        }
+
+        public decimal AmountRaised
+        {
+            get
+            {
+                try
+                {
+                    return this.DatabaseContext.Database.ExecuteScalar<decimal>(@"
+                                                                                    SELECT  SUM(Amount)
+                                                                                    FROM    wonderlandDonation
+                                                                                    WHERE   PartyGuid = @0
+                                                                                            AND Success = 1
+                                                                                ", this.PartyGuid);
+                }
+                catch
+                {
+                    return 0;
+                }
             }
         }
 

@@ -45,7 +45,8 @@ namespace Wonderland.Logic.Controllers.Api
                                             [Image] = NULL, 
                                             [Timestamp] 
                                 FROM        wonderlandDonation
-                                WHERE       MemberId IN (SELECT MemberId FROM wonderlandMemberParty WHERE PartyGuid = @0)
+                                WHERE       Success = 1
+                                            AND MemberId IN (SELECT MemberId FROM wonderlandMemberParty WHERE PartyGuid = @0)
                                             AND [Timestamp] < @1
                                 UNION ALL
                                 SELECT      PartyWallItemType = " + (int)PartyWallItemType.Message + @", 
@@ -74,7 +75,8 @@ namespace Wonderland.Logic.Controllers.Api
                                     [Image] = NULL, 
                                     [Timestamp] 
                         FROM        wonderlandDonation
-                        WHERE       MemberId IN (SELECT MemberId FROM wonderlandMemberParty WHERE PartyGuid = @0)
+                        WHERE       Success = 1
+                                    AND MemberId IN (SELECT MemberId FROM wonderlandMemberParty WHERE PartyGuid = @0)
                                     AND [Timestamp] < @1
                         ORDER BY    [Timestamp] DESC
                     ";
@@ -87,12 +89,12 @@ namespace Wonderland.Logic.Controllers.Api
                 {
                     case PartyWallItemType.Donation:
 
-                        partyWallItems.Add(new PartyWallItem((Donation)donation_Message));
+                        partyWallItems.Add(new PartyWallItem((DonationRow)donation_Message));
                         break;
 
                     case PartyWallItemType.Message:
 
-                        partyWallItems.Add(new PartyWallItem((Message)donation_Message));                        
+                        partyWallItems.Add(new PartyWallItem((MessageRow)donation_Message));                        
                         break;
                 }
             }
