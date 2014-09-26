@@ -37,6 +37,9 @@ abstract
 .pad-bottom-large { padding-bottom: $padSmallValue * $multiplierLarge; }
 
 .pad-0 { padding: 0; }
+.pad-1 { padding: 1; }
+.pad-2 { padding: 2; }
+.pad-3 { padding: 3; }
 
 .pad-right-0 { padding-right: 0;}
 .pad-right-1 { padding-right: 1rem;}
@@ -218,7 +221,7 @@ abstract
     position: static;
 }
 
-.only-on-mobile {
+.only-on-tablet {
     display: none;
 }
 
@@ -250,3 +253,4 @@ abstract
 .min-height-8 { min-height: 8rem; }
 .min-height-9 { min-height: 9rem; }
 .min-height-10 { min-height: 10rem; }
+.min-height-20 { min-height: 20rem; }

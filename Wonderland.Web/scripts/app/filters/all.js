@@ -37,3 +37,9 @@ wonderlandApp.filter('dateSuffix', function() {
         return num+suffix;
     };
 });
+
+wonderlandApp.filter('escape', function () {
+    return function (url) {
+        return encodeURIComponent(url);
+    };
+});

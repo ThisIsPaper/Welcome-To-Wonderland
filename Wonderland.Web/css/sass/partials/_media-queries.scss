@@ -9,7 +9,7 @@
 /*****************************/
 
 
-@media only screen and (max-width: 1049px) {
+@media only screen and (max-width: 1100px) {
 
     .logo {
         padding: 4.59rem 3.27rem;
@@ -69,23 +69,21 @@
 
 }
 
-
-
-
 /*****************************/
 /*
-/*  MOBILE VIEW
+/*  TABLET VIEW
 /*
 /*****************************/
 
-@media only screen and (max-width: 767px) {
+
+@media only screen and (max-width: 768px) {
 
     main {
         padding-top: 6.6rem;
     }
 
     //***************************** ABSTRACT
-    .radius-mobile-0 {
+    .radius-tablet-0 {
         @include m-border-radius(0, 0, 0, 0, 0, 0, 0, 0);
     }
 
@@ -216,17 +214,9 @@
         float: none;
     }
 
-    //***************************** Home page
-
-    .hero-explain {
-        margin-top: 18rem;
-        margin-right: 0;
-    }
-
-
     //***************************** General
 
-    .only-on-mobile {
+    .only-on-tablet {
         display: block !important;
     }
 
@@ -236,6 +226,63 @@
 
     .idea-sizer, .idea-tile, .idea-tile.wide {
         width: 100%;
+    }
+
+    //***************************** Home page
+
+    .hero-explain {
+        margin-right: 0;
+        h1 {
+            text-align: center;
+            font-size: $HeadingFontSizeSmall;
+            line-height: $HeadingFontSizeSmall;
+        }
+    }
+
+    .money-raised {
+        position: relative;
+        float: right;
+        margin-bottom: 3rem;
+    }
+
+
+}
+
+/*****************************/
+/*
+/*  MOBILE VIEW
+/*
+/*****************************/
+
+
+@media only screen and (max-width: 450px) {
+
+    .hide-on-mobile {
+        display: none;
+    }
+
+    //***************************** Home page
+
+    .hero-explain {
+        margin-right: 0;
+        h1 {
+            text-align: center;
+            font-size: $HeadingFontSizeSmall;
+            line-height: $HeadingFontSizeSmall;
+        }
+    }
+
+    .money-raised {
+        width: 21rem;
+        height: 9.1rem;
+        background-size: 21rem;
+        right: auto;
+    }
+
+    .raised-amount {
+        font-size: $HeadingFontSizeSmall;
+        width: 16rem;
+        margin-top: 0.6rem;
     }
 
 }

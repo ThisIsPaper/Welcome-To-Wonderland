@@ -20,8 +20,12 @@ $settings : (
 
 @include gridle_setup($settings);
 
-@include gridle_register_state( mobile , (
+@include gridle_register_state( tablet , (
     max-width : 768px /*just do px here otherwise it screws*/
+));
+
+@include gridle_register_state( mobile , (
+    max-width : 450px /*just do px here otherwise it screws*/
 ));
 
 @include gridle_generate_classes();
@@ -109,6 +113,10 @@ $settings : (
 
     &.internal {
         background: $greyReallyLight;
+    }
+
+    &.mega-pad {
+        padding: 3.3rem;
     }
 
 }

@@ -451,6 +451,7 @@ One-off uses
 }
 
 .home-tile-image {
+    @include border-radius(.7rem);
     background-repeat: no-repeat;
     background-size: cover;
     height: 100%;
@@ -574,3 +575,52 @@ One-off uses
     z-index: 5;
     text-indent: -999rem;
 }
+
+
+.share-title {
+    width: 27.8rem;
+    height: 11.6rem;
+    background-image: image-url('share-title@2x.png');
+    background-repeat: no-repeat;
+    background-size: 27.8rem 11.6rem;
+
+}
+
+.share-facebook, .share-twitter, .share-email {
+    background-color: $colorFacebook;
+    font-family: $fontFaceMacmillan;
+    font-size: $FontSizeLarge;
+    color: white;
+    padding: $padSmallValue;
+    line-height: 5.5rem;
+
+    &:before {
+        font-family: $fontFaceIcomoon;
+        content: "\e619";
+        margin-right: $marginSmallValue;
+    }
+}
+
+.share-twitter {
+    background-color: $colorTwitter;
+    &:before {
+        content: "\e61a";
+    }
+}
+
+
+.share-email {
+    background-color: $SecondaryColour;
+    &:before {
+        content: "\e618";
+        margin-right: 0;
+    }
+}
+
+
+/*******************************/// footer
+
+
+.color-facebook { color: $colorFacebook !important; }
+.color-twitter { color: $colorTwitter !important; }
+.color-gplus { color: $colorGPlus !important; }
