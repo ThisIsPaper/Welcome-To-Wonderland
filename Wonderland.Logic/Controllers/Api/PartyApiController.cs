@@ -45,7 +45,8 @@ namespace Wonderland.Logic.Controllers.Api
                                             [Image] = NULL, 
                                             [Timestamp] 
                                 FROM        wonderlandDonation
-                                WHERE       MemberId IN (SELECT MemberId FROM wonderlandMemberParty WHERE PartyGuid = @0)
+                                WHERE       Success = 1
+                                            AND MemberId IN (SELECT MemberId FROM wonderlandMemberParty WHERE PartyGuid = @0)
                                             AND [Timestamp] < @1
                                 UNION ALL
                                 SELECT      PartyWallItemType = " + (int)PartyWallItemType.Message + @", 
@@ -74,7 +75,8 @@ namespace Wonderland.Logic.Controllers.Api
                                     [Image] = NULL, 
                                     [Timestamp] 
                         FROM        wonderlandDonation
-                        WHERE       MemberId IN (SELECT MemberId FROM wonderlandMemberParty WHERE PartyGuid = @0)
+                        WHERE       Success = 1
+                                    AND MemberId IN (SELECT MemberId FROM wonderlandMemberParty WHERE PartyGuid = @0)
                                     AND [Timestamp] < @1
                         ORDER BY    [Timestamp] DESC
                     ";
