@@ -49,28 +49,37 @@
     </div>
 
 
-
     @{
-        Html.RequiresJs("~/scripts/vendor/jquery-1.10.2.js"); // maybe use jquery... not sure yet
+        Html.RequiresJs("~/scripts/vendor/jquery-1.10.2.js");
+        Html.RequiresJs("~/scripts/bower_components/masonry/dist/masonry.pkgd.js");
+        Html.RequiresJs("~/scripts/bower_components/imagesloaded/imagesloaded.pkgd.js");
         Html.RequiresJs("~/scripts/bower_components/angular/angular.js");
         Html.RequiresJs("~/scripts/bower_components/ocModal/dist/ocModal.js");
         Html.RequiresJs("~/scripts/bower_components/moment/moment.js");
         Html.RequiresJs("~/scripts/bower_components/pikaday/pikaday.js");
+
         Html.RequiresJs("~/scripts/app/app.js");
 
+        Html.RequiresJs("~/scripts/app/controllers/faqsCtrl.js");
         Html.RequiresJs("~/scripts/app/controllers/pageCtrl.js");
         Html.RequiresJs("~/scripts/app/controllers/partyCtrl.js");
         Html.RequiresJs("~/scripts/app/controllers/partyDetailsFormCtrl.js");
         Html.RequiresJs("~/scripts/app/controllers/suggestedDonationFormCtrl.js");
         Html.RequiresJs("~/scripts/app/controllers/wallCtrl.js");
+
+        Html.RequiresJs("~/scripts/app/directives/mAngularMasonry.js");
         Html.RequiresJs("~/scripts/app/directives/mDateTimePicker.js");
         Html.RequiresJs("~/scripts/app/directives/mImageUpload.js");
         Html.RequiresJs("~/scripts/app/directives/mFileSelected.js");
         Html.RequiresJs("~/scripts/app/directives/mFundTargetChooser.js");
+        Html.RequiresJs("~/scripts/app/directives/mHeightMatchWidth.js");
         Html.RequiresJs("~/scripts/app/directives/mPostOnSubmit.js");
         Html.RequiresJs("~/scripts/app/directives/mProfileImage.js");
         Html.RequiresJs("~/scripts/app/directives/mRadiusPicker.js");
+        Html.RequiresJs("~/scripts/app/directives/mRotate.js");
+
         Html.RequiresJs("~/scripts/app/filters/all.js");
+
         Html.RequiresJs("~/scripts/app/services/debounce.js");
         Html.RequiresJs("~/scripts/app/services/fileUpload.js");
         Html.RequiresJs("~/scripts/app/services/mHttp.js");
