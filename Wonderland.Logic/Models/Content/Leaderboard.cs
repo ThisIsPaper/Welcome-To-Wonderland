@@ -60,13 +60,9 @@ namespace Wonderland.Logic.Models.Content
             }
         }
 
-        public IEnumerable<PartyHost> Leaders
+        public IEnumerable<PartyHost> TopPartyHosts
         {
-            get
-            {                         
-                // TODO: based on the current LeaderboardType
-                return Enumerable.Empty<PartyHost>();
-            }            
+            get; internal set;
         }
     }
 }
