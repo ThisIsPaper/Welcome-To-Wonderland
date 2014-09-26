@@ -14,7 +14,6 @@ namespace Wonderland.Logic.Extensions
     using Wonderland.Logic.Enums;
     using Wonderland.Logic.Interfaces;
     using Wonderland.Logic.Models.Members;
-    using Wonderland.Logic.Models.Database;
 
     public static class MembershipHelperExtensions
     {
@@ -69,6 +68,14 @@ namespace Wonderland.Logic.Extensions
             return null;
         }
 
+
+        /// <summary>
+        /// TODO: consider refactoring this, so that the additional data of 'partier count' and 'amount raised' is returned and used
+        /// </summary>
+        /// <param name="members"></param>
+        /// <param name="leaderboardType"></param>
+        /// <param name="take"></param>
+        /// <returns></returns>
         public static IEnumerable<PartyHost> GetTopPartyHosts(this MembershipHelper members, LeaderboardType leaderboardType, int take)
         {
             List<PartyHost> partyHosts = new List<PartyHost>();
@@ -79,30 +86,36 @@ namespace Wonderland.Logic.Extensions
             {
                 case LeaderboardType.MostGuests:
 
-                    List<dynamic> mostGuests = databaseContext.Database.Fetch<dynamic>(@"
+                    foreach(dynamic mostGuest in databaseContext.Database.Fetch<dynamic>(@"
                                                                                             SELECT      TOP " + take + @"  
                                                                                                         PartyGuid,
                                                                                                         COUNT(MemberId) AS Partiers
                                                                                             FROM        wonderlandMemberParty
                                                                                             GROUP BY    PartyGuid
                                                                                             ORDER BY    Partiers DESC
-                                                                                        ");
-                    foreach(dynamic partyGuests in mostGuests)
+                                                                                        "))
                     {
-                        partyHosts.Add(members.GetPartyHost((Guid)partyGuests.PartyGuid));
+                        partyHosts.Add(members.GetPartyHost((Guid)mostGuest.PartyGuid));
                     }
 
                     break;
 
                 case LeaderboardType.TopFundraisers:
-                    
 
-                    
+                    foreach(dynamic topFundraiser in databaseContext.Database.Fetch<dynamic>(@"
+                                                                                                SELECT      TOP " + take + @"
+                                                                                                            PartyGuid,
+                                                                                                            SUM(Amount) AS Amount
+                                                                                                FROM        wonderlandDonation
+                                                                                                GROUP BY    PartyGuid
+                                                                                                ORDER BY    Amount DESC
+                                                                                            "))
+                    {
+                        partyHosts.Add(members.GetPartyHost((Guid)topFundraiser.PartyGuid));
+                    }                    
 
                     break;
-
             }
-
 
             return partyHosts;
         }
