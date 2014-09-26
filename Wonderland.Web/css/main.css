@@ -10732,6 +10732,15 @@ Media query variables
   .site-header.compress .right-side ul {
     margin-left: 6.2rem;
   }
+
+  /* line 72, sass/partials/_media-queries.scss */
+  .idea-sizer, .idea-tile {
+    width: 33.3333%;
+  }
+  /* line 75, sass/partials/_media-queries.scss */
+  .idea-sizer.wide, .idea-tile.wide {
+    width: 66.6666%;
+  }
 }
 /*****************************/
 /*
@@ -10739,12 +10748,12 @@ Media query variables
 /*
 /*****************************/
 @media only screen and (max-width: 768px) {
-  /* line 81, sass/partials/_media-queries.scss */
+  /* line 91, sass/partials/_media-queries.scss */
   main {
     padding-top: 6.6rem;
   }
 
-  /* line 86, sass/partials/_media-queries.scss */
+  /* line 96, sass/partials/_media-queries.scss */
   .radius-tablet-0 {
     -moz-border-radius-topleft: 0 0;
     -webkit-border-top-left-radius: 0 0;
@@ -10760,61 +10769,61 @@ Media query variables
     border-bottom-left-radius: 0 0;
   }
 
-  /* line 90, sass/partials/_media-queries.scss */
+  /* line 100, sass/partials/_media-queries.scss */
   .anti-image-shift-details {
     margin-left: 0;
   }
 
-  /* line 94, sass/partials/_media-queries.scss */
+  /* line 104, sass/partials/_media-queries.scss */
   .margin-mobile-bottom-0 {
     margin-bottom: 0;
   }
 
-  /* line 101, sass/partials/_media-queries.scss */
+  /* line 111, sass/partials/_media-queries.scss */
   .page-container.showing-side-nav-menu {
     left: 25.6rem;
   }
 
-  /* line 105, sass/partials/_media-queries.scss */
+  /* line 115, sass/partials/_media-queries.scss */
   .page-container.showing-side-account-menu {
     left: -25.6rem;
   }
 
-  /* line 109, sass/partials/_media-queries.scss */
+  /* line 119, sass/partials/_media-queries.scss */
   .logo {
     top: -16rem;
   }
 
-  /* line 113, sass/partials/_media-queries.scss */
+  /* line 123, sass/partials/_media-queries.scss */
   .logo-ribbon, .site-header.compress .logo-ribbon {
     padding: 1.95rem 9.6rem;
     margin: 12.9rem -9.6rem;
   }
 
-  /* line 118, sass/partials/_media-queries.scss */
+  /* line 128, sass/partials/_media-queries.scss */
   .nav-end-block {
     display: none;
     left: 1.5rem;
     color: #007eac;
   }
 
-  /* line 124, sass/partials/_media-queries.scss */
+  /* line 134, sass/partials/_media-queries.scss */
   .nav-end-block.end-block-right {
     left: auto;
     right: 1.5rem;
   }
 
-  /* line 129, sass/partials/_media-queries.scss */
+  /* line 139, sass/partials/_media-queries.scss */
   .nav-burger, .nav-account {
     display: block;
   }
 
-  /* line 133, sass/partials/_media-queries.scss */
+  /* line 143, sass/partials/_media-queries.scss */
   .nav-end-block, .site-header.compress .nav-end-block {
     top: 1.8rem;
   }
 
-  /* line 137, sass/partials/_media-queries.scss */
+  /* line 147, sass/partials/_media-queries.scss */
   .nav-end-block a, a.nav-end-block {
     font-size: 3rem;
   }
@@ -10822,7 +10831,7 @@ Media query variables
   /**********************/
   /* NAV SIDE MENU
   /**********************/
-  /* line 144, sass/partials/_media-queries.scss */
+  /* line 154, sass/partials/_media-queries.scss */
   .nav-menu, .account-menu {
     position: absolute;
     left: -25.6rem;
@@ -10833,28 +10842,28 @@ Media query variables
     overflow: hidden;
   }
 
-  /* line 154, sass/partials/_media-queries.scss */
+  /* line 164, sass/partials/_media-queries.scss */
   .account-menu {
     left: auto;
     right: -25.6rem;
   }
 
-  /* line 159, sass/partials/_media-queries.scss */
+  /* line 169, sass/partials/_media-queries.scss */
   .menu {
     width: 100%;
   }
-  /* line 162, sass/partials/_media-queries.scss */
+  /* line 172, sass/partials/_media-queries.scss */
   .menu .side-only {
     display: block;
   }
 
-  /* line 167, sass/partials/_media-queries.scss */
+  /* line 177, sass/partials/_media-queries.scss */
   .menu ul {
     float: none;
     margin: 0;
   }
 
-  /* line 172, sass/partials/_media-queries.scss */
+  /* line 182, sass/partials/_media-queries.scss */
   .menu li {
     display: block;
     margin: 0;
@@ -10862,7 +10871,7 @@ Media query variables
     border-bottom: .1rem solid #55554d;
   }
 
-  /* line 179, sass/partials/_media-queries.scss */
+  /* line 189, sass/partials/_media-queries.scss */
   .menu li a {
     line-height: normal;
     color: #d4d3cc;
@@ -10870,57 +10879,80 @@ Media query variables
     font-weight: bold;
   }
 
-  /* line 187, sass/partials/_media-queries.scss */
+  /* line 197, sass/partials/_media-queries.scss */
   .menu li span[class^="icon-"]:before, .menu li span[class*=" icon-"]:before {
     color: #7b7a6d;
     margin-right: 1rem;
     display: inline;
   }
 
-  /* line 193, sass/partials/_media-queries.scss */
+  /* line 203, sass/partials/_media-queries.scss */
   .menu li a:hover {
     color: #a5a395;
     text-decoration: none;
   }
 
-  /* line 199, sass/partials/_media-queries.scss */
+  /* line 209, sass/partials/_media-queries.scss */
   .site-header.compress .left-side ul, .site-header.compress .right-side ul {
     margin-left: 0;
     margin-right: 0;
   }
 
-  /* line 204, sass/partials/_media-queries.scss */
+  /* line 214, sass/partials/_media-queries.scss */
   .site-header.compress .menu li a {
     line-height: normal;
   }
 
-  /* line 213, sass/partials/_media-queries.scss */
+  /* line 223, sass/partials/_media-queries.scss */
   .party-image-container {
     float: none;
   }
 
-  /* line 219, sass/partials/_media-queries.scss */
+  /* line 229, sass/partials/_media-queries.scss */
   .only-on-tablet {
     display: block !important;
   }
 
-  /* line 227, sass/partials/_media-queries.scss */
+  /* line 237, sass/partials/_media-queries.scss */
   .idea-sizer, .idea-tile, .idea-tile.wide {
     width: 100%;
   }
 
-  /* line 233, sass/partials/_media-queries.scss */
+  /* line 241, sass/partials/_media-queries.scss */
+  .idea-details {
+    width: 100%;
+    top: 11%;
+    left: 0;
+    padding: 0 1.2rem;
+  }
+  /* line 247, sass/partials/_media-queries.scss */
+  .idea-details.over-the-top {
+    position: inherit;
+    color: inherit;
+  }
+  /* line 251, sass/partials/_media-queries.scss */
+  .idea-details.over-the-top h1 {
+    color: #025b45;
+    font-size: 2.3rem;
+    line-height: 2.3rem;
+  }
+  /* line 257, sass/partials/_media-queries.scss */
+  .idea-details.over-the-top .spotify-logo {
+    background-position-x: 2.8rem;
+  }
+
+  /* line 265, sass/partials/_media-queries.scss */
   .hero-explain {
     margin-right: 0;
   }
-  /* line 235, sass/partials/_media-queries.scss */
+  /* line 267, sass/partials/_media-queries.scss */
   .hero-explain h1 {
     text-align: center;
     font-size: 2.9rem;
     line-height: 2.9rem;
   }
 
-  /* line 242, sass/partials/_media-queries.scss */
+  /* line 274, sass/partials/_media-queries.scss */
   .money-raised {
     position: relative;
     float: right;
@@ -10933,23 +10965,23 @@ Media query variables
 /*
 /*****************************/
 @media only screen and (max-width: 450px) {
-  /* line 260, sass/partials/_media-queries.scss */
+  /* line 292, sass/partials/_media-queries.scss */
   .hide-on-mobile {
     display: none;
   }
 
-  /* line 266, sass/partials/_media-queries.scss */
+  /* line 298, sass/partials/_media-queries.scss */
   .hero-explain {
     margin-right: 0;
   }
-  /* line 268, sass/partials/_media-queries.scss */
+  /* line 300, sass/partials/_media-queries.scss */
   .hero-explain h1 {
     text-align: center;
     font-size: 2.9rem;
     line-height: 2.9rem;
   }
 
-  /* line 275, sass/partials/_media-queries.scss */
+  /* line 307, sass/partials/_media-queries.scss */
   .money-raised {
     width: 21rem;
     height: 9.1rem;
@@ -10957,7 +10989,7 @@ Media query variables
     right: auto;
   }
 
-  /* line 282, sass/partials/_media-queries.scss */
+  /* line 314, sass/partials/_media-queries.scss */
   .raised-amount {
     font-size: 2.9rem;
     width: 16rem;

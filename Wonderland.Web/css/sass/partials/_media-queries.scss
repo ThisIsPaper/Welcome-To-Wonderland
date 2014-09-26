@@ -67,6 +67,16 @@
         margin-left: 6.2rem;
     }
 
+    //***************************** Party Ideas
+
+    .idea-sizer, .idea-tile {
+        width: 33.3333%;
+
+        &.wide {
+            width: 66.6666%;
+        }
+    }
+
 }
 
 /*****************************/
@@ -226,6 +236,28 @@
 
     .idea-sizer, .idea-tile, .idea-tile.wide {
         width: 100%;
+    }
+
+    .idea-details {
+        width: 100%;
+        top: 11%;
+        left: 0;
+        padding: 0 $padSmallValue;
+
+        &.over-the-top {
+            position: inherit;
+            color: inherit;
+
+            h1 {
+                color: $FourthColour;
+                font-size: $FontSizeLarge;
+                line-height: 2.3rem;
+            }
+
+            .spotify-logo {
+                background-position-x: 2.8rem;
+            }
+        }
     }
 
     //***************************** Home page
