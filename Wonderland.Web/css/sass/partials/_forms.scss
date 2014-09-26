@@ -221,6 +221,10 @@ button[disabled=disabled]:hover {
     cursor: default;
 }
 
+input:-webkit-autofill {
+    color: white !important;
+}
+
 //********************************************** File upload
 
 .choose-file-wrapper {

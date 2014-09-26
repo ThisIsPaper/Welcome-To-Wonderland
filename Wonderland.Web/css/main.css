@@ -6742,7 +6742,12 @@ button[disabled=disabled]:hover {
   cursor: default;
 }
 
-/* line 226, sass/partials/_forms.scss */
+/* line 224, sass/partials/_forms.scss */
+input:-webkit-autofill {
+  color: white !important;
+}
+
+/* line 230, sass/partials/_forms.scss */
 .choose-file-wrapper {
   width: 14rem;
   height: 4rem;
@@ -6750,7 +6755,7 @@ button[disabled=disabled]:hover {
   position: relative;
   cursor: pointer;
 }
-/* line 234, sass/partials/_forms.scss */
+/* line 238, sass/partials/_forms.scss */
 .choose-file-wrapper:before {
   position: relative;
   z-index: 10;
@@ -6760,7 +6765,7 @@ button[disabled=disabled]:hover {
   font-size: 1.4rem;
   line-height: 3.8rem;
 }
-/* line 244, sass/partials/_forms.scss */
+/* line 248, sass/partials/_forms.scss */
 .choose-file-wrapper:after {
   content: "Upload file";
   position: absolute;
@@ -6773,7 +6778,7 @@ button[disabled=disabled]:hover {
   line-height: 1.6rem;
 }
 
-/* line 264, sass/partials/_forms.scss */
+/* line 268, sass/partials/_forms.scss */
 .choose-file {
   width: 200%;
   height: 100%;
@@ -6787,7 +6792,7 @@ button[disabled=disabled]:hover {
   opacity: 0;
 }
 
-/* line 277, sass/partials/_forms.scss */
+/* line 281, sass/partials/_forms.scss */
 .form-field-ico {
   position: absolute;
   top: 0;
@@ -9766,7 +9771,12 @@ button[disabled=disabled]:hover {
   cursor: default;
 }
 
-/* line 226, sass/partials/_forms.scss */
+/* line 224, sass/partials/_forms.scss */
+input:-webkit-autofill {
+  color: white !important;
+}
+
+/* line 230, sass/partials/_forms.scss */
 .choose-file-wrapper {
   width: 14rem;
   height: 4rem;
@@ -9774,7 +9784,7 @@ button[disabled=disabled]:hover {
   position: relative;
   cursor: pointer;
 }
-/* line 234, sass/partials/_forms.scss */
+/* line 238, sass/partials/_forms.scss */
 .choose-file-wrapper:before {
   position: relative;
   z-index: 10;
@@ -9784,7 +9794,7 @@ button[disabled=disabled]:hover {
   font-size: 1.4rem;
   line-height: 3.8rem;
 }
-/* line 244, sass/partials/_forms.scss */
+/* line 248, sass/partials/_forms.scss */
 .choose-file-wrapper:after {
   content: "Upload file";
   position: absolute;
@@ -9797,7 +9807,7 @@ button[disabled=disabled]:hover {
   line-height: 1.6rem;
 }
 
-/* line 264, sass/partials/_forms.scss */
+/* line 268, sass/partials/_forms.scss */
 .choose-file {
   width: 200%;
   height: 100%;
@@ -9811,7 +9821,7 @@ button[disabled=disabled]:hover {
   opacity: 0;
 }
 
-/* line 277, sass/partials/_forms.scss */
+/* line 281, sass/partials/_forms.scss */
 .form-field-ico {
   position: absolute;
   top: 0;
