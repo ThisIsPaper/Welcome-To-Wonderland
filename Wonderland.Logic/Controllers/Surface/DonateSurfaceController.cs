@@ -64,18 +64,6 @@ namespace Wonderland.Logic.Controllers.Surface
             if (this.Members.IsLoggedIn())
             {
                 memberId = this.Members.GetCurrentMemberId();
-
-                // if it's a party host, their billing address defaults to the party / partykit address,
-                // so setting billing here, such that it's always the last used
-                //Address address = new Address()
-                //                    {
-                //                        Address1 = donateForm.Address1,
-                //                        Address2 = donateForm.Address2,
-                //                        TownCity = donateForm.TownCity,
-                //                        Postcode = donateForm.Postcode
-                //                    };
-
-                //((IPartier)this.Members.GetCurrentMember()).BillingAddress = address;                
             }
 
             DonationRow donationRow = new DonationRow()
@@ -90,7 +78,6 @@ namespace Wonderland.Logic.Controllers.Surface
                                             Address2 = donateForm.Address2,
                                             TownCity = donateForm.TownCity,
                                             Postcode = donateForm.Postcode,
-                                            Timestamp = DateTime.Now,
                                             PaymentJourney = PaymentJourney.Donate,
                                             Success = false
                                         };

@@ -358,6 +358,7 @@
     <Content Include="Views\Donate\Complete.cshtml" />
     <Content Include="Views\PlaylistTile.cshtml" />
     <Content Include="Views\RecipeTile.cshtml" />
+    <Content Include="Views\RegisterGuest\Failed.cshtml" />
     <None Include="Views\RegisterHostSurface\RegisterHostForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -409,7 +410,7 @@
     <Content Include="Views\Login.cshtml" />
     <Content Include="Views\ResetPassword.cshtml" />
     <Content Include="Views\RegisterGuest\RegisterGuest.cshtml" />
-    <Content Include="Views\RegisterGuest\RegisterGuestConfirmation.cshtml" />
+    <Content Include="Views\RegisterGuest\Complete.cshtml" />
     <Content Include="Views\RegisterHost\RegisterHost.cshtml" />
     <Content Include="Views\RegisterHost\RegisterHostPartyKit.cshtml" />
     <Content Include="Views\RegisterHost\RegisterHostPartyUrl.cshtml" />

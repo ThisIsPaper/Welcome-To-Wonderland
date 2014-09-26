@@ -10,6 +10,11 @@ namespace Wonderland.Logic.Models.Database
     [PrimaryKey("VendorTxCode", autoIncrement=true)]
     public class DonationRow
     {
+        public DonationRow()
+        {
+            this.Timestamp = DateTime.Now;
+        }
+
         [Column("VendorTxCode")]
         public int VendorTxCode { get; set; }
 
