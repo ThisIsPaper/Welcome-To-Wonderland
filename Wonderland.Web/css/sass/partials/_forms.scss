@@ -121,7 +121,7 @@ $btnPaddingLarge: $btnPaddingMedium*2;
 }
 
 
-.errorred {
+.errorred, .field-validation-error {
     @extend .successful;
     color: $redDark;
     background-color: $redLight;
@@ -219,10 +219,6 @@ button[disabled=disabled]:hover {
     background-color: $greyLight;
     color: $greyMedium;
     cursor: default;
-}
-
-input:-webkit-autofill {
-    color: white !important;
 }
 
 //********************************************** File upload

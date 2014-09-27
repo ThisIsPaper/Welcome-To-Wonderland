@@ -4,8 +4,6 @@
 {
     @Html.AntiForgeryToken()
 
-    @*@Html.EditorForModel()*@
-
     @* TODO: strip tags from validation message *@
     <div class="errorred" ng-show="errorMessage.length>0" ng-init="errorMessage='@Html.ValidationMessage("LoginValidation")'" ng-bind="errorMessage"></div>
 

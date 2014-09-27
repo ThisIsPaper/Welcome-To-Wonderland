@@ -137,7 +137,7 @@ Font Sizes
 }
 
 /* line 507, sass/partials/_helpers.scss */
-.body-small, .form-info, .warning, .party-image-container .warner, .successful, .errorred, .extra-info-block, label, .file-upload-info, .wall-details {
+.body-small, .form-info, .warning, .party-image-container .warner, .successful, .errorred, .field-validation-error, .extra-info-block, label, .file-upload-info, .wall-details {
   font-size: 1.4rem;
 }
 
@@ -401,7 +401,7 @@ abstract
  * @param 	list 	$statesNames 		The states names to generate
  */
 /* line 14, sass/partials/_abstract.scss */
-.pad-tiny, .btn-primary.btn-mini, .btn-mini.btn-secondary, .btn-mini.choose-file-wrapper:after, .successful, .errorred, .extra-info-block, .totaliser {
+.pad-tiny, .btn-primary.btn-mini, .btn-mini.btn-secondary, .btn-mini.choose-file-wrapper:after, .successful, .errorred, .field-validation-error, .extra-info-block, .totaliser {
   padding: 0.6rem;
 }
 
@@ -701,7 +701,7 @@ abstract
 }
 
 /* line 87, sass/partials/_abstract.scss */
-.margin-right-tiny, .successful span[class^="icon-"], .errorred span[class^="icon-"], .extra-info-block span[class^="icon-"], .successful span[class*=" icon-"], .errorred span[class*=" icon-"], .extra-info-block span[class*=" icon-"], .successful:before, .errorred:before, .extra-info-block:before {
+.margin-right-tiny, .successful span[class^="icon-"], .errorred span[class^="icon-"], .field-validation-error span[class^="icon-"], .extra-info-block span[class^="icon-"], .successful span[class*=" icon-"], .errorred span[class*=" icon-"], .field-validation-error span[class*=" icon-"], .extra-info-block span[class*=" icon-"], .successful:before, .errorred:before, .field-validation-error:before, .extra-info-block:before {
   margin-right: 0.6rem;
 }
 
@@ -746,7 +746,7 @@ abstract
 }
 
 /* line 98, sass/partials/_abstract.scss */
-.margin-bottom-small, .form-info, .warning, .party-image-container .warner, .successful, .errorred, .extra-info-block, label.radio-form {
+.margin-bottom-small, .form-info, .warning, .party-image-container .warner, .successful, .errorred, .field-validation-error, .extra-info-block, label.radio-form {
   margin-bottom: 1.2rem;
 }
 
@@ -766,7 +766,7 @@ abstract
 }
 
 /* line 103, sass/partials/_abstract.scss */
-.margin-top-small, .form-info, .warning, .party-image-container .warner, .successful, .errorred, .extra-info-block {
+.margin-top-small, .form-info, .warning, .party-image-container .warner, .successful, .errorred, .field-validation-error, .extra-info-block {
   margin-top: 1.2rem;
 }
 
@@ -1006,7 +1006,7 @@ abstract
 }
 
 /* line 165, sass/partials/_abstract.scss */
-.radius-v1-small, .successful, .errorred, .extra-info-block, .idea-tile {
+.radius-v1-small, .successful, .errorred, .field-validation-error, .extra-info-block, .idea-tile {
   -moz-border-radius-topleft: 1.64rem 1.1rem;
   -webkit-border-top-left-radius: 1.64rem 1.1rem;
   border-top-left-radius: 1.64rem 1.1rem;
@@ -5457,7 +5457,7 @@ abstract
  * @param 	list 	$statesNames 		The states names to generate
  */
 /* line 14, sass/partials/_abstract.scss */
-.pad-tiny, .btn-primary.btn-mini, .btn-mini.btn-secondary, .btn-mini.choose-file-wrapper:after, .successful, .errorred, .extra-info-block, .totaliser {
+.pad-tiny, .btn-primary.btn-mini, .btn-mini.btn-secondary, .btn-mini.choose-file-wrapper:after, .successful, .errorred, .field-validation-error, .extra-info-block, .totaliser {
   padding: 0.6rem;
 }
 
@@ -5757,7 +5757,7 @@ abstract
 }
 
 /* line 87, sass/partials/_abstract.scss */
-.margin-right-tiny, .successful span[class^="icon-"], .errorred span[class^="icon-"], .extra-info-block span[class^="icon-"], .successful span[class*=" icon-"], .errorred span[class*=" icon-"], .extra-info-block span[class*=" icon-"], .successful:before, .errorred:before, .extra-info-block:before {
+.margin-right-tiny, .successful span[class^="icon-"], .errorred span[class^="icon-"], .field-validation-error span[class^="icon-"], .extra-info-block span[class^="icon-"], .successful span[class*=" icon-"], .errorred span[class*=" icon-"], .field-validation-error span[class*=" icon-"], .extra-info-block span[class*=" icon-"], .successful:before, .errorred:before, .field-validation-error:before, .extra-info-block:before {
   margin-right: 0.6rem;
 }
 
@@ -5802,7 +5802,7 @@ abstract
 }
 
 /* line 98, sass/partials/_abstract.scss */
-.margin-bottom-small, .form-info, .warning, .party-image-container .warner, .successful, .errorred, .extra-info-block, label.radio-form {
+.margin-bottom-small, .form-info, .warning, .party-image-container .warner, .successful, .errorred, .field-validation-error, .extra-info-block, label.radio-form {
   margin-bottom: 1.2rem;
 }
 
@@ -5822,7 +5822,7 @@ abstract
 }
 
 /* line 103, sass/partials/_abstract.scss */
-.margin-top-small, .form-info, .warning, .party-image-container .warner, .successful, .errorred, .extra-info-block {
+.margin-top-small, .form-info, .warning, .party-image-container .warner, .successful, .errorred, .field-validation-error, .extra-info-block {
   margin-top: 1.2rem;
 }
 
@@ -6062,7 +6062,7 @@ abstract
 }
 
 /* line 165, sass/partials/_abstract.scss */
-.radius-v1-small, .successful, .errorred, .extra-info-block, .idea-tile {
+.radius-v1-small, .successful, .errorred, .field-validation-error, .extra-info-block, .idea-tile {
   -moz-border-radius-topleft: 1.64rem 1.1rem;
   -webkit-border-top-left-radius: 1.64rem 1.1rem;
   border-top-left-radius: 1.64rem 1.1rem;
@@ -6642,24 +6642,24 @@ Media query variables
 }
 
 /* line 104, sass/partials/_forms.scss */
-.successful, .errorred, .extra-info-block {
+.successful, .errorred, .field-validation-error, .extra-info-block {
   color: #00A246;
   background-color: #D1E8B2;
   text-align: center;
 }
 /* line 116, sass/partials/_forms.scss */
-.successful:before, .errorred:before, .extra-info-block:before {
+.successful:before, .errorred:before, .field-validation-error:before, .extra-info-block:before {
   font-family: "icomoon";
   content: "\e61f";
 }
 
 /* line 124, sass/partials/_forms.scss */
-.errorred {
+.errorred, .field-validation-error {
   color: #E32333;
   background-color: #FCE9EA;
 }
 /* line 129, sass/partials/_forms.scss */
-.errorred:before {
+.errorred:before, .field-validation-error:before {
   font-family: "icomoon";
   content: "\e620";
 }
@@ -6742,12 +6742,7 @@ button[disabled=disabled]:hover {
   cursor: default;
 }
 
-/* line 224, sass/partials/_forms.scss */
-input:-webkit-autofill {
-  color: white !important;
-}
-
-/* line 230, sass/partials/_forms.scss */
+/* line 226, sass/partials/_forms.scss */
 .choose-file-wrapper {
   width: 14rem;
   height: 4rem;
@@ -6755,7 +6750,7 @@ input:-webkit-autofill {
   position: relative;
   cursor: pointer;
 }
-/* line 238, sass/partials/_forms.scss */
+/* line 234, sass/partials/_forms.scss */
 .choose-file-wrapper:before {
   position: relative;
   z-index: 10;
@@ -6765,7 +6760,7 @@ input:-webkit-autofill {
   font-size: 1.4rem;
   line-height: 3.8rem;
 }
-/* line 248, sass/partials/_forms.scss */
+/* line 244, sass/partials/_forms.scss */
 .choose-file-wrapper:after {
   content: "Upload file";
   position: absolute;
@@ -6778,7 +6773,7 @@ input:-webkit-autofill {
   line-height: 1.6rem;
 }
 
-/* line 268, sass/partials/_forms.scss */
+/* line 264, sass/partials/_forms.scss */
 .choose-file {
   width: 200%;
   height: 100%;
@@ -6792,7 +6787,7 @@ input:-webkit-autofill {
   opacity: 0;
 }
 
-/* line 281, sass/partials/_forms.scss */
+/* line 277, sass/partials/_forms.scss */
 .form-field-ico {
   position: absolute;
   top: 0;
@@ -7193,7 +7188,7 @@ Font Sizes
 }
 
 /* line 507, sass/partials/_helpers.scss */
-.body-small, .form-info, .warning, .party-image-container .warner, .successful, .errorred, .extra-info-block, label, .file-upload-info, .wall-details {
+.body-small, .form-info, .warning, .party-image-container .warner, .successful, .errorred, .field-validation-error, .extra-info-block, label, .file-upload-info, .wall-details {
   font-size: 1.4rem;
 }
 
@@ -7414,7 +7409,7 @@ abstract
  * @param 	list 	$statesNames 		The states names to generate
  */
 /* line 14, sass/partials/_abstract.scss */
-.pad-tiny, .btn-primary.btn-mini, .btn-mini.btn-secondary, .btn-mini.choose-file-wrapper:after, .successful, .errorred, .extra-info-block, .totaliser {
+.pad-tiny, .btn-primary.btn-mini, .btn-mini.btn-secondary, .btn-mini.choose-file-wrapper:after, .successful, .errorred, .field-validation-error, .extra-info-block, .totaliser {
   padding: 0.6rem;
 }
 
@@ -7714,7 +7709,7 @@ abstract
 }
 
 /* line 87, sass/partials/_abstract.scss */
-.margin-right-tiny, .successful span[class^="icon-"], .errorred span[class^="icon-"], .extra-info-block span[class^="icon-"], .successful span[class*=" icon-"], .errorred span[class*=" icon-"], .extra-info-block span[class*=" icon-"], .successful:before, .errorred:before, .extra-info-block:before {
+.margin-right-tiny, .successful span[class^="icon-"], .errorred span[class^="icon-"], .field-validation-error span[class^="icon-"], .extra-info-block span[class^="icon-"], .successful span[class*=" icon-"], .errorred span[class*=" icon-"], .field-validation-error span[class*=" icon-"], .extra-info-block span[class*=" icon-"], .successful:before, .errorred:before, .field-validation-error:before, .extra-info-block:before {
   margin-right: 0.6rem;
 }
 
@@ -7759,7 +7754,7 @@ abstract
 }
 
 /* line 98, sass/partials/_abstract.scss */
-.margin-bottom-small, .form-info, .warning, .party-image-container .warner, .successful, .errorred, .extra-info-block, label.radio-form {
+.margin-bottom-small, .form-info, .warning, .party-image-container .warner, .successful, .errorred, .field-validation-error, .extra-info-block, label.radio-form {
   margin-bottom: 1.2rem;
 }
 
@@ -7779,7 +7774,7 @@ abstract
 }
 
 /* line 103, sass/partials/_abstract.scss */
-.margin-top-small, .form-info, .warning, .party-image-container .warner, .successful, .errorred, .extra-info-block {
+.margin-top-small, .form-info, .warning, .party-image-container .warner, .successful, .errorred, .field-validation-error, .extra-info-block {
   margin-top: 1.2rem;
 }
 
@@ -8019,7 +8014,7 @@ abstract
 }
 
 /* line 165, sass/partials/_abstract.scss */
-.radius-v1-small, .successful, .errorred, .extra-info-block, .idea-tile {
+.radius-v1-small, .successful, .errorred, .field-validation-error, .extra-info-block, .idea-tile {
   -moz-border-radius-topleft: 1.64rem 1.1rem;
   -webkit-border-top-left-radius: 1.64rem 1.1rem;
   border-top-left-radius: 1.64rem 1.1rem;
@@ -8486,7 +8481,7 @@ abstract
  * @param 	list 	$statesNames 		The states names to generate
  */
 /* line 14, sass/partials/_abstract.scss */
-.pad-tiny, .btn-primary.btn-mini, .btn-mini.btn-secondary, .btn-mini.choose-file-wrapper:after, .successful, .errorred, .extra-info-block, .totaliser {
+.pad-tiny, .btn-primary.btn-mini, .btn-mini.btn-secondary, .btn-mini.choose-file-wrapper:after, .successful, .errorred, .field-validation-error, .extra-info-block, .totaliser {
   padding: 0.6rem;
 }
 
@@ -8786,7 +8781,7 @@ abstract
 }
 
 /* line 87, sass/partials/_abstract.scss */
-.margin-right-tiny, .successful span[class^="icon-"], .errorred span[class^="icon-"], .extra-info-block span[class^="icon-"], .successful span[class*=" icon-"], .errorred span[class*=" icon-"], .extra-info-block span[class*=" icon-"], .successful:before, .errorred:before, .extra-info-block:before {
+.margin-right-tiny, .successful span[class^="icon-"], .errorred span[class^="icon-"], .field-validation-error span[class^="icon-"], .extra-info-block span[class^="icon-"], .successful span[class*=" icon-"], .errorred span[class*=" icon-"], .field-validation-error span[class*=" icon-"], .extra-info-block span[class*=" icon-"], .successful:before, .errorred:before, .field-validation-error:before, .extra-info-block:before {
   margin-right: 0.6rem;
 }
 
@@ -8831,7 +8826,7 @@ abstract
 }
 
 /* line 98, sass/partials/_abstract.scss */
-.margin-bottom-small, .form-info, .warning, .party-image-container .warner, .successful, .errorred, .extra-info-block, label.radio-form {
+.margin-bottom-small, .form-info, .warning, .party-image-container .warner, .successful, .errorred, .field-validation-error, .extra-info-block, label.radio-form {
   margin-bottom: 1.2rem;
 }
 
@@ -8851,7 +8846,7 @@ abstract
 }
 
 /* line 103, sass/partials/_abstract.scss */
-.margin-top-small, .form-info, .warning, .party-image-container .warner, .successful, .errorred, .extra-info-block {
+.margin-top-small, .form-info, .warning, .party-image-container .warner, .successful, .errorred, .field-validation-error, .extra-info-block {
   margin-top: 1.2rem;
 }
 
@@ -9091,7 +9086,7 @@ abstract
 }
 
 /* line 165, sass/partials/_abstract.scss */
-.radius-v1-small, .successful, .errorred, .extra-info-block, .idea-tile {
+.radius-v1-small, .successful, .errorred, .field-validation-error, .extra-info-block, .idea-tile {
   -moz-border-radius-topleft: 1.64rem 1.1rem;
   -webkit-border-top-left-radius: 1.64rem 1.1rem;
   border-top-left-radius: 1.64rem 1.1rem;
@@ -9671,24 +9666,24 @@ Media query variables
 }
 
 /* line 104, sass/partials/_forms.scss */
-.successful, .errorred, .extra-info-block {
+.successful, .errorred, .field-validation-error, .extra-info-block {
   color: #00A246;
   background-color: #D1E8B2;
   text-align: center;
 }
 /* line 116, sass/partials/_forms.scss */
-.successful:before, .errorred:before, .extra-info-block:before {
+.successful:before, .errorred:before, .field-validation-error:before, .extra-info-block:before {
   font-family: "icomoon";
   content: "\e61f";
 }
 
 /* line 124, sass/partials/_forms.scss */
-.errorred {
+.errorred, .field-validation-error {
   color: #E32333;
   background-color: #FCE9EA;
 }
 /* line 129, sass/partials/_forms.scss */
-.errorred:before {
+.errorred:before, .field-validation-error:before {
   font-family: "icomoon";
   content: "\e620";
 }
@@ -9771,12 +9766,7 @@ button[disabled=disabled]:hover {
   cursor: default;
 }
 
-/* line 224, sass/partials/_forms.scss */
-input:-webkit-autofill {
-  color: white !important;
-}
-
-/* line 230, sass/partials/_forms.scss */
+/* line 226, sass/partials/_forms.scss */
 .choose-file-wrapper {
   width: 14rem;
   height: 4rem;
@@ -9784,7 +9774,7 @@ input:-webkit-autofill {
   position: relative;
   cursor: pointer;
 }
-/* line 238, sass/partials/_forms.scss */
+/* line 234, sass/partials/_forms.scss */
 .choose-file-wrapper:before {
   position: relative;
   z-index: 10;
@@ -9794,7 +9784,7 @@ input:-webkit-autofill {
   font-size: 1.4rem;
   line-height: 3.8rem;
 }
-/* line 248, sass/partials/_forms.scss */
+/* line 244, sass/partials/_forms.scss */
 .choose-file-wrapper:after {
   content: "Upload file";
   position: absolute;
@@ -9807,7 +9797,7 @@ input:-webkit-autofill {
   line-height: 1.6rem;
 }
 
-/* line 268, sass/partials/_forms.scss */
+/* line 264, sass/partials/_forms.scss */
 .choose-file {
   width: 200%;
   height: 100%;
@@ -9821,7 +9811,7 @@ input:-webkit-autofill {
   opacity: 0;
 }
 
-/* line 281, sass/partials/_forms.scss */
+/* line 277, sass/partials/_forms.scss */
 .form-field-ico {
   position: absolute;
   top: 0;

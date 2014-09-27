@@ -2,6 +2,26 @@
 @{
     Layout = "~/Views/SitePage.cshtml";
 }
-<h1>Register Host</h1>
 
-@(Html.Action<RegisterHostSurfaceController>("RenderRegisterHostForm"))
+
+<div class="page-bg">
+
+    <div class="container gutter">
+
+        <div class="wgrid-main centered">
+
+            <div class="boxx" m-radius-picker>
+
+                <h1><span class="icon-icon_person lighter margin-right-small"></span><span class="bigger">Register host</span></h1>
+
+                <hr/>
+
+                @(Html.Action<RegisterHostSurfaceController>("RenderRegisterHostForm"))
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
