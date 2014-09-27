@@ -15,7 +15,7 @@ wonderlandApp.directive('mProfileImage', [function () {
 
             attrs.$observe('mProfileImage', function (newVal) {
 
-                if (!newVal || !angular.isString(newVal)) {
+                if (!newVal || !angular.isString(newVal) || ['.jpg', '.jpeg', '.png'].indexOf(newVal.toLowerCase()) < 0) {
 
                     scope.hasBackgroundImage = false;
 

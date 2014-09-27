@@ -8,20 +8,27 @@
 
     <div class="container gutter" ng-controller="PartyCtrl" ng-init="profileImageUrlInit('@Model.PartyHost.ProfileImageUrl')">
 
-        <div class="wgrid-main wgrid-no-bottom-margin parent">
+        <div class="wgrid-main wgrid-no-bottom-margin">
 
             <div class="wgrid-full parent">
                 <div class="boxx collapse" m-radius-picker="large">
 
                     <div class="wgrid-full wgrid-no-bottom-margin">
                         <div class="grid-12 party-main-image" ng-init="hardCodedCurrentPartyImageUrlInit('@Model.PartyHost.PartyImage')" ng-style="{'background-image': 'url(' + partyImageData.PartyImage +')'}"></div>
+
+                        <div class="party-image-default" ng-show="profileImage.url.length>0">
+                            <div class="icon-icon_camera"></div>
+                            <div>Choose my party picture</div>
+                        </div>
+
                         <div class="edit-trigger" ng-click="openPageModal('partials/partyImageForm.html', 'partyImageModal', {'partyImageData': partyImageDataForForm, 'partyCustomImage': partyCustomImage})"><span class="edit-label">Edit</span><span class="icon-icon_edit"></span></div>
+
                     </div>
 
                     <div class="wgrid-full pad-large">
                         <div m-profile-image="{{ profileImage.url }}" m-radius-picker="small" ng-click="openPageModal('partials/profileImageForm.html', 'profileImageModal', {'profileImage': profileImage})"></div>
                         <div class="party-details">
-                            <h3 class="pad-right-3" ng-bind="partyDetailsData.PartyHeading">@this.Model.Heading</h3>
+                            <h3 class="pad-right-3 margin-top-0 margin-bottom-small" ng-bind="partyDetailsData.PartyHeading">@this.Model.Heading</h3>
                             <div class="body-small float-left margin-right-medium">
                                 <span class="icon-icon_clock"></span>
                                 <span ng-bind="partyDetailsData.PartyDateTime|datePreviewFormat"></span>
@@ -83,7 +90,7 @@
                 <div class="boxx" m-radius-picker>
                     <h4 class="top">Suggested ticket price</h4>
 
-                    <div class="ticket centered selected">
+                    <div class="ticket selected margin-left-3 margin-right-3">
                         <div class="stub">
                             <div class="holes"></div>
                             <div class="holes-right"></div>
@@ -97,7 +104,7 @@
 
 
             <div class="wgrid-full">
-                @Html.ActionLink("Pay in money", "NavigateToDonateUrl", "DonateSurface", new { partyGuid = Model.PartyHost.PartyGuid }, new { @class = "btn-primary btn-large piggy-donater", @m_radius_picker="small medium" })
+                @Html.ActionLink("Pay in money", "NavigateToDonateUrl", "DonateSurface", new { partyGuid = Model.PartyHost.PartyGuid }, new { @class = "btn-primary btn-large piggy-donater dis-block", @m_radius_picker="small medium" })
             </div>
 
 

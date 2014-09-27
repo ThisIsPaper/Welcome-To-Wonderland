@@ -221,10 +221,6 @@ abstract
     position: static;
 }
 
-.only-on-tablet {
-    display: none;
-}
-
 .pos-top-0 {
     top: 0;
 }
@@ -234,9 +230,24 @@ abstract
 }
 
 
+//**************************************** DISPLAY
+
+
+.only-on-tablet {
+    display: none;
+}
+
+.dis-block {
+    display: block;
+}
+
 
 
 //**************************************** WIDTH
+
+.width-100p {
+    width: 100%;
+}
 
 .width-50p {
     width: 50%;

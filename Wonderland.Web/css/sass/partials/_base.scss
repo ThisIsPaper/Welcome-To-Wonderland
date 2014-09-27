@@ -97,6 +97,7 @@ main {
 }
 
 
+
 /* =============================================================================
 Event Page specific - move these out of here eventually
 ========================================================================== */
@@ -108,6 +109,17 @@ Event Page specific - move these out of here eventually
     &.side {
         height: 18rem;
     }
+}
+
+.party-image-default {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    color: $SecondaryColour;
+    font-size: $FontSizeLarge;
+    background-color: $greyLight;
+    padding-top: 17rem;
 }
 
 .edit-trigger {
@@ -299,6 +311,7 @@ Event Page specific - move these out of here eventually
 
 
 .ticket {
+    position: relative;
 
     .stub {
         @extend .pad-medium;
