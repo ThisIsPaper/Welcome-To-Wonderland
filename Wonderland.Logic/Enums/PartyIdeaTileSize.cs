@@ -8,19 +8,8 @@ namespace Wonderland.Logic.Enums
     /// </summary>
     public enum PartyIdeaTileSize
     {
-        /// <summary>
-        /// Large
-        /// </summary>
-        Large,
+        Narrow,
 
-        /// <summary>
-        /// Medium
-        /// </summary>
-        Medium,
-
-        /// <summary>
-        /// Small
-        /// </summary>
-        Small
+        Wide
     }
 }

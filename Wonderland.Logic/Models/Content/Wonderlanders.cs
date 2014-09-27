@@ -98,21 +98,9 @@ namespace Wonderland.Logic.Models.Content
             return this.Children<Leaderboard>().Single();
         }
 
-        public IEnumerable<PartyHost> TopFundraisers
-        {
-            get
-            {
-                return this.Members.GetTopPartyHosts(LeaderboardType.TopFundraisers, this.TopFundraisersCount);
-            }
-        }
+        public IEnumerable<PartyHost> TopFundraisers { get; internal set; }
 
-        public IEnumerable<PartyHost> MostGuests
-        {
-            get
-            {
-                return this.Members.GetTopPartyHosts(LeaderboardType.MostGuests, this.MostGuestsCount);
-            }
-        }
+        public IEnumerable<PartyHost> MostGuests  { get; internal set; }
 
         //public IEnumerable<PartyHost> BadgesToday
         //{  

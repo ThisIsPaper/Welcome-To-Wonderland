@@ -1,0 +1,8 @@
+﻿@inherits UmbracoViewPage<FundraisingTile>
+@{
+    Layout = "SitePage.cshtml";
+}
+<h1>@Model.TileHeading</h1>
+<p>@Model.TileCopy</p>
+<img src="@Model.TileImage.Url" />
+
