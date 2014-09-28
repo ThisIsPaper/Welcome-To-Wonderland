@@ -360,6 +360,7 @@
     <Content Include="Views\RecipeTile.cshtml" />
     <Content Include="Views\RegisterGuest\Failed.cshtml" />
     <Content Include="Views\FundraisingTile.cshtml" />
+    <Content Include="Views\MyProfile.cshtml" />
     <None Include="Views\RegisterHostSurface\RegisterHostForm.cshtml" />
   </ItemGroup>
   <ItemGroup>

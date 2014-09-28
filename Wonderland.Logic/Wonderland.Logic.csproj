@@ -239,6 +239,7 @@
     <Compile Include="Models\Content\FundraisingIdeas.cs" />
     <Compile Include="Models\Content\FundraisingTile.cs" />
     <Compile Include="Models\Content\Home.cs" />
+    <Compile Include="Models\Content\MyProfile.cs" />
     <Compile Include="Models\Content\PageNotFound.cs" />
     <Compile Include="Models\Content\Donate.cs" />
     <Compile Include="Models\Content\Leaderboard.cs" />
