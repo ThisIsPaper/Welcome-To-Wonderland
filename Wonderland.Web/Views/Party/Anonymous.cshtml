@@ -32,7 +32,7 @@
 
 @* totaliser *@
 
-@if (!this.Members.IsLoggedIn())
+@if (!this.Members.IsLoggedInPartier())
 {
     @* only users who don't already have a party can 'join the party' *@ 
     @Html.ActionLink("Join the party", "NavigateToRegisterGuestUrl", "RegisterGuestSurface", new { partyGuid = Model.PartyHost.PartyGuid }, new { @class = "" })    

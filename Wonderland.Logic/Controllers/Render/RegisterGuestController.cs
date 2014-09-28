@@ -40,7 +40,7 @@ namespace Wonderland.Logic.Controllers.Render
 
                 if (model.PartyHost != null)
                 {
-                    if (this.Members.IsLoggedIn())
+                    if (this.Members.IsLoggedInPartier())
                     {
                         if (this.Members.GetCurrentMember() is PartyGuest)
                         {

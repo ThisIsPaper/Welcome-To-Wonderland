@@ -34,7 +34,7 @@ namespace Wonderland.Logic.Controllers.Surface
             // set the default amount to the party host's suggested donation
             donateForm.Amount = this.Members.GetPartyHost(donateForm.PartyGuid).SuggestedDonation;
 
-            if (this.Members.IsLoggedIn())
+            if (this.Members.IsLoggedInPartier())
             {
                 IPartier partier = (IPartier)this.Members.GetCurrentMember();
 
@@ -61,7 +61,7 @@ namespace Wonderland.Logic.Controllers.Surface
 
             int? memberId = null;
 
-            if (this.Members.IsLoggedIn())
+            if (this.Members.IsLoggedInPartier())
             {
                 memberId = this.Members.GetCurrentMemberId();
             }

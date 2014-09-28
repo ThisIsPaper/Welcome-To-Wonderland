@@ -11,7 +11,8 @@
 
 
 
-    @if (!this.Members.IsLoggedIn())
+
+    @if (!this.Members.IsLoggedInPartier())
     {
         <a href="@Url.Action("NavigateToRegisterHostUrl", "RegisterHostSurface")" class="btn-primary btn-small nav-end-block" m-radius-picker="small">Host a party <span class="icon-icon_chevron_right"></span></a>
     }
@@ -22,7 +23,7 @@
 
 
 
-    @if (!this.Members.IsLoggedIn())
+    @if (!this.Members.IsLoggedInPartier())
     {
         <div class="nav-end-block end-block-right">
             <a href="@Url.Action("NavigateToLoginUrl", "LoginSurface")" class="btn-secondary btn-small" m-radius-picker="small">Login <span class="icon-icon_person"></span></a>

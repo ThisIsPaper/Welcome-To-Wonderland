@@ -14,7 +14,7 @@
 }
 
 
-@if (!this.Members.IsLoggedIn())
+@if (!this.Members.IsLoggedInPartier())
 {
     @Html.ActionLink(Model.RegisterHostLinkText, "NavigateToRegisterHostUrl", "RegisterHostSurface", null, null)
 }
