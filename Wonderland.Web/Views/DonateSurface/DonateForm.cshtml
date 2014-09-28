@@ -4,7 +4,101 @@
 {
     @Html.AntiForgeryToken()
 
-    @Html.EditorForModel()
+    @*@Html.EditorForModel()*@
 
-    <button type="submit">Submit</button>
+
+
+    <h3>Are you going?</h3>
+
+    <label class="radio-form"><input type="radio" name="going" />I'm attending the party</label>
+    <label class="radio-form"><input type="radio" name="going" />I can't make the date, but would love to donate</label>
+
+    <hr/>
+
+    <h3>Choose your donation amount</h3>
+    <p>Nullam fermentum, felis vel tempus imperdiet, magna tellus bibendum lorem, ut tempus purus nulla eget neque. Integer dapibus vulputate mi, in mattis metus venenatis non</p>
+
+
+    <div class="container">
+        <div class="pos-relative grid-3 grid-mobile-6 pad-0" ng-repeat="donation in guideDonationSuggestions">
+            <label>
+
+                <div class="ticket clickable" ng-class="{'selected': guideDonation.donation==donation.amount}">
+
+                    <div class="stub">
+                        <div class="holes"></div>
+                        <div class="holes-right"></div>
+                        <div class="price">£<span ng-bind="donation.amount"></span></div>
+                    </div>
+
+                    <div class="form-info body-highlight text-align-center" ng-bind="donation.label"></div>
+
+                    <input type="radio" name="Amount" ng-value="donation.amount" ng-model="guideDonation.donation" />
+
+                </div>
+
+            </label>
+        </div>
+    </div>
+
+
+
+    <div class="clear width-50p">
+        <label>Or a custom amount</label>
+        <div class="pos-relative width-50p">
+            <span class="form-field-ico">£</span>
+            @Html.TextBoxFor(x => x.Amount, new { @class="currency", @ng_model="guideDonation.donation", @m_radius_picker="small", @m_valid_number="", @m_value_matcher="" })
+        </div>
+
+        <div class="form-info">Enter a value between £0 and £200</div>
+    </div>
+
+
+    <h3>Add Gift Aid</h3>
+
+    <p>With Gift Aid your donation will be worth 25% more to Macmillan Cancer Support at no extra cost to you.</p>
+
+    <p class="extra-info-block">With Gift Aid your <span class="body-bold" ng-bind="guideDonation.donation|mCurrency:'£'"></span> donation will give <span class="body-bold" ng-bind="guideDonation.donation*1.25|mCurrency:'£'"></span> to Macmillan!</p>
+
+    <label class="radio-form">
+        @Html.CheckBoxFor(m => m.AllowGiftAid)
+        <span class="body-emphasize">I am a UK taxpayer.</span> Please treat all donations I make or have made to Macmillan Cancer Support for the past for years as Gift Aid donations until I notify you otherwise
+    </label>
+
+    <p class="form-info">I understand that I must have paid or will pay an amount of Income Tax and/or Capital Gains Tax in each tax year, that is at least equal to the tax that Charities & Community Amateur Sports Clubs (CASCs) I donate to will reclaim on my gifts. I understand that taxes such as VAT and Council Tax do not qualify and that Macmillan Cancer Support will reclaim 25p of tax on every £1 that I give.</p>
+
+    <hr/>
+
+    <h3>Enter your billing details</h3>
+
+    <label for="FirstName">First name</label>
+    @Html.TextBoxFor(x => x.FirstName, new { @m_radius_picker="small" })
+
+    <label for="LastName">Last name</label>
+    @Html.TextBoxFor(x => x.LastName, new { @m_radius_picker="small" })
+
+    <h4>Your address</h4>
+
+    <label for="Address1">Address 1</label>
+    @Html.TextBoxFor(x => x.Address1, new { @m_radius_picker="small" })
+
+    <label for="Address2">Address 2</label>
+    @Html.TextBoxFor(x => x.Address2, new { @m_radius_picker="small" })
+
+    <label for="TownCity">Town/City</label>
+    @Html.TextBoxFor(x => x.TownCity, new { @m_radius_picker="small" })
+
+    <label for="Postcode">Postcode</label>
+    @Html.TextBoxFor(x => x.Postcode, new { @class="margin-bottom-large", @m_radius_picker="small" })
+
+
+    <hr/>
+
+
+
+    <button type="submit" class="btn-primary float-right" m-radius-picker="small">Proceed</button>
+    <span class="cancel margin-right-1 float-right">Cancel</span>
 }
+
+
+

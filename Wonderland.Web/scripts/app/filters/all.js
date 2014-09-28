@@ -69,3 +69,38 @@ wonderlandApp.filter('mCurrency', ["$filter", function ($filter) {
         return formattedCurrency;
     };
 }]);
+
+
+wonderlandApp.filter('addressJoiner', [function () {
+    return function(addressString, separator){
+
+        var addressParts = [];
+
+        if (angular.isString(addressString)) {
+            var originalParts = addressString.split(separator);
+
+            for (var i=0; i<originalParts.length; i++) {
+                if (angular.isString(originalParts[i]) && originalParts[i].length>0) {
+                    addressParts.push(originalParts[i]);
+                }
+            }
+        }
+
+        return addressParts.join(", ");
+    };
+}]);
+
+wonderlandApp.filter('striptags', [function () {
+
+    return function (htmlString) {
+
+        var ret = htmlString;
+
+        if (angular.isString(htmlString)) {
+            ret = htmlString.replace(/<[^>]+>/gi,"");
+        }
+
+        return ret;
+    };
+
+}]);
