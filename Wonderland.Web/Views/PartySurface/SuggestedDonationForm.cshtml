@@ -17,25 +17,27 @@
 
             @Html.EditorForModel()
 
-            <div class="margin-bottom-medium">
+            <div class="container margin-bottom-medium">
 
-                <label ng-repeat="donation in hardcodedDonationSuggestions">
+                <div class="pos-relative grid-3 grid-tablet-6 grid-mobile-12 pad-0" ng-repeat="donation in hardcodedDonationSuggestions">
+                    <label >
 
-                    <div class="ticket clickable" ng-class="{'selected': suggestedDonationData.SuggestedDonation==donation.amount}">
+                        <div class="ticket clickable" ng-class="{'selected': suggestedDonationData.SuggestedDonation==donation.amount}">
 
-                        <div class="stub">
-                            <div class="holes"></div>
-                            <div class="holes-right"></div>
-                            <div class="price">£<span ng-bind="donation.amount"></span></div>
+                            <div class="stub">
+                                <div class="holes"></div>
+                                <div class="holes-right"></div>
+                                <div class="price">£<span ng-bind="donation.amount"></span></div>
+                            </div>
+
+                            <div class="body-highlight text-align-center" ng-bind="donation.label"></div>
+
+                            <input type="radio" name="SuggestedDonation" ng-value="donation.amount" ng-model="suggestedDonationData.SuggestedDonation" />
+
                         </div>
 
-                        <div class="body-highlight text-align-center" ng-bind="donation.label"></div>
-
-                        <input type="radio" name="SuggestedDonation" ng-value="donation.amount" ng-model="suggestedDonationData.SuggestedDonation" />
-
-                    </div>
-
-                </label>
+                    </label>
+                </div>
 
                 <div class="clear"></div>
             </div>
