@@ -141,41 +141,45 @@ wonderlandApp.controller('PartyCtrl', ['safeApply', '$ocModal', '$sce', '$scope'
     /**********************/
     var initUrl = null;
     $scope.partyImageData = null;
+    $scope.partyImageDefaultData = null;
     $scope.partyImageDataForForm = null;
     $scope.partyCustomImage = {
         url: null
     };
 
-    $scope.partyImageDataInit = function (partyImageData) {
+    $scope.partyImageDefaultDataInit = function (defaultImages) {
 
-        console.log('partyImageDataInit', partyImageData);
-        $scope.partyImageData = partyImageData;
-        $scope.partyImageDataForForm = angular.copy(partyImageData);
+        console.log('partyImageDefaultDataInit', defaultImages);
+        $scope.partyImageDefaultData = defaultImages;
 
-        // TODO - remove
-        hardCodedFixForRedundantInitialImage(initUrl);
+
+        // hacky check to see if the url is one of the default images
+        if ( $scope.partyImageDefaultData.indexOf(initUrl) >= 0 ) {
+            return;
+        }
+
+        $scope.partyCustomImage.url = initUrl;
+
     };
 
     $scope.$onRootScope('partyImageUpdated', function(event, response) {
         if (response && response.Success === true && response.Message) {
 
-            // might have to only update a certain part of the $scope.partyImageData due to return data
+            // TODO - there isn't any return data in the message
 
 //            $scope.partyImageDataInit(response.Message);
         }
 
         $scope.partyImageData.PartyImage = $scope.partyImageDataForForm.PartyImage;
 
-        // TODO - need this to work before remove the hardcoded fix
-//        hardCodedFixForRedundantInitialImage();
-
         $ocModal.close('partyImageModal');
     });
 
-    $scope.$onRootScope('partyImageUrlUpdated', function(event, response) {
+
+    $scope.$onRootScope('partyImageCustomUrlUploaded', function(event, response) {
         if (response && response.Success === true && response.Message) {
 
-            console.log('partyImageUrlUpdated', response.Message);
+            console.log('partyImageCustomUrlUploaded', response.Message);
             safeApply($scope, function () {
                 $scope.partyCustomImage.url = response.Message;
                 $scope.partyImageDataForForm.PartyImage = $scope.partyCustomImage.url;
@@ -188,28 +192,12 @@ wonderlandApp.controller('PartyCtrl', ['safeApply', '$ocModal', '$sce', '$scope'
     $scope.hardCodedCurrentPartyImageUrlInit = function (url) {
         console.log('hardCodedCurrentPartyImageUrlInit', url);
 
-        // TODO - remove 2 lines
         initUrl = url;
-        hardCodedFixForRedundantInitialImage(url);
 
-        if (url && url.indexOf('test_') >= 0) {
-            return;
-        }
-
-        $scope.partyCustomImage.url = url;
-    };
-
-
-    // TODO - remove: eurgh - hardcoding this before it is put back into form
-    var hardCodedFixForRedundantInitialImage = function (url) {
-        safeApply($scope, function () {
-
-            if (url && angular.isObject($scope.partyImageData) && angular.isObject($scope.partyImageDataForForm)) {
-                $scope.partyImageData.PartyImage = url;
-                $scope.partyImageDataForForm.PartyImage = url;
-            }
-
-        });
+        $scope.partyImageData = {
+            'PartyImage': url
+        };
+        $scope.partyImageDataForForm = angular.copy($scope.partyImageData);
     };
 
 

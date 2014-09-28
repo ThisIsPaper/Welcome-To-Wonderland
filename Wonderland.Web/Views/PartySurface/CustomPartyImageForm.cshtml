@@ -1,7 +1,7 @@
 ﻿@model CustomPartyImageForm
 
 
-<div m-image-upload m-on-success-event="partyImageUrlUpdated">
+<div m-image-upload m-on-success-event="partyImageCustomUrlUploaded">
     @using (Html.BeginUmbracoForm<PartySurfaceController>("HandleCustomPartyImageForm", FormMethod.Post, new { enctype = "multipart/form-data" }))
     {
         @Html.AntiForgeryToken()

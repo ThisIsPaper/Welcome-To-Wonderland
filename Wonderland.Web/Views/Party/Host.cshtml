@@ -14,14 +14,15 @@
                 <div class="boxx collapse" m-radius-picker="large">
 
                     <div class="wgrid-full wgrid-no-bottom-margin">
+
                         <div class="grid-12 party-main-image" ng-init="hardCodedCurrentPartyImageUrlInit('@Model.PartyHost.PartyImage')" ng-style="{'background-image': 'url(' + partyImageData.PartyImage +')'}"></div>
 
-                        <div class="party-image-default" ng-show="profileImage.url.length>0">
+                        <div class="party-image-default" ng-hide="partyImageData.PartyImage.length>0">
                             <div class="icon-icon_camera"></div>
                             <div>Choose my party picture</div>
                         </div>
 
-                        <div class="edit-trigger" ng-click="openPageModal('partials/partyImageForm.html', 'partyImageModal', {'partyImageData': partyImageDataForForm, 'partyCustomImage': partyCustomImage})"><span class="edit-label">Edit</span><span class="icon-icon_edit"></span></div>
+                        <div class="edit-trigger" ng-click="openPageModal('partials/partyImageForm.html', 'partyImageModal', {'partyImageData': partyImageDataForForm, 'partyImageDefaultData': partyImageDefaultData, 'partyCustomImage': partyCustomImage})"><span class="edit-label">Edit</span><span class="icon-icon_edit"></span></div>
 
                     </div>
 
