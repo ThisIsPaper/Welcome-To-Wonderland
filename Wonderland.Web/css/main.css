@@ -5187,8 +5187,16 @@ h1.smaller, h1 .smaller {
   font-size: 2.3rem;
   line-height: 2.3rem;
 }
+/* line 346, sass/partials/_type.scss */
+h1.error {
+  color: #E32333;
+}
+/* line 348, sass/partials/_type.scss */
+h1.error.lighter, h1.error .lighter {
+  color: #E32333;
+}
 
-/* line 347, sass/partials/_type.scss */
+/* line 354, sass/partials/_type.scss */
 h2 {
   font-family: 'macmillan';
   color: #007eac;
@@ -5196,7 +5204,7 @@ h2 {
   margin: .5rem 0;
 }
 
-/* line 354, sass/partials/_type.scss */
+/* line 361, sass/partials/_type.scss */
 h3 {
   color: #025b45;
   font-size: 2.3rem;
@@ -5205,32 +5213,32 @@ h3 {
   line-height: 2.6rem;
 }
 
-/* line 362, sass/partials/_type.scss */
+/* line 369, sass/partials/_type.scss */
 h4 {
   color: #474740;
   font-size: 2.3rem;
   margin: 2rem 0;
   font-weight: bold;
 }
-/* line 368, sass/partials/_type.scss */
+/* line 375, sass/partials/_type.scss */
 h4 span {
   color: #7B7A6D;
   font-weight: normal;
 }
 
-/* line 375, sass/partials/_type.scss */
+/* line 382, sass/partials/_type.scss */
 h3.top, h4.top {
   margin-top: 0;
 }
 
-/* line 380, sass/partials/_type.scss */
+/* line 387, sass/partials/_type.scss */
 hr {
   border: none;
   border-bottom: 0.1rem solid #ECECEC;
   margin: 1.2rem 0;
 }
 
-/* line 386, sass/partials/_type.scss */
+/* line 393, sass/partials/_type.scss */
 .back {
   text-transform: uppercase;
   color: white;
@@ -6444,8 +6452,16 @@ h1.smaller, h1 .smaller {
   font-size: 2.3rem;
   line-height: 2.3rem;
 }
+/* line 346, sass/partials/_type.scss */
+h1.error {
+  color: #E32333;
+}
+/* line 348, sass/partials/_type.scss */
+h1.error.lighter, h1.error .lighter {
+  color: #E32333;
+}
 
-/* line 347, sass/partials/_type.scss */
+/* line 354, sass/partials/_type.scss */
 h2 {
   font-family: 'macmillan';
   color: #007eac;
@@ -6453,7 +6469,7 @@ h2 {
   margin: .5rem 0;
 }
 
-/* line 354, sass/partials/_type.scss */
+/* line 361, sass/partials/_type.scss */
 h3 {
   color: #025b45;
   font-size: 2.3rem;
@@ -6462,32 +6478,32 @@ h3 {
   line-height: 2.6rem;
 }
 
-/* line 362, sass/partials/_type.scss */
+/* line 369, sass/partials/_type.scss */
 h4 {
   color: #474740;
   font-size: 2.3rem;
   margin: 2rem 0;
   font-weight: bold;
 }
-/* line 368, sass/partials/_type.scss */
+/* line 375, sass/partials/_type.scss */
 h4 span {
   color: #7B7A6D;
   font-weight: normal;
 }
 
-/* line 375, sass/partials/_type.scss */
+/* line 382, sass/partials/_type.scss */
 h3.top, h4.top {
   margin-top: 0;
 }
 
-/* line 380, sass/partials/_type.scss */
+/* line 387, sass/partials/_type.scss */
 hr {
   border: none;
   border-bottom: 0.1rem solid #ECECEC;
   margin: 1.2rem 0;
 }
 
-/* line 386, sass/partials/_type.scss */
+/* line 393, sass/partials/_type.scss */
 .back {
   text-transform: uppercase;
   color: white;
@@ -9489,8 +9505,16 @@ h1.smaller, h1 .smaller {
   font-size: 2.3rem;
   line-height: 2.3rem;
 }
+/* line 346, sass/partials/_type.scss */
+h1.error {
+  color: #E32333;
+}
+/* line 348, sass/partials/_type.scss */
+h1.error.lighter, h1.error .lighter {
+  color: #E32333;
+}
 
-/* line 347, sass/partials/_type.scss */
+/* line 354, sass/partials/_type.scss */
 h2 {
   font-family: 'macmillan';
   color: #007eac;
@@ -9498,7 +9522,7 @@ h2 {
   margin: .5rem 0;
 }
 
-/* line 354, sass/partials/_type.scss */
+/* line 361, sass/partials/_type.scss */
 h3 {
   color: #025b45;
   font-size: 2.3rem;
@@ -9507,32 +9531,32 @@ h3 {
   line-height: 2.6rem;
 }
 
-/* line 362, sass/partials/_type.scss */
+/* line 369, sass/partials/_type.scss */
 h4 {
   color: #474740;
   font-size: 2.3rem;
   margin: 2rem 0;
   font-weight: bold;
 }
-/* line 368, sass/partials/_type.scss */
+/* line 375, sass/partials/_type.scss */
 h4 span {
   color: #7B7A6D;
   font-weight: normal;
 }
 
-/* line 375, sass/partials/_type.scss */
+/* line 382, sass/partials/_type.scss */
 h3.top, h4.top {
   margin-top: 0;
 }
 
-/* line 380, sass/partials/_type.scss */
+/* line 387, sass/partials/_type.scss */
 hr {
   border: none;
   border-bottom: 0.1rem solid #ECECEC;
   margin: 1.2rem 0;
 }
 
-/* line 386, sass/partials/_type.scss */
+/* line 393, sass/partials/_type.scss */
 .back {
   text-transform: uppercase;
   color: white;
@@ -9943,8 +9967,16 @@ h1.smaller, h1 .smaller {
   font-size: 2.3rem;
   line-height: 2.3rem;
 }
+/* line 346, sass/partials/_type.scss */
+h1.error {
+  color: #E32333;
+}
+/* line 348, sass/partials/_type.scss */
+h1.error.lighter, h1.error .lighter {
+  color: #E32333;
+}
 
-/* line 347, sass/partials/_type.scss */
+/* line 354, sass/partials/_type.scss */
 h2 {
   font-family: 'macmillan';
   color: #007eac;
@@ -9952,7 +9984,7 @@ h2 {
   margin: .5rem 0;
 }
 
-/* line 354, sass/partials/_type.scss */
+/* line 361, sass/partials/_type.scss */
 h3 {
   color: #025b45;
   font-size: 2.3rem;
@@ -9961,32 +9993,32 @@ h3 {
   line-height: 2.6rem;
 }
 
-/* line 362, sass/partials/_type.scss */
+/* line 369, sass/partials/_type.scss */
 h4 {
   color: #474740;
   font-size: 2.3rem;
   margin: 2rem 0;
   font-weight: bold;
 }
-/* line 368, sass/partials/_type.scss */
+/* line 375, sass/partials/_type.scss */
 h4 span {
   color: #7B7A6D;
   font-weight: normal;
 }
 
-/* line 375, sass/partials/_type.scss */
+/* line 382, sass/partials/_type.scss */
 h3.top, h4.top {
   margin-top: 0;
 }
 
-/* line 380, sass/partials/_type.scss */
+/* line 387, sass/partials/_type.scss */
 hr {
   border: none;
   border-bottom: 0.1rem solid #ECECEC;
   margin: 1.2rem 0;
 }
 
-/* line 386, sass/partials/_type.scss */
+/* line 393, sass/partials/_type.scss */
 .back {
   text-transform: uppercase;
   color: white;

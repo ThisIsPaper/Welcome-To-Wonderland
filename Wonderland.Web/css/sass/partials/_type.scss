@@ -342,6 +342,13 @@ h1 {
         font-size: $FontSizeLarge;
         line-height: 2.3rem;
     }
+
+    &.error {
+        color: $redDark;
+        &.lighter, .lighter {
+            color: $redDark;
+        }
+    }
 }
 
 h2 {
