@@ -47,52 +47,54 @@ $settings : (
 .wgrid-full {
     @extend %relative;
     @include gridle(12);
-    @include gridle(12, mobile);
+    //@include gridle(12, tablet);
     @include gridle_gutter(bottom);
-    @include gridle_gutter(bottom, mobile);
+    //@include gridle_gutter(bottom, mobile);
     @include gridle_no_gutter(left right);
-    @include gridle_no_gutter(left right, mobile);
+    //@include gridle_no_gutter(left right, mobile);
 }
 
 .wgrid-main {
     @extend %relative;
     @include gridle(8);
-    @include gridle(12, mobile);
+    @include gridle(12, tablet);
     @include gridle_gutter(bottom);
-    @include gridle_gutter(bottom, mobile);
+    //@include gridle_gutter(bottom, mobile);
     @include gridle_no_gutter(left);
-    @include gridle_no_gutter(left right, mobile);
+    @include gridle_no_gutter(left right, tablet);
 }
 
 .wgrid-half {
     @extend %relative;
     @include gridle(6);
-    @include gridle(12, mobile);
+    @include gridle(12, tablet);
     @include gridle_gutter(bottom);
-    @include gridle_gutter(bottom, mobile);
+    //@include gridle_gutter(bottom, mobile);
     @include gridle_no_gutter(left);
-    @include gridle_no_gutter(left right, mobile);
+    @include gridle_no_gutter(left right, tablet);
 }
 
 .wgrid-side {
     @extend %relative;
     @include gridle(4);
-    @include gridle(12, mobile);
+    @include gridle(12, tablet);
     @include gridle_gutter(bottom);
-    @include gridle_gutter(bottom, mobile);
+    //@include gridle_gutter(bottom, mobile);
     @include gridle_no_gutter(left right);
-    @include gridle_no_gutter(left right, mobile);
+    //@include gridle_no_gutter(left right, mobile);
     @include gridle_float(right);
-    @include gridle_float(left, mobile);
+    @include gridle_float(left, tablet);
 }
 
 .wgrid-no-bottom-margin {
     @include gridle_no_gutter(bottom);
+    @include gridle_no_gutter(bottom, tablet);
     @include gridle_no_gutter(bottom, mobile);
 }
 
 .wgrid-no-right-margin {
     @include gridle_no_gutter(right);
+    @include gridle_no_gutter(right, tablet);
     @include gridle_no_gutter(right, mobile);
 }
 

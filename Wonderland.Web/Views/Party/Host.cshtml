@@ -13,7 +13,7 @@
             <div class="wgrid-full parent">
                 <div class="boxx collapse" m-radius-picker="large">
 
-                    <div class="wgrid-full wgrid-no-bottom-margin">
+                    <div class="wgrid-full wgrid-no-bottom-margin parent">
 
                         <div class="grid-12 party-main-image" ng-init="hardCodedCurrentPartyImageUrlInit('@Model.PartyHost.PartyImage')" ng-style="{'background-image': 'url(' + partyImageData.PartyImage +')'}"></div>
 
@@ -45,7 +45,7 @@
             </div>
 
 
-            <div class="wgrid-full">
+            <div class="wgrid-full parent">
                 <div class="boxx" m-radius-picker="medium large">
                     <h1 class="pad-right-3 pad-left-3">Join the Wonderland Party</h1>
                     <pre class="body-medium font-futura" ng-bind-html="partyCopyData.CopyHtmlSafe">@this.Model.Copy</pre>
@@ -61,7 +61,7 @@
 
 
 
-            <div class="wgrid-full">
+            <div class="wgrid-full parent">
                 <div class="boxx" m-radius-picker>
 
                     <div>
@@ -87,7 +87,7 @@
 
 
 
-            <div class="wgrid-full">
+            <div class="wgrid-full parent">
                 <div class="boxx" m-radius-picker>
                     <h4 class="top">Suggested ticket price</h4>
 
@@ -104,12 +104,12 @@
             </div>
 
 
-            <div class="wgrid-full">
+            <div class="wgrid-full parent">
                 @Html.ActionLink("Pay in money", "NavigateToDonateUrl", "DonateSurface", new { partyGuid = Model.PartyHost.PartyGuid }, new { @class = "btn-primary btn-large piggy-donater dis-block", @m_radius_picker="small medium" })
             </div>
 
 
-            <div class="wgrid-full">
+            <div class="wgrid-full parent">
                 <div class="boxx" m-radius-picker>
                     <h4 class="top">Who's Coming <span>(@this.Model.Partiers.Count())</span></h4>
                     <ul>
@@ -123,7 +123,7 @@
                 </div>
             </div>
 
-            <div class="wgrid-full">
+            <div class="wgrid-full parent">
                 <div class="boxx" m-radius-picker>
                     <h4 class="top">Badges <span>(0 of 6)</span></h4>
                 </div>

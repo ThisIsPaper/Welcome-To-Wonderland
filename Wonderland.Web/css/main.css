@@ -3028,10 +3028,6 @@ abstract
   padding-left: 2.4rem;
   padding-right: 2.4rem;
   width: 100%;
-  float: left;
-  direction: ltr;
-  padding-left: 2.4rem;
-  padding-right: 2.4rem;
   padding-bottom: 2.4rem;
   padding-left: 0;
   padding-right: 0;
@@ -3052,43 +3048,6 @@ abstract
     direction: ltr;
     padding-left: 2.4rem;
     padding-right: 2.4rem;
-  }
-}
-@media screen and (max-width: 768px) {
-  /* line 47, sass/partials/_grids.scss */
-  .wgrid-full {
-    float: left;
-    direction: ltr;
-    padding-left: 2.4rem;
-    padding-right: 2.4rem;
-  }
-}
-@media screen and (max-width: 450px) {
-  /* line 47, sass/partials/_grids.scss */
-  .wgrid-full {
-    float: left;
-    direction: ltr;
-    padding-left: 2.4rem;
-    padding-right: 2.4rem;
-  }
-}
-@media screen and (max-width: 450px) {
-  /* line 47, sass/partials/_grids.scss */
-  .wgrid-full {
-    width: 100%;
-  }
-}
-@media screen and (max-width: 450px) {
-  /* line 47, sass/partials/_grids.scss */
-  .wgrid-full {
-    padding-bottom: 2.4rem;
-  }
-}
-@media screen and (max-width: 450px) {
-  /* line 47, sass/partials/_grids.scss */
-  .wgrid-full {
-    padding-left: 0;
-    padding-right: 0;
   }
 }
 
@@ -3142,19 +3101,13 @@ abstract
     padding-right: 2.4rem;
   }
 }
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 768px) {
   /* line 57, sass/partials/_grids.scss */
   .wgrid-main {
     width: 100%;
   }
 }
-@media screen and (max-width: 450px) {
-  /* line 57, sass/partials/_grids.scss */
-  .wgrid-main {
-    padding-bottom: 2.4rem;
-  }
-}
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 768px) {
   /* line 57, sass/partials/_grids.scss */
   .wgrid-main {
     padding-left: 0;
@@ -3212,19 +3165,13 @@ abstract
     padding-right: 2.4rem;
   }
 }
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 768px) {
   /* line 67, sass/partials/_grids.scss */
   .wgrid-half {
     width: 100%;
   }
 }
-@media screen and (max-width: 450px) {
-  /* line 67, sass/partials/_grids.scss */
-  .wgrid-half {
-    padding-bottom: 2.4rem;
-  }
-}
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 768px) {
   /* line 67, sass/partials/_grids.scss */
   .wgrid-half {
     padding-left: 0;
@@ -3284,26 +3231,13 @@ abstract
     padding-right: 2.4rem;
   }
 }
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 768px) {
   /* line 77, sass/partials/_grids.scss */
   .wgrid-side {
     width: 100%;
   }
 }
-@media screen and (max-width: 450px) {
-  /* line 77, sass/partials/_grids.scss */
-  .wgrid-side {
-    padding-bottom: 2.4rem;
-  }
-}
-@media screen and (max-width: 450px) {
-  /* line 77, sass/partials/_grids.scss */
-  .wgrid-side {
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 768px) {
   /* line 77, sass/partials/_grids.scss */
   .wgrid-side {
     float: left;
@@ -3314,6 +3248,12 @@ abstract
 .wgrid-no-bottom-margin {
   padding-bottom: 0;
 }
+@media screen and (max-width: 768px) {
+  /* line 89, sass/partials/_grids.scss */
+  .wgrid-no-bottom-margin {
+    padding-bottom: 0;
+  }
+}
 @media screen and (max-width: 450px) {
   /* line 89, sass/partials/_grids.scss */
   .wgrid-no-bottom-margin {
@@ -3321,12 +3261,18 @@ abstract
   }
 }
 
-/* line 94, sass/partials/_grids.scss */
+/* line 95, sass/partials/_grids.scss */
 .wgrid-no-right-margin {
   padding-right: 0;
 }
+@media screen and (max-width: 768px) {
+  /* line 95, sass/partials/_grids.scss */
+  .wgrid-no-right-margin {
+    padding-right: 0;
+  }
+}
 @media screen and (max-width: 450px) {
-  /* line 94, sass/partials/_grids.scss */
+  /* line 95, sass/partials/_grids.scss */
   .wgrid-no-right-margin {
     padding-right: 0;
   }
@@ -3334,21 +3280,21 @@ abstract
 
 /**********************************/
 /**********************************/
-/* line 105, sass/partials/_grids.scss */
+/* line 107, sass/partials/_grids.scss */
 .boxx {
   padding: 1.8rem;
   background: #ffffff;
   overflow: hidden;
 }
-/* line 110, sass/partials/_grids.scss */
+/* line 112, sass/partials/_grids.scss */
 .boxx.collapse {
   padding: 0;
 }
-/* line 114, sass/partials/_grids.scss */
+/* line 116, sass/partials/_grids.scss */
 .boxx.internal {
   background: #ECECEC;
 }
-/* line 118, sass/partials/_grids.scss */
+/* line 120, sass/partials/_grids.scss */
 .boxx.mega-pad {
   padding: 3.3rem;
 }
