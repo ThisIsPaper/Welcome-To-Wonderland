@@ -5,7 +5,7 @@
 <section id="heroGraphic">
     <img src="img/home-hero-copy.png" alt="Welcome to Wonderland" class="hero-title">
     <div class="actions">
-        @if (!this.Members.IsLoggedIn())
+        @if (!this.Members.IsLoggedInPartier())
         {
             @Html.ActionLink("Host a party >", "NavigateToRegisterHostUrl", "RegisterHostSurface", null, new { @class = "btn-primary" })
         }

@@ -6,6 +6,7 @@ namespace Wonderland.Logic.Controllers.Render
     using Umbraco.Web.Models;
     using Wonderland.Logic.Models.Content;
     using Wonderland.Logic.Models.Members;
+    using Wonderland.Logic.Extensions;
 
     public class RegisterHostController : BaseRenderMvcController
     {
@@ -18,7 +19,7 @@ namespace Wonderland.Logic.Controllers.Render
         {
             RegisterHost model = (RegisterHost)renderModel.Content;
 
-            if (this.Members.IsLoggedIn())
+            if (this.Members.IsLoggedInPartier())
             {
                 if (this.Members.GetCurrentMember() is PartyHost)
                 {

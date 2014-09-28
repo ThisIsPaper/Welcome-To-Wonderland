@@ -27,7 +27,7 @@ namespace Wonderland.Logic.Controllers.Render
 
             if (!(partyHost is PartyHost))
             {
-                if (this.Members.IsLoggedIn())
+                if (this.Members.IsLoggedInPartier())
                 {                    
                     return this.Redirect(((IPartier)this.Members.GetCurrentMember()).PartyUrl);
                 }
@@ -70,7 +70,7 @@ namespace Wonderland.Logic.Controllers.Render
                 return View("Blocked", model);
             }
 
-            if (this.Members.IsLoggedIn())
+            if (this.Members.IsLoggedInPartier())
             {
                 IPartier partier = (IPartier)this.Members.GetCurrentMember();
                 if (partier is PartyHost && partier.Id == partyHost.Id)

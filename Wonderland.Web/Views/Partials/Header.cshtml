@@ -11,7 +11,7 @@
 
 
 
-    @if (!this.Members.IsLoggedIn())
+    @if (!this.Members.IsLoggedInPartier())
     {
         @Html.ActionLink("Host a party >", "NavigateToRegisterHostUrl", "RegisterHostSurface", null, new { @class = "btn-primary btn-small nav-end-block",  m_radius_picker="small" })
     }
@@ -22,7 +22,7 @@
 
 
 
-    @if (!this.Members.IsLoggedIn())
+    @if (!this.Members.IsLoggedInPartier())
     {
         <div class="nav-end-block end-block-right">
             @Html.ActionLink("Login", "NavigateToLoginUrl", "LoginSurface", null, new { @class = "btn-secondary btn-small",  m_radius_picker="small" })

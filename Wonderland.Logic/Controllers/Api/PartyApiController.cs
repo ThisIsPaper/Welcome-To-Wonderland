@@ -8,7 +8,8 @@ namespace Wonderland.Logic.Controllers.Api
     using Wonderland.Logic.Enums;
     using Wonderland.Logic.Interfaces;
     using Wonderland.Logic.Models.Database;
-    using Wonderland.Logic.Models.Entities;  
+    using Wonderland.Logic.Models.Entities;
+    using Wonderland.Logic.Extensions;
 
     public class PartyApiController : UmbracoApiController
     {
@@ -31,7 +32,7 @@ namespace Wonderland.Logic.Controllers.Api
 
             string sql;
 
-            if (this.Members.IsLoggedIn() && ((IPartier)this.Members.GetCurrentMember()).PartyGuid == partyGuid)
+            if (this.Members.IsLoggedInPartier() && ((IPartier)this.Members.GetCurrentMember()).PartyGuid == partyGuid)
             {
                 // get all donation and messages
                 sql = @"

@@ -42,7 +42,7 @@ namespace Wonderland.Logic.Controllers.Render
             }
 
             // if a party wasn't found via the query string, then attempt to find party associated with the current login 
-            if (model.PartyHost == null && this.Members.IsLoggedIn())
+            if (model.PartyHost == null && this.Members.IsLoggedInPartier())
             {
                 model.PartyHost = this.Members.GetPartyHost(((IPartier)this.Members.GetCurrentMember()).PartyGuid);
             }

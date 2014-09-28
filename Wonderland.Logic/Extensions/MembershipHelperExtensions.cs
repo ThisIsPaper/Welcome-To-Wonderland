@@ -17,6 +17,16 @@ namespace Wonderland.Logic.Extensions
 
     public static class MembershipHelperExtensions
     {
+        public static bool IsLoggedInPartier(this MembershipHelper members)
+        {
+            return members.IsLoggedIn() && members.GetCurrentMember() is IPartier;
+        }
+
+        //public static IPartier GetCurrentPartier(this MembershipHelper members)
+        //{
+        //    return members.GetCurrentMember() as IPartier;
+        //}
+
         /// <summary>
         /// queries the Lucene index to get all members with the supplied partyGuid
         /// </summary>
@@ -119,12 +129,6 @@ namespace Wonderland.Logic.Extensions
             }
 
             return partyHosts;
-        }
-        
-        // TODO: use this
-        //public static IPartier GetCurrentPartier(this MembershipHelper members)
-        //{
-        //    return members.GetCurrentMember() as IPartier;
-        //}
+        }        
     }
 }
