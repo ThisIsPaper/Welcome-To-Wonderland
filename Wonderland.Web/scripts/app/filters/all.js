@@ -43,3 +43,30 @@ wonderlandApp.filter('escape', function () {
         return encodeURIComponent(url);
     };
 });
+
+
+wonderlandApp.filter('percentageRounder', function () {
+    return function (current, total) {
+        var p = 0;
+
+        if (angular.isNumber(current) && angular.isNumber(total)) {
+            p = Math.floor((current/total)*100);
+            p = p > 100 ? 100 : p;
+            p = p < 0 ? 0 : p;
+        }
+        return p;
+    };
+});
+
+
+wonderlandApp.filter('mCurrency', ["$filter", function ($filter) {
+    return function(amount, currencySymbol){
+        var currency = $filter('currency');
+
+        if(amount < 0){
+            return currency(amount, currencySymbol).replace("(", "-").replace(")", "");
+        }
+
+        return currency(amount, currencySymbol);
+    };
+}]);
