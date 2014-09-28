@@ -361,6 +361,8 @@
     <Content Include="Views\RegisterGuest\Failed.cshtml" />
     <Content Include="Views\FundraisingTile.cshtml" />
     <Content Include="Views\MyProfile.cshtml" />
+    <Content Include="Views\ForgottenPasswordSurface\ForgottenPasswordForm.cshtml" />
+    <Content Include="Views\ForgottenPassword\Complete.cshtml" />
     <None Include="Views\RegisterHostSurface\RegisterHostForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
