@@ -89,3 +89,18 @@ wonderlandApp.filter('addressJoiner', [function () {
         return addressParts.join(", ");
     };
 }]);
+
+wonderlandApp.filter('striptags', [function () {
+
+    return function (htmlString) {
+
+        var ret = htmlString;
+
+        if (angular.isString(htmlString)) {
+            ret = htmlString.replace(/<[^>]+>/gi,"");
+        }
+
+        return ret;
+    };
+
+}]);
