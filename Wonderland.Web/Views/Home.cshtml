@@ -2,65 +2,78 @@
 @{
     Layout = "SitePage.cshtml";
 }
-<section id="heroGraphic">
-    <img src="img/home-hero-copy.png" alt="Welcome to Wonderland" class="hero-title">
-    <div class="actions">
+
+<section class="hero">
+    <img src="/img/home-hero-copy.png" alt="Welcome to Wonderland" class="centered margin-bottom-4 pad-left-large pad-right-large">
+    <div class="text-align-center">
+
         @if (!this.Members.IsLoggedInPartier())
         {
-            @Html.ActionLink("Host a party >", "NavigateToRegisterHostUrl", "RegisterHostSurface", null, new { @class = "btn-primary" })
+            <a href="@Url.Action("NavigateToRegisterHostUrl", "RegisterHostSurface")" class="btn-primary btn-large pad-top-small pad-bottom-small" m-radius-picker="small medium">Host a party <span class="icon-icon_chevron_right"></span></a>
         }
         else
         {
-            <a href="@(((IPartier)this.Members.GetCurrentMember()).PartyUrl)" class="btn-primary">My party</a>
+            <a href="@(((IPartier)this.Members.GetCurrentMember()).PartyUrl)" class="btn-primary btn-large pad-top-small pad-bottom-small" m-radius-picker="small medium">My party <span class="icon-icon_chevron_right"></span></a>
         }
+
     </div>
 </section>
 
 
-<div id="homeBg">
-    <div>
 
 
-        @*<section class="banner">
-            <div class="banner-info">
-              <h1> @Model.BannerHeading </h1>
-              <p> @Model.BannerCopy </p>
+<div class="planking pad-top-4 pad-bottom-8">
+    <div class="container gutter home-content-adjust">
+
+        <section class="wgrid-full text-align-center margin-bottom-6 pad-0">
+            <div class="boxx min-height-20 mega-pad" m-radius-picker="small medium">
+                <div class="hero-explain">
+                    <h1 class="text-align-left">@Model.BannerHeading</h1>
+                    <p>@Model.BannerCopy</p>
+                </div>
+                <div class="money-raised">
+                    <h1 class="raised-amount margin-top-2" ng-init="amountRaised=@Model.TotalAmountRaised" ng-bind="amountRaised|mCurrency:'£'"></h1>
+                </div>
             </div>
-            <div class="money-raised-info">
-              <p class="amount">£55,034</p>
-            </div>
-        </section>*@
+            <a href="#" class="btn-primary btn-large pad-top-small pad-bottom-small" m-radius-picker="small medium">My party <span class="icon-icon_chevron_right"></span></a>
+        </section>
 
 
-        <section id="promoTiles">
-            <ul class="promo-tiles">
+        <section class="wgrid-full parent gutter">
+
             @foreach (PromotionTile promotionTile in Model.PromotionTiles)
             {
-                <li class="frame">
-                    <img src="@promotionTile.Image.GetResponsiveCropUrl("Square")" alt="@promotionTile.AltText" />
-                    <img src="@promotionTile.OverlayImage.Url" />        
-                </li>            
+
+            <div class="grid-4 grid-tablet-6 grid-mobile-12" m-rotate>
+
+                <div class="home-tile" m-height-match-width>
+                    <div class="home-tile-image" style="background-image: url(@promotionTile.Image.GetResponsiveCropUrl("Square"));"></div>
+                    <img class="home-tile-label" src="@promotionTile.OverlayImage.Url" alt="@promotionTile.AltText" />
+                </div>
+
+            </div>
+
             }
-            </ul>
-        </section>
-
-
-        @*<section id="shareWonderland">
-            <div class="share-wonderland-heading">
-
-            </div>
-        </section>*@
-
-
-        <section class="container gutter">
-
-            <div class="boxx home-twitter-boxx grid-6 grid-mobile-12 push-6 push-mobile-0">
-                <a class="twitter-timeline" href="https://twitter.com/hashtag/macmillan" data-widget-id="510440368576290816">#macmillan Tweets</a>
-                <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-            </div>
 
         </section>
 
 
-      </div>
+        <div class="boxx home-twitter-boxx grid-6 grid-tablet-12 push-6 push-tablet-0 margin-bottom-large hide-on-mobile" m-radius-picker="small">
+            <a class="twitter-timeline" href="https://twitter.com/hashtag/macmillan" data-widget-id="510440368576290816">#macmillan Tweets</a>
+            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+        </div>
+
+
+        <div class="grid-6 grid-tablet-12 pull-6 pull-tablet-0 pad-0">
+
+            <div class="share-title margin-bottom-large"></div>
+
+            <a class="share-facebook" m-radius-picker="small" ng-href="https://www.facebook.com/sharer/sharer.php?u=[[ guidePageUrl|escape ]]" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=368,width=600');return false;">Share</a>
+            <a class="share-twitter" m-radius-picker="small" ng-href="https://twitter.com/share?url=[[ guidePageUrl|escape ]]&text=Share+a+winter+wonderland!" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=368,width=600');return false;">Share</a>
+            <a class="share-email" m-radius-picker="small" href="mailto:enter@email.com?subject=Winter%20Wonderland!&body=Come%20and%20visit%20the%20site!" target="_blank"></a>
+
+        </div>
+
+
+    </div>
 </div>

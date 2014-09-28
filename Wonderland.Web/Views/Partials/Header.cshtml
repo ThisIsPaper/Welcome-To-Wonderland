@@ -1,6 +1,7 @@
 ﻿@inherits UmbracoViewPage<SiteSettings> 
 
 
+
 <header class="site-header" ng-class="{'compress': pageHeaderCompress}">
 
 
@@ -10,14 +11,13 @@
 
 
 
-
     @if (!this.Members.IsLoggedInPartier())
     {
-        @Html.ActionLink("Host a party >", "NavigateToRegisterHostUrl", "RegisterHostSurface", null, new { @class = "btn-primary btn-small nav-end-block",  m_radius_picker="small" })
+        <a href="@Url.Action("NavigateToRegisterHostUrl", "RegisterHostSurface")" class="btn-primary btn-small nav-end-block" m-radius-picker="small">Host a party <span class="icon-icon_chevron_right"></span></a>
     }
     else
     {
-        <a href="@(((IPartier)this.Members.GetCurrentMember()).PartyUrl)" class="btn-primary btn-small nav-end-block" m-radius-picker="small">My party</a>
+        <a href="@(((IPartier)this.Members.GetCurrentMember()).PartyUrl)" class="btn-primary btn-small nav-end-block" m-radius-picker="small">MY PARTY <span class="icon-icon_chevron_right"></span></a>
     }
 
 
@@ -25,13 +25,13 @@
     @if (!this.Members.IsLoggedInPartier())
     {
         <div class="nav-end-block end-block-right">
-            @Html.ActionLink("Login", "NavigateToLoginUrl", "LoginSurface", null, new { @class = "btn-secondary btn-small",  m_radius_picker="small" })
+            <a href="@Url.Action("NavigateToLoginUrl", "LoginSurface")" class="btn-secondary btn-small" m-radius-picker="small">Login <span class="icon-icon_person"></span></a>
         </div>
     }
     else
     {
         <div class="nav-end-block end-block-right">
-            @Html.ActionLink("Logout", "Logout", "LogoutSurface", null, new { @class = "btn-secondary btn-small",  m_radius_picker="small" })
+            <a href="@Url.Action("Logout", "LogoutSurface")" class="btn-secondary btn-small" m-radius-picker="small">Logout <span class="icon-icon_person"></span></a>
         </div>
     }
 
@@ -45,20 +45,28 @@
             <ul>
                 <li class="menu left-side">
                     <ul>
-                        <li class="side-only"><a class="" href="/"><span class="icon-icon_home"></span>Home</a></li>
-                        <li class="side-only"><a class="" href="#"><span class="icon-icon_person"></span>My Party</a></li>
+                        <li class="side-only"><a href="/"><span class="icon-icon_home"></span>Home</a></li>
+                        <li class="side-only"><a href="#"><span class="icon-icon_person"></span>My Party</a></li>
+
                         @foreach (SitePage sitePage in Model.HeaderNavigationLeft)
                         {
-                            <li><a class="" href="@sitePage.Url"><span class="icon-icon_fingerpost"></span>@sitePage.Name</a></li>
+                        <li>
+                            <a href="@sitePage.Url"><span class="icon-icon_fingerpost"></span><span>@sitePage.Name</span></a>
+                        </li>
                         }
+
                     </ul>
                 </li>
                 <li class="menu right-side">
                     <ul>
+
                         @foreach (SitePage sitePage in Model.HeaderNavigationRight)
                         {
-                            <li><a class="" href="@sitePage.Url"><span class="icon-icon_fingerpost"></span>@sitePage.Name</a></li>
+                        <li>
+                            <a href="@sitePage.Url"><span class="icon-icon_fingerpost"></span><span>@sitePage.Name</span></a>
+                        </li>
                         }
+
                     </ul>
                 </li>
             </ul>

@@ -9,7 +9,7 @@
 /*****************************/
 
 
-@media only screen and (max-width: 1049px) {
+@media only screen and (max-width: 1100px) {
 
     .logo {
         padding: 4.59rem 3.27rem;
@@ -67,25 +67,32 @@
         margin-left: 6.2rem;
     }
 
+    //***************************** Party Ideas
+
+    .idea-sizer, .idea-tile {
+        width: 33.3333%;
+
+        &.wide {
+            width: 66.6666%;
+        }
+    }
+
 }
 
-
-
-
 /*****************************/
 /*
-/*  MOBILE VIEW
+/*  MID BREAK: CUSTOM HEADER
 /*
 /*****************************/
 
-@media only screen and (max-width: 767px) {
+@media only screen and (max-width: 850px) {
 
     main {
         padding-top: 6.6rem;
     }
 
     //***************************** ABSTRACT
-    .radius-mobile-0 {
+    .radius-tablet-0 {
         @include m-border-radius(0, 0, 0, 0, 0, 0, 0, 0);
     }
 
@@ -120,7 +127,7 @@
     .nav-end-block {
         display: none;
         left: 1.5rem;
-        color: $PrimaryColour;
+        color: $SecondaryColour;
     }
 
     .nav-end-block.end-block-right {
@@ -207,27 +214,119 @@
         line-height: normal;
     }
 
+}
+
+
+
+/*****************************/
+/*
+/*  TABLET VIEW
+/*
+/*****************************/
+
+
+@media only screen and (max-width: 768px) {
+
     //***************************** Event Page
     .file-upload-info {
-        margin-left: 0;
+        //margin-left: 0;
     }
 
     .party-image-container {
         float: none;
     }
 
-    //***************************** Home page
+    //***************************** General
 
-    .hero-explain {
-        margin-top: 18rem;
-        margin-right: 0;
+    .only-on-tablet {
+        display: block !important;
     }
 
 
-    //***************************** General
 
-    .only-on-mobile {
-        display: block !important;
+    //***************************** Party Ideas
+
+    .idea-sizer, .idea-tile, .idea-tile.wide {
+        width: 100%;
+    }
+
+    .idea-details {
+        width: 100%;
+        top: 11%;
+        left: 0;
+        padding: 0 $padSmallValue;
+
+        &.over-the-top {
+            position: inherit;
+            color: inherit;
+
+            h1 {
+                color: $FourthColour;
+                font-size: $FontSizeLarge;
+                line-height: 2.3rem;
+            }
+
+            .spotify-logo {
+                background-position-x: 2.8rem;
+            }
+        }
+    }
+
+    //***************************** Home page
+
+    .hero-explain {
+        margin-right: 0;
+        h1 {
+            text-align: center;
+            font-size: $HeadingFontSizeSmall;
+            line-height: $HeadingFontSizeSmall;
+        }
+    }
+
+    .money-raised {
+        position: relative;
+        float: right;
+        margin-bottom: 3rem;
+    }
+
+
+}
+
+/*****************************/
+/*
+/*  MOBILE VIEW
+/*
+/*****************************/
+
+
+@media only screen and (max-width: 450px) {
+
+    .hide-on-mobile {
+        display: none;
+    }
+
+    //***************************** Home page
+
+    .hero-explain {
+        margin-right: 0;
+        h1 {
+            text-align: center;
+            font-size: $HeadingFontSizeSmall;
+            line-height: $HeadingFontSizeSmall;
+        }
+    }
+
+    .money-raised {
+        width: 21rem;
+        height: 9.1rem;
+        background-size: 21rem;
+        right: auto;
+    }
+
+    .raised-amount {
+        font-size: $HeadingFontSizeSmall;
+        width: 16rem;
+        margin-top: 0.6rem;
     }
 
 }

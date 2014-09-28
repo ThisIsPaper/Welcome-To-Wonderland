@@ -11,6 +11,7 @@ abstract
 
 //**************************************** PADDING
 
+
 .pad-tiny { padding: $padSmallValue/2; }
 .pad-small { padding: $padSmallValue; }
 .pad-medium { padding: $padSmallValue * $multiplierMedium; }
@@ -37,6 +38,9 @@ abstract
 .pad-bottom-large { padding-bottom: $padSmallValue * $multiplierLarge; }
 
 .pad-0 { padding: 0; }
+.pad-1 { padding: 1; }
+.pad-2 { padding: 2; }
+.pad-3 { padding: 3; }
 
 .pad-right-0 { padding-right: 0;}
 .pad-right-1 { padding-right: 1rem;}
@@ -153,8 +157,8 @@ abstract
 
 
 //**************************************** FLOATS
-.m-float-left { float: left; }
-.m-float-right { float: right; }
+//.float-left { float: left; }
+//.float-right { float: right; }
 
 
 //**************************************** RADIUS
@@ -218,10 +222,6 @@ abstract
     position: static;
 }
 
-.only-on-mobile {
-    display: none;
-}
-
 .pos-top-0 {
     top: 0;
 }
@@ -231,9 +231,28 @@ abstract
 }
 
 
+//**************************************** DISPLAY
+
+
+.only-on-tablet {
+    display: none;
+}
+
+.dis-block {
+    display: block;
+}
+
+.dis-inline-block {
+    display: inline-block;
+}
+
 
 
 //**************************************** WIDTH
+
+.width-100p {
+    width: 100%;
+}
 
 .width-50p {
     width: 50%;
@@ -250,3 +269,4 @@ abstract
 .min-height-8 { min-height: 8rem; }
 .min-height-9 { min-height: 9rem; }
 .min-height-10 { min-height: 10rem; }
+.min-height-20 { min-height: 20rem; }

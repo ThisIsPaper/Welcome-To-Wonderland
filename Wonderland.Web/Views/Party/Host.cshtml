@@ -8,20 +8,28 @@
 
     <div class="container gutter" ng-controller="PartyCtrl" ng-init="profileImageUrlInit('@Model.PartyHost.ProfileImageUrl')">
 
-        <div class="wgrid-main wgrid-no-bottom-margin parent">
+        <div class="wgrid-main wgrid-no-bottom-margin">
 
             <div class="wgrid-full parent">
                 <div class="boxx collapse" m-radius-picker="large">
 
-                    <div class="wgrid-full wgrid-no-bottom-margin">
+                    <div class="wgrid-full wgrid-no-bottom-margin parent">
+
                         <div class="grid-12 party-main-image" ng-init="hardCodedCurrentPartyImageUrlInit('@Model.PartyHost.PartyImage')" ng-style="{'background-image': 'url(' + partyImageData.PartyImage +')'}"></div>
-                        <div class="edit-trigger" ng-click="openPageModal('partials/partyImageForm.html', 'partyImageModal', {'partyImageData': partyImageDataForForm, 'partyCustomImage': partyCustomImage})"><span class="edit-label">Edit</span><span class="icon-icon_edit"></span></div>
+
+                        <div class="party-image-default" ng-hide="partyImageData.PartyImage.length>0">
+                            <div class="icon-icon_camera"></div>
+                            <div>Choose my party picture</div>
+                        </div>
+
+                        <div class="edit-trigger" ng-click="openPageModal('partials/partyImageForm.html', 'partyImageModal', {'partyImageData': partyImageDataForForm, 'partyImageDefaultData': partyImageDefaultData, 'partyCustomImage': partyCustomImage})"><span class="edit-label">Edit</span><span class="icon-icon_edit"></span></div>
+
                     </div>
 
                     <div class="wgrid-full pad-large">
                         <div m-profile-image="{{ profileImage.url }}" m-radius-picker="small" ng-click="openPageModal('partials/profileImageForm.html', 'profileImageModal', {'profileImage': profileImage})"></div>
                         <div class="party-details">
-                            <h3 class="pad-right-3" ng-bind="partyDetailsData.PartyHeading">@this.Model.Heading</h3>
+                            <h3 class="pad-right-3 margin-top-0 margin-bottom-small" ng-bind="partyDetailsData.PartyHeading">@this.Model.Heading</h3>
                             <div class="body-small float-left margin-right-medium">
                                 <span class="icon-icon_clock"></span>
                                 <span ng-bind="partyDetailsData.PartyDateTime|datePreviewFormat"></span>
@@ -37,7 +45,7 @@
             </div>
 
 
-            <div class="wgrid-full">
+            <div class="wgrid-full parent">
                 <div class="boxx" m-radius-picker="medium large">
                     <h1 class="pad-right-3 pad-left-3">Join the Wonderland Party</h1>
                     <pre class="body-medium font-futura" ng-bind-html="partyCopyData.CopyHtmlSafe">@this.Model.Copy</pre>
@@ -53,23 +61,25 @@
 
 
 
-            <div class="wgrid-full">
-                <div class="boxx" m-radius-picker>
+            <div class="wgrid-full parent">
+                <div class="boxx" m-radius-picker ng-init="amountRaised=@Model.PartyHost.AmountRaised">
 
                     <div>
-                        <span class="body-mega">£<span>@Model.PartyHost.AmountRaised.ToString("F")</span></span>
-                        <span>raised of the </span>
-                        <span class="body-highlight">£<span ng-bind="fundraisingTargetData.FundraisingTarget"></span></span>
-                        <span>target</span>
+                        <div class="dis-inline-block body-mega" ng-bind="amountRaised|mCurrency:'£'"></div>
+                        <div class="dis-inline-block">
+                            <span>raised of the </span>
+                            <span class="body-highlight" ng-bind="fundraisingTargetData.FundraisingTarget|mCurrency:'£'"></span>
+                            <span>target</span>
+                        </div>
                     </div>
 
                     <div class="totaliser">
-                        <div class="current-total" style="width: 50%"></div>
+                        <div class="current-total" ng-style="{'width': (amountRaised|percentageRounder:fundraisingTargetData.FundraisingTarget) +'%'}"></div>
                     </div>
 
                     <div class="form-info">
-                        <span class="float-left">50%</span>
-                        <span class="float-right">Ranked #423 of 423 parties</span>
+                        <span class="float-left"><span ng-bind="amountRaised|percentageRounder:fundraisingTargetData.FundraisingTarget"></span>%</span>
+                        <span class="float-right">Ranked #x of x parties</span>
                     </div>
 
                     <div class="edit-trigger" ng-click="openPageModal('partials/fundraisingTargetForm.html', 'suggestedDonationModal', {'fundraisingTargetData': fundraisingTargetDataForForm})"><span class="edit-label">Edit</span><span class="icon-icon_edit"></span></div>
@@ -79,15 +89,15 @@
 
 
 
-            <div class="wgrid-full">
+            <div class="wgrid-full parent">
                 <div class="boxx" m-radius-picker>
                     <h4 class="top">Suggested ticket price</h4>
 
-                    <div class="ticket centered selected">
+                    <div class="ticket selected margin-left-3 margin-right-3">
                         <div class="stub">
                             <div class="holes"></div>
                             <div class="holes-right"></div>
-                            <div class="price">£<span ng-bind="suggestedDonationData.SuggestedDonation"></span></div>
+                            <div class="price" ng-bind="suggestedDonationData.SuggestedDonation|mCurrency:'£'"></div>
                         </div>
                     </div>
 
@@ -96,12 +106,12 @@
             </div>
 
 
-            <div class="wgrid-full">
-                @Html.ActionLink("Pay in money", "NavigateToDonateUrl", "DonateSurface", new { partyGuid = Model.PartyHost.PartyGuid }, new { @class = "btn-primary btn-large piggy-donater", @m_radius_picker="small medium" })
+            <div class="wgrid-full parent">
+                @Html.ActionLink("Pay in money", "NavigateToDonateUrl", "DonateSurface", new { partyGuid = Model.PartyHost.PartyGuid }, new { @class = "btn-primary btn-large piggy-donater dis-block", @m_radius_picker="small medium" })
             </div>
 
 
-            <div class="wgrid-full">
+            <div class="wgrid-full parent">
                 <div class="boxx" m-radius-picker>
                     <h4 class="top">Who's Coming <span>(@this.Model.Partiers.Count())</span></h4>
                     <ul>
@@ -115,7 +125,7 @@
                 </div>
             </div>
 
-            <div class="wgrid-full">
+            <div class="wgrid-full parent">
                 <div class="boxx" m-radius-picker>
                     <h4 class="top">Badges <span>(0 of 6)</span></h4>
                 </div>
@@ -182,5 +192,3 @@
     URL to call for party wall items (don't pass the beforeDateTime param and the server will use the current server time)
     ?PartyGuid=&beforeDateTime=12/12/12&take=10
 </p>*@
-
-@* badges *@

@@ -19,6 +19,7 @@
 @import "partials/mixins";
 @import "partials/forms";
 @import "partials/type";
+@import "partials/vars";
 
 
 html {
@@ -49,6 +50,10 @@ nav, nav li, .toolbar, .toolbar li, .btn-group {
 
 pre {
     white-space: pre-wrap;
+}
+
+td {
+    padding-right: $padSmallValue * $multiplierLarge;
 }
 
 /* =============================================================================
@@ -92,6 +97,7 @@ main {
 }
 
 
+
 /* =============================================================================
 Event Page specific - move these out of here eventually
 ========================================================================== */
@@ -103,6 +109,17 @@ Event Page specific - move these out of here eventually
     &.side {
         height: 18rem;
     }
+}
+
+.party-image-default {
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    color: $SecondaryColour;
+    font-size: $FontSizeLarge;
+    background-color: $greyLight;
+    padding-top: 17rem;
 }
 
 .edit-trigger {
@@ -160,6 +177,17 @@ Event Page specific - move these out of here eventually
     }
 }
 
+.profile-image-remover {
+    color: $redDark;
+    font-size: $FontSizeMini;
+    cursor: pointer;
+
+    position: absolute;
+    top: $profileImageSize + .6rem;
+    left: .3rem;
+    width: $profileImageSize;
+}
+
 .image-shift-details {
     margin-left: $profileImageSize + $padSmallValue;
 
@@ -186,7 +214,7 @@ Event Page specific - move these out of here eventually
     }
 }
 
-dal
+
 /*******************************/// party image mo
 .party-image-container {
     @extend .margin-bottom-medium;
@@ -256,10 +284,16 @@ dal
     }
 }
 
+.reference-image {
+    width: 100%;
+    height: 9rem;
+    background-size: cover;
+}
+
 .file-upload-info {
     @extend .body-small;
 
-    margin-left: 17.2rem;
+    //margin-left: 17.2rem;
 }
 
 /*******************************/// wall
@@ -283,6 +317,7 @@ dal
 
 
 .ticket {
+    position: relative;
 
     .stub {
         @extend .pad-medium;
@@ -357,6 +392,7 @@ label .ticket {
     .current-total {
     @include border-radius($padSmallValue/2);
         background-color: $SecondaryColour;
+        width: 0;
         max-width: 100%;
         height: 3rem;
     }
@@ -398,7 +434,7 @@ One-off uses
 
 .planking {
   background: image-url('wood_texture.jpg') repeat top left;
-  background-size: 100% 100%;
+  background-size: 100% auto;
 }
 
 .home-content-adjust {
@@ -424,27 +460,6 @@ One-off uses
     width: 27.5rem;
 }
 
-.home-tile-repeater {
-
-
-    // Calc a random rotate degree value for each frame tile
-  @for $i from 1 through 6 {
-    &:nth-child( #{ $i } ) {
-      .home-tile {
-        @if $i % 2 == 0 {
-          $rand: (random( 23 ) * 0.1) + deg; // generate positive random number (converted to float)
-          @include transform( rotate( $rand ) );
-        }
-        @else {
-          $rand: ( (random( 23 ) * 0.1 ) * - 1 )  + deg;  // generate negative random number
-          @include transform( rotate( $rand ) );
-        }
-      }
-    }
-  }
-
-}
-
 .home-tile {
     @extend .pad-small;
     @extend .margin-bottom-large;
@@ -452,11 +467,11 @@ One-off uses
     position: relative;
     overflow: hidden;
 
-
-
+    @include box-shadow( 0px 14px 30px 0px rgba(0, 0, 0, 0.6) );
 }
 
 .home-tile-image {
+    @include border-radius(.7rem);
     background-repeat: no-repeat;
     background-size: cover;
     height: 100%;
@@ -505,3 +520,131 @@ One-off uses
     right: 0;
     color: $SecondaryColour;
 }
+
+
+
+
+/*******************************/// party ideas
+
+.idea-sizer {
+    width: 25%;
+}
+
+.idea-tile {
+    @extend .radius-v1-small;
+    width: 25%;
+    padding: $padSmallValue;
+
+    &.wide {
+        width: 50%;
+    }
+}
+
+.idea {
+    padding: $padSmallValue;
+    background-color: white;
+    text-transform: uppercase;
+    text-align: center;
+    @include box-shadow( 0px 14px 30px 0px rgba(0, 0, 0, 0.6) );
+}
+
+.idea-details {
+    width: 100%;
+    top: 11%;
+    left: 0;
+    padding: 0 $padSmallValue;
+
+    &.over-the-top {
+        position: absolute;
+        color: white;
+
+        h1 {
+            color: white;
+        }
+    }
+
+    &.wide {
+        top: 23%;
+    }
+}
+
+.idea-polaroid {
+    @include border-radius(.7rem);
+}
+
+.pinterest-ico:before {
+    content: "\e623";
+    font-family: $fontFaceIcomoon;
+    color: $redDark;
+}
+
+.spotify-logo {
+    width: 8rem;
+    height: 2.4rem;
+    background-image: image-url('spotify_logo@2x.png');
+    background-repeat: no-repeat;
+    background-size: 8rem 2.4rem;
+    overflow: hidden;
+
+    margin: 0 auto;
+}
+
+.idea-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    z-index: 5;
+    text-indent: -999rem;
+}
+
+
+.share-title {
+    width: 27.8rem;
+    height: 11.6rem;
+    background-image: image-url('share-title@2x.png');
+    background-repeat: no-repeat;
+    background-size: 27.8rem 11.6rem;
+
+}
+
+.share-facebook, .share-twitter, .share-email {
+    background-color: $colorFacebook;
+    font-family: $fontFaceMacmillan;
+    font-size: $FontSizeLarge;
+    color: white;
+    padding: $padSmallValue;
+    line-height: 5.5rem;
+
+    &:before {
+        font-family: $fontFaceIcomoon;
+        content: "\e619";
+        margin-right: $marginSmallValue;
+    }
+}
+
+.share-twitter {
+    background-color: $colorTwitter;
+    &:before {
+        content: "\e61a";
+    }
+}
+
+
+.share-email {
+    background-color: $SecondaryColour;
+    &:before {
+        content: "\e618";
+        margin-right: 0;
+    }
+}
+
+
+/*******************************/// footer
+
+
+.color-facebook { color: $colorFacebook !important; }
+.color-twitter { color: $colorTwitter !important; }
+.color-gplus { color: $colorGPlus !important; }

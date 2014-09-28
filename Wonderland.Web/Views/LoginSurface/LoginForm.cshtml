@@ -4,9 +4,24 @@
 {
     @Html.AntiForgeryToken()
 
-    @Html.EditorForModel()
+    @* TODO: strip tags from validation message *@
+    <div class="errorred" ng-show="errorMessage.length>0" ng-init="errorMessage='@Html.ValidationMessage("LoginValidation")'" ng-bind="errorMessage"></div>
 
-    @Html.ValidationMessage("LoginValidation") @* server side validation message - reports an invalid username / password combination *@
+    <div class="grid-8 grid-mobile-12 margin-bottom-large">
+        <label for="EmailAddress">Email</label>
+        <input name="EmailAddress" type="text" m-radius-picker="small"/>
 
-    <button type="submit">Submit</button>
+        <label for="Password">Password</label>
+        <div class="pos-relative">
+            <span class="form-field-ico icon-icon_padlock"></span>
+            <input name="Password" type="password" m-radius-picker="small"/>
+        </div>
+    </div>
+
+    <div class="grid-12">
+        <hr/>
+        <button type="submit" class="btn-primary float-right" m-radius-picker="small">Login ></button>
+        <a href="/" class="cancel margin-right-1 float-right">Cancel</a>
+    </div>
+
 }

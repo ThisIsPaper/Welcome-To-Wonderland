@@ -1,86 +1,45 @@
 ﻿@inherits UmbracoViewPage<SiteSettings>
 
 
-@*<footer class="container">
-    <section class="footer-primary">
-        <nav>
-            <h2>Pages</h2>
-            <ul>
-            @foreach (SitePage sitePage in Model.FooterNavigation)
-            {
-              <li><a href="@sitePage.Url">@sitePage.Name</a></li>
-            }
-            </ul>
-        </nav>
-        <div class="share-container menu">
-            <h2>
-                Connect with us
-            </h2>
-            <ul>
-                <li><a href="@Model.FacebookUrl"><span class="icon-facebook"> </span> </a></li>
-                <li><a href="@Model.TwitterUrl"><span class="icon-twitter"> </span> </a></li>
-                <li><a href="@Model.GooglePlusUrl"><span class="icon-google_plus"> </span> </a></li>
-            </ul>
-            <p>
-                @Model.CampaignHashtag
-            </p>
-        </div>
-        <div class="footer-logo row">
-            <img src="/img/macmillan-logo.svg" alt="Macmillan Cancer Support" />
-        </div>
-    </section>
-    <section class="footer-secondary row">
-        <div class="legal-copy">
-            @Model.FooterCopy
-        </div>
-        <nav>
-            <ul>
-              @foreach (SitePage sitePage in Model.LegalNavigation)
-              {
-                <li><a href="@sitePage.Url">@sitePage.Name</a></li>
-              }
-            </ul>
-        </nav>
-    </section>
-</footer>*@
-
-
 
 
 <footer>
     <div class="footer-snow-brush-overlay"></div>
     <div class="container">
 
-        <div class="grid-3 grid-mobile-12 footer-menu">
-            <h2>Pages</h2>
+        <div class="grid-3 grid-tablet-12 footer-menu">
+            <h2 class="top margin-bottom-tiny">Pages</h2>
             <ul>
                 @foreach (SitePage sitePage in Model.HeaderNavigationLeft)
                 {
-                    <li><a href="@sitePage.Url">@sitePage.Name</a></li>
+                <li>
+                    <a href="@sitePage.Url">@sitePage.Name</a>
+                </li>
                 }
 
                 @foreach (SitePage sitePage in Model.HeaderNavigationRight)
                 {
-                    <li><a href="@sitePage.Url">@sitePage.Name</a></li>
+                <li>
+                    <a href="@sitePage.Url">@sitePage.Name</a>
+                </li>
                 }
             </ul>
         </div>
 
 
-        <div class="grid-4 grid-mobile-12 footer-menu single-line icon-list">
-            <h2>
-                Connect with us
-            </h2>
+        <div class="grid-4 grid-tablet-12 footer-menu single-line icon-list">
+            <h2 class="top margin-bottom-small">Connect with us</h2>
             <ul>
-                <li><a class="icon-icon_facebook" href="@Model.FacebookUrl" target="_blank"><span>Find us on Facebook</span></a></li>
-                <li><a class="icon-icon_twitter" href="@Model.TwitterUrl" target="_blank"><span>Find us on Twitter</span></a></li>
-                <li><a class="icon-icon_google_plus" href="@Model.GooglePlusUrl" target="_blank"><span>Find us on Google+</span></a></li>
+                <li><a class="icon-icon_facebook color-facebook" href="@Model.FacebookUrl" target="_blank"><span>Find us on Facebook</span></a></li>
+                <li><a class="icon-icon_twitter color-twitter" href="@Model.TwitterUrl" target="_blank"><span>Find us on Twitter</span></a></li>
+                <li><a class="icon-icon_google_plus color-gplus" href="@Model.GooglePlusUrl" target="_blank"><span>Find us on Google+</span></a></li>
             </ul>
-            <p display="display:block; clear:both;" class="body-large">@Model.CampaignHashtag</p>
+            <div class="margin-bottom-small clear"></div>
+            <div class="clear color-twitter body-large body-bold font-futura">@Model.CampaignHashtag</div>
         </div>
 
 
-        <div class="grid-5 grid-mobile-12">
+        <div class="grid-5 grid-tablet-12">
             <img style="max-width: 25rem;" src="/img/macmillan-logo.svg" alt="Macmillan Cancer Support" />
         </div>
 
@@ -89,18 +48,20 @@
     <div class="container">
 
 
-        <div class="grid-5 grid-mobile-12 footer-menu single-line push-7 push-mobile-0">
+        <div class="grid-5 grid-tablet-12 footer-menu single-line push-7 push-tablet-0">
 
             <ul>
-              @foreach (SitePage sitePage in Model.LegalNavigation)
-              {
-                <li><a href="@sitePage.Url">@sitePage.Name</a></li>
-              }
+                @foreach (SitePage sitePage in Model.LegalNavigation)
+                {
+                <li>
+                    <a href="@sitePage.Url">@sitePage.Name</a>
+                </li>
+                }
             </ul>
 
         </div>
 
-        <div class="grid-7 grid-mobile-12 body-mini pull-5 pull-mobile-0">Macmillan Cancer Support, registered charity in England and Wales (261017) and the Isle of Man (604). A company limited by guarantee, registered in England and Wales company number 2400969. Isle of Man company number 4694F. Registered office: 89 Albert Embankment, London SE1 7UQ.</div>
+        <div class="grid-7 grid-tablet-12 body-mini pull-5 pull-tablet-0">Macmillan Cancer Support, registered charity in England and Wales (261017) and the Isle of Man (604). A company limited by guarantee, registered in England and Wales company number 2400969. Isle of Man company number 4694F. Registered office: 89 Albert Embankment, London SE1 7UQ.</div>
 
 
     </div>

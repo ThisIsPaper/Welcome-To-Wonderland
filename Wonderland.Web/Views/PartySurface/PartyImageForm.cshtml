@@ -1,11 +1,9 @@
 ﻿@model PartyImageForm
 
-<div ng-init="partyImageDataInit(@Html.Raw(Json.Encode(
-    new {
-        DefaultImages = Model.DefaultImages.Select(x => x.Url),
-        PartyImage = Model.PartyImage 
-    }
-)))"></div>
+
+<div ng-init="partyImageDefaultDataInit(
+    @Html.Raw(Json.Encode(Model.DefaultImages.Select(x => x.Url)))
+)"></div>
 
 
 
@@ -16,34 +14,11 @@
 
 
         @* Dynamic defaults *@
-        @*<label ng-repeat="defaultImage in partyImageData.DefaultImages">
-            <input type="radio" name="urlSelectar" ng-model="partyImageData.PartyImage" value="defaultImage"  />
-            <img ng-src="{{ defaultImage }}" alt="" width="50" height="50"/>
-        </label>
-        <div ng-show="partyImageData.DefaultImages.length<=0">No default images... yet</div>@*
 
-
-        @* hardcoded defaults *@
-        <div class="party-image-container" ng-class="{'selected': partyImageData.PartyImage=='/img/test_default_image_1.jpg'}">
+        <div class="party-image-container" ng-class="{'selected': partyImageData.PartyImage==defaultImage}" ng-repeat="defaultImage in partyImageDefaultData">
             <label>
-                <input type="radio" name="urlSelectar" ng-model="partyImageData.PartyImage" value="/img/test_default_image_1.jpg"  />
-                <div class="party-image-selecter" style="background-image: url(/img/test_default_image_1.jpg)" m-radius-picker="small"></div>
-            </label>
-            <div class="warner" ng-click="partyImageData.PartyImage=null">Deselect image <span class="icon-icon_x"></span></div>
-        </div>
-
-        <div class="party-image-container" ng-class="{'selected': partyImageData.PartyImage=='/img/test_default_image_2.jpg'}">
-            <label>
-                <input type="radio" name="urlSelectar" ng-model="partyImageData.PartyImage" value="/img/test_default_image_2.jpg"  />
-                <div class="party-image-selecter" style="background-image: url(/img/test_default_image_2.jpg)" m-radius-picker="small"></div>
-            </label>
-            <div class="warner" ng-click="partyImageData.PartyImage=null">Deselect image <span class="icon-icon_x"></span></div>
-        </div>
-
-        <div class="party-image-container" ng-class="{'selected': partyImageData.PartyImage=='/img/test_default_image_3.jpg'}">
-            <label>
-                <input type="radio" name="urlSelectar" ng-model="partyImageData.PartyImage" value="/img/test_default_image_3.jpg"  />
-                <div class="party-image-selecter margin-right-0" style="background-image: url(/img/test_default_image_3.jpg)" m-radius-picker="small"><span></span></div>
+                <input type="radio" name="urlSelectar" ng-model="partyImageData.PartyImage" ng-value="defaultImage"  />
+                <div class="party-image-selecter" ng-style="{'background-image': 'url(' + defaultImage + ')'}" m-radius-picker="small"></div>
             </label>
             <div class="warner" ng-click="partyImageData.PartyImage=null">Deselect image <span class="icon-icon_x"></span></div>
         </div>

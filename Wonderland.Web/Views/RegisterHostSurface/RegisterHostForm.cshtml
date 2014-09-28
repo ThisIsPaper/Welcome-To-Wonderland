@@ -1,26 +1,41 @@
 ﻿@model RegisterHostForm
 
+
 @using(Html.BeginUmbracoForm<RegisterHostSurfaceController>("HandleRegisterHostForm"))
 {
-    @Html.AntiForgeryToken()
-    
-    <div class="editor-label">
-        @Html.LabelFor(x => x.EmailAddress)
-    </div>
-    <div class="editor-field">
-        @Html.EditorFor(x => x.EmailAddress)
-        @Html.ValidationMessageFor(x => x.EmailAddress)
-        @Html.ValidationMessage("EmailValidation") @* additional check after form submission *@ 
+
+    <div class="grid-8 grid-mobile-12 margin-bottom-large">
+
+        <h3>Your details</h3>
+        @Html.AntiForgeryToken()
+
+
+        @Html.ValidationMessage("RegisterHostValidation")
+
+
+        <label for="email">Email</label>
+        <div class="margin-bottom-small" ng-show="errorEmailMessage.length>0" ng-init="errorEmailMessage='@Html.ValidationMessageFor(x => x.EmailAddress)'">@Html.ValidationMessageFor(x => x.EmailAddress)</div>
+        @Html.TextBoxFor(x => x.EmailAddress, new { @m_radius_picker="small" })
+
+
+
+        <label for="Password">Password</label>
+        <div class="margin-bottom-small" ng-show="errorPasswordMessage.length>0" ng-init="errorPasswordMessage='@Html.ValidationMessageFor(x => x.Password)'">@Html.ValidationMessageFor(x => x.Password)</div>
+        <div class="pos-relative">
+            <span class="form-field-ico icon-icon_padlock"></span>
+            @Html.PasswordFor(x => x.Password, new { @m_radius_picker="small" })
+        </div>
+
+        @Html.LabelFor(x => x.MarketingSource)
+        @Html.DropDownListFor(x => x.MarketingSource, (SelectList)this.ViewBag.MarketingSources)
+
+
     </div>
 
-    @Html.EditorForField(x => x.Password) @* uses the custom HtmlHelperExtensions *@ 
-            
-    <div class="editor-label">
-        @Html.LabelFor(x => x.MarketingSource)
+    <div class="grid-12">
+        <hr/>
+        <button type="submit" class="btn-primary float-right" m-radius-picker="small">Register ></button>
+        <a href="/" class="cancel margin-right-1 float-right">Cancel</a>
     </div>
-    <div class="editor-field">
-        @Html.DropDownListFor(x => x.MarketingSource, (SelectList)this.ViewBag.MarketingSources)
-    </div>
-    
-    <button type="submit">Submit</button>
+
 }

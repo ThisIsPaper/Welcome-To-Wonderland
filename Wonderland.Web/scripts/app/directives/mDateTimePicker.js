@@ -61,9 +61,6 @@ wonderlandApp.directive('mDateTimePicker', ['safeApply', function (safeApply) {
                     });
                 }
 
-
-                console.log('createPika', basePicka, initialDate);
-
                 pikaday = new Pikaday(basePicka);
 
             };

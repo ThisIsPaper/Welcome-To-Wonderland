@@ -1,7 +1,8 @@
 wonderlandApp.directive('mProfileImage', [function () {
 
     var MAIN_CLASS = 'profile-image',
-        NOT_SET_CLASS = 'profile-image-notset';
+        NOT_SET_CLASS = 'profile-image-notset',
+        ALLOWED_EXTENSIONS = ['.jpg', '.jpeg', '.png'];
 
     return {
         scope: false,
@@ -15,7 +16,12 @@ wonderlandApp.directive('mProfileImage', [function () {
 
             attrs.$observe('mProfileImage', function (newVal) {
 
-                if (!newVal || !angular.isString(newVal)) {
+                var hasExt = false;
+                for (var i=0; i<ALLOWED_EXTENSIONS.length; i++) {
+                    hasExt = newVal.toLowerCase().indexOf(ALLOWED_EXTENSIONS[i]) >= 0 ? true : hasExt;
+                }
+
+                if (!newVal || !angular.isString(newVal) || !hasExt) {
 
                     scope.hasBackgroundImage = false;
 
