@@ -63,10 +63,9 @@ wonderlandApp.filter('mCurrency', ["$filter", function ($filter) {
     return function(amount, currencySymbol){
         var currency = $filter('currency');
 
-        if(amount < 0){
-            return currency(amount, currencySymbol).replace("(", "-").replace(")", "");
-        }
+        var formattedCurrency = currency(amount, currencySymbol);
+        formattedCurrency = formattedCurrency.replace("(", "-").replace(")", "").replace(".00", "");
 
-        return currency(amount, currencySymbol);
+        return formattedCurrency;
     };
 }]);

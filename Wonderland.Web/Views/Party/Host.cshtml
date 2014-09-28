@@ -62,7 +62,8 @@
 
 
             <div class="wgrid-full parent">
-                <div class="boxx" m-radius-picker ng-init="amountRaised=@Model.PartyHost.AmountRaised">
+                @*<div class="boxx" m-radius-picker ng-init="amountRaised=@Model.PartyHost.AmountRaised">*@
+                <div class="boxx" m-radius-picker ng-init="amountRaised=48.34555">
 
                     <div>
                         <div class="dis-inline-block body-mega" ng-bind="amountRaised|mCurrency:'£'"></div>
@@ -97,7 +98,7 @@
                         <div class="stub">
                             <div class="holes"></div>
                             <div class="holes-right"></div>
-                            <div class="price">£<span ng-bind="suggestedDonationData.SuggestedDonation"></span></div>
+                            <div class="price" ng-bind="suggestedDonationData.SuggestedDonation|mCurrency:'£'"></div>
                         </div>
                     </div>
 
