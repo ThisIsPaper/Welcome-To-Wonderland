@@ -2,17 +2,22 @@
 
 <h2>Party Idea Tiles (partial)</h2>
 
-<ul class="party-idea-tiles" ng-init="">
-    <!--
-        tile-size-large
-        tile-size-medium
-        tile-size-small
-
-        tile-type-decoration
-        tile-type-fashion
-        tile-type-playlist
-        tile-type-recipe
-    -->
+<ul class="party-idea-tiles" ng-init="@Json.Encode(
+                                                Model.Select(x =>
+                                                    new 
+                                                    {
+                                                        imageUrl = x.TileImage.Url,
+                                                        tileType = x.TileType, // decoration, fashion, playlist, recipe, fundraising
+                                                        tileHeading = x.TileHeading,
+                                                        tileCopy= x.TileCopy,
+                                                        link = x.Url,
+                                                        spotify = x is PlaylistTile,
+                                                        pinterest = x is FashionTile || x is DecorationTile,
+                                                        wide = x.TileSize == PartyIdeaTileSize.Wide
+                                                    }
+                                               )
+                                        )">
+    
     @foreach (PartyIdeaTile partyIdeaTile in Model)
     {
         <li class="tile-size-@partyIdeaTile.TileSize.ToString().ToLower() tile-type-@partyIdeaTile.TileType">
