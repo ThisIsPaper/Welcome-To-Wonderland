@@ -18,6 +18,9 @@
 
                 @(Html.Action<LoginSurfaceController>("RenderLoginForm"))
 
+                <hr/>
+                @Html.ActionLink("Forgotten Password", "NavigateToForgottenPasswordUrl", "ForgottenPasswordSurface")
+
             </div>
 
         </div>

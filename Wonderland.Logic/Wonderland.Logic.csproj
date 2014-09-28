@@ -207,11 +207,13 @@
     <Compile Include="Controllers\Render\FashionTileController.cs" />
     <Compile Include="Controllers\Render\HomeController.cs" />
     <Compile Include="Controllers\Render\LeaderboardController.cs" />
+    <Compile Include="Controllers\Render\MyProfileController.cs" />
     <Compile Include="Controllers\Render\PartyController.cs" />
     <Compile Include="Controllers\Render\RegisterGuestController.cs" />
     <Compile Include="Controllers\Render\RegisterHostController.cs" />
     <Compile Include="Controllers\Render\WonderlandersController.cs" />
     <Compile Include="Controllers\Surface\DonateSurfaceController.cs" />
+    <Compile Include="Controllers\Surface\ForgottenPasswordSurfaceController.cs" />
     <Compile Include="Controllers\Surface\LoginSurfaceController.cs" />
     <Compile Include="Controllers\Surface\LogoutSurfaceController.cs" />
     <Compile Include="Controllers\Surface\PartySurfaceController.cs" />
@@ -239,6 +241,7 @@
     <Compile Include="Models\Content\FundraisingIdeas.cs" />
     <Compile Include="Models\Content\FundraisingTile.cs" />
     <Compile Include="Models\Content\Home.cs" />
+    <Compile Include="Models\Content\MyProfile.cs" />
     <Compile Include="Models\Content\PageNotFound.cs" />
     <Compile Include="Models\Content\Donate.cs" />
     <Compile Include="Models\Content\Leaderboard.cs" />
@@ -273,6 +276,7 @@
     <Compile Include="Models\Entities\Reward.cs" />
     <Compile Include="Models\Entities\SiteSettings.cs" />
     <Compile Include="Models\Forms\DonateForm.cs" />
+    <Compile Include="Models\Forms\ForgottenPasswordForm.cs" />
     <Compile Include="Models\Forms\FormResponse.cs" />
     <Compile Include="Models\Forms\FundraisingTargetForm.cs" />
     <Compile Include="Models\Forms\LoginForm.cs" />
