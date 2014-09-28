@@ -15,7 +15,6 @@ wonderlandApp.controller('PartyCtrl', ['safeApply', '$ocModal', '$sce', '$scope'
     };
 
     $scope.$onRootScope('partyCopyDataUpdated', function(event, response, dataObject) {
-        console.log('partyCopyDataUpdated', response, dataObject);
         $scope.partyCopyDataInit(dataObject);
         $ocModal.close('partyCopyModal');
     });
@@ -44,15 +43,11 @@ wonderlandApp.controller('PartyCtrl', ['safeApply', '$ocModal', '$sce', '$scope'
         if (partyDetailsData.Postcode) address.push(partyDetailsData.Postcode);
         $scope.partyDetailsFormattedAddress = address.join(", ");
 
-        console.log('partyDetailsDataInit', partyDetailsData);
-
         $scope.partyDetailsData = partyDetailsData;
         $scope.partyDetailsDataForForm = angular.copy($scope.partyDetailsData);
     };
 
     $scope.$onRootScope('partyDetailsDataUpdated', function(event, response, dataObject) {
-
-        console.log('partyDetailsDataUpdated', response, dataObject);
 
         $scope.partyDetailsDataInit(dataObject);
         $ocModal.close('partyDetailsModal');
@@ -149,7 +144,6 @@ wonderlandApp.controller('PartyCtrl', ['safeApply', '$ocModal', '$sce', '$scope'
 
     $scope.partyImageDefaultDataInit = function (defaultImages) {
 
-        console.log('partyImageDefaultDataInit', defaultImages);
         $scope.partyImageDefaultData = defaultImages;
 
 
@@ -163,12 +157,6 @@ wonderlandApp.controller('PartyCtrl', ['safeApply', '$ocModal', '$sce', '$scope'
     };
 
     $scope.$onRootScope('partyImageUpdated', function(event, response) {
-        if (response && response.Success === true && response.Message) {
-
-            // TODO - there isn't any return data in the message
-
-//            $scope.partyImageDataInit(response.Message);
-        }
 
         $scope.partyImageData.PartyImage = $scope.partyImageDataForForm.PartyImage;
 
@@ -179,7 +167,6 @@ wonderlandApp.controller('PartyCtrl', ['safeApply', '$ocModal', '$sce', '$scope'
     $scope.$onRootScope('partyImageCustomUrlUploaded', function(event, response) {
         if (response && response.Success === true && response.Message) {
 
-            console.log('partyImageCustomUrlUploaded', response.Message);
             safeApply($scope, function () {
                 $scope.partyCustomImage.url = response.Message;
                 $scope.partyImageDataForForm.PartyImage = $scope.partyCustomImage.url;
@@ -190,7 +177,6 @@ wonderlandApp.controller('PartyCtrl', ['safeApply', '$ocModal', '$sce', '$scope'
 
 
     $scope.hardCodedCurrentPartyImageUrlInit = function (url) {
-        console.log('hardCodedCurrentPartyImageUrlInit', url);
 
         initUrl = url;
 

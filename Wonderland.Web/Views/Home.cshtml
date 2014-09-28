@@ -32,7 +32,7 @@
                     <p>@Model.BannerCopy</p>
                 </div>
                 <div class="money-raised">
-                    <h1 class="raised-amount margin-top-2">£<span>@Model.TotalAmountRaised.ToString("F")</span></h1>
+                    <h1 class="raised-amount margin-top-2" ng-init="amountRaised=@Model.TotalAmountRaised" ng-bind="amountRaised|mCurrency:'£'"></h1>
                 </div>
             </div>
             <a href="#" class="btn-primary btn-large pad-top-small pad-bottom-small" m-radius-picker="small medium">My party <span class="icon-icon_chevron_right"></span></a>

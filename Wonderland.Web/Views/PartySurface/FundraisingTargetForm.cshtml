@@ -6,19 +6,43 @@
 <script type="text/ng-template" id="partials/fundraisingTargetForm.html">
 
 
-    <label><input type="radio" name="selectar" ng-click="showChoose=false" ng-model="fundraisingTargetData.FundraisingTarget" value="100" />£100</label>
-    <label><input type="radio" name="selectar" ng-click="showChoose=false" ng-model="fundraisingTargetData.FundraisingTarget" value="250" />£250</label>
-    <label><input type="radio" name="selectar" ng-click="showChoose=false" ng-model="fundraisingTargetData.FundraisingTarget" value="300" />£300</label>
-    <label><input type="radio" name="chooser" ng-checked="showChoose" m-fund-target-chooser="showChoose" m-fund-target-chooser-value="fundraisingTargetData.FundraisingTarget" />I'll choose</label>
-    <input type="text" ng-model="fundraisingTargetData.FundraisingTarget" ng-show="showChoose" />
 
 
-    @using (Html.BeginUmbracoForm<PartySurfaceController>("HandleFundraisingTargetForm", FormMethod.Post, new { m_serialized="", m_post_on_submit="fundraisingTargetData", m_on_success_event="fundraisingTargetDataUpdated" }))
+    @using (Html.BeginUmbracoForm<PartySurfaceController>("HandleFundraisingTargetForm", FormMethod.Post, new { m_serialized="", m_post_on_submit="fundraisingTargetData", m_on_success_event="fundraisingTargetDataUpdated", @name="targetForm" }))
     {
         @Html.AntiForgeryToken()
 
-        <input type="text" name="fundraisingTarget" ng-model="fundraisingTargetData.FundraisingTarget" />
+        <div class="form-holder">
 
-        <button type="submit">Save Changes</button>
+            <h4>Set you fundraising target</h4>
+            <p class="form-info">Set your target here to let your guests know how much you are trying to raise.</p>
+            <label class="dis-inline-block"><input type="radio" name="selectar" ng-click="showChoose=false" ng-model="fundraisingTargetData.FundraisingTarget" value="100" />£100</label>
+            <label class="dis-inline-block"><input type="radio" name="selectar" ng-click="showChoose=false" ng-model="fundraisingTargetData.FundraisingTarget" value="250" />£250</label>
+            <label class="dis-inline-block"><input type="radio" name="selectar" ng-click="showChoose=false" ng-model="fundraisingTargetData.FundraisingTarget" value="300" />£300</label>
+            <label class="dis-inline-block"><input type="radio" name="chooser" ng-checked="showChoose" m-fund-target-chooser="showChoose" m-fund-target-chooser-value="fundraisingTargetData.FundraisingTarget" />I'll choose</label>
+
+            <div class="pos-relative width-50p" ng-show="showChoose">
+                <span class="form-field-ico">£</span>
+                <input class="currency" type="text" ng-model="fundraisingTargetData.FundraisingTarget" m-valid-number m-radius-picker="small" />
+            </div>
+            <div class="clear"></div>
+
+            <hr/>
+
+            <div class="grid-4 grid-tablet-6 grid-mobile-12 pad-small text-align-center" ng-repeat="fund in hardcodedFundraisingTargets">
+                <div class="reference-image" ng-style="{'background-image': 'url(' + fund.imageUrl + ')'}" m-radius-picker="small"></div>
+                <div class="form-info body-emphasize" ng-bind="fund.title"></div>
+                <div class="form-info" ng-bind="fund.info"></div>
+            </div>
+
+            <div class="clear margin-bottom-large"></div>
+
+
+            <input type="hidden" name="fundraisingTarget" ng-model="fundraisingTargetData.FundraisingTarget" />
+
+            <button type="submit" class="btn-primary float-right" ng-disabled="!fundraisingTargetData.FundraisingTarget" m-radius-picker="small medium">Save changes</button>
+            <span class="cancel margin-right-1 float-right">Cancel</span>
+
+        </div>
     }
 </script>

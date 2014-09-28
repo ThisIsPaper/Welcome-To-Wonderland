@@ -1,4 +1,4 @@
-wonderlandApp.controller('PageCtrl', ['debounce', '$scope', '$window', function (debounce, $scope, $window) {
+wonderlandApp.controller('PageCtrl', ['debounce', '$rootScope', '$scope', '$window', function (debounce, $rootScope, $scope, $window) {
 
     $scope.pageHeaderCompress = false;
     $scope.pageShowingSideNavMenu = false;
@@ -33,5 +33,18 @@ wonderlandApp.controller('PageCtrl', ['debounce', '$scope', '$window', function 
 
     runScrollCheck();
     angular.element($window).bind('scroll', runScrollCheck);
+
+
+
+
+
+    /*************************
+    HARDCODED
+    /*************************/
+    $rootScope.hardcodedFundraisingTargets = [
+        {imageUrl: '/img/test_default_image_1.jpg', title: 'Standard', info: 'Get a round of applause and enjoy your party kit'},
+        {imageUrl: '/img/test_default_image_2.jpg', title: '£150 or more', info: 'Party kit and an exclusive Wonderland t-shirt by Ashish'},
+        {imageUrl: '/img/test_default_image_3.jpg', title: '£300 or more', info: 'Party kit, t-shirt and an exclusive invite to our celebrity after party'}
+    ];
 
 }]);

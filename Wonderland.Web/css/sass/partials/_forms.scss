@@ -190,9 +190,12 @@ input[type="text"][readonly] {
     cursor: pointer;
 }
 
-
 input[type='password'] {
     padding-left: 4rem;
+}
+
+input[type="text"].currency {
+    padding-left: 3rem;
 }
 
 

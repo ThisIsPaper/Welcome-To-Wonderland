@@ -284,6 +284,12 @@ Event Page specific - move these out of here eventually
     }
 }
 
+.reference-image {
+    width: 100%;
+    height: 9rem;
+    background-size: cover;
+}
+
 .file-upload-info {
     @extend .body-small;
 
