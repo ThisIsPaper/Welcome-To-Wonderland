@@ -2,10 +2,58 @@
 @{
     Layout = "SitePage.cshtml";
 }
-	
-<h1>@Model.TileHeading</h1>
-<p>@Model.TileCopy</p>
 
-<img src="@Model.TileImage.Url"/>
 
-<p>@Html.Raw(Model.SpotifyUrl)</p>
+
+<div class="page-bg">
+
+    <div class="container gutter">
+
+
+        <div class="wgrid-full text-align-center">
+            @* TODO: remove hardcoded link *@
+            <a class="back" href="/party-ideas"><span class="icon-icon_back"></span>Back to party ideas</a>
+        </div>
+
+
+
+        <div class="wgrid-main centered">
+
+            <div class="boxx collapse" m-radius-picker="large">
+
+                <div class="wgrid-full wgrid-no-bottom-margin">
+                    <div class="grid-12 party-main-image" style="background-image: url(@Model.TileImage.Url)"></div>
+                </div>
+
+                <div class="wgrid-full pad-large">
+
+                    <div class="boxx centered internal spotify-holder" m-radius-picker="small medium">
+
+                        <iframe src="https://embed.spotify.com/?uri=@Model.SpotifyUrl" frameborder="0" allowtransparency="true" width="320" height="400"></iframe>
+
+                    </div>
+
+                </div>
+
+
+                <div class="centered text-align-center margin-bottom-large">
+                    <iframe src="https://embed.spotify.com/follow/1/?uri=spotify:user:ruperttebb&size=detail&theme=light&show-count=0" width="170" height="56" scrolling="no" frameborder="0" style="border:none; overflow:hidden;" allowtransparency="true"></iframe>
+                </div>
+
+            </div>
+
+
+            <div class="wgrid-full spotify-info-holder">
+                <h1>@Model.TileHeading</h1>
+                <span ng-bind="tileCopy|striptags" ng-init="tileCopy='@Model.TileCopy'"></span>
+            </div>
+
+        </div>
+
+
+
+
+
+    </div>
+
+</div>
