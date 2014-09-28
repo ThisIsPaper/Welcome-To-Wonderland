@@ -3,17 +3,84 @@
     Layout = "SitePage.cshtml";
 }
 
-<h1>@Model.TileHeading</h1>
-<p>@Model.TileCopy</p>
-<img src="@Model.TileImage.Url" />
+
+@* TODO: remove hardcoded url *@
+<div class="page-bg" ng-init="guidePageUrl='http://www.google.com'">
+
+    <div class="container gutter">
 
 
-<h2>@Model.IngredientsHeading</h2>
-<ul>
-    @foreach(string ingredient in Model.Ingredients)
-    {
-        <li>@ingredient</li>
-    }
-</ul>
+        <div class="wgrid-full text-align-center">
+            @* TODO: don't hardcode the url here *@
+            <a class="back" href="/party-ideas"><span class="icon-icon_back"></span>Back to party ideas</a>
+        </div>
 
-<p>@Model.PreparationCopy</p>
+
+
+        <div class="wgrid-main">
+
+            <div class="boxx collapse" m-radius-picker="large">
+
+                <div class="wgrid-full parent wgrid-no-bottom-margin">
+                    <div class="grid-12 party-main-image" style="background-image: url(@Model.TileImage.Url)"></div>
+                </div>
+
+                <div class="wgrid-full pad-large">
+                    <h1>@Model.TileHeading</h1>
+                    @Html.Raw(Model.TileCopy)
+                </div>
+            </div>
+
+        </div>
+
+
+
+        <div class="wgrid-side parent">
+
+            <div class="wgrid-full parent">
+                <div class="boxx" m-radius-picker>
+
+                    <h4>@Model.IngredientsHeading</h4>
+                    <ul>
+                        @foreach(string ingredient in Model.Ingredients)
+                        {
+                            <li>@ingredient</li>
+                        }
+                    </ul>
+
+                </div>
+            </div>
+
+
+            <div class="wgrid-full parent">
+
+                <div class="share-title margin-bottom-large"></div>
+
+                <a class="share-facebook" m-radius-picker="small" ng-href="https://www.facebook.com/sharer/sharer.php?u={{ guidePageUrl|escape }}" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=368,width=600');return false;">Share</a>
+                <a class="share-twitter" m-radius-picker="small" ng-href="https://twitter.com/share?url={{ guidePageUrl|escape }}&text=Share+a+winter+wonderland!" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=368,width=600');return false;">Share</a>
+                <a class="share-email" m-radius-picker="small" href="mailto:enter@email.com?subject=Winter%20Wonderland!&body=Come%20and%20visit%20the%20site!" target="_blank"></a>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="wgrid-main">
+            <div class="boxx" m-radius-picker="medium">
+
+                <h4>Method</h4>
+
+
+                @Html.Raw(Model.PreparationCopy)
+
+            </div>
+        </div>
+
+
+
+
+
+    </div>
+
+</div>
