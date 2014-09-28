@@ -3,18 +3,15 @@
     Layout = "~/Views/SitePage.cshtml";
 }
 
-<br/><br /><br /><br /><br /><br /><br /><br />
 
-
+@*
 <h1>the current user (logged in or not) is anonymous for this party</h1>
 
 
 
-@* image *@
 
 <h1>@(this.Model.PartyHost.FirstName)'s Wonderland party</h1>
 
-@* time *@
 <p>
     @Model.PartyHost.PartyAddress.TownCity
 </p>
@@ -26,15 +23,10 @@
 @Html.ActionLink("Donate", "NavigateToDonateUrl", "DonateSurface", new { partyGuid = Model.PartyHost.PartyGuid }, new { @class = "" })
 
 
-@* wall (no form)*@
-
-
-
-@* totaliser *@
 
 @if (!this.Members.IsLoggedInPartier())
 {
-    @* only users who don't already have a party can 'join the party' *@ 
+    *@@* only users who don't already have a party can 'join the party' *@@*
     @Html.ActionLink("Join the party", "NavigateToRegisterGuestUrl", "RegisterGuestSurface", new { partyGuid = Model.PartyHost.PartyGuid }, new { @class = "" })    
 }
 
@@ -49,5 +41,193 @@
         </li>
     }
 </ul>
+    *@
 
-@* badges *@
+
+
+
+
+
+
+
+<div class="page-bg">
+
+    <div class="container gutter" ng-controller="PartyCtrl" ng-init="profileImageUrlInit('@Model.PartyHost.ProfileImageUrl')">
+
+        <div class="wgrid-main wgrid-no-bottom-margin">
+
+            <div class="wgrid-full parent">
+                <div class="boxx collapse" m-radius-picker="large">
+
+                    <div class="wgrid-full wgrid-no-bottom-margin parent">
+
+                        <div class="grid-12 party-main-image" ng-init="hardCodedCurrentPartyImageUrlInit('@Model.PartyHost.PartyImage')" ng-style="{'background-image': 'url(' + partyImageData.PartyImage +')'}"></div>
+
+                        <div class="party-image-default" ng-hide="partyImageData.PartyImage.length>0"></div>
+                    </div>
+
+                    <div class="wgrid-full pad-large">
+                        <div m-profile-image="{{ profileImage.url }}" m-radius-picker="small"></div>
+                        <div class="party-details">
+                            <h3 class="pad-right-3 margin-top-0 margin-bottom-small">@this.Model.Heading</h3>
+                            <div class="body-small float-left margin-right-medium">
+                                <span class="icon-icon_clock"></span>
+                                <span ng-init="partyDateTime='@Model.PartyHost.PartyDateTime'" ng-bind="partyDateTime|datePreviewFormat"></span>
+                            </div>
+                            <div class="body-small float-left">
+                                <span class="icon-icon_fingerpost"></span>
+                                <span ng-bind="'@Model.PartyHost.PartyAddress.Address1:~:@Model.PartyHost.PartyAddress.Address2:~:@Model.PartyHost.PartyAddress.TownCity:~:@Model.PartyHost.PartyAddress.Postcode'|addressJoiner:':~:'"></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="wgrid-full parent">
+                <div class="boxx" m-radius-picker="medium large">
+                    <h1 class="pad-right-3 pad-left-3">Join the Wonderland Party</h1>
+                    <pre class="body-medium font-futura">@this.Model.Copy</pre>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="wgrid-side wgrid-no-bottom-margin parent">
+
+
+
+
+            <div class="wgrid-full parent">
+                <div class="boxx" m-radius-picker ng-init="amountRaised=@Model.PartyHost.AmountRaised; fundraisingTarget=@Model.PartyHost.FundraisingTarget">
+
+                    <div>
+                        <div class="dis-inline-block body-mega" ng-bind="amountRaised|mCurrency:'£'"></div>
+                        <div class="dis-inline-block">
+                            <span>raised of the </span>
+                            <span class="body-highlight" ng-bind="fundraisingTarget|mCurrency:'£'"></span>
+                            <span>target</span>
+                        </div>
+                    </div>
+
+                    <div class="totaliser">
+                        <div class="current-total" ng-style="{'width': (amountRaised|percentageRounder:fundraisingTarget) +'%'}"></div>
+                    </div>
+
+                    <div class="form-info">
+                        <span class="float-left"><span ng-bind="amountRaised|percentageRounder:fundraisingTarget"></span>%</span>
+                        <span class="float-right">Ranked #x of x parties</span>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+            <div class="wgrid-full parent">
+                <div class="boxx" m-radius-picker ng-init="suggestedDonation=@Model.PartyHost.SuggestedDonation">
+                    <h4 class="top">Suggested ticket price</h4>
+
+                    <div class="ticket selected margin-left-3 margin-right-3">
+                        <div class="stub">
+                            <div class="holes"></div>
+                            <div class="holes-right"></div>
+                            <div class="price" ng-bind="suggestedDonation|mCurrency:'£'"></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="wgrid-full parent text-align-center">
+
+                @if (!this.Members.IsLoggedInPartier())
+                {
+                    @* only users who don't already have a party can 'join the party' *@
+                    @Html.ActionLink("Join the party", "NavigateToRegisterGuestUrl", "RegisterGuestSurface", new { partyGuid = Model.PartyHost.PartyGuid }, new { @class = "btn-primary dis-block btn-large join-party-ico margin-bottom-large", @m_radius_picker="small" })
+                    <p class="form-info">or if you can't attend, @Html.ActionLink("donate >", "NavigateToDonateUrl", "DonateSurface", new { partyGuid = Model.PartyHost.PartyGuid }, new { @class = "body-highlight margin-bottom-large" })</p>
+                } else {
+                    @Html.ActionLink("Donate", "NavigateToDonateUrl", "DonateSurface", new { partyGuid = Model.PartyHost.PartyGuid }, new { @class = "btn-primary piggy-donater margin-bottom-large", @m_radius_picker="small" })
+                }
+
+            </div>
+
+
+            <div class="wgrid-full parent">
+                <div class="boxx" m-radius-picker>
+                    <h4 class="top">Who's Coming <span>(@this.Model.Partiers.Count())</span></h4>
+                    <ul>
+                        @foreach (IPartier partier in this.Model.Partiers)
+                        {
+                            <li>
+                                <img src="@partier.ProfileImageUrl" width="50" height="50" alt="@Model.PartyHost.FirstName @Model.PartyHost.LastName" title="@Model.PartyHost.FirstName @Model.PartyHost.LastName" />
+                            </li>
+                        }
+                    </ul>
+                </div>
+            </div>
+
+            <div class="wgrid-full parent">
+                <div class="boxx" m-radius-picker>
+                    <h4 class="top">Badges <span>(0 of 6)</span></h4>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="wgrid-main">
+            <div class="boxx" ng-controller="WallCtrl" ng-init="init(
+                    '@(Url.GetUmbracoApiService<PartyApiController>("GetPartyWallItems"))',
+                    '@Model.PartyHost.PartyGuid.ToString()'
+                )" m-radius-picker="large medium">
+
+                <h4 class="top">Leave a message on the party wall</h4>
+
+                <div class="boxx internal highlight text-align-center" m-radius-picker="small">
+
+                    <h4 class="highlight">Join the conversation</h4>
+
+                    @if (!this.Members.IsLoggedInPartier())
+                    {
+                        @* only users who don't already have a party can 'join the party' *@
+                        <p>To have your say, and see what others are saying, join the party</p>
+                        @Html.ActionLink("Join the party", "NavigateToRegisterGuestUrl", "RegisterGuestSurface", new { partyGuid = Model.PartyHost.PartyGuid }, new { @class = "btn-primary join-party-ico margin-bottom-large", @m_radius_picker="small" })
+                    } else {
+                        <p>Unfortunately, you can't participate in multiple parties. You can donate to the cause though!</p>
+                        @Html.ActionLink("Donate", "NavigateToDonateUrl", "DonateSurface", new { partyGuid = Model.PartyHost.PartyGuid }, new { @class = "btn-primary piggy-donater margin-bottom-large", @m_radius_picker="small" })
+                    }
+
+                    <div class="clear margin-bottom-large"></div>
+                </div>
+
+
+                <div class="margin-top-small" ng-repeat="feedItem in wall.feed">
+                    <div m-profile-image="{{ feedItem.thumbnailUrl }}" m-radius-picker="small"></div>
+                    <div class="wall-details">
+                        <div>
+                            <span class="wall-name" ng-bind="feedItem.name"></span>
+                            <span class="wall-time">3h</span>
+                        </div>
+                        <div ng-bind="feedItem.text"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+    </div>
+
+</div>
+
+
+
+
+@*call the following url to the json collection of party wall items*@
+@*<p>
+    URL to call for party wall items (don't pass the beforeDateTime param and the server will use the current server time)
+    ?PartyGuid=&beforeDateTime=12/12/12&take=10
+</p>*@

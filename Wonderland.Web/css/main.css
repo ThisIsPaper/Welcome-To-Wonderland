@@ -726,7 +726,7 @@ abstract
 }
 
 /* line 94, sass/partials/_abstract.scss */
-.margin-left-small, .piggy-donater:after {
+.margin-left-small, .piggy-donater:after, .join-party-ico:after {
   margin-left: 1.2rem;
 }
 
@@ -3285,21 +3285,26 @@ abstract
 
 /**********************************/
 /**********************************/
-/* line 107, sass/partials/_grids.scss */
+/* line 108, sass/partials/_grids.scss */
 .boxx {
   padding: 1.8rem;
   background: #ffffff;
   overflow: hidden;
 }
-/* line 112, sass/partials/_grids.scss */
+/* line 113, sass/partials/_grids.scss */
 .boxx.collapse {
   padding: 0;
 }
-/* line 116, sass/partials/_grids.scss */
+/* line 117, sass/partials/_grids.scss */
 .boxx.internal {
   background: #ECECEC;
 }
 /* line 120, sass/partials/_grids.scss */
+.boxx.internal.highlight {
+  background: #e3f3f8;
+  color: #007eac;
+}
+/* line 126, sass/partials/_grids.scss */
 .boxx.mega-pad {
   padding: 3.3rem;
 }
@@ -5225,20 +5230,24 @@ h4 span {
   color: #7B7A6D;
   font-weight: normal;
 }
+/* line 380, sass/partials/_type.scss */
+h4.highlight {
+  color: #007eac;
+}
 
-/* line 382, sass/partials/_type.scss */
+/* line 386, sass/partials/_type.scss */
 h3.top, h4.top {
   margin-top: 0;
 }
 
-/* line 387, sass/partials/_type.scss */
+/* line 391, sass/partials/_type.scss */
 hr {
   border: none;
   border-bottom: 0.1rem solid #ECECEC;
   margin: 1.2rem 0;
 }
 
-/* line 393, sass/partials/_type.scss */
+/* line 397, sass/partials/_type.scss */
 .back {
   text-transform: uppercase;
   color: white;
@@ -5736,7 +5745,7 @@ abstract
 }
 
 /* line 94, sass/partials/_abstract.scss */
-.margin-left-small, .piggy-donater:after {
+.margin-left-small, .piggy-donater:after, .join-party-ico:after {
   margin-left: 1.2rem;
 }
 
@@ -6490,20 +6499,24 @@ h4 span {
   color: #7B7A6D;
   font-weight: normal;
 }
+/* line 380, sass/partials/_type.scss */
+h4.highlight {
+  color: #007eac;
+}
 
-/* line 382, sass/partials/_type.scss */
+/* line 386, sass/partials/_type.scss */
 h3.top, h4.top {
   margin-top: 0;
 }
 
-/* line 387, sass/partials/_type.scss */
+/* line 391, sass/partials/_type.scss */
 hr {
   border: none;
   border-bottom: 0.1rem solid #ECECEC;
   margin: 1.2rem 0;
 }
 
-/* line 393, sass/partials/_type.scss */
+/* line 397, sass/partials/_type.scss */
 .back {
   text-transform: uppercase;
   color: white;
@@ -7717,7 +7730,7 @@ abstract
 }
 
 /* line 94, sass/partials/_abstract.scss */
-.margin-left-small, .piggy-donater:after {
+.margin-left-small, .piggy-donater:after, .join-party-ico:after {
   margin-left: 1.2rem;
 }
 
@@ -8789,7 +8802,7 @@ abstract
 }
 
 /* line 94, sass/partials/_abstract.scss */
-.margin-left-small, .piggy-donater:after {
+.margin-left-small, .piggy-donater:after, .join-party-ico:after {
   margin-left: 1.2rem;
 }
 
@@ -9543,20 +9556,24 @@ h4 span {
   color: #7B7A6D;
   font-weight: normal;
 }
+/* line 380, sass/partials/_type.scss */
+h4.highlight {
+  color: #007eac;
+}
 
-/* line 382, sass/partials/_type.scss */
+/* line 386, sass/partials/_type.scss */
 h3.top, h4.top {
   margin-top: 0;
 }
 
-/* line 387, sass/partials/_type.scss */
+/* line 391, sass/partials/_type.scss */
 hr {
   border: none;
   border-bottom: 0.1rem solid #ECECEC;
   margin: 1.2rem 0;
 }
 
-/* line 393, sass/partials/_type.scss */
+/* line 397, sass/partials/_type.scss */
 .back {
   text-transform: uppercase;
   color: white;
@@ -10005,20 +10022,24 @@ h4 span {
   color: #7B7A6D;
   font-weight: normal;
 }
+/* line 380, sass/partials/_type.scss */
+h4.highlight {
+  color: #007eac;
+}
 
-/* line 382, sass/partials/_type.scss */
+/* line 386, sass/partials/_type.scss */
 h3.top, h4.top {
   margin-top: 0;
 }
 
-/* line 387, sass/partials/_type.scss */
+/* line 391, sass/partials/_type.scss */
 hr {
   border: none;
   border-bottom: 0.1rem solid #ECECEC;
   margin: 1.2rem 0;
 }
 
-/* line 393, sass/partials/_type.scss */
+/* line 397, sass/partials/_type.scss */
 .back {
   text-transform: uppercase;
   color: white;
@@ -10416,8 +10437,15 @@ One-off uses
   color: white;
 }
 
+/* line 421, sass/partials/_base.scss */
+.join-party-ico:after {
+  content: "\e601";
+  font-family: "icomoon";
+  color: white;
+}
+
 /*******************************/
-/* line 425, sass/partials/_base.scss */
+/* line 432, sass/partials/_base.scss */
 .hero {
   height: 45rem;
   background-image: url('/img/hero-ph.jpg?1411655923');
@@ -10428,24 +10456,24 @@ One-off uses
   padding-top: 10rem;
 }
 
-/* line 435, sass/partials/_base.scss */
+/* line 442, sass/partials/_base.scss */
 .planking {
   background: url('/img/wood_texture.jpg?1411035906') repeat top left;
   background-size: 100% auto;
 }
 
-/* line 440, sass/partials/_base.scss */
+/* line 447, sass/partials/_base.scss */
 .home-content-adjust {
   margin-top: -8rem;
 }
 
-/* line 444, sass/partials/_base.scss */
+/* line 451, sass/partials/_base.scss */
 .hero-explain {
   margin-right: 35rem;
   text-align: left;
 }
 
-/* line 449, sass/partials/_base.scss */
+/* line 456, sass/partials/_base.scss */
 .money-raised {
   position: absolute;
   top: 2.4rem;
@@ -10455,13 +10483,13 @@ One-off uses
   width: 34rem;
 }
 
-/* line 458, sass/partials/_base.scss */
+/* line 465, sass/partials/_base.scss */
 .raised-amount {
   color: white;
   width: 27.5rem;
 }
 
-/* line 463, sass/partials/_base.scss */
+/* line 470, sass/partials/_base.scss */
 .home-tile {
   background-color: white;
   position: relative;
@@ -10471,7 +10499,7 @@ One-off uses
   box-shadow: 0px 14px 30px 0px rgba(0, 0, 0, 0.6);
 }
 
-/* line 473, sass/partials/_base.scss */
+/* line 480, sass/partials/_base.scss */
 .home-tile-image {
   -moz-border-radius: 0.7rem;
   -webkit-border-radius: 0.7rem;
@@ -10482,7 +10510,7 @@ One-off uses
   width: 100%;
 }
 
-/* line 481, sass/partials/_base.scss */
+/* line 488, sass/partials/_base.scss */
 .home-tile-label {
   position: absolute;
   bottom: 0;
@@ -10491,32 +10519,32 @@ One-off uses
 }
 
 /*******************************/
-/* line 492, sass/partials/_base.scss */
+/* line 499, sass/partials/_base.scss */
 .spotify-holder {
   width: 35.6rem;
   margin-top: -7rem;
 }
 
-/* line 497, sass/partials/_base.scss */
+/* line 504, sass/partials/_base.scss */
 .spotify-info-holder {
   position: absolute;
   top: 12rem;
   color: white;
   text-align: center;
 }
-/* line 504, sass/partials/_base.scss */
+/* line 511, sass/partials/_base.scss */
 .spotify-info-holder h1 {
   color: white;
 }
 
 /*******************************/
-/* line 512, sass/partials/_base.scss */
+/* line 519, sass/partials/_base.scss */
 .scoreboard-place {
   float: left;
   width: 5rem;
 }
 
-/* line 517, sass/partials/_base.scss */
+/* line 524, sass/partials/_base.scss */
 .scoreboard-value {
   position: absolute;
   top: 0;
@@ -10525,22 +10553,22 @@ One-off uses
 }
 
 /*******************************/
-/* line 529, sass/partials/_base.scss */
+/* line 536, sass/partials/_base.scss */
 .idea-sizer {
   width: 25%;
 }
 
-/* line 533, sass/partials/_base.scss */
+/* line 540, sass/partials/_base.scss */
 .idea-tile {
   width: 25%;
   padding: 1.2rem;
 }
-/* line 538, sass/partials/_base.scss */
+/* line 545, sass/partials/_base.scss */
 .idea-tile.wide {
   width: 50%;
 }
 
-/* line 543, sass/partials/_base.scss */
+/* line 550, sass/partials/_base.scss */
 .idea {
   padding: 1.2rem;
   background-color: white;
@@ -10551,42 +10579,42 @@ One-off uses
   box-shadow: 0px 14px 30px 0px rgba(0, 0, 0, 0.6);
 }
 
-/* line 551, sass/partials/_base.scss */
+/* line 558, sass/partials/_base.scss */
 .idea-details {
   width: 100%;
   top: 11%;
   left: 0;
   padding: 0 1.2rem;
 }
-/* line 557, sass/partials/_base.scss */
+/* line 564, sass/partials/_base.scss */
 .idea-details.over-the-top {
   position: absolute;
   color: white;
 }
-/* line 561, sass/partials/_base.scss */
+/* line 568, sass/partials/_base.scss */
 .idea-details.over-the-top h1 {
   color: white;
 }
-/* line 566, sass/partials/_base.scss */
+/* line 573, sass/partials/_base.scss */
 .idea-details.wide {
   top: 23%;
 }
 
-/* line 571, sass/partials/_base.scss */
+/* line 578, sass/partials/_base.scss */
 .idea-polaroid {
   -moz-border-radius: 0.7rem;
   -webkit-border-radius: 0.7rem;
   border-radius: 0.7rem;
 }
 
-/* line 575, sass/partials/_base.scss */
+/* line 582, sass/partials/_base.scss */
 .pinterest-ico:before {
   content: "\e623";
   font-family: "icomoon";
   color: #E32333;
 }
 
-/* line 581, sass/partials/_base.scss */
+/* line 588, sass/partials/_base.scss */
 .spotify-logo {
   width: 8rem;
   height: 2.4rem;
@@ -10597,7 +10625,7 @@ One-off uses
   margin: 0 auto;
 }
 
-/* line 592, sass/partials/_base.scss */
+/* line 599, sass/partials/_base.scss */
 .idea-link {
   position: absolute;
   top: 0;
@@ -10608,7 +10636,7 @@ One-off uses
   text-indent: -999rem;
 }
 
-/* line 604, sass/partials/_base.scss */
+/* line 611, sass/partials/_base.scss */
 .share-title {
   width: 27.8rem;
   height: 11.6rem;
@@ -10617,7 +10645,7 @@ One-off uses
   background-size: 27.8rem 11.6rem;
 }
 
-/* line 613, sass/partials/_base.scss */
+/* line 620, sass/partials/_base.scss */
 .share-facebook, .share-twitter, .share-email {
   background-color: #3c5898;
   font-family: "macmillan";
@@ -10626,44 +10654,44 @@ One-off uses
   padding: 1.2rem;
   line-height: 5.5rem;
 }
-/* line 621, sass/partials/_base.scss */
+/* line 628, sass/partials/_base.scss */
 .share-facebook:before, .share-twitter:before, .share-email:before {
   font-family: "icomoon";
   content: "\e619";
   margin-right: 1.2rem;
 }
 
-/* line 628, sass/partials/_base.scss */
+/* line 635, sass/partials/_base.scss */
 .share-twitter {
   background-color: #17abed;
 }
-/* line 630, sass/partials/_base.scss */
+/* line 637, sass/partials/_base.scss */
 .share-twitter:before {
   content: "\e61a";
 }
 
-/* line 636, sass/partials/_base.scss */
+/* line 643, sass/partials/_base.scss */
 .share-email {
   background-color: #007eac;
 }
-/* line 638, sass/partials/_base.scss */
+/* line 645, sass/partials/_base.scss */
 .share-email:before {
   content: "\e618";
   margin-right: 0;
 }
 
 /*******************************/
-/* line 648, sass/partials/_base.scss */
+/* line 655, sass/partials/_base.scss */
 .color-facebook {
   color: #3c5898 !important;
 }
 
-/* line 649, sass/partials/_base.scss */
+/* line 656, sass/partials/_base.scss */
 .color-twitter {
   color: #17abed !important;
 }
 
-/* line 650, sass/partials/_base.scss */
+/* line 657, sass/partials/_base.scss */
 .color-gplus {
   color: #cd3627 !important;
 }
