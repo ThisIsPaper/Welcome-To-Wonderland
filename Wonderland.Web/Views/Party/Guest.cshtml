@@ -2,45 +2,6 @@
 @{
     Layout = "~/Views/SitePage.cshtml";
 }
-@*
-<h1>the current user is a guest at this party</h1>
-
-
-<h1>@(this.Model.PartyHost.FirstName)'s Wonderland party</h1>
-
-<p>
-    @Model.PartyHost.PartyAddress.Address1, 
-    @Model.PartyHost.PartyAddress.Address2, 
-    @Model.PartyHost.PartyAddress.TownCity, 
-    @Model.PartyHost.PartyAddress.Postcode
-</p>
-
-<h2>@this.Model.Heading</h2>
-<p>@this.Model.Copy</p>
-
-@Html.ActionLink("Donate", "NavigateToDonateUrl", "DonateSurface", new { partyGuid = Model.PartyHost.PartyGuid }, new { @class = "" })
-
-
-@(Html.Action<PartySurfaceController>("RenderPartyWallMessageForm"))
-
-@(Html.Action<PartySurfaceController>("RenderPartyWallImageForm"))
-
-
-
-<h2>Who's Coming (@this.Model.Partiers.Count())</h2>
-<ul>
-    @foreach (IPartier partier in this.Model.Partiers)
-    {
-        <li>
-            <img src="@partier.ProfileImageUrl" />
-            @Model.PartyHost.FirstName @Model.PartyHost.LastName
-        </li>
-    }
-</ul>
-*@
-
-
-
 
 
 
