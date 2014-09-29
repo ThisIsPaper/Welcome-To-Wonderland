@@ -52,6 +52,8 @@
                     int i=0;
                     int t=0;
                     @* TODO: probably remove this hacky loop to get total items *@
+                    @* total items = @Model.TopFundraisers.Count() *@ 
+                    
                     foreach (PartyHost partyHost in Model.TopFundraisers)
                     {
                         t++;
@@ -92,6 +94,7 @@
                     int ii=0;
                     int tt=0;
                     @* TODO: probably remove this hacky loop to get total items *@
+                    @* total items = Model.MostGuests.Count() *@
                     foreach (PartyHost partyHost in Model.MostGuests)
                     {
                         tt++;
@@ -108,7 +111,7 @@
                             </div>
                             <div class="scoreboard-value">
                                 @* TODO: get the # of guests *@
-                                <div>XX</div>
+                                <div>@partyHost.TotalGuests</div>
                                 <div class="body-dephasize">guests</div>
                             </div>
                             <div class="clear"></div>

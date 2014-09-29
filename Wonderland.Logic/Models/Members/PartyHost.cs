@@ -11,6 +11,7 @@ namespace Wonderland.Logic.Models.Members
     using Wonderland.Logic.Interfaces;
     using Wonderland.Logic.Models.Content;
     using Wonderland.Logic.Models.Entities;
+    using Wonderland.Logic.Extensions;
 
     public class PartyHost : BaseMemberType, IPartier
     {
@@ -301,6 +302,26 @@ namespace Wonderland.Logic.Models.Members
                 {
                     return 0;
                 }
+            }
+        }
+
+        private int? totalGuests = null;
+        public int TotalGuests
+        {
+            get
+            {                
+                if (!this.totalGuests.HasValue)
+                {
+                    // no value set, so calculate
+                    this.totalGuests = this.Members.GetPartiers(this.PartyGuid).Count();
+                }
+
+                return this.totalGuests.Value;
+            }
+            internal set
+            {
+                // used to preset total guests for a number of party hosts in a single loop (results of a single sql query)
+                this.totalGuests = value;
             }
         }
 
