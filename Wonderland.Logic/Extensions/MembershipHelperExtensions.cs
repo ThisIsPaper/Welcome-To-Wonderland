@@ -67,20 +67,26 @@ namespace Wonderland.Logic.Extensions
 
         public static PartyHost GetPartyHost(this MembershipHelper members, Guid partyGuid)
         {
-            // WARNING: hits db            
-            IMember partyHost = ApplicationContext
-                                .Current
-                                .Services
-                                .MemberService
-                                .GetMembersByMemberType(PartyHost.Alias)
-                                .SingleOrDefault(x => x.GetValue<Guid>(PartyHost.PartyGuidAlias) == partyGuid);
+            BaseSearchProvider searchProvider = ExamineManager.Instance.SearchProviderCollection["InternalMemberSearcher"];
+            ISearchCriteria searchCriteria = searchProvider.CreateSearchCriteria(IndexTypes.Member).Field("partyGuid", partyGuid.ToString()).And().NodeTypeAlias(PartyHost.Alias.ToLower()).Compile();
+            ISearchResults searchResults = searchProvider.Search(searchCriteria);
 
-            if (partyHost != null)
-            {
-                return new PartyHost(members.GetByUsername(partyHost.Username));
-            }
+            return searchResults.Select(x => (PartyHost)members.GetById(x.Id)).SingleOrDefault();
 
-            return null;
+            //// WARNING: hits db            
+            //IMember partyHost = ApplicationContext
+            //                    .Current
+            //                    .Services
+            //                    .MemberService
+            //                    .GetMembersByMemberType(PartyHost.Alias)
+            //                    .SingleOrDefault(x => x.GetValue<Guid>(PartyHost.PartyGuidAlias) == partyGuid);
+
+            //if (partyHost != null)
+            //{
+            //    return new PartyHost(members.GetByUsername(partyHost.Username));
+            //}
+
+            //return null;
         }
 
         public static PartyHost GetPartyHost(this MembershipHelper members, string partyUrlIdentifier)
