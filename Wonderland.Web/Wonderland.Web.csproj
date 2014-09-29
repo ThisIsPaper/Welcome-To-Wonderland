@@ -260,9 +260,9 @@
     <Content Include="Views\RecipeTile.cshtml" />
     <Content Include="Views\RegisterGuest\Failed.cshtml" />
     <Content Include="Views\FundraisingTile.cshtml" />
-    <Content Include="Views\MyProfile.cshtml" />
     <Content Include="Views\ForgottenPasswordSurface\ForgottenPasswordForm.cshtml" />
     <Content Include="Views\ForgottenPassword\Complete.cshtml" />
+    <Content Include="Views\Profile.cshtml" />
     <None Include="Views\RegisterHostSurface\RegisterHostForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -288,7 +288,6 @@
     <Content Include="Views\Wonderlanders.cshtml" />
     <Content Include="Views\PartyIdeas.cshtml" />
     <Content Include="Views\Leaderboard.cshtml" />
-    <Content Include="Views\FundraisingIdeas.cshtml" />
     <Content Include="Views\FAQs.cshtml" />
     <Content Include="Views\Legal.cshtml" />
     <Content Include="config\UrlRewriting.config" />

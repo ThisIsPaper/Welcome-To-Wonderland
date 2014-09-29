@@ -207,7 +207,7 @@
     <Compile Include="Controllers\Render\FashionTileController.cs" />
     <Compile Include="Controllers\Render\HomeController.cs" />
     <Compile Include="Controllers\Render\LeaderboardController.cs" />
-    <Compile Include="Controllers\Render\MyProfileController.cs" />
+    <Compile Include="Controllers\Render\ProfileController.cs" />
     <Compile Include="Controllers\Render\PartyController.cs" />
     <Compile Include="Controllers\Render\RegisterGuestController.cs" />
     <Compile Include="Controllers\Render\RegisterHostController.cs" />
@@ -243,7 +243,7 @@
     <Compile Include="Models\Content\FundraisingIdeas.cs" />
     <Compile Include="Models\Content\FundraisingTile.cs" />
     <Compile Include="Models\Content\Home.cs" />
-    <Compile Include="Models\Content\MyProfile.cs" />
+    <Compile Include="Models\Content\Profile.cs" />
     <Compile Include="Models\Content\PageNotFound.cs" />
     <Compile Include="Models\Content\Donate.cs" />
     <Compile Include="Models\Content\Leaderboard.cs" />

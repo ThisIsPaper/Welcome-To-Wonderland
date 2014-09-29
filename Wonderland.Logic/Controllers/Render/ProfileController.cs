@@ -8,11 +8,11 @@ namespace Wonderland.Logic.Controllers.Render
     using Wonderland.Logic.Extensions;
 
     
-    public class MyProfileController : BaseRenderMvcController
+    public class ProfileController : BaseRenderMvcController
     {
         public ActionResult MyProfile() // method executed in preference to the Index, as Home is the template name
         {
-            MyProfile model = (MyProfile)this.CurrentPage;
+            Profile model = (Profile)this.CurrentPage;
 
             if(!this.Members.IsLoggedInPartier())
             {
