@@ -4,6 +4,7 @@ namespace Wonderland.Logic.Controllers.Surface
     using System;
     using System.Web.Mvc;
     using Umbraco.Web.Mvc;
+    using Wonderland.Logic.Interfaces;
     using Wonderland.Logic.Models.Content;
     using Wonderland.Logic.Models.Forms;
 
@@ -30,10 +31,14 @@ namespace Wonderland.Logic.Controllers.Surface
                 return this.CurrentUmbracoPage();
             }
 
-            // TODO: check to see if there is a matching email address, if so, send email
+            IPartier partier = this.Members.GetByUsername(forgottenPasswordForm.EmailAddress) as IPartier;
+
+            if (partier != null)
+            {
+                // set forgotten password guid and send email
+            }
 
             return this.View("ForgottenPassword/Complete", this.CurrentPage);
         }
-
     }
 }

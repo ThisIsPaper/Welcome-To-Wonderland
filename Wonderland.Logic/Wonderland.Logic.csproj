@@ -219,6 +219,7 @@
     <Compile Include="Controllers\Surface\PartySurfaceController.cs" />
     <Compile Include="Controllers\Surface\RegisterGuestSurfaceController.cs" />
     <Compile Include="Controllers\Surface\RegisterHostSurfaceController.cs" />
+    <Compile Include="Controllers\Surface\ResetPasswordSurfaceController.cs" />
     <Compile Include="Enums\LeaderboardType.cs" />
     <Compile Include="Enums\PartyIdeaTileSize.cs" />
     <Compile Include="Enums\PartyWallItemType.cs" />
@@ -290,6 +291,7 @@
     <Compile Include="Models\Forms\RegisterGuestForm.cs" />
     <Compile Include="Models\Forms\RegisterHostForm.cs" />
     <Compile Include="Models\Forms\RegisterHostPartyKitForm.cs" />
+    <Compile Include="Models\Forms\ResetPasswordForm.cs" />
     <Compile Include="Models\Forms\SuggestedDonationForm.cs" />
     <Compile Include="Models\Media\Image.cs" />
     <Compile Include="Models\Members\BaseMemberType.cs" />
