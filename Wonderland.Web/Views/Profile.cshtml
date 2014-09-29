@@ -3,3 +3,11 @@
     Layout = "SitePage.cshtml";
 }
 <h1>Profile</h1>
+
+@(Html.Action<ProfileSurfaceController>("RenderProfileNamesForm"))
+
+@(Html.Action<ProfileSurfaceController>("RenderProfileImageForm"))
+
+@(Html.Action<ProfileSurfaceController>("RenderProfileBillingAddressForm"))
+
+@(Html.Action<ProfileSurfaceController>("RenderProfileChangePasswordForm"))

@@ -263,6 +263,10 @@
     <Content Include="Views\ForgottenPasswordSurface\ForgottenPasswordForm.cshtml" />
     <Content Include="Views\ForgottenPassword\Complete.cshtml" />
     <Content Include="Views\Profile.cshtml" />
+    <Content Include="Views\ProfileSurface\ProfileImageForm.cshtml" />
+    <Content Include="Views\ProfileSurface\ProfileNamesForm.cshtml" />
+    <Content Include="Views\ProfileSurface\ProfileBillingAddressForm.cshtml" />
+    <Content Include="Views\ProfileSurface\ProfileChangePasswordForm.cshtml" />
     <None Include="Views\RegisterHostSurface\RegisterHostForm.cshtml" />
   </ItemGroup>
   <ItemGroup>

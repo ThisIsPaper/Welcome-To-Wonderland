@@ -1,0 +1,8 @@
+﻿@model ProfileBillingAddressForm
+
+@using (Html.BeginUmbracoForm<ProfileSurfaceController>("HandleProfileBillingAddressForm"))
+{
+    @Html.AntiForgeryToken()
+
+    @Html.EditorForModel()
+}

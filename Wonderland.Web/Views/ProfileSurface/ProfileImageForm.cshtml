@@ -1,0 +1,8 @@
+﻿@model ProfileImageForm
+
+@using (Html.BeginUmbracoForm<ProfileSurfaceController>("HandleProfileImageForm", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    @Html.EditorForModel()
+}

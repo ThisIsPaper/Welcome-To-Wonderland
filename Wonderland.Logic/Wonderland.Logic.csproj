@@ -218,6 +218,7 @@
     <Compile Include="Controllers\Surface\LoginSurfaceController.cs" />
     <Compile Include="Controllers\Surface\LogoutSurfaceController.cs" />
     <Compile Include="Controllers\Surface\PartySurfaceController.cs" />
+    <Compile Include="Controllers\Surface\ProfileSurfaceController.cs" />
     <Compile Include="Controllers\Surface\RegisterGuestSurfaceController.cs" />
     <Compile Include="Controllers\Surface\RegisterHostSurfaceController.cs" />
     <Compile Include="Controllers\Surface\ResetPasswordSurfaceController.cs" />
@@ -287,7 +288,10 @@
     <Compile Include="Models\Forms\PartyImageForm.cs" />
     <Compile Include="Models\Forms\PartyWallMessageForm.cs" />
     <Compile Include="Models\Forms\PartyWallImageForm.cs" />
+    <Compile Include="Models\Forms\ProfileBillingAddressForm.cs" />
+    <Compile Include="Models\Forms\ProfileChangePasswordForm.cs" />
     <Compile Include="Models\Forms\ProfileImageForm.cs" />
+    <Compile Include="Models\Forms\ProfileNamesForm.cs" />
     <Compile Include="Models\Forms\RegisterGuestBillingForm.cs" />
     <Compile Include="Models\Forms\RegisterGuestForm.cs" />
     <Compile Include="Models\Forms\RegisterHostForm.cs" />
