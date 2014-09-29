@@ -2,6 +2,8 @@
 namespace Wonderland.Logic.Models.Content
 {
     using System.Linq;
+    using System.Web;
+    using System.Web.Caching;
     using Umbraco.Core.Models;
     using Umbraco.Core.Models.PublishedContent;
     using Umbraco.Web;
@@ -14,8 +16,6 @@ namespace Wonderland.Logic.Models.Content
 
         // Properties
         public const string MetaDescriptionAlias = "metaDescription";
-
-        private SiteSettings siteSettings = null;
 
         public SitePage(IPublishedContent content) : base(content)
         {
@@ -40,13 +40,19 @@ namespace Wonderland.Logic.Models.Content
         {
             get
             {
-                // TODO: consider caching globally
-                if (this.siteSettings == null)
+                SiteSettings siteSettings = null;
+
+                Cache cache = HttpContext.Current.Cache;
+
+                siteSettings = (SiteSettings)cache["SiteSettings"];
+
+                if (siteSettings == null)
                 {
-                    this.siteSettings = new SiteSettings(Home.GetCurrentHome(this));
+                    siteSettings = new SiteSettings(Home.GetCurrentHome(this));
+                    cache.Insert("SiteSettings", siteSettings);
                 }
 
-                return this.siteSettings;
+                return siteSettings;
             }
         }
 

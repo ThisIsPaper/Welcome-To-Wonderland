@@ -11,7 +11,7 @@ namespace Wonderland.Logic.Controllers.Render
 
     public class LeaderboardController : BaseRenderMvcController
     {
-        //[OutputCache(Duration=60, VaryByParam="")]
+        //[OutputCache(Duration=60, VaryByParam="*")]
         public ActionResult Leaderboard() // method executed in preference to the Index, as Leaderboard is the template name
         {
             Leaderboard model = (Leaderboard)this.CurrentPage;
