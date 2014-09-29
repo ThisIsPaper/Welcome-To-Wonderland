@@ -40,9 +40,9 @@ namespace Wonderland.Logic.Models.Content
         {
             get
             {
+                // TODO: consider caching globally
                 if (this.siteSettings == null)
                 {
-                    //this.siteSettings = new SiteSettings((Home)new UmbracoHelper(UmbracoContext.Current).TypedContentSingleAtXPath("//" + Home.Alias));                    
                     this.siteSettings = new SiteSettings(Home.GetCurrentHome(this));
                 }
 

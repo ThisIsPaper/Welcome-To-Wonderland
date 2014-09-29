@@ -12,6 +12,12 @@ namespace Wonderland.Logic.Models.Entities
             this.HeaderNavigation = home.HeaderNavigation;
             this.HeaderNavigationLeft = this.HeaderNavigation.Take(home.HeaderNavigation.Count() / 2);
             this.HeaderNavigationRight = this.HeaderNavigation.Skip(home.HeaderNavigation.Count() / 2);
+
+            this.RegisterHostUrl = home.Children.Single(x => x.DocumentTypeAlias == RegisterHost.Alias).Url;
+            this.LoginUrl = home.Children.Single(x => x.DocumentTypeAlias == Login.Alias).Url;
+            this.ProfileUrl = home.Children.Single(x => x.DocumentTypeAlias == Profile.Alias).Url;
+            //this.LogoutUrl = null;
+
             this.FooterNavigation = home.FooterNavigation;
             this.LegalNavigation = home.LegalNavigation;
             this.CampaignHashtag = home.CampaignHashtag;
@@ -30,6 +36,14 @@ namespace Wonderland.Logic.Models.Entities
         public IEnumerable<SitePage> FooterNavigation { get; private set; }
 
         public IEnumerable<SitePage> LegalNavigation { get; private set; }
+
+        public string RegisterHostUrl { get; private set; }
+
+        public string LoginUrl { get; private set; }
+
+        public string ProfileUrl { get; private set; }
+
+        //public string LogoutUrl { get; private set; }
 
         public string CampaignHashtag { get; private set; }
 

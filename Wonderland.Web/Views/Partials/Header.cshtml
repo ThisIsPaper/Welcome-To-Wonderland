@@ -14,7 +14,7 @@
 
     @if (!this.Members.IsLoggedInPartier())
     {
-        <a href="@Url.Action("NavigateToRegisterHostUrl", "RegisterHostSurface")" class="btn-primary btn-small nav-end-block" m-radius-picker="small">Host a party <span class="icon-icon_chevron_right"></span></a>
+        <a href="@Model.RegisterHostUrl" class="btn-primary btn-small nav-end-block" m-radius-picker="small">Host a party <span class="icon-icon_chevron_right"></span></a>
     }
     else
     {
@@ -26,13 +26,13 @@
     @if (!this.Members.IsLoggedInPartier())
     {
         <div class="nav-end-block end-block-right">
-            <a href="@Url.Action("NavigateToLoginUrl", "LoginSurface")" class="btn-secondary btn-small" m-radius-picker="small">Login <span class="icon-icon_person"></span></a>
+            <a href="@Model.LoginUrl" class="btn-secondary btn-small" m-radius-picker="small">Login <span class="icon-icon_person"></span></a>
         </div>
     }
     else
     {
         <div class="nav-end-block end-block-right">
-            <a href="@Url.Action("NavigateToProfileUrl", "ProfileSurface")" class="btn-secondary btn-small" m-radius-picker="small">My Profile</a>
+            <a href="@Model.ProfileUrl" class="btn-secondary btn-small" m-radius-picker="small">My Profile</a>
 
             <a href="@Url.Action("Logout", "LogoutSurface")" class="btn-secondary btn-small" m-radius-picker="small">Logout <span class="icon-icon_person"></span></a>
         </div>
