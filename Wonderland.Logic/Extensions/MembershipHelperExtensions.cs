@@ -50,6 +50,7 @@ namespace Wonderland.Logic.Extensions
 
             //return searchResults.Select(x => (IPartier)members.GetById(x.Id)).SingleOrDefault();
 
+            //// WARNING: hits db
             IMember member = ApplicationContext
                                 .Current
                                 .Services
@@ -91,20 +92,26 @@ namespace Wonderland.Logic.Extensions
 
         public static PartyHost GetPartyHost(this MembershipHelper members, string partyUrlIdentifier)
         {
-            // WARNING: hits db
-            IMember partyHost = ApplicationContext
-                                    .Current
-                                    .Services
-                                    .MemberService
-                                    .GetMembersByMemberType(PartyHost.Alias)
-                                    .SingleOrDefault(x => x.GetValue<string>(PartyHost.PartyUrlIdentifierAlias).ToLower() == partyUrlIdentifier.ToLower());
+            BaseSearchProvider searchProvider = ExamineManager.Instance.SearchProviderCollection["InternalMemberSearcher"];
+            ISearchCriteria searchCriteria = searchProvider.CreateSearchCriteria(IndexTypes.Member).Field("partyUrlIdentifier", partyUrlIdentifier).Compile();
+            ISearchResults searchResults = searchProvider.Search(searchCriteria);
 
-            if (partyHost != null)
-            {
-                return new PartyHost(members.GetByUsername(partyHost.Username));
-            }
+            return searchResults.Select(x => (PartyHost)members.GetById(x.Id)).SingleOrDefault();
 
-            return null;
+            //// WARNING: hits db
+            //IMember partyHost = ApplicationContext
+            //                        .Current
+            //                        .Services
+            //                        .MemberService
+            //                        .GetMembersByMemberType(PartyHost.Alias)
+            //                        .SingleOrDefault(x => x.GetValue<string>(PartyHost.PartyUrlIdentifierAlias).ToLower() == partyUrlIdentifier.ToLower());
+
+            //if (partyHost != null)
+            //{
+            //    return new PartyHost(members.GetByUsername(partyHost.Username));
+            //}
+
+            //return null;
         }
 
 
