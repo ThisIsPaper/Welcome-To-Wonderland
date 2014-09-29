@@ -13,6 +13,12 @@ namespace Wonderland.Logic.Controllers.Surface
 
     public class ProfileSurfaceController : SurfaceController
     {
+        [HttpGet]
+        public ActionResult NavigateToProfileUrl()
+        {
+            return this.Redirect(this.Umbraco.TypedContentSingleAtXPath("//" + Wonderland.Logic.Models.Content.Profile.Alias).Url); // avoids naming conflict with this.Profile
+        }
+
         [ChildActionOnly]
         [MemberAuthorize]
         public ActionResult RenderProfileBillingAddressForm()
