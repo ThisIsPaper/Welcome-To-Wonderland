@@ -2,7 +2,7 @@
 @{
     Layout = "SitePage.cshtml";
 }
-<h1>@Model.PageHeading</h1>
+@*<h1>@Model.PageHeading</h1>
 
 <h2>@Model.TopFundraisersHeading</h2>
 @foreach (PartyHost partyHost in Model.TopFundraisers)
@@ -17,16 +17,138 @@
 {
     @partyHost.Name
 }
-<a href="@Model.GetLeaderboard().MostGuestsLink">view all &gt;</a>
+<a href="@Model.GetLeaderboard().MostGuestsLink">view all &gt;</a>*@
 
 @*<h2>@Model.BadgesTodayHeading</h2>
 @foreach (PartyHost partyHost in Model.BadgesToday)
 {
     @partyHost.Name
-}
+}*@
 
-<h2>@Model.RecentHostsHeading</h2>
+@*<h2>@Model.RecentHostsHeading</h2>
 @foreach (PartyHost partyHost in Model.RecentHosts)
 {
     @partyHost.Name
-}*@
+}
+*@
+
+
+
+
+<div class="page-bg">
+
+    <div class="container gutter">
+
+        <div class="wgrid-half">
+
+            <div class="boxx" m-radius-picker>
+
+                @* TODO: This heading is hardcoded, the dynamic one breaks styling *@
+                <h1><span class="lighter"><span class="icon-icon_crown margin-right-small"></span><span class="bigger">Top<br/></span></span><span>Fundraisers</span></h1>
+
+                <p>Wonderland royalty; these party people have raised an avalanche of cash for Macmillan.</p>
+
+                @{
+                    int i=0;
+                    int t=0;
+                    @* TODO: probably remove this hacky loop to get total items *@
+                    foreach (PartyHost partyHost in Model.TopFundraisers)
+                    {
+                        t++;
+                    }
+                    foreach (PartyHost partyHost in Model.TopFundraisers)
+                    {
+                        i++;
+                        <div class="pos-relative margin-bottom-small">
+                            <div class="scoreboard-place body-dephasize" ng-bind="@i|dateSuffix"></div>
+                            <div class="float-left" m-profile-image="{{ '@partyHost.ProfileImageUrl' }}" m-radius-picker="small medium"></div>
+                            <div class="image-shift-details bigger margin-right-7">
+                                <div class="body-emphasize">@partyHost.Name</div>
+                                <div class="body-dephasize">@partyHost.PartyHeading</div>
+                            </div>
+                            <div class="scoreboard-value" ng-init="amountRaised@i=@partyHost.AmountRaised" ng-bind="amountRaised@i|mCurrency:'£'"></div>
+                            <div class="clear"></div>
+                        </div>
+                        <hr ng-show="{{ @i < @t }}" />
+                    }
+                    <div class="errorred" ng-show="@t==0">There are currently no fundaraisers</div>
+                }
+
+
+            </div>
+
+        </div>
+
+        <div class="wgrid-half wgrid-no-right-margin">
+
+            <div class="boxx" m-radius-picker>
+
+                <h1 class="lighter"><span class="icon-icon_trophy margin-right-small"></span><span class="bigger">Party</span></h1>
+                <h1>Professionals</h1>
+
+                <p>If the winter olympics involved selling tickets for parties these people would be gold medal winners.</p>
+
+                @{
+                    int ii=0;
+                    int tt=0;
+                    @* TODO: probably remove this hacky loop to get total items *@
+                    foreach (PartyHost partyHost in Model.MostGuests)
+                    {
+                        tt++;
+                    }
+                    foreach (PartyHost partyHost in Model.MostGuests)
+                    {
+                        ii++;
+                        <div class="pos-relative margin-bottom-small">
+                            <div class="scoreboard-place body-dephasize" ng-bind="@ii|dateSuffix"></div>
+                            <div class="float-left" m-profile-image="{{ '@partyHost.ProfileImageUrl' }}" m-radius-picker="small medium"></div>
+                            <div class="image-shift-details bigger margin-right-7">
+                                <div class="body-emphasize">@partyHost.Name</div>
+                                <div class="body-dephasize">@partyHost.PartyHeading</div>
+                            </div>
+                            <div class="scoreboard-value">
+                                @* TODO: get the # of guests *@
+                                <div>XX</div>
+                                <div class="body-dephasize">guests</div>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <hr ng-show="{{ @ii < @tt }}" />
+                    }
+                    <div class="errorred" ng-show="@tt==0">There are currently no party professionals</div>
+                }
+
+            </div>
+
+        </div>
+
+
+       <div class="wgrid-full parent">
+
+           <div class="boxx" m-radius-picker>
+
+               <h1 class="margin-bottom-5">Latest hosts</h1>
+
+
+
+               @*<div class="grid-4 grid-mobile-12" ng-repeat="funders in guideLatestHosts">
+                   <div class="pos-relative">
+                        <div class="float-left" m-profile-image="[[ funders.img ]]" m-radius-picker="small medium"></div>
+                        <div class="image-shift-details">
+                            <div class="body-emphasize" ng-bind="funders.name"></div>
+                            <div class="body-small body-dephasize">Joined <span ng-bind="funders.joined"></span> ago</div>
+                        </div>
+                        <div class="clear"></vdiv>
+                    </div>
+                    <hr ng-class="{'only-on-tablet': guideLatestHosts.length<=($index+3), 'opacity-0': $last}" />
+                </div>*@
+               <div class="errorred">There are currently no latest hosts</div>
+
+
+            </div>
+
+       </div>
+
+    </div>
+
+</div>

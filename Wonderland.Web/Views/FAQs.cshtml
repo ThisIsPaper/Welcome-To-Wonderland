@@ -3,14 +3,48 @@
     Layout = "SitePage.cshtml";
 }
 
-<h1>@Model.PageHeading</h1>
 
-<dl>
-    @foreach (QuestionAndAnswer questionAndAnswer in Model.QuestionsAndAnswers)
-    {
-        <dt>@questionAndAnswer.Question</dt>
-        <dd>@questionAndAnswer.Answer</dd>
-    }
-</dl>
+<div class="page-bg" ng-controller="FaqsCtrl">
 
-@Html.Raw(Model.Copy)
+    <div class="container gutter">
+
+        <div class="wgrid-main centered">
+
+            <div class="boxx" m-radius-picker>
+
+                <h1><span class="lighter icon-icon_question"></span><span class="bigger">@Model.PageHeading</span></h1>
+                @Html.Raw(Model.Copy)
+
+                <hr/>
+
+                @{
+                    int i=0;
+                    int t=0;
+                    foreach (QuestionAndAnswer questionAndAnswer in Model.QuestionsAndAnswers)
+                    {
+                        t++;
+                    }
+                    foreach (QuestionAndAnswer questionAndAnswer in Model.QuestionsAndAnswers)
+                    {
+                        i++;
+                        <div class="pos-relative clickable" ng-click="toggleFaq('faqOp' + @i)">
+                            <div class="margin-right-5">
+                                <div class="body-emphasize margin-bottom-small">@questionAndAnswer.Question</div>
+                                <div class="body-small" ng-show="{{ 'faqOp' + @i }}">@questionAndAnswer.Answer</div>
+                            </div>
+                            <div class="pos-absolute pos-right-0 pos-top-0">
+                                <span ng-hide="{{ 'faqOp' + @i }}">+</span>
+                                <span ng-show="{{ 'faqOp' + @i }}">-</span>
+                            </div>
+                            <hr ng-show="{{ @i < @t }}"/>
+                        </div>
+                    }
+                }
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

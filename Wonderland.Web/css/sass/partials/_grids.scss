@@ -100,6 +100,7 @@ $settings : (
 
 
 
+
 /**********************************/
 // BOXX
 /**********************************/
@@ -115,6 +116,11 @@ $settings : (
 
     &.internal {
         background: $greyReallyLight;
+
+        &.highlight {
+            background: $blueLight;
+            color: $SecondaryColour;
+        }
     }
 
     &.mega-pad {

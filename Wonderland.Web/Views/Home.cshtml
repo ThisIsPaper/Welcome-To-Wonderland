@@ -1,4 +1,4 @@
-@inherits UmbracoViewPage<Home>
+﻿@inherits UmbracoViewPage<Home>
 @{
     Layout = "SitePage.cshtml";
 }
@@ -22,7 +22,7 @@
 
 
 
-<div class="planking pad-top-4 pad-bottom-8">
+<div class="planking pad-top-4 pad-bottom-8" ng-init="guidePageUrl='http://www.google.com'">
     <div class="container gutter home-content-adjust">
 
         <section class="wgrid-full text-align-center margin-bottom-6 pad-0">
@@ -35,7 +35,16 @@
                     <h1 class="raised-amount margin-top-2" ng-init="amountRaised=@Model.TotalAmountRaised" ng-bind="amountRaised|mCurrency:'£'"></h1>
                 </div>
             </div>
-            <a href="#" class="btn-primary btn-large pad-top-small pad-bottom-small" m-radius-picker="small medium">My party <span class="icon-icon_chevron_right"></span></a>
+
+            @if (!this.Members.IsLoggedInPartier())
+            {
+                <a href="@Url.Action("NavigateToRegisterHostUrl", "RegisterHostSurface")" class="btn-primary btn-large pad-top-small pad-bottom-small" m-radius-picker="small medium">Host a party <span class="icon-icon_chevron_right"></span></a>
+            }
+            else
+            {
+                <a href="@(((IPartier)this.Members.GetCurrentMember()).PartyUrl)" class="btn-primary btn-large pad-top-small pad-bottom-small" m-radius-picker="small medium">My party <span class="icon-icon_chevron_right"></span></a>
+            }
+
         </section>
 
 

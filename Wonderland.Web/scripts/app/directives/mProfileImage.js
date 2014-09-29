@@ -14,8 +14,7 @@ wonderlandApp.directive('mProfileImage', [function () {
 
 
 
-            attrs.$observe('mProfileImage', function (newVal) {
-
+            attrs.$observe('mProfileImage', function (newVal, oldVal) {
                 var hasExt = false;
                 for (var i=0; i<ALLOWED_EXTENSIONS.length; i++) {
                     hasExt = newVal.toLowerCase().indexOf(ALLOWED_EXTENSIONS[i]) >= 0 ? true : hasExt;
@@ -36,7 +35,12 @@ wonderlandApp.directive('mProfileImage', [function () {
 
 
 
-            scope.$watch('hasBackgroundImage', function (newVal) {
+            scope.$watch('hasBackgroundImage', function (newVal, oldVal) {
+
+                // weird onload bug if the url is hard coded
+                if (newVal===false && oldVal===true) {
+                    return;
+                }
 
                 if (newVal===true) {
                     element.removeClass(NOT_SET_CLASS);

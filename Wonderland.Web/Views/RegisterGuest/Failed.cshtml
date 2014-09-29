@@ -3,8 +3,74 @@
     Layout = "~/Views/SitePage.cshtml";
 }
 
-<h1>Failed</h1>
-<br />
-<p>
-    @ViewData["errorMessage"]
-</p>
+<div class="page-bg">
+
+
+    <div class="container gutter">
+
+        <div class="wgrid-main centered wgrid-no-bottom-margin">
+
+            <div class="boxx radius-bottom-0" m-radius-picker="large">
+
+                <h1 class="error"><span class="lighter"><span class="icon-icon_alert margin-right-small"></span>Payment </span><br/><span class="bigger margin-top-medium">failed</span></h1>
+
+            </div>
+
+        </div>
+
+        @* TODO: need model object to display side bar event info *@
+        @*<div class="wgrid-side parent wgrid-no-bottom-margin">
+
+            <div class="boxx collapse radius-tablet-0" m-radius-picker="medium">
+
+                <div class="wgrid-full wgrid-no-bottom-margin parent">
+                    <div class="grid-12 party-main-image side" style="background-image: url(@Model.PartyHost.PartyImage)"></div>
+                </div>
+
+
+                <div class="wgrid-full pad-large">
+
+                    <div m-profile-image="@Model.PartyHost.ProfileImageUrl" m-radius-picker="small"></div>
+                    <div class="party-details">
+                        <h3 class="top pad-right-3 margin-bottom-4 margin-mobile-bottom-0">@Model.PartyHost.PartyHeading</h3>
+
+                        <div class="anti-image-shift-details body-small float-left margin-right-medium">
+                            <span class="icon-icon_clock"></span>
+                            <span ng-bind="partyDateTime|datePreviewFormat" ng-init="partyDateTime='@Model.PartyHost.PartyDateTime'"></span>
+                        </div>
+                        <div class="anti-image-shift-details body-small float-left">
+                            <span class="icon-icon_fingerpost"></span>
+                            <span ng-bind="'@Model.PartyHost.PartyAddress.Address1:~:@Model.PartyHost.PartyAddress.Address2:~:@Model.PartyHost.PartyAddress.TownCity:~:@Model.PartyHost.PartyAddress.Postcode'|addressJoiner:':~:'"></span>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>*@
+
+
+
+        <div class="wgrid-main centered">
+
+            <div class="boxx radius-top-0" m-radius-picker>
+
+                <hr/>
+
+                @ViewData["errorMessage"]
+
+
+                <hr/>
+
+                @* TODO: need guid to go back to the join party page *@
+                <span class="cancel margin-right-1 float-right">Go back</span>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</div>

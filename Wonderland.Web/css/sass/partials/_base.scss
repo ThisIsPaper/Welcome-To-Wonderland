@@ -418,6 +418,13 @@ One-off uses
     color: white;
 }
 
+.join-party-ico:after {
+    @extend .margin-left-small;
+    content: "\e601";
+    font-family: $fontFaceIcomoon;
+    color: white;
+}
+
 
 /*******************************/// home page
 
