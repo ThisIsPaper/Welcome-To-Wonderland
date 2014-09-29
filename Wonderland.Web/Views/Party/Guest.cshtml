@@ -118,18 +118,20 @@
 
 
             <div class="wgrid-full parent" ng-init="guideBadges=[
-        {imageUrl: '/img/badge_0003_gondola.png', badgeTitle: '', badgeCopy: '', complete: true},
-        {imageUrl: '/img/badge_0004_hottub.png', badgeTitle: '', badgeCopy: '', complete: true},
-        {imageUrl: '/img/badge_0005_chalet.png', badgeTitle: '', badgeCopy: '', complete: false},
-        {imageUrl: '/img/badge_0000_pro.png', badgeTitle: '', badgeCopy: '', complete: true},
-        {imageUrl: '/img/badge_0001_intermediate.png', badgeTitle: '', badgeCopy: '', complete: false},
-        {imageUrl: '/img/badge_0002_beginner.png', badgeTitle: '', badgeCopy: '', complete: false}
+        {imageUrl: '/img/badge_0003_gondola.png', badgeTitle: '5+ guests', badgeCopy: 'Gondola', complete: @this.Model.Partiers.Count() >= 5},
+        {imageUrl: '/img/badge_0004_hottub.png', badgeTitle: '10+ guests', badgeCopy: 'Hot tub', complete: @this.Model.Partiers.Count() >= 10},
+        {imageUrl: '/img/badge_0005_chalet.png', badgeTitle: '15+ guests', badgeCopy: 'Chalet', complete: @this.Model.Partiers.Count() >= 15},
+        {imageUrl: '/img/badge_0002_beginner.png', badgeTitle: '£120+', badgeCopy: 'Beginner', complete: @Model.PartyHost.AmountRaised >= 120 },
+        {imageUrl: '/img/badge_0001_intermediate.png', badgeTitle: '£180+', badgeCopy: 'Intermediate', complete: @Model.PartyHost.AmountRaised >= 180},
+        {imageUrl: '/img/badge_0000_pro.png', badgeTitle: '£240+', badgeCopy: 'Pro', complete: @Model.PartyHost.AmountRaised >= 240}
     ]">
                 <div class="boxx" m-radius-picker="small medium">
-                    <h4>Badges <span>(3 of 6)</span></h4>
+                    <h4>Badges <span ng-bind="guideBadges|formatAmountComplete"></span></h4>
 
-                    <div class="grid-4 grid-mobile-6 pad-0" ng-repeat="badge in guideBadges">
+                    <div class="grid-4 grid-mobile-6 pad-0 text-align-center" ng-repeat="badge in guideBadges">
                         <div class="badge" ng-style="{'background-image': 'url(' + badge.imageUrl + ')'}" ng-class="{'collected': badge.complete}"></div>
+                        <div class="form-info body-emphasize margin-top-0 margin-bottom-0" ng-bind="badge.badgeTitle"></div>
+                        <div class="form-info margin-bottom-small margin-top-0" ng-bind="badge.badgeCopy"></div>
                     </div>
 
                 </div>
