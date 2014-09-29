@@ -52,7 +52,7 @@
                             <div class="body-small margin-bottom-small" ng-bind="item.tileType"></div>
                             <div class="icon-icon_snowflake margin-bottom-small" ng-show="item.spotify && item.wide"></div>
                             <h1 class="margin-bottom-small" ng-class="{'smaller': !item.wide}" ng-bind="item.tileHeading"></h1>
-                            <div class="body-mini margin-bottom-small" ng-bind="item.tileCopy|striptags"></div>
+                            <div class="body-mini margin-bottom-small" ng-bind="item.tileCopy|striptags" ng-show="item.spotify"></div>
                             <div class="spotify-logo" ng-show="item.spotify"></div>
                             <div class="pinterest-ico" ng-show="item.pinterest"></div>
                         </div>
