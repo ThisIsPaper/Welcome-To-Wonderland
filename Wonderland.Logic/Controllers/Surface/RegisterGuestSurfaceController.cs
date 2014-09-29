@@ -17,15 +17,15 @@ namespace Wonderland.Logic.Controllers.Surface
 
     public class RegisterGuestSurfaceController : SurfaceController
     {
-        /// <summary>
-        /// Handles inbound links to the register guest page
-        /// </summary>
-        /// <returns></returns>
-        [HttpGet]
-        public ActionResult NavigateToRegisterGuestUrl(Guid partyGuid)
-        {
-            return this.Redirect(this.Umbraco.TypedContentSingleAtXPath("//" + RegisterGuest.Alias).Url + "?partyGuid=" + partyGuid.ToString());
-        }
+        ///// <summary>
+        ///// Handles inbound links to the register guest page
+        ///// </summary>
+        ///// <returns></returns>
+        //[HttpGet]
+        //public ActionResult NavigateToRegisterGuestUrl(Guid partyGuid)
+        //{
+        //    return this.Redirect(this.Umbraco.TypedContentSingleAtXPath("//" + RegisterGuest.Alias).Url + "?partyGuid=" + partyGuid.ToString());
+        //}
 
         /// <summary>
         /// returns the partial for the guest registration form
@@ -96,8 +96,8 @@ namespace Wonderland.Logic.Controllers.Surface
             // send cookie
             FormsAuthentication.SetAuthCookie(partyGuest.Username, true);
 
-            return this.NavigateToRegisterGuestUrl(registerGuestForm.PartyGuid);
-            //return this.RedirectToCurrentUmbracoPage();
+            //return this.NavigateToRegisterGuestUrl(registerGuestForm.PartyGuid);
+            return this.Redirect(this.Umbraco.TypedContentSingleAtXPath("//" + RegisterGuest.Alias).Url + "?partyGuid=" + registerGuestForm.PartyGuid.ToString());
         }
 
         [MemberAuthorize(AllowType=PartyGuest.Alias)]

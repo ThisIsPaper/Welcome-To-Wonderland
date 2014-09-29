@@ -9,7 +9,7 @@
 
         @if (!this.Members.IsLoggedInPartier())
         {
-            <a href="@Url.Action("NavigateToRegisterHostUrl", "RegisterHostSurface")" class="btn-primary btn-large pad-top-small pad-bottom-small" m-radius-picker="small medium">Host a party <span class="icon-icon_chevron_right"></span></a>
+            <a href="@Model.SiteSettings.RegisterHostUrl" class="btn-primary btn-large pad-top-small pad-bottom-small" m-radius-picker="small medium">Host a party <span class="icon-icon_chevron_right"></span></a>
         }
         else
         {
@@ -38,7 +38,7 @@
 
             @if (!this.Members.IsLoggedInPartier())
             {
-                <a href="@Url.Action("NavigateToRegisterHostUrl", "RegisterHostSurface")" class="btn-primary btn-large pad-top-small pad-bottom-small" m-radius-picker="small medium">Host a party <span class="icon-icon_chevron_right"></span></a>
+                <a href="@Model.SiteSettings.RegisterHostUrl" class="btn-primary btn-large pad-top-small pad-bottom-small" m-radius-picker="small medium">Host a party <span class="icon-icon_chevron_right"></span></a>
             }
             else
             {

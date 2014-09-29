@@ -11,11 +11,11 @@ namespace Wonderland.Logic.Controllers.Surface
 
     public class ForgottenPasswordSurfaceController : SurfaceController
     {
-        [HttpGet]
-        public ActionResult NavigateToForgottenPasswordUrl()
-        {
-            return this.Redirect(this.Umbraco.TypedContentSingleAtXPath("//" + ForgottenPassword.Alias).Url);
-        }
+        //[HttpGet]
+        //public ActionResult NavigateToForgottenPasswordUrl()
+        //{
+        //    return this.Redirect(this.Umbraco.TypedContentSingleAtXPath("//" + ForgottenPassword.Alias).Url);
+        //}
 
         [ChildActionOnly]
         public ActionResult RenderForgottenPasswordForm()

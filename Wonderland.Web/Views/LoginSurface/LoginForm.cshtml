@@ -21,7 +21,10 @@
                 @Html.PasswordFor(x => x.Password, new { @m_radius_picker="small", @ng_readonly="processing", @ng_class="{'error': errorPasswordMessage.length>0}" })
             </div>
             <div class="margin-bottom-small" ng-show="errorPasswordMessage.length>0" ng-init="errorPasswordMessage='@Html.ValidationMessageFor(x => x.Password)'">@Html.ValidationMessageFor(x => x.Password)</div>
-            @Html.ActionLink("Forgotten Password?", "NavigateToForgottenPasswordUrl", "ForgottenPasswordSurface", null, new { @class="body-highlight" })
+            
+            @* TODO: remove this hard coded link (would like to avoid adding a non-form property into a form model)*@
+            <a href="/login/forgotten-password" class="body-highlight">Forgotten Password</a>
+            @*@Html.ActionLink("Forgotten Password?", "NavigateToForgottenPasswordUrl", "ForgottenPasswordSurface", null, new { @class="body-highlight" })*@
         </div>
 
         <div class="grid-12">

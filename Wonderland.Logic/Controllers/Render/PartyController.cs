@@ -1,6 +1,7 @@
 ﻿
 namespace Wonderland.Logic.Controllers.Render
 {
+    using System.Linq;
     using System.Web.Mvc;
     using Umbraco.Web.Models;
     using Wonderland.Logic.Extensions;
@@ -25,6 +26,7 @@ namespace Wonderland.Logic.Controllers.Render
                 partyHost = null;
             }
 
+            // party host not found on query string, so
             if (!(partyHost is PartyHost))
             {
                 if (this.Members.IsLoggedInPartier())
@@ -36,12 +38,8 @@ namespace Wonderland.Logic.Controllers.Render
                 return this.Redirect(Home.GetCurrentHome(model).Url);
             }
 
-            // known host, so build the renderModel renderModel
+            // known host, so set the party host for this cms page, and build the model
             model.PartyHost = partyHost;
-
-            // image
-
-            // location - use model.PartyHost.PartyAddress
             
             // heading - use custom heading if set by host
             if (!string.IsNullOrWhiteSpace(partyHost.PartyHeading))
@@ -55,14 +53,12 @@ namespace Wonderland.Logic.Controllers.Render
                 model.Copy = partyHost.PartyCopy;
             }
 
-            // wall - will be ajax only
-
-            // totaliser
-
-            //// partiers - the host + all guests            
+            // partiers - the host + all guests            
             model.Partiers = this.Members.GetPartiers(partyHost.PartyGuid);
 
-            // badges
+            // urls with guids
+            model.DonateUrl = this.Umbraco.TypedContentSingleAtXPath("//" + Donate.Alias).Url + "?partyGuid=" + partyHost.PartyGuid.ToString();
+            model.RegisterGuestUrl = this.Umbraco.TypedContentSingleAtXPath("//" + RegisterGuest.Alias).Url + "?partyGuid=" + partyHost.PartyGuid.ToString();
 
             // determine view to return
             if (model.PartyHost.Blocked)

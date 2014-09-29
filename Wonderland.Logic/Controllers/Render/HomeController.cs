@@ -6,9 +6,9 @@ namespace Wonderland.Logic.Controllers.Render
     using Wonderland.Logic.Enums;
     using Wonderland.Logic.Models.Content;
 
-    //[OutputCache(Duration=60)]
     public class HomeController : BaseRenderMvcController
     {
+        //[OutputCache(Duration=60)]
         public ActionResult Home() // method executed in preference to the Index, as Home is the template name
         {
             Home model = (Home)this.CurrentPage;
@@ -27,6 +27,14 @@ namespace Wonderland.Logic.Controllers.Render
             }
 
             return this.CurrentTemplate(model);
+        }
+
+        // this is hijacking the url /logout,  as it's actually home using the alternate tempalte syntax
+        public ActionResult Logout()
+        {
+            this.Members.Logout();
+
+            return this.Redirect("/");
         }
     }
 }

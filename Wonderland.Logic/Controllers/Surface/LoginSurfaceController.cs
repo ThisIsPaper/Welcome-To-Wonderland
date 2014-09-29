@@ -9,15 +9,15 @@ namespace Wonderland.Logic.Controllers.Surface
 
     public class LoginSurfaceController : SurfaceController
     {
-        /// <summary>
-        /// Handles inbound links to the login page
-        /// </summary>
-        /// <returns></returns>
-        [HttpGet]
-        public ActionResult NavigateToLoginUrl()
-        {
-            return this.Redirect(this.Umbraco.TypedContentSingleAtXPath("//" + Login.Alias).Url);
-        }
+        ///// <summary>
+        ///// Handles inbound links to the login page
+        ///// </summary>
+        ///// <returns></returns>
+        //[HttpGet]
+        //public ActionResult NavigateToLoginUrl()
+        //{
+        //    return this.Redirect(this.Umbraco.TypedContentSingleAtXPath("//" + Login.Alias).Url);
+        //}
 
         /// <summary>
         /// returns the partial for the login form

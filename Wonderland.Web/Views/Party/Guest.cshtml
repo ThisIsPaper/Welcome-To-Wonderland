@@ -98,7 +98,7 @@
 
             <div class="wgrid-full parent">
                 @* TODO: check this is right for guest *@
-                @Html.ActionLink("Donate", "NavigateToDonateUrl", "DonateSurface", new { partyGuid = Model.PartyHost.PartyGuid }, new { @class = "btn-primary btn-large piggy-donater dis-block", @m_radius_picker="small medium" })
+                <a href="@Model.DonateUrl" class="btn-primary btn-large piggy-donater dis-block" m_radius_picker="small medium">Donate</a>
             </div>
 
 

@@ -77,5 +77,17 @@ namespace Wonderland.Logic.Models.Content
             get;
             internal set;
         }
+
+        public string RegisterGuestUrl
+        {
+            get;
+            internal set;
+        }
+
+        public string DonateUrl
+        {
+            get;
+            internal set;
+        }
     }
 }

@@ -267,6 +267,7 @@
     <Content Include="Views\ProfileSurface\ProfileNamesForm.cshtml" />
     <Content Include="Views\ProfileSurface\ProfileBillingAddressForm.cshtml" />
     <Content Include="Views\ProfileSurface\ProfileChangePasswordForm.cshtml" />
+    <Content Include="Views\Logout.cshtml" />
     <None Include="Views\RegisterHostSurface\RegisterHostForm.cshtml" />
   </ItemGroup>
   <ItemGroup>

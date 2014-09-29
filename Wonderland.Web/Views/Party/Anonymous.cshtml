@@ -146,10 +146,13 @@
                 @if (!this.Members.IsLoggedInPartier())
                 {
                     @* only users who don't already have a party can 'join the party' *@
-                    @Html.ActionLink("Join the party", "NavigateToRegisterGuestUrl", "RegisterGuestSurface", new { partyGuid = Model.PartyHost.PartyGuid }, new { @class = "btn-primary dis-block btn-large join-party-ico margin-bottom-large", @m_radius_picker="small" })
-                    <p class="form-info">or if you can't attend, @Html.ActionLink("donate >", "NavigateToDonateUrl", "DonateSurface", new { partyGuid = Model.PartyHost.PartyGuid }, new { @class = "body-highlight margin-bottom-large" })</p>
-                } else {
-                    @Html.ActionLink("Donate", "NavigateToDonateUrl", "DonateSurface", new { partyGuid = Model.PartyHost.PartyGuid }, new { @class = "btn-primary piggy-donater margin-bottom-large", @m_radius_picker="small" })
+                    <a href="@Model.RegisterGuestUrl" class="btn-primary dis-block btn-large join-party-ico margin-bottom-large" m_radius_picker="small">Join the party</a>
+
+                    <p class="form-info">or if you can't attend, <a href="@Model.DonateUrl" class="body-highlight margin-bottom-large">donate &gt;</a></p>
+                }
+                else
+                {
+                    <a href="@Model.DonateUrl" class="btn-primary piggy-donater margin-bottom-large" m_radius_picker="small">Donate</a>
                 }
 
             </div>
@@ -209,10 +212,12 @@
                     {
                         @* only users who don't already have a party can 'join the party' *@
                         <p>To have your say, and see what others are saying, join the party</p>
-                        @Html.ActionLink("Join the party", "NavigateToRegisterGuestUrl", "RegisterGuestSurface", new { partyGuid = Model.PartyHost.PartyGuid }, new { @class = "btn-primary join-party-ico margin-bottom-large", @m_radius_picker="small" })
-                    } else {
+                        <a href="@Model.RegisterGuestUrl" class="btn-primary join-party-ico margin-bottom-large" m_radius_picker="small">Join the party</a>
+                    }
+                    else
+                    {
                         <p>Unfortunately, you can't participate in multiple parties. You can donate to the cause though!</p>
-                        @Html.ActionLink("Donate", "NavigateToDonateUrl", "DonateSurface", new { partyGuid = Model.PartyHost.PartyGuid }, new { @class = "btn-primary piggy-donater margin-bottom-large", @m_radius_picker="small" })
+                        <a href="@Model.DonateUrl" class="btn-primary piggy-donater margin-bottom-large" m_radius_picker="small">Donate</a>
                     }
 
                     <div class="clear margin-bottom-large"></div>
