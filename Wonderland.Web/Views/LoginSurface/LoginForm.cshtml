@@ -1,30 +1,35 @@
 ﻿@model LoginForm
 
-@using (Html.BeginUmbracoForm<LoginSurfaceController>("HandleLoginForm"))
-{
-    @Html.AntiForgeryToken()
 
-    @* TODO: strip tags from validation message *@
-    <div class="errorred" ng-show="errorMessage.length>0" ng-init="errorMessage='@Html.ValidationMessage("LoginValidation")'" ng-bind="errorMessage"></div>
+<div ng-init="processing=false">
+    @using (Html.BeginUmbracoForm<LoginSurfaceController>("HandleLoginForm", FormMethod.Post, new { ng_submit="processing=true" }))
+    {
+        @Html.AntiForgeryToken()
 
-    <div class="grid-8 grid-mobile-12 margin-bottom-large">
-        <label for="EmailAddress">Email</label>
-        <div class="margin-bottom-small" ng-show="errorEmailMessage.length>0" ng-init="errorEmailMessage='@Html.ValidationMessageFor(x => x.EmailAddress)'">@Html.ValidationMessageFor(x => x.EmailAddress)</div>
-        @Html.TextBoxFor(x => x.EmailAddress, new { @m_radius_picker="small" })
+        @* TODO: strip tags from validation message *@
+        <div ng-show="errorMessage.length>0" ng-init="errorMessage='@Html.ValidationMessage("LoginValidation")'">@Html.ValidationMessage("LoginValidation")</div>
 
-        <label for="Password">Password</label>
-        <div class="margin-bottom-small" ng-show="errorPasswordMessage.length>0" ng-init="errorPasswordMessage='@Html.ValidationMessageFor(x => x.Password)'">@Html.ValidationMessageFor(x => x.Password)</div>
-        <div class="pos-relative margin-bottom-small">
-            <span class="form-field-ico icon-icon_padlock"></span>
-            @Html.PasswordFor(x => x.Password, new { @m_radius_picker="small" })
+        <div class="grid-8 grid-mobile-12 margin-bottom-large">
+            <label for="EmailAddress">Email</label>
+            @Html.TextBoxFor(x => x.EmailAddress, new { @m_radius_picker="small", @ng_readonly="processing", @ng_class="{'error': errorEmailMessage.length>0}" })
+            <div class="margin-bottom-small" ng-show="errorEmailMessage.length>0" ng-init="errorEmailMessage='@Html.ValidationMessageFor(x => x.EmailAddress)'">@Html.ValidationMessageFor(x => x.EmailAddress)</div>
+
+
+            <label for="Password">Password</label>
+            <div class="pos-relative margin-bottom-small">
+                <span class="form-field-ico icon-icon_padlock"></span>
+                @Html.PasswordFor(x => x.Password, new { @m_radius_picker="small", @ng_readonly="processing", @ng_class="{'error': errorPasswordMessage.length>0}" })
+            </div>
+            <div class="margin-bottom-small" ng-show="errorPasswordMessage.length>0" ng-init="errorPasswordMessage='@Html.ValidationMessageFor(x => x.Password)'">@Html.ValidationMessageFor(x => x.Password)</div>
+            @Html.ActionLink("Forgotten Password?", "NavigateToForgottenPasswordUrl", "ForgottenPasswordSurface", null, new { @class="body-highlight" })
         </div>
-        @Html.ActionLink("Forgotten Password?", "NavigateToForgottenPasswordUrl", "ForgottenPasswordSurface", null, new { @class="body-highlight" })
-    </div>
 
-    <div class="grid-12">
-        <hr/>
-        <button type="submit" class="btn-primary float-right" m-radius-picker="small">Login ></button>
-        <a href="/" class="cancel margin-right-1 float-right">Cancel</a>
-    </div>
+        <div class="grid-12">
+            <hr/>
+            <button type="submit" class="btn-primary float-right" m-radius-picker="small" ng-disabled="processing">Login ></button>
+            <a href="/" class="cancel margin-right-1 float-right">Cancel</a>
 
-}
+            <div class="loader" ng-show="processing"></div>
+        </div>
+    }
+</div>

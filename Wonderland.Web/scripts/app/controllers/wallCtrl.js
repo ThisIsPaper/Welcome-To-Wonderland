@@ -28,18 +28,15 @@ wonderlandApp.controller('WallCtrl', ['mHttp', '$filter', '$scope', function (mH
 
         feedRequest.then(function (response) {
 
-            console.log('FEED: ', response);
-
             // TODO: hardcoded - work out donations and re-format
             if (response) {
 
-                angular.forEach(response, function (value, key) {
+                angular.forEach(response, function (value) {
                     if (!isNaN(Number(value.text))) {
                         value.wallPostType = "Donation";
                         value.text = $filter('mCurrency')(value.text, '£');
                     }
                     value.timestamp = moment(value.timestamp).fromNow();
-                    console.log('resp', value, key);
                 });
             }
 

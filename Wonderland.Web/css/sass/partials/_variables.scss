@@ -75,7 +75,7 @@ $fontFaceIcomoon: 'icomoon';
 
 $Em: 1.8rem !default;
 $BaseFontSize: 62.5% !default;
-$BaseFontFamily: "Futura BT W01 Book"; // this is the embeded font in _type.scss // old - "Open Sans", "sans-serif", "arial" !default;
+$BaseFontFamily: "Futura BT W01 Book"; // this is the embedded font in _type.scss // old - "Open Sans", "sans-serif", "arial" !default;
 $FontSizeMini: 1.1rem !default;
 $FontSizeSmall: 1.4rem !default;
 $FontSizeMedium: 1.8rem !default;
@@ -92,6 +92,7 @@ $BaseFontWeight: 500 !default;
 $BorderRadius: ($Margin / $MultiplierLarge) !default;
 $BorderRadiusSmall: ($BorderRadius / $Multiplier) !default;
 $BorderRadiusLarge: ($BorderRadius * $MultiplierLarge) !default;
+
 
 /* =============================================================================
 Colours

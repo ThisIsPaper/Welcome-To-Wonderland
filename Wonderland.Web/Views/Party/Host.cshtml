@@ -135,7 +135,7 @@
         {imageUrl: '/img/badge_0000_pro.png', badgeTitle: '£240+', badgeCopy: 'Pro', complete: @Model.PartyHost.AmountRaised >= 240}
     ]">
                 <div class="boxx" m-radius-picker="small medium">
-                    <h4>Badges <span ng-bind="guideBadges|formatAmountComplete"></span></h4>
+                    <h4 class="top">Badges <span ng-bind="guideBadges|formatAmountComplete"></span></h4>
 
                     <div class="grid-4 grid-mobile-6 pad-0 text-align-center" ng-repeat="badge in guideBadges">
                         <div class="badge" ng-style="{'background-image': 'url(' + badge.imageUrl + ')'}" ng-class="{'collected': badge.complete}"></div>
