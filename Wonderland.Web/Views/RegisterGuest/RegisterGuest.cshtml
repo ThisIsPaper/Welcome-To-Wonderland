@@ -3,6 +3,24 @@
     Layout = "~/Views/SitePage.cshtml";
 }
 
-<h1>Join @Model.PartyHost.FirstName's Party</h1>
+<div class="page-bg">
 
-@(Html.Action<RegisterGuestSurfaceController>("RenderRegisterGuestForm"))
+    <div class="container gutter">
+
+        <div class="wgrid-main centered">
+
+            <div class="boxx" m-radius-picker>
+
+                <h1><span class="lighter"><span class="icon-icon_person lighter margin-right-small"></span><span class="bigger">Join <br/></span></span><span>@Model.PartyHost.FirstName's Party</span></h1>
+
+                <hr/>
+
+                @(Html.Action<RegisterGuestSurfaceController>("RenderRegisterGuestForm"))
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
