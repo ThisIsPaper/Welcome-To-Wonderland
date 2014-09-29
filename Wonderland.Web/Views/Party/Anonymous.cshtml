@@ -224,9 +224,10 @@
                     <div class="wall-details">
                         <div>
                             <span class="wall-name" ng-bind="feedItem.name"></span>
-                            <span class="wall-time">3h</span>
+                            <span class="wall-type" ng-class="feedItem.wallPostType|lowercase" ng-bind="feedItem.wallPostType" ng-show="feedItem.wallPostType"></span>
+                            <span class="wall-time" ng-bind="feedItem.timestamp"></span>
                         </div>
-                        <div ng-bind="feedItem.text"></div>
+                        <div ng-class="{'donation-copy': feedItem.wallPostType=='Donation'}" ng-bind="feedItem.text"></div>
                     </div>
                 </div>
 
