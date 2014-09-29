@@ -16,9 +16,11 @@ namespace Wonderland.Logic.Interfaces
         /// </summary>
         int Id { get; }
 
-        string FirstName { get; }
+        string FirstName { get; set;  }
 
-        string LastName { get; }
+        string LastName { get; set; }
+
+        string ProfileImage { get; set; }
 
         /// <summary>
         /// url to their profile image

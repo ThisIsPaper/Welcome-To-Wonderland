@@ -74,7 +74,15 @@ namespace Wonderland.Logic.Controllers.Surface
             {
                 IPartier partier = this.Members.GetCurrentPartier();
 
-                // TODO:
+
+                // IMPORTANT ! TODO: check existing password
+
+
+                IMember member = this.Services.MemberService.GetById(partier.Id);
+                if (member != null)
+                {
+                    this.Services.MemberService.SavePassword(member, profileChangePasswordForm.Password);
+                }
 
                 formResponse.Success = true;
             }
@@ -101,7 +109,21 @@ namespace Wonderland.Logic.Controllers.Surface
             {
                 IPartier partier = this.Members.GetCurrentPartier();
 
-                // TODO:
+                if (profileImageForm.ProfileImage.ContentLength > 0 && profileImageForm.ProfileImage.InputStream.IsImage())
+                {
+                    // WARNING: user may upload an image, but use an incorrect extension !
+                    string fileName = Guid.NewGuid().ToString() + "." + profileImageForm.ProfileImage.ContentType.Split('/')[1];
+
+                    profileImageForm.ProfileImage.SaveAs(Server.MapPath("~/Uploads/Profile/" + fileName));
+
+                    //update property
+                    partier.ProfileImage = fileName;
+
+                    // re-inflate the current user model (to take into account newly set property)
+                    formResponse.Message = "/Uploads/Profile/" + fileName;
+
+                    formResponse.Success = true;
+                }
 
                 formResponse.Success = true;
             }
@@ -113,7 +135,14 @@ namespace Wonderland.Logic.Controllers.Surface
         [MemberAuthorize]
         public ActionResult RenderProfileNamesForm()
         {
-            return this.PartialView("ProfileNamesForm", new ProfileNamesForm());
+            ProfileNamesForm profileNamesForm = new ProfileNamesForm();
+
+            IPartier partier = this.Members.GetCurrentPartier();
+
+            profileNamesForm.FirstName = partier.FirstName;
+            profileNamesForm.LastName = partier.LastName;
+
+            return this.PartialView("ProfileNamesForm", profileNamesForm);
         }
 
         [HttpPost]
@@ -127,7 +156,8 @@ namespace Wonderland.Logic.Controllers.Surface
             {
                 IPartier partier = this.Members.GetCurrentPartier();
 
-                // TODO:
+                partier.FirstName = profileNamesForm.FirstName;
+                partier.LastName = profileNamesForm.LastName;
 
                 formResponse.Success = true;
             }
