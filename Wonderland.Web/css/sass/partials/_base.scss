@@ -231,6 +231,8 @@ Event Page specific - move these out of here eventually
 }
 
 
+
+
 /*******************************/// party image mo
 .party-image-container {
     @extend .margin-bottom-medium;
@@ -320,13 +322,26 @@ Event Page specific - move these out of here eventually
     min-height: 6rem;
 }
 
-.wall-name {
+.wall-name, wall-type {
     font-weight: bold;
     color: $greyDark;
 }
 
+.wall-type {
+    text-transform: uppercase;
+
+    &.donation {
+        color: $SecondaryColour;
+    }
+}
+
 .wall-time {
     color: $greyLight;
+}
+
+.donation-copy {
+    color: $SecondaryColour;
+    font-size: $FontSizeLarge;
 }
 
 /*******************************/// ticket
