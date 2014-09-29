@@ -117,12 +117,19 @@
             </div>
 
 
-            <div class="wgrid-full parent">
+            <div class="wgrid-full parent" ng-init="guideBadges=[
+        {imageUrl: '/img/badge_0003_gondola.png', badgeTitle: '', badgeCopy: '', complete: true},
+        {imageUrl: '/img/badge_0004_hottub.png', badgeTitle: '', badgeCopy: '', complete: true},
+        {imageUrl: '/img/badge_0005_chalet.png', badgeTitle: '', badgeCopy: '', complete: false},
+        {imageUrl: '/img/badge_0000_pro.png', badgeTitle: '', badgeCopy: '', complete: true},
+        {imageUrl: '/img/badge_0001_intermediate.png', badgeTitle: '', badgeCopy: '', complete: false},
+        {imageUrl: '/img/badge_0002_beginner.png', badgeTitle: '', badgeCopy: '', complete: false}
+    ]">
                 <div class="boxx" m-radius-picker="small medium">
-                    <h4>Badges <span>(2 of 6)</span></h4>
+                    <h4>Badges <span>(3 of 6)</span></h4>
 
-                    <div class="grid-4 grid-mobile-6 pad-0" ng-repeat="badge in [1, 2, 3, 4, 5, 6]">
-                        <div class="badge" ng-class="{'collected': $index%3==0}"></div>
+                    <div class="grid-4 grid-mobile-6 pad-0" ng-repeat="badge in guideBadges">
+                        <div class="badge" ng-style="{'background-image': 'url(' + badge.imageUrl + ')'}" ng-class="{'collected': badge.complete}"></div>
                     </div>
 
                 </div>

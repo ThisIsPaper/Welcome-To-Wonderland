@@ -215,19 +215,19 @@ Event Page specific - move these out of here eventually
     }
 }
 
+
 .badge {
     width: 100%;
-    height: 8rem;
+    height: 7.8rem;
     margin-bottom: 3rem;
     overflow: hidden;
 
-    background-image: url(/img/test_badge.jpg);
-    background-size: 7.5rem 16rem;
+    background-size: 7rem 15.6rem;
     background-repeat: no-repeat;
-    background-position: top center;
+    background-position: bottom center;
 
     &.badge.collected {
-        background-position: bottom center;
+        background-position: top center;
     }
 }
 
