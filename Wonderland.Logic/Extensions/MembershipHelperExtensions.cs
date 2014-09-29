@@ -113,6 +113,8 @@ namespace Wonderland.Logic.Extensions
         {
             List<PartyHost> partyHosts = new List<PartyHost>();
 
+            PartyHost partyHost = null;
+
             DatabaseContext databaseContext = ApplicationContext.Current.DatabaseContext;
 
             switch (leaderboardType)
@@ -128,7 +130,9 @@ namespace Wonderland.Logic.Extensions
                                                                                             ORDER BY    Partiers DESC
                                                                                         "))
                     {
-                        partyHosts.Add(members.GetPartyHost((Guid)mostGuest.PartyGuid));
+                        partyHost = members.GetPartyHost((Guid)mostGuest.PartyGuid);
+                        partyHost.TotalGuests = mostGuest.Partiers;
+                        partyHosts.Add(partyHost);
                     }
 
                     break;
