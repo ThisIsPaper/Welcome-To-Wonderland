@@ -285,23 +285,33 @@ namespace Wonderland.Logic.Models.Members
             }
         }
 
+        private decimal? amountRaised = null;
         public decimal AmountRaised
         {
             get
             {
-                try
+                if (!this.amountRaised.HasValue)
                 {
-                    return this.DatabaseContext.Database.ExecuteScalar<decimal>(@"
-                                                                                    SELECT  SUM(Amount)
-                                                                                    FROM    wonderlandDonation
-                                                                                    WHERE   PartyGuid = @0
-                                                                                            AND Success = 1
-                                                                                ", this.PartyGuid);
+                    try
+                    {
+                        this.amountRaised = this.DatabaseContext.Database.ExecuteScalar<decimal>(@"
+                                                                                                    SELECT  SUM(Amount)
+                                                                                                    FROM    wonderlandDonation
+                                                                                                    WHERE   PartyGuid = @0
+                                                                                                            AND Success = 1
+                                                                                                ", this.PartyGuid);
+                    }
+                    catch
+                    {
+                        this.amountRaised = 0;
+                    }
                 }
-                catch
-                {
-                    return 0;
-                }
+
+                return this.amountRaised.Value;
+            }
+            internal set
+            {
+                this.amountRaised = value;
             }
         }
 

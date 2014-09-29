@@ -149,7 +149,9 @@ namespace Wonderland.Logic.Extensions
                                                                                                 ORDER BY    Amount DESC
                                                                                             "))
                     {
-                        partyHosts.Add(members.GetPartyHost((Guid)topFundraiser.PartyGuid));
+                        partyHost = members.GetPartyHost((Guid)topFundraiser.PartyGuid);
+                        partyHost.AmountRaised = topFundraiser.Amount;
+                        partyHosts.Add(partyHost);
                     }                    
 
                     break;
