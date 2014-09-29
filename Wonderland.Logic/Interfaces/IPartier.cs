@@ -45,5 +45,10 @@ namespace Wonderland.Logic.Interfaces
         /// common property in BaseMemberType
         /// </summary>
         string Email { get; }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        Guid ForgottenPasswordGuid { get; set; }
     }
 }

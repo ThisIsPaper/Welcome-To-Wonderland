@@ -211,6 +211,7 @@
     <Compile Include="Controllers\Render\PartyController.cs" />
     <Compile Include="Controllers\Render\RegisterGuestController.cs" />
     <Compile Include="Controllers\Render\RegisterHostController.cs" />
+    <Compile Include="Controllers\Render\ResetPasswordController.cs" />
     <Compile Include="Controllers\Render\WonderlandersController.cs" />
     <Compile Include="Controllers\Surface\DonateSurfaceController.cs" />
     <Compile Include="Controllers\Surface\ForgottenPasswordSurfaceController.cs" />

@@ -101,7 +101,7 @@ namespace Wonderland.Logic.Models.Members
             }
             set
             {
-                this.SetPropertyValue(PartyGuest.ForgottenPasswordGuidAlias, value.ToString());
+                this.SetPropertyValue(PartyGuest.ForgottenPasswordGuidAlias, value.ToString("D").ToLower());
             }
         }
 

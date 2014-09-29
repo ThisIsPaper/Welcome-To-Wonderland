@@ -11,7 +11,9 @@ namespace Wonderland.Logic.Models.Content
 
         // Properties
         public const string PageHeadingAlias = "pageHeading";
-        public const string ForgottenPasswordEmailAlias = "forgottenPasswordEmail";
+        public const string ServerEmailAddressAlias = "serverEmailAddress";
+        public const string EmailSubjectAlias = "emailSubject";
+        public const string EmailBodyAlias = "emailBody";
 
         public ForgottenPassword(IPublishedContent content)
             : base(content)
@@ -26,11 +28,27 @@ namespace Wonderland.Logic.Models.Content
             }
         }
 
-        public string ForgottenPasswordEmail
+        public string ServerEmailAddress
         {
             get
             {
-                return this.GetPropertyValue<string>(ForgottenPassword.ForgottenPasswordEmailAlias);
+                return this.GetPropertyValue<string>(ForgottenPassword.ServerEmailAddressAlias);
+            }
+        }
+
+        public string EmailSubject
+        {
+            get
+            {
+                return this.GetPropertyValue<string>(ForgottenPassword.EmailSubjectAlias);
+            }
+        }
+
+        public string EmailBody
+        {
+            get
+            {
+                return this.GetPropertyValue<string>(ForgottenPassword.EmailBodyAlias);
             }
         }
     }

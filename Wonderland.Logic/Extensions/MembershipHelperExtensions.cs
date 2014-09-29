@@ -22,10 +22,10 @@ namespace Wonderland.Logic.Extensions
             return members.IsLoggedIn() && members.GetCurrentMember() is IPartier;
         }
 
-        //public static IPartier GetCurrentPartier(this MembershipHelper members)
-        //{
-        //    return members.GetCurrentMember() as IPartier;
-        //}
+        public static IPartier GetCurrentPartier(this MembershipHelper members)
+        {
+            return members.GetCurrentMember() as IPartier;
+        }
 
         /// <summary>
         /// queries the Lucene index to get all members with the supplied partyGuid
@@ -40,6 +40,29 @@ namespace Wonderland.Logic.Extensions
             ISearchResults searchResults = searchProvider.Search(searchCriteria);
 
             return searchResults.Select(x => (IPartier)members.GetById(x.Id));
+        }
+
+        public static IPartier GetPartier(this MembershipHelper members, Guid forgottenPasswordGuid)
+        {
+            //BaseSearchProvider searchProvider = ExamineManager.Instance.SearchProviderCollection["InternalMemberSearcher"];
+            //ISearchCriteria searchCriteria = searchProvider.CreateSearchCriteria(IndexTypes.Member).Field("forgottenPasswordGuid", forgottenPasswordGuid.ToString()).Compile();
+            //ISearchResults searchResults = searchProvider.Search(searchCriteria);
+
+            //return searchResults.Select(x => (IPartier)members.GetById(x.Id)).SingleOrDefault();
+
+            IMember member = ApplicationContext
+                                .Current
+                                .Services
+                                .MemberService
+                                .GetMembersByPropertyValue("forgottenPasswordGuid", forgottenPasswordGuid.ToString())
+                                .SingleOrDefault();
+
+            if (member != null)
+            {
+                return members.GetById(member.Id) as IPartier;
+            }
+
+            return null;
         }
 
         public static PartyHost GetPartyHost(this MembershipHelper members, Guid partyGuid)

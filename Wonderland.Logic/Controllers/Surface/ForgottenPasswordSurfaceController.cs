@@ -7,6 +7,7 @@ namespace Wonderland.Logic.Controllers.Surface
     using Wonderland.Logic.Interfaces;
     using Wonderland.Logic.Models.Content;
     using Wonderland.Logic.Models.Forms;
+    using System.Net.Mail;
 
     public class ForgottenPasswordSurfaceController : SurfaceController
     {
@@ -35,7 +36,26 @@ namespace Wonderland.Logic.Controllers.Surface
 
             if (partier != null)
             {
-                // set forgotten password guid and send email
+                Guid forgottenPasswordGuid = Guid.NewGuid();
+
+                partier.ForgottenPasswordGuid = forgottenPasswordGuid;
+
+                ForgottenPassword forgottenPassword = (ForgottenPassword)this.CurrentPage;
+
+                MailMessage mailMessage = new MailMessage();
+
+                mailMessage.From = new MailAddress(forgottenPassword.ServerEmailAddress);
+                mailMessage.To.Add(new MailAddress(partier.Email));
+                mailMessage.Subject = forgottenPassword.EmailSubject;
+                mailMessage.IsBodyHtml = true;
+
+                mailMessage.Body = forgottenPassword.EmailBody.Replace("[%RESET_PASSWORD_LINK%]", this.Request.Url.Scheme + "://" + this.Request.Url.Host.ToLower() + this.Umbraco.TypedContentSingleAtXPath("//" + ResetPassword.Alias).Url + "?forgottenPasswordGuid=" + forgottenPasswordGuid.ToString("D"));
+
+                using (SmtpClient smtpClient = new SmtpClient())
+                {
+                    smtpClient.Send(mailMessage);
+                }
+
             }
 
             return this.View("ForgottenPassword/Complete", this.CurrentPage);

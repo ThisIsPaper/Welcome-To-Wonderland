@@ -7,10 +7,13 @@ namespace Wonderland.Logic.Controllers.Surface
     using Wonderland.Logic.Interfaces;
     using Wonderland.Logic.Models.Content;
     using Wonderland.Logic.Models.Forms;
+    using Wonderland.Logic.Extensions;
+    using Umbraco.Core.Models;
 
     public class ResetPasswordSurfaceController : SurfaceController
     {
         [ChildActionOnly]
+        [MemberAuthorize]
         public ActionResult RenderResetPasswordForm()
         {
             return this.PartialView("ResetPasswordForm", new ResetPasswordForm());
@@ -18,11 +21,22 @@ namespace Wonderland.Logic.Controllers.Surface
 
         [HttpPost]
         [ValidateAntiForgeryToken]
+        [MemberAuthorize]
         public ActionResult HandleResetPasswordForm(ResetPasswordForm resetPasswordForm)
         {
             if (!this.ModelState.IsValid)
             {
                 return this.CurrentUmbracoPage();
+            }
+
+            IPartier partier = this.Members.GetCurrentPartier();
+            if (partier != null)
+            {
+                IMember member = this.Services.MemberService.GetById(partier.Id);
+                if (member != null)
+                {
+                    this.Services.MemberService.SavePassword(member, resetPasswordForm.Password);
+                }
             }
 
             return this.View("ResetPassword/Complete", this.CurrentPage);
