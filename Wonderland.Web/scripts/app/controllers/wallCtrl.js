@@ -1,4 +1,4 @@
-wonderlandApp.controller('WallCtrl', ['mHttp', '$scope', function (mHttp, $scope) {
+wonderlandApp.controller('WallCtrl', ['mHttp', '$filter', '$scope', function (mHttp, $filter, $scope) {
 
     var wallFeed, partyGuid, feedRequest;
 
@@ -27,6 +27,22 @@ wonderlandApp.controller('WallCtrl', ['mHttp', '$scope', function (mHttp, $scope
         });
 
         feedRequest.then(function (response) {
+
+            console.log('FEED: ', response);
+
+            // TODO: hardcoded - work out donations and re-format
+            if (response) {
+
+                angular.forEach(response, function (value, key) {
+                    if (!isNaN(Number(value.text))) {
+                        value.wallPostType = "Donation";
+                        value.text = $filter('mCurrency')(value.text, '£');
+                    }
+                    value.timestamp = moment(value.timestamp).fromNow();
+                    console.log('resp', value, key);
+                });
+            }
+
             $scope.wall.hasDoneFirstLoad = true;
             $scope.wall.feed = response;
         });
