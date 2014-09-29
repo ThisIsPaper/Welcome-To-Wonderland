@@ -23,6 +23,7 @@ namespace Wonderland.Logic.Models.Members
         public const string LastNameAlias = "lastName";
         public const string BillingAddressAlias = "billingAddress";
         public const string ProfileImageAlias = "profileImage";
+        public const string ForgottenPasswordGuidAlias = "forgottenPasswordGuid";
 
         public PartyGuest(IPublishedContent content)
             : base(content)
@@ -89,6 +90,18 @@ namespace Wonderland.Logic.Models.Members
             set
             {
                 this.SetPropertyValue(PartyGuest.ProfileImageAlias, value);
+            }
+        }
+
+        public Guid ForgottenPasswordGuid
+        {
+            get
+            {
+                return this.GetPropertyValue<Guid>(PartyGuest.ForgottenPasswordGuidAlias);
+            }
+            set
+            {
+                this.SetPropertyValue(PartyGuest.ForgottenPasswordGuidAlias, value.ToString());
             }
         }
 

@@ -35,6 +35,7 @@ namespace Wonderland.Logic.Models.Members
         public const string PartyCopyAlias = "partyCopy";
         public const string SuggestedDonationAlias = "suggestedDonation";
         public const string FundraisingTargetAlias = "fundraisingTarget";
+        public const string ForgottenPasswordGuidAlias = "forgottenPasswordGuid";
 
         public PartyHost(IPublishedContent content)
             : base(content)
@@ -252,6 +253,18 @@ namespace Wonderland.Logic.Models.Members
             set
             {
                 this.SetPropertyValue(PartyHost.FundraisingTargetAlias, value.ToString());
+            }
+        }
+
+        public Guid ForgottenPasswordGuid
+        {
+            get
+            {
+                return this.GetPropertyValue<Guid>(PartyHost.ForgottenPasswordGuidAlias);
+            }
+            set
+            {
+                this.SetPropertyValue(PartyHost.ForgottenPasswordGuidAlias, value.ToString());
             }
         }
 
