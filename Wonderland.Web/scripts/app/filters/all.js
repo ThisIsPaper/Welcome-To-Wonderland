@@ -49,6 +49,9 @@ wonderlandApp.filter('percentageRounder', function () {
     return function (current, total) {
         var p = 0;
 
+        current = Number(current);
+        total = Number(total);
+
         if (angular.isNumber(current) && angular.isNumber(total)) {
             p = Math.floor((current/total)*100);
             p = p > 100 ? 100 : p;

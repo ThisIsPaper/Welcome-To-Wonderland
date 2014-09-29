@@ -4857,8 +4857,8 @@ abstract
 }
 @font-face {
   font-family: 'icomoon';
-  src: url("/fonts/icomoon.eot?1up521");
-  src: url("/fonts/icomoon.eot?#iefix1up521") format("embedded-opentype"), url("/fonts/icomoon.woff?1up521") format("woff"), url("/fonts/icomoon.ttf?1up521") format("truetype"), url("/fonts/icomoon.svg?1up521#icomoon") format("svg");
+  src: url("/fonts/icomoon.eot?-my7vwe");
+  src: url("/fonts/icomoon.eot?#iefix-my7vwe") format("embedded-opentype"), url("/fonts/icomoon.woff?-my7vwe") format("woff"), url("/fonts/icomoon.ttf?-my7vwe") format("truetype"), url("/fonts/icomoon.svg?-my7vwe#icomoon") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -4877,181 +4877,191 @@ abstract
 }
 
 /* line 27, sass/partials/icomoon/_icomoon.scss */
+.icon-icon_minus:before {
+  content: "\e624";
+}
+
+/* line 30, sass/partials/icomoon/_icomoon.scss */
+.icon-icon_plus:before {
+  content: "\e625";
+}
+
+/* line 33, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_pinterest:before {
   content: "\e623";
 }
 
-/* line 30, sass/partials/icomoon/_icomoon.scss */
+/* line 36, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_trophy:before {
   content: "\e622";
 }
 
-/* line 33, sass/partials/icomoon/_icomoon.scss */
+/* line 39, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_alert:before {
   content: "\e620";
 }
 
-/* line 36, sass/partials/icomoon/_icomoon.scss */
+/* line 42, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_gift:before {
   content: "\e621";
 }
 
-/* line 39, sass/partials/icomoon/_icomoon.scss */
+/* line 45, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_back:before {
   content: "\e61e";
 }
 
-/* line 42, sass/partials/icomoon/_icomoon.scss */
+/* line 48, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_tick:before {
   content: "\e61f";
 }
 
-/* line 45, sass/partials/icomoon/_icomoon.scss */
+/* line 51, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_anon_user:before {
   content: "\e61b";
 }
 
-/* line 48, sass/partials/icomoon/_icomoon.scss */
+/* line 54, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_piggy:before {
   content: "\e61c";
 }
 
-/* line 51, sass/partials/icomoon/_icomoon.scss */
+/* line 57, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_question_mark:before {
   content: "\e61d";
 }
 
-/* line 54, sass/partials/icomoon/_icomoon.scss */
+/* line 60, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_envelope:before {
   content: "\e618";
 }
 
-/* line 57, sass/partials/icomoon/_icomoon.scss */
+/* line 63, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_facebook_f:before {
   content: "\e619";
 }
 
-/* line 60, sass/partials/icomoon/_icomoon.scss */
+/* line 66, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_twitter_bird:before {
   content: "\e61a";
 }
 
-/* line 63, sass/partials/icomoon/_icomoon.scss */
+/* line 69, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_chevron_left:before {
   content: "\e600";
 }
 
-/* line 66, sass/partials/icomoon/_icomoon.scss */
+/* line 72, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_chevron_right:before {
   content: "\e601";
 }
 
-/* line 69, sass/partials/icomoon/_icomoon.scss */
+/* line 75, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_chevron_up:before {
   content: "\e602";
 }
 
-/* line 72, sass/partials/icomoon/_icomoon.scss */
+/* line 78, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_chevron_down:before {
   content: "\e603";
 }
 
-/* line 75, sass/partials/icomoon/_icomoon.scss */
+/* line 81, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_hamburger_menu:before {
   content: "\e604";
 }
 
-/* line 78, sass/partials/icomoon/_icomoon.scss */
+/* line 84, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_home:before {
   content: "\e605";
 }
 
-/* line 81, sass/partials/icomoon/_icomoon.scss */
+/* line 87, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_camera:before {
   content: "\e606";
 }
 
-/* line 84, sass/partials/icomoon/_icomoon.scss */
+/* line 90, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_clock:before {
   content: "\e607";
 }
 
-/* line 87, sass/partials/icomoon/_icomoon.scss */
+/* line 93, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_cog:before {
   content: "\e608";
 }
 
-/* line 90, sass/partials/icomoon/_icomoon.scss */
+/* line 96, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_crown:before {
   content: "\e609";
 }
 
-/* line 93, sass/partials/icomoon/_icomoon.scss */
+/* line 99, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_cutlery:before {
   content: "\e60a";
 }
 
-/* line 96, sass/partials/icomoon/_icomoon.scss */
+/* line 102, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_edit:before {
   content: "\e60b";
 }
 
-/* line 99, sass/partials/icomoon/_icomoon.scss */
+/* line 105, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_fingerpost:before {
   content: "\e60c";
 }
 
-/* line 102, sass/partials/icomoon/_icomoon.scss */
+/* line 108, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_padlock_unlocked:before {
   content: "\e60d";
 }
 
-/* line 105, sass/partials/icomoon/_icomoon.scss */
+/* line 111, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_padlock:before {
   content: "\e60e";
 }
 
-/* line 108, sass/partials/icomoon/_icomoon.scss */
+/* line 114, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_person:before {
   content: "\e60f";
 }
 
-/* line 111, sass/partials/icomoon/_icomoon.scss */
+/* line 117, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_question:before {
   content: "\e610";
 }
 
-/* line 114, sass/partials/icomoon/_icomoon.scss */
+/* line 120, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_snowflake:before {
   content: "\e611";
 }
 
-/* line 117, sass/partials/icomoon/_icomoon.scss */
+/* line 123, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_star:before {
   content: "\e612";
 }
 
-/* line 120, sass/partials/icomoon/_icomoon.scss */
+/* line 126, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_t-shirt:before {
   content: "\e613";
 }
 
-/* line 123, sass/partials/icomoon/_icomoon.scss */
+/* line 129, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_twitter:before {
   content: "\e614";
 }
 
-/* line 126, sass/partials/icomoon/_icomoon.scss */
+/* line 132, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_facebook:before {
   content: "\e615";
 }
 
-/* line 129, sass/partials/icomoon/_icomoon.scss */
+/* line 135, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_google_plus:before {
   content: "\e616";
 }
 
-/* line 132, sass/partials/icomoon/_icomoon.scss */
+/* line 138, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_x:before {
   content: "\e617";
 }
@@ -10481,32 +10491,51 @@ label .ticket span {
   -webkit-border-radius: 0.6rem;
   border-radius: 0.6rem;
   background-color: #007eac;
+  background-image: url('/img/frost.png?1412007012');
+  background-repeat: no-repeat;
+  background-position: top left;
   width: 0;
   max-width: 100%;
   height: 3rem;
+  -moz-transition-property: width;
+  -o-transition-property: width;
+  -webkit-transition-property: width;
+  transition-property: width;
+  -moz-transition-duration: 0.5s;
+  -o-transition-duration: 0.5s;
+  -webkit-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+  -moz-transition-delay: 1s;
+  -o-transition-delay: 1s;
+  -webkit-transition-delay: 1s;
+  transition-delay: 1s;
+  -moz-transition-timing-function: ease-in;
+  -o-transition-timing-function: ease-in;
+  -webkit-transition-timing-function: ease-in;
+  transition-timing-function: ease-in;
 }
 
 /* =============================================================================
 One-off uses
 ========================================================================== */
-/* line 437, sass/partials/_base.scss */
+/* line 445, sass/partials/_base.scss */
 #twitter-widget-0 {
   width: 100% !important;
 }
 
-/* line 441, sass/partials/_base.scss */
+/* line 449, sass/partials/_base.scss */
 .home-twitter-boxx {
   height: 35.6rem;
 }
 
-/* line 445, sass/partials/_base.scss */
+/* line 453, sass/partials/_base.scss */
 .piggy-donater:after {
   content: "\e61c";
   font-family: "icomoon";
   color: white;
 }
 
-/* line 452, sass/partials/_base.scss */
+/* line 460, sass/partials/_base.scss */
 .join-party-ico:after {
   content: "\e601";
   font-family: "icomoon";
@@ -10514,7 +10543,7 @@ One-off uses
 }
 
 /*******************************/
-/* line 463, sass/partials/_base.scss */
+/* line 471, sass/partials/_base.scss */
 .hero {
   height: 45rem;
   background-image: url('/img/hero-ph.jpg?1411655923');
@@ -10525,24 +10554,24 @@ One-off uses
   padding-top: 10rem;
 }
 
-/* line 473, sass/partials/_base.scss */
+/* line 481, sass/partials/_base.scss */
 .planking {
   background: url('/img/wood_texture.jpg?1411035906') repeat top left;
   background-size: 100% auto;
 }
 
-/* line 478, sass/partials/_base.scss */
+/* line 486, sass/partials/_base.scss */
 .home-content-adjust {
   margin-top: -8rem;
 }
 
-/* line 482, sass/partials/_base.scss */
+/* line 490, sass/partials/_base.scss */
 .hero-explain {
   margin-right: 35rem;
   text-align: left;
 }
 
-/* line 487, sass/partials/_base.scss */
+/* line 495, sass/partials/_base.scss */
 .money-raised {
   position: absolute;
   top: 2.4rem;
@@ -10552,13 +10581,13 @@ One-off uses
   width: 34rem;
 }
 
-/* line 496, sass/partials/_base.scss */
+/* line 504, sass/partials/_base.scss */
 .raised-amount {
   color: white;
   width: 27.5rem;
 }
 
-/* line 501, sass/partials/_base.scss */
+/* line 509, sass/partials/_base.scss */
 .home-tile {
   background-color: white;
   position: relative;
@@ -10568,7 +10597,7 @@ One-off uses
   box-shadow: 0px 14px 30px 0px rgba(0, 0, 0, 0.6);
 }
 
-/* line 511, sass/partials/_base.scss */
+/* line 519, sass/partials/_base.scss */
 .home-tile-image {
   -moz-border-radius: 0.7rem;
   -webkit-border-radius: 0.7rem;
@@ -10579,7 +10608,7 @@ One-off uses
   width: 100%;
 }
 
-/* line 519, sass/partials/_base.scss */
+/* line 527, sass/partials/_base.scss */
 .home-tile-label {
   position: absolute;
   bottom: 0;
@@ -10588,32 +10617,32 @@ One-off uses
 }
 
 /*******************************/
-/* line 530, sass/partials/_base.scss */
+/* line 538, sass/partials/_base.scss */
 .spotify-holder {
   width: 35.6rem;
   margin-top: -7rem;
 }
 
-/* line 535, sass/partials/_base.scss */
+/* line 543, sass/partials/_base.scss */
 .spotify-info-holder {
   position: absolute;
   top: 12rem;
   color: white;
   text-align: center;
 }
-/* line 542, sass/partials/_base.scss */
+/* line 550, sass/partials/_base.scss */
 .spotify-info-holder h1 {
   color: white;
 }
 
 /*******************************/
-/* line 550, sass/partials/_base.scss */
+/* line 558, sass/partials/_base.scss */
 .scoreboard-place {
   float: left;
   width: 5rem;
 }
 
-/* line 555, sass/partials/_base.scss */
+/* line 563, sass/partials/_base.scss */
 .scoreboard-value {
   position: absolute;
   top: 0;
@@ -10622,22 +10651,22 @@ One-off uses
 }
 
 /*******************************/
-/* line 567, sass/partials/_base.scss */
+/* line 575, sass/partials/_base.scss */
 .idea-sizer {
   width: 25%;
 }
 
-/* line 571, sass/partials/_base.scss */
+/* line 579, sass/partials/_base.scss */
 .idea-tile {
   width: 25%;
   padding: 1.2rem;
 }
-/* line 576, sass/partials/_base.scss */
+/* line 584, sass/partials/_base.scss */
 .idea-tile.wide {
   width: 50%;
 }
 
-/* line 581, sass/partials/_base.scss */
+/* line 589, sass/partials/_base.scss */
 .idea {
   padding: 1.2rem;
   background-color: white;
@@ -10648,42 +10677,42 @@ One-off uses
   box-shadow: 0px 14px 30px 0px rgba(0, 0, 0, 0.6);
 }
 
-/* line 589, sass/partials/_base.scss */
+/* line 597, sass/partials/_base.scss */
 .idea-details {
   width: 100%;
   top: 11%;
   left: 0;
   padding: 0 1.2rem;
 }
-/* line 595, sass/partials/_base.scss */
+/* line 603, sass/partials/_base.scss */
 .idea-details.over-the-top {
   position: absolute;
   color: white;
 }
-/* line 599, sass/partials/_base.scss */
+/* line 607, sass/partials/_base.scss */
 .idea-details.over-the-top h1 {
   color: white;
 }
-/* line 604, sass/partials/_base.scss */
+/* line 612, sass/partials/_base.scss */
 .idea-details.wide {
   top: 23%;
 }
 
-/* line 609, sass/partials/_base.scss */
+/* line 617, sass/partials/_base.scss */
 .idea-polaroid {
   -moz-border-radius: 0.7rem;
   -webkit-border-radius: 0.7rem;
   border-radius: 0.7rem;
 }
 
-/* line 613, sass/partials/_base.scss */
+/* line 621, sass/partials/_base.scss */
 .pinterest-ico:before {
   content: "\e623";
   font-family: "icomoon";
   color: #E32333;
 }
 
-/* line 619, sass/partials/_base.scss */
+/* line 627, sass/partials/_base.scss */
 .spotify-logo {
   width: 8rem;
   height: 2.4rem;
@@ -10694,7 +10723,7 @@ One-off uses
   margin: 0 auto;
 }
 
-/* line 630, sass/partials/_base.scss */
+/* line 638, sass/partials/_base.scss */
 .idea-link {
   position: absolute;
   top: 0;
@@ -10705,7 +10734,7 @@ One-off uses
   text-indent: -999rem;
 }
 
-/* line 642, sass/partials/_base.scss */
+/* line 650, sass/partials/_base.scss */
 .share-title {
   width: 27.8rem;
   height: 11.6rem;
@@ -10714,7 +10743,7 @@ One-off uses
   background-size: 27.8rem 11.6rem;
 }
 
-/* line 651, sass/partials/_base.scss */
+/* line 659, sass/partials/_base.scss */
 .share-facebook, .share-twitter, .share-email {
   background-color: #3c5898;
   font-family: "macmillan";
@@ -10723,44 +10752,44 @@ One-off uses
   padding: 1.2rem;
   line-height: 5.5rem;
 }
-/* line 659, sass/partials/_base.scss */
+/* line 667, sass/partials/_base.scss */
 .share-facebook:before, .share-twitter:before, .share-email:before {
   font-family: "icomoon";
   content: "\e619";
   margin-right: 1.2rem;
 }
 
-/* line 666, sass/partials/_base.scss */
+/* line 674, sass/partials/_base.scss */
 .share-twitter {
   background-color: #17abed;
 }
-/* line 668, sass/partials/_base.scss */
+/* line 676, sass/partials/_base.scss */
 .share-twitter:before {
   content: "\e61a";
 }
 
-/* line 674, sass/partials/_base.scss */
+/* line 682, sass/partials/_base.scss */
 .share-email {
   background-color: #007eac;
 }
-/* line 676, sass/partials/_base.scss */
+/* line 684, sass/partials/_base.scss */
 .share-email:before {
   content: "\e618";
   margin-right: 0;
 }
 
 /*******************************/
-/* line 686, sass/partials/_base.scss */
+/* line 694, sass/partials/_base.scss */
 .color-facebook {
   color: #3c5898 !important;
 }
 
-/* line 687, sass/partials/_base.scss */
+/* line 695, sass/partials/_base.scss */
 .color-twitter {
   color: #17abed !important;
 }
 
-/* line 688, sass/partials/_base.scss */
+/* line 696, sass/partials/_base.scss */
 .color-gplus {
   color: #cd3627 !important;
 }
