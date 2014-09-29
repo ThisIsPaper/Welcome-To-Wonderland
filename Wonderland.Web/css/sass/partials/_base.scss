@@ -188,6 +188,7 @@ Event Page specific - move these out of here eventually
     width: $profileImageSize;
 }
 
+
 .image-shift-details {
     margin-left: $profileImageSize + $padSmallValue;
 
@@ -211,6 +212,22 @@ Event Page specific - move these out of here eventually
 
     [class^="icon-"], [class*=" icon-"] {
         color: $greyLight;
+    }
+}
+
+
+.badge {
+    width: 100%;
+    height: 7.8rem;
+    margin-bottom: 3rem;
+    overflow: hidden;
+
+    background-size: 7rem 15.6rem;
+    background-repeat: no-repeat;
+    background-position: bottom center;
+
+    &.badge.collected {
+        background-position: top center;
     }
 }
 

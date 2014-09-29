@@ -10228,49 +10228,64 @@ Event Page specific - move these out of here eventually
   width: 6rem;
 }
 
-/* line 191, sass/partials/_base.scss */
+/* line 192, sass/partials/_base.scss */
 .image-shift-details, .party-details, .wall-details {
   margin-left: 7.2rem;
 }
-/* line 194, sass/partials/_base.scss */
+/* line 195, sass/partials/_base.scss */
 .image-shift-details.bigger, .bigger.party-details, .bigger.wall-details {
   margin-left: 12.2rem;
 }
 
-/* line 200, sass/partials/_base.scss */
+/* line 201, sass/partials/_base.scss */
 .anti-image-shift-details {
   margin-left: -7.2rem;
 }
-/* line 203, sass/partials/_base.scss */
+/* line 204, sass/partials/_base.scss */
 .anti-image-shift-details.bigger {
   margin-left: -12.2rem;
 }
 
-/* line 208, sass/partials/_base.scss */
+/* line 209, sass/partials/_base.scss */
 .party-details {
   color: #A19F91;
 }
-/* line 212, sass/partials/_base.scss */
+/* line 213, sass/partials/_base.scss */
 .party-details [class^="icon-"], .party-details [class*=" icon-"] {
   color: #D4D3CC;
 }
 
-/*******************************/
 /* line 219, sass/partials/_base.scss */
+.badge {
+  width: 100%;
+  height: 7.8rem;
+  margin-bottom: 3rem;
+  overflow: hidden;
+  background-size: 7rem 15.6rem;
+  background-repeat: no-repeat;
+  background-position: bottom center;
+}
+/* line 229, sass/partials/_base.scss */
+.badge.badge.collected {
+  background-position: top center;
+}
+
+/*******************************/
+/* line 236, sass/partials/_base.scss */
 .party-image-container {
   float: left;
 }
-/* line 224, sass/partials/_base.scss */
+/* line 241, sass/partials/_base.scss */
 .party-image-container input[type="radio"] {
   display: none;
 }
-/* line 228, sass/partials/_base.scss */
+/* line 245, sass/partials/_base.scss */
 .party-image-container .warner {
   width: 16rem;
   text-align: center;
   display: none;
 }
-/* line 237, sass/partials/_base.scss */
+/* line 254, sass/partials/_base.scss */
 .party-image-container.selected .party-image-selecter:after {
   content: "\e61f";
   font-family: "icomoon";
@@ -10281,18 +10296,18 @@ Event Page specific - move these out of here eventually
   opacity: .8;
   line-height: 8rem;
 }
-/* line 248, sass/partials/_base.scss */
+/* line 265, sass/partials/_base.scss */
 .party-image-container.selected .party-image-selecter:before {
   content: "";
   margin-left: 0;
 }
-/* line 253, sass/partials/_base.scss */
+/* line 270, sass/partials/_base.scss */
 .party-image-container.selected .warner {
   display: block;
   cursor: pointer;
 }
 
-/* line 260, sass/partials/_base.scss */
+/* line 277, sass/partials/_base.scss */
 .party-image-selecter {
   width: 16rem;
   height: 7.5rem;
@@ -10302,23 +10317,23 @@ Event Page specific - move these out of here eventually
   position: relative;
   overflow: hidden;
 }
-/* line 271, sass/partials/_base.scss */
+/* line 288, sass/partials/_base.scss */
 .party-image-selecter:before {
   color: white;
   font-size: 4.7rem;
   line-height: 7.5rem;
   margin-left: 6.8rem;
 }
-/* line 278, sass/partials/_base.scss */
+/* line 295, sass/partials/_base.scss */
 .party-image-selecter.image-unset {
   cursor: default;
 }
-/* line 282, sass/partials/_base.scss */
+/* line 299, sass/partials/_base.scss */
 .party-image-selecter.image-set:before {
   content: "";
 }
 
-/* line 287, sass/partials/_base.scss */
+/* line 304, sass/partials/_base.scss */
 .reference-image {
   width: 100%;
   height: 9rem;
@@ -10326,34 +10341,34 @@ Event Page specific - move these out of here eventually
 }
 
 /*******************************/
-/* line 300, sass/partials/_base.scss */
+/* line 317, sass/partials/_base.scss */
 .wall-details {
   color: #A19F91;
   min-height: 6rem;
 }
 
-/* line 307, sass/partials/_base.scss */
+/* line 324, sass/partials/_base.scss */
 .wall-name {
   font-weight: bold;
   color: #7B7A6D;
 }
 
-/* line 312, sass/partials/_base.scss */
+/* line 329, sass/partials/_base.scss */
 .wall-time {
   color: #D4D3CC;
 }
 
 /*******************************/
-/* line 319, sass/partials/_base.scss */
+/* line 336, sass/partials/_base.scss */
 .ticket {
   position: relative;
 }
-/* line 322, sass/partials/_base.scss */
+/* line 339, sass/partials/_base.scss */
 .ticket .stub {
   background-color: #D4D3CC;
   overflow: hidden;
 }
-/* line 327, sass/partials/_base.scss */
+/* line 344, sass/partials/_base.scss */
 .ticket .stub .holes, .ticket .stub .holes-right {
   position: absolute;
   left: -.1rem;
@@ -10363,13 +10378,13 @@ Event Page specific - move these out of here eventually
   background-image: url('/img/raffle.svg?1411490329');
   background-repeat: no-repeat;
 }
-/* line 337, sass/partials/_base.scss */
+/* line 354, sass/partials/_base.scss */
 .ticket .stub .holes-right {
   left: auto;
   right: -.1rem;
   background-image: url('/img/raffle_r.svg?1411491819');
 }
-/* line 343, sass/partials/_base.scss */
+/* line 360, sass/partials/_base.scss */
 .ticket .stub .price {
   -moz-border-radius: 1rem;
   -webkit-border-radius: 1rem;
@@ -10380,33 +10395,33 @@ Event Page specific - move these out of here eventually
   text-align: center;
   line-height: 7.3rem;
 }
-/* line 360, sass/partials/_base.scss */
+/* line 377, sass/partials/_base.scss */
 .ticket.selected .stub {
   background-color: #007eac;
 }
-/* line 363, sass/partials/_base.scss */
+/* line 380, sass/partials/_base.scss */
 .ticket.selected .stub .price {
   color: white !important;
 }
-/* line 370, sass/partials/_base.scss */
+/* line 387, sass/partials/_base.scss */
 .ticket input[type="radio"] {
   display: none;
 }
 
-/* line 378, sass/partials/_base.scss */
+/* line 395, sass/partials/_base.scss */
 label .ticket span {
   color: inherit;
 }
 
 /*******************************/
-/* line 386, sass/partials/_base.scss */
+/* line 403, sass/partials/_base.scss */
 .totaliser {
   -moz-border-radius: 0.6rem;
   -webkit-border-radius: 0.6rem;
   border-radius: 0.6rem;
   background-color: #D4D3CC;
 }
-/* line 392, sass/partials/_base.scss */
+/* line 409, sass/partials/_base.scss */
 .totaliser .current-total {
   -moz-border-radius: 0.6rem;
   -webkit-border-radius: 0.6rem;
@@ -10420,24 +10435,24 @@ label .ticket span {
 /* =============================================================================
 One-off uses
 ========================================================================== */
-/* line 406, sass/partials/_base.scss */
+/* line 423, sass/partials/_base.scss */
 #twitter-widget-0 {
   width: 100% !important;
 }
 
-/* line 410, sass/partials/_base.scss */
+/* line 427, sass/partials/_base.scss */
 .home-twitter-boxx {
   height: 35.6rem;
 }
 
-/* line 414, sass/partials/_base.scss */
+/* line 431, sass/partials/_base.scss */
 .piggy-donater:after {
   content: "\e61c";
   font-family: "icomoon";
   color: white;
 }
 
-/* line 421, sass/partials/_base.scss */
+/* line 438, sass/partials/_base.scss */
 .join-party-ico:after {
   content: "\e601";
   font-family: "icomoon";
@@ -10445,7 +10460,7 @@ One-off uses
 }
 
 /*******************************/
-/* line 432, sass/partials/_base.scss */
+/* line 449, sass/partials/_base.scss */
 .hero {
   height: 45rem;
   background-image: url('/img/hero-ph.jpg?1411655923');
@@ -10456,24 +10471,24 @@ One-off uses
   padding-top: 10rem;
 }
 
-/* line 442, sass/partials/_base.scss */
+/* line 459, sass/partials/_base.scss */
 .planking {
   background: url('/img/wood_texture.jpg?1411035906') repeat top left;
   background-size: 100% auto;
 }
 
-/* line 447, sass/partials/_base.scss */
+/* line 464, sass/partials/_base.scss */
 .home-content-adjust {
   margin-top: -8rem;
 }
 
-/* line 451, sass/partials/_base.scss */
+/* line 468, sass/partials/_base.scss */
 .hero-explain {
   margin-right: 35rem;
   text-align: left;
 }
 
-/* line 456, sass/partials/_base.scss */
+/* line 473, sass/partials/_base.scss */
 .money-raised {
   position: absolute;
   top: 2.4rem;
@@ -10483,13 +10498,13 @@ One-off uses
   width: 34rem;
 }
 
-/* line 465, sass/partials/_base.scss */
+/* line 482, sass/partials/_base.scss */
 .raised-amount {
   color: white;
   width: 27.5rem;
 }
 
-/* line 470, sass/partials/_base.scss */
+/* line 487, sass/partials/_base.scss */
 .home-tile {
   background-color: white;
   position: relative;
@@ -10499,7 +10514,7 @@ One-off uses
   box-shadow: 0px 14px 30px 0px rgba(0, 0, 0, 0.6);
 }
 
-/* line 480, sass/partials/_base.scss */
+/* line 497, sass/partials/_base.scss */
 .home-tile-image {
   -moz-border-radius: 0.7rem;
   -webkit-border-radius: 0.7rem;
@@ -10510,7 +10525,7 @@ One-off uses
   width: 100%;
 }
 
-/* line 488, sass/partials/_base.scss */
+/* line 505, sass/partials/_base.scss */
 .home-tile-label {
   position: absolute;
   bottom: 0;
@@ -10519,32 +10534,32 @@ One-off uses
 }
 
 /*******************************/
-/* line 499, sass/partials/_base.scss */
+/* line 516, sass/partials/_base.scss */
 .spotify-holder {
   width: 35.6rem;
   margin-top: -7rem;
 }
 
-/* line 504, sass/partials/_base.scss */
+/* line 521, sass/partials/_base.scss */
 .spotify-info-holder {
   position: absolute;
   top: 12rem;
   color: white;
   text-align: center;
 }
-/* line 511, sass/partials/_base.scss */
+/* line 528, sass/partials/_base.scss */
 .spotify-info-holder h1 {
   color: white;
 }
 
 /*******************************/
-/* line 519, sass/partials/_base.scss */
+/* line 536, sass/partials/_base.scss */
 .scoreboard-place {
   float: left;
   width: 5rem;
 }
 
-/* line 524, sass/partials/_base.scss */
+/* line 541, sass/partials/_base.scss */
 .scoreboard-value {
   position: absolute;
   top: 0;
@@ -10553,22 +10568,22 @@ One-off uses
 }
 
 /*******************************/
-/* line 536, sass/partials/_base.scss */
+/* line 553, sass/partials/_base.scss */
 .idea-sizer {
   width: 25%;
 }
 
-/* line 540, sass/partials/_base.scss */
+/* line 557, sass/partials/_base.scss */
 .idea-tile {
   width: 25%;
   padding: 1.2rem;
 }
-/* line 545, sass/partials/_base.scss */
+/* line 562, sass/partials/_base.scss */
 .idea-tile.wide {
   width: 50%;
 }
 
-/* line 550, sass/partials/_base.scss */
+/* line 567, sass/partials/_base.scss */
 .idea {
   padding: 1.2rem;
   background-color: white;
@@ -10579,42 +10594,42 @@ One-off uses
   box-shadow: 0px 14px 30px 0px rgba(0, 0, 0, 0.6);
 }
 
-/* line 558, sass/partials/_base.scss */
+/* line 575, sass/partials/_base.scss */
 .idea-details {
   width: 100%;
   top: 11%;
   left: 0;
   padding: 0 1.2rem;
 }
-/* line 564, sass/partials/_base.scss */
+/* line 581, sass/partials/_base.scss */
 .idea-details.over-the-top {
   position: absolute;
   color: white;
 }
-/* line 568, sass/partials/_base.scss */
+/* line 585, sass/partials/_base.scss */
 .idea-details.over-the-top h1 {
   color: white;
 }
-/* line 573, sass/partials/_base.scss */
+/* line 590, sass/partials/_base.scss */
 .idea-details.wide {
   top: 23%;
 }
 
-/* line 578, sass/partials/_base.scss */
+/* line 595, sass/partials/_base.scss */
 .idea-polaroid {
   -moz-border-radius: 0.7rem;
   -webkit-border-radius: 0.7rem;
   border-radius: 0.7rem;
 }
 
-/* line 582, sass/partials/_base.scss */
+/* line 599, sass/partials/_base.scss */
 .pinterest-ico:before {
   content: "\e623";
   font-family: "icomoon";
   color: #E32333;
 }
 
-/* line 588, sass/partials/_base.scss */
+/* line 605, sass/partials/_base.scss */
 .spotify-logo {
   width: 8rem;
   height: 2.4rem;
@@ -10625,7 +10640,7 @@ One-off uses
   margin: 0 auto;
 }
 
-/* line 599, sass/partials/_base.scss */
+/* line 616, sass/partials/_base.scss */
 .idea-link {
   position: absolute;
   top: 0;
@@ -10636,7 +10651,7 @@ One-off uses
   text-indent: -999rem;
 }
 
-/* line 611, sass/partials/_base.scss */
+/* line 628, sass/partials/_base.scss */
 .share-title {
   width: 27.8rem;
   height: 11.6rem;
@@ -10645,7 +10660,7 @@ One-off uses
   background-size: 27.8rem 11.6rem;
 }
 
-/* line 620, sass/partials/_base.scss */
+/* line 637, sass/partials/_base.scss */
 .share-facebook, .share-twitter, .share-email {
   background-color: #3c5898;
   font-family: "macmillan";
@@ -10654,44 +10669,44 @@ One-off uses
   padding: 1.2rem;
   line-height: 5.5rem;
 }
-/* line 628, sass/partials/_base.scss */
+/* line 645, sass/partials/_base.scss */
 .share-facebook:before, .share-twitter:before, .share-email:before {
   font-family: "icomoon";
   content: "\e619";
   margin-right: 1.2rem;
 }
 
-/* line 635, sass/partials/_base.scss */
+/* line 652, sass/partials/_base.scss */
 .share-twitter {
   background-color: #17abed;
 }
-/* line 637, sass/partials/_base.scss */
+/* line 654, sass/partials/_base.scss */
 .share-twitter:before {
   content: "\e61a";
 }
 
-/* line 643, sass/partials/_base.scss */
+/* line 660, sass/partials/_base.scss */
 .share-email {
   background-color: #007eac;
 }
-/* line 645, sass/partials/_base.scss */
+/* line 662, sass/partials/_base.scss */
 .share-email:before {
   content: "\e618";
   margin-right: 0;
 }
 
 /*******************************/
-/* line 655, sass/partials/_base.scss */
+/* line 672, sass/partials/_base.scss */
 .color-facebook {
   color: #3c5898 !important;
 }
 
-/* line 656, sass/partials/_base.scss */
+/* line 673, sass/partials/_base.scss */
 .color-twitter {
   color: #17abed !important;
 }
 
-/* line 657, sass/partials/_base.scss */
+/* line 674, sass/partials/_base.scss */
 .color-gplus {
   color: #cd3627 !important;
 }
