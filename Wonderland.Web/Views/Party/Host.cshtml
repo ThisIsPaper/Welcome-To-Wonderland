@@ -125,9 +125,15 @@
                 </div>
             </div>
 
+
             <div class="wgrid-full parent">
-                <div class="boxx" m-radius-picker>
-                    <h4 class="top">Badges <span>(0 of 6)</span></h4>
+                <div class="boxx" m-radius-picker="small medium">
+                    <h4>Badges <span>(2 of 6)</span></h4>
+
+                    <div class="grid-4 grid-mobile-6 pad-0" ng-repeat="badge in [1, 2, 3, 4, 5, 6]">
+                        <div class="badge" ng-class="{'collected': $index%3==0}"></div>
+                    </div>
+
                 </div>
             </div>
 
