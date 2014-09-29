@@ -1,0 +1,20 @@
+
+@Html.Raw(Json.Encode(Model))
+
+<div>
+    <div>
+        <span class="body-mega" ng-bind="@Model.raised|mCurrency:'£'"></span>
+        <span>raised of the </span>
+        <span class="body-highlight" ng-bind="@Model.total|mCurrency:'£'"</span>
+        <span>target</span>
+    </div>
+
+    <div class="totaliser">
+        <div class="current-total"></div>
+    </div>
+
+    <div class="form-info">
+        <span class="float-left" ng-bind="@Model.raised|percentageRounder:@Model.total"></span>
+        <span class="float-right">Ranked #423 of 423 parties</span>
+    </div>
+</div>

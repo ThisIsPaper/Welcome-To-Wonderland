@@ -64,23 +64,7 @@
             <div class="wgrid-full parent">
                 <div class="boxx" m-radius-picker ng-init="amountRaised=@Model.PartyHost.AmountRaised">
 
-                    <div>
-                        <div class="dis-inline-block body-mega" ng-bind="amountRaised|mCurrency:'£'"></div>
-                        <div class="dis-inline-block">
-                            <span>raised of the </span>
-                            <span class="body-highlight" ng-bind="fundraisingTargetData.FundraisingTarget|mCurrency:'£'"></span>
-                            <span>target</span>
-                        </div>
-                    </div>
-
-                    <div class="totaliser">
-                        <div class="current-total" ng-style="{'width': (amountRaised|percentageRounder:fundraisingTargetData.FundraisingTarget) +'%'}"></div>
-                    </div>
-
-                    <div class="form-info">
-                        <span class="float-left"><span ng-bind="amountRaised|percentageRounder:fundraisingTargetData.FundraisingTarget"></span>%</span>
-                        <span class="float-right">Ranked #x of x parties</span>
-                    </div>
+                    <m-totaliser m-raised="{{ amountRaised }}" m-total="{{ fundraisingTargetData.FundraisingTarget }}"></m-totaliser>
 
                     <div class="edit-trigger" ng-click="openPageModal('partials/fundraisingTargetForm.html', 'suggestedDonationModal', {'fundraisingTargetData': fundraisingTargetDataForForm})"><span class="edit-label">Edit</span><span class="icon-icon_edit"></span></div>
 
