@@ -4,15 +4,12 @@ namespace Wonderland.Logic.Controllers.Surface
     using System;
     using System.Web.Mvc;
     using Umbraco.Web.Mvc;
+    using Wonderland.Logic.Extensions;
+    using Wonderland.Logic.Models.Content;
     using Wonderland.Logic.Models.Database;
+    using Wonderland.Logic.Models.Entities;
     using Wonderland.Logic.Models.Forms;
     using Wonderland.Logic.Models.Members;
-    using Wonderland.Logic.Models.Content;
-    using System.IO;
-    using System.Drawing;
-    using System.Drawing.Imaging;
-    using Wonderland.Logic.Extensions;
-    using Wonderland.Logic.Models.Entities;
 
     public class PartySurfaceController : SurfaceController
     {

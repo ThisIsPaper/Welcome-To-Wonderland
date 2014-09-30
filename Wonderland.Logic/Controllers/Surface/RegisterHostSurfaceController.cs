@@ -3,7 +3,6 @@ namespace Wonderland.Logic.Controllers.Surface
 {
     using System;
     using System.Collections.Generic;
-    using System.Linq;
     using System.Web.Mvc;
     using System.Web.Security;
     using Umbraco.Core;
@@ -17,16 +16,6 @@ namespace Wonderland.Logic.Controllers.Surface
 
     public class RegisterHostSurfaceController : SurfaceController
     {        
-        ///// <summary>
-        ///// Handles inbound links to the register host page
-        ///// </summary>
-        ///// <returns></returns>
-        //[HttpGet]
-        //public ActionResult NavigateToRegisterHostUrl()
-        //{
-        //    return this.Redirect(this.Umbraco.TypedContentSingleAtXPath("//" + RegisterHost.Alias).Url);
-        //}
-
         /// <summary>
         /// returns the partial for the host registration form
         /// </summary>
@@ -48,12 +37,6 @@ namespace Wonderland.Logic.Controllers.Surface
 
             return this.PartialView("RegisterHostForm", new RegisterHostForm());
         }
-
-        //// commented out until js client side validation wired-up
-        //public JsonResult ValidateIsEmailAvailable(string emailAddress)
-        //{
-        //    return Json(this.Members.GetByUsername(emailAddress) == null, JsonRequestBehavior.AllowGet);
-        //}
 
         [HttpPost]
         [ValidateAntiForgeryToken]
