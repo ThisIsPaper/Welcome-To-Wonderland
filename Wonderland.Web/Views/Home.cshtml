@@ -75,11 +75,7 @@
 
         <div class="grid-6 grid-tablet-12 pull-6 pull-tablet-0 pad-0">
 
-            <div class="share-title margin-bottom-large"></div>
-
-            <a class="share-facebook" m-radius-picker="small" ng-href="https://www.facebook.com/sharer/sharer.php?u=[[ guidePageUrl|escape ]]" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=368,width=600');return false;">Share</a>
-            <a class="share-twitter" m-radius-picker="small" ng-href="https://twitter.com/share?url=[[ guidePageUrl|escape ]]&text=Share+a+winter+wonderland!" onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=368,width=600');return false;">Share</a>
-            <a class="share-email" m-radius-picker="small" href="mailto:enter@email.com?subject=Winter%20Wonderland!&body=Come%20and%20visit%20the%20site!" target="_blank"></a>
+            @Html.Partial("Share")
 
         </div>
 

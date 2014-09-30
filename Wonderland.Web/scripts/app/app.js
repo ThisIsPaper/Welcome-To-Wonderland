@@ -21,7 +21,9 @@ wonderlandApp.config(['$provide', function($provide){
 }]);
 
 
-wonderlandApp.run(['$rootScope', '$ocModal', function ($rootScope, $ocModal) {
+wonderlandApp.run(['$rootScope', '$ocModal', '$window', function ($rootScope, $ocModal, $window) {
+
+    $rootScope.currentPageUrl = $window.location.href;
 
     $rootScope.openPageModal = function (partial, modalId, initVars) {
 
