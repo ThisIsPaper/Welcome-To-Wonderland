@@ -1,9 +1,9 @@
 ﻿
 namespace Wonderland.Logic.SagePay
 {
-    using System.ComponentModel;
-
-    // inbound http data from sage pay
+    /// <summary>
+    /// inbound http data from sage pay 
+    /// </summary>
     public class NotificationRequest
     {
         public string VPSProtocol { get; set; }
@@ -56,5 +56,4 @@ namespace Wonderland.Logic.SagePay
 
         public string Token { get; set; }
     }
-
 }

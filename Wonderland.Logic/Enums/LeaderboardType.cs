@@ -1,8 +1,6 @@
 ﻿
 namespace Wonderland.Logic.Enums
 {
-    using System;
-
     public enum LeaderboardType
     {
         /// <summary>
