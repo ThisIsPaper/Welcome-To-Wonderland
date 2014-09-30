@@ -4,6 +4,7 @@ namespace Wonderland.Logic.Models.Content
     using Umbraco.Core.Models;
     using Umbraco.Web;
     using Wonderland.Logic.Models.Members;
+    using Wonderland.Logic.Models.Database;
 
     public class RegisterGuest : SitePage
     {
@@ -19,6 +20,12 @@ namespace Wonderland.Logic.Models.Content
         /// set by controller
         /// </summary>
         public PartyHost PartyHost
+        {
+            get;
+            internal set;
+        }
+
+        public DonationRow DonationRow
         {
             get;
             internal set;
