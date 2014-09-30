@@ -25,7 +25,7 @@ namespace Wonderland.Logic.SagePay
             this.BillingAddress1 = donationRow.Address1;
             this.BillingAddress2 = donationRow.Address2;
             this.BillingCity = donationRow.TownCity;
-            this.BillingCountry = "UK";
+            this.BillingCountry = "GB";
             this.BillingPostCode = donationRow.Postcode;
 
             this.DeliverySurname = donationRow.LastName;
@@ -34,7 +34,7 @@ namespace Wonderland.Logic.SagePay
             this.DeliveryAddress1 = donationRow.Address1;
             this.DeliveryAddress2 = donationRow.Address2;
             this.DeliveryCity = donationRow.TownCity;
-            this.DeliveryCountry = "UK";
+            this.DeliveryCountry = "GB";
             this.DeliveryPostCode = donationRow.Postcode;
 
             // if member known, then populate customer email
@@ -44,7 +44,7 @@ namespace Wonderland.Logic.SagePay
             }
         }
 
-        public string VPSProtocol { get { return "2.23"; } } //3.00
+        public string VPSProtocol { get { return "2.23"; } } //3.00 use 2.23 with simulator
 
         public string TxType { get { return "PAYMENT"; } }
 
