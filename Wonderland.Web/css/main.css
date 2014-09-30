@@ -426,7 +426,7 @@ abstract
 }
 
 /* line 21, sass/partials/_abstract.scss */
-.pad-right-small, input[type='text'], input[type='password'] {
+.pad-right-small, input[type='text'], input[type='password'], select {
   padding-right: 1.2rem;
 }
 
@@ -446,7 +446,7 @@ abstract
 }
 
 /* line 26, sass/partials/_abstract.scss */
-.pad-left-small, input[type='text'], input[type='password'] {
+.pad-left-small, input[type='text'], input[type='password'], select {
   padding-left: 1.2rem;
 }
 
@@ -5480,7 +5480,7 @@ abstract
 }
 
 /* line 21, sass/partials/_abstract.scss */
-.pad-right-small, input[type='text'], input[type='password'] {
+.pad-right-small, input[type='text'], input[type='password'], select {
   padding-right: 1.2rem;
 }
 
@@ -5500,7 +5500,7 @@ abstract
 }
 
 /* line 26, sass/partials/_abstract.scss */
-.pad-left-small, input[type='text'], input[type='password'] {
+.pad-left-small, input[type='text'], input[type='password'], select {
   padding-left: 1.2rem;
 }
 
@@ -6773,7 +6773,7 @@ textarea {
 }
 
 /* line 187, sass/partials/_forms.scss */
-input[type='text'], input[type='password'] {
+input[type='text'], input[type='password'], select {
   width: 100%;
   height: 5rem;
   font-size: 1.8rem;
@@ -6781,30 +6781,31 @@ input[type='text'], input[type='password'] {
 }
 
 /* line 196, sass/partials/_forms.scss */
-input[type='text'], input[type='password'], textarea {
+input[type='text'], input[type='password'], textarea, select {
   border: 0.1rem solid #D4D3CC;
+  background-color: white;
 }
-/* line 199, sass/partials/_forms.scss */
-input[type='text'].error, input[type='password'].error, textarea.error {
+/* line 200, sass/partials/_forms.scss */
+input[type='text'].error, input[type='password'].error, textarea.error, select.error {
   border: 0.1rem solid #E32333;
 }
 
-/* line 204, sass/partials/_forms.scss */
+/* line 205, sass/partials/_forms.scss */
 input[type="text"][readonly] {
   cursor: pointer;
 }
 
-/* line 208, sass/partials/_forms.scss */
+/* line 209, sass/partials/_forms.scss */
 input[type='password'] {
   padding-left: 4rem;
 }
 
-/* line 212, sass/partials/_forms.scss */
+/* line 213, sass/partials/_forms.scss */
 input[type="text"].currency {
   padding-left: 3rem;
 }
 
-/* line 217, sass/partials/_forms.scss */
+/* line 218, sass/partials/_forms.scss */
 input[type=submit][disabled=disabled],
 input[type=submit][disabled=disabled]:hover,
 button[disabled=disabled],
@@ -6814,12 +6815,12 @@ button[disabled=disabled]:hover {
   cursor: default;
 }
 
-/* line 226, sass/partials/_forms.scss */
+/* line 227, sass/partials/_forms.scss */
 *:focus {
   outline: 0;
 }
 
-/* line 232, sass/partials/_forms.scss */
+/* line 233, sass/partials/_forms.scss */
 .choose-file-wrapper {
   width: 16.2rem;
   height: 4rem;
@@ -6827,7 +6828,7 @@ button[disabled=disabled]:hover {
   position: relative;
   cursor: pointer;
 }
-/* line 240, sass/partials/_forms.scss */
+/* line 241, sass/partials/_forms.scss */
 .choose-file-wrapper:before {
   position: relative;
   z-index: 10;
@@ -6837,7 +6838,7 @@ button[disabled=disabled]:hover {
   font-size: 1.4rem;
   line-height: 3.8rem;
 }
-/* line 250, sass/partials/_forms.scss */
+/* line 251, sass/partials/_forms.scss */
 .choose-file-wrapper:after {
   content: "Upload file";
   position: absolute;
@@ -6849,14 +6850,14 @@ button[disabled=disabled]:hover {
   padding-right: 4.4rem;
   line-height: 1.6rem;
 }
-/* line 268, sass/partials/_forms.scss */
+/* line 269, sass/partials/_forms.scss */
 .choose-file-wrapper.disabled:after {
   cursor: default;
   background-color: #D4D3CC;
   color: #A19F91;
 }
 
-/* line 276, sass/partials/_forms.scss */
+/* line 277, sass/partials/_forms.scss */
 .choose-file {
   width: 200%;
   height: 100%;
@@ -6870,7 +6871,7 @@ button[disabled=disabled]:hover {
   opacity: 0;
 }
 
-/* line 289, sass/partials/_forms.scss */
+/* line 290, sass/partials/_forms.scss */
 .form-field-ico {
   position: absolute;
   top: 0;
@@ -7512,7 +7513,7 @@ abstract
 }
 
 /* line 21, sass/partials/_abstract.scss */
-.pad-right-small, input[type='text'], input[type='password'] {
+.pad-right-small, input[type='text'], input[type='password'], select {
   padding-right: 1.2rem;
 }
 
@@ -7532,7 +7533,7 @@ abstract
 }
 
 /* line 26, sass/partials/_abstract.scss */
-.pad-left-small, input[type='text'], input[type='password'] {
+.pad-left-small, input[type='text'], input[type='password'], select {
   padding-left: 1.2rem;
 }
 
@@ -8604,7 +8605,7 @@ abstract
 }
 
 /* line 21, sass/partials/_abstract.scss */
-.pad-right-small, input[type='text'], input[type='password'] {
+.pad-right-small, input[type='text'], input[type='password'], select {
   padding-right: 1.2rem;
 }
 
@@ -8624,7 +8625,7 @@ abstract
 }
 
 /* line 26, sass/partials/_abstract.scss */
-.pad-left-small, input[type='text'], input[type='password'] {
+.pad-left-small, input[type='text'], input[type='password'], select {
   padding-left: 1.2rem;
 }
 
@@ -9897,7 +9898,7 @@ textarea {
 }
 
 /* line 187, sass/partials/_forms.scss */
-input[type='text'], input[type='password'] {
+input[type='text'], input[type='password'], select {
   width: 100%;
   height: 5rem;
   font-size: 1.8rem;
@@ -9905,30 +9906,31 @@ input[type='text'], input[type='password'] {
 }
 
 /* line 196, sass/partials/_forms.scss */
-input[type='text'], input[type='password'], textarea {
+input[type='text'], input[type='password'], textarea, select {
   border: 0.1rem solid #D4D3CC;
+  background-color: white;
 }
-/* line 199, sass/partials/_forms.scss */
-input[type='text'].error, input[type='password'].error, textarea.error {
+/* line 200, sass/partials/_forms.scss */
+input[type='text'].error, input[type='password'].error, textarea.error, select.error {
   border: 0.1rem solid #E32333;
 }
 
-/* line 204, sass/partials/_forms.scss */
+/* line 205, sass/partials/_forms.scss */
 input[type="text"][readonly] {
   cursor: pointer;
 }
 
-/* line 208, sass/partials/_forms.scss */
+/* line 209, sass/partials/_forms.scss */
 input[type='password'] {
   padding-left: 4rem;
 }
 
-/* line 212, sass/partials/_forms.scss */
+/* line 213, sass/partials/_forms.scss */
 input[type="text"].currency {
   padding-left: 3rem;
 }
 
-/* line 217, sass/partials/_forms.scss */
+/* line 218, sass/partials/_forms.scss */
 input[type=submit][disabled=disabled],
 input[type=submit][disabled=disabled]:hover,
 button[disabled=disabled],
@@ -9938,12 +9940,12 @@ button[disabled=disabled]:hover {
   cursor: default;
 }
 
-/* line 226, sass/partials/_forms.scss */
+/* line 227, sass/partials/_forms.scss */
 *:focus {
   outline: 0;
 }
 
-/* line 232, sass/partials/_forms.scss */
+/* line 233, sass/partials/_forms.scss */
 .choose-file-wrapper {
   width: 16.2rem;
   height: 4rem;
@@ -9951,7 +9953,7 @@ button[disabled=disabled]:hover {
   position: relative;
   cursor: pointer;
 }
-/* line 240, sass/partials/_forms.scss */
+/* line 241, sass/partials/_forms.scss */
 .choose-file-wrapper:before {
   position: relative;
   z-index: 10;
@@ -9961,7 +9963,7 @@ button[disabled=disabled]:hover {
   font-size: 1.4rem;
   line-height: 3.8rem;
 }
-/* line 250, sass/partials/_forms.scss */
+/* line 251, sass/partials/_forms.scss */
 .choose-file-wrapper:after {
   content: "Upload file";
   position: absolute;
@@ -9973,14 +9975,14 @@ button[disabled=disabled]:hover {
   padding-right: 4.4rem;
   line-height: 1.6rem;
 }
-/* line 268, sass/partials/_forms.scss */
+/* line 269, sass/partials/_forms.scss */
 .choose-file-wrapper.disabled:after {
   cursor: default;
   background-color: #D4D3CC;
   color: #A19F91;
 }
 
-/* line 276, sass/partials/_forms.scss */
+/* line 277, sass/partials/_forms.scss */
 .choose-file {
   width: 200%;
   height: 100%;
@@ -9994,7 +9996,7 @@ button[disabled=disabled]:hover {
   opacity: 0;
 }
 
-/* line 289, sass/partials/_forms.scss */
+/* line 290, sass/partials/_forms.scss */
 .form-field-ico {
   position: absolute;
   top: 0;

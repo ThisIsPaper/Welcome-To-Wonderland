@@ -184,7 +184,7 @@ textarea {
     resize: none;
 }
 
-input[type='text'], input[type='password'] {
+input[type='text'], input[type='password'], select {
     @extend .pad-left-small;
     @extend .pad-right-small;
     width: 100%;
@@ -193,8 +193,9 @@ input[type='text'], input[type='password'] {
     line-height: 5rem;
 }
 
-input[type='text'], input[type='password'], textarea {
+input[type='text'], input[type='password'], textarea, select {
     border: .1rem solid $greyLight;
+    background-color: white;
 
     &.error {
         border: .1rem solid $redDark;
@@ -221,6 +222,10 @@ button[disabled=disabled]:hover {
     background-color: $greyLight;
     color: $greyMedium;
     cursor: default;
+}
+
+select.auto-width {
+    width: auto;
 }
 
 *:focus{
