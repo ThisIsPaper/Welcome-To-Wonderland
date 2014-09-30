@@ -276,6 +276,7 @@
     <Content Include="Views\ProfileSurface\ProfileBillingAddressForm.cshtml" />
     <Content Include="Views\ProfileSurface\ProfileChangePasswordForm.cshtml" />
     <Content Include="Views\Logout.cshtml" />
+    <Content Include="Views\Donate\UnknownTransaction.cshtml" />
     <None Include="Views\RegisterHostSurface\RegisterHostForm.cshtml" />
   </ItemGroup>
   <ItemGroup>

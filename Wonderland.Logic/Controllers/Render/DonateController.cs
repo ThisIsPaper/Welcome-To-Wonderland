@@ -24,13 +24,17 @@ namespace Wonderland.Logic.Controllers.Render
             {
                 if (vendorTxCode > 0)
                 {
-                    DonationRow donationRow = this.DatabaseContext.Database.Fetch<DonationRow>("SELECT TOP 1 * FROM wonderlandDonation WHERE VendorTxCode = @0", vendorTxCode).Single();
+                    DonationRow donationRow = this.DatabaseContext.Database.Fetch<DonationRow>("SELECT TOP 1 * FROM wonderlandDonation WHERE VendorTxCode = @0", vendorTxCode).SingleOrDefault();
 
                     if (donationRow != null)
                     {
                         model.PartyHost = this.Members.GetPartyHost(donationRow.PartyGuid);
 
                         return this.View("Donate/Complete", model);
+                    }
+                    else
+                    {
+                        return this.View("Donate/UnknownTransaction", model);
                     }
                 }
             }
