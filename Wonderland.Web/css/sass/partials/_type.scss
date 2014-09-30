@@ -380,6 +380,11 @@ h4 {
     &.highlight {
         color: $SecondaryColour;
     }
+
+    &.tight {
+        margin: 0;
+        padding: 0;
+    }
 }
 
 h3, h4 {

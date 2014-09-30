@@ -2,12 +2,45 @@
 @{
     Layout = "SitePage.cshtml";
 }
-<h1>Profile</h1>
 
-@(Html.Action<ProfileSurfaceController>("RenderProfileNamesForm"))
 
+<div class="page-bg" ng-controller="ProfileCtrl">
+
+    <div class="container gutter">
+
+        <div class="wgrid-main centered">
+
+            <div class="boxx" m-radius-picker>
+
+                <h1><span class="lighter"><span class="icon-icon_person margin-right-small"></span><span class="bigger">My <br/></span></span>profile</h1>
+
+                <hr/>
+
+                <h3>Your basic details</h3>
+
+                <h4 class="tight">Name</h4>
+
+                <div class="grid-8 grid-tablet-12">
+                    <div class="successful margin-bottom-small" ng-show="feedback.profileNameShowSuccess">Your name was successfully changed</div>
+                    <div class="errorred margin-bottom-small" ng-show="feedback.profileNameErrorMessage.length>0" ng-bind="feedback.profileNameErrorMessage"></div>
+                </div>
+
+                @(Html.Action<ProfileSurfaceController>("RenderProfileNamesForm"))
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+@*
 @(Html.Action<ProfileSurfaceController>("RenderProfileImageForm"))
 
 @(Html.Action<ProfileSurfaceController>("RenderProfileBillingAddressForm"))
 
 @(Html.Action<ProfileSurfaceController>("RenderProfileChangePasswordForm"))
+*@

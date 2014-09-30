@@ -1,8 +1,22 @@
 ﻿@model ProfileNamesForm
 
-@using (Html.BeginUmbracoForm<ProfileSurfaceController>("HandleProfileNamesForm"))
+@using (Html.BeginUmbracoForm<ProfileSurfaceController>("HandleProfileNamesForm", FormMethod.Post, new { m_serialized="", ng_submit="feedback.profileNameProcessing=true", m_post_on_submit="profileNameData", m_on_success_event="profileNameDataUpdated" }))
 {
     @Html.AntiForgeryToken()
 
-    @Html.EditorForModel()
+    <div class="grid-8 grid-tablet-12 parent margin-bottom-large">
+        <label for="FirstName">First name</label>
+        @Html.TextBoxFor(x => x.FirstName, new { @m_radius_picker="small", @ng_model="profileNameData.FirstName", @ng_readonly="feedback.profileNameProcessing", @ng_class="{'error': errorFirstNameMessage.length>0}", @m_value_matcher="" })
+        <div class="margin-bottom-small" ng-show="errorFirstNameMessage.length>0" ng-init="errorFirstNameMessage='@Html.ValidationMessageFor(x => x.FirstName)'">@Html.ValidationMessageFor(x => x.FirstName)</div>
+
+        <label for="LastName">Last name</label>
+        @Html.TextBoxFor(x => x.LastName, new { @m_radius_picker="small", @ng_model="profileNameData.LastName", @ng_readonly="feedback.profileNameProcessing", @ng_class="{'error': errorLastNameMessage.length>0}", @m_value_matcher="" })
+        <div class="margin-bottom-small" ng-show="errorLastNameMessage.length>0" ng-init="errorLastNameMessage='@Html.ValidationMessageFor(x => x.LastName)'">@Html.ValidationMessageFor(x => x.LastName)</div>
+    </div>
+
+    <div class="grid-12 parent">
+        <button type="submit" class="btn-primary float-right" m-radius-picker="small" ng-disabled="feedback.profileNameProcessing">Change name ></button>
+        <div class="loader" ng-show="feedback.profileNameProcessing"></div>
+    </div>
+
 }

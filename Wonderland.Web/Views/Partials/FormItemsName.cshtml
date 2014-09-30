@@ -1,0 +1,9 @@
+@model
+
+<label for="FirstName">First name</label>
+@Html.TextBoxFor(x => x.FirstName, new { @m_radius_picker="small", @ng_readonly="processing", @ng_class="{'error': errorFirstNameMessage.length>0}" })
+<div class="margin-bottom-small" ng-show="errorFirstNameMessage.length>0" ng-init="errorFirstNameMessage='@Html.ValidationMessageFor(x => x.FirstName)'">@Html.ValidationMessageFor(x => x.FirstName)</div>
+
+<label for="LastName">Last name</label>
+@Html.TextBoxFor(x => x.LastName, new { @m_radius_picker="small", @ng_readonly="processing", @ng_class="{'error': errorLastNameMessage.length>0}" })
+<div class="margin-bottom-small" ng-show="errorLastNameMessage.length>0" ng-init="errorLastNameMessage='@Html.ValidationMessageFor(x => x.LastName)'">@Html.ValidationMessageFor(x => x.LastName)</div>

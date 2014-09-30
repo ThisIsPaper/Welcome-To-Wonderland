@@ -12,6 +12,7 @@ $btnPaddingLarge: $btnPaddingMedium*2;
 .btn-primary {
     @extend %border-box;
     cursor: pointer;
+    font-family: $fontFaceFutura;
     font-weight: $BaseFontWeight;
     color: #fff;
     text-decoration: none;
