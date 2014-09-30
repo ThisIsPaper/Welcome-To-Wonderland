@@ -45,6 +45,7 @@
 
     <div class="clear width-50p">
         <label>Or a custom amount</label>
+        <div class="errorred margin-bottom-small" ng-show="guideDonation.donation>=1000">Are you sure you want to donate this amount of money, it seems like a lot!</div>
         <div class="margin-bottom-small" ng-show="errorAmountMessage.length>0" ng-init="errorAmountMessage='@Html.ValidationMessageFor(x => x.Amount)'">@Html.ValidationMessageFor(x => x.Amount)</div>
         <div class="pos-relative width-50p">
             <span class="form-field-ico">£</span>
