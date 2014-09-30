@@ -44,8 +44,8 @@ wonderlandApp.run(['$rootScope', '$ocModal', '$window', function ($rootScope, $o
 
     };
 
-    $rootScope.closePageModal = function (modalId) {
-        $ocModal.open(modal);
+    $rootScope.closePageModal = function () {
+        $ocModal.close();
     };
 
 

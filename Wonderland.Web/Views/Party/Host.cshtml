@@ -22,7 +22,7 @@
                             <div>Choose my party picture</div>
                         </div>
 
-                        <div class="edit-trigger" ng-click="openPageModal('partials/partyImageForm.html', 'partyImageModal', {'modalId': 'partyImageModal', 'partyImageData': partyImageDataForForm, 'partyImageDefaultData': partyImageDefaultData, 'partyCustomImage': partyCustomImage})"><span class="edit-label">Edit</span><span class="icon-icon_edit"></span></div>
+                        <div class="edit-trigger" ng-click="openPageModal('partials/partyImageForm.html', 'partyImageModal', {'partyImageData': partyImageDataForForm, 'partyImageDefaultData': partyImageDefaultData, 'partyCustomImage': partyCustomImage})"><span class="edit-label">Edit</span><span class="icon-icon_edit"></span></div>
 
                     </div>
 
@@ -99,10 +99,12 @@
                 <div class="boxx" m-radius-picker>
                     <h4 class="top">Who's Coming <span>(@this.Model.Partiers.Count())</span></h4>
 
+                    <div class="text-align-center">
                     @foreach (IPartier partier in this.Model.Partiers)
                     {
                         <div class="margin-right-small margin-bottom-small" m-profile-image="@partier.ProfileImageUrl" m-radius-picker="small"></div>
                     }
+                    </div>
                 </div>
             </div>
 
@@ -146,7 +148,7 @@
                     @(Html.Action<PartySurfaceController>("RenderPartyWallMessageForm"))
 
                     @* TODO: fix the party wall image poster *@
-                    @*@(Html.Action<PartySurfaceController>("RenderPartyWallImageForm"))*@
+                    @(Html.Action<PartySurfaceController>("RenderPartyWallImageForm"))
                 </div>
 
 
