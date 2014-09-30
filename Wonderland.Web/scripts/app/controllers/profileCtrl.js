@@ -17,7 +17,11 @@ wonderlandApp.controller('ProfileCtrl', ['safeApply', '$scope', '$timeout', func
 
         profileBillingAddressProcessing: false,
         profileBillingAddressShowSuccess: false,
-        profileBillingAddressShowError: false
+        profileBillingAddressShowError: false,
+
+        profilePasswordProcessing: false,
+        profilePasswordShowSuccess: false,
+        profilePasswordShowError: false
     };
 
 
@@ -119,6 +123,38 @@ wonderlandApp.controller('ProfileCtrl', ['safeApply', '$scope', '$timeout', func
         });
 
     });
+
+
+    /***
+     *
+     *
+     * PASSWORD CHANGE
+     *
+     */
+    $scope.$onRootScope('profilePasswordUpdated', function(event, response, dataObject) {
+        console.log('Event::profilePasswordUpdated', response, dataObject);
+
+        safeApply( $scope, function () {
+
+            $scope.feedback.profilePasswordProcessing = false;
+
+            if (response && response.Success === true) {
+                $scope.profilePasswordData = null;
+                $scope.feedback.profilePasswordShowSuccess = true;
+            } else {
+                $scope.feedback.profilePasswordShowError = true;
+            }
+
+
+            $timeout(function () {
+                $scope.feedback.profilePasswordShowSuccess = false;
+                $scope.feedback.profilePasswordShowError = false;
+            }, 5000);
+
+        });
+
+    });
+
 
 
 }]);
