@@ -31,9 +31,12 @@
                     <h1 class="text-align-left">@Model.BannerHeading</h1>
                     <p>@Model.BannerCopy</p>
                 </div>
-                <div class="money-raised">
-                    <h1 class="raised-amount margin-top-2" ng-init="amountRaised=@Model.TotalAmountRaised" ng-bind="amountRaised|mCurrency:'£'"></h1>
-                </div>
+                @if (Model.TotalAmountRaised > 10000)
+                { 
+                    <div class="money-raised">
+                        <h1 class="raised-amount margin-top-2" ng-init="amountRaised=@Model.TotalAmountRaised" ng-bind="amountRaised|mCurrency:'£'"></h1>
+                    </div>
+                }
             </div>
 
             @if (!this.Members.IsLoggedInPartier())
