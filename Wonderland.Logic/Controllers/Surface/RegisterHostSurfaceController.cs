@@ -87,7 +87,7 @@ namespace Wonderland.Logic.Controllers.Surface
                     case MembershipCreateStatus.DuplicateEmail:
                     case MembershipCreateStatus.DuplicateUserName:
 
-                        this.ModelState.AddModelError("EmailValidation", "Email already registered");
+                        this.ModelState.AddModelError("RegisterHostValidation", "Email already registered");
 
                         break;
                 }
