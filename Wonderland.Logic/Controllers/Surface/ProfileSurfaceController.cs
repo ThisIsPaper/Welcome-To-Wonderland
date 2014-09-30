@@ -3,22 +3,15 @@ namespace Wonderland.Logic.Controllers.Surface
 {
     using System;
     using System.Web.Mvc;
-    using Umbraco.Web.Mvc;
-    using Wonderland.Logic.Interfaces;
-    using Wonderland.Logic.Models.Content;
-    using Wonderland.Logic.Models.Forms;
-    using Wonderland.Logic.Extensions;
     using Umbraco.Core.Models;
+    using Umbraco.Web.Mvc;
+    using Wonderland.Logic.Extensions;
+    using Wonderland.Logic.Interfaces;
     using Wonderland.Logic.Models.Entities;
+    using Wonderland.Logic.Models.Forms;
 
     public class ProfileSurfaceController : SurfaceController
     {
-        //[HttpGet]
-        //public ActionResult NavigateToProfileUrl()
-        //{
-        //    return this.Redirect(this.Umbraco.TypedContentSingleAtXPath("//" + Wonderland.Logic.Models.Content.Profile.Alias).Url); // avoids naming conflict with this.Profile
-        //}
-
         [ChildActionOnly]
         [MemberAuthorize]
         public ActionResult RenderProfileBillingAddressForm()

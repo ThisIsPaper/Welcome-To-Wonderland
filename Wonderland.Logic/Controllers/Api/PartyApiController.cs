@@ -6,10 +6,10 @@ namespace Wonderland.Logic.Controllers.Api
     using System.Web.Http;
     using Umbraco.Web.WebApi;
     using Wonderland.Logic.Enums;
+    using Wonderland.Logic.Extensions;
     using Wonderland.Logic.Interfaces;
     using Wonderland.Logic.Models.Database;
     using Wonderland.Logic.Models.Entities;
-    using Wonderland.Logic.Extensions;
 
     public class PartyApiController : UmbracoApiController
     {

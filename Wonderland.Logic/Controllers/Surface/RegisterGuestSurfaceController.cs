@@ -17,16 +17,6 @@ namespace Wonderland.Logic.Controllers.Surface
 
     public class RegisterGuestSurfaceController : SurfaceController
     {
-        ///// <summary>
-        ///// Handles inbound links to the register guest page
-        ///// </summary>
-        ///// <returns></returns>
-        //[HttpGet]
-        //public ActionResult NavigateToRegisterGuestUrl(Guid partyGuid)
-        //{
-        //    return this.Redirect(this.Umbraco.TypedContentSingleAtXPath("//" + RegisterGuest.Alias).Url + "?partyGuid=" + partyGuid.ToString());
-        //}
-
         /// <summary>
         /// returns the partial for the guest registration form
         /// </summary>
@@ -37,12 +27,6 @@ namespace Wonderland.Logic.Controllers.Surface
             // get party guid from the querystring
             return this.PartialView("RegisterGuestForm", new RegisterGuestForm(Guid.Parse(this.Request.QueryString["partyGuid"])));
         }
-
-        //// commented out until js client side validation wired-up
-        //public JsonResult ValidateIsEmailAvailable(string emailAddress)
-        //{it's
-        //    return Json(this.Members.GetByUsername(emailAddress) == null, JsonRequestBehavior.AllowGet);
-        //}
 
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -76,7 +60,7 @@ namespace Wonderland.Logic.Controllers.Surface
                     case MembershipCreateStatus.DuplicateEmail:
                     case MembershipCreateStatus.DuplicateUserName:
 
-                        this.ModelState.AddModelError("EmailValidation", "Email already registered");
+                        this.ModelState.AddModelError("RegisterGuestValidation", "Email already registered");
 
                         break;
                 }

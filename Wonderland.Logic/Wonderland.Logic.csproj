@@ -216,7 +216,6 @@
     <Compile Include="Controllers\Surface\DonateSurfaceController.cs" />
     <Compile Include="Controllers\Surface\ForgottenPasswordSurfaceController.cs" />
     <Compile Include="Controllers\Surface\LoginSurfaceController.cs" />
-    <Compile Include="Controllers\Surface\LogoutSurfaceController.cs" />
     <Compile Include="Controllers\Surface\PartySurfaceController.cs" />
     <Compile Include="Controllers\Surface\ProfileSurfaceController.cs" />
     <Compile Include="Controllers\Surface\RegisterGuestSurfaceController.cs" />

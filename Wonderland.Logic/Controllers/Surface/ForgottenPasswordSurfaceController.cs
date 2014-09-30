@@ -2,21 +2,15 @@
 namespace Wonderland.Logic.Controllers.Surface
 {
     using System;
+    using System.Net.Mail;
     using System.Web.Mvc;
     using Umbraco.Web.Mvc;
     using Wonderland.Logic.Interfaces;
     using Wonderland.Logic.Models.Content;
     using Wonderland.Logic.Models.Forms;
-    using System.Net.Mail;
 
     public class ForgottenPasswordSurfaceController : SurfaceController
     {
-        //[HttpGet]
-        //public ActionResult NavigateToForgottenPasswordUrl()
-        //{
-        //    return this.Redirect(this.Umbraco.TypedContentSingleAtXPath("//" + ForgottenPassword.Alias).Url);
-        //}
-
         [ChildActionOnly]
         public ActionResult RenderForgottenPasswordForm()
         {

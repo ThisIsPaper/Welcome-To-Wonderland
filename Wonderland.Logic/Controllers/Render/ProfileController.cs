@@ -1,12 +1,9 @@
 ﻿
 namespace Wonderland.Logic.Controllers.Render
 {
-    using System;
     using System.Web.Mvc;
-    using Wonderland.Logic.Enums;
-    using Wonderland.Logic.Models.Content;
     using Wonderland.Logic.Extensions;
-
+    using Wonderland.Logic.Models.Content;
     
     public class ProfileController : BaseRenderMvcController
     {

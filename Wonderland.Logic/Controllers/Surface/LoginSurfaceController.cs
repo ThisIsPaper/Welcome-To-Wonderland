@@ -4,21 +4,10 @@ namespace Wonderland.Logic.Controllers.Surface
     using System.Web.Mvc;
     using Umbraco.Web.Mvc;
     using Wonderland.Logic.Interfaces;
-    using Wonderland.Logic.Models.Content;
     using Wonderland.Logic.Models.Forms;
 
     public class LoginSurfaceController : SurfaceController
     {
-        ///// <summary>
-        ///// Handles inbound links to the login page
-        ///// </summary>
-        ///// <returns></returns>
-        //[HttpGet]
-        //public ActionResult NavigateToLoginUrl()
-        //{
-        //    return this.Redirect(this.Umbraco.TypedContentSingleAtXPath("//" + Login.Alias).Url);
-        //}
-
         /// <summary>
         /// returns the partial for the login form
         /// </summary>

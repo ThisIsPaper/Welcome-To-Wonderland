@@ -3,9 +3,9 @@ namespace Wonderland.Logic.Controllers.Render
 {
     using System.Web.Mvc;
     using Umbraco.Web.Models;
-    using Wonderland.Logic.Models.Content;
-    using Wonderland.Logic.Extensions;
     using Wonderland.Logic.Enums;
+    using Wonderland.Logic.Extensions;
+    using Wonderland.Logic.Models.Content;
 
     public class WonderlandersController : BaseRenderMvcController
     {

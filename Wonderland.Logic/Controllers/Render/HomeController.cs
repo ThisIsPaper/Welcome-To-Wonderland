@@ -1,9 +1,7 @@
 ﻿
 namespace Wonderland.Logic.Controllers.Render
 {
-    using System;
     using System.Web.Mvc;
-    using Wonderland.Logic.Enums;
     using Wonderland.Logic.Models.Content;
 
     public class HomeController : BaseRenderMvcController

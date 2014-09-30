@@ -2,15 +2,12 @@
 namespace Wonderland.Logic.Controllers.Render
 {
     using System;
-    using System.Linq;
     using System.Web.Mvc;
-    using umbraco;
-    using Wonderland.Logic.Extensions;
-    using Wonderland.Logic.Models.Content;
-    using Wonderland.Logic.Models.Members;
-    using Wonderland.Logic.Interfaces;
     using System.Web.Security;
     using Umbraco.Web.Models;
+    using Wonderland.Logic.Extensions;
+    using Wonderland.Logic.Interfaces;
+    using Wonderland.Logic.Models.Content;
 
     public class ResetPasswordController : BaseRenderMvcController
     {
