@@ -256,7 +256,7 @@ namespace Wonderland.Logic.Controllers.Surface
         }
 
         [HttpPost]
-        //[ValidateAntiForgeryToken]
+        [ValidateAntiForgeryToken]
         [MemberAuthorize]
         public JsonResult HandlePartyWallMessageForm(PartyWallMessageForm partyWallMessageForm)
         {
@@ -267,6 +267,13 @@ namespace Wonderland.Logic.Controllers.Surface
             if (this.ModelState.IsValid && (!string.IsNullOrWhiteSpace(partyWallMessageForm.Message) || !string.IsNullOrWhiteSpace(partyWallMessageForm.PartyWallImage)))
             {
                 //Guid partyGuid = ((Party)this.Umbraco.AssignedContentItem).PartyHost.PartyGuid;
+
+                string partyWallImage = partyWallMessageForm.PartyWallImage;
+
+                if (partyWallImage.StartsWith("/Uploads/PartyWall/"))
+                {
+                    partyWallImage = partyWallImage.Remove(0, "/Uploads/PartyWall/".Length);
+                }
 
                 //// insert message into DB
                 this.DatabaseContext.Database.Insert(new MessageRow()
@@ -292,7 +299,7 @@ namespace Wonderland.Logic.Controllers.Surface
         }
 
         [HttpPost]
-        //[ValidateAntiForgeryToken]
+        [ValidateAntiForgeryToken]
         [MemberAuthorize]
         public JsonResult HandlePartyWallImageForm(PartyWallImageForm partyWallImageForm)
         {

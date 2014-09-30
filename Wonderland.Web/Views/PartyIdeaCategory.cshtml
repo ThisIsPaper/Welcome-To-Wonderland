@@ -3,5 +3,8 @@
     Layout = "SitePage.cshtml";
 }
 
-
-@Html.Partial("PartyIdeaTiles", Model.GetPartyIdeaTiles())
+@{
+    // there are no longer any category pages, but keeping this template here for easy easy redirection to partent (rather than hi-jack controllers for each docType)
+    //this.Response.Redirect(this.Model.Parent.Url + "?tileType=" + this.Model.DocumentTypeAlias);   
+    this.Response.Redirect(this.Model.Parent.Url);   
+}

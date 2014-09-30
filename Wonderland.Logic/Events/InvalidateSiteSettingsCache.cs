@@ -16,6 +16,8 @@ namespace Wonderland.Logic.Events
 
         private void ContentService_Published(Umbraco.Core.Publishing.IPublishingStrategy sender, PublishEventArgs<IContent> e)
         {
+            // TODO: only wipe if home is being published
+
             HttpContext.Current.Cache.Remove("SiteSettings");
         }
     }
