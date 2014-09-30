@@ -32,10 +32,7 @@
     @Html.RenderJsHere("HeadRenderer")
 </head>
 <body>
-
-
-
-    <div class="page-container" ng-controller="PageCtrl" ng-class="{'showing-side-nav-menu': pageShowingSideNavMenu, 'showing-side-account-menu': pageShowingSideAccountMenu}">
+    <div class="page-container" ng-controller="PageCtrl" ng-class="{'showing-side-nav-menu': pageShowingSideNavMenu, 'showing-side-account-menu': pageShowingSideAccountMenu}" ng-init="pageProfile.imageUrl='@if(this.Members.GetCurrentPartier()!=null){@Html.Raw(Members.GetCurrentPartier().ProfileImageUrl);}'">
         <!--[if lt IE 7]>
         <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
@@ -64,6 +61,7 @@
         Html.RequiresJs("~/scripts/app/controllers/pageCtrl.js");
         Html.RequiresJs("~/scripts/app/controllers/partyCtrl.js");
         Html.RequiresJs("~/scripts/app/controllers/partyDetailsFormCtrl.js");
+        Html.RequiresJs("~/scripts/app/controllers/profileCtrl.js");
         Html.RequiresJs("~/scripts/app/controllers/suggestedDonationFormCtrl.js");
         Html.RequiresJs("~/scripts/app/controllers/wallCtrl.js");
 

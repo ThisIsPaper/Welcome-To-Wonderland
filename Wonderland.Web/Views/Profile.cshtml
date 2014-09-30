@@ -2,12 +2,81 @@
 @{
     Layout = "SitePage.cshtml";
 }
-<h1>Profile</h1>
 
-@(Html.Action<ProfileSurfaceController>("RenderProfileNamesForm"))
 
-@(Html.Action<ProfileSurfaceController>("RenderProfileImageForm"))
+<div class="page-bg" ng-controller="ProfileCtrl">
+
+    <div class="container gutter">
+
+        <div class="wgrid-main centered">
+
+            <div class="boxx" m-radius-picker>
+
+                <h1><span class="lighter"><span class="icon-icon_person margin-right-small"></span><span class="bigger">My <br/></span></span>profile</h1>
+
+                <hr/>
+
+                <h3>Your basic details</h3>
+
+
+
+
+                <h4 class="tight">Name</h4>
+
+                <div class="grid-8 grid-tablet-12">
+                    <div class="successful margin-bottom-small" ng-show="feedback.profileNameShowSuccess">Your name was successfully changed</div>
+                    <div class="errorred margin-bottom-small" ng-show="feedback.profileNameErrorMessage.length>0" ng-bind="feedback.profileNameErrorMessage"></div>
+                </div>
+
+                @(Html.Action<ProfileSurfaceController>("RenderProfileNamesForm"))
+
+
+                <div class="grid-12">
+
+                    <hr/>
+                    <h4>Profile image</h4>
+
+                </div>
+
+                <div class="grid-8 grid-tablet-12 parent">
+
+                    <div class="boxx internal" m-radius-picker="small">
+
+                        @* display the profile picture *@
+                        <div m-profile-image="{{ pageProfile.imageUrl }}" m-radius-picker="small"></div>
+
+
+                        <div class="image-shift-details">
+                            <div m-image-upload m-on-start-event="profileImageUploadStart" m-on-success-event="profileImageUpdated">
+
+
+                                @(Html.Action<ProfileSurfaceController>("RenderProfileImageForm"))
+
+
+                            </div>
+
+                            <div class="successful" ng-show="feedback.profileImageShowSuccess">Image uploaded successfully</div>
+                            <div class="errorred" ng-show="feedback.profileImageShowError">Oops something went wrong!</div>
+
+                            <div class="file-upload-info margin-left-0">Recommended dimensions of 500x500</div>
+                            <div class="file-upload-info margin-left-0">Maximum file size of 1MB</div>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+@*
 
 @(Html.Action<ProfileSurfaceController>("RenderProfileBillingAddressForm"))
 
 @(Html.Action<ProfileSurfaceController>("RenderProfileChangePasswordForm"))
+*@

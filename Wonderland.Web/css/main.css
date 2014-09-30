@@ -5264,20 +5264,25 @@ h4 span {
 h4.highlight {
   color: #007eac;
 }
+/* line 384, sass/partials/_type.scss */
+h4.tight {
+  margin: 0;
+  padding: 0;
+}
 
-/* line 386, sass/partials/_type.scss */
+/* line 391, sass/partials/_type.scss */
 h3.top, h4.top {
   margin-top: 0;
 }
 
-/* line 391, sass/partials/_type.scss */
+/* line 396, sass/partials/_type.scss */
 hr {
   border: none;
   border-bottom: 0.1rem solid #ECECEC;
   margin: 1.2rem 0;
 }
 
-/* line 397, sass/partials/_type.scss */
+/* line 402, sass/partials/_type.scss */
 .back {
   text-transform: uppercase;
   color: white;
@@ -6553,20 +6558,25 @@ h4 span {
 h4.highlight {
   color: #007eac;
 }
+/* line 384, sass/partials/_type.scss */
+h4.tight {
+  margin: 0;
+  padding: 0;
+}
 
-/* line 386, sass/partials/_type.scss */
+/* line 391, sass/partials/_type.scss */
 h3.top, h4.top {
   margin-top: 0;
 }
 
-/* line 391, sass/partials/_type.scss */
+/* line 396, sass/partials/_type.scss */
 hr {
   border: none;
   border-bottom: 0.1rem solid #ECECEC;
   margin: 1.2rem 0;
 }
 
-/* line 397, sass/partials/_type.scss */
+/* line 402, sass/partials/_type.scss */
 .back {
   text-transform: uppercase;
   color: white;
@@ -6619,6 +6629,7 @@ Media query variables
 /* line 12, sass/partials/_forms.scss */
 .btn-primary, .btn-secondary, .choose-file-wrapper:after {
   cursor: pointer;
+  font-family: "Futura BT W01 Book";
   font-weight: 500;
   color: #fff;
   text-decoration: none;
@@ -6631,92 +6642,92 @@ Media query variables
   padding: 1.2rem;
   margin: 0;
 }
-/* line 28, sass/partials/_forms.scss */
+/* line 29, sass/partials/_forms.scss */
 .btn-primary:hover, .btn-secondary:hover, .choose-file-wrapper:hover:after, .btn-primary:focus, .btn-secondary:focus, .choose-file-wrapper:focus:after {
   background: #4b2061;
 }
-/* line 32, sass/partials/_forms.scss */
+/* line 33, sass/partials/_forms.scss */
 .btn-primary .disabled, .btn-secondary .disabled, .choose-file-wrapper:after .disabled {
   background-color: #D4D3CC;
   color: #A19F91;
   cursor: default;
 }
-/* line 38, sass/partials/_forms.scss */
+/* line 39, sass/partials/_forms.scss */
 .btn-primary.btn-mini, .btn-mini.btn-secondary, .btn-mini.choose-file-wrapper:after {
   font-size: 1.1rem;
 }
-/* line 43, sass/partials/_forms.scss */
+/* line 44, sass/partials/_forms.scss */
 .btn-primary.btn-small, .btn-small.btn-secondary, .btn-small.choose-file-wrapper:after {
   font-size: 1.4rem;
 }
-/* line 48, sass/partials/_forms.scss */
+/* line 49, sass/partials/_forms.scss */
 .btn-primary.btn-large, .btn-large.btn-secondary, .btn-large.choose-file-wrapper:after {
   font-size: 2.3rem;
   letter-spacing: .3rem;
 }
 
-/* line 56, sass/partials/_forms.scss */
+/* line 57, sass/partials/_forms.scss */
 .btn-secondary, .choose-file-wrapper:after {
   background: #007eac;
 }
-/* line 60, sass/partials/_forms.scss */
+/* line 61, sass/partials/_forms.scss */
 .btn-secondary:hover, .choose-file-wrapper:hover:after, .btn-secondary:focus, .choose-file-wrapper:focus:after {
   background: #005979;
 }
 
-/* line 65, sass/partials/_forms.scss */
+/* line 66, sass/partials/_forms.scss */
 .cancel {
   line-height: 4rem;
   color: #007eac;
   font-size: 1.8rem;
   cursor: pointer;
 }
-/* line 71, sass/partials/_forms.scss */
+/* line 72, sass/partials/_forms.scss */
 .cancel:hover {
   color: #005979;
 }
 
-/* line 82, sass/partials/_forms.scss */
+/* line 83, sass/partials/_forms.scss */
 .warning, .party-image-container .warner {
   color: #E32333;
 }
 
-/* line 87, sass/partials/_forms.scss */
+/* line 88, sass/partials/_forms.scss */
 .successful, .errorred, .field-validation-error, .extra-info-block {
   color: #00A246;
   background-color: #D1E8B2;
   text-align: center;
   display: block;
 }
-/* line 100, sass/partials/_forms.scss */
+/* line 101, sass/partials/_forms.scss */
 .successful:before, .errorred:before, .field-validation-error:before, .extra-info-block:before {
   font-family: "icomoon";
   content: "\e61f";
 }
 
-/* line 108, sass/partials/_forms.scss */
+/* line 109, sass/partials/_forms.scss */
 .errorred, .field-validation-error {
   color: #E32333;
   background-color: #FCE9EA;
 }
-/* line 113, sass/partials/_forms.scss */
+/* line 114, sass/partials/_forms.scss */
 .errorred:before, .field-validation-error:before {
   font-family: "icomoon";
   content: "\e620";
 }
 
-/* line 120, sass/partials/_forms.scss */
+/* line 121, sass/partials/_forms.scss */
 .extra-info-block {
   color: #007eac;
   background-color: #e3f3f8;
 }
-/* line 125, sass/partials/_forms.scss */
+/* line 126, sass/partials/_forms.scss */
 .extra-info-block:before {
   font-family: "icomoon";
   content: "\e621";
 }
 
-/* line 131, sass/partials/_forms.scss */
+/* line 132, sass/partials/_forms.scss */
 .loader {
   background-image: url('/img/loading-icon.svg?1411991516');
   background-repeat: no-repeat;
@@ -6727,41 +6738,41 @@ Media query variables
   margin-top: -2rem;
 }
 
-/* line 144, sass/partials/_forms.scss */
+/* line 145, sass/partials/_forms.scss */
 .form-holder {
   max-width: 50rem;
 }
-/* line 147, sass/partials/_forms.scss */
+/* line 148, sass/partials/_forms.scss */
 .form-holder.wide {
   max-width: 70rem;
 }
 
-/* line 154, sass/partials/_forms.scss */
+/* line 155, sass/partials/_forms.scss */
 label {
   text-transform: uppercase;
   color: #7B7A6D;
   font-weight: bold;
   line-height: 3rem;
 }
-/* line 161, sass/partials/_forms.scss */
+/* line 162, sass/partials/_forms.scss */
 label span {
   text-transform: none;
   color: #A19F91;
 }
-/* line 167, sass/partials/_forms.scss */
+/* line 168, sass/partials/_forms.scss */
 label.radio-form {
   text-transform: none;
   display: inline-block;
 }
 
-/* line 179, sass/partials/_forms.scss */
+/* line 180, sass/partials/_forms.scss */
 textarea {
   width: 100%;
   height: 15rem;
   resize: none;
 }
 
-/* line 186, sass/partials/_forms.scss */
+/* line 187, sass/partials/_forms.scss */
 input[type='text'], input[type='password'] {
   width: 100%;
   height: 5rem;
@@ -6769,31 +6780,31 @@ input[type='text'], input[type='password'] {
   line-height: 5rem;
 }
 
-/* line 195, sass/partials/_forms.scss */
+/* line 196, sass/partials/_forms.scss */
 input[type='text'], input[type='password'], textarea {
   border: 0.1rem solid #D4D3CC;
 }
-/* line 198, sass/partials/_forms.scss */
+/* line 199, sass/partials/_forms.scss */
 input[type='text'].error, input[type='password'].error, textarea.error {
   border: 0.1rem solid #E32333;
 }
 
-/* line 203, sass/partials/_forms.scss */
+/* line 204, sass/partials/_forms.scss */
 input[type="text"][readonly] {
   cursor: pointer;
 }
 
-/* line 207, sass/partials/_forms.scss */
+/* line 208, sass/partials/_forms.scss */
 input[type='password'] {
   padding-left: 4rem;
 }
 
-/* line 211, sass/partials/_forms.scss */
+/* line 212, sass/partials/_forms.scss */
 input[type="text"].currency {
   padding-left: 3rem;
 }
 
-/* line 216, sass/partials/_forms.scss */
+/* line 217, sass/partials/_forms.scss */
 input[type=submit][disabled=disabled],
 input[type=submit][disabled=disabled]:hover,
 button[disabled=disabled],
@@ -6803,12 +6814,12 @@ button[disabled=disabled]:hover {
   cursor: default;
 }
 
-/* line 225, sass/partials/_forms.scss */
+/* line 226, sass/partials/_forms.scss */
 *:focus {
   outline: 0;
 }
 
-/* line 231, sass/partials/_forms.scss */
+/* line 232, sass/partials/_forms.scss */
 .choose-file-wrapper {
   width: 16.2rem;
   height: 4rem;
@@ -6816,7 +6827,7 @@ button[disabled=disabled]:hover {
   position: relative;
   cursor: pointer;
 }
-/* line 239, sass/partials/_forms.scss */
+/* line 240, sass/partials/_forms.scss */
 .choose-file-wrapper:before {
   position: relative;
   z-index: 10;
@@ -6826,7 +6837,7 @@ button[disabled=disabled]:hover {
   font-size: 1.4rem;
   line-height: 3.8rem;
 }
-/* line 249, sass/partials/_forms.scss */
+/* line 250, sass/partials/_forms.scss */
 .choose-file-wrapper:after {
   content: "Upload file";
   position: absolute;
@@ -6838,8 +6849,14 @@ button[disabled=disabled]:hover {
   padding-right: 4.4rem;
   line-height: 1.6rem;
 }
+/* line 268, sass/partials/_forms.scss */
+.choose-file-wrapper.disabled:after {
+  cursor: default;
+  background-color: #D4D3CC;
+  color: #A19F91;
+}
 
-/* line 269, sass/partials/_forms.scss */
+/* line 276, sass/partials/_forms.scss */
 .choose-file {
   width: 200%;
   height: 100%;
@@ -6853,7 +6870,7 @@ button[disabled=disabled]:hover {
   opacity: 0;
 }
 
-/* line 282, sass/partials/_forms.scss */
+/* line 289, sass/partials/_forms.scss */
 .form-field-ico {
   position: absolute;
   top: 0;
@@ -6974,7 +6991,7 @@ button[disabled=disabled]:hover {
 /* line 99, sass/partials/_nav.scss */
 .snow-brush-overlay {
   width: 100%;
-  background: url('/img/header_texture.png?1411035906') repeat center;
+  background: url('/img/header_texture.png?1412071056') repeat center;
   padding-top: 1.2rem;
 }
 
@@ -7002,68 +7019,63 @@ button[disabled=disabled]:hover {
   cursor: pointer;
 }
 
-/* line 127, sass/partials/_nav.scss */
-.account-menu {
-  display: none;
-}
-
 /********************/
 /* COMPRESSED VIEW  */
 /********************/
-/* line 134, sass/partials/_nav.scss */
+/* line 136, sass/partials/_nav.scss */
 .site-header.compress .logo {
   top: -16rem;
 }
 
-/* line 138, sass/partials/_nav.scss */
+/* line 140, sass/partials/_nav.scss */
 .site-header.compress .logo-ribbon {
   margin-top: 9.7rem;
 }
 
-/* line 142, sass/partials/_nav.scss */
+/* line 144, sass/partials/_nav.scss */
 .site-header.compress .left-side ul {
   margin-right: 10.8rem;
 }
 
-/* line 146, sass/partials/_nav.scss */
+/* line 148, sass/partials/_nav.scss */
 .site-header.compress .right-side ul {
   margin-left: 10.8rem;
 }
 
-/* line 150, sass/partials/_nav.scss */
+/* line 152, sass/partials/_nav.scss */
 .site-header.compress .menu li a {
   line-height: 6.6rem;
 }
 
-/* line 154, sass/partials/_nav.scss */
+/* line 156, sass/partials/_nav.scss */
 .site-header.compress .nav-end-block {
   top: 1.6rem;
 }
 
-/* line 158, sass/partials/_nav.scss */
+/* line 160, sass/partials/_nav.scss */
 footer {
   z-index: 998;
   color: #666666;
 }
 
-/* line 163, sass/partials/_nav.scss */
+/* line 165, sass/partials/_nav.scss */
 footer [class*="grid-"] {
   margin-bottom: 2rem;
   margin-bottom: 4rem;
 }
 
-/* line 174, sass/partials/_nav.scss */
+/* line 176, sass/partials/_nav.scss */
 .footer-menu ul {
   list-style-type: none;
   padding: 0;
   margin: 0;
 }
-/* line 179, sass/partials/_nav.scss */
+/* line 181, sass/partials/_nav.scss */
 .footer-menu ul:after {
   clear: both;
 }
 
-/* line 184, sass/partials/_nav.scss */
+/* line 186, sass/partials/_nav.scss */
 .footer-menu li a {
   text-transform: uppercase;
   font-size: 1.4rem;
@@ -7072,35 +7084,35 @@ footer [class*="grid-"] {
   cursor: pointer;
 }
 
-/* line 192, sass/partials/_nav.scss */
+/* line 194, sass/partials/_nav.scss */
 .footer-menu li a:hover {
   color: #006593;
   text-decoration: underline;
 }
 
-/* line 197, sass/partials/_nav.scss */
+/* line 199, sass/partials/_nav.scss */
 .footer-menu.single-line li {
   float: left;
   margin-right: 1rem;
 }
 
-/* line 202, sass/partials/_nav.scss */
+/* line 204, sass/partials/_nav.scss */
 .footer-menu.single-line li a {
   font-size: 1.1rem;
 }
 
-/* line 206, sass/partials/_nav.scss */
+/* line 208, sass/partials/_nav.scss */
 .footer-menu.single-line.icon-list li a {
   font-size: 4.7rem;
   text-decoration: none;
 }
 
-/* line 211, sass/partials/_nav.scss */
+/* line 213, sass/partials/_nav.scss */
 .footer-menu.single-line.icon-list li a span {
   display: none;
 }
 
-/* line 215, sass/partials/_nav.scss */
+/* line 217, sass/partials/_nav.scss */
 .footer-snow-brush-overlay {
   background: url('/img/footer_texture.png?1411035906') repeat-x center;
   padding-top: 1.2rem;
@@ -9670,20 +9682,25 @@ h4 span {
 h4.highlight {
   color: #007eac;
 }
+/* line 384, sass/partials/_type.scss */
+h4.tight {
+  margin: 0;
+  padding: 0;
+}
 
-/* line 386, sass/partials/_type.scss */
+/* line 391, sass/partials/_type.scss */
 h3.top, h4.top {
   margin-top: 0;
 }
 
-/* line 391, sass/partials/_type.scss */
+/* line 396, sass/partials/_type.scss */
 hr {
   border: none;
   border-bottom: 0.1rem solid #ECECEC;
   margin: 1.2rem 0;
 }
 
-/* line 397, sass/partials/_type.scss */
+/* line 402, sass/partials/_type.scss */
 .back {
   text-transform: uppercase;
   color: white;
@@ -9736,6 +9753,7 @@ Media query variables
 /* line 12, sass/partials/_forms.scss */
 .btn-primary, .btn-secondary, .choose-file-wrapper:after {
   cursor: pointer;
+  font-family: "Futura BT W01 Book";
   font-weight: 500;
   color: #fff;
   text-decoration: none;
@@ -9748,92 +9766,92 @@ Media query variables
   padding: 1.2rem;
   margin: 0;
 }
-/* line 28, sass/partials/_forms.scss */
+/* line 29, sass/partials/_forms.scss */
 .btn-primary:hover, .btn-secondary:hover, .choose-file-wrapper:hover:after, .btn-primary:focus, .btn-secondary:focus, .choose-file-wrapper:focus:after {
   background: #4b2061;
 }
-/* line 32, sass/partials/_forms.scss */
+/* line 33, sass/partials/_forms.scss */
 .btn-primary .disabled, .btn-secondary .disabled, .choose-file-wrapper:after .disabled {
   background-color: #D4D3CC;
   color: #A19F91;
   cursor: default;
 }
-/* line 38, sass/partials/_forms.scss */
+/* line 39, sass/partials/_forms.scss */
 .btn-primary.btn-mini, .btn-mini.btn-secondary, .btn-mini.choose-file-wrapper:after {
   font-size: 1.1rem;
 }
-/* line 43, sass/partials/_forms.scss */
+/* line 44, sass/partials/_forms.scss */
 .btn-primary.btn-small, .btn-small.btn-secondary, .btn-small.choose-file-wrapper:after {
   font-size: 1.4rem;
 }
-/* line 48, sass/partials/_forms.scss */
+/* line 49, sass/partials/_forms.scss */
 .btn-primary.btn-large, .btn-large.btn-secondary, .btn-large.choose-file-wrapper:after {
   font-size: 2.3rem;
   letter-spacing: .3rem;
 }
 
-/* line 56, sass/partials/_forms.scss */
+/* line 57, sass/partials/_forms.scss */
 .btn-secondary, .choose-file-wrapper:after {
   background: #007eac;
 }
-/* line 60, sass/partials/_forms.scss */
+/* line 61, sass/partials/_forms.scss */
 .btn-secondary:hover, .choose-file-wrapper:hover:after, .btn-secondary:focus, .choose-file-wrapper:focus:after {
   background: #005979;
 }
 
-/* line 65, sass/partials/_forms.scss */
+/* line 66, sass/partials/_forms.scss */
 .cancel {
   line-height: 4rem;
   color: #007eac;
   font-size: 1.8rem;
   cursor: pointer;
 }
-/* line 71, sass/partials/_forms.scss */
+/* line 72, sass/partials/_forms.scss */
 .cancel:hover {
   color: #005979;
 }
 
-/* line 82, sass/partials/_forms.scss */
+/* line 83, sass/partials/_forms.scss */
 .warning, .party-image-container .warner {
   color: #E32333;
 }
 
-/* line 87, sass/partials/_forms.scss */
+/* line 88, sass/partials/_forms.scss */
 .successful, .errorred, .field-validation-error, .extra-info-block {
   color: #00A246;
   background-color: #D1E8B2;
   text-align: center;
   display: block;
 }
-/* line 100, sass/partials/_forms.scss */
+/* line 101, sass/partials/_forms.scss */
 .successful:before, .errorred:before, .field-validation-error:before, .extra-info-block:before {
   font-family: "icomoon";
   content: "\e61f";
 }
 
-/* line 108, sass/partials/_forms.scss */
+/* line 109, sass/partials/_forms.scss */
 .errorred, .field-validation-error {
   color: #E32333;
   background-color: #FCE9EA;
 }
-/* line 113, sass/partials/_forms.scss */
+/* line 114, sass/partials/_forms.scss */
 .errorred:before, .field-validation-error:before {
   font-family: "icomoon";
   content: "\e620";
 }
 
-/* line 120, sass/partials/_forms.scss */
+/* line 121, sass/partials/_forms.scss */
 .extra-info-block {
   color: #007eac;
   background-color: #e3f3f8;
 }
-/* line 125, sass/partials/_forms.scss */
+/* line 126, sass/partials/_forms.scss */
 .extra-info-block:before {
   font-family: "icomoon";
   content: "\e621";
 }
 
-/* line 131, sass/partials/_forms.scss */
+/* line 132, sass/partials/_forms.scss */
 .loader {
   background-image: url('/img/loading-icon.svg?1411991516');
   background-repeat: no-repeat;
@@ -9844,41 +9862,41 @@ Media query variables
   margin-top: -2rem;
 }
 
-/* line 144, sass/partials/_forms.scss */
+/* line 145, sass/partials/_forms.scss */
 .form-holder {
   max-width: 50rem;
 }
-/* line 147, sass/partials/_forms.scss */
+/* line 148, sass/partials/_forms.scss */
 .form-holder.wide {
   max-width: 70rem;
 }
 
-/* line 154, sass/partials/_forms.scss */
+/* line 155, sass/partials/_forms.scss */
 label {
   text-transform: uppercase;
   color: #7B7A6D;
   font-weight: bold;
   line-height: 3rem;
 }
-/* line 161, sass/partials/_forms.scss */
+/* line 162, sass/partials/_forms.scss */
 label span {
   text-transform: none;
   color: #A19F91;
 }
-/* line 167, sass/partials/_forms.scss */
+/* line 168, sass/partials/_forms.scss */
 label.radio-form {
   text-transform: none;
   display: inline-block;
 }
 
-/* line 179, sass/partials/_forms.scss */
+/* line 180, sass/partials/_forms.scss */
 textarea {
   width: 100%;
   height: 15rem;
   resize: none;
 }
 
-/* line 186, sass/partials/_forms.scss */
+/* line 187, sass/partials/_forms.scss */
 input[type='text'], input[type='password'] {
   width: 100%;
   height: 5rem;
@@ -9886,31 +9904,31 @@ input[type='text'], input[type='password'] {
   line-height: 5rem;
 }
 
-/* line 195, sass/partials/_forms.scss */
+/* line 196, sass/partials/_forms.scss */
 input[type='text'], input[type='password'], textarea {
   border: 0.1rem solid #D4D3CC;
 }
-/* line 198, sass/partials/_forms.scss */
+/* line 199, sass/partials/_forms.scss */
 input[type='text'].error, input[type='password'].error, textarea.error {
   border: 0.1rem solid #E32333;
 }
 
-/* line 203, sass/partials/_forms.scss */
+/* line 204, sass/partials/_forms.scss */
 input[type="text"][readonly] {
   cursor: pointer;
 }
 
-/* line 207, sass/partials/_forms.scss */
+/* line 208, sass/partials/_forms.scss */
 input[type='password'] {
   padding-left: 4rem;
 }
 
-/* line 211, sass/partials/_forms.scss */
+/* line 212, sass/partials/_forms.scss */
 input[type="text"].currency {
   padding-left: 3rem;
 }
 
-/* line 216, sass/partials/_forms.scss */
+/* line 217, sass/partials/_forms.scss */
 input[type=submit][disabled=disabled],
 input[type=submit][disabled=disabled]:hover,
 button[disabled=disabled],
@@ -9920,12 +9938,12 @@ button[disabled=disabled]:hover {
   cursor: default;
 }
 
-/* line 225, sass/partials/_forms.scss */
+/* line 226, sass/partials/_forms.scss */
 *:focus {
   outline: 0;
 }
 
-/* line 231, sass/partials/_forms.scss */
+/* line 232, sass/partials/_forms.scss */
 .choose-file-wrapper {
   width: 16.2rem;
   height: 4rem;
@@ -9933,7 +9951,7 @@ button[disabled=disabled]:hover {
   position: relative;
   cursor: pointer;
 }
-/* line 239, sass/partials/_forms.scss */
+/* line 240, sass/partials/_forms.scss */
 .choose-file-wrapper:before {
   position: relative;
   z-index: 10;
@@ -9943,7 +9961,7 @@ button[disabled=disabled]:hover {
   font-size: 1.4rem;
   line-height: 3.8rem;
 }
-/* line 249, sass/partials/_forms.scss */
+/* line 250, sass/partials/_forms.scss */
 .choose-file-wrapper:after {
   content: "Upload file";
   position: absolute;
@@ -9955,8 +9973,14 @@ button[disabled=disabled]:hover {
   padding-right: 4.4rem;
   line-height: 1.6rem;
 }
+/* line 268, sass/partials/_forms.scss */
+.choose-file-wrapper.disabled:after {
+  cursor: default;
+  background-color: #D4D3CC;
+  color: #A19F91;
+}
 
-/* line 269, sass/partials/_forms.scss */
+/* line 276, sass/partials/_forms.scss */
 .choose-file {
   width: 200%;
   height: 100%;
@@ -9970,7 +9994,7 @@ button[disabled=disabled]:hover {
   opacity: 0;
 }
 
-/* line 282, sass/partials/_forms.scss */
+/* line 289, sass/partials/_forms.scss */
 .form-field-ico {
   position: absolute;
   top: 0;
@@ -10156,32 +10180,37 @@ h4 span {
 h4.highlight {
   color: #007eac;
 }
+/* line 384, sass/partials/_type.scss */
+h4.tight {
+  margin: 0;
+  padding: 0;
+}
 
-/* line 386, sass/partials/_type.scss */
+/* line 391, sass/partials/_type.scss */
 h3.top, h4.top {
   margin-top: 0;
 }
 
-/* line 391, sass/partials/_type.scss */
+/* line 396, sass/partials/_type.scss */
 hr {
   border: none;
   border-bottom: 0.1rem solid #ECECEC;
   margin: 1.2rem 0;
 }
 
-/* line 397, sass/partials/_type.scss */
+/* line 402, sass/partials/_type.scss */
 .back {
   text-transform: uppercase;
   color: white;
   font-weight: bold;
 }
 
-/* line 25, sass/partials/_base.scss */
+/* line 26, sass/partials/_base.scss */
 html {
   font-size: 62.5%;
 }
 
-/* line 29, sass/partials/_base.scss */
+/* line 30, sass/partials/_base.scss */
 body {
   color: #666;
   background: #fff;
@@ -10190,20 +10219,28 @@ body {
   font-size: 1.8rem;
 }
 
-/* line 51, sass/partials/_base.scss */
+/* line 52, sass/partials/_base.scss */
 pre {
   white-space: pre-wrap;
 }
 
-/* line 55, sass/partials/_base.scss */
+/* line 56, sass/partials/_base.scss */
 td {
   padding-right: 2.4rem;
 }
 
+/************************************************************************** ANGULAR
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
+
+
 /* =============================================================================
 Shadows
 ========================================================================== */
-/* line 62, sass/partials/_base.scss */
+/* line 72, sass/partials/_base.scss */
 .shadowed {
   -moz-box-shadow: 0 0 3rem rgba(102, 102, 102, 0.7);
   -webkit-box-shadow: 0 0 3rem rgba(102, 102, 102, 0.7);
@@ -10213,7 +10250,7 @@ Shadows
 /* =============================================================================
 images
 ========================================================================== */
-/* line 69, sass/partials/_base.scss */
+/* line 79, sass/partials/_base.scss */
 img, object, embed {
   max-width: 100%;
 }
@@ -10221,7 +10258,7 @@ img, object, embed {
 /* =============================================================================
 Base page structure
 ========================================================================== */
-/* line 76, sass/partials/_base.scss */
+/* line 86, sass/partials/_base.scss */
 .page-container {
   position: relative;
   width: 100%;
@@ -10240,12 +10277,12 @@ Base page structure
   transition-timing-function: ease-in-out;
 }
 
-/* line 87, sass/partials/_base.scss */
+/* line 97, sass/partials/_base.scss */
 main {
   padding-top: 8.4rem;
 }
 
-/* line 91, sass/partials/_base.scss */
+/* line 101, sass/partials/_base.scss */
 .page-bg {
   background-color: #ECECEC;
   background-image: url('/img/bg_simple.png?1411126422');
@@ -10257,18 +10294,18 @@ main {
 /* =============================================================================
 Event Page specific - move these out of here eventually
 ========================================================================== */
-/* line 104, sass/partials/_base.scss */
+/* line 114, sass/partials/_base.scss */
 .party-main-image {
   background-position: center center;
   background-size: cover;
   height: 37.2rem;
 }
-/* line 109, sass/partials/_base.scss */
+/* line 119, sass/partials/_base.scss */
 .party-main-image.side {
   height: 18rem;
 }
 
-/* line 114, sass/partials/_base.scss */
+/* line 124, sass/partials/_base.scss */
 .party-image-default {
   position: absolute;
   text-align: center;
@@ -10280,7 +10317,7 @@ Event Page specific - move these out of here eventually
   padding-top: 17rem;
 }
 
-/* line 125, sass/partials/_base.scss */
+/* line 135, sass/partials/_base.scss */
 .edit-trigger {
   position: absolute;
   top: 2rem;
@@ -10306,23 +10343,23 @@ Event Page specific - move these out of here eventually
   -webkit-border-bottom-left-radius: 3rem 3rem;
   border-bottom-left-radius: 3rem 3rem;
 }
-/* line 140, sass/partials/_base.scss */
+/* line 150, sass/partials/_base.scss */
 .edit-trigger .edit-label {
   display: none;
   margin-right: 1rem;
   text-transform: uppercase;
 }
-/* line 146, sass/partials/_base.scss */
+/* line 156, sass/partials/_base.scss */
 .edit-trigger:hover {
   padding: 0 .95rem;
   width: auto;
 }
-/* line 149, sass/partials/_base.scss */
+/* line 159, sass/partials/_base.scss */
 .edit-trigger:hover .edit-label {
   display: inline;
 }
 
-/* line 156, sass/partials/_base.scss */
+/* line 166, sass/partials/_base.scss */
 .profile-image {
   width: 6rem;
   height: 6rem;
@@ -10331,7 +10368,7 @@ Event Page specific - move these out of here eventually
   background-color: #A19F91;
   float: left;
 }
-/* line 164, sass/partials/_base.scss */
+/* line 174, sass/partials/_base.scss */
 .profile-image:before {
   font-family: "icomoon";
   content: " ";
@@ -10342,12 +10379,17 @@ Event Page specific - move these out of here eventually
   text-align: center;
   display: block;
 }
-/* line 175, sass/partials/_base.scss */
+/* line 185, sass/partials/_base.scss */
 .profile-image.profile-image-notset:before {
   content: "\e61b";
 }
+/* line 189, sass/partials/_base.scss */
+.profile-image.small {
+  width: 4.2rem;
+  height: 4.2rem;
+}
 
-/* line 180, sass/partials/_base.scss */
+/* line 195, sass/partials/_base.scss */
 .profile-image-remover {
   color: #E32333;
   font-size: 1.1rem;
@@ -10358,34 +10400,34 @@ Event Page specific - move these out of here eventually
   width: 6rem;
 }
 
-/* line 192, sass/partials/_base.scss */
+/* line 207, sass/partials/_base.scss */
 .image-shift-details, .party-details, .wall-details {
   margin-left: 7.2rem;
 }
-/* line 195, sass/partials/_base.scss */
+/* line 210, sass/partials/_base.scss */
 .image-shift-details.bigger, .bigger.party-details, .bigger.wall-details {
   margin-left: 12.2rem;
 }
 
-/* line 201, sass/partials/_base.scss */
+/* line 216, sass/partials/_base.scss */
 .anti-image-shift-details {
   margin-left: -7.2rem;
 }
-/* line 204, sass/partials/_base.scss */
+/* line 219, sass/partials/_base.scss */
 .anti-image-shift-details.bigger {
   margin-left: -12.2rem;
 }
 
-/* line 209, sass/partials/_base.scss */
+/* line 224, sass/partials/_base.scss */
 .party-details {
   color: #A19F91;
 }
-/* line 213, sass/partials/_base.scss */
+/* line 228, sass/partials/_base.scss */
 .party-details [class^="icon-"], .party-details [class*=" icon-"] {
   color: #D4D3CC;
 }
 
-/* line 219, sass/partials/_base.scss */
+/* line 234, sass/partials/_base.scss */
 .badge {
   width: 100%;
   height: 7.8rem;
@@ -10394,27 +10436,27 @@ Event Page specific - move these out of here eventually
   background-repeat: no-repeat;
   background-position: bottom center;
 }
-/* line 228, sass/partials/_base.scss */
+/* line 243, sass/partials/_base.scss */
 .badge.badge.collected {
   background-position: top center;
 }
 
 /*******************************/
-/* line 237, sass/partials/_base.scss */
+/* line 252, sass/partials/_base.scss */
 .party-image-container {
   float: left;
 }
-/* line 242, sass/partials/_base.scss */
+/* line 257, sass/partials/_base.scss */
 .party-image-container input[type="radio"] {
   display: none;
 }
-/* line 246, sass/partials/_base.scss */
+/* line 261, sass/partials/_base.scss */
 .party-image-container .warner {
   width: 16rem;
   text-align: center;
   display: none;
 }
-/* line 255, sass/partials/_base.scss */
+/* line 270, sass/partials/_base.scss */
 .party-image-container.selected .party-image-selecter:after {
   content: "\e61f";
   font-family: "icomoon";
@@ -10425,18 +10467,18 @@ Event Page specific - move these out of here eventually
   opacity: .8;
   line-height: 8rem;
 }
-/* line 266, sass/partials/_base.scss */
+/* line 281, sass/partials/_base.scss */
 .party-image-container.selected .party-image-selecter:before {
   content: "";
   margin-left: 0;
 }
-/* line 271, sass/partials/_base.scss */
+/* line 286, sass/partials/_base.scss */
 .party-image-container.selected .warner {
   display: block;
   cursor: pointer;
 }
 
-/* line 278, sass/partials/_base.scss */
+/* line 293, sass/partials/_base.scss */
 .party-image-selecter {
   width: 16rem;
   height: 7.5rem;
@@ -10446,23 +10488,23 @@ Event Page specific - move these out of here eventually
   position: relative;
   overflow: hidden;
 }
-/* line 289, sass/partials/_base.scss */
+/* line 304, sass/partials/_base.scss */
 .party-image-selecter:before {
   color: white;
   font-size: 4.7rem;
   line-height: 7.5rem;
   margin-left: 6.8rem;
 }
-/* line 296, sass/partials/_base.scss */
+/* line 311, sass/partials/_base.scss */
 .party-image-selecter.image-unset {
   cursor: default;
 }
-/* line 300, sass/partials/_base.scss */
+/* line 315, sass/partials/_base.scss */
 .party-image-selecter.image-set:before {
   content: "";
 }
 
-/* line 305, sass/partials/_base.scss */
+/* line 320, sass/partials/_base.scss */
 .reference-image {
   width: 100%;
   height: 9rem;
@@ -10470,49 +10512,49 @@ Event Page specific - move these out of here eventually
 }
 
 /*******************************/
-/* line 318, sass/partials/_base.scss */
+/* line 333, sass/partials/_base.scss */
 .wall-details {
   color: #A19F91;
   min-height: 6rem;
 }
 
-/* line 325, sass/partials/_base.scss */
+/* line 340, sass/partials/_base.scss */
 .wall-name, wall-type {
   font-weight: bold;
   color: #7B7A6D;
 }
 
-/* line 330, sass/partials/_base.scss */
+/* line 345, sass/partials/_base.scss */
 .wall-type {
   text-transform: uppercase;
 }
-/* line 333, sass/partials/_base.scss */
+/* line 348, sass/partials/_base.scss */
 .wall-type.donation {
   color: #007eac;
 }
 
-/* line 338, sass/partials/_base.scss */
+/* line 353, sass/partials/_base.scss */
 .wall-time {
   color: #D4D3CC;
 }
 
-/* line 342, sass/partials/_base.scss */
+/* line 357, sass/partials/_base.scss */
 .donation-copy {
   color: #007eac;
   font-size: 2.3rem;
 }
 
 /*******************************/
-/* line 350, sass/partials/_base.scss */
+/* line 365, sass/partials/_base.scss */
 .ticket {
   position: relative;
 }
-/* line 353, sass/partials/_base.scss */
+/* line 368, sass/partials/_base.scss */
 .ticket .stub {
   background-color: #D4D3CC;
   overflow: hidden;
 }
-/* line 358, sass/partials/_base.scss */
+/* line 373, sass/partials/_base.scss */
 .ticket .stub .holes, .ticket .stub .holes-right {
   position: absolute;
   left: -.1rem;
@@ -10522,13 +10564,13 @@ Event Page specific - move these out of here eventually
   background-image: url('/img/raffle.svg?1411490329');
   background-repeat: no-repeat;
 }
-/* line 368, sass/partials/_base.scss */
+/* line 383, sass/partials/_base.scss */
 .ticket .stub .holes-right {
   left: auto;
   right: -.1rem;
   background-image: url('/img/raffle_r.svg?1411491819');
 }
-/* line 374, sass/partials/_base.scss */
+/* line 389, sass/partials/_base.scss */
 .ticket .stub .price {
   -moz-border-radius: 1rem;
   -webkit-border-radius: 1rem;
@@ -10539,33 +10581,33 @@ Event Page specific - move these out of here eventually
   text-align: center;
   line-height: 7.3rem;
 }
-/* line 391, sass/partials/_base.scss */
+/* line 406, sass/partials/_base.scss */
 .ticket.selected .stub {
   background-color: #007eac;
 }
-/* line 394, sass/partials/_base.scss */
+/* line 409, sass/partials/_base.scss */
 .ticket.selected .stub .price {
   color: white !important;
 }
-/* line 401, sass/partials/_base.scss */
+/* line 416, sass/partials/_base.scss */
 .ticket input[type="radio"] {
   display: none;
 }
 
-/* line 409, sass/partials/_base.scss */
+/* line 424, sass/partials/_base.scss */
 label .ticket span {
   color: inherit;
 }
 
 /*******************************/
-/* line 417, sass/partials/_base.scss */
+/* line 432, sass/partials/_base.scss */
 .totaliser {
   -moz-border-radius: 0.6rem;
   -webkit-border-radius: 0.6rem;
   border-radius: 0.6rem;
   background-color: #D4D3CC;
 }
-/* line 423, sass/partials/_base.scss */
+/* line 438, sass/partials/_base.scss */
 .totaliser .current-total {
   -moz-border-radius: 0.6rem;
   -webkit-border-radius: 0.6rem;
@@ -10598,24 +10640,24 @@ label .ticket span {
 /* =============================================================================
 One-off uses
 ========================================================================== */
-/* line 445, sass/partials/_base.scss */
+/* line 460, sass/partials/_base.scss */
 #twitter-widget-0 {
   width: 100% !important;
 }
 
-/* line 449, sass/partials/_base.scss */
+/* line 464, sass/partials/_base.scss */
 .home-twitter-boxx {
   height: 35.6rem;
 }
 
-/* line 453, sass/partials/_base.scss */
+/* line 468, sass/partials/_base.scss */
 .piggy-donater:after {
   content: "\e61c";
   font-family: "icomoon";
   color: white;
 }
 
-/* line 460, sass/partials/_base.scss */
+/* line 475, sass/partials/_base.scss */
 .join-party-ico:after {
   content: "\e601";
   font-family: "icomoon";
@@ -10623,7 +10665,7 @@ One-off uses
 }
 
 /*******************************/
-/* line 471, sass/partials/_base.scss */
+/* line 486, sass/partials/_base.scss */
 .hero {
   height: 45rem;
   background-image: url('/img/hero-ph.jpg?1411655923');
@@ -10634,24 +10676,24 @@ One-off uses
   padding-top: 10rem;
 }
 
-/* line 481, sass/partials/_base.scss */
+/* line 496, sass/partials/_base.scss */
 .planking {
   background: url('/img/wood_texture.jpg?1411035906') repeat top left;
   background-size: 100% auto;
 }
 
-/* line 486, sass/partials/_base.scss */
+/* line 501, sass/partials/_base.scss */
 .home-content-adjust {
   margin-top: -8rem;
 }
 
-/* line 490, sass/partials/_base.scss */
+/* line 505, sass/partials/_base.scss */
 .hero-explain {
   margin-right: 35rem;
   text-align: left;
 }
 
-/* line 495, sass/partials/_base.scss */
+/* line 510, sass/partials/_base.scss */
 .money-raised {
   position: absolute;
   top: 2.4rem;
@@ -10661,13 +10703,13 @@ One-off uses
   width: 34rem;
 }
 
-/* line 504, sass/partials/_base.scss */
+/* line 519, sass/partials/_base.scss */
 .raised-amount {
   color: white;
   width: 27.5rem;
 }
 
-/* line 509, sass/partials/_base.scss */
+/* line 524, sass/partials/_base.scss */
 .home-tile {
   background-color: white;
   position: relative;
@@ -10677,7 +10719,7 @@ One-off uses
   box-shadow: 0px 14px 30px 0px rgba(0, 0, 0, 0.6);
 }
 
-/* line 519, sass/partials/_base.scss */
+/* line 534, sass/partials/_base.scss */
 .home-tile-image {
   -moz-border-radius: 0.7rem;
   -webkit-border-radius: 0.7rem;
@@ -10688,7 +10730,7 @@ One-off uses
   width: 100%;
 }
 
-/* line 527, sass/partials/_base.scss */
+/* line 542, sass/partials/_base.scss */
 .home-tile-label {
   position: absolute;
   bottom: 0;
@@ -10697,32 +10739,32 @@ One-off uses
 }
 
 /*******************************/
-/* line 538, sass/partials/_base.scss */
+/* line 553, sass/partials/_base.scss */
 .spotify-holder {
   width: 35.6rem;
   margin-top: -7rem;
 }
 
-/* line 543, sass/partials/_base.scss */
+/* line 558, sass/partials/_base.scss */
 .spotify-info-holder {
   position: absolute;
   top: 12rem;
   color: white;
   text-align: center;
 }
-/* line 550, sass/partials/_base.scss */
+/* line 565, sass/partials/_base.scss */
 .spotify-info-holder h1 {
   color: white;
 }
 
 /*******************************/
-/* line 558, sass/partials/_base.scss */
+/* line 573, sass/partials/_base.scss */
 .scoreboard-place {
   float: left;
   width: 5rem;
 }
 
-/* line 563, sass/partials/_base.scss */
+/* line 578, sass/partials/_base.scss */
 .scoreboard-value {
   position: absolute;
   top: 0;
@@ -10731,22 +10773,22 @@ One-off uses
 }
 
 /*******************************/
-/* line 575, sass/partials/_base.scss */
+/* line 590, sass/partials/_base.scss */
 .idea-sizer {
   width: 25%;
 }
 
-/* line 579, sass/partials/_base.scss */
+/* line 594, sass/partials/_base.scss */
 .idea-tile {
   width: 25%;
   padding: 1.2rem;
 }
-/* line 584, sass/partials/_base.scss */
+/* line 599, sass/partials/_base.scss */
 .idea-tile.wide {
   width: 50%;
 }
 
-/* line 589, sass/partials/_base.scss */
+/* line 604, sass/partials/_base.scss */
 .idea {
   padding: 1.2rem;
   background-color: white;
@@ -10757,42 +10799,42 @@ One-off uses
   box-shadow: 0px 14px 30px 0px rgba(0, 0, 0, 0.6);
 }
 
-/* line 597, sass/partials/_base.scss */
+/* line 612, sass/partials/_base.scss */
 .idea-details {
   width: 100%;
   top: 11%;
   left: 0;
   padding: 0 1.2rem;
 }
-/* line 603, sass/partials/_base.scss */
+/* line 618, sass/partials/_base.scss */
 .idea-details.over-the-top {
   position: absolute;
   color: white;
 }
-/* line 607, sass/partials/_base.scss */
+/* line 622, sass/partials/_base.scss */
 .idea-details.over-the-top h1 {
   color: white;
 }
-/* line 612, sass/partials/_base.scss */
+/* line 627, sass/partials/_base.scss */
 .idea-details.wide {
   top: 23%;
 }
 
-/* line 617, sass/partials/_base.scss */
+/* line 632, sass/partials/_base.scss */
 .idea-polaroid {
   -moz-border-radius: 0.7rem;
   -webkit-border-radius: 0.7rem;
   border-radius: 0.7rem;
 }
 
-/* line 621, sass/partials/_base.scss */
+/* line 636, sass/partials/_base.scss */
 .pinterest-ico:before {
   content: "\e623";
   font-family: "icomoon";
   color: #E32333;
 }
 
-/* line 627, sass/partials/_base.scss */
+/* line 642, sass/partials/_base.scss */
 .spotify-logo {
   width: 8rem;
   height: 2.4rem;
@@ -10803,7 +10845,7 @@ One-off uses
   margin: 0 auto;
 }
 
-/* line 638, sass/partials/_base.scss */
+/* line 653, sass/partials/_base.scss */
 .idea-link {
   position: absolute;
   top: 0;
@@ -10814,7 +10856,7 @@ One-off uses
   text-indent: -999rem;
 }
 
-/* line 650, sass/partials/_base.scss */
+/* line 665, sass/partials/_base.scss */
 .share-title {
   width: 27.8rem;
   height: 11.6rem;
@@ -10823,7 +10865,7 @@ One-off uses
   background-size: 27.8rem 11.6rem;
 }
 
-/* line 659, sass/partials/_base.scss */
+/* line 674, sass/partials/_base.scss */
 .share-facebook, .share-twitter, .share-email {
   background-color: #3c5898;
   font-family: "macmillan";
@@ -10832,44 +10874,44 @@ One-off uses
   padding: 1.2rem;
   line-height: 5.5rem;
 }
-/* line 667, sass/partials/_base.scss */
+/* line 682, sass/partials/_base.scss */
 .share-facebook:before, .share-twitter:before, .share-email:before {
   font-family: "icomoon";
   content: "\e619";
   margin-right: 1.2rem;
 }
 
-/* line 674, sass/partials/_base.scss */
+/* line 689, sass/partials/_base.scss */
 .share-twitter {
   background-color: #17abed;
 }
-/* line 676, sass/partials/_base.scss */
+/* line 691, sass/partials/_base.scss */
 .share-twitter:before {
   content: "\e61a";
 }
 
-/* line 682, sass/partials/_base.scss */
+/* line 697, sass/partials/_base.scss */
 .share-email {
   background-color: #007eac;
 }
-/* line 684, sass/partials/_base.scss */
+/* line 699, sass/partials/_base.scss */
 .share-email:before {
   content: "\e618";
   margin-right: 0;
 }
 
 /*******************************/
-/* line 694, sass/partials/_base.scss */
+/* line 709, sass/partials/_base.scss */
 .color-facebook {
   color: #3c5898 !important;
 }
 
-/* line 695, sass/partials/_base.scss */
+/* line 710, sass/partials/_base.scss */
 .color-twitter {
   color: #17abed !important;
 }
 
-/* line 696, sass/partials/_base.scss */
+/* line 711, sass/partials/_base.scss */
 .color-gplus {
   color: #cd3627 !important;
 }

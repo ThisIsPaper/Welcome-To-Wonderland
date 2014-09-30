@@ -1,8 +1,13 @@
 ﻿@model ProfileImageForm
 
-@using (Html.BeginUmbracoForm<ProfileSurfaceController>("HandleProfileImageForm", FormMethod.Post, new { enctype = "multipart/form-data" }))
+@using (Html.BeginUmbracoForm<ProfileSurfaceController>("HandleProfileImageForm", FormMethod.Post, new { enctype = "multipart/form-data"}))
 {
     @Html.AntiForgeryToken()
 
-    @Html.EditorForModel()
+    @*@Html.EditorForModel()*@
+
+    <div class="choose-file-wrapper icon-icon_camera margin-bottom-small" data-ng-class="{'disabled': feedback.profileImageProcessing}">
+        <input class="choose-file" type="file" name="profileImage" accept="image/jpeg,image/gif,image/png" m-file-selected="submit()" ng-disabled="feedback.profileImageProcessing" />
+    </div>
+    <div class="loader" ng-show="feedback.profileImageProcessing"></div>
 }

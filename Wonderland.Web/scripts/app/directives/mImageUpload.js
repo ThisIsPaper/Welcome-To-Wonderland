@@ -3,11 +3,18 @@ wonderlandApp.directive('mImageUpload', ['fileUpload', '$rootScope', function(fi
         scope: true,
         link: function(scope, element, attrs) {
 
+            var onStartEvent = attrs.mOnStartEvent;
             var onSuccessEvent = attrs.mOnSuccessEvent;
 
             scope.submit = function() {
                 // TODO: Check file extension
                 scope.uploading = true;
+
+
+                // Fire off the start event
+                if (onStartEvent) {
+                    $rootScope.$emit(onStartEvent);
+                }
 
                 fileUpload.backgroundUpload(element.find('form')).then(function(response) {
 

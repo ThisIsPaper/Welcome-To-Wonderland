@@ -32,9 +32,12 @@
     else
     {
         <div class="nav-end-block end-block-right">
-            <a href="@Model.ProfileUrl" class="btn-secondary btn-small" m-radius-picker="small">My Profile</a>
+            <div class="small" m-profile-image="{{ pageProfile.imageUrl }}" m-radius-picker="small" ng-click="showAccountMenu=!showAccountMenu"></div>
 
-            <a href="/logout/" class="btn-secondary btn-small" m-radius-picker="small">Logout <span class="icon-icon_person"></span></a>
+            <div class="account-menu" ng-show="showAccountMenu">
+                <a href="@Model.ProfileUrl" class="btn-secondary btn-small" m-radius-picker="small">My Profile</a>
+                <a href="/logout/" class="btn-secondary btn-small" m-radius-picker="small">Logout <span class="icon-icon_person"></span></a>
+            </div>
         </div>
     }
 
@@ -82,7 +85,7 @@
         </a>
 
 
-        <div class="account-menu">
+        @*<div class="account-menu">
             <div class="menu">
                 <ul>
                     <li><a class="" href="#"><span class="icon-icon_person"></span>My Party</a></li>
@@ -90,7 +93,7 @@
                     <li><a class="" href="#"><span class="icon-icon_person"></span>Logout</a></li>
                 </ul>
             </div>
-        </div>
+        </div>*@
 
 
     </nav>

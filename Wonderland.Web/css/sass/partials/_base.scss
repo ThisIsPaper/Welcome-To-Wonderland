@@ -12,6 +12,7 @@
  This file is responsible for establishing base styles for the Macmillan - Wonderland app.
  --------------------------------------------------------------------------------------------------------------------- */
 
+
 @import "compass/css3";
 @import "partials/variables";
 @import "partials/helpers";
@@ -55,6 +56,15 @@ pre {
 td {
     padding-right: $padSmallValue * $multiplierLarge;
 }
+
+
+/************************************************************************** ANGULAR
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
+}
+
+
 
 /* =============================================================================
 Shadows
@@ -174,6 +184,11 @@ Event Page specific - move these out of here eventually
 
     &.profile-image-notset:before {
         content: "\e61b";
+    }
+
+    &.small {
+        width: $profileImageSize * .7;
+        height: $profileImageSize * .7;
     }
 }
 

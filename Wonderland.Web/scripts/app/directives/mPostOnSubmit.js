@@ -80,7 +80,6 @@ wonderlandApp.directive('mPostOnSubmit', ['safeApply', 'mHttp', '$parse', '$root
             return;
 
             function setProgressState(state) {
-                console.log('setProgressState', state);
                 progressState = state;
                 if (progressVar) {
                     progressVar.assign(scope.$parent, state);
