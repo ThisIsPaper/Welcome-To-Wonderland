@@ -18,8 +18,6 @@ wonderlandApp.factory('fileUpload', ['$document', '$q', 'uniqueId',
             var targetIframe = $('<iframe/>', {name: formTarget, id: formTarget}).appendTo($document.find('body'));
             form.attr('target', formTarget);
 
-            console.log('fileUpload::targetIframe', formTarget);
-
             form.submit();
 
             targetIframe.load(function() {

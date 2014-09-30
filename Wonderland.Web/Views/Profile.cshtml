@@ -18,6 +18,9 @@
 
                 <h3>Your basic details</h3>
 
+
+
+
                 <h4 class="tight">Name</h4>
 
                 <div class="grid-8 grid-tablet-12">
@@ -26,6 +29,40 @@
                 </div>
 
                 @(Html.Action<ProfileSurfaceController>("RenderProfileNamesForm"))
+
+
+                <div class="grid-12">
+
+                    <hr/>
+                    <h4>Profile image</h4>
+
+                </div>
+
+                <div class="grid-8 grid-tablet-12 parent">
+
+                    <div class="boxx internal" m-radius-picker="small">
+
+                        @* display the profile picture *@
+                        <div m-profile-image="{{ pageProfile.imageUrl }}" m-radius-picker="small"></div>
+
+
+                        <div class="image-shift-details">
+                            <div m-image-upload m-on-start-event="profileImageUploadStart" m-on-success-event="profileImageUpdated">
+
+
+                                @(Html.Action<ProfileSurfaceController>("RenderProfileImageForm"))
+
+
+                            </div>
+
+                            <div class="successful" ng-show="feedback.profileImageShowSuccess">Image uploaded successfully</div>
+                            <div class="errorred" ng-show="feedback.profileImageShowError">Oops something went wrong!</div>
+
+                            <div class="file-upload-info margin-left-0">Recommended dimensions of 500x500</div>
+                            <div class="file-upload-info margin-left-0">Maximum file size of 1MB</div>
+                        </div>
+                    </div>
+                </div>
 
 
             </div>
@@ -38,7 +75,6 @@
 
 
 @*
-@(Html.Action<ProfileSurfaceController>("RenderProfileImageForm"))
 
 @(Html.Action<ProfileSurfaceController>("RenderProfileBillingAddressForm"))
 

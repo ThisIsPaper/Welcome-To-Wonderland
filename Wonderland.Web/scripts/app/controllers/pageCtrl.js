@@ -3,6 +3,9 @@ wonderlandApp.controller('PageCtrl', ['debounce', '$rootScope', '$scope', '$wind
     $scope.pageHeaderCompress = false;
     $scope.pageShowingSideNavMenu = false;
     $scope.pageShowingSideAccountMenu = false;
+    $scope.pageProfile = {
+        imageUrl: null
+    };
 
 
 

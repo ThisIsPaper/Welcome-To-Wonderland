@@ -264,6 +264,12 @@ button[disabled=disabled]:hover {
         padding-right: 4.4rem;
         line-height: 1.6rem;
     }
+
+    &.disabled:after {
+        cursor: default;
+        background-color: $greyLight;
+        color: $greyMedium;
+    }
 }
 
 
