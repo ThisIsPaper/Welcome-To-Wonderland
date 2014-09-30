@@ -52,6 +52,7 @@
 
         <div class="clear width-50p">
             <label>Or a custom amount</label>
+            <div class="errorred margin-bottom-small" ng-show="guideDonation.donation>=1000">Are you sure you want to donate this amount of money, it seems like a lot!</div>
             <div class="pos-relative width-50p">
                 <span class="form-field-ico">£</span>
                 @Html.TextBoxFor(x => x.Amount, new { @class="currency", @ng_model="guideDonation.donation", @m_radius_picker="small", @m_valid_number="", @m_value_matcher="", @ng_readonly="processing", @ng_class="{'error': errorAmountMessage.length>0}" })
@@ -106,8 +107,6 @@
         <div class="margin-bottom-small" ng-show="errorPostcodeMessage.length>0" ng-init="errorPostcodeMessage='@Html.ValidationMessageFor(x => x.Postcode)'">@Html.ValidationMessageFor(x => x.Postcode)</div>
 
         <div class="clear margin-bottom-large"></div>
-
-        <hr/>
 
 
 

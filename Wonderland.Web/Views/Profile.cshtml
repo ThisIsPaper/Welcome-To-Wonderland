@@ -23,22 +23,22 @@
 
                 <h4 class="tight">Name</h4>
 
-                <div class="grid-8 grid-tablet-12">
+                <div class="grid-8 grid-tablet-12 margin-bottom-large">
                     <div class="successful margin-bottom-small" ng-show="feedback.profileNameShowSuccess">Your name was successfully changed</div>
-                    <div class="errorred margin-bottom-small" ng-show="feedback.profileNameErrorMessage.length>0" ng-bind="feedback.profileNameErrorMessage"></div>
+                    <div class="errorred margin-bottom-small" ng-show="feedback.profileNameShowError">Your changed name couldn't be saved, check both fields are filled out and try again</div>
                 </div>
 
                 @(Html.Action<ProfileSurfaceController>("RenderProfileNamesForm"))
 
 
-                <div class="grid-12">
+                <div class="wgrid-full parent">
 
                     <hr/>
                     <h4>Profile image</h4>
 
                 </div>
 
-                <div class="grid-8 grid-tablet-12 parent">
+                <div class="grid-8 grid-tablet-12 parent margin-bottom-large">
 
                     <div class="boxx internal" m-radius-picker="small">
 
@@ -65,6 +65,55 @@
                 </div>
 
 
+                <div class="wgrid-full pad-0">
+
+                    <hr/>
+
+                    <h3>Your address</h3>
+
+                    @if (this.Members.GetCurrentPartier() is PartyHost)
+                    {
+                        <p>Please change your party address on your <a href="@(((IPartier)this.Members.GetCurrentMember()).PartyUrl)" class="body-highlight">party page</a>.</p>
+
+                        <p>If you want to change the delivery address for your party kit please contact the support team by email <span class="body-highlight">wonderland@macmillan.org.uk</span> or call <span class="body-emphasize">02380 654 456</span></p>
+
+                        <hr/>
+                    }
+
+                </div>
+
+                <div class="grid-8 grid-tablet-12 parent margin-bottom-large">
+
+                    <h4 class="tight">Billing address</h4>
+
+                    <div class="successful margin-bottom-small" ng-show="feedback.profileBillingAddressShowSuccess">Your billing address was successfully changed</div>
+                    <div class="errorred margin-bottom-small" ng-show="feedback.profileBillingAddressShowError">Your changed billing address couldn't be saved, please check the details and try again</div>
+
+                </div>
+
+                <div class="wgrid-full parent">
+
+                    @(Html.Action<ProfileSurfaceController>("RenderProfileBillingAddressForm"))
+
+
+                    <hr/>
+                </div>
+
+                <div class="grid-8 grid-tablet-12 parent margin-bottom-large">
+
+                    <h3>Change your password</h3>
+
+                    <div class="successful margin-bottom-small" ng-show="feedback.profilePasswordShowSuccess">Your password was successfully changed</div>
+                    <div class="errorred margin-bottom-small" ng-show="feedback.profilePasswordShowError">Your changed password couldn't be saved, please try again</div>
+
+                </div>
+
+                <div class="wgrid">
+
+                    @(Html.Action<ProfileSurfaceController>("RenderProfileChangePasswordForm"))
+
+                </div>
+
             </div>
 
         </div>
@@ -76,7 +125,4 @@
 
 @*
 
-@(Html.Action<ProfileSurfaceController>("RenderProfileBillingAddressForm"))
-
-@(Html.Action<ProfileSurfaceController>("RenderProfileChangePasswordForm"))
 *@

@@ -1,57 +1,18 @@
 ﻿@model DonateForm
 
-@using (Html.BeginUmbracoForm<DonateSurfaceController>("HandleDonateForm"))
+@using (Html.BeginUmbracoForm<DonateSurfaceController>("HandleDonateForm", FormMethod.Post, new { ng_submit="processing=true" }))
 {
     @Html.AntiForgeryToken()
 
-    @*@Html.EditorForModel()*@
-
-
-
-    <h3>Are you going?</h3>
-
-    <label class="radio-form"><input type="radio" name="going" />I'm attending the party</label>
-    <label class="radio-form"><input type="radio" name="going" />I can't make the date, but would love to donate</label>
-
-    <hr/>
-
-    <h3>Choose your donation amount</h3>
-    <p>Nullam fermentum, felis vel tempus imperdiet, magna tellus bibendum lorem, ut tempus purus nulla eget neque. Integer dapibus vulputate mi, in mattis metus venenatis non</p>
-
-
-    <div class="container">
-        <div class="pos-relative grid-3 grid-mobile-6 pad-0" ng-repeat="donation in guideDonationSuggestions">
-            <label>
-
-                <div class="ticket clickable" ng-class="{'selected': guideDonation.donation==donation.amount}">
-
-                    <div class="stub">
-                        <div class="holes"></div>
-                        <div class="holes-right"></div>
-                        <div class="price">£<span ng-bind="donation.amount"></span></div>
-                    </div>
-
-                    <div class="form-info body-highlight text-align-center" ng-bind="donation.label"></div>
-
-                    <input type="radio" name="Amount" ng-value="donation.amount" ng-model="guideDonation.donation" />
-
-                </div>
-
-            </label>
-        </div>
-    </div>
-
-
+    <h3>Enter your donation amount</h3>
 
     <div class="clear width-50p">
-        <label>Or a custom amount</label>
-        <div class="margin-bottom-small" ng-show="errorAmountMessage.length>0" ng-init="errorAmountMessage='@Html.ValidationMessageFor(x => x.Amount)'">@Html.ValidationMessageFor(x => x.Amount)</div>
-        <div class="pos-relative width-50p">
+        <div class="errorred margin-bottom-small" ng-show="guideDonation.donation>=1000">Are you sure you want to donate this amount of money, it seems like a lot!</div>
+        <div class="pos-relative">
             <span class="form-field-ico">£</span>
-            @Html.TextBoxFor(x => x.Amount, new { @class="currency", @ng_model="guideDonation.donation", @m_radius_picker="small", @m_valid_number="", @m_value_matcher="" })
+            @Html.TextBoxFor(x => x.Amount, new { @class="currency", @m_radius_picker="small", @m_valid_number="", @ng_readonly="processing", @ng_class="{'error': errorAmountMessage.length>0}"})
         </div>
-
-        <div class="form-info">Enter a value between £0 and £200</div>
+        <div class="margin-bottom-small" ng-show="errorAmountMessage.length>0" ng-init="errorAmountMessage='@Html.ValidationMessageFor(x => x.Amount)'">@Html.ValidationMessageFor(x => x.Amount)</div>
     </div>
 
 
@@ -72,39 +33,39 @@
 
     <h3>Enter your billing details</h3>
 
-    <label for="FirstName">First name</label>
-    <div class="margin-bottom-small" ng-show="errorFirstNameMessage.length>0" ng-init="errorFirstNameMessage='@Html.ValidationMessageFor(x => x.FirstName)'">@Html.ValidationMessageFor(x => x.FirstName)</div>
-    @Html.TextBoxFor(x => x.FirstName, new { @m_radius_picker="small" })
+    <div class="margin-bottom-large">
+        <label for="FirstName">First name</label>
+        @Html.TextBoxFor(x => x.FirstName, new { @m_radius_picker="small", @ng_readonly="processing", @ng_class="{'error': errorFirstNameMessage.length>0}" })
+        <div class="margin-bottom-small" ng-show="errorFirstNameMessage.length>0" ng-init="errorFirstNameMessage='@Html.ValidationMessageFor(x => x.FirstName)'">@Html.ValidationMessageFor(x => x.FirstName)</div>
 
-    <label for="LastName">Last name</label>
-    <div class="margin-bottom-small" ng-show="errorLastNameMessage.length>0" ng-init="errorLastNameMessage='@Html.ValidationMessageFor(x => x.LastName)'">@Html.ValidationMessageFor(x => x.LastName)</div>
-    @Html.TextBoxFor(x => x.LastName, new { @m_radius_picker="small" })
+        <label for="LastName">Last name</label>
+        @Html.TextBoxFor(x => x.LastName, new { @m_radius_picker="small", @ng_readonly="processing", @ng_class="{'error': errorLastNameMessage.length>0}" })
+        <div class="margin-bottom-small" ng-show="errorLastNameMessage.length>0" ng-init="errorLastNameMessage='@Html.ValidationMessageFor(x => x.LastName)'">@Html.ValidationMessageFor(x => x.LastName)</div>
 
-    <h4>Your address</h4>
+        <h4>Your address</h4>
 
-    <label for="Address1">Address 1</label>
-    <div class="margin-bottom-small" ng-show="errorAddress1Message.length>0" ng-init="errorAddress1Message='@Html.ValidationMessageFor(x => x.Address1)'">@Html.ValidationMessageFor(x => x.Address1)</div>
-    @Html.TextBoxFor(x => x.Address1, new { @m_radius_picker="small" })
+        <label for="Address1">Address 1</label>
+        @Html.TextBoxFor(x => x.Address1, new { @m_radius_picker="small", @ng_readonly="processing", @ng_class="{'error': errorAddress1Message.length>0}" })
+        <div class="margin-bottom-small" ng-show="errorAddress1Message.length>0" ng-init="errorAddress1Message='@Html.ValidationMessageFor(x => x.Address1)'">@Html.ValidationMessageFor(x => x.Address1)</div>
 
-    <label for="Address2">Address 2</label>
-    <div class="margin-bottom-small" ng-show="errorAddress2Message.length>0" ng-init="errorAddress2Message='@Html.ValidationMessageFor(x => x.Address2)'">@Html.ValidationMessageFor(x => x.Address2)</div>
-    @Html.TextBoxFor(x => x.Address2, new { @m_radius_picker="small" })
+        <label for="Address2">Address 2</label>
+        @Html.TextBoxFor(x => x.Address2, new { @m_radius_picker="small", @ng_readonly="processing", @ng_class="{'error': errorAddress2Message.length>0}" })
+        <div class="margin-bottom-small" ng-show="errorAddress2Message.length>0" ng-init="errorAddress2Message='@Html.ValidationMessageFor(x => x.Address2)'">@Html.ValidationMessageFor(x => x.Address2)</div>
 
-    <label for="TownCity">Town/City</label>
-    <div class="margin-bottom-small" ng-show="errorTownCityMessage.length>0" ng-init="errorTownCityMessage='@Html.ValidationMessageFor(x => x.TownCity)'">@Html.ValidationMessageFor(x => x.TownCity)</div>
-    @Html.TextBoxFor(x => x.TownCity, new { @m_radius_picker="small" })
+        <label for="TownCity">Town/City</label>
+        @Html.TextBoxFor(x => x.TownCity, new { @m_radius_picker="small", @ng_readonly="processing", @ng_class="{'error': errorTownCityMessage.length>0}" })
+        <div class="margin-bottom-small" ng-show="errorTownCityMessage.length>0" ng-init="errorTownCityMessage='@Html.ValidationMessageFor(x => x.TownCity)'">@Html.ValidationMessageFor(x => x.TownCity)</div>
 
-    <label for="Postcode">Postcode</label>
-    <div class="margin-bottom-small" ng-show="errorPostcodeMessage.length>0" ng-init="errorPostcodeMessage='@Html.ValidationMessageFor(x => x.Postcode)'">@Html.ValidationMessageFor(x => x.Postcode)</div>
-    @Html.TextBoxFor(x => x.Postcode, new { @class="margin-bottom-large", @m_radius_picker="small" })
-
-
-    <hr/>
-
+        <label for="Postcode">Postcode</label>
+        @Html.TextBoxFor(x => x.Postcode, new { @m_radius_picker="small", @ng_readonly="processing", @ng_class="{'error': errorPostcodeMessage.length>0}" })
+        <div class="margin-bottom-small" ng-show="errorPostcodeMessage.length>0" ng-init="errorPostcodeMessage='@Html.ValidationMessageFor(x => x.Postcode)'">@Html.ValidationMessageFor(x => x.Postcode)</div>
+    </div>
 
 
-    <button type="submit" class="btn-primary float-right" m-radius-picker="small">Proceed</button>
+
+    <button type="submit" class="btn-primary float-right" m-radius-picker="small" ng-disabled="processing">Proceed</button>
     <span class="cancel margin-right-1 float-right">Cancel</span>
+    <div class="loader" ng-show="processing"></div>
 }
 
 
