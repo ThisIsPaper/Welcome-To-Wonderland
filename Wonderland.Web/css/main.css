@@ -6816,11 +6816,16 @@ button[disabled=disabled]:hover {
 }
 
 /* line 227, sass/partials/_forms.scss */
+select.auto-width {
+  width: auto;
+}
+
+/* line 231, sass/partials/_forms.scss */
 *:focus {
   outline: 0;
 }
 
-/* line 233, sass/partials/_forms.scss */
+/* line 237, sass/partials/_forms.scss */
 .choose-file-wrapper {
   width: 16.2rem;
   height: 4rem;
@@ -6828,7 +6833,7 @@ button[disabled=disabled]:hover {
   position: relative;
   cursor: pointer;
 }
-/* line 241, sass/partials/_forms.scss */
+/* line 245, sass/partials/_forms.scss */
 .choose-file-wrapper:before {
   position: relative;
   z-index: 10;
@@ -6838,7 +6843,7 @@ button[disabled=disabled]:hover {
   font-size: 1.4rem;
   line-height: 3.8rem;
 }
-/* line 251, sass/partials/_forms.scss */
+/* line 255, sass/partials/_forms.scss */
 .choose-file-wrapper:after {
   content: "Upload file";
   position: absolute;
@@ -6850,14 +6855,14 @@ button[disabled=disabled]:hover {
   padding-right: 4.4rem;
   line-height: 1.6rem;
 }
-/* line 269, sass/partials/_forms.scss */
+/* line 273, sass/partials/_forms.scss */
 .choose-file-wrapper.disabled:after {
   cursor: default;
   background-color: #D4D3CC;
   color: #A19F91;
 }
 
-/* line 277, sass/partials/_forms.scss */
+/* line 281, sass/partials/_forms.scss */
 .choose-file {
   width: 200%;
   height: 100%;
@@ -6871,7 +6876,7 @@ button[disabled=disabled]:hover {
   opacity: 0;
 }
 
-/* line 290, sass/partials/_forms.scss */
+/* line 294, sass/partials/_forms.scss */
 .form-field-ico {
   position: absolute;
   top: 0;
@@ -9941,11 +9946,16 @@ button[disabled=disabled]:hover {
 }
 
 /* line 227, sass/partials/_forms.scss */
+select.auto-width {
+  width: auto;
+}
+
+/* line 231, sass/partials/_forms.scss */
 *:focus {
   outline: 0;
 }
 
-/* line 233, sass/partials/_forms.scss */
+/* line 237, sass/partials/_forms.scss */
 .choose-file-wrapper {
   width: 16.2rem;
   height: 4rem;
@@ -9953,7 +9963,7 @@ button[disabled=disabled]:hover {
   position: relative;
   cursor: pointer;
 }
-/* line 241, sass/partials/_forms.scss */
+/* line 245, sass/partials/_forms.scss */
 .choose-file-wrapper:before {
   position: relative;
   z-index: 10;
@@ -9963,7 +9973,7 @@ button[disabled=disabled]:hover {
   font-size: 1.4rem;
   line-height: 3.8rem;
 }
-/* line 251, sass/partials/_forms.scss */
+/* line 255, sass/partials/_forms.scss */
 .choose-file-wrapper:after {
   content: "Upload file";
   position: absolute;
@@ -9975,14 +9985,14 @@ button[disabled=disabled]:hover {
   padding-right: 4.4rem;
   line-height: 1.6rem;
 }
-/* line 269, sass/partials/_forms.scss */
+/* line 273, sass/partials/_forms.scss */
 .choose-file-wrapper.disabled:after {
   cursor: default;
   background-color: #D4D3CC;
   color: #A19F91;
 }
 
-/* line 277, sass/partials/_forms.scss */
+/* line 281, sass/partials/_forms.scss */
 .choose-file {
   width: 200%;
   height: 100%;
@@ -9996,7 +10006,7 @@ button[disabled=disabled]:hover {
   opacity: 0;
 }
 
-/* line 290, sass/partials/_forms.scss */
+/* line 294, sass/partials/_forms.scss */
 .form-field-ico {
   position: absolute;
   top: 0;
