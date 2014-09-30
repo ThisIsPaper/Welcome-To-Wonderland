@@ -121,8 +121,6 @@ wonderlandApp.controller('PartyCtrl', ['safeApply', '$ocModal', '$sce', '$scope'
 
     $scope.fundraisingTargetDataInit = function (fundraisingTargetData) {
 
-        console.log('fundraisingTargetDataInit', fundraisingTargetData);
-
         $scope.fundraisingTargetData = fundraisingTargetData;
         $scope.fundraisingTargetDataForForm = angular.copy($scope.fundraisingTargetData);
     };

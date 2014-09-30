@@ -42,6 +42,10 @@ wonderlandApp.run(['$rootScope', '$ocModal', function ($rootScope, $ocModal) {
 
     };
 
+    $rootScope.closePageModal = function (modalId) {
+        $ocModal.open(modal);
+    };
+
 
     moment.fn.toASP = function () {
 //        return '/Date(' + (+this) + this.format('ZZ') + ')/'; // with timezone, maybe add later

@@ -1005,6 +1005,16 @@ abstract
   margin-top: 10rem;
 }
 
+/* line 160, sass/partials/_abstract.scss */
+.float-left {
+  float: left;
+}
+
+/* line 161, sass/partials/_abstract.scss */
+.float-right {
+  float: right;
+}
+
 /* line 166, sass/partials/_abstract.scss */
 .radius-v1-small, .successful, .errorred, .field-validation-error, .extra-info-block, .idea-tile {
   -moz-border-radius-topleft: 1.64rem 1.1rem;
@@ -1303,6 +1313,16 @@ abstract
 }
 
 /* line 272, sass/partials/_abstract.scss */
+.min-height-11 {
+  min-height: 11rem;
+}
+
+/* line 273, sass/partials/_abstract.scss */
+.min-height-12 {
+  min-height: 12rem;
+}
+
+/* line 274, sass/partials/_abstract.scss */
 .min-height-20 {
   min-height: 20rem;
 }
@@ -6034,6 +6054,16 @@ abstract
   margin-top: 10rem;
 }
 
+/* line 160, sass/partials/_abstract.scss */
+.float-left {
+  float: left;
+}
+
+/* line 161, sass/partials/_abstract.scss */
+.float-right {
+  float: right;
+}
+
 /* line 166, sass/partials/_abstract.scss */
 .radius-v1-small, .successful, .errorred, .field-validation-error, .extra-info-block, .idea-tile {
   -moz-border-radius-topleft: 1.64rem 1.1rem;
@@ -6332,6 +6362,16 @@ abstract
 }
 
 /* line 272, sass/partials/_abstract.scss */
+.min-height-11 {
+  min-height: 11rem;
+}
+
+/* line 273, sass/partials/_abstract.scss */
+.min-height-12 {
+  min-height: 12rem;
+}
+
+/* line 274, sass/partials/_abstract.scss */
 .min-height-20 {
   min-height: 20rem;
 }
@@ -8039,6 +8079,16 @@ abstract
   margin-top: 10rem;
 }
 
+/* line 160, sass/partials/_abstract.scss */
+.float-left {
+  float: left;
+}
+
+/* line 161, sass/partials/_abstract.scss */
+.float-right {
+  float: right;
+}
+
 /* line 166, sass/partials/_abstract.scss */
 .radius-v1-small, .successful, .errorred, .field-validation-error, .extra-info-block, .idea-tile {
   -moz-border-radius-topleft: 1.64rem 1.1rem;
@@ -8337,6 +8387,16 @@ abstract
 }
 
 /* line 272, sass/partials/_abstract.scss */
+.min-height-11 {
+  min-height: 11rem;
+}
+
+/* line 273, sass/partials/_abstract.scss */
+.min-height-12 {
+  min-height: 12rem;
+}
+
+/* line 274, sass/partials/_abstract.scss */
 .min-height-20 {
   min-height: 20rem;
 }
@@ -9111,6 +9171,16 @@ abstract
   margin-top: 10rem;
 }
 
+/* line 160, sass/partials/_abstract.scss */
+.float-left {
+  float: left;
+}
+
+/* line 161, sass/partials/_abstract.scss */
+.float-right {
+  float: right;
+}
+
 /* line 166, sass/partials/_abstract.scss */
 .radius-v1-small, .successful, .errorred, .field-validation-error, .extra-info-block, .idea-tile {
   -moz-border-radius-topleft: 1.64rem 1.1rem;
@@ -9409,6 +9479,16 @@ abstract
 }
 
 /* line 272, sass/partials/_abstract.scss */
+.min-height-11 {
+  min-height: 11rem;
+}
+
+/* line 273, sass/partials/_abstract.scss */
+.min-height-12 {
+  min-height: 12rem;
+}
+
+/* line 274, sass/partials/_abstract.scss */
 .min-height-20 {
   min-height: 20rem;
 }
@@ -10491,7 +10571,7 @@ label .ticket span {
   -webkit-border-radius: 0.6rem;
   border-radius: 0.6rem;
   background-color: #007eac;
-  background-image: url('/img/frost.png?1412007012');
+  background-image: url('/img/frost.png?1412007906');
   background-repeat: no-repeat;
   background-position: top left;
   width: 0;

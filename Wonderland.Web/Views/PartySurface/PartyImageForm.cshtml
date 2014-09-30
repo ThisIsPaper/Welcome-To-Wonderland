@@ -9,18 +9,20 @@
 
 <script type="text/ng-template" id="partials/partyImageForm.html">
 
-    <div class="">
+    <div class="form-holder wide">
         <h4>Choose a party image from our gallery</h4>
 
 
         @* Dynamic defaults *@
 
-        <div class="party-image-container" ng-class="{'selected': partyImageData.PartyImage==defaultImage}" ng-repeat="defaultImage in partyImageDefaultData">
-            <label>
-                <input type="radio" name="urlSelectar" ng-model="partyImageData.PartyImage" ng-value="defaultImage"  />
-                <div class="party-image-selecter" ng-style="{'background-image': 'url(' + defaultImage + ')'}" m-radius-picker="small"></div>
-            </label>
-            <div class="warner" ng-click="partyImageData.PartyImage=null">Deselect image <span class="icon-icon_x"></span></div>
+        <div class="grid-4 grid-tablet-6 grid-mobile-12" ng-repeat="defaultImage in partyImageDefaultData">
+            <div class="party-image-container min-height-12" ng-class="{'selected': partyImageData.PartyImage==defaultImage}">
+                <label>
+                    <input type="radio" name="urlSelectar" ng-model="partyImageData.PartyImage" ng-value="defaultImage"  />
+                    <div class="party-image-selecter" ng-style="{'background-image': 'url(' + defaultImage + ')'}" m-radius-picker="small"></div>
+                </label>
+                <div class="warner" ng-click="partyImageData.PartyImage=null">Deselect image <span class="icon-icon_x"></span></div>
+            </div>
         </div>
 
         <div class="clear"></div>
@@ -29,32 +31,40 @@
 
     <h4>Or upload your own</h4>
 
+    <div class="grid-8 grid-tablet-12 parent margin-bottom-large">
 
-    <div class="boxx internal margin-bottom-medium" m-radius-picker="small">
+        <div class="boxx internal margin-bottom-medium" m-radius-picker="small">
 
-        <div class="party-image-container"ng-class="{'selected': (partyImageData.PartyImage==partyCustomImage.url && partyCustomImage.url)}">
-            <label>
-                <input type="radio" name="urlSelectar" ng-model="partyImageData.PartyImage" value="{{ partyCustomImage.url }}" ng-disabled="!partyCustomImage.url"  />
-                <div class="party-image-selecter icon-icon_question_mark" ng-style="{'background-image': 'url(' + partyCustomImage.url + ')'}" ng-class="{'image-set': partyCustomImage.url, 'image-unset': !partyCustomImage.url}" m-radius-picker="small"></div>
-            </label>
-            <div class="warner" ng-click="partyImageData.PartyImage=null">Deselect image <span class="icon-icon_x"></span></div>
+            <div class="float-left">
+                <div class="party-image-container"ng-class="{'selected': (partyImageData.PartyImage==partyCustomImage.url && partyCustomImage.url)}">
+                    <label>
+                        <input type="radio" name="urlSelectar" ng-model="partyImageData.PartyImage" value="{{ partyCustomImage.url }}" ng-disabled="!partyCustomImage.url"  />
+                        <div class="party-image-selecter icon-icon_question_mark" ng-style="{'background-image': 'url(' + partyCustomImage.url + ')'}" ng-class="{'image-set': partyCustomImage.url, 'image-unset': !partyCustomImage.url}" m-radius-picker="small"></div>
+                    </label>
+                    <div class="warner" ng-click="partyImageData.PartyImage=null">Deselect image <span class="icon-icon_x"></span></div>
+                </div>
+            </div>
+
+            @(Html.Action<PartySurfaceController>("RenderCustomPartyImageForm"))
+
+            <div class="file-upload-info">Recommended dimensions of 500x500</div>
+            <div class="file-upload-info">Maximum file size of 1MB</div>
         </div>
-
-        @(Html.Action<PartySurfaceController>("RenderCustomPartyImageForm"))
-
-        <div class="file-upload-info">Recommended dimensions of 500x500</div>
-        <div class="file-upload-info">Maximum file size of 1MB</div>
     </div>
 
-    <div>
-        @using (Html.BeginUmbracoForm<PartySurfaceController>("HandlePartyImageForm", FormMethod.Post, new { m_serialized="", m_post_on_submit="partyImageData", m_on_success_event="partyImageUpdated" }))
+    <div class="grid-12" ng-init="processing=false">
+
+        <hr/>
+
+        @using (Html.BeginUmbracoForm<PartySurfaceController>("HandlePartyImageForm", FormMethod.Post, new { m_serialized="", m_post_on_submit="partyImageData", m_on_success_event="partyImageUpdated", ng_submit="processing=true" }))
         {
             @Html.AntiForgeryToken()
 
             <input name="PartyImage" type="hidden" ng-model="partyImageData.PartyImage">
 
-            <button type="submit" class="btn-primary float-right" ng-disabled="!partyImageData.PartyImage" m-radius-picker="small medium">Save changes</button>
-            <span class="cancel margin-right-1 float-right">Cancel</span>
+            <button type="submit" class="btn-primary float-right" ng-disabled="!partyImageData.PartyImage||processing" m-radius-picker="small medium">Save changes</button>
+            <span ng-click="closePageModal(modalId)" class="cancel margin-right-1 float-right">Cancel</span>
+            <div class="loader float-left" ng-show="processing"></div>
         }
     </div>
 </script>

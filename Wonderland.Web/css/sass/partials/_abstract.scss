@@ -157,8 +157,8 @@ abstract
 
 
 //**************************************** FLOATS
-//.float-left { float: left; }
-//.float-right { float: right; }
+.float-left { float: left; }
+.float-right { float: right; }
 
 
 //**************************************** RADIUS
@@ -183,6 +183,7 @@ abstract
         @include border-radius(0);
     }
 }
+
 
 
 //**************************************** TEXT
@@ -269,4 +270,6 @@ abstract
 .min-height-8 { min-height: 8rem; }
 .min-height-9 { min-height: 9rem; }
 .min-height-10 { min-height: 10rem; }
+.min-height-11 { min-height: 11rem; }
+.min-height-12 { min-height: 12rem; }
 .min-height-20 { min-height: 20rem; }
