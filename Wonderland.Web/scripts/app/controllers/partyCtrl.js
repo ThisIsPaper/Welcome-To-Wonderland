@@ -29,7 +29,7 @@ wonderlandApp.controller('PartyCtrl', ['safeApply', '$ocModal', '$sce', '$scope'
     $scope.partyDetailsDataForForm = null;
 
     $scope.partyDetailsDataInit = function (partyDetailsData) {
-
+console.log('partyDetailsDataInit', partyDetailsData);
         // convert date to javascript Date
         if (partyDetailsData && partyDetailsData.PartyDateTime) {
             partyDetailsData.PartyDateTime = moment(partyDetailsData.PartyDateTime).format('YYYY/MM/DD');
@@ -48,7 +48,7 @@ wonderlandApp.controller('PartyCtrl', ['safeApply', '$ocModal', '$sce', '$scope'
     };
 
     $scope.$onRootScope('partyDetailsDataUpdated', function(event, response, dataObject) {
-
+console.log('partyDetailsDataUpdated', response, dataObject);
         $scope.partyDetailsDataInit(dataObject);
         $ocModal.close('partyDetailsModal');
     });

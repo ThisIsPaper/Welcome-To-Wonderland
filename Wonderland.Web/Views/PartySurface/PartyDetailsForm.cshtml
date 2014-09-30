@@ -13,16 +13,17 @@
             <label for="PartyHeading">Your party heading</label>
             <input name="PartyHeading" type="text" ng-model="partyDetailsData.PartyHeading" m-radius-picker="small" ng-readonly="processing" />
 
-            <div class="grid-6 grid-tablet-12 parent">
-                <label for="PartyDate">Date</label>
-                <input name="PartyDate" type="text" m-date-time-picker="tempModel.PartyDateTime" m-radius-picker="small" readonly />
-            </div>
+            <div class="container">
+                <div class="grid-8 grid-tablet-12 parent">
+                    <label for="PartyDate">Date</label>
+                    <input name="PartyDate" type="text" m-date-time-picker="tempModel.partyDate" m-radius-picker="small" readonly />
+                </div>
 
-            <div class="grid-6 grid-tablet-12 parent margin-bottom-large">
-                <label for="PartyTime">Time</label>
-                <select name="PartyTimeHour" m-radius-picker="small">
-                    <option ng-value="time" ng-repeat="time in times" ng-bind="time"></option>
-                </select>
+                <div class="grid-4 grid-tablet-12 parent margin-bottom-large">
+                    <label for="PartyTime">Time</label>
+                    <select name="PartyTime" ng-model="tempModel.partyTime" ng-options="x for x in tempModel.times" m-radius-picker="small">
+                    </select>
+                </div>
             </div>
 
             <h4>Your Party Address</h4>

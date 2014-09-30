@@ -40,7 +40,7 @@ wonderlandApp.directive('mDateTimePicker', ['safeApply', function (safeApply) {
 
                     field: element[0],
                     firstDay: 1,
-                    format: "ddd Do MMM, YYYY",
+                    format: "dddd Do MMMM, YYYY",
                     minDate: moment().toDate(),
                     maxDate: new Date('2015-12-31'),
                     yearRange: [2014,2015],

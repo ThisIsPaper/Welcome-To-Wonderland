@@ -6,7 +6,7 @@ wonderlandApp.filter('datePreviewFormat', [function () {
 
         if (dateString) {
 
-            newFormattedDate = moment(dateString).format('dddd D MMM, YYYY');
+            newFormattedDate = moment(dateString).format('dddd D MMM, YYYY') + " at " + moment(dateString).format('HH.mm');
 
         }
 

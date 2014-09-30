@@ -21,7 +21,7 @@
     <h1 class="secondary margin-bottom-4"><span class="icon-icon_cutlery margin-right-small"></span>Party <br/><span class="bigger">Ideas</span></h1>
 
     <div class="text-align-center">
-        <select ng-model="guideIdeaFilter">
+        <select class="auto-width" ng-model="guideIdeaFilter">
             <option value="">Show All</option>
             @foreach(string tileType in Model.Select(x => x.TileType).Distinct())
             {
