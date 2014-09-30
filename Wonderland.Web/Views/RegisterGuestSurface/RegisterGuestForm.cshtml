@@ -5,13 +5,12 @@
     @using (Html.BeginUmbracoForm<RegisterGuestSurfaceController>("HandleRegisterGuestForm", FormMethod.Post, new { ng_submit="processing=true" }))
     {
 
+        @Html.ValidationMessage("RegisterGuestValidation")
+
         <div class="grid-8 grid-mobile-12 margin-bottom-large">
 
             <h3>Your details</h3>
             @Html.AntiForgeryToken()
-
-
-            @Html.ValidationMessage("RegisterGuestValidation")
 
 
             <label for="EmailAddress">Email</label>
