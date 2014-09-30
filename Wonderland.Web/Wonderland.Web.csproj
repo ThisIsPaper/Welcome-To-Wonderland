@@ -230,7 +230,15 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dashboards\ExportFinancials.ascx.cs">
+      <DependentUpon>ExportFinancials.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboards\ExportFinancials.ascx.designer.cs">
+      <DependentUpon>ExportFinancials.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Content Include="Dashboards\ExportFinancials.ascx" />
     <Content Include="Views\RegisterHostSurface\RegisterHostPartyKitForm.cshtml" />
     <Content Include="Views\LoginSurface\LoginForm.cshtml" />
     <Content Include="Views\PageNotFound.cshtml" />
@@ -268,6 +276,8 @@
     <Content Include="Views\ProfileSurface\ProfileBillingAddressForm.cshtml" />
     <Content Include="Views\ProfileSurface\ProfileChangePasswordForm.cshtml" />
     <Content Include="Views\Logout.cshtml" />
+    <Content Include="Views\Donate\UnknownTransaction.cshtml" />
+    <Content Include="Views\RegisterGuest\UnknownTransaction.cshtml" />
     <None Include="Views\RegisterHostSurface\RegisterHostForm.cshtml" />
   </ItemGroup>
   <ItemGroup>

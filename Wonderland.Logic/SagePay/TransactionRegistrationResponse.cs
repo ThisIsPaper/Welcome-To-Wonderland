@@ -6,6 +6,11 @@ namespace Wonderland.Logic.SagePay
     /// </summary>
     public class TransactionRegistrationResponse
     {
+        public TransactionRegistrationResponse()
+        {
+            this.Status = TransactionRegistrationStatus.ERROR;
+        }
+
         /// <summary>
         /// Protocol version
         /// </summary>

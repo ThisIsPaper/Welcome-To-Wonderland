@@ -22,10 +22,10 @@
                 <h4>Order details</h4>
 
                 <table>
-                    <tr><td>Payment #:</td><td>XXXXXXXX</td></tr>
-                    <tr><td>Payment status:</td><td>XXXXXXXX</td></tr>
-                    <tr><td>Date:</td><td ng-bind="''|datePreviewFormat"></td></tr>
-                    <tr><td>Total amount:</td><td ng-bind="@Model.PartyHost.SuggestedDonation|mCurrency:'£'"></td></tr>
+                    <tr><td>Payment #:</td><td>@Model.DonationRow.VendorTxCode</td></tr>
+                    <tr><td>Payment status:</td><td>Success</td></tr>
+                    <tr><td>Date:</td><td ng-bind="''|datePreviewFormat">@Model.DonationRow.Timestamp</td></tr>
+                    <tr><td>Total amount:</td><td ng-bind="@Model.DonationRow.Amount|mCurrency:'£'"></td></tr>
                 </table>
 
                 <hr class="margin-top-large margin-bottom-large"/>

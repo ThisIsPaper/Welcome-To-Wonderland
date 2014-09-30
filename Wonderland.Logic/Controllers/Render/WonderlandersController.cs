@@ -9,7 +9,7 @@ namespace Wonderland.Logic.Controllers.Render
 
     public class WonderlandersController : BaseRenderMvcController
     {
-        //[OutputCache(Duration=60)]
+        [OutputCache(Duration=60)] // cache for a minute
         public override ActionResult Index(RenderModel renderModel)
         {
             Wonderlanders model = (Wonderlanders)renderModel.Content;

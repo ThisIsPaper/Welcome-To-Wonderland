@@ -89,7 +89,7 @@ namespace Wonderland.Logic.Models.Members
         protected void SetPropertyValue(string propertyAlias, object propertyValue)
         {
             this.Member.SetValue(propertyAlias, propertyValue);
-            this.MemberService.Save(this.member, false); // NOTE: false indicates that any Umbraco events watching wont get fired
+            this.MemberService.Save(this.member, true); // NOTE: true indicates that any Umbraco events watching will be fired
         }
     }
 }

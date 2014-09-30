@@ -28,15 +28,15 @@
                 <h4>Order details</h4>
 
                 <table>
-                    <tr><td>Payment #:</td><td>6666666</td></tr>
+                    <tr><td>Payment #:</td><td>@Model.DonationRow.VendorTxCode</td></tr>
                     <tr><td>Payment status:</td><td>Complete</td></tr>
-                    <tr><td>Date:</td><td ng-bind="guidePartyHost.partyDateTime|datePreviewFormat"></td></tr>
-                    <tr><td>Total amount:</td><td>£10.00</td></tr>
+                    <tr><td>Date:</td><td ng-bind="guidePartyHost.partyDateTime|datePreviewFormat">@Model.DonationRow.Timestamp</td></tr>
+                    <tr><td>Total amount:</td><td>£@Model.DonationRow.Amount</td></tr>
                 </table>
 
                 <hr class="margin-top-large margin-bottom-large"/>
 
-                <a href="#" class="btn-primary float-right" m-radius-picker="small medium">Go to the party page ></a>
+                <a href="@Model.PartyHost.PartyUrl" class="btn-primary float-right" m-radius-picker="small medium">Go to the party page ></a>
 
             </div>
 
