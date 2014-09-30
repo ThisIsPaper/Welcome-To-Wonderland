@@ -4,6 +4,8 @@ namespace Wonderland.Logic.Models.Content
     using nuPickers;
     using System.Collections.Generic;
     using System.Linq;
+    using System.Web;
+    using System.Web.Caching;
     using Umbraco.Core.Models;
     using Umbraco.Core.Models.PublishedContent;
     using Umbraco.Web;
@@ -49,18 +51,27 @@ namespace Wonderland.Logic.Models.Content
         /// <returns></returns>
         public IEnumerable<PartyIdeaTile> GetPartyIdeaTiles()
         {
-            List<PartyIdeaTile> partyIdeaTiles = new List<PartyIdeaTile>();
+            Cache cache = HttpContext.Current.Cache;
 
-            // add the priority tiles to the top of the list
-            partyIdeaTiles.AddRange(this.PriorityTiles);
+            List<PartyIdeaTile> partyIdeaTiles = (List<PartyIdeaTile>)cache["PartyIdeaTiles"];
 
-            // add all remaining tiles (that are not in the priority list)
-            partyIdeaTiles.AddRange(this.Descendants()
-                                        .Select(x => PublishedContentModelFactoryResolver.Current.Factory.CreateModel(x))
-                                        .Where(x => x is PartyIdeaTile && !this.PriorityTiles.Select(y => y.Id).Contains(x.Id))
-                                        .Cast<PartyIdeaTile>());
+            if (partyIdeaTiles == null)
+            {
+                partyIdeaTiles = new List<PartyIdeaTile>();
 
-            return partyIdeaTiles;
+                // add the priority tiles to the top of the list
+                partyIdeaTiles.AddRange(this.PriorityTiles);
+
+                // add all remaining tiles (that are not in the priority list) - this query is really slow !
+                partyIdeaTiles.AddRange(this.Descendants()
+                                            .Select(x => PublishedContentModelFactoryResolver.Current.Factory.CreateModel(x))
+                                            .Where(x => x is PartyIdeaTile && !this.PriorityTiles.Select(y => y.Id).Contains(x.Id))
+                                            .Cast<PartyIdeaTile>());
+
+                cache.Insert("PartyIdeaTiles", partyIdeaTiles);
+            }
+
+            return partyIdeaTiles;            
         }
     }
 }
