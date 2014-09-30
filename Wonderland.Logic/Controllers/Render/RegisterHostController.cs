@@ -1,12 +1,11 @@
 ﻿
 namespace Wonderland.Logic.Controllers.Render
 {
-    using System.Linq;
     using System.Web.Mvc;
     using Umbraco.Web.Models;
+    using Wonderland.Logic.Extensions;
     using Wonderland.Logic.Models.Content;
     using Wonderland.Logic.Models.Members;
-    using Wonderland.Logic.Extensions;
 
     public class RegisterHostController : BaseRenderMvcController
     {
