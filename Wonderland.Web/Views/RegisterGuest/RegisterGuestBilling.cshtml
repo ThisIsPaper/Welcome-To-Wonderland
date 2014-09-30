@@ -7,10 +7,10 @@
 
 
 <div class="page-bg" ng-init="guideDonationSuggestions = [
-        { amount: 10, label: null },
-        { amount: 15, label: '@Model.PartyHost.FirstName\'s suggested amount' },
-        { amount: 20, label: null },
-        { amount: 25, label: null }
+        { amount: 10, label: '@if(Model.PartyHost.SuggestedDonation == 10){ @Html.Raw(@Model.PartyHost.FirstName + "\\'s suggested amount"); }' },
+        { amount: 15, label: '@if(Model.PartyHost.SuggestedDonation == 15){ @Html.Raw(@Model.PartyHost.FirstName + "\\'s suggested amount"); }' },
+        { amount: 20, label: '@if(Model.PartyHost.SuggestedDonation == 20){ @Html.Raw(@Model.PartyHost.FirstName + "\\'s suggested amount"); }' },
+        { amount: 25, label: '@if(Model.PartyHost.SuggestedDonation == 25){ @Html.Raw(@Model.PartyHost.FirstName + "\\'s suggested amount"); }' }
     ];">
 
 

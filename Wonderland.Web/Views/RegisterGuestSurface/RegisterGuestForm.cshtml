@@ -13,6 +13,7 @@
 
             @Html.ValidationMessage("RegisterGuestValidation")
 
+
             <label for="EmailAddress">Email</label>
             @Html.TextBoxFor(x => x.EmailAddress, new { @m_radius_picker="small", @ng_readonly="processing", @ng_class="{'error': errorEmailMessage.length>0}" })
             <div class="margin-bottom-small" ng-show="errorEmailMessage.length>0" ng-init="errorEmailMessage='@Html.ValidationMessageFor(x => x.EmailAddress)'">@Html.ValidationMessageFor(x => x.EmailAddress)</div>
