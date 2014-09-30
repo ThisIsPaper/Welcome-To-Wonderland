@@ -1,11 +1,11 @@
-wonderlandApp.directive('mProfileImage', [function () {
+wonderlandApp.directive('mProfileImage', ['safeApply', function (safeApply) {
 
     var MAIN_CLASS = 'profile-image',
         NOT_SET_CLASS = 'profile-image-notset',
         ALLOWED_EXTENSIONS = ['.jpg', '.jpeg', '.png'];
 
     return {
-        scope: false,
+        scope: {},
         link: function (scope, element, attrs) {
 
             scope.hasBackgroundImage = false;
@@ -13,8 +13,23 @@ wonderlandApp.directive('mProfileImage', [function () {
             element.addClass(MAIN_CLASS);
 
 
+            var loadImage = function (newImgSrc) {
 
-            attrs.$observe('mProfileImage', function (newVal, oldVal) {
+                var img = new Image();
+
+                $(img).on('load', function () {
+                    element.css('background-image', 'url('+ newImgSrc +')');
+                    safeApply(scope, function () {
+                        scope.hasBackgroundImage = true;
+                    });
+                });
+
+                $(img).attr('src', newImgSrc);
+            };
+
+
+
+            attrs.$observe('mProfileImage', function (newVal) {
                 var hasExt = false;
                 for (var i=0; i<ALLOWED_EXTENSIONS.length; i++) {
                     hasExt = newVal.toLowerCase().indexOf(ALLOWED_EXTENSIONS[i]) >= 0 ? true : hasExt;
@@ -23,16 +38,12 @@ wonderlandApp.directive('mProfileImage', [function () {
                 if (!newVal || !angular.isString(newVal) || !hasExt) {
 
                     scope.hasBackgroundImage = false;
-
                     return;
                 }
 
-                scope.hasBackgroundImage = true;
-
-                element.css('background-image', 'url('+ newVal +')');
+                loadImage(newVal);
 
             });
-
 
 
             scope.$watch('hasBackgroundImage', function (newVal, oldVal) {

@@ -22,9 +22,9 @@ wonderlandApp.directive('mTotaliser', ['$filter', function ($filter) {
 
         template:   '<div>' +
                         '<span class="body-mega" ng-bind="raised|mCurrency:\'£\'"></span>' +
-                        '<span> raised of the </span>' +
+                        '<span class="dis-inline-block"><span> raised of the </span>' +
                         '<span class="body-highlight" ng-bind="total|mCurrency:\'£\'"></span>' +
-                        '<span> target</span>' +
+                        '<span> target</span></span>' +
                     '</div>' +
 
                     '<div class="totaliser">' +
@@ -36,12 +36,9 @@ wonderlandApp.directive('mTotaliser', ['$filter', function ($filter) {
                         '<span class="float-right" ng-show="rank">Ranked #<span ng-bind="rank"></span><span ng-show="rankTotal"> of <span ng-bind="rankTotal"></span>&nbsp;<ng-pluralize count="rankTotal" when="{\'1\': \'party\', \'other\': \'parties\'}"></ng-pluralize></span></span>' +
                     '</div>',
 
-        link: function (scope, element, attrs) {
+        link: function (scope) {
 
             scope.$watch('raised + total', function () {
-
-                console.log('raised', scope.raised);
-                console.log('total', scope.total);
 
                 scope.currentPercentage = $filter('percentageRounder')(scope.raised, scope.total);
             });
