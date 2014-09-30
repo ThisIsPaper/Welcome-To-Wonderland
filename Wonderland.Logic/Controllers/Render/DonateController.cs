@@ -29,6 +29,7 @@ namespace Wonderland.Logic.Controllers.Render
                     if (donationRow != null)
                     {
                         model.PartyHost = this.Members.GetPartyHost(donationRow.PartyGuid);
+                        model.DonationRow = donationRow;
 
                         return this.View("Donate/Complete", model);
                     }
