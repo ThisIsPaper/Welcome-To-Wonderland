@@ -1,6 +1,7 @@
 wonderlandApp.factory('paf', ['mHttp', '$q', function (mHttp, $q) {
 
-    var HARDCODED_URL = "/umbraco/Api/PostcodeAnywhereApi/FindByPostcode?";
+    var FIND_BY_POSTCODE = "/umbraco/Api/PostcodeAnywhereApi/FindByPostcode",
+        RETRIEVE_BY_ID = "/umbraco/Api/PostcodeAnywhereApi/RetrieveById";
 
     return {
 
@@ -9,8 +10,7 @@ wonderlandApp.factory('paf', ['mHttp', '$q', function (mHttp, $q) {
             var deferred = $q.defer(),
                 promise = deferred.promise;
 
-
-            var formSubmitRequest = mHttp.get(HARDCODED_URL, {
+            var formSubmitRequest = mHttp.get(FIND_BY_POSTCODE, {
                 data: {
                     postcode: postCode
                 },
@@ -20,8 +20,6 @@ wonderlandApp.factory('paf', ['mHttp', '$q', function (mHttp, $q) {
 
             formSubmitRequest.then(
                 function (response) {
-
-                    console.log('POSTCODE SUCCESS', response);
 
                     if (response && response.length) {
                         deferred.resolve(response);
@@ -38,7 +36,43 @@ wonderlandApp.factory('paf', ['mHttp', '$q', function (mHttp, $q) {
 
             return promise;
 
+        },
+
+
+        getAddressFromIdField: function (idField) {
+
+            var deferred = $q.defer(),
+                promise = deferred.promise;
+
+
+            var formSubmitRequest = mHttp.get(RETRIEVE_BY_ID, {
+                data: {
+                    'idField': idField
+                },
+                dataType: 'json'
+            });
+
+
+            formSubmitRequest.then(
+                function (response) {
+
+                    if (response && response.length) {
+                        deferred.resolve(response[0]);
+                    } else {
+                        deferred.reject();
+                    }
+
+                },
+                function () {
+                    deferred.reject();
+                }
+            );
+
+
+            return promise;
+
         }
+
 
     };
 

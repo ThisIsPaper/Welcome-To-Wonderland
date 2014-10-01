@@ -6,17 +6,18 @@
 {
     @Html.AntiForgeryToken()
 
-    <div class="grid-8 grid-tablet-12 parent margin-bottom-large">
+    <div class="grid-12 parent margin-bottom-large">
 
-
-
-        <h4>Address finder</h4>
-        <div class="width-50p">
+        <div class="grid-8 grid-tablet-12 parent">
             <label for="Postcode2">Postcode</label>
-            <input type="text" name="Postcode2" ng-model="profileBillingAddressData.Postcode" m-radius-picker="small"/>
-            <div m-address-finder="{{ profileBillingAddressData.Postcode }}" m-address="profileBillingAddressData"></div>
+            <input type="text" class="margin-bottom-small" name="Postcode2" ng-model="profileBillingAddressData.Postcode" m-radius-picker="small" on-key-enter-trigger="pafAddressFinderPostcodeSearch1"/>
+            <div m-address-finder="{{ profileBillingAddressData.Postcode }}" m-address="profileBillingAddressData" m-trigger-event="pafAddressFinderPostcodeSearch1"></div>
         </div>
+        <div class="clear"></div>
+        <hr/>
+    </div>
 
+    <div class="grid-8 grid-tablet-12 parent margin-bottom-large">
 
 
         <label for="Address1">Address 1</label>
