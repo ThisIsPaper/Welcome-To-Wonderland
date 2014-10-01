@@ -32,7 +32,7 @@ wonderlandApp.controller('PartyCtrl', ['safeApply', '$ocModal', '$sce', '$scope'
 console.log('partyDetailsDataInit', partyDetailsData);
         // convert date to javascript Date
         if (partyDetailsData && partyDetailsData.PartyDateTime) {
-            partyDetailsData.PartyDateTime = moment(partyDetailsData.PartyDateTime).format('YYYY/MM/DD');
+            partyDetailsData.PartyDateTime = moment(partyDetailsData.PartyDateTime).format('YYYY/MM/DD HH:mm:SS');
         }
 
         //*** format address
