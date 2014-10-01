@@ -325,7 +325,12 @@
     <Compile Include="SagePay\TransactionRegistration.cs" />
     <Compile Include="SagePay\TransactionRegistrationRequest.cs" />
     <Compile Include="SagePay\TransactionRegistrationResponse.cs" />
-    <Compile Include="Web References\PostcodeAnywhere\Reference.cs">
+    <Compile Include="Web References\PostcodeAnywhere.FindByPostcode\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\PostcodeAnywhere.RetrieveById\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.map</DependentUpon>
@@ -339,14 +344,22 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
-    <None Include="Web References\PostcodeAnywhere\Reference.map">
+    <None Include="Web References\PostcodeAnywhere.FindByPostcode\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <None Include="Web References\PostcodeAnywhere\Results.datasource">
+    <None Include="Web References\PostcodeAnywhere.FindByPostcode\Results.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
-    <None Include="Web References\PostcodeAnywhere\wsdl.wsdl" />
+    <None Include="Web References\PostcodeAnywhere.FindByPostcode\wsdl.wsdl" />
+    <None Include="Web References\PostcodeAnywhere.RetrieveById\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\PostcodeAnywhere.RetrieveById\Results1.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\PostcodeAnywhere.RetrieveById\wsdl.wsdl" />
   </ItemGroup>
   <ItemGroup>
     <WebReferences Include="Web References\" />
@@ -354,7 +367,7 @@
   <ItemGroup>
     <WebReferenceUrl Include="http://services.postcodeanywhere.co.uk/PostcodeAnywhere/Interactive/FindByPostcode/v1.00/wsdl.ws">
       <UrlBehavior>Dynamic</UrlBehavior>
-      <RelPath>Web References\PostcodeAnywhere\</RelPath>
+      <RelPath>Web References\PostcodeAnywhere.FindByPostcode\</RelPath>
       <UpdateFromURL>http://services.postcodeanywhere.co.uk/PostcodeAnywhere/Interactive/FindByPostcode/v1.00/wsdl.ws</UpdateFromURL>
       <ServiceLocationURL>
       </ServiceLocationURL>
@@ -363,6 +376,20 @@
       <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
       <CachedSettingsPropName>Wonderland_Logic_PostcodeAnywhere_WebService</CachedSettingsPropName>
     </WebReferenceUrl>
+    <WebReferenceUrl Include="http://services.postcodeanywhere.co.uk/PostcodeAnywhere/Interactive/RetrieveById/v1.30/wsdl.ws">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\PostcodeAnywhere.RetrieveById\</RelPath>
+      <UpdateFromURL>http://services.postcodeanywhere.co.uk/PostcodeAnywhere/Interactive/RetrieveById/v1.30/wsdl.ws</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Wonderland_Logic_RetrieveById_WebService</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,47 +1,70 @@
 ﻿@model RegisterHostPartyKitForm
 
-@using (Html.BeginUmbracoForm<RegisterHostSurfaceController>("HandleRegisterHostPartyKitForm"))
+@using (Html.BeginUmbracoForm<RegisterHostSurfaceController>("HandleRegisterHostPartyKitForm", FormMethod.Post, new { ng_submit="processing=true" }))
 {
 
-    <div class="grid-12">
-        <h3>Your address</h3>
-        <p class="form-info">Please enter the address in which you require your party pack to be sent to, not necessarily where your party will take place!</p>
+    <div class="grid-12 parent">
+        <h3>Your details</h3>
     </div>
 
-    <div class="grid-8 grid-mobile-12 margin-bottom-large">
+
+
+    <div class="grid-8 grid-mobile-12 margin-bottom-large parent">
 
         @Html.AntiForgeryToken()
 
+        <h4>Your name</h4>
+
         <label for="FirstName">First name</label>
+        @Html.TextBoxFor(x => x.FirstName, new { @m_radius_picker="small", @ng_readonly="processing", @ng_class="{'error': errorFirstNameMessage.length>0}" })
         <div class="margin-bottom-small" ng-show="errorFirstNameMessage.length>0" ng-init="errorFirstNameMessage='@Html.ValidationMessageFor(x => x.FirstName)'">@Html.ValidationMessageFor(x => x.FirstName)</div>
-        @Html.TextBoxFor(x => x.FirstName, new { @m_radius_picker="small" })
 
         <label for="LastName">Last name</label>
+        @Html.TextBoxFor(x => x.LastName, new { @m_radius_picker="small", @ng_readonly="processing", @ng_class="{'error': errorLastNameMessage.length>0}" })
         <div class="margin-bottom-small" ng-show="errorLastNameMessage.length>0" ng-init="errorLastNameMessage='@Html.ValidationMessageFor(x => x.LastName)'">@Html.ValidationMessageFor(x => x.LastName)</div>
-        @Html.TextBoxFor(x => x.LastName, new { @m_radius_picker="small" })
+    </div>
+
+    <div class="grid-12 parent margin-bottom-large">
+
+        <hr/>
+
+        <h4>Your address</h4>
+        <p class="margin-bottom-large form-info">Please enter the address in which you require your party pack to be sent to, not necessarily where your party will take place!</p>
+
+        <div class="grid-8 grid-tablet-12 parent">
+            <label for="Postcode2">Postcode</label>
+            <input type="text" class="margin-bottom-small" name="Postcode2" ng-model="partyKitAddressData.Postcode" m-radius-picker="small" on-key-enter-trigger="pafAddressFinderPostcodeSearchPartyKit"/>
+            <div m-address-finder="{{ partyKitAddressData.Postcode }}" m-address="partyKitAddressData" m-trigger-event="pafAddressFinderPostcodeSearchPartyKit"></div>
+        </div>
+        <div class="clear"></div>
+        <hr/>
+    </div>
+
+    <div class="grid-8 grid-mobile-12 margin-bottom-large parent">
 
         <label for="Address1">Address 1</label>
+        @Html.TextBoxFor(x => x.Address1, new { @m_radius_picker="small", @ng_model="partyKitAddressData.Address1", @m_value_matcher="", @ng_readonly="processing", @ng_class="{'error': errorAddress1Message.length>0}" })
         <div class="margin-bottom-small" ng-show="errorAddress1Message.length>0" ng-init="errorAddress1Message='@Html.ValidationMessageFor(x => x.Address1)'">@Html.ValidationMessageFor(x => x.Address1)</div>
-        @Html.TextBoxFor(x => x.Address1, new { @m_radius_picker="small" })
 
         <label for="Address2">Address 2</label>
+        @Html.TextBoxFor(x => x.Address2, new { @m_radius_picker="small", @ng_model="partyKitAddressData.Address2", @m_value_matcher="", @ng_readonly="processing", @ng_class="{'error': errorAddress2Message.length>0}" })
         <div class="margin-bottom-small" ng-show="errorAddress2Message.length>0" ng-init="errorAddress2Message='@Html.ValidationMessageFor(x => x.Address2)'">@Html.ValidationMessageFor(x => x.Address2)</div>
-        @Html.TextBoxFor(x => x.Address2, new { @m_radius_picker="small" })
 
         <label for="TownCity">Town/City</label>
+        @Html.TextBoxFor(x => x.TownCity, new { @m_radius_picker="small", @ng_model="partyKitAddressData.TownCity", @m_value_matcher="", @ng_readonly="processing", @ng_class="{'error': errorTownCityMessage.length>0}" })
         <div class="margin-bottom-small" ng-show="errorTownCityMessage.length>0" ng-init="errorTownCityMessage='@Html.ValidationMessageFor(x => x.TownCity)'">@Html.ValidationMessageFor(x => x.TownCity)</div>
-        @Html.TextBoxFor(x => x.TownCity, new { @m_radius_picker="small" })
 
         <label for="PostCode">Postcode</label>
+        @Html.TextBoxFor(x => x.PostCode, new { @m_radius_picker="small", @ng_model="partyKitAddressData.Postcode", @m_value_matcher="", @ng_readonly="processing", @ng_class="{'error': errorPostCodeMessage.length>0}" })
         <div class="margin-bottom-small" ng-show="errorPostCodeMessage.length>0" ng-init="errorPostCodeMessage='@Html.ValidationMessageFor(x => x.PostCode)'">@Html.ValidationMessageFor(x => x.PostCode)</div>
-        @Html.TextBoxFor(x => x.PostCode, new { @m_radius_picker="small" })
 
     </div>
 
-    <div class="grid-12">
+    <div class="grid-12 pad-0">
         <hr/>
-        <button type="submit" class="btn-primary float-right" m-radius-picker="small">Register <span class="icon-icon_chevron_right"></span></button>
+        <button type="submit" class="btn-primary float-right" m-radius-picker="small" ng-disabled="processing">Register <span class="icon-icon_chevron_right"></span></button>
         <a href="/" class="cancel margin-right-1 float-right">Cancel</a>
+        <div class="loader" ng-show="processing"></div>
     </div>
 
 }

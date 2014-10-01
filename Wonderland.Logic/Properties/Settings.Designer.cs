@@ -33,5 +33,16 @@ namespace Wonderland.Logic.Properties {
                 return ((string)(this["Wonderland_Logic_PostcodeAnywhere_WebService"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://services.postcodeanywhere.co.uk/PostcodeAnywhere/Interactive/RetrieveById/" +
+            "v1.30/soap.ws")]
+        public string Wonderland_Logic_RetrieveById_WebService {
+            get {
+                return ((string)(this["Wonderland_Logic_RetrieveById_WebService"]));
+            }
+        }
     }
 }

@@ -90,20 +90,33 @@
 
         <h4>Your address</h4>
 
+
+        <div class="grid-12 parent margin-bottom-large">
+
+            <div class="grid-8 grid-tablet-12 parent">
+                <label for="Postcode2">Postcode</label>
+                <input type="text" class="margin-bottom-small" name="Postcode2" ng-model="billingAddressData.Postcode" m-radius-picker="small" on-key-enter-trigger="pafAddressFinderPostcode"/>
+                <div m-address-finder="{{ billingAddressData.Postcode }}" m-address="billingAddressData" m-trigger-event="pafAddressFinderPostcode"></div>
+            </div>
+            <div class="clear"></div>
+            <hr/>
+        </div>
+
+
         <label for="Address1">Address 1</label>
-        @Html.TextBoxFor(x => x.Address1, new { @m_radius_picker="small", @ng_readonly="processing", @ng_class="{'error': errorAddress1Message.length>0}" })
+        @Html.TextBoxFor(x => x.Address1, new { @m_radius_picker="small", @ng_model="billingAddressData.Address1", @m_value_matcher="", @ng_readonly="processing", @ng_class="{'error': errorAddress1Message.length>0}" })
         <div class="margin-bottom-small" ng-show="errorAddress1Message.length>0" ng-init="errorAddress1Message='@Html.ValidationMessageFor(x => x.Address1)'">@Html.ValidationMessageFor(x => x.Address1)</div>
 
         <label for="Address2">Address 2</label>
-        @Html.TextBoxFor(x => x.Address2, new { @m_radius_picker="small", @ng_readonly="processing", @ng_class="{'error': errorAddress2Message.length>0}" })
+        @Html.TextBoxFor(x => x.Address2, new { @m_radius_picker="small", @ng_model="billingAddressData.Address2", @m_value_matcher="", @ng_readonly="processing", @ng_class="{'error': errorAddress2Message.length>0}" })
         <div class="margin-bottom-small" ng-show="errorAddress2Message.length>0" ng-init="errorAddress2Message='@Html.ValidationMessageFor(x => x.Address2)'">@Html.ValidationMessageFor(x => x.Address2)</div>
 
         <label for="TownCity">Town/City</label>
-        @Html.TextBoxFor(x => x.TownCity, new { @m_radius_picker="small", @ng_readonly="processing", @ng_class="{'error': errorTownCityMessage.length>0}" })
+        @Html.TextBoxFor(x => x.TownCity, new { @m_radius_picker="small", @ng_model="billingAddressData.TownCity", @m_value_matcher="", @ng_readonly="processing", @ng_class="{'error': errorTownCityMessage.length>0}" })
         <div class="margin-bottom-small" ng-show="errorTownCityMessage.length>0" ng-init="errorTownCityMessage='@Html.ValidationMessageFor(x => x.TownCity)'">@Html.ValidationMessageFor(x => x.TownCity)</div>
 
         <label for="Postcode">Postcode</label>
-        @Html.TextBoxFor(x => x.Postcode, new { @m_radius_picker="small", @ng_readonly="processing", @ng_class="{'error': errorPostcodeMessage.length>0}" })
+        @Html.TextBoxFor(x => x.Postcode, new { @m_radius_picker="small", @ng_model="billingAddressData.Postcode", @m_value_matcher="", @ng_readonly="processing", @ng_class="{'error': errorPostcodeMessage.length>0}" })
         <div class="margin-bottom-small" ng-show="errorPostcodeMessage.length>0" ng-init="errorPostcodeMessage='@Html.ValidationMessageFor(x => x.Postcode)'">@Html.ValidationMessageFor(x => x.Postcode)</div>
 
         <div class="clear margin-bottom-large"></div>
