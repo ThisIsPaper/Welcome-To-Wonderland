@@ -151,8 +151,12 @@
 
                     @(Html.Action<PartySurfaceController>("RenderPartyWallMessageForm"))
 
-                    @* TODO: fix the party wall image poster *@
                     @(Html.Action<PartySurfaceController>("RenderPartyWallImageForm"))
+
+
+                     <div class="grid-12 pad-0">
+                        <div class="loader pos-static float-right" ng-show="wall.feedback.messageProcessing"></div>
+                     </div>
                 </div>
 
 
@@ -165,6 +169,7 @@
                             <span class="wall-time" ng-bind="feedItem.timestamp"></span>
                         </div>
                         <div ng-class="{'donation-copy': feedItem.wallPostType=='Donation'}" ng-bind="feedItem.text"></div>
+                        <img class="margin-top-small margin-bottom-small pad-small" ng-src="{{ feedItem.imageUrl }}" />
                     </div>
                     <hr ng-show="!$last"/>
                 </div>

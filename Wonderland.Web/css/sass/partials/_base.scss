@@ -359,6 +359,26 @@ Event Page specific - move these out of here eventually
     font-size: $FontSizeLarge;
 }
 
+.wall-textarea {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+    @include border-bottom-radius(0);
+}
+
+.wall-image-preview {
+    border: .1rem solid $greyLight;
+    margin-top: 0;
+    padding-top: 0;
+    border-top: none;
+    background-color: white;
+    margin-top: -.6rem;
+
+    width: 100%;
+
+    @include border-top-radius(0);
+}
+
 /*******************************/// ticket
 
 
