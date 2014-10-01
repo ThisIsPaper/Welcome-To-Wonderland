@@ -15,7 +15,12 @@ namespace Wonderland.Logic.Controllers.Api
             }
         }
 
-        // http://wonderland.local/umbraco/Api/PostcodeAnywhereApi/FindByPostcode?postcode=EC1V1LJ
+        /// <summary>
+        /// http://www.postcodeanywhere.co.uk/support/webservice/postcodeanywhere/interactive/findbypostcode/1/
+        /// http://wonderland.local/umbraco/Api/PostcodeAnywhereApi/FindByPostcode?postcode=EC1V1LJ
+        /// </summary>
+        /// <param name="postcode"></param>
+        /// <returns></returns>
         [HttpGet]
         public PostcodeAnywhere.FindByPostcode.Results[] FindByPostcode([FromUri] string postcode)
         {
@@ -24,7 +29,12 @@ namespace Wonderland.Logic.Controllers.Api
             return webService.FindByPostcode(this.ServiceKey, postcode, null);
         }
 
-        // http://wonderland.local/umbraco/Api/PostcodeAnywhereApi/RetrieveById?idField=8175153.00
+        /// <summary>
+        /// http://www.postcodeanywhere.co.uk/Support/WebService/PostcodeAnywhere/Interactive/RetrieveById/1.3/
+        /// http://wonderland.local/umbraco/Api/PostcodeAnywhereApi/RetrieveById?idField=8175153.00
+        /// </summary>
+        /// <param name="idField"></param>
+        /// <returns></returns>
         [HttpGet]
         public PostcodeAnywhere.RetrieveById.Results[] RetrieveById([FromUri] string idField)
         {

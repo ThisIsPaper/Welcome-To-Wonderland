@@ -268,6 +268,7 @@
     <Compile Include="Models\Content\ResetPassword.cs" />
     <Compile Include="Models\Content\SitePage.cs" />
     <Compile Include="Models\Content\PlaylistTile.cs" />
+    <Compile Include="Models\Content\WhoIsItFor.cs" />
     <Compile Include="Models\Content\Wonderlanders.cs" />
     <Compile Include="Models\Database\DonationRow.cs" />
     <Compile Include="Models\Database\Donation_Message.cs" />

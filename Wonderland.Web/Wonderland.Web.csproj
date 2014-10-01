@@ -334,6 +334,7 @@
     <Content Include="Views\RegisterHost\RegisterHostPartyUrl.cshtml" />
     <Content Include="Views\ResetPassword\Complete.cshtml" />
     <Content Include="Views\ResetPasswordSurface\ResetPasswordForm.cshtml" />
+    <Content Include="Views\WhoIsItFor.cshtml" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>
