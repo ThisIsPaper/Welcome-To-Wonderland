@@ -124,10 +124,79 @@
     cursor: pointer;
 }
 
+
 .account-menu {
-    //display: none;
+    position: absolute;
+    top: 4.7rem;
+    right: 0;
+    width: 17rem;
+    background-color: $greyReallyDark;
+    @include border-radius(.7rem);
+
+  
+    ul {
+        padding: 0;
+        margin: 0;
+    }
+
+    li {
+        list-style: none;
+        border-bottom: 1px solid $greyDark;
+
+        &.last {
+            border-bottom: none;
+        }
+
+        span[class^="icon-"]:before, span[class*=" icon-"]:before {
+            color: $greyMedium;
+
+            width: 3.5rem;
+            float: left;
+            line-height: 4.4rem;
+            font-size: $FontSizeLarge;
+            text-align: center;
+        }
+
+        a {
+            color: $greyReallyLight;
+            letter-spacing: .1rem;
+            padding: 0 $padSmallValue;
+            text-transform: uppercase;
+            font-size: $FontSizeSmall;
+            line-height: 4.4rem;
+            display: block;
+        }
+    }
 }
 
+.arrow-up {
+    position: absolute;
+    top: -1rem;
+    right: 2.5rem;
+	width: 0;
+	height: 0;
+	border-left: 1rem solid transparent;
+	border-right: 1rem solid transparent;
+	border-bottom: 1rem solid $greyReallyDark;
+}
+
+
+.account-name {
+    float: left;
+    line-height: 4.2rem;
+    margin-left: 0.6rem;
+    font-size: $FontSizeSmall;
+    font-weight: bold;
+    letter-spacing: .1rem;
+    text-transform: uppercase;
+    cursor: pointer;
+    color: $SecondaryColour;
+
+    span[class^="icon-"]:before, span[class*=" icon-"]:before {
+        font-size: .7rem;
+        color: $greyLight;
+    }
+}
 
 
 /********************/
