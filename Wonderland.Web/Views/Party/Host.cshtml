@@ -160,10 +160,13 @@
 
 
                      <div class="grid-12 pad-0">
-                        <div class="loader pos-static float-right" ng-show="wall.feedback.messageProcessing"></div>
+                        <div class="loader pos-static" ng-show="wall.feedback.messageProcessing"></div>
                      </div>
                 </div>
 
+                <div class="grid-12 margin-top-small pad-0" ng-show="wall.feedback.feedProcessingPre">
+                    <div class="loader pos-static margin-side-auto"></div>
+                </div>
 
                 <div class="margin-top-small" ng-repeat="feedItem in wall.feed">
                     <div m-profile-image="{{ feedItem.thumbnailUrl }}" m-radius-picker="small"></div>
@@ -171,13 +174,19 @@
                         <div>
                             <span class="wall-name" ng-bind="feedItem.name"></span>
                             <span class="wall-type" ng-class="feedItem.wallPostType|lowercase" ng-bind="feedItem.wallPostType" ng-show="feedItem.wallPostType"></span>
-                            <span class="wall-time" ng-bind="feedItem.timestamp"></span>
+                            <span class="wall-time" ng-bind="feedItem.timeFormatted"></span>
                         </div>
                         <div ng-class="{'donation-copy': feedItem.wallPostType=='Donation'}" ng-bind="feedItem.text"></div>
                         <img class="margin-top-small margin-bottom-small pad-small" ng-src="{{ feedItem.imageUrl }}" />
                     </div>
                     <hr ng-show="!$last"/>
                 </div>
+
+                <div class="grid-12 margin-top-small pad-0" ng-show="wall.feedback.feedProcessingPost">
+                    <div class="loader pos-static margin-side-auto"></div>
+                </div>
+
+                <div class="btn-secondary dis-block" ng-click="getFeed(wall.feedLastDate)" ng-show="!wall.feedback.feedProcessingPost">SHOW MORE!</div>
 
             </div>
         </div>

@@ -8,10 +8,14 @@ wonderlandApp.controller('WallCtrl', ['mHttp', 'safeApply', '$filter', '$scope',
             imageShowSuccess: false,
             imageShowError: false,
 
-            messageProcessing: false
+            messageProcessing: false,
+
+            feedProcessingPre: false,
+            feedProcessingPost: false
         },
 
         feed: null,
+        feedLastDate: null,
         formModel: null,
         previewImageUrl: null,
         hasDoneFirstLoad: false
@@ -25,17 +29,33 @@ wonderlandApp.controller('WallCtrl', ['mHttp', 'safeApply', '$filter', '$scope',
     };
 
 
-    $scope.getFeed = function () {
+    $scope.getFeed = function (beforeDateTime) {
+
+        safeApply($scope, function () {
+            if (!beforeDateTime) {
+                $scope.wall.feedback.feedProcessingPre = true;
+            } else {
+                $scope.wall.feedback.feedProcessingPost = true;
+            }
+        });
+
+        var sendFormData = {
+            'partyGuid': partyGuid,
+            'take': 10
+        };
+        if (beforeDateTime) {
+            sendFormData['beforeDateTime'] = beforeDateTime;
+        }
 
         feedRequest = mHttp.get(wallFeed, {
-            data: {
-                'partyGuid': partyGuid,
-                'take': 10
-            },
+            data: sendFormData,
             dataType: 'json'
         });
 
         feedRequest.then(function (response) {
+
+            $scope.wall.feedback.feedProcessingPre = false;
+            $scope.wall.feedback.feedProcessingPost = false;
 
             // TODO: hardcoded - work out donations and re-format
             if (response) {
@@ -46,19 +66,23 @@ wonderlandApp.controller('WallCtrl', ['mHttp', 'safeApply', '$filter', '$scope',
                         value.text = $filter('mCurrency')(value.text, '£');
                     }
                     // TODO: need to remove this hardcoded time subtraction, server times differ, must be timezone issues
-                    value.timestamp = moment(value.timestamp).subtract(1, 'hour').fromNow();
+                    value.timeFormatted = moment(value.timestamp).subtract(1, 'hour').fromNow();
 
                     value.imageUrl = value.imageUrl && value.imageUrl.indexOf('null') >= 0 ? null : value.imageUrl;
                 });
             }
 
-            console.log('FEED', response);
+            console.log('FEED', beforeDateTime, response);
+            if (response.length) {
+                $scope.wall.feedLastDate = response[(response.length-1)].timestamp;
+            }
 
             $scope.wall.hasDoneFirstLoad = true;
-            $scope.wall.feed = response;
+            $scope.wall.feed = beforeDateTime ? $scope.wall.feed.concat(response) : response;
         });
 
     };
+
 
     $scope.wallFormModelInit = function (formModel) {
 

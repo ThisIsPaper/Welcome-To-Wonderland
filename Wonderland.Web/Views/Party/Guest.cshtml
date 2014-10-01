@@ -166,7 +166,7 @@
                         <div>
                             <span class="wall-name" ng-bind="feedItem.name"></span>
                             <span class="wall-type" ng-class="feedItem.wallPostType|lowercase" ng-bind="feedItem.wallPostType" ng-show="feedItem.wallPostType"></span>
-                            <span class="wall-time" ng-bind="feedItem.timestamp"></span>
+                            <span class="wall-time" ng-bind="feedItem.timeFormatted"></span>
                         </div>
                         <div ng-class="{'donation-copy': feedItem.wallPostType=='Donation'}" ng-bind="feedItem.text"></div>
                         <img class="margin-top-small margin-bottom-small pad-small" ng-src="{{ feedItem.imageUrl }}" />
