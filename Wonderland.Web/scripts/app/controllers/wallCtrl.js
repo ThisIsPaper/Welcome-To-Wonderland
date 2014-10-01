@@ -15,7 +15,9 @@ wonderlandApp.controller('WallCtrl', ['mHttp', 'safeApply', '$filter', '$scope',
         },
 
         feed: null,
+        feedLimit: 10,
         feedLastDate: null,
+        feedLastResponseCount: 0,
         formModel: null,
         previewImageUrl: null,
         hasDoneFirstLoad: false
@@ -35,13 +37,17 @@ wonderlandApp.controller('WallCtrl', ['mHttp', 'safeApply', '$filter', '$scope',
             if (!beforeDateTime) {
                 $scope.wall.feedback.feedProcessingPre = true;
             } else {
+                var mom = moment(beforeDateTime);
+                if (mom.isValid()) {
+                    beforeDateTime = mom.subtract(1, 'hour').format();
+                }
                 $scope.wall.feedback.feedProcessingPost = true;
             }
         });
 
         var sendFormData = {
             'partyGuid': partyGuid,
-            'take': 10
+            'take': $scope.wall.feedLimit
         };
         if (beforeDateTime) {
             sendFormData['beforeDateTime'] = beforeDateTime;
@@ -73,7 +79,9 @@ wonderlandApp.controller('WallCtrl', ['mHttp', 'safeApply', '$filter', '$scope',
             }
 
             console.log('FEED', beforeDateTime, response);
+
             if (response.length) {
+                $scope.wall.feedLastResponseCount = response.length;
                 $scope.wall.feedLastDate = response[(response.length-1)].timestamp;
             }
 
