@@ -1,10 +1,23 @@
 ﻿@model ProfileBillingAddressForm
 
+
+
 @using (Html.BeginUmbracoForm<ProfileSurfaceController>("HandleProfileBillingAddressForm", FormMethod.Post, new { m_serialized="", ng_submit="feedback.profileBillingAddressProcessing=true", m_post_on_submit="profileBillingAddressData", m_on_success_event="profileBillingAddressDataUpdated" }))
 {
     @Html.AntiForgeryToken()
 
     <div class="grid-8 grid-tablet-12 parent margin-bottom-large">
+
+
+
+        <h4>Address finder</h4>
+        <div class="width-50p">
+            <label for="Postcode2">Postcode</label>
+            <input type="text" name="Postcode2" ng-model="profileBillingAddressData.Postcode" m-radius-picker="small"/>
+            <div m-address-finder="{{ profileBillingAddressData.Postcode }}" m-address="profileBillingAddressData"></div>
+        </div>
+
+
 
         <label for="Address1">Address 1</label>
         @Html.TextBoxFor(x => x.Address1, new { @m_radius_picker="small", @ng_model="profileBillingAddressData.Address1", @ng_readonly="feedback.profileBillingAddressProcessing", @ng_class="{'error': errorAddress1Message.length>0}", @m_value_matcher="" })

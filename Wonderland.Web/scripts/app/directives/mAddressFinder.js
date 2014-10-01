@@ -13,8 +13,7 @@ wonderlandApp.directive('mAddressFinder', ['paf', 'safeApply', function (paf, sa
 
         template:   '<div class="margin-bottom-large">' +
                         '<div class="btn-secondary" m-radius-picker="small" ng-click="findAddress()">Find postcode</div>' +
-                        '<div ng-bind="listOfAddresses.length"></div>' +
-                        '<select class="margin-bottom-large" ng-model="selectedAddressId" ng-options="address.streetAddressField for address in listOfAddresses" ></select>' +
+                        '<select ng-show="listOfAddresses" class="margin-bottom-large" ng-model="selectedAddressId" ng-options="address.streetAddressField for address in listOfAddresses" ></select>' +
                     '</div>',
 
         link: function (scope) {
@@ -34,6 +33,13 @@ wonderlandApp.directive('mAddressFinder', ['paf', 'safeApply', function (paf, sa
                     }
                 );
             };
+
+
+            scope.$watch('selectedAddressId', function (newVal, oldVal) {
+
+                console.log('selectedAddressId', newVal, oldVal);
+
+            });
 
 
         }
