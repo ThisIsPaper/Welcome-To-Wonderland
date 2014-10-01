@@ -29,6 +29,19 @@
             <h4>Your Party Address</h4>
             <div class="form-info margin-bottom-3">Only guests who have joined your party will be able to view your full address</div>
 
+
+            <div class="grid-12 parent margin-bottom-large">
+
+                <div class="grid-8 grid-tablet-12 parent">
+                    <label for="Postcode2">Postcode</label>
+                    <input type="text" class="margin-bottom-small" name="Postcode2" ng-model="partyDetailsData.Postcode" m-radius-picker="small" on-key-enter-trigger="pafAddressFinderPostcodeSearchPartyDetails"/>
+                    <div m-address-finder="{{ partyDetailsData.Postcode }}" m-address="partyDetailsData" m-trigger-event="pafAddressFinderPostcodeSearchPartyDetails"></div>
+                </div>
+                <div class="clear"></div>
+                <hr/>
+            </div>
+
+
             <label for="Address1">Address 1</label>
             <input name="Address1" type="text" ng-model="partyDetailsData.Address1" m-radius-picker="small" ng-readonly="processing" />
 

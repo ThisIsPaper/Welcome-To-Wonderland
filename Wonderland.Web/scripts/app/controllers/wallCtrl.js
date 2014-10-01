@@ -62,7 +62,7 @@ wonderlandApp.controller('WallCtrl', ['mHttp', 'safeApply', '$filter', '$scope',
                     }
                     // TODO: need to remove this hardcoded time subtraction, server times differ, must be timezone issues
                     value.timeFormatted = moment(value.timestamp).fromNow();
-
+                    value.text = value.text == "null" ? null : value.text;
                     value.imageUrl = value.imageUrl && value.imageUrl.indexOf('null') >= 0 ? null : value.imageUrl;
                 });
             }
