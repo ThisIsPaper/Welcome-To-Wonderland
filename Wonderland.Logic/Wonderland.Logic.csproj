@@ -232,6 +232,7 @@
     <Compile Include="Events\SetPublishedContentModelFactory.cs" />
     <Compile Include="Extensions\HtmlHelperExtensions.cs" />
     <Compile Include="Extensions\MembershipHelperExtensions.cs" />
+    <Compile Include="Extensions\ModelStateDictionaryExtensions.cs" />
     <Compile Include="Extensions\StreamExtensions.cs" />
     <Compile Include="Models\Content\BaseContentType.cs" />
     <Compile Include="Models\Content\DecorationCategory.cs" />
@@ -282,6 +283,7 @@
     <Compile Include="Models\Forms\DonateForm.cs" />
     <Compile Include="Models\Forms\ForgottenPasswordForm.cs" />
     <Compile Include="Models\Forms\FormResponse.cs" />
+    <Compile Include="Models\Forms\FormResponseError.cs" />
     <Compile Include="Models\Forms\FundraisingTargetForm.cs" />
     <Compile Include="Models\Forms\LoginForm.cs" />
     <Compile Include="Models\Forms\PartyCopyForm.cs" />

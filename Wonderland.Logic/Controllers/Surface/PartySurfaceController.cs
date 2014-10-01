@@ -2,6 +2,7 @@
 namespace Wonderland.Logic.Controllers.Surface
 {
     using System;
+    using System.Linq;
     using System.Web.Mvc;
     using Umbraco.Web.Mvc;
     using Wonderland.Logic.Extensions;
@@ -181,6 +182,10 @@ namespace Wonderland.Logic.Controllers.Surface
                 partyHost.PartyAddress = address;
 
                 formResponse.Success = true;
+            }
+            else
+            {
+                formResponse.Errors = this.ModelState.GetErrors();
             }
 
             return Json(formResponse);

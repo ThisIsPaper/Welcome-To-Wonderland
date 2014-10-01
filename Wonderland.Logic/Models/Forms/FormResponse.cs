@@ -2,6 +2,7 @@
 namespace Wonderland.Logic.Models.Forms
 {
     using Newtonsoft.Json;
+    using System.Collections.Generic;
     using System.ComponentModel;
 
     public class FormResponse
@@ -13,5 +14,8 @@ namespace Wonderland.Logic.Models.Forms
         [JsonProperty("message")]
         [DefaultValue("")]
         public string Message { get; internal set; }
+
+        [JsonProperty("errors")]
+        public IEnumerable<FormResponseFieldErrors> Errors { get; internal set; }
     }
 }
