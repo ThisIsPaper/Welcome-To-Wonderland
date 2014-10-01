@@ -37,10 +37,6 @@ wonderlandApp.controller('WallCtrl', ['mHttp', 'safeApply', '$filter', '$scope',
             if (!beforeDateTime) {
                 $scope.wall.feedback.feedProcessingPre = true;
             } else {
-                var mom = moment(beforeDateTime);
-                if (mom.isValid()) {
-                    beforeDateTime = mom.subtract(1, 'hour').format();
-                }
                 $scope.wall.feedback.feedProcessingPost = true;
             }
         });
@@ -67,12 +63,11 @@ wonderlandApp.controller('WallCtrl', ['mHttp', 'safeApply', '$filter', '$scope',
             if (response) {
 
                 angular.forEach(response, function (value) {
-                    if (!isNaN(Number(value.text))) {
-                        value.wallPostType = "Donation";
-                        value.text = $filter('mCurrency')(value.text, '£');
+                    if (Number(value.id<0)) { // is a donation
+                        value.isDonation = true;
                     }
                     // TODO: need to remove this hardcoded time subtraction, server times differ, must be timezone issues
-                    value.timeFormatted = moment(value.timestamp).subtract(1, 'hour').fromNow();
+                    value.timeFormatted = moment(value.timestamp).fromNow();
 
                     value.imageUrl = value.imageUrl && value.imageUrl.indexOf('null') >= 0 ? null : value.imageUrl;
                 });
