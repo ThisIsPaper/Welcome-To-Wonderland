@@ -10,9 +10,13 @@ namespace Wonderland.Logic.Controllers.Api
     using Wonderland.Logic.Interfaces;
     using Wonderland.Logic.Models.Database;
     using Wonderland.Logic.Models.Entities;
+    using Wonderland.Logic.Models.Forms;
+    using Wonderland.Logic.Models.Members;
+    
 
     public class PartyApiController : UmbracoApiController
     {
+        [HttpGet]
         public IEnumerable<PartyWallItem> GetPartyWallItems([FromUri] Guid partyGuid, [FromUri] int take)
         {
             return this.GetPartyWallItems(partyGuid, DateTime.Now, take);
@@ -101,6 +105,39 @@ namespace Wonderland.Logic.Controllers.Api
             }
 
             return partyWallItems;
+        }
+
+        [HttpGet]
+        [MemberAuthorize(AllowType=PartyHost.Alias)]
+        public FormResponse DeletePartyWallItem(int messageId)
+        {
+            FormResponse formResponse = new FormResponse();
+
+            PartyHost partyHost = (PartyHost)this.Members.GetCurrentMember();
+
+            // is party host the host of the party associated with message being deleted ?
+            MessageRow messageRow = this.DatabaseContext.Database.SingleOrDefault<MessageRow>(@"
+                                                                                                SELECT  A.MessageId,
+                                                                                                        A.MemberId,
+                                                                                                        A.Text,
+                                                                                                        A.Image,
+                                                                                                        A.Timestamp 
+                                                                                                FROM    wonderlandMessage A
+                                                                                                        LEFT OUTER JOIN wonderlandMemberParty B ON A.MemberID = B.MemberId
+                                                                                                WHERE   A.MessageId=@0 
+                                                                                                        AND B.PartyGuid=@1",
+                                                                                               messageId, 
+                                                                                               partyHost.PartyGuid);
+            
+            if (messageRow != null)
+            {
+                // TODO: consider marking as deleted instead, and adapting all queries to account for this
+                this.DatabaseContext.Database.Delete(messageRow);
+
+                formResponse.Success = true;
+            }
+
+            return formResponse;
         }
     }
 }
