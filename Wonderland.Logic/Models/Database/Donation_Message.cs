@@ -14,6 +14,9 @@ namespace Wonderland.Logic.Models.Database
         [ResultColumn("PartyWallItemType")]
         public PartyWallItemType PartyWallItemType { get; set; }
 
+        [ResultColumn("Id")]
+        public int Id { get; set; }
+
         [ResultColumn("MemberID")]
         public int MemberId { get; set; }
 

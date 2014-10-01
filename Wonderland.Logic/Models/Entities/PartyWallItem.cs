@@ -10,15 +10,18 @@ namespace Wonderland.Logic.Models.Entities
     using Wonderland.Logic.Enums;
     using Wonderland.Logic.Interfaces;
     using Wonderland.Logic.Models.Database;
+    using Wonderland.Logic.Models.Members;
 
     public class PartyWallItem
     {
         internal PartyWallItem(DonationRow donation)
         {
             IPartier partier = (IPartier)new MembershipHelper(UmbracoContext.Current).GetById((int)donation.MemberId);   // NOTE: exlicit cast from int? to int
-            
+
+            this.Id = -1;
             this.PartyWallItemType = PartyWallItemType.Donation;
             this.ThumbnailUrl = partier.ProfileImageUrl;
+            this.IsPartyHost = partier is PartyHost;
             this.Name = partier.FirstName + partier.LastName;
             this.Text = donation.Amount.ToString();
             this.Timestamp = donation.Timestamp;
@@ -26,10 +29,12 @@ namespace Wonderland.Logic.Models.Entities
 
         internal PartyWallItem(MessageRow message)
         {
-            IPartier partier = (IPartier)new MembershipHelper(UmbracoContext.Current).GetById(message.MemberId);   
+            IPartier partier = (IPartier)new MembershipHelper(UmbracoContext.Current).GetById(message.MemberId);
 
+            this.Id = message.MessageId;
             this.PartyWallItemType = PartyWallItemType.Message; 
             this.ThumbnailUrl = partier.ProfileImageUrl;
+            this.IsPartyHost = partier is PartyHost;
             this.Name = partier.FirstName + partier.LastName;
             this.Text = message.Text;
             
@@ -41,7 +46,14 @@ namespace Wonderland.Logic.Models.Entities
             this.Timestamp = message.Timestamp;
         }
 
-        [JsonIgnore]
+        [JsonProperty("id")]
+        public int Id
+        {
+            get;
+            private set;
+        }
+
+        [JsonProperty("partyWallItemType")]
         public PartyWallItemType PartyWallItemType
         {
             get;
@@ -50,6 +62,13 @@ namespace Wonderland.Logic.Models.Entities
 
         [JsonProperty("thumbnailUrl")]
         public string ThumbnailUrl
+        {
+            get;
+            private set;
+        }
+
+        [JsonProperty("isPartyHost")]
+        public bool IsPartyHost
         {
             get;
             private set;

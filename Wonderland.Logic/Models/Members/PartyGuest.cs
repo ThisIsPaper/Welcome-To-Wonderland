@@ -109,7 +109,12 @@ namespace Wonderland.Logic.Models.Members
         {
             get
             {
-                return "/Uploads/Profile/" + this.ProfileImage;
+                if (!string.IsNullOrWhiteSpace(this.ProfileImage))
+                {
+                    return "/Uploads/Profile/" + this.ProfileImage;
+                }
+
+                return null;                
             }
         }
 
