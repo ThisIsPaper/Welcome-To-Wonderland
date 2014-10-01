@@ -51,6 +51,10 @@ namespace Wonderland.Logic.Controllers.Surface
 
                 formResponse.Success = true;
             }
+            else
+            {
+                formResponse.Errors = this.ModelState.GetErrors();
+            }
 
             return Json(formResponse);
         }
@@ -84,6 +88,10 @@ namespace Wonderland.Logic.Controllers.Surface
                 }
 
                 formResponse.Success = true;
+            }
+            else
+            {
+                formResponse.Errors = this.ModelState.GetErrors();
             }
 
             return Json(formResponse);
@@ -126,6 +134,10 @@ namespace Wonderland.Logic.Controllers.Surface
 
                 formResponse.Success = true;
             }
+            else
+            {
+                formResponse.Errors = this.ModelState.GetErrors();
+            }
 
             return Json(formResponse);
         }
@@ -159,6 +171,10 @@ namespace Wonderland.Logic.Controllers.Surface
                 partier.LastName = profileNamesForm.LastName;
 
                 formResponse.Success = true;
+            }
+            else
+            {
+                formResponse.Errors = this.ModelState.GetErrors();
             }
 
             return Json(formResponse);

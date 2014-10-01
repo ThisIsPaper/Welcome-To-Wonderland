@@ -283,7 +283,7 @@
     <Compile Include="Models\Forms\DonateForm.cs" />
     <Compile Include="Models\Forms\ForgottenPasswordForm.cs" />
     <Compile Include="Models\Forms\FormResponse.cs" />
-    <Compile Include="Models\Forms\FormResponseError.cs" />
+    <Compile Include="Models\Forms\FormResponseFieldErrors.cs" />
     <Compile Include="Models\Forms\FundraisingTargetForm.cs" />
     <Compile Include="Models\Forms\LoginForm.cs" />
     <Compile Include="Models\Forms\PartyCopyForm.cs" />
