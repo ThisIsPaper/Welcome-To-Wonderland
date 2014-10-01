@@ -1,0 +1,15 @@
+﻿@model RegisterHostPartyUrlForm
+
+
+@using (Html.BeginUmbracoForm<RegisterHostSurfaceController>("HandleRegisterHostPartyUrlForm"))
+{
+    @Html.AntiForgeryToken()
+
+    <p>
+        http://wonderland.local/party/ @Html.TextBoxFor(x => x.PartyUrlIdentifier)
+
+        @Html.ValidationMessageFor(x => x.PartyUrlIdentifier)
+    </p>
+
+    <input type="submit" value="Change Url" />
+}

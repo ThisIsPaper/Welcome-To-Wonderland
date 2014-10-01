@@ -303,6 +303,7 @@
     <Compile Include="Models\Forms\RegisterGuestForm.cs" />
     <Compile Include="Models\Forms\RegisterHostForm.cs" />
     <Compile Include="Models\Forms\RegisterHostPartyKitForm.cs" />
+    <Compile Include="Models\Forms\RegisterHostPartyUrlForm.cs" />
     <Compile Include="Models\Forms\ResetPasswordForm.cs" />
     <Compile Include="Models\Forms\SuggestedDonationForm.cs" />
     <Compile Include="Models\Media\Image.cs" />

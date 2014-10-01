@@ -8,12 +8,16 @@ namespace Wonderland.Logic.Models.Database
     [ExplicitColumns]
     public class PartyRow
     {
-        public PartyRow(Guid partyGuid)
+        public PartyRow(Guid partyGuid, string partyUrlIdentifier)
         {
             this.PartyGuid = partyGuid;
+            this.PartyUrlIdentifier = partyUrlIdentifier;
         }
 
         [Column("PartyGuid")]
         public Guid PartyGuid { get; set; }
+
+        [Column("PartyUrlIdentifier")]
+        public string PartyUrlIdentifier { get; set; }
     }
 }

@@ -18,6 +18,9 @@
 
                 <h3>TBC: What is the status of this page?</h3>
 
+                @(Html.Action<RegisterHostSurfaceController>("RenderRegisterHostPartyUrlForm"))
+
+
                 <hr/>
 
                 <a href="@(((IPartier)this.Members.GetCurrentMember()).PartyUrl)" class="btn-primary float-right" m-radius-picker="small">Go to my party <span class="icon-icon_chevron_right"></span></a>

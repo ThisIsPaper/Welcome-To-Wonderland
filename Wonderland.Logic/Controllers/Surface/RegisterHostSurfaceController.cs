@@ -2,6 +2,7 @@
 namespace Wonderland.Logic.Controllers.Surface
 {
     using System;
+    using System.Linq;
     using System.Collections.Generic;
     using System.Web.Mvc;
     using System.Web.Security;
@@ -13,6 +14,8 @@ namespace Wonderland.Logic.Controllers.Surface
     using Wonderland.Logic.Models.Entities;
     using Wonderland.Logic.Models.Forms;
     using Wonderland.Logic.Models.Members;
+    using Wonderland.Logic.Extensions;
+    using Umbraco.Core.Models;
 
     public class RegisterHostSurfaceController : SurfaceController
     {        
@@ -84,8 +87,9 @@ namespace Wonderland.Logic.Controllers.Surface
             partyHost.MarketingSource = registerHostForm.MarketingSource;
 
             Guid partyGuid = Guid.NewGuid();
+            string partyUrlIdentifier = partyGuid.ToString();
 
-            this.DatabaseContext.Database.Insert(new PartyRow(partyGuid));
+            this.DatabaseContext.Database.Insert(new PartyRow(partyGuid, partyUrlIdentifier));
 
             // update database with member and party guid (duplicated data, but never changes)
             this.DatabaseContext.Database.Insert(new MemberPartyRow(partyHost.Id, partyGuid));
@@ -93,8 +97,8 @@ namespace Wonderland.Logic.Controllers.Surface
             // (duplicate data) store party guid in cms cache
             partyHost.PartyGuid = partyGuid;
 
-            // set the default custom url to be the party guid
-            partyHost.PartyUrlIdentifier = partyGuid.ToString();
+            // set the default custom url to be the party guid (this allows for lucnene indexing)
+            partyHost.PartyUrlIdentifier = partyUrlIdentifier;
 
             // set default party date
             partyHost.PartyDateTime = new DateTime(2014, 12, 5, 20, 0, 0);
@@ -143,6 +147,54 @@ namespace Wonderland.Logic.Controllers.Surface
             partyHost.HasRequestedPartyKit = true;
 
             //return this.CurrentUmbracoPage();
+            return this.RedirectToCurrentUmbracoPage();
+        }
+
+
+
+        
+        [ChildActionOnly]
+        [MemberAuthorize(AllowType = PartyHost.Alias)]
+        public ActionResult RenderRegisterHostPartyUrlForm()
+        {
+            RegisterHostPartyUrlForm registerHostPartyUrlForm = new RegisterHostPartyUrlForm();
+
+            registerHostPartyUrlForm.PartyUrlIdentifier = ((PartyHost)this.Members.GetCurrentMember()).PartyUrlIdentifier;
+
+            return this.PartialView("RegisterHostPartyUrlForm", new RegisterHostPartyUrlForm());
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [MemberAuthorize(AllowType = PartyHost.Alias)]
+        public ActionResult HandleRegisterHostPartyUrlForm(RegisterHostPartyUrlForm registerHostPartyUrlForm)
+        {
+            if (ModelState.IsValid)
+            {
+                string partyUrlIdentifier = registerHostPartyUrlForm.PartyUrlIdentifier.ToLower();
+
+                PartyHost partyHost = (PartyHost)this.Members.GetCurrentMember();
+
+                // check to see if this url fragment is available
+                // if not found in the lucene cache
+                if (this.Members.GetPartyHost(partyUrlIdentifier) == null)
+                {
+                    // atttempt to update wonderlandParty table
+                    PartyRow partyRow = new PartyRow(partyHost.PartyGuid, partyUrlIdentifier);
+
+                    try
+                    {
+                        this.DatabaseContext.Database.Update(partyRow);
+
+                        partyHost.PartyUrlIdentifier = partyUrlIdentifier;
+                    }
+                    catch
+                    {
+                        // flag an error
+                    }
+                }
+            }
+
             return this.RedirectToCurrentUmbracoPage();
         }
     }
