@@ -439,7 +439,7 @@ label .ticket {
         @include border-radius($padSmallValue/2);
         background-color: $SecondaryColour;
         background-image: image-url('frost.png');
-        background-repeat: no-repeat;
+        background-repeat: repeat-x;
         background-position: top left;
         width: 0;
         max-width: 100%;
