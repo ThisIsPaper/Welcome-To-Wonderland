@@ -33,9 +33,7 @@ wonderlandApp.controller('WallCtrl', ['mHttp', 'safeApply', '$filter', '$scope',
     $scope.getFeed = function (beforeDateTime) {
 
         safeApply($scope, function () {
-            if (beforeDateTime) {
-                $scope.wall.feedback.feedProcessingPost = true;
-            }
+           $scope.wall.feedback.feedProcessingPost = true;
         });
 
         var sendFormData = {
