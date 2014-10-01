@@ -160,12 +160,8 @@
 
 
                      <div class="grid-12 pad-0">
-                        <div class="loader pos-static" ng-show="wall.feedback.messageProcessing"></div>
+                        <div class="loader margin-side-auto pos-static" ng-show="wall.feedback.messageProcessing"></div>
                      </div>
-                </div>
-
-                <div class="grid-12 margin-top-small pad-0" ng-show="wall.feedback.feedProcessingPre">
-                    <div class="loader pos-static margin-side-auto"></div>
                 </div>
 
                 <div class="margin-top-small" ng-repeat="feedItem in wall.feed">
@@ -186,7 +182,7 @@
                     <div class="loader pos-static margin-side-auto"></div>
                 </div>
 
-                <div class="btn-secondary dis-block" ng-click="getFeed(wall.feedLastDate)" ng-show="!wall.feedback.feedProcessingPost">SHOW MORE!</div>
+                <div class="btn-secondary" ng-click="getFeed(wall.feedLastDate)" ng-show="!wall.feedback.feedProcessingPost && wall.feedLastResponseCount >= wall.feedLimit">Show more!</div>
 
             </div>
         </div>

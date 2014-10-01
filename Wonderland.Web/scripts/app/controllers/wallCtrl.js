@@ -10,12 +10,13 @@ wonderlandApp.controller('WallCtrl', ['mHttp', 'safeApply', '$filter', '$scope',
 
             messageProcessing: false,
 
-            feedProcessingPre: false,
             feedProcessingPost: false
         },
 
         feed: null,
+        feedLimit: 10,
         feedLastDate: null,
+        feedLastResponseCount: 0,
         formModel: null,
         previewImageUrl: null,
         hasDoneFirstLoad: false
@@ -32,16 +33,12 @@ wonderlandApp.controller('WallCtrl', ['mHttp', 'safeApply', '$filter', '$scope',
     $scope.getFeed = function (beforeDateTime) {
 
         safeApply($scope, function () {
-            if (!beforeDateTime) {
-                $scope.wall.feedback.feedProcessingPre = true;
-            } else {
-                $scope.wall.feedback.feedProcessingPost = true;
-            }
+           $scope.wall.feedback.feedProcessingPost = true;
         });
 
         var sendFormData = {
             'partyGuid': partyGuid,
-            'take': 10
+            'take': $scope.wall.feedLimit
         };
         if (beforeDateTime) {
             sendFormData['beforeDateTime'] = beforeDateTime;
@@ -54,26 +51,26 @@ wonderlandApp.controller('WallCtrl', ['mHttp', 'safeApply', '$filter', '$scope',
 
         feedRequest.then(function (response) {
 
-            $scope.wall.feedback.feedProcessingPre = false;
             $scope.wall.feedback.feedProcessingPost = false;
 
             // TODO: hardcoded - work out donations and re-format
             if (response) {
 
                 angular.forEach(response, function (value) {
-                    if (!isNaN(Number(value.text))) {
-                        value.wallPostType = "Donation";
-                        value.text = $filter('mCurrency')(value.text, '£');
+                    if (Number(value.id<0)) { // is a donation
+                        value.isDonation = true;
                     }
                     // TODO: need to remove this hardcoded time subtraction, server times differ, must be timezone issues
-                    value.timeFormatted = moment(value.timestamp).subtract(1, 'hour').fromNow();
+                    value.timeFormatted = moment(value.timestamp).fromNow();
 
                     value.imageUrl = value.imageUrl && value.imageUrl.indexOf('null') >= 0 ? null : value.imageUrl;
                 });
             }
 
             console.log('FEED', beforeDateTime, response);
+
             if (response.length) {
+                $scope.wall.feedLastResponseCount = response.length;
                 $scope.wall.feedLastDate = response[(response.length-1)].timestamp;
             }
 

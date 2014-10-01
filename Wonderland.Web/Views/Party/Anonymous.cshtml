@@ -236,6 +236,13 @@
                     <hr ng-show="!$last"/>
                 </div>
 
+                <div class="grid-12 margin-top-small pad-0" ng-show="wall.feedback.feedProcessingPost">
+                    <div class="loader pos-static margin-side-auto"></div>
+                </div>
+
+                <div class="btn-secondary" ng-click="getFeed(wall.feedLastDate)" ng-show="!wall.feedback.feedProcessingPost && wall.feedLastResponseCount >= wall.feedLimit">Show more!</div>
+
+
             </div>
         </div>
 
