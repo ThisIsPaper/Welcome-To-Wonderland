@@ -110,9 +110,9 @@ namespace Wonderland.Logic.Controllers.Api
             return partyWallItems;
         }
 
-        [HttpGet]
+        [HttpPost]
         [MemberAuthorize(AllowType=PartyHost.Alias)]
-        public FormResponse DeletePartyWallItem(int messageId)
+        public FormResponse DeletePartyWallItem([FromBody] int messageId)
         {
             FormResponse formResponse = new FormResponse();
 

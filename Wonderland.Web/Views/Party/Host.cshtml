@@ -136,6 +136,11 @@
                     '@Model.PartyHost.PartyGuid.ToString()'
                 )" m-radius-picker="large medium">
 
+                                
+                @(Url.GetUmbracoApiService<PartyApiController>("DeletePartyWallItem")) @* post messageId=123 *@
+                
+
+
                 <h4 class="top">Leave a message on the party wall</h4>
 
                 <div class="boxx internal" m-radius-picker="small">
