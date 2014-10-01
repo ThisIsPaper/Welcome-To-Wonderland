@@ -193,6 +193,7 @@
         </div>
 
 
+
         <div class="wgrid-main">
             <div class="boxx" ng-controller="WallCtrl" ng-init="init(
                     '@(Url.GetUmbracoApiService<PartyApiController>("GetPartyWallItems"))',
@@ -230,12 +231,15 @@
                             <span class="wall-time" ng-bind="feedItem.timestamp"></span>
                         </div>
                         <div ng-class="{'donation-copy': feedItem.wallPostType=='Donation'}" ng-bind="feedItem.text"></div>
+                        <img class="margin-top-small margin-bottom-small pad-small" ng-src="{{ feedItem.imageUrl }}" />
                     </div>
                     <hr ng-show="!$last"/>
                 </div>
 
             </div>
         </div>
+
+
 
 
     </div>
