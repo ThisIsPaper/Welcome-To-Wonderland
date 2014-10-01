@@ -19,7 +19,7 @@ namespace Wonderland.Logic.Controllers.Api
         [HttpGet]
         public IEnumerable<PartyWallItem> GetPartyWallItems([FromUri] Guid partyGuid, [FromUri] int take)
         {
-            return this.GetPartyWallItems(partyGuid, DateTime.Now, take);
+            return this.GetPartyWallItems(partyGuid, DateTime.Now.ToUniversalTime(), take);
         }
 
         /// <summary>
