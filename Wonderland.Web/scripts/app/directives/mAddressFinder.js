@@ -13,7 +13,9 @@ wonderlandApp.directive('mAddressFinder', ['paf', 'safeApply', '$timeout', funct
 
         template:   '' +
                         '<div class="margin-bottom-medium"><div class="btn-secondary" m-radius-picker="small" ng-click="findAddressFromPostcode()">Find address</div></div>' +
-                        '<select ng-show="listOfAddresses" class="margin-bottom-large" ng-model="selectedAddress" ng-options="address.streetAddressField for address in listOfAddresses" ></select>' +
+                        '<select ng-show="listOfAddresses" class="margin-bottom-large" ng-model="selectedAddress" ng-options="address.streetAddressField for address in listOfAddresses">' +
+                        '<option value="">-- Select your address --</option>' +
+                        '</select>' +
                         '<div class="errorred" ng-show="showErrorPostcode">That appears to be an invalid postcode, please try again</div>' +
                         '<div class="errorred" ng-show="showErrorAddress">That addresses full details couldn\'t be loaded, try again</div>' +
                         '<div class="successful" ng-show="showSuccess">Your address has been pre-filled!</div>' +
