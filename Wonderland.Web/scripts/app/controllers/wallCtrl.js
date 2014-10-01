@@ -10,7 +10,6 @@ wonderlandApp.controller('WallCtrl', ['mHttp', 'safeApply', '$filter', '$scope',
 
             messageProcessing: false,
 
-            feedProcessingPre: false,
             feedProcessingPost: false
         },
 
@@ -34,9 +33,7 @@ wonderlandApp.controller('WallCtrl', ['mHttp', 'safeApply', '$filter', '$scope',
     $scope.getFeed = function (beforeDateTime) {
 
         safeApply($scope, function () {
-            if (!beforeDateTime) {
-                $scope.wall.feedback.feedProcessingPre = true;
-            } else {
+            if (beforeDateTime) {
                 $scope.wall.feedback.feedProcessingPost = true;
             }
         });
@@ -56,7 +53,6 @@ wonderlandApp.controller('WallCtrl', ['mHttp', 'safeApply', '$filter', '$scope',
 
         feedRequest.then(function (response) {
 
-            $scope.wall.feedback.feedProcessingPre = false;
             $scope.wall.feedback.feedProcessingPost = false;
 
             // TODO: hardcoded - work out donations and re-format
