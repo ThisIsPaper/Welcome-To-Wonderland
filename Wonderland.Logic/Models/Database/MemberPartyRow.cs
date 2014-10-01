@@ -13,7 +13,7 @@ namespace Wonderland.Logic.Models.Database
         {
             this.MemberId = memberId;
             this.PartyGuid = partyGuid;
-            this.Timestamp = DateTime.Now;
+            this.Timestamp = DateTime.UtcNow;
         }
 
         [Column("MemberId")]
