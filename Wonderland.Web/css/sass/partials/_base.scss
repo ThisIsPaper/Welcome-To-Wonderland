@@ -348,6 +348,10 @@ Event Page specific - move these out of here eventually
     &.donation {
         color: $SecondaryColour;
     }
+
+    &.party-host {
+        color: orange;
+    }
 }
 
 .wall-time {

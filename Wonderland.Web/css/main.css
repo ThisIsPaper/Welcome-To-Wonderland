@@ -10733,19 +10733,23 @@ Event Page specific - move these out of here eventually
 .wall-type.donation {
   color: #007eac;
 }
+/* line 352, sass/partials/_base.scss */
+.wall-type.party-host {
+  color: orange;
+}
 
-/* line 353, sass/partials/_base.scss */
+/* line 357, sass/partials/_base.scss */
 .wall-time {
   color: #D4D3CC;
 }
 
-/* line 357, sass/partials/_base.scss */
+/* line 361, sass/partials/_base.scss */
 .donation-copy {
   color: #007eac;
   font-size: 2.3rem;
 }
 
-/* line 362, sass/partials/_base.scss */
+/* line 366, sass/partials/_base.scss */
 .wall-textarea {
   margin-bottom: 0;
   padding-bottom: 0;
@@ -10758,7 +10762,7 @@ Event Page specific - move these out of here eventually
   border-bottom-right-radius: 0;
 }
 
-/* line 369, sass/partials/_base.scss */
+/* line 373, sass/partials/_base.scss */
 .wall-image-preview {
   border: 0.1rem solid #D4D3CC;
   margin-top: 0;
@@ -10776,16 +10780,16 @@ Event Page specific - move these out of here eventually
 }
 
 /*******************************/
-/* line 385, sass/partials/_base.scss */
+/* line 389, sass/partials/_base.scss */
 .ticket {
   position: relative;
 }
-/* line 388, sass/partials/_base.scss */
+/* line 392, sass/partials/_base.scss */
 .ticket .stub {
   background-color: #D4D3CC;
   overflow: hidden;
 }
-/* line 393, sass/partials/_base.scss */
+/* line 397, sass/partials/_base.scss */
 .ticket .stub .holes, .ticket .stub .holes-right {
   position: absolute;
   left: -.1rem;
@@ -10795,13 +10799,13 @@ Event Page specific - move these out of here eventually
   background-image: url('/img/raffle.svg?1411490329');
   background-repeat: no-repeat;
 }
-/* line 403, sass/partials/_base.scss */
+/* line 407, sass/partials/_base.scss */
 .ticket .stub .holes-right {
   left: auto;
   right: -.1rem;
   background-image: url('/img/raffle_r.svg?1411491819');
 }
-/* line 409, sass/partials/_base.scss */
+/* line 413, sass/partials/_base.scss */
 .ticket .stub .price {
   -moz-border-radius: 1rem;
   -webkit-border-radius: 1rem;
@@ -10812,33 +10816,33 @@ Event Page specific - move these out of here eventually
   text-align: center;
   line-height: 7.3rem;
 }
-/* line 426, sass/partials/_base.scss */
+/* line 430, sass/partials/_base.scss */
 .ticket.selected .stub {
   background-color: #007eac;
 }
-/* line 429, sass/partials/_base.scss */
+/* line 433, sass/partials/_base.scss */
 .ticket.selected .stub .price {
   color: white !important;
 }
-/* line 436, sass/partials/_base.scss */
+/* line 440, sass/partials/_base.scss */
 .ticket input[type="radio"] {
   display: none;
 }
 
-/* line 444, sass/partials/_base.scss */
+/* line 448, sass/partials/_base.scss */
 label .ticket span {
   color: inherit;
 }
 
 /*******************************/
-/* line 452, sass/partials/_base.scss */
+/* line 456, sass/partials/_base.scss */
 .totaliser {
   -moz-border-radius: 0.6rem;
   -webkit-border-radius: 0.6rem;
   border-radius: 0.6rem;
   background-color: #D4D3CC;
 }
-/* line 458, sass/partials/_base.scss */
+/* line 462, sass/partials/_base.scss */
 .totaliser .current-total {
   -moz-border-radius: 0.6rem;
   -webkit-border-radius: 0.6rem;
@@ -10871,24 +10875,24 @@ label .ticket span {
 /* =============================================================================
 One-off uses
 ========================================================================== */
-/* line 480, sass/partials/_base.scss */
+/* line 484, sass/partials/_base.scss */
 #twitter-widget-0 {
   width: 100% !important;
 }
 
-/* line 484, sass/partials/_base.scss */
+/* line 488, sass/partials/_base.scss */
 .home-twitter-boxx {
   height: 35.6rem;
 }
 
-/* line 488, sass/partials/_base.scss */
+/* line 492, sass/partials/_base.scss */
 .piggy-donater:after {
   content: "\e61c";
   font-family: "icomoon";
   color: white;
 }
 
-/* line 495, sass/partials/_base.scss */
+/* line 499, sass/partials/_base.scss */
 .join-party-ico:after {
   content: "\e601";
   font-family: "icomoon";
@@ -10896,7 +10900,7 @@ One-off uses
 }
 
 /*******************************/
-/* line 506, sass/partials/_base.scss */
+/* line 510, sass/partials/_base.scss */
 .hero {
   height: 45rem;
   background-image: url('/img/hero-ph.jpg?1411655923');
@@ -10907,24 +10911,24 @@ One-off uses
   padding-top: 10rem;
 }
 
-/* line 516, sass/partials/_base.scss */
+/* line 520, sass/partials/_base.scss */
 .planking {
   background: url('/img/wood_texture.jpg?1411035906') repeat top left;
   background-size: 100% auto;
 }
 
-/* line 521, sass/partials/_base.scss */
+/* line 525, sass/partials/_base.scss */
 .home-content-adjust {
   margin-top: -8rem;
 }
 
-/* line 525, sass/partials/_base.scss */
+/* line 529, sass/partials/_base.scss */
 .hero-explain {
   margin-right: 35rem;
   text-align: left;
 }
 
-/* line 530, sass/partials/_base.scss */
+/* line 534, sass/partials/_base.scss */
 .money-raised {
   position: absolute;
   top: 2.4rem;
@@ -10934,13 +10938,13 @@ One-off uses
   width: 34rem;
 }
 
-/* line 539, sass/partials/_base.scss */
+/* line 543, sass/partials/_base.scss */
 .raised-amount {
   color: white;
   width: 27.5rem;
 }
 
-/* line 544, sass/partials/_base.scss */
+/* line 548, sass/partials/_base.scss */
 .home-tile {
   background-color: white;
   position: relative;
@@ -10950,7 +10954,7 @@ One-off uses
   box-shadow: 0px 14px 30px 0px rgba(0, 0, 0, 0.6);
 }
 
-/* line 554, sass/partials/_base.scss */
+/* line 558, sass/partials/_base.scss */
 .home-tile-image {
   -moz-border-radius: 0.7rem;
   -webkit-border-radius: 0.7rem;
@@ -10961,7 +10965,7 @@ One-off uses
   width: 100%;
 }
 
-/* line 562, sass/partials/_base.scss */
+/* line 566, sass/partials/_base.scss */
 .home-tile-label {
   position: absolute;
   bottom: 0;
@@ -10970,32 +10974,32 @@ One-off uses
 }
 
 /*******************************/
-/* line 573, sass/partials/_base.scss */
+/* line 577, sass/partials/_base.scss */
 .spotify-holder {
   width: 35.6rem;
   margin-top: -7rem;
 }
 
-/* line 578, sass/partials/_base.scss */
+/* line 582, sass/partials/_base.scss */
 .spotify-info-holder {
   position: absolute;
   top: 12rem;
   color: white;
   text-align: center;
 }
-/* line 585, sass/partials/_base.scss */
+/* line 589, sass/partials/_base.scss */
 .spotify-info-holder h1 {
   color: white;
 }
 
 /*******************************/
-/* line 593, sass/partials/_base.scss */
+/* line 597, sass/partials/_base.scss */
 .scoreboard-place {
   float: left;
   width: 5rem;
 }
 
-/* line 598, sass/partials/_base.scss */
+/* line 602, sass/partials/_base.scss */
 .scoreboard-value {
   position: absolute;
   top: 0;
@@ -11004,22 +11008,22 @@ One-off uses
 }
 
 /*******************************/
-/* line 610, sass/partials/_base.scss */
+/* line 614, sass/partials/_base.scss */
 .idea-sizer {
   width: 25%;
 }
 
-/* line 614, sass/partials/_base.scss */
+/* line 618, sass/partials/_base.scss */
 .idea-tile {
   width: 25%;
   padding: 1.2rem;
 }
-/* line 619, sass/partials/_base.scss */
+/* line 623, sass/partials/_base.scss */
 .idea-tile.wide {
   width: 50%;
 }
 
-/* line 624, sass/partials/_base.scss */
+/* line 628, sass/partials/_base.scss */
 .idea {
   padding: 1.2rem;
   background-color: white;
@@ -11030,42 +11034,42 @@ One-off uses
   box-shadow: 0px 14px 30px 0px rgba(0, 0, 0, 0.6);
 }
 
-/* line 632, sass/partials/_base.scss */
+/* line 636, sass/partials/_base.scss */
 .idea-details {
   width: 100%;
   top: 11%;
   left: 0;
   padding: 0 1.2rem;
 }
-/* line 638, sass/partials/_base.scss */
+/* line 642, sass/partials/_base.scss */
 .idea-details.over-the-top {
   position: absolute;
   color: white;
 }
-/* line 642, sass/partials/_base.scss */
+/* line 646, sass/partials/_base.scss */
 .idea-details.over-the-top h1 {
   color: white;
 }
-/* line 647, sass/partials/_base.scss */
+/* line 651, sass/partials/_base.scss */
 .idea-details.wide {
   top: 23%;
 }
 
-/* line 652, sass/partials/_base.scss */
+/* line 656, sass/partials/_base.scss */
 .idea-polaroid {
   -moz-border-radius: 0.7rem;
   -webkit-border-radius: 0.7rem;
   border-radius: 0.7rem;
 }
 
-/* line 656, sass/partials/_base.scss */
+/* line 660, sass/partials/_base.scss */
 .pinterest-ico:before {
   content: "\e623";
   font-family: "icomoon";
   color: #E32333;
 }
 
-/* line 662, sass/partials/_base.scss */
+/* line 666, sass/partials/_base.scss */
 .spotify-logo {
   width: 8rem;
   height: 2.4rem;
@@ -11076,7 +11080,7 @@ One-off uses
   margin: 0 auto;
 }
 
-/* line 673, sass/partials/_base.scss */
+/* line 677, sass/partials/_base.scss */
 .idea-link {
   position: absolute;
   top: 0;
@@ -11087,7 +11091,7 @@ One-off uses
   text-indent: -999rem;
 }
 
-/* line 685, sass/partials/_base.scss */
+/* line 689, sass/partials/_base.scss */
 .share-title {
   width: 27.8rem;
   height: 11.6rem;
@@ -11096,7 +11100,7 @@ One-off uses
   background-size: 27.8rem 11.6rem;
 }
 
-/* line 694, sass/partials/_base.scss */
+/* line 698, sass/partials/_base.scss */
 .share-facebook, .share-twitter, .share-email {
   background-color: #3c5898;
   font-family: "macmillan";
@@ -11105,44 +11109,44 @@ One-off uses
   padding: 1.2rem;
   line-height: 5.5rem;
 }
-/* line 702, sass/partials/_base.scss */
+/* line 706, sass/partials/_base.scss */
 .share-facebook:before, .share-twitter:before, .share-email:before {
   font-family: "icomoon";
   content: "\e619";
   margin-right: 1.2rem;
 }
 
-/* line 709, sass/partials/_base.scss */
+/* line 713, sass/partials/_base.scss */
 .share-twitter {
   background-color: #17abed;
 }
-/* line 711, sass/partials/_base.scss */
+/* line 715, sass/partials/_base.scss */
 .share-twitter:before {
   content: "\e61a";
 }
 
-/* line 717, sass/partials/_base.scss */
+/* line 721, sass/partials/_base.scss */
 .share-email {
   background-color: #007eac;
 }
-/* line 719, sass/partials/_base.scss */
+/* line 723, sass/partials/_base.scss */
 .share-email:before {
   content: "\e618";
   margin-right: 0;
 }
 
 /*******************************/
-/* line 729, sass/partials/_base.scss */
+/* line 733, sass/partials/_base.scss */
 .color-facebook {
   color: #3c5898 !important;
 }
 
-/* line 730, sass/partials/_base.scss */
+/* line 734, sass/partials/_base.scss */
 .color-twitter {
   color: #17abed !important;
 }
 
-/* line 731, sass/partials/_base.scss */
+/* line 735, sass/partials/_base.scss */
 .color-gplus {
   color: #cd3627 !important;
 }

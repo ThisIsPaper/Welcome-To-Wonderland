@@ -59,14 +59,14 @@ wonderlandApp.controller('WallCtrl', ['mHttp', 'safeApply', '$filter', '$scope',
                 angular.forEach(response, function (value) {
                     if (Number(value.id<0)) { // is a donation
                         value.isDonation = true;
+                        value.text = $filter('mCurrency')(value.text, "£");
                     }
-                    // TODO: need to remove this hardcoded time subtraction, server times differ, must be timezone issues
                     value.timeFormatted = moment(value.timestamp).fromNow();
                     value.text = value.text == "null" ? null : value.text;
                     value.imageUrl = value.imageUrl && value.imageUrl.indexOf('null') >= 0 ? null : value.imageUrl;
                 });
             }
-
+console.log('feed', response);
             if (response.length) {
                 $scope.wall.feedLastResponseCount = response.length;
                 $scope.wall.feedLastDate = response[(response.length-1)].timestamp;

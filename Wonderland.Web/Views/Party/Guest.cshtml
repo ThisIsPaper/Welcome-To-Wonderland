@@ -165,10 +165,11 @@
                     <div class="wall-details">
                         <div>
                             <span class="wall-name" ng-bind="feedItem.name"></span>
-                            <span class="wall-type" ng-class="feedItem.wallPostType|lowercase" ng-bind="feedItem.wallPostType" ng-show="feedItem.wallPostType"></span>
+                            <span class="wall-type" ng-class="{'party-host': feedItem.isPartyHost}" ng-show="feedItem.isPartyHost">Party Host</span>
+                            <span class="wall-type" ng-class="{'donation': feedItem.isDonation}" ng-show="feedItem.isDonation">Donation</span>
                             <span class="wall-time" ng-bind="feedItem.timeFormatted"></span>
                         </div>
-                        <div ng-class="{'donation-copy': feedItem.wallPostType=='Donation'}" ng-bind="feedItem.text"></div>
+                        <div ng-class="{'donation-copy': feedItem.isDonation}" ng-bind="feedItem.text"></div>
                         <img class="margin-top-small margin-bottom-small pad-small" ng-src="{{ feedItem.imageUrl }}" />
                     </div>
                     <hr ng-show="!$last"/>
