@@ -20,20 +20,21 @@
 
     <h1 class="secondary margin-bottom-4"><span class="icon-icon_cutlery margin-right-small"></span>Party <br/><span class="bigger">Ideas</span></h1>
 
-    <div class="text-align-center">
-        <select class="auto-width" ng-model="guideIdeaFilter">
-            <option value="">Show All</option>
-            @foreach(string tileType in Model.Select(x => x.TileType).Distinct())
-            {
-                <option value="@tileType">@tileType</option>
-            }            
-            @*<option value="fashion">Fashion</option>
-            <option value="fundraising">Fundraising ideas</option>
-            <option value="playlist">Music</option>
-            <option value="recipe">Recipes</option>
-            <option value="decoration">Venue decoration</option>*@
-        </select>
-    </div>
+    @{
+        IEnumerable<string> tileTypes = this.Model.Select(x => x.TileType).Distinct();
+        if (tileTypes.Count() > 1)
+        {
+            <div class="text-align-center">
+                <select class="auto-width" ng-model="guideIdeaFilter">
+                    <option value="">Show All</option>
+                    @foreach (string tileType in Model.Select(x => x.TileType).Distinct())
+                    {
+                        <option value="@tileType">@tileType</option>
+                    }
+                </select>
+            </div>
+        }
+    }
 
 </div>
 

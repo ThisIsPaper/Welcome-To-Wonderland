@@ -17,9 +17,9 @@ namespace Wonderland.Logic.Models.Content
         {
         }
 
-        //public IEnumerable<PartyIdeaTile> GetPartyIdeaTiles()
-        //{
-        //    return this.Children().Select(x => (PartyIdeaTile)PublishedContentModelFactoryResolver.Current.Factory.CreateModel(x));
-        //}
+        public IEnumerable<PartyIdeaTile> GetPartyIdeaTiles()
+        {
+            return this.Children().Select(x => (PartyIdeaTile)PublishedContentModelFactoryResolver.Current.Factory.CreateModel(x));
+        }
     }
 }
