@@ -4,14 +4,14 @@
 
 <script type="text/ng-template" id="partials/suggestedDonationForm.html">
 
-    <div class="form-holder wide" ng-controller="SuggestedDonationFormCtrl">
+    <div class="form-holder wide" ng-controller="SuggestedDonationFormCtrl" ng-init="processing=false">
 
         <h4>Suggest a ticket donation amount</h4>
         <p class="body-medium margin-bottom-medium">
             You're a ski-tastic host so suggest a donation to your guests for your Wonderland Eggnog-anza! Every penny will go to support the two million people living  with cancer in the UK, and help  them to take back control and live their lives to the fullest. That's cooler than an Alpine stream.
         </p>
 
-        @using (Html.BeginUmbracoForm<PartySurfaceController>("HandleSuggestedDonationForm", FormMethod.Post, new { m_serialized="", m_post_on_submit="suggestedDonationData", m_on_success_event="suggestedDonationDataUpdated" }))
+        @using (Html.BeginUmbracoForm<PartySurfaceController>("HandleSuggestedDonationForm", FormMethod.Post, new { m_serialized="", m_post_on_submit="suggestedDonationData", m_on_success_event="suggestedDonationDataUpdated", ng_submit="processing=true" }))
         {
             @Html.AntiForgeryToken()
 
@@ -32,7 +32,7 @@
 
                             <div class="body-highlight text-align-center" ng-bind="donation.label"></div>
 
-                            <input type="radio" name="SuggestedDonation" ng-value="donation.amount" ng-model="suggestedDonationData.SuggestedDonation" />
+                            <input type="radio" name="SuggestedDonation" ng-value="donation.amount" ng-model="suggestedDonationData.SuggestedDonation" ng-readonly="processing" />
 
                         </div>
 
@@ -43,8 +43,10 @@
             </div>
 
 
-            <button type="submit" class="btn-primary float-right" m-radius-picker="small">Save changes</button>
-            <span class="cancel margin-right-1 float-right">Cancel</span>
+            <button type="submit" class="btn-primary float-right" m-radius-picker="small" ng-disabled="processing">Save changes</button>
+            <span ng-click="closePageModal()" class="cancel margin-right-1 float-right">Cancel</span>
+            <div ng-click="closePageModal()" class="modal-close"></div>
+            <div class="loader" ng-show="processing"></div>
         }
 
     </div>

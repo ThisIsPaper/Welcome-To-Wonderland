@@ -3,37 +3,49 @@
 <div ng-init="partyDetailsDataInit(@Html.Raw(Json.Encode(Model)))"></div>
 
 <script type="text/ng-template" id="partials/partyDetailsForm.html">
-    <div class="form-holder" ng-controller="PartyDetailsFormCtrl">
-        @using (Html.BeginUmbracoForm<PartySurfaceController>("HandlePartyDetailsForm", FormMethod.Post, new { m_serialized="", m_post_on_submit="partyDetailsData", m_on_success_event="partyDetailsDataUpdated" }))
+    <div class="form-holder" ng-controller="PartyDetailsFormCtrl" ng-init="processing">
+        @using (Html.BeginUmbracoForm<PartySurfaceController>("HandlePartyDetailsForm", FormMethod.Post, new { m_serialized="", m_post_on_submit="partyDetailsData", m_on_success_event="partyDetailsDataUpdated", ng_submit="processing=true" }))
         {
             @Html.AntiForgeryToken()
 
             <h4>Your Party Details</h4>
 
             <label for="PartyHeading">Your party heading</label>
-            <input name="PartyHeading" type="text" ng-model="partyDetailsData.PartyHeading" m-radius-picker="small"/>
+            <input name="PartyHeading" type="text" ng-model="partyDetailsData.PartyHeading" m-radius-picker="small" ng-readonly="processing" />
 
-            <label for="PartyDate">Date</label>
-            <input name="PartyDate" type="text" m-date-time-picker="tempModel.PartyDateTime" m-radius-picker="small" readonly />
+            <div class="container">
+                <div class="grid-8 grid-tablet-12 parent">
+                    <label for="PartyDate">Date</label>
+                    <input name="PartyDate" type="text" m-date-time-picker="tempModel.partyDate" m-radius-picker="small" readonly />
+                </div>
+
+                <div class="grid-4 grid-tablet-12 parent margin-bottom-large">
+                    <label for="PartyTime">Time</label>
+                    <select name="PartyTime" ng-model="tempModel.partyTime" ng-options="x for x in tempModel.times" m-radius-picker="small">
+                    </select>
+                </div>
+            </div>
 
             <h4>Your Party Address</h4>
             <div class="form-info margin-bottom-3">Only guests who have joined your party will be able to view your full address</div>
 
             <label for="Address1">Address 1</label>
-            <input name="Address1" type="text" ng-model="partyDetailsData.Address1" m-radius-picker="small"/>
+            <input name="Address1" type="text" ng-model="partyDetailsData.Address1" m-radius-picker="small" ng-readonly="processing" />
 
             <label for="Address2">Address 2</label>
-            <input name="Address2" type="text" ng-model="partyDetailsData.Address2" m-radius-picker="small"/>
+            <input name="Address2" type="text" ng-model="partyDetailsData.Address2" m-radius-picker="small" ng-readonly="processing" />
 
             <label for="TownCity">Town/City</label>
-            <input name="TownCity" type="text" ng-model="partyDetailsData.TownCity" m-radius-picker="small"/>
+            <input name="TownCity" type="text" ng-model="partyDetailsData.TownCity" m-radius-picker="small" ng-readonly="processing" />
 
             <label for="Postcode">Postcode</label>
-            <input class="margin-bottom-3" name="Postcode" type="text" ng-model="partyDetailsData.Postcode" m-radius-picker="small"/>
+            <input class="margin-bottom-3" name="Postcode" type="text" ng-model="partyDetailsData.Postcode" m-radius-picker="small" ng-readonly="processing" />
 
 
-            <button type="submit" class="btn-primary float-right" m-radius-picker="small">Save changes</button>
-            <span class="cancel margin-right-1 float-right">Cancel</span>
+            <button type="submit" class="btn-primary float-right" m-radius-picker="small" ng-disabled="processing">Save changes</button>
+            <span ng-click="closePageModal()" class="cancel margin-right-1 float-right">Cancel</span>
+            <div ng-click="closePageModal()" class="modal-close"></div>
+            <div class="loader" ng-show="processing"></div>
         }
     </div>
 </script>

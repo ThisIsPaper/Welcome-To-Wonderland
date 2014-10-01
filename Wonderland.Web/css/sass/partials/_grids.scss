@@ -21,7 +21,7 @@ $settings : (
 @include gridle_setup($settings);
 
 @include gridle_register_state( tablet , (
-    max-width : 768px /*just do px here otherwise it screws*/
+    max-width : 850px /*just do px here otherwise it screws*/
 ));
 
 @include gridle_register_state( mobile , (

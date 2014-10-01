@@ -7,27 +7,40 @@
     <div class="boxx internal" m-radius-picker="small">
 
         @* display the profile picture *@
-        <div m-profile-image="{{ profileImage.url }}" m-radius-picker="small"></div>
+        <div m-profile-image="{{ pageProfile.imageUrl }}" m-radius-picker="small"></div>
 
 
         <div class="image-shift-details">
-            <div m-image-upload m-on-success-event="profileImageUrlUpdated">
-                @using (Html.BeginUmbracoForm<PartySurfaceController>("HandleProfileImageForm", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            <div m-image-upload m-on-start-event="profileImageUploadStart" m-on-success-event="profileImageUpdated">
+
+
+                @* TODO: This form doesn't return the correct image url so i have swapped it out for the form used on the profile page  *@@*
+                @using (Html.BeginUmbracoForm<ProfileSurfaceController>("HandleProfileImageForm", FormMethod.Post, new { enctype = "multipart/form-data" }))
                 {
                     @Html.AntiForgeryToken()
 
-                    <div class="choose-file-wrapper icon-icon_camera margin-bottom-small">
+                    <div class="choose-file-wrapper icon-icon_camera margin-bottom-small" ng-class="{'disabled': pageFeedback.profileImageProcessing}">
                         <input class="choose-file" type="file" name="profileImage" accept="image/jpeg,image/gif,image/png" m-file-selected="submit()" />
                     </div>
                 }
+                *@
+
+
+                @* TODO: SWAPPED WITH THIS ONE THAT RETURNS THE CORRECT IMAGE URL *@
+                @(Html.Action<ProfileSurfaceController>("RenderProfileImageForm"))
+
+
             </div>
 
-            <div class="successful" ng-show="profileImage.showFeedbackSuccess">Image uploaded successfully</div>
-            <div class="errorred" ng-show="profileImage.showFeedbackError">Oops something went wrong!</div>
+            <div class="loader pos-static" ng-show="pageFeedback.profileImageProcessing"></div>
+
+            <div class="successful" ng-show="pageFeedback.profileImageShowSuccess">Image uploaded successfully</div>
+            <div class="errorred" ng-show="pageFeedback.profileImageShowError">Oops something went wrong!</div>
 
             <div class="file-upload-info margin-left-0">Recommended dimensions of 500x500</div>
             <div class="file-upload-info margin-left-0">Maximum file size of 1MB</div>
         </div>
     </div>
+    <div ng-click="closePageModal()" class="modal-close"></div>
 
 </script>

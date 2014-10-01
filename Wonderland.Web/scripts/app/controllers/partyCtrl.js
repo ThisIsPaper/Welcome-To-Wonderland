@@ -29,10 +29,9 @@ wonderlandApp.controller('PartyCtrl', ['safeApply', '$ocModal', '$sce', '$scope'
     $scope.partyDetailsDataForForm = null;
 
     $scope.partyDetailsDataInit = function (partyDetailsData) {
-
         // convert date to javascript Date
         if (partyDetailsData && partyDetailsData.PartyDateTime) {
-            partyDetailsData.PartyDateTime = moment(partyDetailsData.PartyDateTime).format('YYYY/MM/DD');
+            partyDetailsData.PartyDateTime = moment(partyDetailsData.PartyDateTime).format('YYYY/MM/DD HH:mm:SS');
         }
 
         //*** format address
@@ -48,7 +47,6 @@ wonderlandApp.controller('PartyCtrl', ['safeApply', '$ocModal', '$sce', '$scope'
     };
 
     $scope.$onRootScope('partyDetailsDataUpdated', function(event, response, dataObject) {
-
         $scope.partyDetailsDataInit(dataObject);
         $ocModal.close('partyDetailsModal');
     });
@@ -58,40 +56,40 @@ wonderlandApp.controller('PartyCtrl', ['safeApply', '$ocModal', '$sce', '$scope'
     /**********************/
     /* PROFILE IMAGE DETAILS */
     /**********************/
-    $scope.profileImage = {
-        url: null,
-        showFeedbackSuccess: false,
-        showFeedbackError: false
-    };
-
-
-    $scope.profileImageUrlInit = function (profileImageUrl) {
-        $scope.profileImage.url = profileImageUrl;
-    };
-
-    $scope.$onRootScope('profileImageUrlUpdated', function(event, response) {
-
-        var timeoutTime = 3000;
-
-        if (response && response.Success === true && response.Message) {
-            $scope.profileImage.url = response.Message;
-            $scope.profileImage.showFeedbackSuccess = true;
-
-            // close modal
-            $timeout(function () {
-                $ocModal.close('profileImageModal');
-            }, timeoutTime);
-
-        } else {
-            $scope.profileImage.showFeedbackError = true;
-        }
-
-        // hide feedback
-        $timeout(function () {
-            $scope.profileImage.showFeedbackSuccess = false;
-            $scope.profileImage.showFeedbackError = false;
-        }, timeoutTime);
-    });
+//    $scope.profileImage = {
+//        url: null,
+//        showFeedbackSuccess: false,
+//        showFeedbackError: false
+//    };
+//
+//
+//    $scope.profileImageUrlInit = function (profileImageUrl) {
+//        $scope.profileImage.url = profileImageUrl;
+//    };
+//
+//    $scope.$onRootScope('profileImageUrlUpdated', function(event, response) {
+//
+//        var timeoutTime = 3000;
+//
+//        if (response && response.Success === true && response.Message) {
+//            $scope.profileImage.url = response.Message;
+//            $scope.profileImage.showFeedbackSuccess = true;
+//
+//            // close modal
+//            $timeout(function () {
+//                $ocModal.close('profileImageModal');
+//            }, timeoutTime);
+//
+//        } else {
+//            $scope.profileImage.showFeedbackError = true;
+//        }
+//
+//        // hide feedback
+//        $timeout(function () {
+//            $scope.profileImage.showFeedbackSuccess = false;
+//            $scope.profileImage.showFeedbackError = false;
+//        }, timeoutTime);
+//    });
 
 
 
@@ -126,8 +124,6 @@ wonderlandApp.controller('PartyCtrl', ['safeApply', '$ocModal', '$sce', '$scope'
     };
 
     $scope.$onRootScope('fundraisingTargetDataUpdated', function(event, response, dataObject) {
-
-        console.log('fundraisingTargetDataUpdated', response, dataObject);
 
         $scope.fundraisingTargetDataInit(dataObject);
         $ocModal.close('fundraisingTargetDataModal');

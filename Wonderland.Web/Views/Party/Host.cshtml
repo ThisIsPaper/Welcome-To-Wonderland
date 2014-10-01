@@ -22,12 +22,12 @@
                             <div>Choose my party picture</div>
                         </div>
 
-                        <div class="edit-trigger" ng-click="openPageModal('partials/partyImageForm.html', 'partyImageModal', {'modalId': 'partyImageModal', 'partyImageData': partyImageDataForForm, 'partyImageDefaultData': partyImageDefaultData, 'partyCustomImage': partyCustomImage})"><span class="edit-label">Edit</span><span class="icon-icon_edit"></span></div>
+                        <div class="edit-trigger" ng-click="openPageModal('partials/partyImageForm.html', 'partyImageModal', {'partyImageData': partyImageDataForForm, 'partyImageDefaultData': partyImageDefaultData, 'partyCustomImage': partyCustomImage})"><span class="edit-label">Edit</span><span class="icon-icon_edit"></span></div>
 
                     </div>
 
                     <div class="wgrid-full pad-large">
-                        <div m-profile-image="{{ profileImage.url }}" m-radius-picker="small" ng-click="openPageModal('partials/profileImageForm.html', 'profileImageModal', {'profileImage': profileImage})"></div>
+                        <div m-profile-image="{{ pageProfile.imageUrl }}" class="clickable" m-radius-picker="small" ng-click="openPageModal('partials/profileImageForm.html', 'profileImageModal', {'pageProfile': pageProfile, 'pageFeedback': pageFeedback})"></div>
                         <div class="party-details">
                             <h3 class="pad-right-3 margin-top-0 margin-bottom-small" ng-bind="partyDetailsData.PartyHeading">@this.Model.Heading</h3>
                             <div class="body-small float-left margin-right-medium">
@@ -77,7 +77,7 @@
                 <div class="boxx" m-radius-picker>
                     <h4 class="top">Suggested ticket price</h4>
 
-                    <div class="ticket selected margin-left-3 margin-right-3">
+                    <div class="ticket selected centered max-width-25">
                         <div class="stub">
                             <div class="holes"></div>
                             <div class="holes-right"></div>
@@ -99,10 +99,17 @@
                 <div class="boxx" m-radius-picker>
                     <h4 class="top">Who's Coming <span>(@this.Model.Partiers.Count())</span></h4>
 
+                    <div class="text-align-center">
                     @foreach (IPartier partier in this.Model.Partiers)
                     {
-                        <div class="margin-right-small margin-bottom-small" m-profile-image="@partier.ProfileImageUrl" m-radius-picker="small"></div>
+                        if (partier is PartyHost)
+                        {
+                            <div class="margin-right-small margin-bottom-small" m-profile-image="{{ pageProfile.imageUrl }}" m-radius-picker="small"></div>
+                        } else {
+                            <div class="margin-right-small margin-bottom-small" m-profile-image="@partier.ProfileImageUrl" m-radius-picker="small"></div>
+                        }
                     }
+                    </div>
                 </div>
             </div>
 
@@ -145,15 +152,21 @@
 
                 <div class="boxx internal" m-radius-picker="small">
 
-                    @* TODO - make this user image not host *@
-                    <div m-profile-image="{{ profileImage.url }}" m-radius-picker="small"></div>
+                    <div m-profile-image="{{ pageProfile.imageUrl }}" m-radius-picker="small"></div>
 
                     @(Html.Action<PartySurfaceController>("RenderPartyWallMessageForm"))
 
-                    @* TODO: fix the party wall image poster *@
                     @(Html.Action<PartySurfaceController>("RenderPartyWallImageForm"))
+
+
+                     <div class="grid-12 pad-0">
+                        <div class="loader pos-static" ng-show="wall.feedback.messageProcessing"></div>
+                     </div>
                 </div>
 
+                <div class="grid-12 margin-top-small pad-0" ng-show="wall.feedback.feedProcessingPre">
+                    <div class="loader pos-static margin-side-auto"></div>
+                </div>
 
                 <div class="margin-top-small" ng-repeat="feedItem in wall.feed">
                     <div m-profile-image="{{ feedItem.thumbnailUrl }}" m-radius-picker="small"></div>
@@ -161,12 +174,19 @@
                         <div>
                             <span class="wall-name" ng-bind="feedItem.name"></span>
                             <span class="wall-type" ng-class="feedItem.wallPostType|lowercase" ng-bind="feedItem.wallPostType" ng-show="feedItem.wallPostType"></span>
-                            <span class="wall-time" ng-bind="feedItem.timestamp"></span>
+                            <span class="wall-time" ng-bind="feedItem.timeFormatted"></span>
                         </div>
                         <div ng-class="{'donation-copy': feedItem.wallPostType=='Donation'}" ng-bind="feedItem.text"></div>
+                        <img class="margin-top-small margin-bottom-small pad-small" ng-src="{{ feedItem.imageUrl }}" />
                     </div>
                     <hr ng-show="!$last"/>
                 </div>
+
+                <div class="grid-12 margin-top-small pad-0" ng-show="wall.feedback.feedProcessingPost">
+                    <div class="loader pos-static margin-side-auto"></div>
+                </div>
+
+                <div class="btn-secondary dis-block" ng-click="getFeed(wall.feedLastDate)" ng-show="!wall.feedback.feedProcessingPost">SHOW MORE!</div>
 
             </div>
         </div>

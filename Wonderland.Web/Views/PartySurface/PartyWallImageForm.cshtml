@@ -1,11 +1,11 @@
 ﻿@model PartyWallImageForm
 
-<div class="float-right margin-right-small" m-image-upload m-on-success-event="wallImageUrlUploaded">
+<div class="float-right margin-right-small" m-image-upload m-on-start-event="wallImageUploadStart" m-on-success-event="wallImageUrlUploaded">
     @using (Html.BeginUmbracoForm<PartySurfaceController>("HandlePartyWallImageForm", FormMethod.Post, new { enctype = "multipart/form-data" }))
     {
         @Html.AntiForgeryToken()
 
-        <div class="choose-file-wrapper icon-icon_camera margin-bottom-small">
+        <div class="choose-file-wrapper icon-icon_camera margin-bottom-small" ng-class="{'disabled': (wall.feedback.imageProcessing||wall.feedback.messageProcessing)}">
             <input type="file" class="choose-file" name="partyWallImage" accept="image/jpeg,image/gif,image/png" m-file-selected="submit()" />
         </div>
     }

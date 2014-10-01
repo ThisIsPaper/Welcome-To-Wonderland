@@ -129,7 +129,7 @@
                 <div class="boxx" m-radius-picker ng-init="suggestedDonation=@Model.PartyHost.SuggestedDonation">
                     <h4 class="top">Suggested ticket price</h4>
 
-                    <div class="ticket selected margin-left-3 margin-right-3">
+                    <div class="ticket selected centered max-width-25">
                         <div class="stub">
                             <div class="holes"></div>
                             <div class="holes-right"></div>
@@ -193,6 +193,7 @@
         </div>
 
 
+
         <div class="wgrid-main">
             <div class="boxx" ng-controller="WallCtrl" ng-init="init(
                     '@(Url.GetUmbracoApiService<PartyApiController>("GetPartyWallItems"))',
@@ -227,15 +228,18 @@
                         <div>
                             <span class="wall-name" ng-bind="feedItem.name"></span>
                             <span class="wall-type" ng-class="feedItem.wallPostType|lowercase" ng-bind="feedItem.wallPostType" ng-show="feedItem.wallPostType"></span>
-                            <span class="wall-time" ng-bind="feedItem.timestamp"></span>
+                            <span class="wall-time" ng-bind="feedItem.timeFormatted"></span>
                         </div>
                         <div ng-class="{'donation-copy': feedItem.wallPostType=='Donation'}" ng-bind="feedItem.text"></div>
+                        <img class="margin-top-small margin-bottom-small pad-small" ng-src="{{ feedItem.imageUrl }}" />
                     </div>
                     <hr ng-show="!$last"/>
                 </div>
 
             </div>
         </div>
+
+
 
 
     </div>
