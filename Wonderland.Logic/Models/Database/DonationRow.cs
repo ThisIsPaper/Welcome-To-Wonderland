@@ -12,7 +12,7 @@ namespace Wonderland.Logic.Models.Database
     {
         public DonationRow()
         {
-            this.Timestamp = DateTime.Now;
+            this.Timestamp = DateTime.UtcNow;
         }
 
         [Column("VendorTxCode")]

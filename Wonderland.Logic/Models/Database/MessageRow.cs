@@ -11,7 +11,7 @@ namespace Wonderland.Logic.Models.Database
     {
         public MessageRow()
         {
-            this.Timestamp = DateTime.Now;
+            this.Timestamp = DateTime.UtcNow;
         }
 
         [Column("MessageId")]
