@@ -147,10 +147,11 @@
         font-size: 3rem;
     }
 
+
     /**********************/
     /* NAV SIDE MENU
     /**********************/
-    .nav-menu, .account-menu {
+    .nav-menu {
         position: absolute;
         left: -25.6rem;
         width: 25.6rem;
@@ -160,10 +161,36 @@
         overflow: hidden;
     }
 
-    .account-menu {
-        left: auto;
+
+    /**********************/
+    /* NAV SIDE ACCOUNT MENU
+    /**********************/
+    .account-menu-holder, .site-header.compress .account-menu-holder {
+        top: 0;
         right: -25.6rem;
+        background-color: $greyReallyDark;
+        height: 300rem;
+        width: 25.6rem;
+        overflow: hidden;
+
+        .profile-image, .profile-image.small {
+            width: 16rem;
+            height: 16rem;
+            margin: 2.3rem 0 0 4.9rem;
+            cursor: default;
+        }
     }
+
+    .account-menu {
+        display: block !important;
+        position: relative;
+        width: 100%;
+    }
+
+    .account-name {
+        display: none;
+    }
+    /**********************/
 
     .menu {
         width: 100%;

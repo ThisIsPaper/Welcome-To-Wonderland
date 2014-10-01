@@ -1,3 +1,7 @@
+@import "compass/css3/transition";
+
+
+
 .site-header {
     position: fixed;
     width: 100%;
@@ -19,10 +23,7 @@
     padding: 7.65rem 5.45rem;
     margin: 0 -5.45rem;
 
-    transition-property: top;
-    transition-duration: .3s;
-    transition-timing-function: linear;
-    transition-delay: 0;
+    @include transition(top .3s linear 0);
 }
 
 .logo-ribbon {
@@ -47,10 +48,7 @@
     line-height: 8.4rem;
     letter-spacing: .2rem;
 
-    transition-property: line-height;
-    transition-duration: .3s;
-    transition-timing-function: linear;
-    transition-delay: 0;
+    @include transition(line-height .3s linear 0);
 }
 
 .menu li a:hover {
@@ -85,10 +83,7 @@
 }
 
 .logo-ribbon, .menu ul {
-    transition-property: margin;
-    transition-duration: .3s;
-    transition-timing-function: linear;
-    transition-delay: 0;
+    @include transition(margin .3s linear 0);
 }
 
 .menu li {
@@ -108,10 +103,7 @@
     left: 2rem;
     z-index: 3;
 
-    transition-property: top;
-    transition-duration: .3s;
-    transition-timing-function: linear;
-    transition-delay: 0;
+    @include transition(top .3s linear 0);
 }
 
 .nav-end-block.end-block-right {
@@ -124,8 +116,16 @@
     cursor: pointer;
 }
 
+.account-menu-holder {
+    position: absolute;
+    right: .8rem;
+    top: 2.3rem;
+    z-index: 10;
+    @include transition(top .3s linear 0);
+}
 
 .account-menu {
+    display: none;
     position: absolute;
     top: 4.7rem;
     right: 0;
@@ -133,7 +133,7 @@
     background-color: $greyReallyDark;
     @include border-radius(.7rem);
 
-  
+
     ul {
         padding: 0;
         margin: 0;
@@ -141,11 +141,6 @@
 
     li {
         list-style: none;
-        border-bottom: 1px solid $greyDark;
-
-        &.last {
-            border-bottom: none;
-        }
 
         span[class^="icon-"]:before, span[class*=" icon-"]:before {
             color: $greyMedium;
@@ -165,7 +160,22 @@
             font-size: $FontSizeSmall;
             line-height: 4.4rem;
             display: block;
+            width: 100%;
+            float: left;
+            border-bottom: 1px solid $greyDark;
+
+            &.last {
+                border-bottom: none;
+            }
+
+            &:hover {
+                color: white;
+            }
         }
+    }
+
+    &.opened {
+        display: block;
     }
 }
 
@@ -224,6 +234,9 @@
 
 .site-header.compress .nav-end-block {
     top: 1.6rem;
+}
+.site-header.compress .account-menu-holder {
+    top: 1.3rem;
 }
 
 footer {
