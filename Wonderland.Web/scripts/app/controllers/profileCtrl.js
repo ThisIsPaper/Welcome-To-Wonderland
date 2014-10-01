@@ -34,6 +34,7 @@ wonderlandApp.controller('ProfileCtrl', ['safeApply', '$scope', '$timeout', func
             $scope.feedback.profileNameProcessing = false;
 
             if (response && response.Success === true) {
+                $scope.pageProfile.firstName = dataObject.FirstName;
                 $scope.feedback.profileNameShowSuccess = true;
             } else {
                 $scope.feedback.profileNameShowError = true;

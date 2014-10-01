@@ -127,3 +127,11 @@ wonderlandApp.filter('formatAmountComplete', [function () {
     };
 
 }]);
+
+wonderlandApp.filter('mLimitTo', ['$filter', function ($filter) {
+
+    return function (str, limit, suffix) {
+        return $filter('limitTo')(str, limit) + (str.length>limit && suffix ? suffix : '');
+    };
+
+}]);

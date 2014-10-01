@@ -35,7 +35,7 @@
         <div class="nav-end-block end-block-right" m-window-click-toggle="pageShowAccountDropdown">
             <div ng-click="pageShowAccountDropdown=true">
                 <div class="small clickable" m-profile-image="{{ pageProfile.imageUrl }}" m-radius-picker="small"></div>
-                <div class="account-name"><span class="margin-right-tiny" ng-bind="pageProfile.firstName"></span><span class="icon-icon_chevron_down"></span></div>
+                <div class="account-name"><span class="margin-right-tiny" ng-bind="pageProfile.firstName|mLimitTo:9:'...'"></span><span class="icon-icon_chevron_down"></span></div>
             </div>
             <div class="account-menu ng-cloak" ng-show="pageShowAccountDropdown" ng-cloak>
                 <div class="arrow-up"></div>
