@@ -67,8 +67,6 @@ wonderlandApp.controller('WallCtrl', ['mHttp', 'safeApply', '$filter', '$scope',
                 });
             }
 
-            console.log('FEED', beforeDateTime, response);
-
             if (response.length) {
                 $scope.wall.feedLastResponseCount = response.length;
                 $scope.wall.feedLastDate = response[(response.length-1)].timestamp;

@@ -56,7 +56,6 @@ wonderlandApp.controller('PageCtrl', ['debounce', 'paf', 'safeApply', '$rootScop
      *
      */
     $scope.$onRootScope('profileImageUploadStart', function() {
-        console.log('Event::profileImageUploadStart');
 
         safeApply($scope, function () {
             $scope.pageFeedback.profileImageProcessing = true;
@@ -64,7 +63,6 @@ wonderlandApp.controller('PageCtrl', ['debounce', 'paf', 'safeApply', '$rootScop
 
     });
     $scope.$onRootScope('profileImageUpdated', function(event, response, dataObject) {
-        console.log('Event::profileImageUpdated', response, dataObject);
 
 
         /**
