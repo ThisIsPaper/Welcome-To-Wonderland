@@ -2,6 +2,7 @@
 namespace Wonderland.Logic.Controllers.Surface
 {
     using System;
+    using System.Linq;
     using System.Web.Mvc;
     using Umbraco.Web.Mvc;
     using Wonderland.Logic.Extensions;
@@ -36,6 +37,10 @@ namespace Wonderland.Logic.Controllers.Surface
                 ((PartyHost)this.Members.GetCurrentMember()).PartyImage = partyImageForm.PartyImage;
 
                 formResponse.Success = true;
+            }
+            else
+            {
+                formResponse.Errors = this.ModelState.GetErrors();
             }
 
             return Json(formResponse);
@@ -96,6 +101,10 @@ namespace Wonderland.Logic.Controllers.Surface
 
                 formResponse.Success = true;
             }
+            else
+            {
+                formResponse.Errors = this.ModelState.GetErrors();
+            }
 
             return Json(formResponse);
         }
@@ -131,6 +140,10 @@ namespace Wonderland.Logic.Controllers.Surface
                     formResponse.Message = new PartyHost(this.Umbraco.TypedMember(partyHost.Id)).ProfileImageUrl;
                     formResponse.Success = true;
                 }
+            }
+            else
+            {
+                formResponse.Errors = this.ModelState.GetErrors();
             }
 
             return Json(formResponse);
@@ -182,6 +195,10 @@ namespace Wonderland.Logic.Controllers.Surface
 
                 formResponse.Success = true;
             }
+            else
+            {
+                formResponse.Errors = this.ModelState.GetErrors();
+            }
 
             return Json(formResponse);
         }
@@ -212,6 +229,10 @@ namespace Wonderland.Logic.Controllers.Surface
 
                 formResponse.Success = true;
             }
+            else
+            {
+                formResponse.Errors = this.ModelState.GetErrors();
+            }
 
             return Json(formResponse);
         }
@@ -241,6 +262,10 @@ namespace Wonderland.Logic.Controllers.Surface
                 ((PartyHost)this.Members.GetCurrentMember()).FundraisingTarget = fundraisingTargetForm.FundraisingTarget;
 
                 formResponse.Success = true;
+            }
+            else
+            {
+                formResponse.Errors = this.ModelState.GetErrors();
             }
 
             return Json(formResponse);
@@ -316,6 +341,10 @@ namespace Wonderland.Logic.Controllers.Surface
                 formResponse.Message = "/Uploads/PartyWall/" + fileName;
 
                 formResponse.Success = true;
+            }
+            else
+            {
+                formResponse.Errors = this.ModelState.GetErrors();
             }
 
             return Json(formResponse);
