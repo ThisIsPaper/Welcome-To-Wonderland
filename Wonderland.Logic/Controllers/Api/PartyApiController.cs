@@ -91,7 +91,7 @@ namespace Wonderland.Logic.Controllers.Api
             }
             
             // get a collection of all raw data, for all wall items for a party - as sorted by sql
-            foreach (Donation_Message donation_Message in this.DatabaseContext.Database.Fetch<Donation_Message>(sql, partyGuid, beforeDateTime))
+            foreach (Donation_Message donation_Message in this.DatabaseContext.Database.Fetch<Donation_Message>(sql, partyGuid, beforeDateTime.ToUniversalTime()))
             {
                 switch (donation_Message.PartyWallItemType)
                 {

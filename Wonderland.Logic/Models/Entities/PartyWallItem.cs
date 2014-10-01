@@ -24,7 +24,7 @@ namespace Wonderland.Logic.Models.Entities
             this.IsPartyHost = partier is PartyHost;
             this.Name = partier.FirstName + partier.LastName;
             this.Text = donation.Amount.ToString();
-            this.Timestamp = donation.Timestamp;
+            this.Timestamp = donation.Timestamp.ToUniversalTime();
         }
 
         internal PartyWallItem(MessageRow message)
@@ -43,7 +43,7 @@ namespace Wonderland.Logic.Models.Entities
                 this.ImageUrl = "/Uploads/PartyWall/" + message.Image;
             }
             
-            this.Timestamp = message.Timestamp;
+            this.Timestamp = message.Timestamp.ToUniversalTime();
         }
 
         [JsonProperty("id")]
