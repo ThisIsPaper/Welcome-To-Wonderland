@@ -95,6 +95,12 @@
 
                 <div class="wgrid-full parent">
 
+                    <div class="width-50p"">
+                        <label for="testPostcode">Test postcode</label>
+                        <input type="text" name=testPostcode ng-model="testPostcode"/>
+                        <div m-address-finder="{{ testPostcode }}" m-address="profileBillingAddressData"></div>
+                    </div>
+
                     @(Html.Action<ProfileSurfaceController>("RenderProfileBillingAddressForm"))
 
 

@@ -1,4 +1,4 @@
-wonderlandApp.controller('PageCtrl', ['debounce', 'safeApply', '$rootScope', '$scope', '$timeout', '$window', function (debounce, safeApply, $rootScope, $scope, $timeout, $window) {
+wonderlandApp.controller('PageCtrl', ['debounce', 'paf', 'safeApply', '$rootScope', '$scope', '$timeout', '$window', function (debounce, paf, safeApply, $rootScope, $scope, $timeout, $window) {
 
     $scope.pageHeaderCompress = false;
     $scope.pageShowingSideNavMenu = false;
@@ -86,8 +86,6 @@ wonderlandApp.controller('PageCtrl', ['debounce', 'safeApply', '$rootScope', '$s
             }, 5000);
         });
     });
-
-
 
 
 
