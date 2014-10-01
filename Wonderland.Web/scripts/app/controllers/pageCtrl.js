@@ -1,4 +1,4 @@
-wonderlandApp.controller('PageCtrl', ['debounce', 'safeApply', '$rootScope', '$scope', '$timeout', '$window', function (debounce, safeApply, $rootScope, $scope, $timeout, $window) {
+wonderlandApp.controller('PageCtrl', ['debounce', 'paf', 'safeApply', '$rootScope', '$scope', '$timeout', '$window', function (debounce, paf, safeApply, $rootScope, $scope, $timeout, $window) {
 
     $scope.pageHeaderCompress = false;
     $scope.pageShowingSideNavMenu = false;
@@ -56,7 +56,6 @@ wonderlandApp.controller('PageCtrl', ['debounce', 'safeApply', '$rootScope', '$s
      *
      */
     $scope.$onRootScope('profileImageUploadStart', function() {
-        console.log('Event::profileImageUploadStart');
 
         safeApply($scope, function () {
             $scope.pageFeedback.profileImageProcessing = true;
@@ -64,7 +63,6 @@ wonderlandApp.controller('PageCtrl', ['debounce', 'safeApply', '$rootScope', '$s
 
     });
     $scope.$onRootScope('profileImageUpdated', function(event, response, dataObject) {
-        console.log('Event::profileImageUpdated', response, dataObject);
 
 
         /**
@@ -86,8 +84,6 @@ wonderlandApp.controller('PageCtrl', ['debounce', 'safeApply', '$rootScope', '$s
             }, 5000);
         });
     });
-
-
 
 
 

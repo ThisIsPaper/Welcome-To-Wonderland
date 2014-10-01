@@ -29,8 +29,6 @@ wonderlandApp.factory('fileUpload', ['$document', '$q', 'uniqueId',
                     var response = targetIframe[0].contentWindow.document.body.innerHTML;
                     response = response.replace(/<\/?[^>]+>/gi, '');
 
-                    console.log('fileUpload::loaded', response);
-
                     targetIframe.remove();
                     deferred.resolve(angular.fromJson(response));
                 });
