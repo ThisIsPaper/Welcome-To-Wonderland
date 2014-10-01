@@ -13,7 +13,7 @@
 // 
 #pragma warning disable 1591
 
-namespace Wonderland.Logic.PostcodeAnywhere {
+namespace Wonderland.Logic.PostcodeAnywhere.FindByPostcode {
     using System;
     using System.Web.Services;
     using System.Diagnostics;
