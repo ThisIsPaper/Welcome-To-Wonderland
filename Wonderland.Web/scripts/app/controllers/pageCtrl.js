@@ -1,10 +1,17 @@
-wonderlandApp.controller('PageCtrl', ['debounce', '$rootScope', '$scope', '$window', function (debounce, $rootScope, $scope, $window) {
+wonderlandApp.controller('PageCtrl', ['debounce', 'safeApply', '$rootScope', '$scope', '$timeout', '$window', function (debounce, safeApply, $rootScope, $scope, $timeout, $window) {
 
     $scope.pageHeaderCompress = false;
     $scope.pageShowingSideNavMenu = false;
     $scope.pageShowingSideAccountMenu = false;
     $scope.pageProfile = {
         imageUrl: null
+    };
+    $scope.pageFeedback = {
+
+        profileImageProcessing:  false,
+        profileImageShowSuccess: false,
+        profileImageShowError: false
+
     };
 
 
@@ -36,6 +43,50 @@ wonderlandApp.controller('PageCtrl', ['debounce', '$rootScope', '$scope', '$wind
 
     runScrollCheck();
     angular.element($window).bind('scroll', runScrollCheck);
+
+
+
+
+
+
+
+     /***
+     *
+     * PROFILE IMAGE CHANGE
+     *
+     */
+    $scope.$onRootScope('profileImageUploadStart', function() {
+        console.log('Event::profileImageUploadStart');
+
+        safeApply($scope, function () {
+            $scope.pageFeedback.profileImageProcessing = true;
+        });
+
+    });
+    $scope.$onRootScope('profileImageUpdated', function(event, response, dataObject) {
+        console.log('Event::profileImageUpdated', response, dataObject);
+
+
+        /**
+         * safe apply the feedback response
+         */
+        safeApply($scope, function () {
+            $scope.pageFeedback.profileImageProcessing = false;
+
+            if (response && response.Success === true && response.Message) {
+                $scope.pageProfile.imageUrl = response.Message;
+                $scope.pageFeedback.profileImageShowSuccess = true;
+            } else {
+                $scope.pageFeedback.profileImageShowError = true;
+            }
+
+            $timeout(function () {
+                $scope.pageFeedback.profileImageShowSuccess = false;
+                $scope.pageFeedback.profileImageShowError = false;
+            }, 5000);
+        });
+    });
+
 
 
 

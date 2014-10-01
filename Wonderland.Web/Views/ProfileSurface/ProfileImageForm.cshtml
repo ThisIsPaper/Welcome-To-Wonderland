@@ -4,10 +4,7 @@
 {
     @Html.AntiForgeryToken()
 
-    @*@Html.EditorForModel()*@
-
-    <div class="choose-file-wrapper icon-icon_camera margin-bottom-small" data-ng-class="{'disabled': feedback.profileImageProcessing}">
-        <input class="choose-file" type="file" name="profileImage" accept="image/jpeg,image/gif,image/png" m-file-selected="submit()" ng-disabled="feedback.profileImageProcessing" />
+    <div class="choose-file-wrapper icon-icon_camera margin-bottom-small" ng-class="{'disabled': pageFeedback.profileImageProcessing}">
+        <input class="choose-file" type="file" name="profileImage" accept="image/jpeg,image/gif,image/png" m-file-selected="submit()" ng-disabled="pageFeedback.profileImageProcessing" />
     </div>
-    <div class="loader pos-static" ng-show="feedback.profileImageProcessing"></div>
 }

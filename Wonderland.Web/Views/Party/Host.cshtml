@@ -27,7 +27,7 @@
                     </div>
 
                     <div class="wgrid-full pad-large">
-                        <div m-profile-image="{{ profileImage.url }}" m-radius-picker="small" ng-click="openPageModal('partials/profileImageForm.html', 'profileImageModal', {'profileImage': profileImage})"></div>
+                        <div m-profile-image="{{ pageProfile.imageUrl }}" class="clickable" m-radius-picker="small" ng-click="openPageModal('partials/profileImageForm.html', 'profileImageModal', {'pageProfile': pageProfile, 'pageFeedback': pageFeedback})"></div>
                         <div class="party-details">
                             <h3 class="pad-right-3 margin-top-0 margin-bottom-small" ng-bind="partyDetailsData.PartyHeading">@this.Model.Heading</h3>
                             <div class="body-small float-left margin-right-medium">
@@ -102,7 +102,12 @@
                     <div class="text-align-center">
                     @foreach (IPartier partier in this.Model.Partiers)
                     {
-                        <div class="margin-right-small margin-bottom-small" m-profile-image="@partier.ProfileImageUrl" m-radius-picker="small"></div>
+                        if (partier is PartyHost)
+                        {
+                            <div class="margin-right-small margin-bottom-small" m-profile-image="{{ pageProfile.imageUrl }}" m-radius-picker="small"></div>
+                        } else {
+                            <div class="margin-right-small margin-bottom-small" m-profile-image="@partier.ProfileImageUrl" m-radius-picker="small"></div>
+                        }
                     }
                     </div>
                 </div>
@@ -142,8 +147,7 @@
 
                 <div class="boxx internal" m-radius-picker="small">
 
-                    @* TODO - make this user image not host *@
-                    <div m-profile-image="{{ profileImage.url }}" m-radius-picker="small"></div>
+                    <div m-profile-image="{{ pageProfile.imageUrl }}" m-radius-picker="small"></div>
 
                     @(Html.Action<PartySurfaceController>("RenderPartyWallMessageForm"))
 

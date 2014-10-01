@@ -60,10 +60,7 @@ wonderlandApp.controller('WallCtrl', ['mHttp', '$filter', '$scope', function (mH
 
             var url = response.Message;
 
-            // TODO - remove this work around once the returned data is valid
-//            if (url.indexOf("PartyImage") < 0) {
-//                url = '/Uploads/PartyWall/' + url;
-//            }
+            console.log('wallImageUrlUploaded', url);
 
             $scope.wall.formModel.PartyWallImage = url;
         }
