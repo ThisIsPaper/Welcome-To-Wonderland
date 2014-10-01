@@ -31,12 +31,19 @@
     }
     else
     {
-        <div class="nav-end-block end-block-right">
-            <div class="small" m-profile-image="{{ pageProfile.imageUrl }}" m-radius-picker="small" ng-click="showAccountMenu=!showAccountMenu"></div>
 
-            <div class="account-menu" ng-show="showAccountMenu">
-                <a href="@Model.ProfileUrl" class="btn-secondary btn-small" m-radius-picker="small">My Profile</a>
-                <a href="/logout/" class="btn-secondary btn-small" m-radius-picker="small">Logout <span class="icon-icon_person"></span></a>
+        <div class="nav-end-block end-block-right" m-window-click-toggle="pageShowAccountDropdown">
+            <div ng-click="pageShowAccountDropdown=true">
+                <div class="small clickable" m-profile-image="{{ pageProfile.imageUrl }}" m-radius-picker="small"></div>
+                <div class="account-name"><span class="margin-right-tiny" ng-bind="pageProfile.firstName|mLimitTo:9:'...'"></span><span class="icon-icon_chevron_down"></span></div>
+            </div>
+            <div class="account-menu ng-cloak" ng-show="pageShowAccountDropdown" ng-cloak>
+                <div class="arrow-up"></div>
+                <ul>
+                    <li class=""><a href="@(((IPartier)this.Members.GetCurrentMember()).PartyUrl)"><span class="icon-icon_star"></span>My party</a></li>
+                    <li class=""><a href="@Model.ProfileUrl"><span class="icon-icon_cog"></span>My profile</a></li>
+                    <li class="last"><a href="/logout"><span class="icon-icon_padlock_unlocked"></span>Logout</a></li>
+                </ul>
             </div>
         </div>
     }

@@ -47,9 +47,6 @@ wonderlandApp.controller('PageCtrl', ['debounce', 'paf', 'safeApply', '$rootScop
 
 
 
-
-
-
      /***
      *
      * PROFILE IMAGE CHANGE
