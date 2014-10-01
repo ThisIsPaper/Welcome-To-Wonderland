@@ -44,6 +44,7 @@ namespace Wonderland.Logic.Controllers.Api
                         FROM
                         (                            
                                 SELECT      PartyWallItemType = " + (int)PartyWallItemType.Donation + @", 
+                                            Id = NULL,
                                             MemberId, 
                                             Amount, 
                                             [Text] = NULL, 
@@ -55,6 +56,7 @@ namespace Wonderland.Logic.Controllers.Api
                                             AND [Timestamp] < @1
                                 UNION ALL
                                 SELECT      PartyWallItemType = " + (int)PartyWallItemType.Message + @", 
+                                            MessageId AS Id,
                                             MemberId, 
                                             Amount = NULL, 
                                             [Text], 
@@ -74,6 +76,7 @@ namespace Wonderland.Logic.Controllers.Api
                 sql = @"
                         SELECT      TOP " + take.ToString() + @"
                                     PartyWallItemType = " + (int)PartyWallItemType.Donation + @", 
+                                    ID = NULL,
                                     MemberId, 
                                     Amount, 
                                     [Text] = NULL, 

@@ -33,6 +33,7 @@ namespace Wonderland.Logic.Models.Database
         {
             return new MessageRow()
                         {
+                            MessageId = donation_Message.Id,
                             MemberId = donation_Message.MemberId,
                             Text = donation_Message.Text,
                             Image = donation_Message.Image,
