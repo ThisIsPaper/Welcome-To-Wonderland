@@ -140,11 +140,9 @@
         <div class="wgrid-main">
             <div class="boxx" ng-controller="WallCtrl" ng-init="init(
                     '@(Url.GetUmbracoApiService<PartyApiController>("GetPartyWallItems"))',
-                    '@Model.PartyHost.PartyGuid.ToString()'
+                    '@Model.PartyHost.PartyGuid.ToString()',
+                    '@(Url.GetUmbracoApiService<PartyApiController>("DeletePartyWallItem"))'
                 )" m-radius-picker="large medium">
-
-                                
-                @(Url.GetUmbracoApiService<PartyApiController>("DeletePartyWallItem")) @* post messageId=123 *@
                 
 
 
@@ -164,7 +162,7 @@
                      </div>
                 </div>
 
-                <div class="margin-top-small" ng-repeat="feedItem in wall.feed">
+                <div class="margin-top-small pos-relative" ng-repeat="feedItem in wall.feed">
                     <div m-profile-image="{{ feedItem.thumbnailUrl }}" m-radius-picker="small"></div>
                     <div class="wall-details">
                         <div>
@@ -175,6 +173,10 @@
                         </div>
                         <div ng-class="{'donation-copy': feedItem.isDonation}" ng-bind="feedItem.text"></div>
                         <img class="margin-top-small margin-bottom-small pad-small" ng-src="{{ feedItem.imageUrl }}" />
+                    </div>
+                    <div ng-hide="feedItem.isDonation">
+                        <div class="warning wall-remove clickable"ng-hide="wall.feedback.removeProcessingId==feedItem.id" ng-click="deleteFeedItem(feedItem.id)">Remove <span class="icon-icon_x"></span></div>
+                        <div class="wall-remove loader" ng-show="wall.feedback.removeProcessingId==feedItem.id"></div>
                     </div>
                     <hr ng-show="!$last"/>
                 </div>

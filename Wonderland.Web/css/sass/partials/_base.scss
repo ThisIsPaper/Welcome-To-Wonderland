@@ -358,6 +358,17 @@ Event Page specific - move these out of here eventually
     color: $greyLight;
 }
 
+.wall-remove {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+
+    &.loader {
+        margin-top: -3rem;
+    }
+}
+
 .donation-copy {
     color: $SecondaryColour;
     font-size: $FontSizeLarge;
