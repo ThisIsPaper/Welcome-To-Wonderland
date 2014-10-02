@@ -6,7 +6,7 @@
                                                 Model.Select(x =>
                                                     new
                                                     {
-                                                        imageUrl = x.TileImage.Url,
+                                                        imageUrl =  x.TileSize == PartyIdeaTileSize.Wide ? x.TileImage.GetResponsiveCropUrl("Letterbox") : x.TileImage.GetResponsiveCropUrl("Square"),
                                                         tileType = x.TileType, // decoration, fashion, playlist, recipe, fundraising
                                                         tileHeading = x.TileHeading,
                                                         tileCopy= x.TileCopy,
@@ -27,7 +27,7 @@
             <div class="text-align-center">
                 <select class="auto-width" ng-model="guideIdeaFilter">
                     <option value="">Show All</option>
-                    @foreach (string tileType in Model.Select(x => x.TileType).Distinct())
+                    @foreach (string tileType in tileTypes)
                     {
                         <option value="@tileType">@tileType</option>
                     }
