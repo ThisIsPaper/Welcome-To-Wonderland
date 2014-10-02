@@ -6,9 +6,14 @@
 
 
     <a class="nav-burger nav-end-block icon-icon_hamburger_menu" ng-click="pageShowingSideNavMenu=!pageShowingSideNavMenu" ng-class="{'icon-icon_x': pageShowingSideNavMenu}"></a>
-
+    @if (!this.Members.IsLoggedInPartier())
+    {
+    <a class="nav-account nav-end-block end-block-right icon-icon_person" href="@Model.LoginUrl"></a>
+    }
+    else
+    {
     <a class="nav-account nav-end-block end-block-right icon-icon_person" ng-click="pageShowingSideAccountMenu=!pageShowingSideAccountMenu" ng-class="{'icon-icon_x': pageShowingSideAccountMenu}"></a>
-
+    }
 
 
 
@@ -32,17 +37,17 @@
     else
     {
 
-        <div class="nav-end-block end-block-right" m-window-click-toggle="pageShowAccountDropdown">
+        <div class="account-menu-holder" m-window-click-toggle="pageShowAccountDropdown">
             <div ng-click="pageShowAccountDropdown=true">
                 <div class="small clickable" m-profile-image="{{ pageProfile.imageUrl }}" m-radius-picker="small"></div>
                 <div class="account-name"><span class="margin-right-tiny" ng-bind="pageProfile.firstName|mLimitTo:9:'...'"></span><span class="icon-icon_chevron_down"></span></div>
             </div>
-            <div class="account-menu ng-cloak" ng-show="pageShowAccountDropdown" ng-cloak>
+            <div class="account-menu" ng-class="{'opened': pageShowAccountDropdown}">
                 <div class="arrow-up"></div>
                 <ul>
                     <li class=""><a href="@(((IPartier)this.Members.GetCurrentMember()).PartyUrl)"><span class="icon-icon_star"></span>My party</a></li>
                     <li class=""><a href="@Model.ProfileUrl"><span class="icon-icon_cog"></span>My profile</a></li>
-                    <li class="last"><a href="/logout"><span class="icon-icon_padlock_unlocked"></span>Logout</a></li>
+                    <li class=""><a class="last" href="/logout"><span class="icon-icon_padlock_unlocked"></span>Logout</a></li>
                 </ul>
             </div>
         </div>

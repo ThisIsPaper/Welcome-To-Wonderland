@@ -348,10 +348,25 @@ Event Page specific - move these out of here eventually
     &.donation {
         color: $SecondaryColour;
     }
+
+    &.party-host {
+        color: orange;
+    }
 }
 
 .wall-time {
     color: $greyLight;
+}
+
+.wall-remove {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+
+    &.loader {
+        margin-top: -3rem;
+    }
 }
 
 .donation-copy {

@@ -1,6 +1,6 @@
 wonderlandApp.controller('WallCtrl', ['mHttp', 'safeApply', '$filter', '$scope', '$timeout', function (mHttp, safeApply, $filter, $scope, $timeout) {
 
-    var wallFeed, partyGuid, feedRequest, initialFormModel, hasSetInitialFormModel=false;
+    var wallFeed, partyGuid, wallDelete, deleteRequest, feedRequest, initialFormModel, hasSetInitialFormModel=false;
 
     $scope.wall = {
         feedback: {
@@ -10,7 +10,9 @@ wonderlandApp.controller('WallCtrl', ['mHttp', 'safeApply', '$filter', '$scope',
 
             messageProcessing: false,
 
-            feedProcessingPost: false
+            feedProcessingPost: false,
+
+            removeProcessingId: null
         },
 
         feed: null,
@@ -22,9 +24,10 @@ wonderlandApp.controller('WallCtrl', ['mHttp', 'safeApply', '$filter', '$scope',
         hasDoneFirstLoad: false
     };
 
-    $scope.init = function (baseWallFeed, basePartyGuid) {
+    $scope.init = function (baseWallFeed, basePartyGuid, baseWallFeedDelete) {
         wallFeed = baseWallFeed;
         partyGuid = basePartyGuid;
+        wallDelete = baseWallFeedDelete;
 
         $scope.getFeed();
     };
@@ -59,8 +62,8 @@ wonderlandApp.controller('WallCtrl', ['mHttp', 'safeApply', '$filter', '$scope',
                 angular.forEach(response, function (value) {
                     if (Number(value.id<0)) { // is a donation
                         value.isDonation = true;
+                        value.text = $filter('mCurrency')(value.text, "£");
                     }
-                    // TODO: need to remove this hardcoded time subtraction, server times differ, must be timezone issues
                     value.timeFormatted = moment(value.timestamp).fromNow();
                     value.text = value.text == "null" ? null : value.text;
                     value.imageUrl = value.imageUrl && value.imageUrl.indexOf('null') >= 0 ? null : value.imageUrl;
@@ -77,6 +80,46 @@ wonderlandApp.controller('WallCtrl', ['mHttp', 'safeApply', '$filter', '$scope',
         });
 
     };
+
+    $scope.deleteFeedItem = function (messageId) {
+
+        if (!wallDelete || !messageId || messageId<0) {
+            return;
+        }
+
+        $scope.wall.feedback.removeProcessingId = messageId;
+
+        var sendFormData = {
+            'messageId': messageId
+        };
+
+
+        deleteRequest = mHttp.post(wallDelete, {
+            formData: sendFormData,
+            dataType: 'json'
+        });
+
+        deleteRequest.then(
+            function (response) { // success
+
+                var removeIndex = null;
+                angular.forEach($scope.wall.feed, function (value, key) {
+                    removeIndex = value.id === messageId ? key : removeIndex;
+                });
+
+                if (removeIndex>=0) {
+                    $scope.wall.feed.splice(removeIndex, 1);
+                }
+                $scope.wall.feedback.removeProcessingId = null;
+            },
+            function (response) { // failed
+                $scope.wall.feedback.removeProcessingId = null;
+            }
+        );
+
+    };
+
+
 
 
     $scope.wallFormModelInit = function (formModel) {
