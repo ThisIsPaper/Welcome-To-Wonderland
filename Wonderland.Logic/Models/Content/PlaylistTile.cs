@@ -11,7 +11,7 @@ namespace Wonderland.Logic.Models.Content
 
         // Properties
         public const string PlaylistNameAlias = "playlistName";
-        public const string SpotifyUrlAlias = "spotifyUrl";
+        public const string SpotifyUriAlias = "spotifyUri";
 
         public PlaylistTile(IPublishedContent content)
             : base(content)
@@ -34,11 +34,11 @@ namespace Wonderland.Logic.Models.Content
             }
         }
 
-        public string SpotifyUrl
+        public string SpotifyUri
         {
             get
             {
-                return this.GetPropertyValue<string>(PlaylistTile.SpotifyUrlAlias);
+                return this.GetPropertyValue<string>(PlaylistTile.SpotifyUriAlias);
             }
         }
     }
