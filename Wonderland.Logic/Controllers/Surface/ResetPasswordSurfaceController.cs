@@ -16,7 +16,7 @@ namespace Wonderland.Logic.Controllers.Surface
         [MemberAuthorize]
         public ActionResult RenderResetPasswordForm()
         {
-            return this.PartialView("ResetPasswordForm", new ResetPasswordForm());
+            return this.PartialView("ResetPassword/Forms/ResetPasswordForm", new ResetPasswordForm());
         }
 
         [HttpPost]

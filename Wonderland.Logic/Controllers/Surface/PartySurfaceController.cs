@@ -22,7 +22,7 @@ namespace Wonderland.Logic.Controllers.Surface
 
             partyImageForm.DefaultImages = ((Party)this.CurrentPage).DefaultImages;
 
-            return this.PartialView("PartyImageForm", partyImageForm);
+            return this.PartialView("Party/Forms/PartyImageForm", partyImageForm);
         }
 
         [HttpPost]
@@ -50,7 +50,7 @@ namespace Wonderland.Logic.Controllers.Surface
         [MemberAuthorize(AllowType = PartyHost.Alias)]
         public ActionResult RenderCustomPartyImageForm()
         {
-            return this.PartialView("CustomPartyImageForm", new CustomPartyImageForm());
+            return this.PartialView("Party/Forms/CustomPartyImageForm", new CustomPartyImageForm());
         }
 
         [HttpPost]
@@ -82,7 +82,7 @@ namespace Wonderland.Logic.Controllers.Surface
 
             partyCopyForm.Copy = ((PartyHost)this.Members.GetCurrentMember()).PartyCopy;
 
-            return this.PartialView("PartyCopyForm", partyCopyForm);
+            return this.PartialView("Party/Forms/PartyCopyForm", partyCopyForm);
         }
 
         [HttpPost]
@@ -113,7 +113,7 @@ namespace Wonderland.Logic.Controllers.Surface
         [MemberAuthorize(AllowType = PartyHost.Alias)]
         public ActionResult RenderProfileImageForm()
         {
-            return this.PartialView("ProfileImageForm", new ProfileImageForm());
+            return this.PartialView("Party/Forms/ProfileImageForm", new ProfileImageForm());
         }
 
         [HttpPost]
@@ -164,8 +164,8 @@ namespace Wonderland.Logic.Controllers.Surface
             partyDetailsForm.Address2 = partyHost.PartyAddress.Address2;
             partyDetailsForm.TownCity = partyHost.PartyAddress.TownCity;
             partyDetailsForm.Postcode = partyHost.PartyAddress.Postcode;
-            
-            return this.PartialView("PartyDetailsForm", partyDetailsForm);
+
+            return this.PartialView("Party/Forms/PartyDetailsForm", partyDetailsForm);
         }
 
         [HttpPost]
@@ -213,7 +213,7 @@ namespace Wonderland.Logic.Controllers.Surface
 
             suggestedDonationForm.SuggestedDonation = partyHost.SuggestedDonation;
 
-            return this.PartialView("SuggestedDonationForm", suggestedDonationForm);
+            return this.PartialView("Party/Forms/SuggestedDonationForm", suggestedDonationForm);
         }
 
         [HttpPost]
@@ -247,7 +247,7 @@ namespace Wonderland.Logic.Controllers.Surface
 
             fundraisingTargetForm.FundraisingTarget = partyHost.FundraisingTarget;
 
-            return this.PartialView("FundraisingTargetForm", fundraisingTargetForm);
+            return this.PartialView("Party/Forms/FundraisingTargetForm", fundraisingTargetForm);
         }
 
         [HttpPost]
@@ -277,7 +277,7 @@ namespace Wonderland.Logic.Controllers.Surface
         {
             // TODO: safety check that current member is associated with this party ?
 
-            return this.PartialView("PartyWallMessageForm", new PartyWallMessageForm());
+            return this.PartialView("Party/Forms/PartyWallMessageForm", new PartyWallMessageForm());
         }
 
         [HttpPost]
@@ -320,7 +320,7 @@ namespace Wonderland.Logic.Controllers.Surface
         {
             // TODO: safety check that current member is associated with this party ?
 
-            return this.PartialView("PartyWallImageForm", new PartyWallImageForm());
+            return this.PartialView("Party/Forms/PartyWallImageForm", new PartyWallImageForm());
         }
 
         [HttpPost]

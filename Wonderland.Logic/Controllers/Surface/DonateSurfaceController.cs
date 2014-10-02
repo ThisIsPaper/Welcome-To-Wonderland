@@ -36,7 +36,7 @@ namespace Wonderland.Logic.Controllers.Surface
                 donateForm.Postcode = partier.BillingAddress.Postcode;
             }
 
-            return this.PartialView("DonateForm", donateForm);
+            return this.PartialView("Donate/Forms/DonateForm", donateForm);
         }
 
         [HttpPost]

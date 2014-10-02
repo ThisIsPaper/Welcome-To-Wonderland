@@ -25,7 +25,7 @@ namespace Wonderland.Logic.Controllers.Surface
             profileBillingAddressForm.TownCity = partier.BillingAddress.TownCity;
             profileBillingAddressForm.Postcode = partier.BillingAddress.Postcode;
 
-            return this.PartialView("ProfileBillingAddressForm", profileBillingAddressForm);
+            return this.PartialView("Profile/Forms/ProfileBillingAddressForm", profileBillingAddressForm);
         }
 
         [HttpPost]
@@ -63,7 +63,7 @@ namespace Wonderland.Logic.Controllers.Surface
         [MemberAuthorize]
         public ActionResult RenderProfileChangePasswordForm()
         {
-            return this.PartialView("ProfileChangePasswordForm", new ProfileChangePasswordForm());
+            return this.PartialView("Profile/Forms/ProfileChangePasswordForm", new ProfileChangePasswordForm());
         }
 
         [HttpPost]
@@ -102,7 +102,7 @@ namespace Wonderland.Logic.Controllers.Surface
         [MemberAuthorize]
         public ActionResult RenderProfileImageForm()
         {
-            return this.PartialView("ProfileImageForm", new ProfileImageForm());
+            return this.PartialView("Profile/Forms/ProfileImageForm", new ProfileImageForm());
         }
 
         [HttpPost]
@@ -153,7 +153,7 @@ namespace Wonderland.Logic.Controllers.Surface
             profileNamesForm.FirstName = partier.FirstName;
             profileNamesForm.LastName = partier.LastName;
 
-            return this.PartialView("ProfileNamesForm", profileNamesForm);
+            return this.PartialView("Profile/Forms/ProfileNamesForm", profileNamesForm);
         }
 
         [HttpPost]

@@ -25,7 +25,7 @@ namespace Wonderland.Logic.Controllers.Surface
         public ActionResult RenderRegisterGuestForm()
         {
             // get party guid from the querystring
-            return this.PartialView("RegisterGuestForm", new RegisterGuestForm(Guid.Parse(this.Request.QueryString["partyGuid"])));
+            return this.PartialView("RegisterGuest/Forms/RegisterGuestForm", new RegisterGuestForm(Guid.Parse(this.Request.QueryString["partyGuid"])));
         }
 
         [HttpPost]
@@ -96,7 +96,7 @@ namespace Wonderland.Logic.Controllers.Surface
             // set the default amount to the party host's suggested donation
             registerGuestBillingForm.Amount = this.Members.GetPartyHost(registerGuestBillingForm.PartyGuid).SuggestedDonation;
 
-            return this.PartialView("RegisterGuestBillingForm", registerGuestBillingForm);
+            return this.PartialView("RegisterGuest/Forms/RegisterGuestBillingForm", registerGuestBillingForm);
         }
 
         [HttpPost]

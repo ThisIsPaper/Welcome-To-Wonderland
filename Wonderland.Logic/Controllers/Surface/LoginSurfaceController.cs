@@ -15,7 +15,7 @@ namespace Wonderland.Logic.Controllers.Surface
         [ChildActionOnly]
         public ActionResult RenderLoginForm()
         {
-            return this.PartialView("LoginForm", new LoginForm());
+            return this.PartialView("Login/Forms/LoginForm", new LoginForm());
         }
 
         [HttpPost]

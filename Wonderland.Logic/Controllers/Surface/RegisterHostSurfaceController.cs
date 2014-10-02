@@ -35,7 +35,7 @@ namespace Wonderland.Logic.Controllers.Surface
             // add a dropdown to the viewbag
             this.ViewBag.MarketingSources = new SelectList(marketingSources);
 
-            return this.PartialView("RegisterHostForm", new RegisterHostForm());
+            return this.PartialView("RegisterHost/Forms/RegisterHostForm", new RegisterHostForm());
         }
 
         [HttpPost]
@@ -110,7 +110,7 @@ namespace Wonderland.Logic.Controllers.Surface
         [MemberAuthorize(AllowType = PartyHost.Alias)]
         public ActionResult RenderRegisterHostPartyKitForm()
         {
-            return this.PartialView("RegisterHostPartyKitForm", new RegisterHostPartyKitForm());
+            return this.PartialView("RegisterHost/Forms/RegisterHostPartyKitForm", new RegisterHostPartyKitForm());
         }
 
         [HttpPost]

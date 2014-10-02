@@ -14,7 +14,7 @@ namespace Wonderland.Logic.Controllers.Surface
         [ChildActionOnly]
         public ActionResult RenderForgottenPasswordForm()
         {
-            return this.PartialView("ForgottenPasswordForm", new ForgottenPasswordForm());
+            return this.PartialView("ForgottenPassword/Forms/ForgottenPasswordForm", new ForgottenPasswordForm());
         }
 
         [HttpPost]
