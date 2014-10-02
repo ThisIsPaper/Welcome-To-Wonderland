@@ -183,13 +183,11 @@ namespace Wonderland.Logic.Controllers.Surface
 
                 partyHost.PartyDateTime = partyDetailsForm.PartyDateTime;
 
-                Address address = new Address()
-                {
-                    Address1 = partyDetailsForm.Address1.Replace(Environment.NewLine, string.Empty),
-                    Address2 = partyDetailsForm.Address2.Replace(Environment.NewLine, string.Empty),
-                    TownCity = partyDetailsForm.TownCity.Replace(Environment.NewLine, string.Empty),
-                    Postcode = partyDetailsForm.Postcode.Replace(Environment.NewLine, string.Empty)
-                };
+                Address address = new Address(
+                                            partyDetailsForm.Address1,
+                                            partyDetailsForm.Address2,
+                                            partyDetailsForm.TownCity,
+                                            partyDetailsForm.Postcode);
 
                 partyHost.PartyAddress = address;
 

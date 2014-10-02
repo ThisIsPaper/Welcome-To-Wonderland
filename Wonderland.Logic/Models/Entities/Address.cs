@@ -2,11 +2,23 @@
 namespace Wonderland.Logic.Models.Entities
 {
     using System;
+    using System.ComponentModel;
 
     public class Address
     {
-        internal Address()
+        //internal Address()
+        //{
+        //}
+
+        internal Address(string address1, string address2, string townCity, string postCode)
         {
+            this.Address1 = address1.Replace(Environment.NewLine, string.Empty);
+            if (!string.IsNullOrWhiteSpace(address2))
+            {
+                this.Address2 = address2.Replace(Environment.NewLine, string.Empty);
+            }
+            this.TownCity = townCity.Replace(Environment.NewLine, string.Empty);
+            this.Postcode = postCode.Replace(Environment.NewLine, string.Empty);
         }
 
         internal Address(string address)
@@ -26,12 +38,16 @@ namespace Wonderland.Logic.Models.Entities
             }
         }
 
+        [DefaultValue("")]
         public string Address1 { get; internal set; }
 
+        [DefaultValue("")]
         public string Address2 { get; internal set; }
 
+        [DefaultValue("")]
         public string TownCity { get; internal set; }
 
+        [DefaultValue("")]
         public string Postcode { get; internal set; }
 
         /// <summary>

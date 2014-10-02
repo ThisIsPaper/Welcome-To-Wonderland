@@ -128,13 +128,11 @@ namespace Wonderland.Logic.Controllers.Surface
             partyHost.FirstName = registerHostPartyKitForm.FirstName;
             partyHost.LastName = registerHostPartyKitForm.LastName;
 
-            Address address = new Address()
-                                    {
-                                        Address1 = registerHostPartyKitForm.Address1.Replace(Environment.NewLine, string.Empty),
-                                        Address2 = registerHostPartyKitForm.Address2.Replace(Environment.NewLine, string.Empty),
-                                        TownCity = registerHostPartyKitForm.TownCity.Replace(Environment.NewLine, string.Empty),
-                                        Postcode = registerHostPartyKitForm.PostCode.Replace(Environment.NewLine, string.Empty)
-                                    };
+            Address address = new Address(
+                                        registerHostPartyKitForm.Address1,
+                                        registerHostPartyKitForm.Address2,
+                                        registerHostPartyKitForm.TownCity,
+                                        registerHostPartyKitForm.PostCode);
 
             partyHost.PartyKitAddress = address;
             partyHost.PartyAddress = address;

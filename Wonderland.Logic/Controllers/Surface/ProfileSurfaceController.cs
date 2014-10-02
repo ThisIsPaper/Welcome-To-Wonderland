@@ -37,13 +37,11 @@ namespace Wonderland.Logic.Controllers.Surface
 
             if (this.ModelState.IsValid)
             {
-                Address address = new Address()
-                                    {
-                                        Address1 = profileBillingAddressForm.Address1,
-                                        Address2 = profileBillingAddressForm.Address2,
-                                        TownCity = profileBillingAddressForm.TownCity,
-                                        Postcode = profileBillingAddressForm.Postcode
-                                    };
+                Address address = new Address(
+                                        profileBillingAddressForm.Address1,
+                                        profileBillingAddressForm.Address2,
+                                        profileBillingAddressForm.TownCity,
+                                        profileBillingAddressForm.Postcode);
 
                 IPartier partier = this.Members.GetCurrentPartier();
 
