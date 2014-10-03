@@ -1,0 +1,24 @@
+{
+  "name": "wonderland",
+  "version": "1.0.0",
+  "description": "Wonderland - Macmillan Cancer Support",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "wonderland",
+    "macmillan",
+    "cancer",
+    "support"
+  ],
+  "cssPath": "css/",
+  "jsPath": "scripts/",
+  "author": "Matthew Rawson",
+  "license": "No license",
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-contrib-cssmin": "^0.10.0",
+    "grunt-contrib-uglify": "^0.6.0"
+  }
+}

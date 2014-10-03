@@ -15,21 +15,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-        
-    @{ 
+
+    @* Removed in favour of pre-minifying with grunt *@
+    @*@{
         Html.RequiresCss("~/css/main.css"); 
         Html.RequiresCss("~/scripts/bower_components/ocModal/dist/css/ocModal.full.css");
         Html.RequiresCss("~/scripts/bower_components/pikaday/css/pikaday.css");
         Html.RequiresCss("~/css/overrides.css");
+    }*@
+
+    @* Pre-minified *@
+    @{
+        Html.RequiresCss("~/css/all.min.css");
     }
+
     @Html.RenderCssHere()
   
     <script type="text/javascript">window.slimmage = { verbose: false };</script>
+    @* Remove and put into minified bundle *@
+    @*
     @{
         Html.RequiresJs(new JavascriptFile("~/scripts/slimmage.js") { ForceProvider = "HeadRenderer" });
         Html.RequiresJs(new JavascriptFile("~/scripts/vendor/modernizr-2.6.2.min.js") { ForceProvider = "HeadRenderer" });
     }
     @Html.RenderJsHere("HeadRenderer")
+    *@
 </head>
 <body>
     <div class="page-container" ng-controller="PageCtrl" ng-class="{'showing-side-nav-menu': pageShowingSideNavMenu, 'showing-side-account-menu': pageShowingSideAccountMenu}" ng-init="pageProfile.imageUrl='@if(this.Members.GetCurrentPartier()!=null){@Html.Raw(Members.GetCurrentPartier().ProfileImageUrl);}';
@@ -46,8 +56,8 @@
 
     </div>
 
-
-    @{
+    @* Removed in favour of pre-minifiying *@
+    @*@{
         Html.RequiresJs("~/scripts/vendor/jquery-1.10.2.js");
         Html.RequiresJs("~/scripts/bower_components/masonry/dist/masonry.pkgd.js");
         Html.RequiresJs("~/scripts/bower_components/imagesloaded/imagesloaded.pkgd.js");
@@ -91,6 +101,12 @@
         Html.RequiresJs("~/scripts/app/services/paf.js");
         Html.RequiresJs("~/scripts/app/services/safeApply.js");
         Html.RequiresJs("~/scripts/app/services/uniqueId.js");
+    }
+    *@
+
+    @* Pre-minified *@
+    @{
+        Html.RequiresJs("~/scripts/all.min.js");
     }
     @Html.Raw(Html.RenderJsHere());
 
