@@ -72,6 +72,9 @@
     <Reference Include="ImageProcessor.Web">
       <HintPath>..\packages\ImageProcessor.Web.3.3.0.0\lib\net45\ImageProcessor.Web.dll</HintPath>
     </Reference>
+    <Reference Include="Imazen.SlimResponse">
+      <HintPath>..\Wonderland.Web\bin\Imazen.SlimResponse.dll</HintPath>
+    </Reference>
     <Reference Include="interfaces">
       <HintPath>..\packages\UmbracoCms.Core.7.1.5\lib\interfaces.dll</HintPath>
     </Reference>
@@ -102,6 +105,12 @@
     </Reference>
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Our.Umbraco.PropertyEditorConverters">
+      <HintPath>..\Wonderland.Web\bin\Our.Umbraco.PropertyEditorConverters.dll</HintPath>
+    </Reference>
+    <Reference Include="Slimsy">
+      <HintPath>..\Wonderland.Web\bin\Slimsy.dll</HintPath>
     </Reference>
     <Reference Include="SQLCE4Umbraco">
       <HintPath>..\packages\UmbracoCms.Core.7.1.5\lib\SQLCE4Umbraco.dll</HintPath>
