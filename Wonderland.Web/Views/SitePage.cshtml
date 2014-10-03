@@ -14,32 +14,9 @@
     <meta name="description" content="@Model.MetaDescription">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <link href="/css/all.min.css" type="text/css" rel="stylesheet" />
 
-    @* Removed in favour of pre-minifying with grunt *@
-    @*@{
-        Html.RequiresCss("~/css/main.css"); 
-        Html.RequiresCss("~/scripts/bower_components/ocModal/dist/css/ocModal.full.css");
-        Html.RequiresCss("~/scripts/bower_components/pikaday/css/pikaday.css");
-        Html.RequiresCss("~/css/overrides.css");
-    }*@
-
-    @* Pre-minified *@
-    @{
-        Html.RequiresCss("~/css/all.min.css");
-    }
-
-    @Html.RenderCssHere()
-  
     <script type="text/javascript">window.slimmage = { verbose: false };</script>
-    @* Remove and put into minified bundle *@
-    @*
-    @{
-        Html.RequiresJs(new JavascriptFile("~/scripts/slimmage.js") { ForceProvider = "HeadRenderer" });
-        Html.RequiresJs(new JavascriptFile("~/scripts/vendor/modernizr-2.6.2.min.js") { ForceProvider = "HeadRenderer" });
-    }
-    @Html.RenderJsHere("HeadRenderer")
-    *@
 </head>
 <body>
     <div class="page-container" ng-controller="PageCtrl" ng-class="{'showing-side-nav-menu': pageShowingSideNavMenu, 'showing-side-account-menu': pageShowingSideAccountMenu}" ng-init="pageProfile.imageUrl='@if(this.Members.GetCurrentPartier()!=null){@Html.Raw(Members.GetCurrentPartier().ProfileImageUrl);}';
@@ -56,61 +33,7 @@
 
     </div>
 
-    @* Removed in favour of pre-minifiying *@
-    @*@{
-        Html.RequiresJs("~/scripts/vendor/jquery-1.10.2.js");
-        Html.RequiresJs("~/scripts/bower_components/masonry/dist/masonry.pkgd.js");
-        Html.RequiresJs("~/scripts/bower_components/imagesloaded/imagesloaded.pkgd.js");
-        Html.RequiresJs("~/scripts/bower_components/angular/angular.js");
-        Html.RequiresJs("~/scripts/bower_components/ocModal/dist/ocModal.js");
-        Html.RequiresJs("~/scripts/bower_components/moment/moment.js");
-        Html.RequiresJs("~/scripts/bower_components/pikaday/pikaday.js");
-
-        Html.RequiresJs("~/scripts/app/app.js");
-
-        Html.RequiresJs("~/scripts/app/controllers/faqsCtrl.js");
-        Html.RequiresJs("~/scripts/app/controllers/pageCtrl.js");
-        Html.RequiresJs("~/scripts/app/controllers/partyCtrl.js");
-        Html.RequiresJs("~/scripts/app/controllers/partyDetailsFormCtrl.js");
-        Html.RequiresJs("~/scripts/app/controllers/profileCtrl.js");
-        Html.RequiresJs("~/scripts/app/controllers/suggestedDonationFormCtrl.js");
-        Html.RequiresJs("~/scripts/app/controllers/wallCtrl.js");
-
-        Html.RequiresJs("~/scripts/app/directives/mAngularMasonry.js");
-        Html.RequiresJs("~/scripts/app/directives/mAddressFinder.js");
-        Html.RequiresJs("~/scripts/app/directives/mDateTimePicker.js");
-        Html.RequiresJs("~/scripts/app/directives/mImageUpload.js");
-        Html.RequiresJs("~/scripts/app/directives/mKeyEnterTrigger.js");
-        Html.RequiresJs("~/scripts/app/directives/mFileSelected.js");
-        Html.RequiresJs("~/scripts/app/directives/mFundTargetChooser.js");
-        Html.RequiresJs("~/scripts/app/directives/mHeightMatchWidth.js");
-        Html.RequiresJs("~/scripts/app/directives/mPostOnSubmit.js");
-        Html.RequiresJs("~/scripts/app/directives/mProfileImage.js");
-        Html.RequiresJs("~/scripts/app/directives/mRadiusPicker.js");
-        Html.RequiresJs("~/scripts/app/directives/mRotate.js");
-        Html.RequiresJs("~/scripts/app/directives/mTotaliser.js");
-        Html.RequiresJs("~/scripts/app/directives/mValidnumber.js");
-        Html.RequiresJs("~/scripts/app/directives/mValueMatcher.js");
-        Html.RequiresJs("~/scripts/app/directives/mWindowClickToggle.js");
-
-        Html.RequiresJs("~/scripts/app/filters/all.js");
-
-        Html.RequiresJs("~/scripts/app/services/debounce.js");
-        Html.RequiresJs("~/scripts/app/services/fileUpload.js");
-        Html.RequiresJs("~/scripts/app/services/mHttp.js");
-        Html.RequiresJs("~/scripts/app/services/paf.js");
-        Html.RequiresJs("~/scripts/app/services/safeApply.js");
-        Html.RequiresJs("~/scripts/app/services/uniqueId.js");
-    }
-    *@
-
-    @* Pre-minified *@
-    @{
-        Html.RequiresJs("~/scripts/all.min.js");
-    }
-    @Html.Raw(Html.RenderJsHere());
-
-
+    <script src="~/scripts/all.min.js" type="text/javascript"></script>
 
     <script>angular.bootstrap(document.getElementsByTagName("html")[0], ['wonderlandApp']);</script>
 
