@@ -19,6 +19,7 @@ module.exports = function (grunt) {
                                          '<%= pkg.jsPath %>bower_components/imagesloaded/imagesloaded.pkgd.js',
                                          '<%= pkg.jsPath %>bower_components/angular/angular.js',
                                          '<%= pkg.jsPath %>bower_components/ocModal/dist/ocModal.js',
+                                         '<%= pkg.jsPath %>bower_components/moment/moment.js',
                                          '<%= pkg.jsPath %>bower_components/pikaday/pikaday.js',
 
                                          '<%= pkg.jsPath %>app/app.js',
