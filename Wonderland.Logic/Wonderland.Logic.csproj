@@ -109,6 +109,9 @@
     <Reference Include="Our.Umbraco.PropertyEditorConverters">
       <HintPath>..\Wonderland.Web\bin\Our.Umbraco.PropertyEditorConverters.dll</HintPath>
     </Reference>
+    <Reference Include="RJP.MultiUrlPicker">
+      <HintPath>..\Wonderland.Web\bin\RJP.MultiUrlPicker.dll</HintPath>
+    </Reference>
     <Reference Include="Slimsy">
       <HintPath>..\Wonderland.Web\bin\Slimsy.dll</HintPath>
     </Reference>
