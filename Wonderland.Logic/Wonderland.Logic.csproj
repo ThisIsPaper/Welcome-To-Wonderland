@@ -254,8 +254,6 @@
     <Compile Include="Models\Content\FashionTile.cs" />
     <Compile Include="Models\Content\ForgottenPassword.cs" />
     <Compile Include="Models\Content\FundraisingCategory.cs" />
-    <Compile Include="Models\Content\FundraisingIdea.cs" />
-    <Compile Include="Models\Content\FundraisingIdeas.cs" />
     <Compile Include="Models\Content\FundraisingTile.cs" />
     <Compile Include="Models\Content\Home.cs" />
     <Compile Include="Models\Content\Profile.cs" />
