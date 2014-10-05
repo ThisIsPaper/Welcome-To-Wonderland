@@ -12,6 +12,7 @@ namespace Wonderland.Logic.Models.Content
 
         // Properties
         public const string MarketingSourcesAlias = "marketingSources";
+        public const string TShirtSizesAlias = "tShirtSizes";
 
         public RegisterHost(IPublishedContent content)
             : base(content)
@@ -23,6 +24,14 @@ namespace Wonderland.Logic.Models.Content
             get
             {
                 return this.GetPropertyValue<string[]>(RegisterHost.MarketingSourcesAlias);
+            }
+        }
+
+        public IEnumerable<string> TShirtSizes
+        {
+            get
+            {
+                return this.GetPropertyValue<string[]>(RegisterHost.TShirtSizesAlias);
             }
         }
     }

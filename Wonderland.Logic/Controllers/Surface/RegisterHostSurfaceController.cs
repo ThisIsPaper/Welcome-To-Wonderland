@@ -109,7 +109,12 @@ namespace Wonderland.Logic.Controllers.Surface
         [ChildActionOnly]
         [MemberAuthorize(AllowType = PartyHost.Alias)]
         public ActionResult RenderRegisterHostPartyKitForm()
-        {
+        {   
+            // get the renderModel for the current page
+            RegisterHost model = (RegisterHost)this.CurrentPage;
+
+            this.ViewBag.TShirtSizes = new List<string>(model.TShirtSizes);
+
             return this.PartialView("RegisterHost/Forms/RegisterHostPartyKitForm", new RegisterHostPartyKitForm());
         }
 
@@ -137,6 +142,8 @@ namespace Wonderland.Logic.Controllers.Surface
             partyHost.PartyKitAddress = address;
             partyHost.PartyAddress = address;
             partyHost.BillingAddress = address;
+
+            partyHost.TShirtSize = registerHostPartyKitForm.TShirtSize;
 
             partyHost.HasRequestedPartyKit = true;
 

@@ -23,5 +23,7 @@ namespace Wonderland.Logic.Models.Forms
 
         [Required]
         public string PostCode { get; set; }
+
+        public string TShirtSize { get; set; }
     }
 }

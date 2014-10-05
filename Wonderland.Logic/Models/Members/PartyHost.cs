@@ -29,6 +29,7 @@ namespace Wonderland.Logic.Models.Members
         public const string PartyKitAddressAlias = "partyKitAddress";
         public const string PartyAddressAlias = "partyAddress";
         public const string PartyDateTimeAlias = "partyDateTime";
+        public const string TShirtSizeAlias = "tShirtSize";
         public const string HasRequestedPartyKitAlias = "hasRequestedPartyKit";        
         public const string PartyUrlIdentifierAlias = "partyUrlIdentifier";
         public const string PartyImageAlias = "partyImage";
@@ -159,6 +160,18 @@ namespace Wonderland.Logic.Models.Members
             set
             {
                 this.SetPropertyValue(PartyHost.PartyDateTimeAlias, value.ToString());
+            }
+        }
+
+        public string TShirtSize
+        {
+            get
+            {
+                return this.GetPropertyValue<string>(PartyHost.TShirtSizeAlias);
+            }
+            set
+            {
+                this.SetPropertyValue(PartyHost.TShirtSizeAlias, value);
             }
         }
 

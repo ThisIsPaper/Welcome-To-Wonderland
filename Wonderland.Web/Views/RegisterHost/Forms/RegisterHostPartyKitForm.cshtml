@@ -54,6 +54,15 @@
 
     </div>
 
+    <div class="">
+        <h4>T-Shirt Size</h4>
+        @foreach(string tShirtSize in this.ViewBag.TShirtSizes)
+        {
+            @Html.RadioButtonFor(x => x.TShirtSize, tShirtSize) @tShirtSize
+        }
+    </div>
+
+
     <div class="grid-12 pad-0">
         <hr/>
         <button type="submit" class="btn-primary float-right" m-radius-picker="small" ng-disabled="processing">Register <span class="icon-icon_chevron_right"></span></button>
