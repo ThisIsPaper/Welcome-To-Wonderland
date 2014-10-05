@@ -1,20 +1,20 @@
 ﻿@model ProfileTShirtSizeForm
 
-@using (Html.BeginUmbracoForm<ProfileSurfaceController>("HandleProfileTShirtSizeForm", FormMethod.Post))
+@using (Html.BeginUmbracoForm<ProfileSurfaceController>("HandleProfileTShirtSizeForm", FormMethod.Post, new { m_serialized="", ng_submit="feedback.profileShirtProcessing=true", m_post_on_submit="profileShirtData", m_on_success_event="profileShirtUpdated" }))
 {
     @Html.AntiForgeryToken()
 
-    <div class="">
-        <h4>T-Shirt Size</h4>
+    <div class="grid-8 grid-tablet-12 parent">
         @foreach (string tShirtSize in this.ViewBag.TShirtSizes)
         {
-            @Html.RadioButtonFor(x => x.TShirtSize, tShirtSize) @tShirtSize
+            <label>
+                @Html.RadioButtonFor(x => x.TShirtSize, @tShirtSize, new { @ng_model="profileShirtData.TShirtSize", @ng_readonly="feedback.profileShirtProcessing" }) @tShirtSize
+            </label>
         }
     </div>
-
     <div class="grid-12 parent">
-        <button type="submit" class="btn-primary float-right" m-radius-picker="small" ng-disabled="">Change T-Shirt Size ></button>
-        <div class="loader" ng-show=""></div>
+        <button type="submit" class="btn-primary float-right" m-radius-picker="small" ng-disabled="feedback.profileShirtProcessing">Change T-Shirt Size <span class="icon-icon_chevron_right"></span></button>
+        <div class="loader" ng-show="feedback.profileShirtProcessing"></div>
     </div>
 
 }

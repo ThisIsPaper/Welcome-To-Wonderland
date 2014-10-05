@@ -17,7 +17,11 @@ wonderlandApp.controller('ProfileCtrl', ['safeApply', '$scope', '$timeout', func
 
         profilePasswordProcessing: false,
         profilePasswordShowSuccess: false,
-        profilePasswordShowError: false
+        profilePasswordShowError: false,
+
+        profileShirtProcessing: false,
+        profileShirtShowSuccess: false,
+        profileShirtShowError: false
     };
 
 
@@ -109,6 +113,34 @@ wonderlandApp.controller('ProfileCtrl', ['safeApply', '$scope', '$timeout', func
 
     });
 
+
+    /***
+     *
+     *
+     * T-SHIRT CHANGE
+     *
+     */
+    $scope.$onRootScope('profileShirtUpdated', function(event, response) {
+
+        safeApply( $scope, function () {
+
+            $scope.feedback.profileShirtProcessing = false;
+
+            if (response && response.Success === true) {
+                $scope.feedback.profileShirtShowSuccess = true;
+            } else {
+                $scope.feedback.profileShirtShowError = true;
+            }
+
+
+            $timeout(function () {
+                $scope.feedback.profileShirtShowSuccess = false;
+                $scope.feedback.profileShirtShowError = false;
+            }, 5000);
+
+        });
+
+    });
 
 
 }]);

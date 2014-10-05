@@ -118,7 +118,12 @@
 
                 @if (this.Members.GetCurrentPartier() is PartyHost)
                 { 
-                    <div class="wgrid">
+                    <div class="grid-12 parent margin-bottom-large" ng-init="profileShirtData.TShirtSize='@(((PartyHost)this.Members.GetCurrentMember()).TShirtSize)'">
+                        <h4>T-Shirt Size</h4>
+
+                        <div class="successful margin-bottom-small" ng-show="feedback.profileShirtShowSuccess">Your t-shirt size was successfully changed</div>
+                        <div class="errorred margin-bottom-small" ng-show="feedback.profileShirtShowError">Your changed t-shirt size couldn't be saved, please try again</div>
+
                         @(Html.Action<ProfileSurfaceController>("RenderProfileTShirtSizeForm"))
                     </div>
                 }
