@@ -30,7 +30,7 @@
 
                     </div>
 
-                    <div class="wgrid-full pad-large">
+                    <div class="wgrid-full pad-large pad-bottom-0">
                         <div m-profile-image="{{ pageProfile.imageUrl }}" class="clickable" m-radius-picker="small" ng-click="openPageModal('partials/profileImageForm.html', 'profileImageModal', {'pageProfile': pageProfile, 'pageFeedback': pageFeedback})"></div>
                         <div class="party-details">
                             <h3 class="pad-right-3 margin-top-0 margin-bottom-small" ng-bind="partyDetailsData.PartyHeading"></h3>
@@ -45,6 +45,18 @@
                         </div>
                         <div class="edit-trigger" ng-click="openPageModal('partials/partyDetailsForm.html', 'partyDetailsModal', {'partyDetailsData': partyDetailsDataForForm})"><span class="edit-label">Edit</span><span class="icon-icon_edit"></span></div>
                     </div>
+
+                    <div class="wgrid-full pad-large">
+                        <div class="boxx internal highlight" m-radius-picker="small">
+                            <div class="grid-6 grid-tablet-12 text-align-center margin-bottom-small">
+                                It takes more than one to party. Share this link to invite guests.
+                            </div>
+                            <div class="grid-6 grid-tablet-12">
+                                <input type="text" ng-value="currentPageUrl" m-radius-picker="small" readonly="readonly"/>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
 
