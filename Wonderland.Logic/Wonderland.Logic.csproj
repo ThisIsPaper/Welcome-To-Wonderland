@@ -305,6 +305,7 @@
     <Compile Include="Models\Forms\ProfileChangePasswordForm.cs" />
     <Compile Include="Models\Forms\ProfileImageForm.cs" />
     <Compile Include="Models\Forms\ProfileNamesForm.cs" />
+    <Compile Include="Models\Forms\ProfileTShirtSizeForm.cs" />
     <Compile Include="Models\Forms\RegisterGuestBillingForm.cs" />
     <Compile Include="Models\Forms\RegisterGuestForm.cs" />
     <Compile Include="Models\Forms\RegisterHostForm.cs" />

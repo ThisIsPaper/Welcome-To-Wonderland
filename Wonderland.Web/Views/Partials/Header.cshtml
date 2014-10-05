@@ -1,9 +1,9 @@
 @inherits UmbracoViewPage<SiteSettings> 
-
-
+@{
+    SitePage currentSitePage = (SitePage)this.Umbraco.AssignedContentItem;
+}
 
 <header class="site-header" ng-class="{'compress': pageHeaderCompress}">
-
 
     <a class="nav-burger nav-end-block icon-icon_hamburger_menu" ng-click="pageShowingSideNavMenu=!pageShowingSideNavMenu" ng-class="{'icon-icon_x': pageShowingSideNavMenu}"></a>
     @if (!this.Members.IsLoggedInPartier())
@@ -35,8 +35,7 @@
         </div>
     }
     else
-    {
-
+    {        
         <div class="account-menu-holder" m-window-click-toggle="pageShowAccountDropdown">
             <div ng-click="pageShowAccountDropdown=true">
                 <div class="small clickable" m-profile-image="{{ pageProfile.imageUrl }}" m-radius-picker="small"></div>
@@ -69,7 +68,7 @@
                         @foreach (SitePage sitePage in Model.HeaderNavigationLeft)
                         {
                         <li>
-                            <a href="@sitePage.Url"><span class="icon-icon_fingerpost"></span><span>@sitePage.Name</span></a>
+                            <a @{if(currentSitePage.IsInPathOf(sitePage)){<text>class="selected"</text>}} href="@sitePage.Url"><span class="icon-icon_fingerpost"></span><span>@sitePage.Name</span></a>
                         </li>
                         }
 
@@ -81,7 +80,7 @@
                         @foreach (SitePage sitePage in Model.HeaderNavigationRight)
                         {
                         <li>
-                            <a href="@sitePage.Url"><span class="icon-icon_fingerpost"></span><span>@sitePage.Name</span></a>
+                            <a @{if (currentSitePage.IsInPathOf(sitePage)) { <text> class="selected" </text> }} href="@sitePage.Url"><span class="icon-icon_fingerpost"></span><span>@sitePage.Name</span></a>
                         </li>
                         }
 
