@@ -3,54 +3,32 @@
     Layout = "SitePage.cshtml";
 }
 
-@*
-@foreach(Reward reward in Model.Rewards)
-{
-    <h1>@reward.Heading</h1>
-    <img src="@reward.Image.GetResponsiveImageUrl(10,10)"/>
-    <h2>@reward.SubHeading</h2>    
-    <p>@reward.Copy</p>
-}
-
-
-@if (!this.Members.IsLoggedInPartier())
-{
-    @Html.ActionLink(Model.RegisterHostLinkText, "NavigateToRegisterHostUrl", "RegisterHostSurface", null, null)
-}
-else
-{
-    //WARNING: this is slow
-    <a href="@(((IPartier)this.Members.GetCurrentMember()).PartyUrl)" class="btn-primary">My party</a>
-}
-
-
-@Html.Partial("PartyKit", Model.PartyKit)*@
 
 
 
+<div class="page-bg">
 
-<section class="hero">
+    <div class="container gutter">
 
-    <div class="text-align-center">
+        @foreach(Reward reward in Model.Rewards)
+        {
+            <div class="grid-4 grid-tablet-6 grid-mobile-12 margin-bottom-large parent">
+                <div class="boxx collapse margin-small" m-radius-picker="medium">
 
-        <h1 class="secondary"><span class="icon-icon_fingerpost margin-right-small"></span>Piste <br/><span class="bigger">points</span></h1>
+                    <div class="pos-relative">
+                        <img width="100%" src="@reward.Image.Url"/>
+                        <div class="boxx-twerk"></div>
+                    </div>
 
-    </div>
-</section>
-
-
-
-
-<div class="planking pad-top-4 pad-bottom-8">
-    <div class="container gutter home-content-adjust">
-
-        <section class="wgrid-full text-align-center margin-bottom-6 pad-0">
-            <div class="boxx min-height-20 mega-pad" m-radius-picker="small medium">
-
-                <h4>This page is awaiting design</h4>
-
+                    <div class="wgrid-full pad-medium text-align-center">
+                        <h1 class="lighter">@reward.Heading</h1>
+                        <h4 class="color-brand">@reward.SubHeading</h4>
+                        <hr/>
+                        <p>@reward.Copy</p>
+                    </div>
+                </div>
             </div>
-        </section>
+        }
 
 
     </div>
