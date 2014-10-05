@@ -30,8 +30,7 @@ namespace Wonderland.Logic.Controllers.Render
                         return View("RegisterHost/RegisterHostPartyKit", model);
                     }
 
-                    // TODO: flag so that the final view can only be rendered once
-                    return View("RegisterHost/RegisterHostPartyUrl", model);
+                    return this.Redirect(partyHost.PartyUrl);
                 }
                 else
                 {

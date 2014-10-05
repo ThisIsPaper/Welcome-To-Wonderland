@@ -3169,7 +3169,6 @@
     <Content Include="Views\RegisterGuest\Complete.cshtml" />
     <Content Include="Views\RegisterHost\RegisterHost.cshtml" />
     <Content Include="Views\RegisterHost\RegisterHostPartyKit.cshtml" />
-    <Content Include="Views\RegisterHost\RegisterHostPartyUrl.cshtml" />
     <Content Include="Views\ResetPassword\Complete.cshtml" />
     <Content Include="Views\ResetPassword\Forms\ResetPasswordForm.cshtml" />
     <Content Include="Views\WhoIsItFor.cshtml" />
