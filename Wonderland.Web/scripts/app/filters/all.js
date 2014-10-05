@@ -46,16 +46,20 @@ wonderlandApp.filter('escape', function () {
 
 
 wonderlandApp.filter('percentageRounder', function () {
-    return function (current, total) {
+    return function (current, total, capAt100) {
         var p = 0;
+        capAt100 = capAt100 || true;
 
         current = Number(current);
         total = Number(total);
 
-        if (angular.isNumber(current) && angular.isNumber(total)) {
+        if (!isNaN(current) && !isNaN(total)) {
             p = Math.floor((current/total)*100);
-            p = p > 100 ? 100 : p;
+            if (capAt100) {
+                p = p > 100 ? 100 : p;
+            }
             p = p < 0 ? 0 : p;
+            p = isNaN(p) ? 0 : p;
         }
         return p;
     };
@@ -83,13 +87,18 @@ wonderlandApp.filter('addressJoiner', [function () {
             var originalParts = addressString.split(separator);
 
             for (var i=0; i<originalParts.length; i++) {
-                if (angular.isString(originalParts[i]) && originalParts[i].length>0) {
+                if (angular.isString(originalParts[i]) && originalParts[i].length>0 && originalParts[i] !== "null") {
                     addressParts.push(originalParts[i]);
                 }
             }
         }
 
-        return addressParts.join(", ");
+        var finalAddress = addressParts.join(", ");
+        if (finalAddress.length<=0) {
+            finalAddress = "An address hasn't been set yet";
+        }
+
+        return finalAddress;
     };
 }]);
 

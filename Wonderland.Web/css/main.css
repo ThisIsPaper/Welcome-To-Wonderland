@@ -1338,6 +1338,21 @@ abstract
   min-height: 20rem;
 }
 
+/* line 290, sass/partials/_abstract.scss */
+.color-primary {
+  color: #682c88 !important;
+}
+
+/* line 291, sass/partials/_abstract.scss */
+.color-secondary {
+  color: #007eac !important;
+}
+
+/* line 292, sass/partials/_abstract.scss */
+.color-brand {
+  color: #025b45 !important;
+}
+
 /* line 30, ../scripts/bower_components/gridle/sass/gridle/_silent-classes.scss */
 .container:after {
   content: "";
@@ -6403,6 +6418,21 @@ abstract
   min-height: 20rem;
 }
 
+/* line 290, sass/partials/_abstract.scss */
+.color-primary {
+  color: #682c88 !important;
+}
+
+/* line 291, sass/partials/_abstract.scss */
+.color-secondary {
+  color: #007eac !important;
+}
+
+/* line 292, sass/partials/_abstract.scss */
+.color-brand {
+  color: #025b45 !important;
+}
+
 /*------------------------------------------------------------------------------------------------------------------------
  @package: Macmillan - Wonderland (app)
 
@@ -6689,11 +6719,11 @@ Media query variables
 }
 
 /* line 57, sass/partials/_forms.scss */
-.btn-secondary, .choose-file-wrapper:after {
+.btn-secondary {
   background: #025b45;
 }
 /* line 61, sass/partials/_forms.scss */
-.btn-secondary:hover, .choose-file-wrapper:hover:after, .btn-secondary:focus, .choose-file-wrapper:focus:after {
+.btn-secondary:hover, .btn-secondary:focus {
   background: #024c3a;
 }
 
@@ -6886,7 +6916,7 @@ select.auto-width {
   font-size: 1.4rem;
   line-height: 3.8rem;
 }
-/* line 275, sass/partials/_forms.scss */
+/* line 276, sass/partials/_forms.scss */
 .choose-file-wrapper:after {
   content: "Upload file";
   position: absolute;
@@ -6898,14 +6928,14 @@ select.auto-width {
   padding-right: 4.4rem;
   line-height: 1.6rem;
 }
-/* line 293, sass/partials/_forms.scss */
+/* line 294, sass/partials/_forms.scss */
 .choose-file-wrapper.disabled:after {
   cursor: default;
   background-color: #D4D3CC;
   color: #A19F91;
 }
 
-/* line 301, sass/partials/_forms.scss */
+/* line 302, sass/partials/_forms.scss */
 .choose-file {
   width: 200%;
   height: 100%;
@@ -6919,7 +6949,7 @@ select.auto-width {
   opacity: 0;
 }
 
-/* line 314, sass/partials/_forms.scss */
+/* line 315, sass/partials/_forms.scss */
 .form-field-ico {
   position: absolute;
   top: 0;
@@ -8581,6 +8611,21 @@ abstract
   min-height: 20rem;
 }
 
+/* line 290, sass/partials/_abstract.scss */
+.color-primary {
+  color: #682c88 !important;
+}
+
+/* line 291, sass/partials/_abstract.scss */
+.color-secondary {
+  color: #007eac !important;
+}
+
+/* line 292, sass/partials/_abstract.scss */
+.color-brand {
+  color: #025b45 !important;
+}
+
 /* =============================================================================
 abstract
 ========================================================================== */
@@ -9684,6 +9729,21 @@ abstract
   min-height: 20rem;
 }
 
+/* line 290, sass/partials/_abstract.scss */
+.color-primary {
+  color: #682c88 !important;
+}
+
+/* line 291, sass/partials/_abstract.scss */
+.color-secondary {
+  color: #007eac !important;
+}
+
+/* line 292, sass/partials/_abstract.scss */
+.color-brand {
+  color: #025b45 !important;
+}
+
 /*------------------------------------------------------------------------------------------------------------------------
  @package: Macmillan - Wonderland (app)
 
@@ -9970,11 +10030,11 @@ Media query variables
 }
 
 /* line 57, sass/partials/_forms.scss */
-.btn-secondary, .choose-file-wrapper:after {
+.btn-secondary {
   background: #025b45;
 }
 /* line 61, sass/partials/_forms.scss */
-.btn-secondary:hover, .choose-file-wrapper:hover:after, .btn-secondary:focus, .choose-file-wrapper:focus:after {
+.btn-secondary:hover, .btn-secondary:focus {
   background: #024c3a;
 }
 
@@ -10167,7 +10227,7 @@ select.auto-width {
   font-size: 1.4rem;
   line-height: 3.8rem;
 }
-/* line 275, sass/partials/_forms.scss */
+/* line 276, sass/partials/_forms.scss */
 .choose-file-wrapper:after {
   content: "Upload file";
   position: absolute;
@@ -10179,14 +10239,14 @@ select.auto-width {
   padding-right: 4.4rem;
   line-height: 1.6rem;
 }
-/* line 293, sass/partials/_forms.scss */
+/* line 294, sass/partials/_forms.scss */
 .choose-file-wrapper.disabled:after {
   cursor: default;
   background-color: #D4D3CC;
   color: #A19F91;
 }
 
-/* line 301, sass/partials/_forms.scss */
+/* line 302, sass/partials/_forms.scss */
 .choose-file {
   width: 200%;
   height: 100%;
@@ -10200,7 +10260,7 @@ select.auto-width {
   opacity: 0;
 }
 
-/* line 314, sass/partials/_forms.scss */
+/* line 315, sass/partials/_forms.scss */
 .form-field-ico {
   position: absolute;
   top: 0;
@@ -10502,16 +10562,17 @@ Event Page specific - move these out of here eventually
 ========================================================================== */
 /* line 114, sass/partials/_base.scss */
 .party-main-image {
+  background-color: #D4D3CC;
   background-position: center center;
   background-size: cover;
   height: 37.2rem;
 }
-/* line 119, sass/partials/_base.scss */
+/* line 120, sass/partials/_base.scss */
 .party-main-image.side {
   height: 18rem;
 }
 
-/* line 124, sass/partials/_base.scss */
+/* line 125, sass/partials/_base.scss */
 .party-image-default {
   position: absolute;
   text-align: center;
@@ -10523,7 +10584,7 @@ Event Page specific - move these out of here eventually
   padding-top: 17rem;
 }
 
-/* line 135, sass/partials/_base.scss */
+/* line 136, sass/partials/_base.scss */
 .edit-trigger {
   position: absolute;
   top: 2rem;
@@ -10549,23 +10610,23 @@ Event Page specific - move these out of here eventually
   -webkit-border-bottom-left-radius: 3rem 3rem;
   border-bottom-left-radius: 3rem 3rem;
 }
-/* line 150, sass/partials/_base.scss */
+/* line 151, sass/partials/_base.scss */
 .edit-trigger .edit-label {
   display: none;
   margin-right: 1rem;
   text-transform: uppercase;
 }
-/* line 156, sass/partials/_base.scss */
+/* line 157, sass/partials/_base.scss */
 .edit-trigger:hover {
   padding: 0 .95rem;
   width: auto;
 }
-/* line 159, sass/partials/_base.scss */
+/* line 160, sass/partials/_base.scss */
 .edit-trigger:hover .edit-label {
   display: inline;
 }
 
-/* line 166, sass/partials/_base.scss */
+/* line 167, sass/partials/_base.scss */
 .profile-image {
   width: 6rem;
   height: 6rem;
@@ -10574,7 +10635,7 @@ Event Page specific - move these out of here eventually
   background-color: #A19F91;
   float: left;
 }
-/* line 174, sass/partials/_base.scss */
+/* line 175, sass/partials/_base.scss */
 .profile-image:before {
   font-family: "icomoon";
   content: " ";
@@ -10585,17 +10646,17 @@ Event Page specific - move these out of here eventually
   text-align: center;
   display: block;
 }
-/* line 185, sass/partials/_base.scss */
+/* line 186, sass/partials/_base.scss */
 .profile-image.profile-image-notset:before {
   content: "\e61b";
 }
-/* line 189, sass/partials/_base.scss */
+/* line 190, sass/partials/_base.scss */
 .profile-image.small {
   width: 4.2rem;
   height: 4.2rem;
 }
 
-/* line 195, sass/partials/_base.scss */
+/* line 196, sass/partials/_base.scss */
 .profile-image-remover {
   color: #E32333;
   font-size: 1.1rem;
@@ -10606,34 +10667,34 @@ Event Page specific - move these out of here eventually
   width: 6rem;
 }
 
-/* line 207, sass/partials/_base.scss */
+/* line 208, sass/partials/_base.scss */
 .image-shift-details, .party-details, .wall-details {
   margin-left: 7.2rem;
 }
-/* line 210, sass/partials/_base.scss */
+/* line 211, sass/partials/_base.scss */
 .image-shift-details.bigger, .bigger.party-details, .bigger.wall-details {
   margin-left: 12.2rem;
 }
 
-/* line 216, sass/partials/_base.scss */
+/* line 217, sass/partials/_base.scss */
 .anti-image-shift-details {
   margin-left: -7.2rem;
 }
-/* line 219, sass/partials/_base.scss */
+/* line 220, sass/partials/_base.scss */
 .anti-image-shift-details.bigger {
   margin-left: -12.2rem;
 }
 
-/* line 224, sass/partials/_base.scss */
+/* line 225, sass/partials/_base.scss */
 .party-details {
   color: #A19F91;
 }
-/* line 228, sass/partials/_base.scss */
+/* line 229, sass/partials/_base.scss */
 .party-details [class^="icon-"], .party-details [class*=" icon-"] {
   color: #D4D3CC;
 }
 
-/* line 234, sass/partials/_base.scss */
+/* line 235, sass/partials/_base.scss */
 .badge {
   width: 100%;
   height: 7.8rem;
@@ -10642,27 +10703,27 @@ Event Page specific - move these out of here eventually
   background-repeat: no-repeat;
   background-position: bottom center;
 }
-/* line 243, sass/partials/_base.scss */
+/* line 244, sass/partials/_base.scss */
 .badge.badge.collected {
   background-position: top center;
 }
 
 /*******************************/
-/* line 252, sass/partials/_base.scss */
+/* line 253, sass/partials/_base.scss */
 .party-image-container {
   float: left;
 }
-/* line 257, sass/partials/_base.scss */
+/* line 258, sass/partials/_base.scss */
 .party-image-container input[type="radio"] {
   display: none;
 }
-/* line 261, sass/partials/_base.scss */
+/* line 262, sass/partials/_base.scss */
 .party-image-container .warner {
   width: 16rem;
   text-align: center;
   display: none;
 }
-/* line 270, sass/partials/_base.scss */
+/* line 271, sass/partials/_base.scss */
 .party-image-container.selected .party-image-selecter:after {
   content: "\e61f";
   font-family: "icomoon";
@@ -10673,18 +10734,18 @@ Event Page specific - move these out of here eventually
   opacity: .8;
   line-height: 8rem;
 }
-/* line 281, sass/partials/_base.scss */
+/* line 282, sass/partials/_base.scss */
 .party-image-container.selected .party-image-selecter:before {
   content: "";
   margin-left: 0;
 }
-/* line 286, sass/partials/_base.scss */
+/* line 287, sass/partials/_base.scss */
 .party-image-container.selected .warner {
   display: block;
   cursor: pointer;
 }
 
-/* line 293, sass/partials/_base.scss */
+/* line 294, sass/partials/_base.scss */
 .party-image-selecter {
   width: 16rem;
   height: 7.5rem;
@@ -10694,23 +10755,23 @@ Event Page specific - move these out of here eventually
   position: relative;
   overflow: hidden;
 }
-/* line 304, sass/partials/_base.scss */
+/* line 305, sass/partials/_base.scss */
 .party-image-selecter:before {
   color: white;
   font-size: 4.7rem;
   line-height: 7.5rem;
   margin-left: 6.8rem;
 }
-/* line 311, sass/partials/_base.scss */
+/* line 312, sass/partials/_base.scss */
 .party-image-selecter.image-unset {
   cursor: default;
 }
-/* line 315, sass/partials/_base.scss */
+/* line 316, sass/partials/_base.scss */
 .party-image-selecter.image-set:before {
   content: "";
 }
 
-/* line 320, sass/partials/_base.scss */
+/* line 321, sass/partials/_base.scss */
 .reference-image {
   width: 100%;
   height: 9rem;
@@ -10718,55 +10779,55 @@ Event Page specific - move these out of here eventually
 }
 
 /*******************************/
-/* line 333, sass/partials/_base.scss */
+/* line 334, sass/partials/_base.scss */
 .wall-details {
   color: #A19F91;
   min-height: 6rem;
 }
 
-/* line 340, sass/partials/_base.scss */
+/* line 341, sass/partials/_base.scss */
 .wall-name, wall-type {
   font-weight: bold;
   color: #7B7A6D;
 }
 
-/* line 345, sass/partials/_base.scss */
+/* line 346, sass/partials/_base.scss */
 .wall-type {
   text-transform: uppercase;
 }
-/* line 348, sass/partials/_base.scss */
+/* line 349, sass/partials/_base.scss */
 .wall-type.donation {
   color: #007eac;
 }
-/* line 352, sass/partials/_base.scss */
+/* line 353, sass/partials/_base.scss */
 .wall-type.party-host {
   color: orange;
 }
 
-/* line 357, sass/partials/_base.scss */
+/* line 358, sass/partials/_base.scss */
 .wall-time {
   color: #D4D3CC;
 }
 
-/* line 361, sass/partials/_base.scss */
+/* line 362, sass/partials/_base.scss */
 .wall-remove {
   position: absolute;
   top: 0;
   right: 0;
   margin: 0;
 }
-/* line 367, sass/partials/_base.scss */
+/* line 368, sass/partials/_base.scss */
 .wall-remove.loader {
   margin-top: -3rem;
 }
 
-/* line 372, sass/partials/_base.scss */
+/* line 373, sass/partials/_base.scss */
 .donation-copy {
   color: #007eac;
   font-size: 2.3rem;
 }
 
-/* line 377, sass/partials/_base.scss */
+/* line 378, sass/partials/_base.scss */
 .wall-textarea {
   margin-bottom: 0;
   padding-bottom: 0;
@@ -10779,7 +10840,7 @@ Event Page specific - move these out of here eventually
   border-bottom-right-radius: 0;
 }
 
-/* line 384, sass/partials/_base.scss */
+/* line 385, sass/partials/_base.scss */
 .wall-image-preview {
   border: 0.1rem solid #D4D3CC;
   margin-top: 0;
@@ -10797,16 +10858,16 @@ Event Page specific - move these out of here eventually
 }
 
 /*******************************/
-/* line 400, sass/partials/_base.scss */
+/* line 401, sass/partials/_base.scss */
 .ticket {
   position: relative;
 }
-/* line 403, sass/partials/_base.scss */
+/* line 404, sass/partials/_base.scss */
 .ticket .stub {
   background-color: #D4D3CC;
   overflow: hidden;
 }
-/* line 408, sass/partials/_base.scss */
+/* line 409, sass/partials/_base.scss */
 .ticket .stub .holes, .ticket .stub .holes-right {
   position: absolute;
   left: -.1rem;
@@ -10816,13 +10877,13 @@ Event Page specific - move these out of here eventually
   background-image: url('/img/raffle.svg?1412505524');
   background-repeat: no-repeat;
 }
-/* line 418, sass/partials/_base.scss */
+/* line 419, sass/partials/_base.scss */
 .ticket .stub .holes-right {
   left: auto;
   right: -.1rem;
   background-image: url('/img/raffle_r.svg?1412505524');
 }
-/* line 424, sass/partials/_base.scss */
+/* line 425, sass/partials/_base.scss */
 .ticket .stub .price {
   -moz-border-radius: 1rem;
   -webkit-border-radius: 1rem;
@@ -10833,33 +10894,33 @@ Event Page specific - move these out of here eventually
   text-align: center;
   line-height: 7.3rem;
 }
-/* line 441, sass/partials/_base.scss */
+/* line 442, sass/partials/_base.scss */
 .ticket.selected .stub {
   background-color: #025b45;
 }
-/* line 444, sass/partials/_base.scss */
+/* line 445, sass/partials/_base.scss */
 .ticket.selected .stub .price {
   color: white !important;
 }
-/* line 451, sass/partials/_base.scss */
+/* line 452, sass/partials/_base.scss */
 .ticket input[type="radio"] {
   display: none;
 }
 
-/* line 459, sass/partials/_base.scss */
+/* line 460, sass/partials/_base.scss */
 label .ticket span {
   color: inherit;
 }
 
 /*******************************/
-/* line 467, sass/partials/_base.scss */
+/* line 468, sass/partials/_base.scss */
 .totaliser {
   -moz-border-radius: 0.6rem;
   -webkit-border-radius: 0.6rem;
   border-radius: 0.6rem;
   background-color: #D4D3CC;
 }
-/* line 473, sass/partials/_base.scss */
+/* line 474, sass/partials/_base.scss */
 .totaliser .current-total {
   -moz-border-radius: 0.6rem;
   -webkit-border-radius: 0.6rem;
@@ -10892,24 +10953,24 @@ label .ticket span {
 /* =============================================================================
 One-off uses
 ========================================================================== */
-/* line 495, sass/partials/_base.scss */
+/* line 496, sass/partials/_base.scss */
 #twitter-widget-0 {
   width: 100% !important;
 }
 
-/* line 499, sass/partials/_base.scss */
+/* line 500, sass/partials/_base.scss */
 .home-twitter-boxx {
   height: 35.6rem;
 }
 
-/* line 503, sass/partials/_base.scss */
+/* line 504, sass/partials/_base.scss */
 .piggy-donater:after {
   content: "\e61c";
   font-family: "icomoon";
   color: white;
 }
 
-/* line 510, sass/partials/_base.scss */
+/* line 511, sass/partials/_base.scss */
 .join-party-ico:after {
   content: "\e601";
   font-family: "icomoon";
@@ -10917,7 +10978,7 @@ One-off uses
 }
 
 /*******************************/
-/* line 522, sass/partials/_base.scss */
+/* line 523, sass/partials/_base.scss */
 .hero {
   height: 45rem;
   background-image: url('/img/hero-ph.jpg?1412505524');
@@ -10928,28 +10989,28 @@ One-off uses
   padding-top: 10rem;
 }
 
-/* line 532, sass/partials/_base.scss */
+/* line 533, sass/partials/_base.scss */
 .planking {
   background: url('/img/wood_texture.jpg?1412505524') repeat top left;
   background-size: 100% auto;
 }
 
-/* line 537, sass/partials/_base.scss */
+/* line 538, sass/partials/_base.scss */
 .home-content-adjust {
   margin-top: -8rem;
 }
 
-/* line 541, sass/partials/_base.scss */
+/* line 542, sass/partials/_base.scss */
 .hero-explain {
   margin-right: 35rem;
   text-align: left;
 }
-/* line 545, sass/partials/_base.scss */
+/* line 546, sass/partials/_base.scss */
 .hero-explain.full-width {
   margin-right: 0;
 }
 
-/* line 550, sass/partials/_base.scss */
+/* line 551, sass/partials/_base.scss */
 .money-raised {
   position: absolute;
   top: 2.4rem;
@@ -10959,7 +11020,7 @@ One-off uses
   width: 34rem;
 }
 
-/* line 559, sass/partials/_base.scss */
+/* line 560, sass/partials/_base.scss */
 .raised-amount {
   color: white;
   width: 27.5rem;
@@ -10967,7 +11028,7 @@ One-off uses
   line-height: 4.7rem;
 }
 
-/* line 567, sass/partials/_base.scss */
+/* line 568, sass/partials/_base.scss */
 .home-tile {
   background-color: white;
   position: relative;
@@ -10977,7 +11038,7 @@ One-off uses
   box-shadow: 0px 14px 30px 0px rgba(0, 0, 0, 0.6);
 }
 
-/* line 577, sass/partials/_base.scss */
+/* line 578, sass/partials/_base.scss */
 .home-tile-image {
   -moz-border-radius: 0.7rem;
   -webkit-border-radius: 0.7rem;
@@ -10988,7 +11049,7 @@ One-off uses
   width: 100%;
 }
 
-/* line 585, sass/partials/_base.scss */
+/* line 586, sass/partials/_base.scss */
 .home-tile-label {
   position: absolute;
   bottom: 0;
@@ -10997,32 +11058,32 @@ One-off uses
 }
 
 /*******************************/
-/* line 596, sass/partials/_base.scss */
+/* line 597, sass/partials/_base.scss */
 .spotify-holder {
   width: 35.6rem;
   margin-top: -7rem;
 }
 
-/* line 601, sass/partials/_base.scss */
+/* line 602, sass/partials/_base.scss */
 .spotify-info-holder {
   position: absolute;
   top: 12rem;
   color: white;
   text-align: center;
 }
-/* line 608, sass/partials/_base.scss */
+/* line 609, sass/partials/_base.scss */
 .spotify-info-holder h1 {
   color: white;
 }
 
 /*******************************/
-/* line 616, sass/partials/_base.scss */
+/* line 617, sass/partials/_base.scss */
 .scoreboard-place {
   float: left;
   width: 5rem;
 }
 
-/* line 621, sass/partials/_base.scss */
+/* line 622, sass/partials/_base.scss */
 .scoreboard-value {
   position: absolute;
   top: 0;
@@ -11031,22 +11092,22 @@ One-off uses
 }
 
 /*******************************/
-/* line 633, sass/partials/_base.scss */
+/* line 634, sass/partials/_base.scss */
 .idea-sizer {
   width: 25%;
 }
 
-/* line 637, sass/partials/_base.scss */
+/* line 638, sass/partials/_base.scss */
 .idea-tile {
   width: 25%;
   padding: 1.2rem;
 }
-/* line 642, sass/partials/_base.scss */
+/* line 643, sass/partials/_base.scss */
 .idea-tile.wide {
   width: 50%;
 }
 
-/* line 647, sass/partials/_base.scss */
+/* line 648, sass/partials/_base.scss */
 .idea {
   padding: 1.2rem;
   background-color: white;
@@ -11057,42 +11118,42 @@ One-off uses
   box-shadow: 0px 14px 30px 0px rgba(0, 0, 0, 0.6);
 }
 
-/* line 655, sass/partials/_base.scss */
+/* line 656, sass/partials/_base.scss */
 .idea-details {
   width: 100%;
   top: 11%;
   left: 0;
   padding: 0 1.2rem;
 }
-/* line 661, sass/partials/_base.scss */
+/* line 662, sass/partials/_base.scss */
 .idea-details.over-the-top {
   position: absolute;
   color: white;
 }
-/* line 665, sass/partials/_base.scss */
+/* line 666, sass/partials/_base.scss */
 .idea-details.over-the-top h1 {
   color: white;
 }
-/* line 670, sass/partials/_base.scss */
+/* line 671, sass/partials/_base.scss */
 .idea-details.wide {
   top: 23%;
 }
 
-/* line 675, sass/partials/_base.scss */
+/* line 676, sass/partials/_base.scss */
 .idea-polaroid {
   -moz-border-radius: 0.7rem;
   -webkit-border-radius: 0.7rem;
   border-radius: 0.7rem;
 }
 
-/* line 679, sass/partials/_base.scss */
+/* line 680, sass/partials/_base.scss */
 .pinterest-ico:before {
   content: "\e623";
   font-family: "icomoon";
   color: #E32333;
 }
 
-/* line 685, sass/partials/_base.scss */
+/* line 686, sass/partials/_base.scss */
 .spotify-logo {
   width: 8rem;
   height: 2.4rem;
@@ -11103,7 +11164,7 @@ One-off uses
   margin: 0 auto;
 }
 
-/* line 696, sass/partials/_base.scss */
+/* line 697, sass/partials/_base.scss */
 .idea-link {
   position: absolute;
   top: 0;
@@ -11114,7 +11175,7 @@ One-off uses
   text-indent: -999rem;
 }
 
-/* line 707, sass/partials/_base.scss */
+/* line 708, sass/partials/_base.scss */
 .share-title {
   width: 27.8rem;
   height: 11.6rem;
@@ -11123,7 +11184,7 @@ One-off uses
   background-size: 27.8rem 11.6rem;
 }
 
-/* line 716, sass/partials/_base.scss */
+/* line 717, sass/partials/_base.scss */
 .share-facebook, .share-twitter, .share-email {
   background-color: #3c5898;
   font-family: "macmillan";
@@ -11132,33 +11193,33 @@ One-off uses
   padding: 1.2rem;
   line-height: 5.5rem;
 }
-/* line 724, sass/partials/_base.scss */
+/* line 725, sass/partials/_base.scss */
 .share-facebook:before, .share-twitter:before, .share-email:before {
   font-family: "icomoon";
   content: "\e619";
   margin-right: 1.2rem;
 }
 
-/* line 731, sass/partials/_base.scss */
+/* line 732, sass/partials/_base.scss */
 .share-twitter {
   background-color: #17abed;
 }
-/* line 733, sass/partials/_base.scss */
+/* line 734, sass/partials/_base.scss */
 .share-twitter:before {
   content: "\e61a";
 }
 
-/* line 739, sass/partials/_base.scss */
+/* line 740, sass/partials/_base.scss */
 .share-email {
   background-color: #007eac;
 }
-/* line 741, sass/partials/_base.scss */
+/* line 742, sass/partials/_base.scss */
 .share-email:before {
   content: "\e618";
   margin-right: 0;
 }
 
-/* line 748, sass/partials/_base.scss */
+/* line 749, sass/partials/_base.scss */
 .centered-share-holder .share-title {
   display: block;
   float: none;
@@ -11168,17 +11229,17 @@ One-off uses
 }
 
 /*******************************/
-/* line 761, sass/partials/_base.scss */
+/* line 762, sass/partials/_base.scss */
 .color-facebook {
   color: #3c5898 !important;
 }
 
-/* line 762, sass/partials/_base.scss */
+/* line 763, sass/partials/_base.scss */
 .color-twitter {
   color: #17abed !important;
 }
 
-/* line 763, sass/partials/_base.scss */
+/* line 764, sass/partials/_base.scss */
 .color-gplus {
   color: #cd3627 !important;
 }

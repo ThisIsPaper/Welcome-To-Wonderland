@@ -272,9 +272,10 @@ select.auto-width {
         line-height: 3.8rem;
     }
 
+
     &:after {
 
-        @extend .btn-secondary;
+        @extend .btn-primary;
         @extend .radius-v3-small;
 
         content: "Upload file";

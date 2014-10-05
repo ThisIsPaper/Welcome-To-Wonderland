@@ -1,4 +1,4 @@
-wonderlandApp.controller('PartyCtrl', ['safeApply', '$ocModal', '$sce', '$scope', '$timeout', function (safeApply, $ocModal, $sce, $scope, $timeout) {
+wonderlandApp.controller('PartyCtrl', ['safeApply', '$filter', '$ocModal', '$sce', '$scope', '$timeout', function (safeApply, $filter, $ocModal, $sce, $scope, $timeout) {
 
 
     /**********************/
@@ -40,7 +40,8 @@ wonderlandApp.controller('PartyCtrl', ['safeApply', '$ocModal', '$sce', '$scope'
         if (partyDetailsData.Address2) address.push(partyDetailsData.Address2);
         if (partyDetailsData.TownCity) address.push(partyDetailsData.TownCity);
         if (partyDetailsData.Postcode) address.push(partyDetailsData.Postcode);
-        $scope.partyDetailsFormattedAddress = address.join(", ");
+
+        $scope.partyDetailsFormattedAddress = $filter('addressJoiner')(address.join(":~:"), ":~:");
 
         $scope.partyDetailsData = partyDetailsData;
         $scope.partyDetailsDataForForm = angular.copy($scope.partyDetailsData);

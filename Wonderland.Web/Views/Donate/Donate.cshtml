@@ -4,15 +4,7 @@
 }
 
 
-<div class="page-bg" ng-init="guideDonationSuggestions = [
-        { amount: 10, label: null },
-        { amount: 15, label: '@Model.PartyHost.FirstName\'s suggested amount' },
-        { amount: 20, label: null },
-        { amount: 25, label: null }
-    ];">
-
-
-
+<div class="page-bg">
 
 
     <div class="container gutter">
@@ -32,6 +24,9 @@
 
             <div class="boxx collapse radius-tablet-0" m-radius-picker="medium">
 
+                @Html.Partial("PartyDetailsSide")
+
+                @*
                 <div class="wgrid-full wgrid-no-bottom-margin parent">
                     <div class="grid-12 party-main-image side" style="background-image: url(@Model.PartyHost.PartyImage)"></div>
                 </div>
@@ -54,6 +49,7 @@
 
                     </div>
                 </div>
+                *@
 
             </div>
 

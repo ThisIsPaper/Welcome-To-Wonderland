@@ -21,14 +21,14 @@ wonderlandApp.directive('mTotaliser', ['$filter', function ($filter) {
         },
 
         template:   '<div>' +
-                        '<span class="body-mega" ng-bind="raised|mCurrency:\'£\'"></span>' +
+                        '<span class="body-mega color-brand" ng-bind="raised|mCurrency:\'£\'"></span>' +
                         '<span class="dis-inline-block"><span> raised of the </span>' +
-                        '<span class="body-highlight" ng-bind="total|mCurrency:\'£\'"></span>' +
+                        '<span class="body-highlight color-brand" ng-bind="total|mCurrency:\'£\'"></span>' +
                         '<span> target</span></span>' +
                     '</div>' +
 
                     '<div class="totaliser">' +
-                        '<div class="current-total" ng-style="{\'width\': currentPercentage + \'%\'}"></div>' +
+                        '<div class="current-total" ng-style="{\'width\': cappedCurrentPercentage + \'%\'}"></div>' +
                     '</div>' +
 
                     '<div class="form-info">' +
@@ -40,7 +40,10 @@ wonderlandApp.directive('mTotaliser', ['$filter', function ($filter) {
 
             scope.$watch('raised + total', function () {
 
-                scope.currentPercentage = $filter('percentageRounder')(scope.raised, scope.total);
+                var cp = $filter('percentageRounder')(scope.raised, scope.total, false);
+                scope.currentPercentage = cp;
+                var cpc = cp > 100 ? 100 : cp;
+                scope.cappedCurrentPercentage = cpc;
             });
 
         }

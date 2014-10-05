@@ -6,14 +6,6 @@
     {
         @Html.AntiForgeryToken()
 
-
-        <h3>Are you going?</h3>
-
-        <label class="radio-form"><input type="radio" name="going" />I'm attending the party</label>
-        <label class="radio-form"><input type="radio" name="going" />I can't make the date, but would love to donate</label>
-
-        <hr/>
-
         <h3>Write a message</h3>
         <p>This will be posted to the event page's wall once you have joined the party</p>
         @Html.TextAreaFor(x => x.Message, new { @m_radius_picker="small", @ng_readonly="processing", @ng_class="{'error': errorEmailMessage.length>0}" })

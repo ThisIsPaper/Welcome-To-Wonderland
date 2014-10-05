@@ -30,13 +30,13 @@
                         <div m-profile-image="{{ pageProfile.imageUrl }}" class="clickable" m-radius-picker="small" ng-click="openPageModal('partials/profileImageForm.html', 'profileImageModal', {'pageProfile': pageProfile, 'pageFeedback': pageFeedback})"></div>
                         <div class="party-details">
                             <h3 class="pad-right-3 margin-top-0 margin-bottom-small" ng-bind="partyDetailsData.PartyHeading">@this.Model.Heading</h3>
-                            <div class="body-small float-left margin-right-medium">
+                            <div class="body-medium float-left margin-right-medium">
                                 <span class="icon-icon_clock"></span>
                                 <span ng-bind="partyDetailsData.PartyDateTime|datePreviewFormat"></span>
                             </div>
-                            <div class="body-small float-left">
+                            <div class="body-medium float-left">
                                 <span class="icon-icon_fingerpost"></span>
-                                <span ng-bind="partyDetailsFormattedAddress">@Model.PartyHost.PartyAddress.Address1</span>
+                                <span ng-bind="partyDetailsFormattedAddress"></span>
                             </div>
                         </div>
                         <div class="edit-trigger" ng-click="openPageModal('partials/partyDetailsForm.html', 'partyDetailsModal', {'partyDetailsData': partyDetailsDataForForm})"><span class="edit-label">Edit</span><span class="icon-icon_edit"></span></div>
