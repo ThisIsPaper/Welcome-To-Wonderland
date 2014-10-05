@@ -143,7 +143,7 @@ Event Page specific - move these out of here eventually
     text-align: center;
     width: 3rem;
     height: 3rem;
-    background-color: $SecondaryColour;
+    background-color: $FourthColour;
     @include m-border-radius(3rem, 3rem, 3rem, 3rem, 3rem, 3rem, 3rem, 3rem);
 
 
@@ -426,7 +426,7 @@ Event Page specific - move these out of here eventually
             @include border-radius(1rem);
 
             font-family: $fontFaceMacmillan;
-            color: $SecondaryColour;
+            color: $FourthColour;
 
             border: .1rem solid white;
             text-align: center;
@@ -439,7 +439,7 @@ Event Page specific - move these out of here eventually
 
     &.selected {
         .stub {
-            background-color: $SecondaryColour;
+            background-color: $FourthColour;
 
             .price {
                 color: white !important;

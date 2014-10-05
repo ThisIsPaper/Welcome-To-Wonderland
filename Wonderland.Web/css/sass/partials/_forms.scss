@@ -56,10 +56,10 @@ $btnPaddingLarge: $btnPaddingMedium*2;
 
 .btn-secondary {
     @extend .btn-primary;
-    background: $SecondaryColour;
+    background: $FourthColour;
 
     &:hover, &:focus {
-        background: darken($SecondaryColour, 10%);
+        background: darken($FourthColour, 3%);
     }
 }
 
