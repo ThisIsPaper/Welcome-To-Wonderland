@@ -95,7 +95,7 @@ wonderlandApp.controller('WallCtrl', ['mHttp', 'safeApply', '$filter', '$scope',
 
 
         deleteRequest = mHttp.post(wallDelete, {
-            formData: sendFormData,
+            data: sendFormData,
             dataType: 'json'
         });
 
