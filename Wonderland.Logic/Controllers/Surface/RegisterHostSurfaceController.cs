@@ -113,7 +113,7 @@ namespace Wonderland.Logic.Controllers.Surface
             // get the renderModel for the current page
             RegisterHost model = (RegisterHost)this.CurrentPage;
 
-            this.ViewBag.TShirtSizes = new List<string>(model.TShirtSizes);
+            this.ViewBag.TShirtSizes = model.TShirtSizes;
 
             return this.PartialView("RegisterHost/Forms/RegisterHostPartyKitForm", new RegisterHostPartyKitForm());
         }

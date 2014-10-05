@@ -116,6 +116,13 @@
 
                 </div>
 
+                @if (this.Members.GetCurrentPartier() is PartyHost)
+                { 
+                    <div class="wgrid">
+                        @(Html.Action<ProfileSurfaceController>("RenderProfileTShirtSizeForm"))
+                    </div>
+                }
+
             </div>
 
         </div>
@@ -123,8 +130,3 @@
     </div>
 
 </div>
-
-
-@*
-
-*@

@@ -9,6 +9,8 @@ namespace Wonderland.Logic.Controllers.Surface
     using Wonderland.Logic.Interfaces;
     using Wonderland.Logic.Models.Entities;
     using Wonderland.Logic.Models.Forms;
+    using Wonderland.Logic.Models.Members;
+    using Wonderland.Logic.Models.Content;
 
     public class ProfileSurfaceController : SurfaceController
     {
@@ -167,6 +169,46 @@ namespace Wonderland.Logic.Controllers.Surface
 
                 partier.FirstName = profileNamesForm.FirstName;
                 partier.LastName = profileNamesForm.LastName;
+
+                formResponse.Success = true;
+            }
+            else
+            {
+                formResponse.Errors = this.ModelState.GetErrors();
+            }
+
+            return Json(formResponse);
+        }
+
+        [ChildActionOnly]
+        [MemberAuthorize(AllowType=PartyHost.Alias)]
+        public ActionResult RenderProfileTShirtSizeForm()
+        {
+            ProfileTShirtSizeForm profileTShirtSizeForm = new ProfileTShirtSizeForm();
+
+            RegisterHost registerHost = (RegisterHost)this.Umbraco.TypedContentSingleAtXPath("//" + RegisterHost.Alias);
+
+            this.ViewBag.TShirtSizes = registerHost.TShirtSizes;
+
+            PartyHost partyHost = (PartyHost)this.Members.GetCurrentPartier();
+
+            profileTShirtSizeForm.TShirtSize = partyHost.TShirtSize;
+
+            return this.PartialView("Profile/Forms/ProfileTShirtSizeForm", profileTShirtSizeForm);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [MemberAuthorize(AllowType=PartyHost.Alias)]
+        public ActionResult HandleProfileTShirtSizeForm(ProfileTShirtSizeForm profileTShirtSizeForm)
+        {
+            FormResponse formResponse = new FormResponse();
+
+            if (this.ModelState.IsValid)
+            {
+                PartyHost partyHost = (PartyHost)this.Members.GetCurrentPartier();
+
+                partyHost.TShirtSize = profileTShirtSizeForm.TShirtSize;
 
                 formResponse.Success = true;
             }

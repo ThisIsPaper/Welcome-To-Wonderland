@@ -3117,6 +3117,7 @@
     <Content Include="umbraco_client\CodeMirror\Js\Mode\Razor\LICENSE" />
     <Content Include="umbraco_client\CodeMirror\Js\Mode\Sieve\LICENSE" />
     <None Include="Properties\PublishProfiles\AWS Macmillan.pubxml" />
+    <Content Include="Views\Profile\Forms\ProfileTShirtSizeForm.cshtml" />
     <None Include="Views\RegisterHost\Forms\RegisterHostForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
