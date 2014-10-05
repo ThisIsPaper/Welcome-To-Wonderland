@@ -91,11 +91,6 @@ Base page structure
   position: relative;
   width: 100%;
   left: 0;
-
-
-  @include transition-property(left);
-  @include transition-duration(.2s);
-  @include transition-timing-function(ease-in-out);
 }
 
 main {

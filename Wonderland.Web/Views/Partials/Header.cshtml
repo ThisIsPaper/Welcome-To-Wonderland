@@ -3,7 +3,7 @@
     SitePage currentSitePage = (SitePage)this.Umbraco.AssignedContentItem;
 }
 
-<header class="site-header" ng-class="{'compress': pageHeaderCompress}">
+<header class="site-header"  ng-class="{'showing-side-nav-menu': pageShowingSideNavMenu, 'showing-side-account-menu': pageShowingSideAccountMenu, 'compress': pageHeaderCompress}">
 
     <a class="nav-burger nav-end-block icon-icon_hamburger_menu" ng-click="pageShowingSideNavMenu=!pageShowingSideNavMenu" ng-class="{'icon-icon_x': pageShowingSideNavMenu}"></a>
     @if (!this.Members.IsLoggedInPartier())
