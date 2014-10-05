@@ -49,15 +49,8 @@
                 <p>Wonderland royalty; these party people have raised an avalanche of cash for Macmillan.</p>
 
                 @{
-                    int i=0;
-                    int t=0;
-                    @* TODO: probably remove this hacky loop to get total items *@
-                    @* total items = @Model.TopFundraisers.Count() *@ 
-                    
-                    foreach (PartyHost partyHost in Model.TopFundraisers)
-                    {
-                        t++;
-                    }
+                    int i = 0;
+                    int t = Model.TopFundraisers.Count();
                     foreach (PartyHost partyHost in Model.TopFundraisers)
                     {
                         i++;
@@ -91,19 +84,13 @@
                 <p>If the winter olympics involved selling tickets for parties these people would be gold medal winners.</p>
 
                 @{
-                    int ii=0;
-                    int tt=0;
-                    @* TODO: probably remove this hacky loop to get total items *@
-                    @* total items = Model.MostGuests.Count() *@
+                    i=0;
+                    t = Model.MostGuests.Count();
                     foreach (PartyHost partyHost in Model.MostGuests)
                     {
-                        tt++;
-                    }
-                    foreach (PartyHost partyHost in Model.MostGuests)
-                    {
-                        ii++;
+                        i++;
                         <div class="pos-relative margin-bottom-small">
-                            <div class="scoreboard-place body-dephasize" ng-bind="@ii|dateSuffix"></div>
+                            <div class="scoreboard-place body-dephasize" ng-bind="@i|dateSuffix"></div>
                             <div class="float-left" m-profile-image="{{ '@partyHost.ProfileImageUrl' }}" m-radius-picker="small medium"></div>
                             <div class="image-shift-details bigger margin-right-7">
                                 <div class="body-emphasize">@partyHost.Name</div>
@@ -116,9 +103,9 @@
                             </div>
                             <div class="clear"></div>
                         </div>
-                        <hr ng-show="{{ @ii < @tt }}" />
+                        <hr ng-show="{{ @i < @t }}" />
                     }
-                    <div class="errorred" ng-show="@tt==0">There are currently no party professionals</div>
+                    <div class="errorred" ng-show="@t==0">There are currently no party professionals</div>
                 }
 
             </div>
