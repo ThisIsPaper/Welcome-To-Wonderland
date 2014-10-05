@@ -540,6 +540,10 @@ One-off uses
 .hero-explain {
     margin-right: 35rem;
     text-align: left;
+
+    &.full-width {
+        margin-right: 0;
+    }
 }
 
 .money-raised {
@@ -554,6 +558,9 @@ One-off uses
 .raised-amount {
     color: white;
     width: 27.5rem;
+
+    font-size: 3.5rem;
+    line-height: 4.7rem;
 }
 
 .home-tile {

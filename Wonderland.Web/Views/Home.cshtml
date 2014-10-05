@@ -27,8 +27,8 @@
 
         <section class="wgrid-full text-align-center margin-bottom-6 pad-0">
             <div class="boxx min-height-20 mega-pad" m-radius-picker="small medium">
-                <div class="hero-explain">
-                    <h1 class="text-align-left">@Model.BannerHeading</h1>
+                <div class="hero-explain @if (Model.TotalAmountRaised <= 10000) {@Html.Raw("full-width");}">
+                    <h1 class="@if (Model.TotalAmountRaised > 10000) {@Html.Raw("text-align-left");}">@Model.BannerHeading</h1>
                     <p>@Model.BannerCopy</p>
                 </div>
                 @if (Model.TotalAmountRaised > 10000)
