@@ -114,7 +114,9 @@ namespace Wonderland.Logic.Controllers.Surface
 
             if (this.ModelState.IsValid)
             {
-                IPartier partier = this.Members.GetCurrentPartier();
+                formResponse.Success = true;
+
+                IPartier partier = this.Members.GetCurrentPartier();                
 
                 if (profileImageForm.ProfileImage.ContentLength > 0 && profileImageForm.ProfileImage.InputStream.IsImage())
                 {
@@ -128,9 +130,12 @@ namespace Wonderland.Logic.Controllers.Surface
 
                     // re-inflate the current user model (to take into account newly set property)
                     formResponse.Message = "/Uploads/Profile/" + fileName;
-
-                    formResponse.Success = true;
                 }
+                else // remove reference to image
+                {
+                    partier.ProfileImage = string.Empty;
+                }
+
 
                 formResponse.Success = true;
             }

@@ -109,6 +109,9 @@
     <Reference Include="Our.Umbraco.PropertyEditorConverters">
       <HintPath>..\Wonderland.Web\bin\Our.Umbraco.PropertyEditorConverters.dll</HintPath>
     </Reference>
+    <Reference Include="RJP.MultiUrlPicker">
+      <HintPath>..\Wonderland.Web\bin\RJP.MultiUrlPicker.dll</HintPath>
+    </Reference>
     <Reference Include="Slimsy">
       <HintPath>..\Wonderland.Web\bin\Slimsy.dll</HintPath>
     </Reference>
@@ -219,6 +222,7 @@
     <Compile Include="Controllers\Render\FashionTileController.cs" />
     <Compile Include="Controllers\Render\HomeController.cs" />
     <Compile Include="Controllers\Render\LeaderboardController.cs" />
+    <Compile Include="Controllers\Render\LegalController.cs" />
     <Compile Include="Controllers\Render\ProfileController.cs" />
     <Compile Include="Controllers\Render\PartyController.cs" />
     <Compile Include="Controllers\Render\RegisterGuestController.cs" />

@@ -6,7 +6,6 @@ namespace Wonderland.Logic.Models.Forms
 
     public class ProfileImageForm
     {
-        [Required]
         [DataType(DataType.Upload)]
         public HttpPostedFileBase ProfileImage { get; set; }
     }
