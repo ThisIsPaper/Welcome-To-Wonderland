@@ -5,8 +5,11 @@ module.exports = function (grunt) {
                          pkg: grunt.file.readJSON('package.json'),
                          uglify: {
                              options: {
-                                 mangle: true,
-                                 banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
+                                 mangle: false,
+                                 banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n',
+                                 compress: {
+                                     drop_console: false
+                                 }
                              },
                              all: {
                                  files: {
@@ -47,6 +50,7 @@ module.exports = function (grunt) {
                                          '<%= pkg.jsPath %>app/directives/mTotaliser.js',
                                          '<%= pkg.jsPath %>app/directives/mValidnumber.js',
                                          '<%= pkg.jsPath %>app/directives/mValueMatcher.js',
+                                         '<%= pkg.jsPath %>app/directives/mVerticalAlign.js',
                                          '<%= pkg.jsPath %>app/directives/mWindowClickToggle.js',
 
                                          '<%= pkg.jsPath %>app/filters/all.js',

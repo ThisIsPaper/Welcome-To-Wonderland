@@ -101,6 +101,11 @@
     }
 
 
+    .hero {
+        height: 26rem;
+        padding-top: 7rem;
+    }
+
     //***************************** ABSTRACT
     .radius-tablet-0 {
         @include m-border-radius(0, 0, 0, 0, 0, 0, 0, 0);

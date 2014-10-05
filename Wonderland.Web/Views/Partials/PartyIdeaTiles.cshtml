@@ -52,7 +52,7 @@
 
                     <div class="idea" m-rotate>
                         <img class="idea-polaroid" ng-src="{{ item.imageUrl }}" width="100%" />
-                        <div class="idea-details" ng-class="{'over-the-top': item.spotify, 'wide': item.wide}">
+                        <div class="idea-details" ng-class="{'over-the-top': item.spotify, 'wide': item.wide}" m-vertical-align="{{ item.spotify }}">
                             <div class="body-small margin-bottom-small" ng-bind="item.tileType"></div>
                             <div class="icon-icon_snowflake margin-bottom-small" ng-show="item.spotify && item.wide"></div>
                             <h1 class="margin-bottom-small" ng-class="{'smaller': !item.wide}" ng-bind="item.tileHeading"></h1>

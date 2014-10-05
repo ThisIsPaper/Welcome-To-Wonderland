@@ -10917,7 +10917,7 @@ One-off uses
 }
 
 /*******************************/
-/* line 521, sass/partials/_base.scss */
+/* line 522, sass/partials/_base.scss */
 .hero {
   height: 45rem;
   background-image: url('/img/hero-ph.jpg?1412505524');
@@ -10928,28 +10928,28 @@ One-off uses
   padding-top: 10rem;
 }
 
-/* line 531, sass/partials/_base.scss */
+/* line 532, sass/partials/_base.scss */
 .planking {
   background: url('/img/wood_texture.jpg?1412505524') repeat top left;
   background-size: 100% auto;
 }
 
-/* line 536, sass/partials/_base.scss */
+/* line 537, sass/partials/_base.scss */
 .home-content-adjust {
   margin-top: -8rem;
 }
 
-/* line 540, sass/partials/_base.scss */
+/* line 541, sass/partials/_base.scss */
 .hero-explain {
   margin-right: 35rem;
   text-align: left;
 }
-/* line 544, sass/partials/_base.scss */
+/* line 545, sass/partials/_base.scss */
 .hero-explain.full-width {
   margin-right: 0;
 }
 
-/* line 549, sass/partials/_base.scss */
+/* line 550, sass/partials/_base.scss */
 .money-raised {
   position: absolute;
   top: 2.4rem;
@@ -10959,7 +10959,7 @@ One-off uses
   width: 34rem;
 }
 
-/* line 558, sass/partials/_base.scss */
+/* line 559, sass/partials/_base.scss */
 .raised-amount {
   color: white;
   width: 27.5rem;
@@ -10967,7 +10967,7 @@ One-off uses
   line-height: 4.7rem;
 }
 
-/* line 566, sass/partials/_base.scss */
+/* line 567, sass/partials/_base.scss */
 .home-tile {
   background-color: white;
   position: relative;
@@ -10977,7 +10977,7 @@ One-off uses
   box-shadow: 0px 14px 30px 0px rgba(0, 0, 0, 0.6);
 }
 
-/* line 576, sass/partials/_base.scss */
+/* line 577, sass/partials/_base.scss */
 .home-tile-image {
   -moz-border-radius: 0.7rem;
   -webkit-border-radius: 0.7rem;
@@ -10988,7 +10988,7 @@ One-off uses
   width: 100%;
 }
 
-/* line 584, sass/partials/_base.scss */
+/* line 585, sass/partials/_base.scss */
 .home-tile-label {
   position: absolute;
   bottom: 0;
@@ -10997,32 +10997,32 @@ One-off uses
 }
 
 /*******************************/
-/* line 595, sass/partials/_base.scss */
+/* line 596, sass/partials/_base.scss */
 .spotify-holder {
   width: 35.6rem;
   margin-top: -7rem;
 }
 
-/* line 600, sass/partials/_base.scss */
+/* line 601, sass/partials/_base.scss */
 .spotify-info-holder {
   position: absolute;
   top: 12rem;
   color: white;
   text-align: center;
 }
-/* line 607, sass/partials/_base.scss */
+/* line 608, sass/partials/_base.scss */
 .spotify-info-holder h1 {
   color: white;
 }
 
 /*******************************/
-/* line 615, sass/partials/_base.scss */
+/* line 616, sass/partials/_base.scss */
 .scoreboard-place {
   float: left;
   width: 5rem;
 }
 
-/* line 620, sass/partials/_base.scss */
+/* line 621, sass/partials/_base.scss */
 .scoreboard-value {
   position: absolute;
   top: 0;
@@ -11031,22 +11031,22 @@ One-off uses
 }
 
 /*******************************/
-/* line 632, sass/partials/_base.scss */
+/* line 633, sass/partials/_base.scss */
 .idea-sizer {
   width: 25%;
 }
 
-/* line 636, sass/partials/_base.scss */
+/* line 637, sass/partials/_base.scss */
 .idea-tile {
   width: 25%;
   padding: 1.2rem;
 }
-/* line 641, sass/partials/_base.scss */
+/* line 642, sass/partials/_base.scss */
 .idea-tile.wide {
   width: 50%;
 }
 
-/* line 646, sass/partials/_base.scss */
+/* line 647, sass/partials/_base.scss */
 .idea {
   padding: 1.2rem;
   background-color: white;
@@ -11057,42 +11057,42 @@ One-off uses
   box-shadow: 0px 14px 30px 0px rgba(0, 0, 0, 0.6);
 }
 
-/* line 654, sass/partials/_base.scss */
+/* line 655, sass/partials/_base.scss */
 .idea-details {
   width: 100%;
   top: 11%;
   left: 0;
   padding: 0 1.2rem;
 }
-/* line 660, sass/partials/_base.scss */
+/* line 661, sass/partials/_base.scss */
 .idea-details.over-the-top {
   position: absolute;
   color: white;
 }
-/* line 664, sass/partials/_base.scss */
+/* line 665, sass/partials/_base.scss */
 .idea-details.over-the-top h1 {
   color: white;
 }
-/* line 669, sass/partials/_base.scss */
+/* line 670, sass/partials/_base.scss */
 .idea-details.wide {
   top: 23%;
 }
 
-/* line 674, sass/partials/_base.scss */
+/* line 675, sass/partials/_base.scss */
 .idea-polaroid {
   -moz-border-radius: 0.7rem;
   -webkit-border-radius: 0.7rem;
   border-radius: 0.7rem;
 }
 
-/* line 678, sass/partials/_base.scss */
+/* line 679, sass/partials/_base.scss */
 .pinterest-ico:before {
   content: "\e623";
   font-family: "icomoon";
   color: #E32333;
 }
 
-/* line 684, sass/partials/_base.scss */
+/* line 685, sass/partials/_base.scss */
 .spotify-logo {
   width: 8rem;
   height: 2.4rem;
@@ -11103,7 +11103,7 @@ One-off uses
   margin: 0 auto;
 }
 
-/* line 695, sass/partials/_base.scss */
+/* line 696, sass/partials/_base.scss */
 .idea-link {
   position: absolute;
   top: 0;
@@ -11114,7 +11114,7 @@ One-off uses
   text-indent: -999rem;
 }
 
-/* line 707, sass/partials/_base.scss */
+/* line 708, sass/partials/_base.scss */
 .share-title {
   width: 27.8rem;
   height: 11.6rem;
@@ -11123,7 +11123,7 @@ One-off uses
   background-size: 27.8rem 11.6rem;
 }
 
-/* line 716, sass/partials/_base.scss */
+/* line 717, sass/partials/_base.scss */
 .share-facebook, .share-twitter, .share-email {
   background-color: #3c5898;
   font-family: "macmillan";
@@ -11132,44 +11132,44 @@ One-off uses
   padding: 1.2rem;
   line-height: 5.5rem;
 }
-/* line 724, sass/partials/_base.scss */
+/* line 725, sass/partials/_base.scss */
 .share-facebook:before, .share-twitter:before, .share-email:before {
   font-family: "icomoon";
   content: "\e619";
   margin-right: 1.2rem;
 }
 
-/* line 731, sass/partials/_base.scss */
+/* line 732, sass/partials/_base.scss */
 .share-twitter {
   background-color: #17abed;
 }
-/* line 733, sass/partials/_base.scss */
+/* line 734, sass/partials/_base.scss */
 .share-twitter:before {
   content: "\e61a";
 }
 
-/* line 739, sass/partials/_base.scss */
+/* line 740, sass/partials/_base.scss */
 .share-email {
   background-color: #007eac;
 }
-/* line 741, sass/partials/_base.scss */
+/* line 742, sass/partials/_base.scss */
 .share-email:before {
   content: "\e618";
   margin-right: 0;
 }
 
 /*******************************/
-/* line 751, sass/partials/_base.scss */
+/* line 752, sass/partials/_base.scss */
 .color-facebook {
   color: #3c5898 !important;
 }
 
-/* line 752, sass/partials/_base.scss */
+/* line 753, sass/partials/_base.scss */
 .color-twitter {
   color: #17abed !important;
 }
 
-/* line 753, sass/partials/_base.scss */
+/* line 754, sass/partials/_base.scss */
 .color-gplus {
   color: #cd3627 !important;
 }
@@ -11316,7 +11316,13 @@ Media query variables
     line-height: 2.9rem;
   }
 
-  /* line 105, sass/partials/_media-queries.scss */
+  /* line 104, sass/partials/_media-queries.scss */
+  .hero {
+    height: 26rem;
+    padding-top: 7rem;
+  }
+
+  /* line 110, sass/partials/_media-queries.scss */
   .radius-tablet-0 {
     -moz-border-radius-topleft: 0 0;
     -webkit-border-top-left-radius: 0 0;
@@ -11332,61 +11338,61 @@ Media query variables
     border-bottom-left-radius: 0 0;
   }
 
-  /* line 109, sass/partials/_media-queries.scss */
+  /* line 114, sass/partials/_media-queries.scss */
   .anti-image-shift-details {
     margin-left: 0;
   }
 
-  /* line 113, sass/partials/_media-queries.scss */
+  /* line 118, sass/partials/_media-queries.scss */
   .margin-mobile-bottom-0 {
     margin-bottom: 0;
   }
 
-  /* line 120, sass/partials/_media-queries.scss */
+  /* line 125, sass/partials/_media-queries.scss */
   .page-container.showing-side-nav-menu {
     left: 25.6rem;
   }
 
-  /* line 124, sass/partials/_media-queries.scss */
+  /* line 129, sass/partials/_media-queries.scss */
   .page-container.showing-side-account-menu {
     left: -25.6rem;
   }
 
-  /* line 128, sass/partials/_media-queries.scss */
+  /* line 133, sass/partials/_media-queries.scss */
   .logo {
     top: -16rem;
   }
 
-  /* line 132, sass/partials/_media-queries.scss */
+  /* line 137, sass/partials/_media-queries.scss */
   .logo-ribbon, .site-header.compress .logo-ribbon {
     padding: 1.95rem 9.6rem;
     margin: 12.9rem -9.6rem;
   }
 
-  /* line 137, sass/partials/_media-queries.scss */
+  /* line 142, sass/partials/_media-queries.scss */
   .nav-end-block {
     display: none;
     left: 1.5rem;
     color: #007eac;
   }
 
-  /* line 143, sass/partials/_media-queries.scss */
+  /* line 148, sass/partials/_media-queries.scss */
   .nav-end-block.end-block-right {
     left: auto;
     right: 1.5rem;
   }
 
-  /* line 148, sass/partials/_media-queries.scss */
+  /* line 153, sass/partials/_media-queries.scss */
   .nav-burger, .nav-account {
     display: block;
   }
 
-  /* line 152, sass/partials/_media-queries.scss */
+  /* line 157, sass/partials/_media-queries.scss */
   .nav-end-block, .site-header.compress .nav-end-block {
     top: 1.8rem;
   }
 
-  /* line 156, sass/partials/_media-queries.scss */
+  /* line 161, sass/partials/_media-queries.scss */
   .nav-end-block a, a.nav-end-block {
     font-size: 3rem;
   }
@@ -11394,7 +11400,7 @@ Media query variables
   /**********************/
   /* NAV SIDE MENU
   /**********************/
-  /* line 164, sass/partials/_media-queries.scss */
+  /* line 169, sass/partials/_media-queries.scss */
   .nav-menu {
     position: absolute;
     left: -25.6rem;
@@ -11408,7 +11414,7 @@ Media query variables
   /**********************/
   /* NAV SIDE ACCOUNT MENU
   /**********************/
-  /* line 178, sass/partials/_media-queries.scss */
+  /* line 183, sass/partials/_media-queries.scss */
   .account-menu-holder, .site-header.compress .account-menu-holder {
     top: 0;
     right: -25.6rem;
@@ -11417,7 +11423,7 @@ Media query variables
     width: 25.6rem;
     overflow: hidden;
   }
-  /* line 186, sass/partials/_media-queries.scss */
+  /* line 191, sass/partials/_media-queries.scss */
   .account-menu-holder .profile-image, .account-menu-holder .profile-image.small, .site-header.compress .account-menu-holder .profile-image, .site-header.compress .account-menu-holder .profile-image.small {
     width: 16rem;
     height: 16rem;
@@ -11425,35 +11431,35 @@ Media query variables
     cursor: default;
   }
 
-  /* line 194, sass/partials/_media-queries.scss */
+  /* line 199, sass/partials/_media-queries.scss */
   .account-menu {
     display: block !important;
     position: relative;
     width: 100%;
   }
 
-  /* line 200, sass/partials/_media-queries.scss */
+  /* line 205, sass/partials/_media-queries.scss */
   .account-name {
     display: none;
   }
 
   /**********************/
-  /* line 205, sass/partials/_media-queries.scss */
+  /* line 210, sass/partials/_media-queries.scss */
   .menu {
     width: 100%;
   }
-  /* line 208, sass/partials/_media-queries.scss */
+  /* line 213, sass/partials/_media-queries.scss */
   .menu .side-only {
     display: block;
   }
 
-  /* line 213, sass/partials/_media-queries.scss */
+  /* line 218, sass/partials/_media-queries.scss */
   .menu ul {
     float: none;
     margin: 0;
   }
 
-  /* line 218, sass/partials/_media-queries.scss */
+  /* line 223, sass/partials/_media-queries.scss */
   .menu li {
     display: block;
     margin: 0;
@@ -11461,93 +11467,93 @@ Media query variables
     border-bottom: .1rem solid #55554d;
   }
 
-  /* line 225, sass/partials/_media-queries.scss */
+  /* line 230, sass/partials/_media-queries.scss */
   .menu li a {
     line-height: normal;
     color: #d4d3cc;
     font-size: 1.4rem;
     font-weight: bold;
   }
-  /* line 231, sass/partials/_media-queries.scss */
+  /* line 236, sass/partials/_media-queries.scss */
   .menu li a.selected {
     background: none;
     padding: 0;
   }
 
-  /* line 238, sass/partials/_media-queries.scss */
+  /* line 243, sass/partials/_media-queries.scss */
   .menu li span[class^="icon-"]:before, .menu li span[class*=" icon-"]:before {
     color: #7b7a6d;
     margin-right: 1rem;
     display: inline;
   }
 
-  /* line 244, sass/partials/_media-queries.scss */
+  /* line 249, sass/partials/_media-queries.scss */
   .menu li a:hover {
     color: #a5a395;
     text-decoration: none;
   }
 
-  /* line 250, sass/partials/_media-queries.scss */
+  /* line 255, sass/partials/_media-queries.scss */
   .site-header.compress .left-side ul, .site-header.compress .right-side ul {
     margin-left: 0;
     margin-right: 0;
   }
 
-  /* line 255, sass/partials/_media-queries.scss */
+  /* line 260, sass/partials/_media-queries.scss */
   .site-header.compress .menu li a {
     line-height: normal;
   }
 
-  /* line 264, sass/partials/_media-queries.scss */
+  /* line 269, sass/partials/_media-queries.scss */
   .party-image-container {
     float: none;
   }
 
-  /* line 270, sass/partials/_media-queries.scss */
+  /* line 275, sass/partials/_media-queries.scss */
   .only-on-tablet {
     display: block !important;
   }
 
-  /* line 278, sass/partials/_media-queries.scss */
+  /* line 283, sass/partials/_media-queries.scss */
   .idea-sizer, .idea-tile, .idea-tile.wide {
     width: 100%;
   }
 
-  /* line 282, sass/partials/_media-queries.scss */
+  /* line 287, sass/partials/_media-queries.scss */
   .idea-details {
     width: 100%;
     top: 11%;
     left: 0;
     padding: 0 1.2rem;
   }
-  /* line 288, sass/partials/_media-queries.scss */
+  /* line 293, sass/partials/_media-queries.scss */
   .idea-details.over-the-top {
     position: inherit;
     color: inherit;
   }
-  /* line 292, sass/partials/_media-queries.scss */
+  /* line 297, sass/partials/_media-queries.scss */
   .idea-details.over-the-top h1 {
     color: #025b45;
     font-size: 2.3rem;
     line-height: 2.3rem;
   }
-  /* line 298, sass/partials/_media-queries.scss */
+  /* line 303, sass/partials/_media-queries.scss */
   .idea-details.over-the-top .spotify-logo {
     background-position-x: 2.8rem;
   }
 
-  /* line 306, sass/partials/_media-queries.scss */
+  /* line 311, sass/partials/_media-queries.scss */
   .hero-explain {
     margin-right: 0;
   }
-  /* line 308, sass/partials/_media-queries.scss */
+  /* line 313, sass/partials/_media-queries.scss */
   .hero-explain h1 {
     text-align: center;
     font-size: 2.9rem;
     line-height: 2.9rem;
   }
 
-  /* line 315, sass/partials/_media-queries.scss */
+  /* line 320, sass/partials/_media-queries.scss */
   .money-raised {
     position: relative;
     float: right;
@@ -11560,23 +11566,23 @@ Media query variables
 /*
 /*****************************/
 @media only screen and (max-width: 450px) {
-  /* line 338, sass/partials/_media-queries.scss */
+  /* line 343, sass/partials/_media-queries.scss */
   .hide-on-mobile {
     display: none;
   }
 
-  /* line 344, sass/partials/_media-queries.scss */
+  /* line 349, sass/partials/_media-queries.scss */
   .hero-explain {
     margin-right: 0;
   }
-  /* line 346, sass/partials/_media-queries.scss */
+  /* line 351, sass/partials/_media-queries.scss */
   .hero-explain h1 {
     text-align: center;
     font-size: 2.9rem;
     line-height: 2.9rem;
   }
 
-  /* line 353, sass/partials/_media-queries.scss */
+  /* line 358, sass/partials/_media-queries.scss */
   .money-raised {
     width: 21rem;
     height: 9.1rem;
@@ -11584,7 +11590,7 @@ Media query variables
     right: auto;
   }
 
-  /* line 360, sass/partials/_media-queries.scss */
+  /* line 365, sass/partials/_media-queries.scss */
   .raised-amount {
     font-size: 2.9rem;
     width: 16rem;
