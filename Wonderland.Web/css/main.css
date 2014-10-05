@@ -11271,19 +11271,46 @@ One-off uses
 }
 
 /*******************************/
-/* line 771, sass/partials/_base.scss */
+/* line 772, sass/partials/_base.scss */
 .color-facebook {
   color: #3c5898 !important;
 }
 
-/* line 772, sass/partials/_base.scss */
+/* line 773, sass/partials/_base.scss */
 .color-twitter {
   color: #17abed !important;
 }
 
-/* line 773, sass/partials/_base.scss */
+/* line 774, sass/partials/_base.scss */
 .color-gplus {
   color: #cd3627 !important;
+}
+
+/*******************************/
+/* line 779, sass/partials/_base.scss */
+.giftaid-logo {
+  width: 10rem;
+  height: 3.5rem;
+  overflow: hidden;
+  background-image: url('/img/giftaid-logo.jpg?1412541557');
+  background-repeat: no-repeat;
+  background-size: 10rem 3.5rem;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+/* line 792, sass/partials/_base.scss */
+.fsb-logo {
+  width: 8rem;
+  height: 38rem;
+  overflow: hidden;
+  background-image: url('/img/fsb.jpg?1412541620');
+  background-repeat: no-repeat;
+  background-size: 8rem 8rem;
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 
 /*------------------------------------------------------------------------------------------------------------------------

@@ -19,7 +19,7 @@
                 <label class="dis-inline-block"><input type="radio" name="selectar" ng-click="showChoose=false" ng-model="fundraisingTargetData.FundraisingTarget" value="100" ng-readonly="processing" />£100</label>
                 <label class="dis-inline-block"><input type="radio" name="selectar" ng-click="showChoose=false" ng-model="fundraisingTargetData.FundraisingTarget" value="250" ng-readonly="processing" />£250</label>
                 <label class="dis-inline-block"><input type="radio" name="selectar" ng-click="showChoose=false" ng-model="fundraisingTargetData.FundraisingTarget" value="300" ng-readonly="processing" />£300</label>
-                <label class="dis-inline-block"><input type="radio" name="chooser" ng-checked="showChoose" ng-readonly="processing" m-fund-target-chooser="showChoose" m-fund-target-chooser-value="fundraisingTargetData.FundraisingTarget" />I'll choose</label>
+                <label class="dis-inline-block"><input type="checkbox" name="chooser" ng-model="showChoose" ng-readonly="processing" />I'll choose</label>
 
                 <div class="pos-relative width-50p" ng-show="showChoose">
                     <span class="form-field-ico">£</span>

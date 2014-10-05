@@ -765,9 +765,39 @@ One-off uses
 }
 
 
+
 /*******************************/// footer
 
 
 .color-facebook { color: $colorFacebook !important; }
 .color-twitter { color: $colorTwitter !important; }
 .color-gplus { color: $colorGPlus !important; }
+
+
+/*******************************/// donate
+
+.giftaid-logo {
+    width: 10rem;
+    height: 3.5rem;
+    overflow: hidden;
+    background-image: image-url('giftaid-logo.jpg');
+    background-repeat: no-repeat;
+    background-size: 10rem 3.5rem;
+
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.fsb-logo {
+    width: 8rem;
+    height: 38rem;
+    overflow: hidden;
+    background-image: image-url('fsb.jpg');
+    background-repeat: no-repeat;
+    background-size: 8rem 8rem;
+
+    position: absolute;
+    right: 0;
+    top: 0;
+}

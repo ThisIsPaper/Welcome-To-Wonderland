@@ -41,7 +41,6 @@ module.exports = function (grunt) {
                                          '<%= pkg.jsPath %>app/directives/mImageUpload.js',
                                          '<%= pkg.jsPath %>app/directives/mKeyEnterTrigger.js',
                                          '<%= pkg.jsPath %>app/directives/mFileSelected.js',
-                                         '<%= pkg.jsPath %>app/directives/mFundTargetChooser.js',
                                          '<%= pkg.jsPath %>app/directives/mHeightMatchWidth.js',
                                          '<%= pkg.jsPath %>app/directives/mPostOnSubmit.js',
                                          '<%= pkg.jsPath %>app/directives/mProfileImage.js',

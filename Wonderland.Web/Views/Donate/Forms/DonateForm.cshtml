@@ -11,14 +11,17 @@
         <div class="errorred margin-bottom-small" ng-show="guideDonation.donation>=1000">Are you sure you want to donate this amount of money, it seems like a lot!</div>
         <div class="pos-relative">
             <span class="form-field-ico">£</span>
-            @Html.TextBoxFor(x => x.Amount, new { @class="currency", @m_radius_picker="small", @m_valid_number="", @ng_readonly="processing", @ng_class="{'error': errorAmountMessage.length>0}"})
+            @Html.TextBoxFor(x => x.Amount, new { @class="currency", @ng_model="guideDonation.donation", @m_value_matcher="", @m_radius_picker="small", @m_valid_number="", @ng_readonly="processing", @ng_class="{'error': errorAmountMessage.length>0}"})
         </div>
         <div class="margin-bottom-small" ng-show="errorAmountMessage.length>0" ng-init="errorAmountMessage='@Html.ValidationMessageFor(x => x.Amount)'">@Html.ValidationMessageFor(x => x.Amount)</div>
     </div>
 
+    <div class="pos-relative min-height-4">
+        <div class="giftaid-logo"></div>
 
-    <h3>Add Gift Aid</h3>
-
+        <h3>Add Gift Aid</h3>
+    </div>
+    
     <p>With Gift Aid your donation will be worth 25% more to Macmillan Cancer Support at no extra cost to you.</p>
 
     <p class="extra-info-block">With Gift Aid your <span class="body-bold" ng-bind="guideDonation.donation|mCurrency:'£'"></span> donation will give <span class="body-bold" ng-bind="guideDonation.donation*1.25|mCurrency:'£'"></span> to Macmillan!</p>
@@ -32,7 +35,10 @@
 
     <hr/>
 
-    <h3>Enter your billing details</h3>
+    <div class="pos-relative min-height-8">
+        <h3>Enter your billing details</h3>
+        <div class="fsb-logo"></div>
+    </div>
 
 
     <div class="grid-12 parent margin-bottom-large">
