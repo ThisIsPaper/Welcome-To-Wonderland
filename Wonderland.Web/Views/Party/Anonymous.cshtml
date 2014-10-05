@@ -4,66 +4,21 @@
 }
 
 
-@*
-<h1>the current user (logged in or not) is anonymous for this party</h1>
-
-
-
-
-<h1>@(this.Model.PartyHost.FirstName)'s Wonderland party</h1>
-
-<p>
-    @Model.PartyHost.PartyAddress.TownCity
-</p>
-
-<h2>@this.Model.Heading</h2>
-<p>@this.Model.Copy</p>
-
-
-@Html.ActionLink("Donate", "NavigateToDonateUrl", "DonateSurface", new { partyGuid = Model.PartyHost.PartyGuid }, new { @class = "" })
-
-
-
-@if (!this.Members.IsLoggedInPartier())
-{
-    *@@* only users who don't already have a party can 'join the party' *@@*
-    @Html.ActionLink("Join the party", "NavigateToRegisterGuestUrl", "RegisterGuestSurface", new { partyGuid = Model.PartyHost.PartyGuid }, new { @class = "" })    
-}
-
-<h2>Who's Coming (@this.Model.Partiers.Count())</h2>
-<ul>
-    @foreach (IPartier partier in this.Model.Partiers)
-    {
-        <li>
-            <img src="@partier.ProfileImageUrl" />
-            @Model.PartyHost.FirstName @Model.PartyHost.LastName
-
-        </li>
-    }
-</ul>
-    *@
-
-
-
-
-
-
-
 
 <div class="page-bg">
 
     <div class="container gutter" ng-controller="PartyCtrl" ng-init="profileImageUrlInit('@Model.PartyHost.ProfileImageUrl')">
+
 
         <div class="wgrid-main wgrid-no-bottom-margin">
 
             <div class="wgrid-full parent">
                 <div class="boxx collapse" m-radius-picker="large">
 
-                    <div class="wgrid-full wgrid-no-bottom-margin parent">
-
-                        <div class="grid-12 party-main-image" ng-init="hardCodedCurrentPartyImageUrlInit('@Model.PartyHost.PartyImage')" ng-style="{'background-image': 'url(' + partyImageData.PartyImage +')'}"></div>
-
-                        <div class="party-image-default" ng-hide="partyImageData.PartyImage.length>0"></div>
+                    <div class="wgrid-full wgrid-no-bottom-margin parent" ng-init="partyImageImageUrl='@Model.PartyHost.PartyImage'">
+                        <img ng-src="{{ partyImageImageUrl }}" width="100%"/>
+                        <div class="no-party-image" ng-show="partyImageImageUrl.length<=0" ng-cloak></div>
+                        <div class="boxx-twerk"></div>
                     </div>
 
                     <div class="wgrid-full pad-large">
@@ -100,25 +55,9 @@
 
 
             <div class="wgrid-full parent">
-                <div class="boxx" m-radius-picker ng-init="amountRaised=@Model.PartyHost.AmountRaised; fundraisingTarget=@Model.PartyHost.FundraisingTarget">
+                <div class="boxx" m-radius-picker>
 
-                    <div>
-                        <div class="dis-inline-block body-mega" ng-bind="amountRaised|mCurrency:'£'"></div>
-                        <div class="dis-inline-block">
-                            <span>raised of the </span>
-                            <span class="body-highlight" ng-bind="fundraisingTarget|mCurrency:'£'"></span>
-                            <span>target</span>
-                        </div>
-                    </div>
-
-                    <div class="totaliser">
-                        <div class="current-total" ng-style="{'width': (amountRaised|percentageRounder:fundraisingTarget) +'%'}"></div>
-                    </div>
-
-                    <div class="form-info">
-                        <span class="float-left"><span ng-bind="amountRaised|percentageRounder:fundraisingTarget"></span>%</span>
-                        <span class="float-right">Ranked #x of x parties</span>
-                    </div>
+                    <m-totaliser m-raised="{{ '@Model.PartyHost.AmountRaised' }}" m-total="{{ '@Model.PartyHost.FundraisingTarget' }}"></m-totaliser>
 
                 </div>
             </div>
@@ -152,7 +91,7 @@
                 }
                 else
                 {
-                    <a href="@Model.DonateUrl" class="btn-primary piggy-donater margin-bottom-large" m_radius_picker="small">Donate</a>
+                    <a href="@Model.DonateUrl" class="btn-primary piggy-donater margin-bottom-large btn-large dis-block" m_radius_picker="small">Donate</a>
                 }
 
             </div>
@@ -253,12 +192,3 @@
     </div>
 
 </div>
-
-
-
-
-@*call the following url to the json collection of party wall items*@
-@*<p>
-    URL to call for party wall items (don't pass the beforeDateTime param and the server will use the current server time)
-    ?PartyGuid=&beforeDateTime=12/12/12&take=10
-</p>*@

@@ -16,9 +16,11 @@
 
                     <div class="wgrid-full wgrid-no-bottom-margin parent">
 
-                        <div class="grid-12 party-main-image" ng-init="hardCodedCurrentPartyImageUrlInit('@Model.PartyHost.PartyImage')" ng-style="{'background-image': 'url(' + partyImageData.PartyImage +')'}"></div>
-
-                        <div class="party-image-default" ng-hide="partyImageData.PartyImage.length>0"></div>
+                        <div class="wgrid-full wgrid-no-bottom-margin parent" ng-init="partyImageMainUrl='@this.Model.PartyHost.PartyImage'">
+                            <img ng-src="{{ partyImageMainUrl }}" width="100%"/>
+                            <div class="no-party-image" ng-show="partyImageMainUrl.length<=0" ng-cloak></div>
+                            <div class="boxx-twerk"></div>
+                        </div>
                     </div>
 
                     <div class="wgrid-full pad-large">
@@ -55,25 +57,9 @@
 
 
             <div class="wgrid-full parent">
-                <div class="boxx" m-radius-picker ng-init="amountRaised=@Model.PartyHost.AmountRaised; fundraisingTarget=@Model.PartyHost.FundraisingTarget">
+                <div class="boxx" m-radius-picker>
 
-                    <div>
-                        <div class="dis-inline-block body-mega" ng-bind="amountRaised|mCurrency:'£'"></div>
-                        <div class="dis-inline-block">
-                            <span>raised of the </span>
-                            <span class="body-highlight" ng-bind="fundraisingTarget|mCurrency:'£'"></span>
-                            <span>target</span>
-                        </div>
-                    </div>
-
-                    <div class="totaliser">
-                        <div class="current-total" ng-style="{'width': (amountRaised|percentageRounder:fundraisingTarget) +'%'}"></div>
-                    </div>
-
-                    <div class="form-info">
-                        <span class="float-left"><span ng-bind="amountRaised|percentageRounder:fundraisingTarget"></span>%</span>
-                        <span class="float-right">Ranked #x of x parties</span>
-                    </div>
+                    <m-totaliser m-raised="{{ '@Model.PartyHost.AmountRaised' }}" m-total="{{ '@Model.PartyHost.FundraisingTarget' }}"></m-totaliser>
 
                 </div>
             </div>

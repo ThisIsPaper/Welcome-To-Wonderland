@@ -78,7 +78,11 @@ images
 ========================================================================== */
 img, object, embed {
   max-width: $RowWidth; //prevent images from going beyond the viewport
+  margin: 0;
+  padding: 0;
+  display: block;
 }
+
 
 /* =============================================================================
 Base page structure
@@ -131,6 +135,11 @@ Event Page specific - move these out of here eventually
     font-size: $FontSizeLarge;
     background-color: $greyLight;
     padding-top: 17rem;
+}
+
+.no-party-image {
+    background-color: $greyLight;
+    min-height: 17rem;
 }
 
 .edit-trigger {
