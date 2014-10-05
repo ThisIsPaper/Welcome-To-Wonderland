@@ -290,3 +290,10 @@ abstract
 .color-primary { color: $PrimaryColour!important; }
 .color-secondary { color: $SecondaryColour!important; }
 .color-brand { color: $FourthColour!important; }
+
+
+//**************************************** z-index
+
+.z-index-0 {
+  z-index: 0;
+}

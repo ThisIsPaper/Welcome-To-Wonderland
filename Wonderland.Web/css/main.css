@@ -1353,6 +1353,11 @@ abstract
   color: #025b45 !important;
 }
 
+/* line 297, sass/partials/_abstract.scss */
+.z-index-0 {
+  z-index: 0;
+}
+
 /* line 30, ../scripts/bower_components/gridle/sass/gridle/_silent-classes.scss */
 .container:after {
   content: "";
@@ -6446,6 +6451,11 @@ abstract
   color: #025b45 !important;
 }
 
+/* line 297, sass/partials/_abstract.scss */
+.z-index-0 {
+  z-index: 0;
+}
+
 /*------------------------------------------------------------------------------------------------------------------------
  @package: Macmillan - Wonderland (app)
 
@@ -8639,6 +8649,11 @@ abstract
   color: #025b45 !important;
 }
 
+/* line 297, sass/partials/_abstract.scss */
+.z-index-0 {
+  z-index: 0;
+}
+
 /* =============================================================================
 abstract
 ========================================================================== */
@@ -9755,6 +9770,11 @@ abstract
 /* line 292, sass/partials/_abstract.scss */
 .color-brand {
   color: #025b45 !important;
+}
+
+/* line 297, sass/partials/_abstract.scss */
+.z-index-0 {
+  z-index: 0;
 }
 
 /*------------------------------------------------------------------------------------------------------------------------
