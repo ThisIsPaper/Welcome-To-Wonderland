@@ -15,7 +15,9 @@
 
                     <div class="wgrid-full wgrid-no-bottom-margin parent">
 
-                        <div class="grid-12 party-main-image" ng-init="hardCodedCurrentPartyImageUrlInit('@Model.PartyHost.PartyImage')" ng-style="{'background-image': 'url(' + partyImageData.PartyImage +')'}"></div>
+                        <div class="grid-12 party-main-image" ng-init="hardCodedCurrentPartyImageUrlInit('@Model.PartyHost.PartyImage')" ng-style="{'background-image': 'url(' + partyImageData.PartyImage +')'}">
+                            <div class="boxx-twerk"></div>
+                        </div>
 
                         <div class="party-image-default" ng-hide="partyImageData.PartyImage.length>0">
                             <div class="icon-icon_camera"></div>

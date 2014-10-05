@@ -24,13 +24,13 @@
                 <table>
                     <tr><td>Payment #:</td><td>@Model.DonationRow.VendorTxCode</td></tr>
                     <tr><td>Payment status:</td><td>Success</td></tr>
-                    <tr><td>Date:</td><td ng-bind="''|datePreviewFormat">@Model.DonationRow.Timestamp</td></tr>
+                    <tr><td>Date:</td><td ng-bind="'@Model.DonationRow.Timestamp'|datePreviewFormat"></td></tr>
                     <tr><td>Total amount:</td><td ng-bind="@Model.DonationRow.Amount|mCurrency:'£'"></td></tr>
                 </table>
 
                 <hr class="margin-top-large margin-bottom-large"/>
 
-                <a href="@Model.PartyHost.PartyUrl" class="btn-primary float-right" m-radius-picker="small medium">Go to the party page ></a>
+                <a href="@Model.PartyHost.PartyUrl" class="btn-primary float-right" m-radius-picker="small medium">Go to the party page <span class="icon-icon_chevron_right"></span></a>
 
             </div>
 
@@ -43,34 +43,13 @@
 
                 <div class="boxx collapse" m-radius-picker="medium">
 
-                    <div class="wgrid-full wgrid-no-bottom-margin">
-                        <div class="grid-12 party-main-image side" style="background-image: url(@Model.PartyHost.PartyImage)"></div>
-                    </div>
-
-
-                    <div class="wgrid-full pad-large">
-
-                        <div m-profile-image="{{ '@Model.PartyHost.ProfileImageUrl' }}" m-radius-picker="small"></div>
-                        <div class="party-details">
-                            <h3 class="top pad-right-3 margin-bottom-4 margin-mobile-bottom-0">@Model.PartyHost.PartyHeading</h3>
-
-                            <div class="anti-image-shift-details body-small float-left margin-right-medium">
-                                <span class="icon-icon_clock"></span>
-                                <span ng-bind="'@Model.PartyHost.PartyDateTime'|datePreviewFormat"></span>
-                            </div>
-                            <div class="anti-image-shift-details body-small float-left">
-                                <span class="icon-icon_fingerpost"></span>
-                                <span ng-bind="'@Model.PartyHost.PartyAddress.Address1:~:@Model.PartyHost.PartyAddress.Address2:~:@Model.PartyHost.PartyAddress.TownCity:~:@Model.PartyHost.PartyAddress.Postcode'|addressJoiner:':~:'"></span>
-                            </div>
-
-                        </div>
-                    </div>
+                    @Html.Partial("PartyDetailsSide")
 
                 </div>
 
             </div>
 
-            <div class="wgrid-full">
+            <div class="wgrid-full pad-0">
 
                 <div class="boxx radius-v1-small">
 

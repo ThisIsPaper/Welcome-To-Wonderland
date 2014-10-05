@@ -3355,6 +3355,18 @@ abstract
   padding: 3.3rem;
 }
 
+/* line 133, sass/partials/_grids.scss */
+.boxx-twerk {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 0 3rem 85rem;
+  border-color: transparent transparent white transparent;
+}
+
 @media screen and (max-width: 400px) {
   @-ms-viewport {
     width: device-width;

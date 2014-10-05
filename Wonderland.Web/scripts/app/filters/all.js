@@ -48,7 +48,7 @@ wonderlandApp.filter('escape', function () {
 wonderlandApp.filter('percentageRounder', function () {
     return function (current, total, capAt100) {
         var p = 0;
-        capAt100 = capAt100 || true;
+        capAt100 = capAt100 === null ? true : !!capAt100;
 
         current = Number(current);
         total = Number(total);
@@ -61,6 +61,7 @@ wonderlandApp.filter('percentageRounder', function () {
             p = p < 0 ? 0 : p;
             p = isNaN(p) ? 0 : p;
         }
+
         return p;
     };
 });
