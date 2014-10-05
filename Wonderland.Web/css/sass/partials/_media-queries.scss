@@ -79,9 +79,12 @@
 
 }
 
+
+
+
 /*****************************/
 /*
-/*  MID BREAK: CUSTOM HEADER
+/*  TABLET VIEW
 /*
 /*****************************/
 
@@ -90,6 +93,13 @@
     main {
         padding-top: 6.6rem;
     }
+
+
+    h1, h1.bigger, h1.smaller, h1 .bigger, h1 .smaller  {
+        font-size: $HeadingFontSizeSmall;
+        line-height: $HeadingFontSizeSmall;
+    }
+
 
     //***************************** ABSTRACT
     .radius-tablet-0 {
@@ -246,19 +256,6 @@
         line-height: normal;
     }
 
-}
-
-
-
-/*****************************/
-/*
-/*  TABLET VIEW
-/*
-/*****************************/
-
-
-@media only screen and (max-width: 768px) {
-
     //***************************** Event Page
     .file-upload-info {
         //margin-left: 0;
@@ -323,6 +320,11 @@
 
 
 }
+
+
+
+
+
 
 /*****************************/
 /*
