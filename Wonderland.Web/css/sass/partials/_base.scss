@@ -704,7 +704,6 @@ One-off uses
     text-indent: -999rem;
 }
 
-
 .share-title {
     width: 27.8rem;
     height: 11.6rem;
@@ -742,6 +741,16 @@ One-off uses
     &:before {
         content: "\e618";
         margin-right: 0;
+    }
+}
+
+.centered-share-holder {
+    .share-title {
+      display: block;
+      float: none;
+      margin-left: auto;
+      margin-right: auto;
+      clear: both;
     }
 }
 

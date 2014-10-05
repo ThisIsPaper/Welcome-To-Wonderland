@@ -54,11 +54,13 @@
 
     </div>
 
-    <div class="">
+    <div class="grid-8 grid-mobile-12 margin-bottom-large parent">
         <h4>T-Shirt Size</h4>
         @foreach(string tShirtSize in this.ViewBag.TShirtSizes)
         {
-            @Html.RadioButtonFor(x => x.TShirtSize, tShirtSize) @tShirtSize
+            <label>
+                @Html.RadioButtonFor(x => x.TShirtSize, tShirtSize) @tShirtSize
+            </label>
         }
     </div>
 
