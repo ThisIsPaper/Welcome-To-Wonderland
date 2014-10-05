@@ -17,7 +17,6 @@ namespace Wonderland.Logic.Models.Content
         public const string PageHeadingAlias = "pageHeading";
         public const string RewardsAlias = "rewards";
         public const string RegisterHostLinkTextAlias = "registerHostLinkText";
-        public const string PartyKitAlias = "partyKit";
 
         public PistePoints(IPublishedContent content)
             : base(content)
@@ -47,13 +46,5 @@ namespace Wonderland.Logic.Models.Content
                 return this.GetPropertyValue<string>(PistePoints.RegisterHostLinkTextAlias);
             }
         }
-
-        public PartyKit PartyKit
-        {
-            get
-            {
-                return new PartyKit(this.GetPropertyValue<ArchetypeModel>(PistePoints.PartyKitAlias).Single());
-            }
-        }        
     }
 }

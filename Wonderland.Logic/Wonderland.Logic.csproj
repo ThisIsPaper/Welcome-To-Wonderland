@@ -286,7 +286,6 @@
     <Compile Include="Models\Entities\PartyWallItem.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Models\Entities\PartyKit.cs" />
     <Compile Include="Models\Entities\PromotionTile.cs" />
     <Compile Include="Models\Entities\QuestionAndAnswer.cs" />
     <Compile Include="Models\Entities\Reward.cs" />

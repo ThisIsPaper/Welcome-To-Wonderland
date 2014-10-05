@@ -3160,7 +3160,6 @@
     <Content Include="config\BaseRestExtensions.config" />
     <Content Include="config\applications.config" />
     <Content Include="config\404handlers.config" />
-    <Content Include="Views\Partials\PartyKit.cshtml" />
     <Content Include="Views\PartyIdeaCategory.cshtml" />
     <Content Include="Views\Partials\PartyIdeaTiles.cshtml" />
     <Content Include="Views\ForgottenPassword.cshtml" />
