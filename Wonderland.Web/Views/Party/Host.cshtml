@@ -13,16 +13,18 @@
             <div class="wgrid-full parent">
                 <div class="boxx collapse" m-radius-picker="large">
 
-                    <div class="wgrid-full wgrid-no-bottom-margin parent">
+                    <div class="wgrid-full wgrid-no-bottom-margin parent" ng-init="hardCodedCurrentPartyImageUrlInit('@Model.PartyHost.PartyImage')">
 
-                        <div class="grid-12 party-main-image" ng-init="hardCodedCurrentPartyImageUrlInit('@Model.PartyHost.PartyImage')" ng-style="{'background-image': 'url(' + partyImageData.PartyImage +')'}">
-                            <div class="boxx-twerk"></div>
+                        <img ng-src="{{ partyImageData.PartyImage }}" width="100%"/>
+
+                        <div class="no-party-image" ng-show="partyImageData.PartyImage.length<=0" ng-cloak>
+                            <div class="party-image-default">
+                                <div class="icon-icon_camera"></div>
+                                <div>Choose my party picture</div>
+                            </div>
                         </div>
 
-                        <div class="party-image-default" ng-hide="partyImageData.PartyImage.length>0">
-                            <div class="icon-icon_camera"></div>
-                            <div>Choose my party picture</div>
-                        </div>
+                        <div class="boxx-twerk"></div>
 
                         <div class="edit-trigger" ng-click="openPageModal('partials/partyImageForm.html', 'partyImageModal', {'partyImageData': partyImageDataForForm, 'partyImageDefaultData': partyImageDefaultData, 'partyCustomImage': partyCustomImage})"><span class="edit-label">Edit</span><span class="icon-icon_edit"></span></div>
 
@@ -31,7 +33,7 @@
                     <div class="wgrid-full pad-large">
                         <div m-profile-image="{{ pageProfile.imageUrl }}" class="clickable" m-radius-picker="small" ng-click="openPageModal('partials/profileImageForm.html', 'profileImageModal', {'pageProfile': pageProfile, 'pageFeedback': pageFeedback})"></div>
                         <div class="party-details">
-                            <h3 class="pad-right-3 margin-top-0 margin-bottom-small" ng-bind="partyDetailsData.PartyHeading">@this.Model.Heading</h3>
+                            <h3 class="pad-right-3 margin-top-0 margin-bottom-small" ng-bind="partyDetailsData.PartyHeading"></h3>
                             <div class="body-medium float-left margin-right-medium">
                                 <span class="icon-icon_clock"></span>
                                 <span ng-bind="partyDetailsData.PartyDateTime|datePreviewFormat"></span>
