@@ -54,8 +54,10 @@
             <div class="form-info">Enter a value between £0 and £200</div>
         </div>
 
-
-        <h3>Add Gift Aid</h3>
+        <div class="pos-relative min-height-4">
+            <h3 class="margin-right-10">Add Gift Aid</h3>
+            <div class="giftaid-logo"></div>
+        </div>
 
         <p>With Gift Aid your donation will be worth 25% more to Macmillan Cancer Support at no extra cost to you.</p>
 
@@ -70,7 +72,10 @@
 
         <hr/>
 
-        <h3>Enter your billing details</h3>
+        <div class="pos-relative min-height-8">
+            <h3 class="margin-right-9">Enter your billing details</h3>
+            <div class="fsb-logo"></div>
+        </div>
 
         <label for="FirstName">First name</label>
         @Html.TextBoxFor(x => x.FirstName, new { @m_radius_picker="small", @ng_readonly="processing", @ng_class="{'error': errorFirstNameMessage.length>0}" })
