@@ -10,7 +10,7 @@
                                                         tileType = x.TileType, // decoration, fashion, playlist, recipe, fundraising
                                                         tileHeading = x.TileHeading,
                                                         tileCopy= x.TileCopy,
-                                                        link = x.Url,
+                                                        link = (x is FashionTile ? ((FashionTile)x).PinterestBoardUrl : (x is DecorationTile ? ((DecorationTile)x).PinterestBoradUrl : x.Url)),
                                                         spotify = x is PlaylistTile,
                                                         pinterest = x is FashionTile || x is DecorationTile,
                                                         wide = x.TileSize == PartyIdeaTileSize.Wide
