@@ -16,6 +16,7 @@ namespace Wonderland.Logic.Models.Content
 
         // Properties
         public const string MetaDescriptionAlias = "metaDescription";
+        public const string MetaKeywordsAlias = "metaKeywords";
 
         public SitePage(IPublishedContent content) : base(content)
         {
@@ -33,6 +34,14 @@ namespace Wonderland.Logic.Models.Content
             get
             {
                 return this.GetPropertyValue<string>(SitePage.MetaDescriptionAlias);
+            }
+        }
+
+        public string MetaKeywords
+        {
+            get
+            {
+                return this.GetPropertyValue<string>(SitePage.MetaKeywordsAlias);
             }
         }
 
