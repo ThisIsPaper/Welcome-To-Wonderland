@@ -473,7 +473,7 @@ label .ticket {
 
     .current-total {
         @include border-radius($padSmallValue/2);
-        background-color: $SecondaryColour;
+        background-color: $FourthColour;
         background-image: image-url('frost.png');
         background-repeat: repeat-x;
         background-position: top left;

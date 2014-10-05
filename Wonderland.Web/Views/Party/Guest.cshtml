@@ -108,7 +108,7 @@
 
                     @foreach (IPartier partier in this.Model.Partiers)
                     {
-                        <div class="margin-right-small margin-bottom-small" m-profile-image="@partier.ProfileImageUrl" m-radius-picker="small"></div>
+                        <div class="margin-right-small margin-bottom-small" m-profile-image="{{ '@partier.ProfileImageUrl' }}" m-radius-picker="small"></div>
                     }
                 </div>
             </div>
@@ -118,7 +118,7 @@
         {imageUrl: '/img/badge_0003_gondola.png', badgeTitle: '5+ guests', badgeCopy: 'Gondola', complete: @this.Model.Partiers.Count() >= 5},
         {imageUrl: '/img/badge_0004_hottub.png', badgeTitle: '10+ guests', badgeCopy: 'Hot tub', complete: @this.Model.Partiers.Count() >= 10},
         {imageUrl: '/img/badge_0005_chalet.png', badgeTitle: '15+ guests', badgeCopy: 'Chalet', complete: @this.Model.Partiers.Count() >= 15},
-        {imageUrl: '/img/badge_0002_beginner.png', badgeTitle: '£120+', badgeCopy: 'Beginner', complete: @Model.PartyHost.AmountRaised >= 120 },
+        {imageUrl: '/img/badge_0002_beginner.png', badgeTitle: 'First donation', badgeCopy: 'Beginner', complete: @Model.PartyHost.AmountRaised > 0 },
         {imageUrl: '/img/badge_0001_intermediate.png', badgeTitle: '£180+', badgeCopy: 'Intermediate', complete: @Model.PartyHost.AmountRaised >= 180},
         {imageUrl: '/img/badge_0000_pro.png', badgeTitle: '£240+', badgeCopy: 'Pro', complete: @Model.PartyHost.AmountRaised >= 240}
     ]">

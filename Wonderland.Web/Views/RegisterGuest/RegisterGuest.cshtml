@@ -7,12 +7,31 @@
 
     <div class="container gutter">
 
-        <div class="wgrid-main centered">
+        <div class="wgrid-main wgrid-no-bottom-margin">
 
-            <div class="boxx" m-radius-picker>
+            <div class="boxx radius-bottom-0" m-radius-picker="large">
 
-                <h1><span class="lighter"><span class="icon-icon_person lighter margin-right-small"></span><span class="bigger">Join <br/></span></span><span>@Model.PartyHost.FirstName's Party</span></h1>
+                <h1><span class="lighter"><span class="icon-icon_person lighter margin-right-small"></span><span class="bigger">Join <br/></span></span><span>the Party</span></h1>
 
+            </div>
+
+        </div>
+
+
+        <div class="wgrid-side parent wgrid-no-bottom-margin">
+
+            <div class="boxx collapse radius-tablet-0" m-radius-picker="medium">
+
+                @Html.Partial("PartyDetailsSide")
+
+            </div>
+
+        </div>
+
+
+        <div class="wgrid-main">
+
+            <div class="boxx radius-top-0" m-radius-picker>
                 <hr/>
 
                 @(Html.Action<RegisterGuestSurfaceController>("RenderRegisterGuestForm"))
@@ -20,6 +39,7 @@
             </div>
 
         </div>
+
 
     </div>
 
