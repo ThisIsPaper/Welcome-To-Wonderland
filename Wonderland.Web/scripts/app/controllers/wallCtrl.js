@@ -1,6 +1,6 @@
 wonderlandApp.controller('WallCtrl', ['mHttp', 'safeApply', '$filter', '$scope', '$timeout', function (mHttp, safeApply, $filter, $scope, $timeout) {
 
-    var wallFeed, partyGuid, wallDelete, deleteRequest, feedRequest, initialFormModel, hasSetInitialFormModel=false;
+    var wallFeed, partyGuid, wallDelete, deleteRequest, feedRequest, initialFormModel, hasSetInitialFormModel = false;
 
     $scope.wall = {
         feedback: {
@@ -36,7 +36,7 @@ wonderlandApp.controller('WallCtrl', ['mHttp', 'safeApply', '$filter', '$scope',
     $scope.getFeed = function (beforeDateTime) {
 
         safeApply($scope, function () {
-           $scope.wall.feedback.feedProcessingPost = true;
+            $scope.wall.feedback.feedProcessingPost = true;
         });
 
         var sendFormData = {
@@ -60,7 +60,7 @@ wonderlandApp.controller('WallCtrl', ['mHttp', 'safeApply', '$filter', '$scope',
             if (response) {
 
                 angular.forEach(response, function (value) {
-                    if (Number(value.id<0)) { // is a donation
+                    if (Number(value.id < 0)) { // is a donation
                         value.isDonation = true;
                         value.text = $filter('mCurrency')(value.text, "£");
                     }
@@ -72,7 +72,7 @@ wonderlandApp.controller('WallCtrl', ['mHttp', 'safeApply', '$filter', '$scope',
 
             if (response.length) {
                 $scope.wall.feedLastResponseCount = response.length;
-                $scope.wall.feedLastDate = response[(response.length-1)].timestamp;
+                $scope.wall.feedLastDate = response[(response.length - 1)].timestamp;
             }
 
             $scope.wall.hasDoneFirstLoad = true;
@@ -83,19 +83,13 @@ wonderlandApp.controller('WallCtrl', ['mHttp', 'safeApply', '$filter', '$scope',
 
     $scope.deleteFeedItem = function (messageId) {
 
-        if (!wallDelete || !messageId || messageId<0) {
+        if (!wallDelete || !messageId || messageId < 0) {
             return;
         }
 
         $scope.wall.feedback.removeProcessingId = messageId;
 
-        var sendFormData = {
-            'messageId': messageId
-        };
-
-
-        deleteRequest = mHttp.post(wallDelete, {
-            data: sendFormData,
+        deleteRequest = mHttp.post(wallDelete + '?messageId=' + messageId, {
             dataType: 'json'
         });
 
@@ -107,7 +101,7 @@ wonderlandApp.controller('WallCtrl', ['mHttp', 'safeApply', '$filter', '$scope',
                     removeIndex = value.id === messageId ? key : removeIndex;
                 });
 
-                if (removeIndex>=0) {
+                if (removeIndex >= 0) {
                     $scope.wall.feed.splice(removeIndex, 1);
                 }
                 $scope.wall.feedback.removeProcessingId = null;
@@ -118,8 +112,6 @@ wonderlandApp.controller('WallCtrl', ['mHttp', 'safeApply', '$filter', '$scope',
         );
 
     };
-
-
 
 
     $scope.wallFormModelInit = function (formModel) {
@@ -138,12 +130,12 @@ wonderlandApp.controller('WallCtrl', ['mHttp', 'safeApply', '$filter', '$scope',
         });
     };
 
-    $scope.$onRootScope('wallMessagePosted', function() {
+    $scope.$onRootScope('wallMessagePosted', function () {
         $scope.wallFormModelInit(initialFormModel);
         $scope.getFeed();
     });
 
-    $scope.$onRootScope('wallImageUploadStart', function() {
+    $scope.$onRootScope('wallImageUploadStart', function () {
         safeApply($scope, function () {
             $scope.wall.previewImageUrl = null;
             $scope.wall.formModel.PartyWallImage = null;
@@ -151,7 +143,7 @@ wonderlandApp.controller('WallCtrl', ['mHttp', 'safeApply', '$filter', '$scope',
         });
     });
 
-    $scope.$onRootScope('wallImageUrlUploaded', function(event, response) {
+    $scope.$onRootScope('wallImageUrlUploaded', function (event, response) {
 
         /**
          * safe apply the feedback response
