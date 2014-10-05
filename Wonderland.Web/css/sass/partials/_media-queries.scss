@@ -121,7 +121,6 @@
 
     //***************************** BASE
 
-
     .site-header.showing-side-nav-menu {
         left: 25.6rem;
     }
@@ -366,6 +365,10 @@
         font-size: $HeadingFontSizeSmall;
         width: 16rem;
         margin-top: 0.6rem;
+    }
+
+    .iframe-mobile {
+        height: 16.2rem;
     }
 
 }
