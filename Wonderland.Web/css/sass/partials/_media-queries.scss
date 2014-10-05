@@ -218,6 +218,11 @@
         font-size: 1.4rem;
         font-weight: bold;
 
+        &.selected {
+            background: none;
+            padding: 0;
+        }
+
     }
 
     .menu li span[class^="icon-"]:before, .menu li span[class*=" icon-"]:before {

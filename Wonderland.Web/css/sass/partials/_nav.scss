@@ -48,6 +48,12 @@
     line-height: 8.4rem;
     letter-spacing: .2rem;
 
+    &.selected {
+        @extend .radius-v1-small;
+        background-color: $blueLight;
+        padding: $padSmallValue;
+    }
+
     @include transition(line-height .3s linear 0);
 }
 
