@@ -2,38 +2,10 @@
 @{
     Layout = "SitePage.cshtml";
 }
-@*<h1>@Model.PageHeading</h1>
-
-<h2>@Model.TopFundraisersHeading</h2>
-@foreach (PartyHost partyHost in Model.TopFundraisers)
-{
-    @partyHost.Name
-}
+@*
 <a href="@Model.GetLeaderboard().TopFundraisersLink">view all &gt;</a>
-
-
-<h2>@Model.MostGuestsHeading</h2>
-@foreach (PartyHost partyHost in Model.MostGuests)
-{
-    @partyHost.Name
-}
-<a href="@Model.GetLeaderboard().MostGuestsLink">view all &gt;</a>*@
-
-@*<h2>@Model.BadgesTodayHeading</h2>
-@foreach (PartyHost partyHost in Model.BadgesToday)
-{
-    @partyHost.Name
-}*@
-
-@*<h2>@Model.RecentHostsHeading</h2>
-@foreach (PartyHost partyHost in Model.RecentHosts)
-{
-    @partyHost.Name
-}
+<a href="@Model.GetLeaderboard().MostGuestsLink">view all &gt;</a>
 *@
-
-
-
 
 <div class="page-bg">
 
@@ -58,7 +30,7 @@
                             <div class="scoreboard-place body-dephasize" ng-bind="@i|dateSuffix"></div>
                             <div class="float-left" m-profile-image="{{ '@partyHost.ProfileImageUrl' }}" m-radius-picker="small medium"></div>
                             <div class="image-shift-details bigger margin-right-7">
-                                <div class="body-emphasize">@partyHost.Name</div>
+                                <div class="body-emphasize">@partyHost.FirstName @partyHost.LastName</div>
                                 <div class="body-dephasize">@partyHost.PartyHeading</div>
                             </div>
                             <div class="scoreboard-value" ng-init="amountRaised@i=@partyHost.AmountRaised" ng-bind="amountRaised@i|mCurrency:'£'"></div>
@@ -93,7 +65,7 @@
                             <div class="scoreboard-place body-dephasize" ng-bind="@i|dateSuffix"></div>
                             <div class="float-left" m-profile-image="{{ '@partyHost.ProfileImageUrl' }}" m-radius-picker="small medium"></div>
                             <div class="image-shift-details bigger margin-right-7">
-                                <div class="body-emphasize">@partyHost.Name</div>
+                                <div class="body-emphasize">@partyHost.FirstName @partyHost.LastName</div>
                                 <div class="body-dephasize">@partyHost.PartyHeading</div>
                             </div>
                             <div class="scoreboard-value">
