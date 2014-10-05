@@ -12,6 +12,7 @@ namespace Wonderland.Logic.Models.Content
         // Properties
         public const string PageHeadingAlias = "pageHeading";
         public const string CopyAlias = "copy";
+        public const string ExternalRedirectAlias = "externalRedirect";
 
         public Legal(IPublishedContent content)
             : base(content)
@@ -31,6 +32,14 @@ namespace Wonderland.Logic.Models.Content
             get
             {
                 return this.GetPropertyValue<string>(Legal.CopyAlias);
+            }
+        }
+
+        public string ExternalRedirect
+        {
+            get
+            {
+                return this.GetPropertyValue<string>(Legal.ExternalRedirectAlias);
             }
         }
     }

@@ -222,6 +222,7 @@
     <Compile Include="Controllers\Render\FashionTileController.cs" />
     <Compile Include="Controllers\Render\HomeController.cs" />
     <Compile Include="Controllers\Render\LeaderboardController.cs" />
+    <Compile Include="Controllers\Render\LegalController.cs" />
     <Compile Include="Controllers\Render\ProfileController.cs" />
     <Compile Include="Controllers\Render\PartyController.cs" />
     <Compile Include="Controllers\Render\RegisterGuestController.cs" />
