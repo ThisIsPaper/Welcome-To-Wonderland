@@ -237,6 +237,8 @@
     <Compile Include="Controllers\Surface\RegisterGuestSurfaceController.cs" />
     <Compile Include="Controllers\Surface\RegisterHostSurfaceController.cs" />
     <Compile Include="Controllers\Surface\ResetPasswordSurfaceController.cs" />
+    <Compile Include="DotMailer\Contact.cs" />
+    <Compile Include="DotMailer\DotMailerService.cs" />
     <Compile Include="Enums\LeaderboardType.cs" />
     <Compile Include="Enums\PartyIdeaTileSize.cs" />
     <Compile Include="Enums\PartyWallItemType.cs" />

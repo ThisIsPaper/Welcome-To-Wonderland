@@ -8,6 +8,7 @@ namespace Wonderland.Logic.Controllers.Surface
     using Umbraco.Core;
     using Umbraco.Core.Security;
     using Umbraco.Web.Mvc;
+    using Wonderland.Logic.DotMailer;
     using Wonderland.Logic.Models.Content;
     using Wonderland.Logic.Models.Database;
     using Wonderland.Logic.Models.Entities;
@@ -98,6 +99,9 @@ namespace Wonderland.Logic.Controllers.Surface
 
             // set default party date
             partyHost.PartyDateTime = new DateTime(2014, 12, 5, 20, 0, 0);
+
+            // add member to DotMailer
+            DotMailerService.AddContact((Contact)partyHost);
 
             // send cookie
             FormsAuthentication.SetAuthCookie(partyHost.Username, true);
