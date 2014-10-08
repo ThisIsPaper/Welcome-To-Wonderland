@@ -14,6 +14,7 @@ namespace Wonderland.Logic.Controllers.Surface
     using Wonderland.Logic.Models.Forms;
     using Wonderland.Logic.Models.Members;
     using Wonderland.Logic.SagePay;
+    using Wonderland.Logic.DotMailer;
 
     public class RegisterGuestSurfaceController : SurfaceController
     {
@@ -76,6 +77,9 @@ namespace Wonderland.Logic.Controllers.Surface
 
             // (duplicate data) store party guid in cms cache
             partyGuest.PartyGuid = registerGuestForm.PartyGuid;
+
+            // add member to DotMailer
+            DotMailerService.AddContact((Contact)partyGuest);
 
             // send cookie
             FormsAuthentication.SetAuthCookie(partyGuest.Username, true);
