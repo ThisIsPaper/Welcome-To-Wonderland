@@ -25,6 +25,8 @@ namespace Wonderland.Logic.Models.Members
         public const string ProfileImageAlias = "profileImage";
         public const string ForgottenPasswordGuidAlias = "forgottenPasswordGuid";
 
+        private Guid? partyGuid = null; // used as a local cache, as the setter / getter normally requires a full round trip
+
         public PartyGuest(IPublishedContent content)
             : base(content)
         {
@@ -37,10 +39,16 @@ namespace Wonderland.Logic.Models.Members
         {
             get
             {
+                if (this.partyGuid.HasValue)
+                {
+                    return this.partyGuid.Value;
+                }
+
                 return this.GetPropertyValue<Guid>(PartyHost.PartyGuidAlias);
             }
             set
             {
+                this.partyGuid = value;
                 this.SetPropertyValue(PartyHost.PartyGuidAlias, value.ToString());
             }
         }
