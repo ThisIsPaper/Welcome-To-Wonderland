@@ -39,6 +39,10 @@ namespace Wonderland.Logic.Models.Members
         public const string FundraisingTargetAlias = "fundraisingTarget";
         public const string ForgottenPasswordGuidAlias = "forgottenPasswordGuid";
 
+        private Guid? partyGuid = null;
+        private DateTime? partyDateTime = null;
+        private string partyUrlIdentifier = null;
+
         public PartyHost(IPublishedContent content)
             : base(content)
         {
@@ -51,10 +55,16 @@ namespace Wonderland.Logic.Models.Members
         {
             get
             {
+                if (this.partyGuid.HasValue)
+                {
+                    return this.partyGuid.Value;
+                }
+
                 return this.GetPropertyValue<Guid>(PartyHost.PartyGuidAlias);
             }
             set
             {
+                this.partyGuid = value;
                 this.SetPropertyValue(PartyHost.PartyGuidAlias, value.ToString());
             }
         }
@@ -155,10 +165,16 @@ namespace Wonderland.Logic.Models.Members
         {
             get
             {
+                if (this.partyDateTime.HasValue)
+                {
+                    return this.partyDateTime.Value;
+                }
+
                 return this.GetPropertyValue<DateTime>(PartyHost.PartyDateTimeAlias);
             }
             set
             {
+                this.partyDateTime = value;
                 this.SetPropertyValue(PartyHost.PartyDateTimeAlias, value.ToString());
             }
         }
@@ -194,10 +210,16 @@ namespace Wonderland.Logic.Models.Members
         {
             get
             {
+                if (!string.IsNullOrWhiteSpace(this.partyUrlIdentifier))
+                {
+                    return this.partyUrlIdentifier;
+                }
+
                 return this.GetPropertyValue<string>(PartyHost.PartyUrlIdentifierAlias);
             }
             set
             {
+                this.partyUrlIdentifier = value;
                 this.SetPropertyValue(PartyHost.PartyUrlIdentifierAlias, value);
             }
         }
