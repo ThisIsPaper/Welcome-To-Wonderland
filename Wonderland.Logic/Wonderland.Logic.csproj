@@ -337,6 +337,11 @@
     <Compile Include="SagePay\TransactionRegistration.cs" />
     <Compile Include="SagePay\TransactionRegistrationRequest.cs" />
     <Compile Include="SagePay\TransactionRegistrationResponse.cs" />
+    <Compile Include="Web References\DotMailerApi\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
     <Compile Include="Web References\PostcodeAnywhere.FindByPostcode\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -355,6 +360,107 @@
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\DotMailerApi\ApiAccount.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\DotMailerApi\ApiAddressBook.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\DotMailerApi\ApiCampaign.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\DotMailerApi\ApiCampaignContactClick.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\DotMailerApi\ApiCampaignContactOpen.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\DotMailerApi\ApiCampaignContactPageView.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\DotMailerApi\ApiCampaignContactReply.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\DotMailerApi\ApiCampaignContactRoiDetail.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\DotMailerApi\ApiCampaignContactSocialBookmarkView.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\DotMailerApi\ApiCampaignContactSummary.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\DotMailerApi\ApiCampaignFromAddress.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\DotMailerApi\ApiCampaignSend.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\DotMailerApi\ApiCampaignSummary.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\DotMailerApi\ApiContact.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\DotMailerApi\ApiContactImport.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\DotMailerApi\ApiContactImportReport.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\DotMailerApi\ApiContactSuppression.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\DotMailerApi\ApiDataField.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\DotMailerApi\ApiDependencyResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\DotMailerApi\ApiDocument.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\DotMailerApi\ApiDocumentFolder.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\DotMailerApi\ApiImage.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\DotMailerApi\ApiImageFolder.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\DotMailerApi\ApiProgram.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\DotMailerApi\ApiProgramEnrolment.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\DotMailerApi\ApiResubscribeResult.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\DotMailerApi\ApiSegment.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\DotMailerApi\ApiSegmentRefresh.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\DotMailerApi\ApiService.wsdl" />
+    <None Include="Web References\DotMailerApi\ApiTemplate.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\DotMailerApi\ApiTransactionalData.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\DotMailerApi\ApiTransactionalDataImport.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\DotMailerApi\ApiTransactionalDataImportReport.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\DotMailerApi\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
     <None Include="Web References\PostcodeAnywhere.FindByPostcode\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
@@ -377,6 +483,17 @@
     <WebReferences Include="Web References\" />
   </ItemGroup>
   <ItemGroup>
+    <WebReferenceUrl Include="http://api.dotmailer.com/v2/api.svc">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\DotMailerApi\</RelPath>
+      <UpdateFromURL>http://api.dotmailer.com/v2/api.svc</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>Wonderland_Logic_DotMailerApi_ApiService</CachedSettingsPropName>
+    </WebReferenceUrl>
     <WebReferenceUrl Include="http://services.postcodeanywhere.co.uk/PostcodeAnywhere/Interactive/FindByPostcode/v1.00/wsdl.ws">
       <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\PostcodeAnywhere.FindByPostcode\</RelPath>
