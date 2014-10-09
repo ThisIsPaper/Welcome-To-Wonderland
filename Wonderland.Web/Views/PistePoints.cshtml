@@ -16,15 +16,15 @@
                 <div class="boxx collapse margin-small" m-radius-picker="medium">
 
                     <div class="pos-relative">
-                        <img width="100%" src="@reward.Image.Url"/>
+                        <img width="100%" ng-src="{{ '@reward.Image.GetResponsiveCropUrl("Letterbox")'|mQuality:50|mWidth:350 }}"/>
                         <div class="boxx-twerk"></div>
                     </div>
 
                     <div class="wgrid-full pad-medium text-align-center">
-                        <h1 class="lighter">@reward.Heading</h1>
+                        <h1>@Html.Raw(@reward.Heading)</h1>
                         <h4 class="color-brand">@reward.SubHeading</h4>
                         <hr/>
-                        <p>@reward.Copy</p>
+                        <p class="text-align-left">@reward.Copy</p>
                     </div>
                 </div>
             </div>

@@ -22,7 +22,7 @@
                     </div>
 
                     <div class="wgrid-full pad-large">
-                        <div m-profile-image="{{ profileImage.url }}" m-radius-picker="small"></div>
+                        <div m-profile-image="{{ '@Model.PartyHost.ProfileImageUrl' }}" m-radius-picker="small"></div>
                         <div class="party-details">
                             <h3 class="pad-right-3 margin-top-0 margin-bottom-small">@this.Model.Heading</h3>
                             <div class="body-medium float-left margin-right-medium">
@@ -103,7 +103,7 @@
 
                     @foreach (IPartier partier in this.Model.Partiers)
                     {
-                        <div class="margin-right-small margin-bottom-small" m-profile-image="{{ '@partier.ProfileImageUrl' }}" m-radius-picker="small"></div>
+                        <div class="margin-right-small margin-bottom-small" m-profile-image="{{ '@partier.ProfileImageUrl' }}" mac-tooltip="@partier.FirstName @partier.LastName" m-radius-picker="small"></div>
                     }
                 </div>
             </div>
@@ -170,7 +170,7 @@
                             <span class="wall-type" ng-class="{'donation': feedItem.isDonation}" ng-show="feedItem.isDonation">Donation</span>
                             <span class="wall-time" ng-bind="feedItem.timeFormatted"></span>
                         </div>
-                        <div ng-class="{'donation-copy': feedItem.isDonation}" ng-bind="feedItem.text"></div>
+                        <div class="color-grey-really-dark" ng-class="{'donation-copy': feedItem.isDonation}" ng-bind="feedItem.text"></div>
                         <img class="margin-top-small margin-bottom-small pad-small" ng-src="{{ feedItem.imageUrl }}" />
                     </div>
                     <hr ng-show="!$last"/>
