@@ -24,14 +24,40 @@ namespace Wonderland.Logic.DotMailer
             this.IdSpecified = this.Id > 0;
         }
 
+        private string FirstName
+        {
+            set
+            {
+                this.contactData.Add(new ApiContactData()
+                    {
+                        Key = "Firstname",
+                        Value = value
+                    }
+                );
+            }
+        }
+
+        private string LastName
+        {
+            set
+            {
+                this.contactData.Add(new ApiContactData()
+                    {
+                        Key = "Lastname",
+                        Value = value
+                    }
+                );
+            }
+        }
+
         private DateTime PartyDate
         {
             set
             {
                 this.contactData.Add(new ApiContactData()
                     {
-                        Key="Party_Date",
-                        Value=value
+                        Key = "Party_Date",
+                        Value = value
                     }
                 );
             }
@@ -43,8 +69,8 @@ namespace Wonderland.Logic.DotMailer
             {
                 this.contactData.Add(new ApiContactData()
                     {
-                        Key="Guest_Count",
-                        Value=value
+                        Key = "Guest_Count",
+                        Value = value
                     }
                 );
             }
@@ -104,7 +130,9 @@ namespace Wonderland.Logic.DotMailer
             contact.Partier = partyHost;
 
             MembershipHelper members = new MembershipHelper(UmbracoContext.Current);
-            
+
+            contact.FirstName = partyHost.FirstName;
+            contact.LastName = partyHost.LastName;
             contact.PartyDate = partyHost.PartyDateTime;
             contact.GuestCount = members.GetPartiers(partyHost.PartyGuid).Count();
             contact.DonationAmount = partyHost.AmountRaised;
@@ -122,6 +150,8 @@ namespace Wonderland.Logic.DotMailer
 
             PartyHost partyHost = new MembershipHelper(UmbracoContext.Current).GetPartyHost(partyGuest.PartyGuid);
 
+            contact.FirstName = partyGuest.FirstName;
+            contact.LastName = partyGuest.LastName;
             contact.PartyDate = partyHost.PartyDateTime;
             
             return contact;
