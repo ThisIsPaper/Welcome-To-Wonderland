@@ -63,6 +63,19 @@ namespace Wonderland.Logic.DotMailer
             }
         }
 
+        private string PartierType
+        {
+            set
+            {
+                this.contactData.Add(new ApiContactData()
+                    {
+                        Key = "Partier_Type",
+                        Value = value
+                    }
+                );
+            }
+        }
+
         private int GuestCount
         {
             set
@@ -134,6 +147,7 @@ namespace Wonderland.Logic.DotMailer
             contact.FirstName = partyHost.FirstName;
             contact.LastName = partyHost.LastName;
             contact.PartyDate = partyHost.PartyDateTime;
+            contact.PartierType = PartyHost.Alias;
             contact.GuestCount = members.GetPartiers(partyHost.PartyGuid).Count();
             contact.DonationAmount = partyHost.AmountRaised;
             contact.PartyPagePopulated = !string.IsNullOrWhiteSpace(partyHost.PartyImage)
@@ -153,6 +167,7 @@ namespace Wonderland.Logic.DotMailer
             contact.FirstName = partyGuest.FirstName;
             contact.LastName = partyGuest.LastName;
             contact.PartyDate = partyHost.PartyDateTime;
+            contact.PartierType = PartyGuest.Alias;
             
             return contact;
         }

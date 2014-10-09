@@ -260,6 +260,8 @@
     <Content Include="App_Plugins\Archetype\views\archetype.config.html" />
     <Content Include="App_Plugins\Archetype\views\archetype.default.html" />
     <Content Include="App_Plugins\Archetype\views\archetype.html" />
+    <Content Include="App_Plugins\RJP.MultiUrlPicker\MultiUrlPicker.html" />
+    <Content Include="App_Plugins\RJP.MultiUrlPicker\MultiUrlPicker.js" />
     <Content Include="css\all.min.css" />
     <Content Include="Dashboards\ExportFinancials.ascx" />
     <Content Include="fonts\71710047-b807-47eb-9874-7db8f4904492.svg" />
@@ -3116,6 +3118,7 @@
     <Content Include="umbraco\Xslt\Web.config" />
     <Content Include="umbraco_client\CodeMirror\Js\Mode\Razor\LICENSE" />
     <Content Include="umbraco_client\CodeMirror\Js\Mode\Sieve\LICENSE" />
+    <Content Include="App_Plugins\RJP.MultiUrlPicker\package.manifest" />
     <None Include="Properties\PublishProfiles\AWS Macmillan.pubxml" />
     <Content Include="Views\Profile\Forms\ProfileTShirtSizeForm.cshtml" />
     <None Include="Views\RegisterHost\Forms\RegisterHostForm.cshtml" />
