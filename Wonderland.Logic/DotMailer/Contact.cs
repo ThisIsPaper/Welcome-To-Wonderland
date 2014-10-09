@@ -8,6 +8,7 @@ namespace Wonderland.Logic.DotMailer
     using Umbraco.Web.Security;
     using Wonderland.Logic.DotMailerApi;
     using Wonderland.Logic.Extensions;
+    using Wonderland.Logic.Interfaces;
     using Wonderland.Logic.Models.Members;
 
     public class Contact : ApiContact
@@ -19,8 +20,8 @@ namespace Wonderland.Logic.DotMailer
             this.Email = email;
             this.EmailType = ApiContactEmailTypes.Html;
             this.EmailTypeSpecified = true; // if this flag isn't set, then the EmailType isn't processed
-            //this.Id = id;
-            this.IdSpecified = false;
+            this.Id = id;            
+            this.IdSpecified = this.Id > 0;
         }
 
         private DateTime PartyDate
@@ -76,6 +77,11 @@ namespace Wonderland.Logic.DotMailer
         }
 
         /// <summary>
+        /// internal reference to the PartyHost or PartyGuest used to construct this contact
+        /// </summary>
+        internal IPartier Partier { get; set; }
+
+        /// <summary>
         /// need to explicity create a new ApiContact obj rather than via a cast, as the built-in serialization uses reflection to see what the full type is
         /// </summary>
         /// <returns></returns>
@@ -94,7 +100,8 @@ namespace Wonderland.Logic.DotMailer
 
         public static explicit operator Contact(PartyHost partyHost)
         {
-            Contact contact = new Contact(partyHost.Email, partyHost.Id);
+            Contact contact = new Contact(partyHost.Email, partyHost.DotMailerId);
+            contact.Partier = partyHost;
 
             MembershipHelper members = new MembershipHelper(UmbracoContext.Current);
             
@@ -110,7 +117,8 @@ namespace Wonderland.Logic.DotMailer
 
         public static explicit operator Contact(PartyGuest partyGuest)
         {
-            Contact contact = new Contact(partyGuest.Email, partyGuest.Id);
+            Contact contact = new Contact(partyGuest.Email, partyGuest.DotMailerId);
+            contact.Partier = partyGuest;
 
             PartyHost partyHost = new MembershipHelper(UmbracoContext.Current).GetPartyHost(partyGuest.PartyGuid);
 
