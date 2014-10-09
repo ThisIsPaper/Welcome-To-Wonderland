@@ -6956,28 +6956,29 @@ input[type='text'], input[type='password'], select {
 input[type='text'], input[type='password'], textarea, select {
   border: 0.1rem solid #D4D3CC;
   background-color: white;
+  font-family: "Futura BT W01 Book";
 }
-/* line 220, sass/partials/_forms.scss */
+/* line 221, sass/partials/_forms.scss */
 input[type='text'].error, input[type='password'].error, textarea.error, select.error {
   border: 0.1rem solid #E32333;
 }
 
-/* line 225, sass/partials/_forms.scss */
+/* line 226, sass/partials/_forms.scss */
 input[type="text"][readonly] {
   cursor: pointer;
 }
 
-/* line 229, sass/partials/_forms.scss */
+/* line 230, sass/partials/_forms.scss */
 input[type='password'] {
   padding-left: 4rem;
 }
 
-/* line 233, sass/partials/_forms.scss */
+/* line 234, sass/partials/_forms.scss */
 input[type="text"].currency {
   padding-left: 3rem;
 }
 
-/* line 238, sass/partials/_forms.scss */
+/* line 239, sass/partials/_forms.scss */
 input[type=submit][disabled=disabled],
 input[type=submit][disabled=disabled]:hover,
 button[disabled=disabled],
@@ -6987,17 +6988,17 @@ button[disabled=disabled]:hover {
   cursor: default;
 }
 
-/* line 247, sass/partials/_forms.scss */
+/* line 248, sass/partials/_forms.scss */
 select.auto-width {
   width: auto;
 }
 
-/* line 251, sass/partials/_forms.scss */
+/* line 252, sass/partials/_forms.scss */
 *:focus {
   outline: 0;
 }
 
-/* line 257, sass/partials/_forms.scss */
+/* line 258, sass/partials/_forms.scss */
 .choose-file-wrapper {
   width: 16.2rem;
   height: 4rem;
@@ -7005,7 +7006,7 @@ select.auto-width {
   position: relative;
   cursor: pointer;
 }
-/* line 265, sass/partials/_forms.scss */
+/* line 266, sass/partials/_forms.scss */
 .choose-file-wrapper:before {
   position: relative;
   z-index: 10;
@@ -7015,7 +7016,7 @@ select.auto-width {
   font-size: 1.4rem;
   line-height: 3.8rem;
 }
-/* line 276, sass/partials/_forms.scss */
+/* line 277, sass/partials/_forms.scss */
 .choose-file-wrapper:after {
   content: "Upload file";
   position: absolute;
@@ -7027,14 +7028,14 @@ select.auto-width {
   padding-right: 4.4rem;
   line-height: 1.6rem;
 }
-/* line 294, sass/partials/_forms.scss */
+/* line 295, sass/partials/_forms.scss */
 .choose-file-wrapper.disabled:after {
   cursor: default;
   background-color: #D4D3CC;
   color: #A19F91;
 }
 
-/* line 302, sass/partials/_forms.scss */
+/* line 303, sass/partials/_forms.scss */
 .choose-file {
   width: 200%;
   height: 100%;
@@ -7048,7 +7049,7 @@ select.auto-width {
   opacity: 0;
 }
 
-/* line 315, sass/partials/_forms.scss */
+/* line 316, sass/partials/_forms.scss */
 .form-field-ico {
   position: absolute;
   top: 0;
@@ -10361,28 +10362,29 @@ input[type='text'], input[type='password'], select {
 input[type='text'], input[type='password'], textarea, select {
   border: 0.1rem solid #D4D3CC;
   background-color: white;
+  font-family: "Futura BT W01 Book";
 }
-/* line 220, sass/partials/_forms.scss */
+/* line 221, sass/partials/_forms.scss */
 input[type='text'].error, input[type='password'].error, textarea.error, select.error {
   border: 0.1rem solid #E32333;
 }
 
-/* line 225, sass/partials/_forms.scss */
+/* line 226, sass/partials/_forms.scss */
 input[type="text"][readonly] {
   cursor: pointer;
 }
 
-/* line 229, sass/partials/_forms.scss */
+/* line 230, sass/partials/_forms.scss */
 input[type='password'] {
   padding-left: 4rem;
 }
 
-/* line 233, sass/partials/_forms.scss */
+/* line 234, sass/partials/_forms.scss */
 input[type="text"].currency {
   padding-left: 3rem;
 }
 
-/* line 238, sass/partials/_forms.scss */
+/* line 239, sass/partials/_forms.scss */
 input[type=submit][disabled=disabled],
 input[type=submit][disabled=disabled]:hover,
 button[disabled=disabled],
@@ -10392,17 +10394,17 @@ button[disabled=disabled]:hover {
   cursor: default;
 }
 
-/* line 247, sass/partials/_forms.scss */
+/* line 248, sass/partials/_forms.scss */
 select.auto-width {
   width: auto;
 }
 
-/* line 251, sass/partials/_forms.scss */
+/* line 252, sass/partials/_forms.scss */
 *:focus {
   outline: 0;
 }
 
-/* line 257, sass/partials/_forms.scss */
+/* line 258, sass/partials/_forms.scss */
 .choose-file-wrapper {
   width: 16.2rem;
   height: 4rem;
@@ -10410,7 +10412,7 @@ select.auto-width {
   position: relative;
   cursor: pointer;
 }
-/* line 265, sass/partials/_forms.scss */
+/* line 266, sass/partials/_forms.scss */
 .choose-file-wrapper:before {
   position: relative;
   z-index: 10;
@@ -10420,7 +10422,7 @@ select.auto-width {
   font-size: 1.4rem;
   line-height: 3.8rem;
 }
-/* line 276, sass/partials/_forms.scss */
+/* line 277, sass/partials/_forms.scss */
 .choose-file-wrapper:after {
   content: "Upload file";
   position: absolute;
@@ -10432,14 +10434,14 @@ select.auto-width {
   padding-right: 4.4rem;
   line-height: 1.6rem;
 }
-/* line 294, sass/partials/_forms.scss */
+/* line 295, sass/partials/_forms.scss */
 .choose-file-wrapper.disabled:after {
   cursor: default;
   background-color: #D4D3CC;
   color: #A19F91;
 }
 
-/* line 302, sass/partials/_forms.scss */
+/* line 303, sass/partials/_forms.scss */
 .choose-file {
   width: 200%;
   height: 100%;
@@ -10453,7 +10455,7 @@ select.auto-width {
   opacity: 0;
 }
 
-/* line 315, sass/partials/_forms.scss */
+/* line 316, sass/partials/_forms.scss */
 .form-field-ico {
   position: absolute;
   top: 0;
