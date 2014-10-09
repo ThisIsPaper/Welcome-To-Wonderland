@@ -11484,6 +11484,11 @@ One-off uses
   top: 0;
 }
 
+/* line 804, sass/partials/_base.scss */
+.ticket-label {
+  line-height: 2rem;
+}
+
 /*------------------------------------------------------------------------------------------------------------------------
  @package: Macmillan - Wonderland (app)
 
@@ -11632,7 +11637,12 @@ Media query variables
     padding-top: 7rem;
   }
 
-  /* line 102, sass/partials/_media-queries.scss */
+  /* line 101, sass/partials/_media-queries.scss */
+  .hide-on-tablet {
+    display: none;
+  }
+
+  /* line 106, sass/partials/_media-queries.scss */
   .radius-tablet-0 {
     -moz-border-radius-topleft: 0 0;
     -webkit-border-top-left-radius: 0 0;
@@ -11648,61 +11658,61 @@ Media query variables
     border-bottom-left-radius: 0 0;
   }
 
-  /* line 106, sass/partials/_media-queries.scss */
+  /* line 110, sass/partials/_media-queries.scss */
   .anti-image-shift-details {
     margin-left: 0;
   }
 
-  /* line 110, sass/partials/_media-queries.scss */
+  /* line 114, sass/partials/_media-queries.scss */
   .margin-mobile-bottom-0 {
     margin-bottom: 0;
   }
 
-  /* line 116, sass/partials/_media-queries.scss */
+  /* line 120, sass/partials/_media-queries.scss */
   .site-header.showing-side-nav-menu {
     left: 25.6rem;
   }
 
-  /* line 120, sass/partials/_media-queries.scss */
+  /* line 124, sass/partials/_media-queries.scss */
   .site-header.showing-side-account-menu {
     left: -25.6rem;
   }
 
-  /* line 124, sass/partials/_media-queries.scss */
+  /* line 128, sass/partials/_media-queries.scss */
   .logo {
     top: -16rem;
   }
 
-  /* line 128, sass/partials/_media-queries.scss */
+  /* line 132, sass/partials/_media-queries.scss */
   .logo-ribbon, .site-header.compress .logo-ribbon {
     padding: 1.95rem 9.6rem;
     margin: 12.9rem -9.6rem;
   }
 
-  /* line 133, sass/partials/_media-queries.scss */
+  /* line 137, sass/partials/_media-queries.scss */
   .nav-end-block {
     display: none;
     left: 1.5rem;
     color: #007eac;
   }
 
-  /* line 139, sass/partials/_media-queries.scss */
+  /* line 143, sass/partials/_media-queries.scss */
   .nav-end-block.end-block-right {
     left: auto;
     right: 1.5rem;
   }
 
-  /* line 144, sass/partials/_media-queries.scss */
+  /* line 148, sass/partials/_media-queries.scss */
   .nav-burger, .nav-account {
     display: block;
   }
 
-  /* line 148, sass/partials/_media-queries.scss */
+  /* line 152, sass/partials/_media-queries.scss */
   .nav-end-block, .site-header.compress .nav-end-block {
     top: 1.8rem;
   }
 
-  /* line 152, sass/partials/_media-queries.scss */
+  /* line 156, sass/partials/_media-queries.scss */
   .nav-end-block a, a.nav-end-block {
     font-size: 3rem;
   }
@@ -11710,7 +11720,7 @@ Media query variables
   /**********************/
   /* NAV SIDE MENU
     /**********************/
-  /* line 159, sass/partials/_media-queries.scss */
+  /* line 163, sass/partials/_media-queries.scss */
   .nav-menu {
     position: absolute;
     left: -25.6rem;
@@ -11724,7 +11734,7 @@ Media query variables
   /**********************/
   /* NAV SIDE ACCOUNT MENU
     /**********************/
-  /* line 172, sass/partials/_media-queries.scss */
+  /* line 176, sass/partials/_media-queries.scss */
   .account-menu-holder, .site-header.compress .account-menu-holder {
     top: 0;
     right: -25.6rem;
@@ -11733,48 +11743,48 @@ Media query variables
     width: 25.6rem;
     overflow: hidden;
   }
-  /* line 180, sass/partials/_media-queries.scss */
+  /* line 184, sass/partials/_media-queries.scss */
   .account-menu-holder .profile-image, .account-menu-holder .profile-image.small, .site-header.compress .account-menu-holder .profile-image, .site-header.compress .account-menu-holder .profile-image.small {
     width: 16rem;
     height: 16rem;
     margin: 2.3rem 0 0 4.9rem;
     cursor: default;
   }
-  /* line 186, sass/partials/_media-queries.scss */
+  /* line 190, sass/partials/_media-queries.scss */
   .account-menu-holder .profile-image:before, .account-menu-holder .profile-image.small:before, .site-header.compress .account-menu-holder .profile-image:before, .site-header.compress .account-menu-holder .profile-image.small:before {
     font-size: 14.2rem;
     line-height: 17.6rem;
   }
 
-  /* line 193, sass/partials/_media-queries.scss */
+  /* line 197, sass/partials/_media-queries.scss */
   .account-menu {
     display: block !important;
     position: relative;
     width: 100%;
   }
 
-  /* line 199, sass/partials/_media-queries.scss */
+  /* line 203, sass/partials/_media-queries.scss */
   .account-name {
     display: none;
   }
 
   /**********************/
-  /* line 204, sass/partials/_media-queries.scss */
+  /* line 208, sass/partials/_media-queries.scss */
   .menu {
     width: 100%;
   }
-  /* line 207, sass/partials/_media-queries.scss */
+  /* line 211, sass/partials/_media-queries.scss */
   .menu .side-only {
     display: block;
   }
 
-  /* line 212, sass/partials/_media-queries.scss */
+  /* line 216, sass/partials/_media-queries.scss */
   .menu ul {
     float: none;
     margin: 0;
   }
 
-  /* line 217, sass/partials/_media-queries.scss */
+  /* line 221, sass/partials/_media-queries.scss */
   .menu li {
     display: block;
     margin: 0;
@@ -11782,100 +11792,100 @@ Media query variables
     border-bottom: .1rem solid #55554d;
   }
 
-  /* line 224, sass/partials/_media-queries.scss */
+  /* line 228, sass/partials/_media-queries.scss */
   .menu li a {
     line-height: normal;
     color: #d4d3cc;
     font-size: 1.4rem;
     font-weight: bold;
   }
-  /* line 230, sass/partials/_media-queries.scss */
+  /* line 234, sass/partials/_media-queries.scss */
   .menu li a.selected {
     background: none;
     padding: 0;
   }
 
-  /* line 237, sass/partials/_media-queries.scss */
+  /* line 241, sass/partials/_media-queries.scss */
   .menu li span[class^="icon-"]:before, .menu li span[class*=" icon-"]:before {
     color: #7b7a6d;
     margin-right: 1rem;
     display: inline;
   }
 
-  /* line 243, sass/partials/_media-queries.scss */
+  /* line 247, sass/partials/_media-queries.scss */
   .menu li a:hover {
     color: #a5a395;
     text-decoration: none;
   }
 
-  /* line 248, sass/partials/_media-queries.scss */
+  /* line 252, sass/partials/_media-queries.scss */
   .site-header.compress .left-side ul, .site-header.compress .right-side ul {
     margin-left: 0;
     margin-right: 0;
   }
 
-  /* line 253, sass/partials/_media-queries.scss */
+  /* line 257, sass/partials/_media-queries.scss */
   .site-header.compress .menu li a {
     line-height: normal;
   }
 
-  /* line 262, sass/partials/_media-queries.scss */
+  /* line 266, sass/partials/_media-queries.scss */
   .party-image-container {
     float: none;
   }
 
-  /* line 268, sass/partials/_media-queries.scss */
+  /* line 272, sass/partials/_media-queries.scss */
   .only-on-tablet {
     display: block !important;
   }
 
-  /* line 274, sass/partials/_media-queries.scss */
+  /* line 278, sass/partials/_media-queries.scss */
   .idea-sizer, .idea-tile, .idea-tile.wide {
     width: 100%;
   }
 
-  /* line 278, sass/partials/_media-queries.scss */
+  /* line 282, sass/partials/_media-queries.scss */
   .idea-details {
     width: 100%;
     top: 11%;
     left: 0;
     padding: 0 1.2rem;
   }
-  /* line 284, sass/partials/_media-queries.scss */
+  /* line 288, sass/partials/_media-queries.scss */
   .idea-details.over-the-top {
     position: inherit;
     color: inherit;
   }
-  /* line 288, sass/partials/_media-queries.scss */
+  /* line 292, sass/partials/_media-queries.scss */
   .idea-details.over-the-top h1 {
     color: #025b45;
     font-size: 2.3rem;
     line-height: 2.3rem;
   }
-  /* line 294, sass/partials/_media-queries.scss */
+  /* line 298, sass/partials/_media-queries.scss */
   .idea-details.over-the-top .spotify-logo {
     background-position-x: 2.8rem;
   }
 
-  /* line 302, sass/partials/_media-queries.scss */
+  /* line 306, sass/partials/_media-queries.scss */
   .hero-explain {
     margin-right: 0;
   }
-  /* line 304, sass/partials/_media-queries.scss */
+  /* line 308, sass/partials/_media-queries.scss */
   .hero-explain h1 {
     text-align: center;
     font-size: 2.9rem;
     line-height: 2.9rem;
   }
 
-  /* line 311, sass/partials/_media-queries.scss */
+  /* line 315, sass/partials/_media-queries.scss */
   .money-raised {
     position: relative;
     float: right;
     margin-bottom: 3rem;
   }
 
-  /* line 321, sass/partials/_media-queries.scss */
+  /* line 325, sass/partials/_media-queries.scss */
   .date-details-shifter {
     padding-right: 0;
   }
@@ -11886,23 +11896,23 @@ Media query variables
 /*
 /*****************************/
 @media only screen and (max-width: 450px) {
-  /* line 335, sass/partials/_media-queries.scss */
+  /* line 339, sass/partials/_media-queries.scss */
   .hide-on-mobile {
     display: none;
   }
 
-  /* line 341, sass/partials/_media-queries.scss */
+  /* line 345, sass/partials/_media-queries.scss */
   .hero-explain {
     margin-right: 0;
   }
-  /* line 343, sass/partials/_media-queries.scss */
+  /* line 347, sass/partials/_media-queries.scss */
   .hero-explain h1 {
     text-align: center;
     font-size: 2.9rem;
     line-height: 2.9rem;
   }
 
-  /* line 350, sass/partials/_media-queries.scss */
+  /* line 354, sass/partials/_media-queries.scss */
   .money-raised {
     width: 21rem;
     height: 9.1rem;
@@ -11910,14 +11920,14 @@ Media query variables
     right: auto;
   }
 
-  /* line 357, sass/partials/_media-queries.scss */
+  /* line 361, sass/partials/_media-queries.scss */
   .raised-amount {
     font-size: 2.9rem;
     width: 16rem;
     margin-top: 0.6rem;
   }
 
-  /* line 363, sass/partials/_media-queries.scss */
+  /* line 367, sass/partials/_media-queries.scss */
   .iframe-mobile {
     height: 16.2rem;
   }
