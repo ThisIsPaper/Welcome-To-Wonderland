@@ -38,6 +38,7 @@ namespace Wonderland.Logic.Models.Members
         public const string SuggestedDonationAlias = "suggestedDonation";
         public const string FundraisingTargetAlias = "fundraisingTarget";
         public const string ForgottenPasswordGuidAlias = "forgottenPasswordGuid";
+        public const string DotMailerIdAlias = "dotMailerId";
 
         private Guid? partyGuid = null;
         private DateTime? partyDateTime = null;
@@ -301,6 +302,18 @@ namespace Wonderland.Logic.Models.Members
             set
             {
                 this.SetPropertyValue(PartyHost.ForgottenPasswordGuidAlias, value.ToString("D").ToLower());
+            }
+        }
+
+        public int DotMailerId
+        {
+            get
+            {
+                return this.GetPropertyValue<int>(PartyGuest.DotMailerIdAlias);
+            }
+            set
+            {
+                this.SetPropertyValue(PartyGuest.DotMailerIdAlias, value);
             }
         }
 

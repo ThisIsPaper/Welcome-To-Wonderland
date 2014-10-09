@@ -24,6 +24,7 @@ namespace Wonderland.Logic.Models.Members
         public const string BillingAddressAlias = "billingAddress";
         public const string ProfileImageAlias = "profileImage";
         public const string ForgottenPasswordGuidAlias = "forgottenPasswordGuid";
+        public const string DotMailerIdAlias = "dotMailerId";
 
         private Guid? partyGuid = null; // used as a local cache, as the setter / getter normally requires a full round trip
 
@@ -110,6 +111,18 @@ namespace Wonderland.Logic.Models.Members
             set
             {
                 this.SetPropertyValue(PartyGuest.ForgottenPasswordGuidAlias, value.ToString("D").ToLower());
+            }
+        }
+
+        public int DotMailerId
+        {
+            get
+            {
+                return this.GetPropertyValue<int>(PartyGuest.DotMailerIdAlias);
+            }
+            set
+            {
+                this.SetPropertyValue(PartyGuest.DotMailerIdAlias, value);
             }
         }
 

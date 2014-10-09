@@ -14,6 +14,7 @@ namespace Wonderland.Logic.DotMailer
     internal static class DotMailerService
     {
         // address book limit = 1000
+        // api calls per hour limit = 2000
 
         private const int HostRegistrationStarted_AddressBookId = 114524;
         private const int HostRegistrationCompleted_AddressBookId = 114525;
@@ -28,7 +29,13 @@ namespace Wonderland.Logic.DotMailer
         {
             ApiService apiService = DotMailerService.GetApiService();
 
-            apiService.AddContactToAddressBook(DotMailerService.HostRegistrationStarted_AddressBookId, contact.ToApiContact());
+            // create contact
+            ApiContact apiContact = apiService.CreateContact(contact.ToApiContact());
+
+            // get dotMailer id
+            contact.Partier.DotMailerId = apiContact.Id;
+
+            apiService.AddContactToAddressBook(DotMailerService.HostRegistrationStarted_AddressBookId, apiContact);
         }
 
         /// <summary>
@@ -49,13 +56,22 @@ namespace Wonderland.Logic.DotMailer
         /// <param name="contact"></param>
         internal static void GuestRegistrationStarted(Contact contact)
         {
+            ApiService apiService = DotMailerService.GetApiService();
+
+            // create contact
+            ApiContact apiContact = apiService.CreateContact(contact.ToApiContact());
+
+            // get dotMailer id
+            contact.Partier.DotMailerId = apiContact.Id;
+
+            apiService.AddContactToAddressBook(DotMailerService.GuestRegistrationStarted_AddressBookId, apiContact);
         }
 
         /// <summary>
         /// move contact from the 'Guest Registration Started' to the 'Guest Registration Completed' address book
         /// </summary>
         /// <param name="contac"></param>
-        internal static void GuestRegistrationCompleted(Contact contac)
+        internal static void GuestRegistrationCompleted(Contact contact)
         {
         }
 

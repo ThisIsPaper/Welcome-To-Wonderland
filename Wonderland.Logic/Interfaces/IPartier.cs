@@ -52,5 +52,7 @@ namespace Wonderland.Logic.Interfaces
         /// 
         /// </summary>
         Guid ForgottenPasswordGuid { get; set; }
+
+        int DotMailerId { get; set; }
     }
 }
