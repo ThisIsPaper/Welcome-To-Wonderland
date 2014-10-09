@@ -10,7 +10,7 @@ wonderlandApp.directive('mVerticalAlign', ['debounce', '$timeout', '$window', fu
                     element.css('top', (scope.parentHeight() - element.height())/2);
                 }, 200);
 
-            scope.parentHeight = function () { return myParent.height(); };
+            scope.parentHeight = function () { return myParent.height() + Number(myParent.css('padding-top').replace('px', '')) + Number(myParent.css('padding-bottom').replace('px', '')); };
             scope.parentWidth = function () { return myParent.width(); };
 
             attrs.$observe('mVerticalAlign', function (newVal) {

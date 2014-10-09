@@ -21,7 +21,8 @@
             <div class="boxx collapse" m-radius-picker="large">
 
                 <div class="wgrid-full parent wgrid-no-bottom-margin">
-                    <div class="grid-12 party-main-image" style="background-image: url(@Model.TileImage.Url)"></div>
+                    @*<div class="grid-12 party-main-image" style="background-image: url(@Model.TileImage.Url)"></div>*@
+                    <img ng-src="{{ '@Model.TileImage.GetResponsiveCropUrl("Letterbox")'|mQuality:50|mWidth:850 }}" alt=""/>
                     <div class="boxx-twerk"></div>
                 </div>
 
