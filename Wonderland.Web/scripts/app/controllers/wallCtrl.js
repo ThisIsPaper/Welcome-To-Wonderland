@@ -9,6 +9,8 @@ wonderlandApp.controller('WallCtrl', ['mHttp', 'safeApply', '$filter', '$scope',
             imageShowError: false,
 
             messageProcessing: false,
+            messageShowSuccess: false,
+            messageShowError: false,
 
             feedProcessingPost: false,
 
@@ -130,9 +132,23 @@ wonderlandApp.controller('WallCtrl', ['mHttp', 'safeApply', '$filter', '$scope',
         });
     };
 
-    $scope.$onRootScope('wallMessagePosted', function () {
-        $scope.wallFormModelInit(initialFormModel);
-        $scope.getFeed();
+    $scope.$onRootScope('wallMessagePosted', function (event, response, dataObject) {
+
+        if (response && response.Success === true) {
+            $scope.wall.feedback.messageShowSuccess = true;
+            $scope.wallFormModelInit(initialFormModel);
+            $scope.getFeed();
+        } else {
+            $scope.wall.feedback.messageProcessing = false;
+            $scope.wall.feedback.messageShowError = true;
+        }
+
+
+        $timeout(function () {
+            $scope.wall.feedback.messageShowSuccess = false;
+            $scope.wall.feedback.messageShowError = false;
+        }, 5000);
+
     });
 
     $scope.$onRootScope('wallImageUploadStart', function () {

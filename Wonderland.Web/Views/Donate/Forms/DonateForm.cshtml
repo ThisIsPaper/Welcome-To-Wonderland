@@ -56,7 +56,7 @@
 
 
 
-    <div class="margin-bottom-large">
+    <div class="grid-8 grid-tablet-12 parent margin-bottom-large">
         <label for="FirstName">First name</label>
         @Html.TextBoxFor(x => x.FirstName, new { @m_radius_picker="small", @ng_readonly="processing", @ng_class="{'error': errorFirstNameMessage.length>0}" })
         <div class="margin-bottom-small" ng-show="errorFirstNameMessage.length>0" ng-init="errorFirstNameMessage='@Html.ValidationMessageFor(x => x.FirstName)'">@Html.ValidationMessageFor(x => x.FirstName)</div>
@@ -85,10 +85,12 @@
     </div>
 
 
+    <div class="grid-12 parent">
+        <button type="submit" class="btn-primary float-right" m-radius-picker="small" ng-disabled="processing">Proceed</button>
+        <span class="cancel margin-right-1 float-right">Cancel</span>
+        <div class="loader" ng-show="processing"></div>
+    </div>
 
-    <button type="submit" class="btn-primary float-right" m-radius-picker="small" ng-disabled="processing">Proceed</button>
-    <span class="cancel margin-right-1 float-right">Cancel</span>
-    <div class="loader" ng-show="processing"></div>
 }
 
 

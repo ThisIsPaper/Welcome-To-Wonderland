@@ -15,13 +15,16 @@
     <div class="party-details">
         <h3 class="top pad-right-3 margin-bottom-4 margin-mobile-bottom-0 min-height-4">@Model.PartyHost.PartyHeading</h3>
 
-        <div class="anti-image-shift-details body-medium float-left margin-right-medium">
-            <span class="icon-icon_clock"></span>
-            <span ng-bind="partyDateTime|datePreviewFormat" ng-init="partyDateTime='@Model.PartyHost.PartyDateTime'"></span>
-        </div>
-        <div class="anti-image-shift-details body-medium float-left">
-            <span class="icon-icon_fingerpost"></span>
-            <span ng-bind="'@Model.PartyHost.PartyAddress.Address1:~:@Model.PartyHost.PartyAddress.Address2:~:@Model.PartyHost.PartyAddress.TownCity:~:@Model.PartyHost.PartyAddress.Postcode'|addressJoiner:':~:'"></span>
+        <div class="anti-image-shift-details body-medium">
+            <hr class="hide-on-tablet"/>
+            <div class="dis-inline-block margin-right-medium">
+                <span class="icon-icon_clock"></span>
+                <span ng-bind="partyDateTime|datePreviewFormat" ng-init="partyDateTime='@Model.PartyHost.PartyDateTime'"></span>
+            </div>
+            <div class="dis-inline-block">
+                <span class="icon-icon_fingerpost"></span>
+                <span ng-bind="'@Model.PartyHost.PartyAddress.TownCity'|addressJoiner:':~:'"></span>
+            </div>
         </div>
 
     </div>

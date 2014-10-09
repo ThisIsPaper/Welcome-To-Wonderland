@@ -14,7 +14,7 @@ module.exports = function (grunt) {
                              all: {
                                  files: {
                                      '<%= pkg.jsPath %>all.min.js': [
-                                         '<%= pkg.jsPath %>slimmage.js',
+                                         '<%= pkg.jsPath %>slimmage.min.js',
                                          '<%= pkg.jsPath %>vendor/modernizr-2.6.2.min.js',
 
                                          '<%= pkg.jsPath %>vendor/jquery-1.10.2.js',
@@ -24,6 +24,7 @@ module.exports = function (grunt) {
                                          '<%= pkg.jsPath %>bower_components/ocModal/dist/ocModal.js',
                                          '<%= pkg.jsPath %>bower_components/moment/moment.js',
                                          '<%= pkg.jsPath %>bower_components/pikaday/pikaday.js',
+                                         '<%= pkg.jsPath %>bower_components/angular-macgyver/lib/macgyver-core.js',
 
                                          '<%= pkg.jsPath %>app/app.js',
 
@@ -46,6 +47,7 @@ module.exports = function (grunt) {
                                          '<%= pkg.jsPath %>app/directives/mProfileImage.js',
                                          '<%= pkg.jsPath %>app/directives/mRadiusPicker.js',
                                          '<%= pkg.jsPath %>app/directives/mRotate.js',
+                                         '<%= pkg.jsPath %>app/directives/mSelectOnClick.js',
                                          '<%= pkg.jsPath %>app/directives/mTotaliser.js',
                                          '<%= pkg.jsPath %>app/directives/mValidnumber.js',
                                          '<%= pkg.jsPath %>app/directives/mValueMatcher.js',
@@ -76,6 +78,7 @@ module.exports = function (grunt) {
                                          '<%= pkg.cssPath %>main.css',
                                          '<%= pkg.jsPath %>bower_components/ocModal/dist/css/ocModal.full.css',
                                          '<%= pkg.jsPath %>bower_components/pikaday/css/pikaday.css',
+                                         '<%= pkg.jsPath %>bower_components/angular-macgyver/lib/macgyver.css',
                                          '<%= pkg.cssPath %>overrides.css'
                                      ]
                                  }

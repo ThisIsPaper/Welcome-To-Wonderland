@@ -11,8 +11,6 @@
  =============================================================================
  This file is responsible for establishing base styles for the Macmillan - Wonderland app.
  --------------------------------------------------------------------------------------------------------------------- */
-
-
 @import "compass/css3";
 @import "partials/variables";
 @import "partials/helpers";
@@ -22,41 +20,38 @@
 @import "partials/type";
 @import "partials/vars";
 
-
 html {
-  font-size: 62.5%;
+	font-size: 62.5%;
 }
 
 body {
-  color: $TextColour;
-  background: $BodyBackground;
-  line-height: $LineHeight;
-  font-family: $BaseFontFamily;
-  font-size: $FontSizeMedium;
-  @extend %margin-none;
-  @extend %padding-none;
+	color: $greyReallyDark;
+	background: $BodyBackground;
+	line-height: $LineHeight;
+	font-family: $BaseFontFamily;
+	font-size: $FontSizeMedium;
+	@extend %margin-none;
+	@extend %padding-none;
 }
 
 nav, nav li, .toolbar, .toolbar li, .btn-group {
-  @extend %inline;
-  ul {
-    @extend %margin-none;
-    @extend %padding-none;
-  }
-  input {
-    @extend %inline;
-  }
+	@extend %inline;
+	ul {
+		@extend %margin-none;
+		@extend %padding-none;
+	}
+	input {
+		@extend %inline;
+	}
 }
 
-
 pre {
-    white-space: pre-wrap;
+	white-space: pre-wrap;
 }
 
 td {
-    padding-right: $padSmallValue * $multiplierLarge;
+	padding-right: $padSmallValue * $multiplierLarge;
 }
-
 
 /************************************************************************** ANGULAR
 
@@ -70,732 +65,742 @@ td {
 Shadows
 ========================================================================== */
 .shadowed {
-  @include box-shadow(0 0 3rem fade-out($TextColour, .3));
+	@include box-shadow(0 0 3rem fade-out($TextColour, .3));
 }
 
 /* =============================================================================
 images
 ========================================================================== */
 img, object, embed {
-  max-width: $RowWidth; //prevent images from going beyond the viewport
-  margin: 0;
-  padding: 0;
-  display: block;
+	max-width: $RowWidth; //prevent images from going beyond the viewport
+	margin: 0;
+	padding: 0;
+	display: block;
 }
 
 iframe {
-    border: none;
+	border: none;
 }
 
 /* =============================================================================
 Base page structure
 ========================================================================== */
 .page-container {
-  position: relative;
-  width: 100%;
-  left: 0;
+	position: relative;
+	width: 100%;
+	left: 0;
 }
 
 main {
-    padding-top: 8.4rem;
+	padding-top: 8.4rem;
 }
 
 .page-bg {
-    background-color: $greyReallyLight;
-    background-image: image-url('bg_simple.png');
-    background-repeat: repeat-x;
-    background-position: top center;
-    padding: 13rem 0 6rem;
+	background-color: $greyReallyLight;
+	background-image: image-url('bg_simple.png');
+	background-repeat: repeat-x;
+	background-position: top center;
+	padding: 13rem 0 6rem;
 }
-
-
 
 /* =============================================================================
 Event Page specific - move these out of here eventually
 ========================================================================== */
 .party-main-image {
-    background-color: $greyLight;
-    background-position: center center;
-    background-size: cover;
-    height: 37.2rem;
+	background-color: $greyLight;
+	background-position: center center;
+	background-size: cover;
+	height: 37.2rem;
 
-    &.side {
-        height: 18rem;
-    }
+	&.side {
+		height: 18rem;
+	}
 }
 
 .party-image-default {
-    position: absolute;
-    text-align: center;
-    width: 100%;
-    height: 100%;
-    color: $SecondaryColour;
-    font-size: $FontSizeLarge;
-    background-color: $greyLight;
-    padding-top: 6rem;
+	position: absolute;
+	text-align: center;
+	width: 100%;
+	height: 100%;
+	color: $SecondaryColour;
+	font-size: $FontSizeLarge;
+	background-color: $greyLight;
+	padding-top: 9rem;
 }
 
 .no-party-image {
-    background-color: $greyLight;
-    min-height: 17rem;
+	background-color: $greyLight;
+	min-height: 25rem;
 }
 
 .edit-trigger {
-    position: absolute;
-    top: 2rem;
-    right: 2rem;
-    cursor: pointer;
-    color: white;
-    font-size: $FontSizeSmall;
-    line-height: 3rem;
-    text-align: center;
-    width: 3rem;
-    height: 3rem;
-    background-color: $FourthColour;
-    @include m-border-radius(3rem, 3rem, 3rem, 3rem, 3rem, 3rem, 3rem, 3rem);
+	position: absolute;
+	top: 2rem;
+	right: 2rem;
+	cursor: pointer;
+	color: white;
+	font-size: $FontSizeSmall;
+	line-height: 3rem;
+	text-align: center;
+	width: 3rem;
+	height: 3rem;
+	background-color: $FourthColour;
+	@include m-border-radius(3rem, 3rem, 3rem, 3rem, 3rem, 3rem, 3rem, 3rem);
 
+	.edit-label {
+		display: none;
+		margin-right: 1rem;
+		text-transform: uppercase;
+	}
 
-    .edit-label {
-        display: none;
-        margin-right: 1rem;
-        text-transform: uppercase;
-    }
-
-    &:hover {
-        padding: 0 .95rem;
-        width: auto;
-        .edit-label {
-            display: inline;
-        }
-    }
+	&:hover {
+		padding: 0 .95rem;
+		width: auto;
+		.edit-label {
+			display: inline;
+		}
+	}
 }
 
-
 .profile-image {
-    width: $profileImageSize;
-    height: $profileImageSize;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-color: $greyMedium;
-    float: left;
+	width: $profileImageSize;
+	height: $profileImageSize;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-color: $greyMedium;
+	float: left;
 
-    &:before {
-        font-family: $fontFaceIcomoon;
-        content: " ";
-        color: white;
-        font-size: 5rem;
-        line-height: 7rem;
-        width: 100%;
-        text-align: center;
-        display: block;
-    }
+	&:before {
+		font-family: $fontFaceIcomoon;
+		content: " ";
+		color: white;
+		font-size: 5rem;
+		line-height: 7rem;
+		width: 100%;
+		text-align: center;
+		display: block;
+	}
 
-    &.profile-image-notset:before {
-        content: "\e61b";
-    }
+	&.profile-image-notset:before {
+		content: "\e61b";
+	}
 
-    &.small {
-        width: $profileImageSize * .7;
-        height: $profileImageSize * .7;
-    }
+	&.small {
+		width: $profileImageSize * .7;
+		height: $profileImageSize * .7;
+
+		&:before {
+			font-size: 3.8rem;
+			line-height: 5.2rem;
+		}
+	}
 }
 
 .profile-image-remover {
-    color: $redDark;
-    font-size: $FontSizeMini;
-    cursor: pointer;
+	color: $redDark;
+	font-size: $FontSizeMini;
+	cursor: pointer;
 
-    position: absolute;
-    top: $profileImageSize + .6rem;
-    left: .3rem;
-    width: $profileImageSize;
+	position: absolute;
+	top: $profileImageSize + .6rem;
+	left: .3rem;
+	width: $profileImageSize;
 }
 
-
 .image-shift-details {
-    margin-left: $profileImageSize + $padSmallValue;
+	margin-left: $profileImageSize + $padSmallValue;
 
-    &.bigger {
-        margin-left: $profileImageSize + $padSmallValue + 5rem;
-    }
+	&.bigger {
+		margin-left: $profileImageSize + $padSmallValue + 5rem;
+	}
 
 }
 
 .anti-image-shift-details {
-    margin-left: -($profileImageSize + $padSmallValue);
+	margin-left: -($profileImageSize + $padSmallValue);
 
-    &.bigger {
-        margin-left: -($profileImageSize + $padSmallValue + 5rem);
-    }
+	&.bigger {
+		margin-left: -($profileImageSize + $padSmallValue + 5rem);
+	}
 }
 
 .party-details {
-    @extend .image-shift-details;
-    color: $greyMedium;
+	@extend .image-shift-details;
+	color: $greyDark;
 
-    [class^="icon-"], [class*=" icon-"] {
-        color: $greyLight;
-    }
+	[class^="icon-"], [class*=" icon-"] {
+		color: $greyLight;
+	}
 }
-
 
 .badge {
-    width: 100%;
-    height: 7.8rem;
-    overflow: hidden;
+	width: 100%;
+	height: 7.8rem;
+	overflow: hidden;
 
-    background-size: 7rem 15.6rem;
-    background-repeat: no-repeat;
-    background-position: bottom center;
+	background-size: 7rem 15.6rem;
+	background-repeat: no-repeat;
+	background-position: bottom center;
 
-    &.badge.collected {
-        background-position: top center;
-    }
+	&.badge.collected {
+		background-position: top center;
+	}
 }
 
-
-
-
-/*******************************/// party image mo
+/*******************************/
+// party image mo
 .party-image-container {
-    @extend .margin-bottom-medium;
+	@extend .margin-bottom-medium;
 
-    float: left;
+	float: left;
 
-    input[type="radio"] {
-        display: none;
-    }
+	input[type="radio"] {
+		display: none;
+	}
 
-    .warner {
-        @extend .warning;
-        width: 16rem;
-        text-align: center;
-        display: none;
-    }
+	.warner {
+		@extend .warning;
+		width: 16rem;
+		text-align: center;
+		display: none;
+	}
 
-    &.selected {
+	&.selected {
 
-        .party-image-selecter:after {
-            content: "\e61f"; // tick
-            font-family: "icomoon";
-            background-color: $SecondaryColour;
-            color: white;
-            font-size: 4rem;
-            padding: 2rem 7rem 2rem 5.8rem;
-            opacity: .8;
-            line-height: 8rem;
-        }
+		.party-image-selecter:after {
+			content: "\e61f"; // tick
+			font-family: "icomoon";
+			background-color: $SecondaryColour;
+			color: white;
+			font-size: 4rem;
+			padding: 2rem 7rem 2rem 5.8rem;
+			opacity: .8;
+			line-height: 8rem;
+		}
 
-        .party-image-selecter:before {
-            content: "";
-            margin-left: 0;
-        }
+		.party-image-selecter:before {
+			content: "";
+			margin-left: 0;
+		}
 
-        .warner {
-            display: block;
-            cursor: pointer;
-        }
-    }
+		.warner {
+			display: block;
+			cursor: pointer;
+		}
+	}
 }
 
 .party-image-selecter {
-    @extend .margin-right-small;
-    width: 16rem;
-    height: 7.5rem;
-    background-size: cover;
-    background-color: $greyLight;
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
+	@extend .margin-right-small;
+	width: 16rem;
+	height: 7.5rem;
+	background-size: cover;
+	background-color: $greyLight;
+	cursor: pointer;
+	position: relative;
+	overflow: hidden;
 
+	&:before {
+		color: white;
+		font-size: $HeadingFontSizeLarge;
+		line-height: 7.5rem;
+		margin-left: 6.8rem;
+	}
 
-    &:before {
-        color: white;
-        font-size: $HeadingFontSizeLarge;
-        line-height: 7.5rem;
-        margin-left: 6.8rem;
-    }
+	&.image-unset {
+		cursor: default;
+	}
 
-    &.image-unset {
-        cursor: default;
-    }
-
-    &.image-set:before {
-        content: "";
-    }
+	&.image-set:before {
+		content: "";
+	}
 }
 
+
 .reference-image {
-    width: 100%;
-    height: 9rem;
-    background-size: cover;
+	width: 100%;
+	height: 9rem;
+	background-size: cover;
 }
 
 .file-upload-info {
-    @extend .body-small;
+	@extend .body-small;
 
-    //margin-left: 17.2rem;
+	//margin-left: 17.2rem;
 }
 
-/*******************************/// wall
+
+.date-details-shifter {
+	padding-right: $padSmallValue;
+}
+
+/*******************************/
+// wall
 .wall-details {
-    @extend .image-shift-details;
-    @extend .body-small;
-    color: $greyMedium;
-    min-height: 6rem;
+	@extend .image-shift-details;
+	color: $greyMedium;
+	min-height: 6rem;
 }
 
 .wall-name, wall-type {
-    font-weight: bold;
-    color: $greyDark;
+	font-weight: bold;
+	color: $greyReallyDark;
 }
 
 .wall-type {
-    text-transform: uppercase;
+	display: inline-block;
+	text-transform: uppercase;
 
-    &.donation {
-        color: $SecondaryColour;
-    }
+	&.donation {
+		color: $SecondaryColour;
+	}
 
-    &.party-host {
-        color: orange;
-    }
+	&.party-host {
+		color: orange;
+	}
 }
 
 .wall-time {
-    color: $greyLight;
+	display: inline-block;
+	color: $greyDark;
 }
 
 .wall-remove {
-    position: absolute;
-    top: 0;
-    right: 0;
-    margin: 0;
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin: 0;
 
-    &.loader {
-        margin-top: -3rem;
-    }
+	&.loader {
+		margin-top: -3rem;
+	}
 }
 
 .donation-copy {
-    color: $SecondaryColour;
-    font-size: $FontSizeLarge;
+	color: $SecondaryColour;
+	font-size: $FontSizeLarge;
 }
 
 .wall-textarea {
-    margin-bottom: 0;
-    padding-bottom: 0;
-    border-bottom: none;
-    @include border-bottom-radius(0);
+	font: $fontFaceFutura;
+	margin-bottom: 0;
+	padding-bottom: 0;
+	border-bottom: none!important;
+	@include border-bottom-radius(0);
 }
+
 
 .wall-image-preview {
-    border: .1rem solid $greyLight;
-    margin-top: 0;
-    padding-top: 0;
-    border-top: none;
-    background-color: white;
-    margin-top: -.6rem;
+	border: .1rem solid $greyLight;
+	margin-top: 0;
+	padding-top: 0;
+	border-top: none!important;
+	background-color: white;
+	margin-top: -.6rem;
 
-    width: 100%;
+	width: 100%;
 
-    @include border-top-radius(0);
+	@include border-top-radius(0);
+
+	&.error {
+		border: .1rem solid $redDark;
+	}
 }
 
-/*******************************/// ticket
-
+/*******************************/
+// ticket
 
 .ticket {
-    position: relative;
+	position: relative;
 
-    .stub {
-        @extend .pad-medium;
-        background-color: $greyLight;
-        overflow: hidden;
+	.stub {
+		@extend .pad-medium;
+		background-color: $greyLight;
+		overflow: hidden;
 
-        .holes, .holes-right {
-            position: absolute;
-            left: -.1rem;
-            top: -.1rem;
-            width: 1.2rem;
-            height: 101%;
-            background-image: image-url('raffle.svg');
-            background-repeat: no-repeat;
-        }
+		.holes, .holes-right {
+			position: absolute;
+			left: -.1rem;
+			top: -.1rem;
+			width: 1.2rem;
+			height: 101%;
+			background-image: image-url('raffle.svg');
+			background-repeat: no-repeat;
+		}
 
-        .holes-right {
-            left: auto;
-            right: -.1rem;
-            background-image: image-url('raffle_r.svg');
-        }
+		.holes-right {
+			left: auto;
+			right: -.1rem;
+			background-image: image-url('raffle_r.svg');
+		}
 
-        .price {
-            @extend .heading-small;
-            @include border-radius(1rem);
+		.price {
+			@extend .heading-small;
+			@include border-radius(1rem);
 
-            font-family: $fontFaceMacmillan;
-            color: $FourthColour;
+			font-family: $fontFaceMacmillan;
+			color: $FourthColour;
 
-            border: .1rem solid white;
-            text-align: center;
+			border: .1rem solid white;
+			text-align: center;
 
-            line-height: 7.3rem;
-        }
+			line-height: 7.3rem;
+		}
 
-    }
+	}
 
+	&.selected {
+		.stub {
+			background-color: $FourthColour;
 
-    &.selected {
-        .stub {
-            background-color: $FourthColour;
+			.price {
+				color: white !important;
+				border: .1rem solid $greenMedium;
+			}
 
-            .price {
-                color: white !important;
-            }
+		}
+	}
 
-        }
-    }
-
-    input[type="radio"] {
-        display: none;
-    }
+	input[type="radio"] {
+		display: none;
+	}
 
 }
-
 
 label .ticket {
-    span {
-      color: inherit;
-    }
+	span {
+		color: inherit;
+	}
 }
 
-
-/*******************************/// totaliser
+/*******************************/
+// totaliser
 
 .totaliser {
-    @extend .pad-tiny;
-    @include border-radius($padSmallValue/2);
-    background-color: $greyLight;
+	@extend .pad-tiny;
+	@include border-radius($padSmallValue/2);
+	background-color: $greyLight;
 
+	.current-total {
+		@include border-radius($padSmallValue/2);
+		background-color: $FourthColour;
+		background-image: image-url('frost.png');
+		background-repeat: repeat-x;
+		background-position: top left;
+		width: 0;
+		max-width: 100%;
+		height: 3rem;
 
-    .current-total {
-        @include border-radius($padSmallValue/2);
-        background-color: $FourthColour;
-        background-image: image-url('frost.png');
-        background-repeat: repeat-x;
-        background-position: top left;
-        width: 0;
-        max-width: 100%;
-        height: 3rem;
-
-        @include transition-property(width);
-        @include transition-duration(.5s);
-        @include transition-delay(1s);
-        @include transition-timing-function(ease-in);
-    }
+		@include transition-property(width);
+		@include transition-duration(.5s);
+		@include transition-delay(1s);
+		@include transition-timing-function(ease-in);
+	}
 }
-
 
 /* =============================================================================
 One-off uses
 ========================================================================== */
 
 #twitter-widget-0 {
-  width:100% !important;
+	width: 100% !important;
 }
 
 .home-twitter-boxx {
-    height: 35.6rem; // includes 1.8rem padding // TODO - might need to change this
+	height: 35.6rem; // includes 1.8rem padding // TODO - might need to change this
 }
 
 .piggy-donater:after {
-    @extend .margin-left-small;
-    content: "\e61c";
-    font-family: $fontFaceIcomoon;
-    color: white;
+	@extend .margin-left-small;
+	content: "\e61c";
+	font-family: $fontFaceIcomoon;
+	color: white;
 }
 
 .join-party-ico:after {
-    @extend .margin-left-small;
-    content: "\e601";
-    font-family: $fontFaceIcomoon;
-    color: white;
+	@extend .margin-left-small;
+	content: "\e601";
+	font-family: $fontFaceIcomoon;
+	color: white;
 }
 
-
-
-/*******************************/// home page
-
+/*******************************/
+// home page
 
 .hero {
-  height: 45rem;
-  background-image: image-url('hero-ph.jpg');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  margin: 0;
-  padding-top: 10rem;
+	height: 45rem;
+	background-image: image-url('hero-ph.jpg');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	margin: 0;
+	padding-top: 10rem;
 }
 
 .planking {
-  background: image-url('wood_texture.jpg') repeat top left;
-  background-size: 100% auto;
+	background: image-url('wood_texture.jpg') repeat top center;
 }
 
 .home-content-adjust {
-    margin-top: -8rem;
+	margin-top: -8rem;
 }
 
 .hero-explain {
-    margin-right: 35rem;
-    text-align: left;
+	margin-right: 35rem;
+	text-align: left;
 
-    &.full-width {
-        margin-right: 0;
-    }
+	&.full-width {
+		margin-right: 0;
+	}
 }
 
 .money-raised {
-    position: absolute;
-    top: $padSmallValue * 2;
-    right: $padSmallValue * 2;
-    background: image-url('amount-raised-ph.png') no-repeat center right transparent;
-    height: 15rem;
-    width: 34rem;
+	position: absolute;
+	top: $padSmallValue * 2;
+	right: $padSmallValue * 2;
+	background: image-url('amount-raised-ph.png') no-repeat center right transparent;
+	height: 15rem;
+	width: 34rem;
 }
 
 .raised-amount {
-    color: white;
-    width: 27.5rem;
+	color: white;
+	width: 27.5rem;
 
-    font-size: 3.5rem;
-    line-height: 4.7rem;
+	font-size: 3.5rem;
+	line-height: 4.7rem;
 }
 
 .home-tile {
-    @extend .pad-small;
-    @extend .margin-bottom-large;
-    background-color: white;
-    position: relative;
-    overflow: hidden;
+	@extend .pad-small;
+	@extend .margin-bottom-large;
+	background-color: white;
+	position: relative;
+	overflow: hidden;
 
-    @include box-shadow( 0px 14px 30px 0px rgba(0, 0, 0, 0.6) );
+	@include box-shadow(0px 14px 30px 0px rgba(0, 0, 0, 0.6));
 }
 
 .home-tile-image {
-    @include border-radius(.7rem);
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 100%;
-    width: 100%;
+	@include border-radius(.7rem);
+	background-repeat: no-repeat;
+	background-size: cover;
+	height: 100%;
+	width: 100%;
 }
 
 .home-tile-label {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    max-width: 60%;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	max-width: 60%;
 }
 
-
-
-/*******************************/// spotfiy
+/*******************************/
+// spotfiy
 
 .spotify-holder {
-    width: 35.6rem;
-    margin-top: -7rem;
+	width: 35.6rem;
+	margin-top: -7rem;
 }
 
 .spotify-info-holder {
-    @extend .pad-right-large;
-    position: absolute;
-    top: 12rem;
-    color: white;
-    text-align: center;
+	@extend .pad-right-large;
+	position: absolute;
+	left: 0;
+	color: white;
+	text-align: center;
 
-    h1 {
-        color: white;
-    }
+	h1 {
+		color: white;
+	}
 }
 
-
-/*******************************/// wonderlanders
+/*******************************/
+// wonderlanders
 
 .scoreboard-place {
-    float: left;
-    width: 5rem;
+	float: left;
+	width: 5rem;
 }
 
 .scoreboard-value {
-    position: absolute;
-    top: 0;
-    right: 0;
-    color: $SecondaryColour;
+	position: absolute;
+	top: 0;
+	right: 0;
+	color: $SecondaryColour;
 }
 
-
-
-
-/*******************************/// party ideas
+/*******************************/
+// party ideas
 
 .idea-sizer {
-    width: 25%;
+	width: 25%;
 }
 
 .idea-tile {
-    @extend .radius-v1-small;
-    width: 25%;
-    padding: $padSmallValue;
+	@extend .radius-v1-small;
+	width: 25%;
+	padding: $padSmallValue;
 
-    &.wide {
-        width: 50%;
-    }
+	&.wide {
+		width: 50%;
+	}
 }
 
 .idea {
-    padding: $padSmallValue;
-    background-color: white;
-    text-transform: uppercase;
-    text-align: center;
-    @include box-shadow( 0px 14px 30px 0px rgba(0, 0, 0, 0.6) );
+	padding: $padSmallValue;
+	background-color: white;
+	text-transform: uppercase;
+	text-align: center;
+	@include box-shadow(0px 14px 30px 0px rgba(0, 0, 0, 0.6));
 }
 
 .idea-details {
-    width: 100%;
-    top: 11%;
-    left: 0;
-    padding: 0 $padSmallValue;
+	width: 100%;
+	top: 11%;
+	left: 0;
+	padding: 0 $padSmallValue;
 
-    &.over-the-top {
-        position: absolute;
-        color: white;
+	&.over-the-top {
+		position: absolute;
+		color: white;
 
-        h1 {
-            color: white;
-        }
-    }
+		h1 {
+			color: white;
+		}
+	}
 
-    &.wide {
-        top: 23%;
-    }
+	&.wide {
+		top: 23%;
+	}
 }
 
 .idea-polaroid {
-    @include border-radius(.7rem);
+	@include border-radius(.7rem);
 }
 
 .pinterest-ico:before {
-    content: "\e623";
-    font-family: $fontFaceIcomoon;
-    color: $redDark;
+	content: "\e623";
+	font-family: $fontFaceIcomoon;
+	color: $redDark;
 }
 
 .spotify-logo {
-    width: 8rem;
-    height: 2.4rem;
-    background-image: image-url('spotify_logo@2x.png');
-    background-repeat: no-repeat;
-    background-size: 8rem 2.4rem;
-    overflow: hidden;
+	width: 8rem;
+	height: 2.4rem;
+	background-image: image-url('spotify_logo@2x.png');
+	background-repeat: no-repeat;
+	background-size: 8rem 2.4rem;
+	overflow: hidden;
 
-    margin: 0 auto;
+	margin: 0 auto;
 }
 
 .idea-link {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
 
-    z-index: 5;
-    text-indent: -999rem;
+	z-index: 5;
+	text-indent: -999rem;
 }
 
 .share-title {
-    width: 27.8rem;
-    height: 11.6rem;
-    background-image: image-url('share-title@2x.png');
-    background-repeat: no-repeat;
-    background-size: 27.8rem 11.6rem;
+	width: 27.8rem;
+	height: 11.6rem;
+	background-image: image-url('share-title@2x.png');
+	background-repeat: no-repeat;
+	background-size: 27.8rem 11.6rem;
 
 }
 
 .share-facebook, .share-twitter, .share-email {
-    background-color: $colorFacebook;
-    font-family: $fontFaceMacmillan;
-    font-size: $FontSizeLarge;
-    color: white;
-    padding: $padSmallValue;
-    line-height: 5.5rem;
+	background-color: $colorFacebook;
+	font-family: $fontFaceMacmillan;
+	font-size: $FontSizeLarge;
+	color: white;
+	padding: $padSmallValue;
+	line-height: 5.5rem;
 
-    &:before {
-        font-family: $fontFaceIcomoon;
-        content: "\e619";
-        margin-right: $marginSmallValue;
-    }
+	&:before {
+		font-family: $fontFaceIcomoon;
+		content: "\e619";
+		margin-right: $marginSmallValue;
+	}
 }
 
 .share-twitter {
-    background-color: $colorTwitter;
-    &:before {
-        content: "\e61a";
-    }
+	background-color: $colorTwitter;
+	&:before {
+		content: "\e61a";
+	}
 }
 
-
 .share-email {
-    background-color: $SecondaryColour;
-    &:before {
-        content: "\e618";
-        margin-right: 0;
-    }
+	background-color: $SecondaryColour;
+	&:before {
+		content: "\e618";
+		margin-right: 0;
+	}
 }
 
 .centered-share-holder {
-    .share-title {
-      display: block;
-      float: none;
-      margin-left: auto;
-      margin-right: auto;
-      clear: both;
-    }
+	.share-title {
+		display: block;
+		float: none;
+		margin-left: auto;
+		margin-right: auto;
+		clear: both;
+	}
 }
 
+/*******************************/
+// footer
 
+.color-facebook {
+	color: $colorFacebook !important;
+}
 
-/*******************************/// footer
+.color-twitter {
+	color: $colorTwitter !important;
+}
 
+.color-gplus {
+	color: $colorGPlus !important;
+}
 
-.color-facebook { color: $colorFacebook !important; }
-.color-twitter { color: $colorTwitter !important; }
-.color-gplus { color: $colorGPlus !important; }
-
-
-/*******************************/// donate
+/*******************************/
+// donate
 
 .giftaid-logo {
-    width: 10rem;
-    height: 3.5rem;
-    overflow: hidden;
-    background-image: image-url('giftaid-logo.jpg');
-    background-repeat: no-repeat;
-    background-size: 10rem 3.5rem;
+	width: 10rem;
+	height: 3.5rem;
+	overflow: hidden;
+	background-image: image-url('giftaid-logo.jpg');
+	background-repeat: no-repeat;
+	background-size: 10rem 3.5rem;
 
-    position: absolute;
-    right: 0;
-    top: 0;
+	position: absolute;
+	right: 0;
+	top: 0;
 }
 
 .fsb-logo {
-    width: 8rem;
-    height: 38rem;
-    overflow: hidden;
-    background-image: image-url('fsb.jpg');
-    background-repeat: no-repeat;
-    background-size: 8rem 8rem;
+	width: 8rem;
+	height: 38rem;
+	overflow: hidden;
+	background-image: image-url('fsb.jpg');
+	background-repeat: no-repeat;
+	background-size: 8rem 8rem;
 
-    position: absolute;
-    right: 0;
-    top: 0;
+	position: absolute;
+	right: 0;
+	top: 0;
+}
+
+.ticket-label {
+	line-height: 2rem;
 }

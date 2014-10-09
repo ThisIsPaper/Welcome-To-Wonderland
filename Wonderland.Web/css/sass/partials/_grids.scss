@@ -114,6 +114,10 @@ $settings : (
         padding: 0;
     }
 
+	&.error {
+		border: .4rem solid $redDark;
+	}
+
     &.internal {
         background: $greyReallyLight;
 

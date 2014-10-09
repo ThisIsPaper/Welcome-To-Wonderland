@@ -1,19 +1,25 @@
 /* =============================================================================
 overrides
 ========================================================================== */
-
-
 @import "partials/mixins";
+@import "partials/variables";
 @import "partials/vars";
 
-
-
 .modal-backdrop {
-    background-color: black !important;
+	background-color: black !important;
 }
 
 .modal .modal-dialog .modal-content {
-    padding: $padSmallValue * $multiplierLarge;
-    @include m-border-radius(1.64rem, 1.1rem, .9rem, .8rem, .9rem, 1.4rem, .9rem, 1.3rem, 2);
-    width: auto;
+	padding: $padSmallValue * $multiplierLarge;
+	@include m-border-radius(1.64rem, 1.1rem, .9rem, .8rem, .9rem, 1.4rem, .9rem, 1.3rem, 2);
+	width: auto;
 }
+
+.mac-tooltip {
+	background-color: $greyReallyDark;
+
+	&.top:after {
+		border-top: 6px solid $greyReallyDark;
+	}
+}
+
