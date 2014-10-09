@@ -23,6 +23,12 @@
 
                 <div class="wgrid-full wgrid-no-bottom-margin parent">
                     <div class="grid-12 party-main-image" style="background-image: url(@Model.TileImage.Url)"></div>
+
+                    <div class="wgrid-full spotify-info-holder" m-vertical-align="true">
+                        <h1>@Model.TileHeading</h1>
+                        <span ng-bind="tileCopy|striptags" ng-init="tileCopy='@Model.TileCopy'"></span>
+                    </div>
+
                     <div class="boxx-twerk z-index-0"></div>
                 </div>
 
@@ -41,12 +47,6 @@
                     <iframe src="https://embed.spotify.com/follow/1/?uri=spotify:user:ruperttebb&size=detail&theme=light&show-count=0" width="170" height="56" scrolling="no" frameborder="0" style="border:none; overflow:hidden;" allowtransparency="true"></iframe>
                 </div>
 
-            </div>
-
-
-            <div class="wgrid-full spotify-info-holder">
-                <h1>@Model.TileHeading</h1>
-                <span ng-bind="tileCopy|striptags" ng-init="tileCopy='@Model.TileCopy'"></span>
             </div>
 
         </div>

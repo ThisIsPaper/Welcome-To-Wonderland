@@ -145,3 +145,27 @@ wonderlandApp.filter('mLimitTo', ['$filter', function ($filter) {
     };
 
 }]);
+
+wonderlandApp.filter('mQuality', [function () {
+
+    return function (str, quality) {
+        var newStr = str;
+        if (str && !isNaN(quality)) {
+            newStr = str.replace(/quality=[0-9]+/i,"quality=" + quality);
+        }
+        return newStr;
+    };
+
+}]);
+
+wonderlandApp.filter('mWidth', [function () {
+
+    return function (str, width) {
+        var newStr = str;
+        if (str && !isNaN(width)) {
+            newStr = str.replace(/width=\d+/i, "width=" + width);
+        }
+        return newStr;
+    };
+
+}]);

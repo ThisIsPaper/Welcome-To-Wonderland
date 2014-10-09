@@ -51,8 +51,9 @@
                             <div class="grid-6 grid-tablet-12 text-align-center margin-bottom-small">
                                 It takes more than one to party. Share this link to invite guests.
                             </div>
+
                             <div class="grid-6 grid-tablet-12">
-                                <input type="text" ng-value="currentPageUrl" m-radius-picker="small" readonly="readonly"/>
+                                <input type="text" ng-value="currentPageUrl" m-radius-picker="small" readonly="readonly" m-select-on-click/>
                             </div>
                         </div>
                     </div>
@@ -78,9 +79,13 @@
 
 
             <div class="wgrid-full parent">
-                <div class="boxx" m-radius-picker ng-init="amountRaised=@Model.PartyHost.AmountRaised">
+                <div class="boxx" ng-class="{'error': fundraisingTargetData.FundraisingTarget<=0}" m-radius-picker ng-init="amountRaised=@Model.PartyHost.AmountRaised">
+
+                    <h4 class="top margin-right-3">Set your fundraising target</h4>
 
                     <m-totaliser m-raised="{{ amountRaised }}" m-total="{{ fundraisingTargetData.FundraisingTarget }}"></m-totaliser>
+
+                    <div class="errorred margin-top-5" ng-show="fundraisingTargetData.FundraisingTarget<=0">You need to set a fundraising target</div>
 
                     <div class="edit-trigger" ng-click="openPageModal('partials/fundraisingTargetForm.html', 'suggestedDonationModal', {'fundraisingTargetData': fundraisingTargetDataForForm})"><span class="edit-label">Edit</span><span class="icon-icon_edit"></span></div>
 
@@ -90,8 +95,8 @@
 
 
             <div class="wgrid-full parent">
-                <div class="boxx" m-radius-picker>
-                    <h4 class="top">Suggested ticket price</h4>
+                <div class="boxx" ng-class="{'error': suggestedDonationData.SuggestedDonation<=0}" m-radius-picker>
+                    <h4 class="top margin-right-3">Suggested ticket price</h4>
 
                     <div class="ticket selected centered max-width-25">
                         <div class="stub">
@@ -100,6 +105,8 @@
                             <div class="price" ng-bind="suggestedDonationData.SuggestedDonation|mCurrency:'£'"></div>
                         </div>
                     </div>
+
+                    <div class="errorred margin-top-large" ng-show="suggestedDonationData.SuggestedDonation<=0">You need to set a suggested ticket price</div>
 
                     <div class="edit-trigger" ng-click="openPageModal('partials/suggestedDonationForm.html', 'suggestedDonationModal', {'suggestedDonationData': suggestedDonationDataForForm})"><span class="edit-label">Edit</span><span class="icon-icon_edit"></span></div>
                 </div>
@@ -120,9 +127,9 @@
                     {
                         if (partier is PartyHost)
                         {
-                            <div class="margin-right-small margin-bottom-small" m-profile-image="{{ pageProfile.imageUrl }}" m-radius-picker="small"></div>
+                            <div class="margin-right-small margin-bottom-small" m-profile-image="{{ pageProfile.imageUrl }}" mac-tooltip="@partier.FirstName @partier.LastName" m-radius-picker="small"></div>
                         } else {
-                            <div class="margin-right-small margin-bottom-small" m-profile-image="{{ '@partier.ProfileImageUrl' }}" m-radius-picker="small"></div>
+                            <div class="margin-right-small margin-bottom-small" m-profile-image="{{ '@partier.ProfileImageUrl' }}" mac-tooltip="@partier.FirstName @partier.LastName" m-radius-picker="small"></div>
                         }
                     }
                     </div>
@@ -158,7 +165,7 @@
                     '@(Url.GetUmbracoApiService<PartyApiController>("GetPartyWallItems"))',
                     '@Model.PartyHost.PartyGuid.ToString()',
                     '@(Url.GetUmbracoApiService<PartyApiController>("DeletePartyWallItem"))'
-                )" m-radius-picker="large medium">
+                );" m-radius-picker="large medium">
                 
 
 
@@ -174,11 +181,13 @@
 
 
                      <div class="grid-12 pad-0">
+                         <div class="successful" ng-show="wall.feedback.messageShowSuccess">Your message was posted to the wall!</div>
+                         <div class="errorred" ng-show="wall.feedback.messageShowError">Your message could not be posted to the wall, please try again</div>
                         <div class="loader margin-side-auto pos-static" ng-show="wall.feedback.messageProcessing"></div>
                      </div>
                 </div>
 
-                <div class="margin-top-small pos-relative" ng-repeat="feedItem in wall.feed">
+                <div class="margin-top-small pos-relative pad-top-large" ng-repeat="feedItem in wall.feed">
                     <div m-profile-image="{{ feedItem.thumbnailUrl }}" m-radius-picker="small"></div>
                     <div class="wall-details">
                         <div>
@@ -187,7 +196,7 @@
                             <span class="wall-type" ng-class="{'donation': feedItem.isDonation}" ng-show="feedItem.isDonation">Donation</span>
                             <span class="wall-time" ng-bind="feedItem.timeFormatted"></span>
                         </div>
-                        <div ng-class="{'donation-copy': feedItem.isDonation}" ng-bind="feedItem.text"></div>
+                        <div class="color-grey-really-dark" ng-class="{'donation-copy': feedItem.isDonation}" ng-bind="feedItem.text"></div>
                         <img class="margin-top-small margin-bottom-small pad-small" ng-src="{{ feedItem.imageUrl }}" />
                     </div>
                     <div ng-hide="feedItem.isDonation">

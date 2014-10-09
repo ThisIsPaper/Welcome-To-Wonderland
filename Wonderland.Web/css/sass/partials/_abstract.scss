@@ -16,6 +16,7 @@ abstract
 .pad-small { padding: $padSmallValue; }
 .pad-medium { padding: $padSmallValue * $multiplierMedium; }
 .pad-large { padding: $padSmallValue * $multiplierLarge; }
+.pad-mega { padding: ($padSmallValue * $multiplierLarge)*2; }
 
 .pad-right-tiny { padding-right: $padSmallValue/2; }
 .pad-right-small { padding-right: $padSmallValue; }
@@ -290,6 +291,12 @@ abstract
 .color-primary { color: $PrimaryColour!important; }
 .color-secondary { color: $SecondaryColour!important; }
 .color-brand { color: $FourthColour!important; }
+
+.color-grey-really-light { color: $greyReallyLight; }
+.color-grey-light { color: $greyLight; }
+.color-grey-medium { color: $greyMedium; }
+.color-grey-dark { color: $greyDark; }
+.color-grey-really-dark { color: $greyReallyDark; }
 
 
 //**************************************** z-index
