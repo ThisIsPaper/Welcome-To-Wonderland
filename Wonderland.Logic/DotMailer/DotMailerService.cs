@@ -11,10 +11,8 @@ namespace Wonderland.Logic.DotMailer
         // address book limit = 1000
         // api calls per hour limit = 2000
 
-        private const int HostRegistrationStarted_AddressBookId = 114524;
-        private const int HostRegistrationCompleted_AddressBookId = 114525;
-        private const int GuestRegistrationStarted_AddressBookId = 114527;
-        private const int GuestRegistrationCompleted_AddressBookId = 114534;
+        private const int PartyHostsAddressBookId = 115142;
+        private const int PartyGuestsAddressBookId = 115144;
 
         /// <summary>
         /// add contact to the 'Host Registration Started' address book
@@ -22,8 +20,8 @@ namespace Wonderland.Logic.DotMailer
         /// <param name="contact"></param>
         internal static void HostRegistrationStarted(Contact contact)
         {
-            ApiContact apiContact = DotMailerService.GetApiService()
-                                                    .AddContactToAddressBook(DotMailerService.HostRegistrationStarted_AddressBookId, contact.ToApiContact());
+            // create contact
+            ApiContact apiContact = DotMailerService.GetApiService().CreateContact(contact.ToApiContact());
 
             // update local member with dotMailerId
             contact.Partier.DotMailerId = apiContact.Id;
@@ -37,9 +35,11 @@ namespace Wonderland.Logic.DotMailer
         {
             ApiService apiService = DotMailerService.GetApiService();
 
-            apiService.UpdateContact(contact.ToApiContact()); // we now have firstname & lastname
-            apiService.DeleteContactFromAddressBook(DotMailerService.HostRegistrationStarted_AddressBookId, contact.Id);
-            apiService.AddContactToAddressBook(DotMailerService.HostRegistrationCompleted_AddressBookId, contact.ToApiContact());
+            // update Contact not needed, as contact is updated when adding to the address book
+            //apiService.UpdateContact(contact.ToApiContact()); // we now have firstname & lastname
+
+            // add host to address book - dotmailer will fire off email 2.
+            apiService.AddContactToAddressBook(DotMailerService.PartyHostsAddressBookId, contact.ToApiContact());
         }
 
         /// <summary>
@@ -48,8 +48,9 @@ namespace Wonderland.Logic.DotMailer
         /// <param name="contact"></param>
         internal static void GuestRegistrationStarted(Contact contact)
         {
+            // create contact
             ApiContact apiContact = DotMailerService.GetApiService()
-                                                    .AddContactToAddressBook(DotMailerService.GuestRegistrationStarted_AddressBookId, contact.ToApiContact());
+                                                    .CreateContact(contact.ToApiContact());
 
             // update local member with dotMailerId
             contact.Partier.DotMailerId = apiContact.Id;
@@ -63,13 +64,16 @@ namespace Wonderland.Logic.DotMailer
         {
             ApiService apiService = DotMailerService.GetApiService();
 
-            apiService.UpdateContact(contact.ToApiContact()); // we now have firstname & lastname
-            apiService.DeleteContactFromAddressBook(DotMailerService.GuestRegistrationStarted_AddressBookId, contact.Id);
-            apiService.AddContactToAddressBook(DotMailerService.GuestRegistrationCompleted_AddressBookId, contact.ToApiContact());
+            //// hit 2: update guest contact - can we avoid this ?
+            //apiService.UpdateContact(contact.ToApiContact()); // we now have firstname & lastname
+
+            // add guest to address book - dotMailer will fire off email 18
+            apiService.AddContactToAddressBook(DotMailerService.PartyGuestsAddressBookId, contact.ToApiContact());            
         }
 
         internal static void UpdateContact(Contact contact)
         {
+            // (hit 4: in guest signup journey)
             DotMailerService.GetApiService().UpdateContact(contact.ToApiContact());
         }
 

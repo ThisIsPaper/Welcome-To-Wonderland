@@ -34,6 +34,8 @@ namespace Wonderland.Logic.Controllers.Api
             // DonationRow donationRow = this.DatabaseContext.Database.Single<DonationRow>(notificationRequest.VendorTxCode); // doens't work with enums
             DonationRow donationRow = this.DatabaseContext.Database.Fetch<DonationRow>("SELECT TOP 1 * FROM wonderlandDonation WHERE VendorTxCode = @0", notificationRequest.VendorTxCode).Single();
 
+            // TODO: sage pay will retry sending if a request if a response isn't recieved quickly
+
             // safety check
             if (notificationRequest.VPSTxId != donationRow.VPSTxId)
             {

@@ -41,6 +41,8 @@ namespace Wonderland.Logic.Models.Members
         public const string DotMailerIdAlias = "dotMailerId";
 
         private Guid? partyGuid = null;
+        private string firstName = null;
+        private string lastName = null;
         private DateTime? partyDateTime = null;
         private string partyUrlIdentifier = null;
 
@@ -74,10 +76,16 @@ namespace Wonderland.Logic.Models.Members
         {
             get
             {
+                if (this.firstName != null)
+                {
+                    return this.firstName;
+                }
+
                 return this.GetPropertyValue<string>(PartyHost.FirstNameAlias);
             }
             set
             {
+                this.firstName = value;
                 this.SetPropertyValue(PartyHost.FirstNameAlias, value);
             }
         }
@@ -86,10 +94,16 @@ namespace Wonderland.Logic.Models.Members
         {
             get
             {
+                if (this.lastName != null)
+                {
+                    return this.lastName;
+                }
+
                 return this.GetPropertyValue<string>(PartyHost.LastNameAlias);
             }
             set
             {
+                this.lastName = value;
                 this.SetPropertyValue(PartyHost.LastNameAlias, value);
             }
         }
