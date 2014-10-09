@@ -1,14 +1,9 @@
 ﻿
 namespace Wonderland.Logic.DotMailer
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
-    using Wonderland.Logic.DotMailerApi;
     using System.Net;
     using System.Web.Configuration;
+    using Wonderland.Logic.DotMailerApi;
     using Wonderland.Logic.Models.Members;
 
     internal static class DotMailerService
@@ -27,15 +22,11 @@ namespace Wonderland.Logic.DotMailer
         /// <param name="contact"></param>
         internal static void HostRegistrationStarted(Contact contact)
         {
-            ApiService apiService = DotMailerService.GetApiService();
+            ApiContact apiContact = DotMailerService.GetApiService()
+                                                    .AddContactToAddressBook(DotMailerService.HostRegistrationStarted_AddressBookId, contact.ToApiContact());
 
-            // create contact
-            ApiContact apiContact = apiService.CreateContact(contact.ToApiContact());
-
-            // get dotMailer id
+            // update local member with dotMailerId
             contact.Partier.DotMailerId = apiContact.Id;
-
-            apiService.AddContactToAddressBook(DotMailerService.HostRegistrationStarted_AddressBookId, apiContact);
         }
 
         /// <summary>
@@ -46,6 +37,7 @@ namespace Wonderland.Logic.DotMailer
         {
             ApiService apiService = DotMailerService.GetApiService();
 
+            apiService.UpdateContact(contact.ToApiContact()); // we now have firstname & lastname
             apiService.DeleteContactFromAddressBook(DotMailerService.HostRegistrationStarted_AddressBookId, contact.Id);
             apiService.AddContactToAddressBook(DotMailerService.HostRegistrationCompleted_AddressBookId, contact.ToApiContact());
         }
@@ -56,15 +48,11 @@ namespace Wonderland.Logic.DotMailer
         /// <param name="contact"></param>
         internal static void GuestRegistrationStarted(Contact contact)
         {
-            ApiService apiService = DotMailerService.GetApiService();
+            ApiContact apiContact = DotMailerService.GetApiService()
+                                                    .AddContactToAddressBook(DotMailerService.GuestRegistrationStarted_AddressBookId, contact.ToApiContact());
 
-            // create contact
-            ApiContact apiContact = apiService.CreateContact(contact.ToApiContact());
-
-            // get dotMailer id
+            // update local member with dotMailerId
             contact.Partier.DotMailerId = apiContact.Id;
-
-            apiService.AddContactToAddressBook(DotMailerService.GuestRegistrationStarted_AddressBookId, apiContact);
         }
 
         /// <summary>
@@ -73,30 +61,21 @@ namespace Wonderland.Logic.DotMailer
         /// <param name="contac"></param>
         internal static void GuestRegistrationCompleted(Contact contact)
         {
+            ApiService apiService = DotMailerService.GetApiService();
+
+            apiService.UpdateContact(contact.ToApiContact()); // we now have firstname & lastname
+            apiService.DeleteContactFromAddressBook(DotMailerService.GuestRegistrationStarted_AddressBookId, contact.Id);
+            apiService.AddContactToAddressBook(DotMailerService.GuestRegistrationCompleted_AddressBookId, contact.ToApiContact());
         }
 
-        //internal static void AddContact(Contact contact)
-        //{
-        //    ApiService apiService = DotMailerService.GetApiService();
-
-        //    //apiService.GetAddressBooks(3, 0).Select(x => x.Name);
-
-        //    apiService.AddContactToAddressBook(113368, contact.ToApiContact());
-
-
-        //    //ApiContact gettingContactTest = apiService.GetContactById(contact.Id);
-        //}
-
-        internal static void UpdatePartyDate(PartyHost partyHost)
+        internal static void UpdateContact(Contact contact)
         {
-            // TODO: need to update all guests for this party
+            DotMailerService.GetApiService().UpdateContact(contact.ToApiContact());
         }
 
-        //private static void UpdateContact(Contact contact)
+        //internal static void UpdatePartyDate(PartyHost partyHost)
         //{
-        //    ApiService apiService = DotMailerService.GetApiService();
-
-        //    apiService.UpdateContact(contact);
+        //    // TODO: need to update all guests for this party
         //}
 
         private static ApiService GetApiService()

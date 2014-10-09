@@ -11,8 +11,10 @@ namespace Wonderland.Logic.Controllers.Api
     using Umbraco.Web.WebApi;
     using Wonderland.Logic.DotMailer;
     using Wonderland.Logic.Enums;
+    using Wonderland.Logic.Extensions;
     using Wonderland.Logic.Models.Content;
     using Wonderland.Logic.Models.Database;
+    using Wonderland.Logic.Models.Members;
     using Wonderland.Logic.SagePay;
     
     public class SagePayApiController : UmbracoApiController
@@ -60,20 +62,25 @@ namespace Wonderland.Logic.Controllers.Api
 
             switch (donationRow.PaymentJourney)
             {
-                case PaymentJourney.RegisterGuest:   
-                    // TODO: update dot mailer to indicate guest has fully registered
-                    // TODO: update dot mailer donation_amount for associated party host
-                    // TODO: update dot mailer guest_count for associated party host
+                case PaymentJourney.RegisterGuest:
+
+                    if (donationRow.MemberId.HasValue) // safety check - memberId should alwayws be present
+                    {
+                        // update dot mailer to indicate guest has fully registered
+                        DotMailerService.GuestRegistrationCompleted((Contact)(PartyGuest)this.Members.GetById(donationRow.MemberId.Value));
+                    }
 
                     redirectUrl += this.Umbraco.TypedContentSingleAtXPath("//" + RegisterGuest.Alias).Url;
                     break;
 
                 case PaymentJourney.Donate:
-                    // TODO: update dot mailer donation_amount for associated party host
 
                     redirectUrl += this.Umbraco.TypedContentSingleAtXPath("//" + Donate.Alias).Url;
                     break;
             }
+
+            //update dot mailer donation_amount and guest_count for associated party host
+            DotMailerService.UpdateContact((Contact)this.Members.GetPartyHost(donationRow.PartyGuid));
 
             notificationResponse.RedirectURL = redirectUrl + "?VendorTxCode=" + notificationRequest.VendorTxCode;
 
