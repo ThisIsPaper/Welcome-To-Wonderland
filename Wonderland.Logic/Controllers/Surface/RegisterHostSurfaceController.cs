@@ -101,7 +101,7 @@ namespace Wonderland.Logic.Controllers.Surface
             partyHost.PartyDateTime = new DateTime(2014, 12, 5, 20, 0, 0);
 
             // add member to DotMailer
-            DotMailerService.AddContact((Contact)partyHost);
+            DotMailerService.HostRegistrationStarted((Contact)partyHost);
 
             // send cookie
             FormsAuthentication.SetAuthCookie(partyHost.Username, true);
@@ -150,6 +150,9 @@ namespace Wonderland.Logic.Controllers.Surface
             partyHost.TShirtSize = registerHostPartyKitForm.TShirtSize;
 
             partyHost.HasRequestedPartyKit = true;
+
+            // update contact in DotMailer
+            DotMailerService.HostRegistrationCompleted((Contact)partyHost);
 
             //return this.CurrentUmbracoPage();
             return this.RedirectToCurrentUmbracoPage();

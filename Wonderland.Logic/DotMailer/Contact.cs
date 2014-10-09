@@ -3,6 +3,7 @@ namespace Wonderland.Logic.DotMailer
 {
     using System;
     using System.Collections.Generic;
+    using System.Linq;
     using Umbraco.Web;
     using Umbraco.Web.Security;
     using Wonderland.Logic.DotMailerApi;
@@ -18,8 +19,8 @@ namespace Wonderland.Logic.DotMailer
             this.Email = email;
             this.EmailType = ApiContactEmailTypes.Html;
             this.EmailTypeSpecified = true; // if this flag isn't set, then the EmailType isn't processed
-            this.Id = id;
-            this.IdSpecified = true;
+            //this.Id = id;
+            this.IdSpecified = false;
         }
 
         private DateTime PartyDate
@@ -29,7 +30,46 @@ namespace Wonderland.Logic.DotMailer
                 this.contactData.Add(new ApiContactData()
                     {
                         Key="Party_Date",
-                        Value=value,
+                        Value=value
+                    }
+                );
+            }
+        }
+
+        private int GuestCount
+        {
+            set
+            {
+                this.contactData.Add(new ApiContactData()
+                    {
+                        Key="Guest_Count",
+                        Value=value
+                    }
+                );
+            }
+        }
+
+        private decimal DonationAmount
+        {
+            set
+            {
+                this.contactData.Add(new ApiContactData()
+                    {
+                        Key = "Donation_Amount",
+                        Value = value
+                    }
+                );
+            }
+        }
+
+        private bool PartyPagePopulated
+        {
+            set
+            {
+                this.contactData.Add(new ApiContactData()
+                    {
+                        Key = "Party_Page_Populated",
+                        Value = value
                     }
                 );
             }
@@ -56,7 +96,14 @@ namespace Wonderland.Logic.DotMailer
         {
             Contact contact = new Contact(partyHost.Email, partyHost.Id);
 
+            MembershipHelper members = new MembershipHelper(UmbracoContext.Current);
+            
             contact.PartyDate = partyHost.PartyDateTime;
+            contact.GuestCount = members.GetPartiers(partyHost.PartyGuid).Count();
+            contact.DonationAmount = partyHost.AmountRaised;
+            contact.PartyPagePopulated = !string.IsNullOrWhiteSpace(partyHost.PartyImage)
+                                            && !string.IsNullOrWhiteSpace(partyHost.PartyHeading)
+                                            && !string.IsNullOrWhiteSpace(partyHost.PartyCopy);
 
             return contact;
         }

@@ -9,6 +9,7 @@ namespace Wonderland.Logic.Controllers.Api
     using System.Web.Http;
     using System.Web.Security;
     using Umbraco.Web.WebApi;
+    using Wonderland.Logic.DotMailer;
     using Wonderland.Logic.Enums;
     using Wonderland.Logic.Models.Content;
     using Wonderland.Logic.Models.Database;
@@ -59,11 +60,17 @@ namespace Wonderland.Logic.Controllers.Api
 
             switch (donationRow.PaymentJourney)
             {
-                case PaymentJourney.RegisterGuest:
+                case PaymentJourney.RegisterGuest:   
+                    // TODO: update dot mailer to indicate guest has fully registered
+                    // TODO: update dot mailer donation_amount for associated party host
+                    // TODO: update dot mailer guest_count for associated party host
+
                     redirectUrl += this.Umbraco.TypedContentSingleAtXPath("//" + RegisterGuest.Alias).Url;
                     break;
 
                 case PaymentJourney.Donate:
+                    // TODO: update dot mailer donation_amount for associated party host
+
                     redirectUrl += this.Umbraco.TypedContentSingleAtXPath("//" + Donate.Alias).Url;
                     break;
             }

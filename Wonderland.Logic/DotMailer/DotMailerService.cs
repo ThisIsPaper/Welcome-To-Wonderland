@@ -15,43 +15,73 @@ namespace Wonderland.Logic.DotMailer
     {
         // address book limit = 1000
 
-        private const int PartyHostsAddressBookId = 105328;
-        private const int PartyGuestsAddressBookId = 113368;
+        private const int HostRegistrationStarted_AddressBookId = 114524;
+        private const int HostRegistrationCompleted_AddressBookId = 114525;
+        private const int GuestRegistrationStarted_AddressBookId = 114527;
+        private const int GuestRegistrationCompleted_AddressBookId = 114534;
 
-
-        internal static void StartedHostRegistration(Contact contact)
-        {
-        }
-
-        internal static void StartedGuestRegistration(Contact contact)
-        {
-        }
-
-        internal static void CompletedHostRegistration(Contact contact)
-        {
-        }
-
-        internal static void CompletedGuestRegistration(Contact contac)
-        {
-        }
-
-        internal static void AddContact(Contact contact)
+        /// <summary>
+        /// add contact to the 'Host Registration Started' address book
+        /// </summary>
+        /// <param name="contact"></param>
+        internal static void HostRegistrationStarted(Contact contact)
         {
             ApiService apiService = DotMailerService.GetApiService();
 
-            //apiService.GetAddressBooks(3, 0).Select(x => x.Name);
-
-            apiService.AddContactToAddressBook(113368, contact.ToApiContact());
-
-
-            //ApiContact gettingContactTest = apiService.GetContactById(contact.Id);
+            apiService.AddContactToAddressBook(DotMailerService.HostRegistrationStarted_AddressBookId, contact.ToApiContact());
         }
+
+        /// <summary>
+        /// move contact from the 'Host Registration Started' to the 'Host Registration Completed' address book
+        /// </summary>
+        /// <param name="contact"></param>
+        internal static void HostRegistrationCompleted(Contact contact)
+        {
+            ApiService apiService = DotMailerService.GetApiService();
+
+            apiService.DeleteContactFromAddressBook(DotMailerService.HostRegistrationStarted_AddressBookId, contact.Id);
+            apiService.AddContactToAddressBook(DotMailerService.HostRegistrationCompleted_AddressBookId, contact.ToApiContact());
+        }
+
+        /// <summary>
+        /// add contact to the 'Guest Registration Started' address book
+        /// </summary>
+        /// <param name="contact"></param>
+        internal static void GuestRegistrationStarted(Contact contact)
+        {
+        }
+
+        /// <summary>
+        /// move contact from the 'Guest Registration Started' to the 'Guest Registration Completed' address book
+        /// </summary>
+        /// <param name="contac"></param>
+        internal static void GuestRegistrationCompleted(Contact contac)
+        {
+        }
+
+        //internal static void AddContact(Contact contact)
+        //{
+        //    ApiService apiService = DotMailerService.GetApiService();
+
+        //    //apiService.GetAddressBooks(3, 0).Select(x => x.Name);
+
+        //    apiService.AddContactToAddressBook(113368, contact.ToApiContact());
+
+
+        //    //ApiContact gettingContactTest = apiService.GetContactById(contact.Id);
+        //}
 
         internal static void UpdatePartyDate(PartyHost partyHost)
         {
             // TODO: need to update all guests for this party
         }
 
+        //private static void UpdateContact(Contact contact)
+        //{
+        //    ApiService apiService = DotMailerService.GetApiService();
+
+        //    apiService.UpdateContact(contact);
+        //}
 
         private static ApiService GetApiService()
         {

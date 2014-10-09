@@ -79,7 +79,7 @@ namespace Wonderland.Logic.Controllers.Surface
             partyGuest.PartyGuid = registerGuestForm.PartyGuid;
 
             // add member to DotMailer
-            DotMailerService.AddContact((Contact)partyGuest);
+            DotMailerService.GuestRegistrationStarted((Contact)partyGuest);
 
             // send cookie
             FormsAuthentication.SetAuthCookie(partyGuest.Username, true);
