@@ -98,6 +98,10 @@
 		padding-top: 7rem;
 	}
 
+	.hide-on-tablet {
+		display: none;
+	}
+
 	//***************************** ABSTRACT
 	.radius-tablet-0 {
 		@include m-border-radius(0, 0, 0, 0, 0, 0, 0, 0);
