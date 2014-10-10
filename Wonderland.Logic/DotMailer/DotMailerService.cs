@@ -6,6 +6,7 @@ namespace Wonderland.Logic.DotMailer
     using System.Web.Caching;
     using System.Web.Configuration;
     using Wonderland.Logic.DotMailerApi;
+    using Wonderland.Logic.Models.Members;
 
     internal static class DotMailerService
     {
@@ -43,6 +44,8 @@ namespace Wonderland.Logic.DotMailer
 
                 // add host to address book (this also updates the contact details) - dotmailer will fire off email 2.
                 apiService.AddContactToAddressBook(DotMailerService.PartyHostsAddressBookId, contact.ToApiContact());
+
+                contact.Partier.DotMailerRegistrationComplete = true;
             }
         }
 
@@ -74,6 +77,8 @@ namespace Wonderland.Logic.DotMailer
 
                 // add guest to address book - dotMailer will fire off email 18
                 apiService.AddContactToAddressBook(DotMailerService.PartyGuestsAddressBookId, contact.ToApiContact());
+
+                contact.Partier.DotMailerRegistrationComplete = true;
             }
         }
 

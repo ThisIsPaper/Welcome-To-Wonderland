@@ -127,13 +127,13 @@ namespace Wonderland.Logic.DotMailer
             }
         }
 
-        private bool PartyPagePopulated
+        private bool PartyPageComplete
         {
             set
             {
                 this.contactData.Add(new ApiContactData()
                     {
-                        Key = "Party_Page_Populated",
+                        Key = "Party_Page_Complete",
                         Value = value
                     }
                 );
@@ -177,9 +177,7 @@ namespace Wonderland.Logic.DotMailer
             contact.PartyUrlIdentifier = partyHost.PartyUrlIdentifier;
             contact.GuestCount = members.GetPartiers(partyHost.PartyGuid).Count();
             contact.DonationAmount = partyHost.AmountRaised;
-            contact.PartyPagePopulated = !string.IsNullOrWhiteSpace(partyHost.PartyImage)
-                                            && !string.IsNullOrWhiteSpace(partyHost.PartyHeading)
-                                            && !string.IsNullOrWhiteSpace(partyHost.PartyCopy);
+            contact.PartyPageComplete = partyHost.DotMailerPartyPageComplete;
 
             return contact;
         }

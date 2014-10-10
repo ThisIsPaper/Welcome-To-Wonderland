@@ -5,6 +5,7 @@ namespace Wonderland.Logic.Controllers.Surface
     using System.Linq;
     using System.Web.Mvc;
     using Umbraco.Web.Mvc;
+    using Wonderland.Logic.DotMailer;
     using Wonderland.Logic.Extensions;
     using Wonderland.Logic.Models.Content;
     using Wonderland.Logic.Models.Database;
@@ -346,6 +347,22 @@ namespace Wonderland.Logic.Controllers.Surface
             }
 
             return Json(formResponse);
+        }
+
+        private void CheckPartyPageComplete(PartyHost partyHost)
+        {
+            if (!partyHost.DotMailerPartyPageComplete)
+            {
+                if (!string.IsNullOrWhiteSpace(partyHost.PartyImage)
+                    && partyHost.FundraisingTarget > 0
+                    && !string.IsNullOrWhiteSpace(partyHost.PartyAddress.ToString()))
+                {
+                    partyHost.DotMailerPartyPageComplete = true;
+
+                    // update the host to indicate that their party page is now complete
+                    DotMailerService.UpdateContact((Contact)partyHost);
+                }
+            }
         }
     }
 }

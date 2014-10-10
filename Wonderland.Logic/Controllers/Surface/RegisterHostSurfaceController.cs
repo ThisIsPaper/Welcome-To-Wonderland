@@ -149,10 +149,13 @@ namespace Wonderland.Logic.Controllers.Surface
 
             partyHost.TShirtSize = registerHostPartyKitForm.TShirtSize;
 
-            partyHost.HasRequestedPartyKit = true;
+            partyHost.HasRequestedPartyKit = true;            
 
             // update contact in DotMailer
             DotMailerService.HostRegistrationCompleted((Contact)partyHost);
+
+            // mark as completed
+            partyHost.DotMailerRegistrationComplete = true;
 
             //return this.CurrentUmbracoPage();
             return this.RedirectToCurrentUmbracoPage();
