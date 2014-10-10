@@ -39,12 +39,18 @@ namespace Wonderland.Logic.Models.Members
         public const string FundraisingTargetAlias = "fundraisingTarget";
         public const string ForgottenPasswordGuidAlias = "forgottenPasswordGuid";
         public const string DotMailerIdAlias = "dotMailerId";
+        public const string DotMailerRegistrationCompleteAlias = "dotMailerRegistrationComplete";
+        public const string DotMailerPartyPageCompleteAlias = "dotMailerPartyPageComplete";
 
         private Guid? partyGuid = null;
         private string firstName = null;
         private string lastName = null;
+        private Address billingAddress = null;
         private DateTime? partyDateTime = null;
         private string partyUrlIdentifier = null;
+        private bool? dotMailerPartyPageComplete = null;
+        private decimal? amountRaised = null;
+        private int? totalGuests = null;
 
         public PartyHost(IPublishedContent content)
             : base(content)
@@ -112,10 +118,16 @@ namespace Wonderland.Logic.Models.Members
         {
             get
             {
+                if (this.billingAddress != null)
+                {
+                    return this.billingAddress;
+                }
+
                 return new Address(this.GetPropertyValue<string>(PartyHost.BillingAddressAlias));
             }
             set
             {
+                this.billingAddress = value;
                 this.SetPropertyValue(PartyHost.BillingAddressAlias, value.ToString());
             }
         }
@@ -323,11 +335,41 @@ namespace Wonderland.Logic.Models.Members
         {
             get
             {
-                return this.GetPropertyValue<int>(PartyGuest.DotMailerIdAlias);
+                return this.GetPropertyValue<int>(PartyHost.DotMailerIdAlias);
             }
             set
             {
-                this.SetPropertyValue(PartyGuest.DotMailerIdAlias, value);
+                this.SetPropertyValue(PartyHost.DotMailerIdAlias, value);
+            }
+        }
+
+        public bool DotMailerRegistrationComplete
+        {
+            get
+            {
+                return this.GetPropertyValue<bool>(PartyHost.DotMailerRegistrationCompleteAlias);
+            }
+            set
+            {
+                this.SetPropertyValue(PartyHost.DotMailerRegistrationCompleteAlias, value);
+            }
+        }
+        
+        public bool DotMailerPartyPageComplete
+        {
+            get
+            {
+                if (this.dotMailerPartyPageComplete.HasValue)
+                {
+                    return this.dotMailerPartyPageComplete.Value;
+                }
+
+                return this.GetPropertyValue<bool>(PartyHost.DotMailerPartyPageCompleteAlias);
+            }
+            set
+            {
+                this.dotMailerPartyPageComplete = value;
+                this.SetPropertyValue(PartyHost.DotMailerPartyPageCompleteAlias, value);
             }
         }
 
@@ -352,7 +394,6 @@ namespace Wonderland.Logic.Models.Members
             }
         }
 
-        private decimal? amountRaised = null;
         public decimal AmountRaised
         {
             get
@@ -381,8 +422,7 @@ namespace Wonderland.Logic.Models.Members
                 this.amountRaised = value;
             }
         }
-
-        private int? totalGuests = null;
+        
         public int TotalGuests
         {
             get
