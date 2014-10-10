@@ -4,7 +4,7 @@
 {
     @Html.AntiForgeryToken()
 
-    <div class="choose-file-wrapper icon-icon_camera margin-bottom-small" ng-class="{'disabled': pageFeedback.profileImageProcessing}">
+    <div class="choose-file-wrapper icon-icon_camera margin-bottom-small width-mobile-100p" ng-class="{'disabled': pageFeedback.profileImageProcessing}">
         <input class="choose-file" type="file" name="profileImage" accept="image/jpeg,image/gif,image/png" m-file-selected="submit()" ng-disabled="pageFeedback.profileImageProcessing" />
     </div>
 }
