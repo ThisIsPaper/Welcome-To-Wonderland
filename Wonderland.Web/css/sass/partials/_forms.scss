@@ -213,6 +213,7 @@ input[type='text'], input[type='password'], select {
     line-height: 5rem;
 }
 
+
 input[type='text'], input[type='password'], textarea, select {
     border: .1rem solid $greyLight;
     background-color: white;
@@ -234,7 +235,6 @@ input[type='password'], input[type="text"].input-with-icon, select.input-with-ic
 input[type="text"].currency {
     padding-left: 3rem;
 }
-
 
 
 input[type=submit][disabled=disabled],
