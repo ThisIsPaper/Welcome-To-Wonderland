@@ -33,8 +33,8 @@ namespace Wonderland.Logic.Controllers.Render
                     return this.Redirect(((IPartier)this.Members.GetCurrentMember()).PartyUrl);
                 }
 
-                // fallback
-                return this.Redirect(Home.GetCurrentHome(model).Url);
+                // fallback to login
+                return this.Redirect(model.SiteSettings.LoginUrl);
             }
 
             // known host, so set the party host for this cms page, and build the model
