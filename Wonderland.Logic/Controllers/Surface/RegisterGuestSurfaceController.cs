@@ -15,6 +15,7 @@ namespace Wonderland.Logic.Controllers.Surface
     using Wonderland.Logic.Models.Members;
     using Wonderland.Logic.SagePay;
     using Wonderland.Logic.DotMailer;
+    using Wonderland.Logic.Models.Entities;
 
     public class RegisterGuestSurfaceController : SurfaceController
     {
@@ -112,6 +113,19 @@ namespace Wonderland.Logic.Controllers.Surface
             {
                 return this.CurrentUmbracoPage();
             }
+
+            PartyGuest partyGuest = (PartyGuest)this.Members.GetCurrentMember();
+
+            partyGuest.FirstName = registerGuestBillingForm.FirstName;
+            partyGuest.LastName = registerGuestBillingForm.LastName;
+
+            Address address = new Address(
+                            registerGuestBillingForm.Address1,
+                            registerGuestBillingForm.Address2,
+                            registerGuestBillingForm.TownCity,
+                            registerGuestBillingForm.Postcode);
+
+            partyGuest.BillingAddress = address;
 
             if (!string.IsNullOrWhiteSpace(registerGuestBillingForm.Message))
             {
