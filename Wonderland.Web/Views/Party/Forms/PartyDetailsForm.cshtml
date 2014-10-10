@@ -17,14 +17,19 @@
                 <div class="grid-8 grid-tablet-12 parent">
                     <div class="date-details-shifter">
                         <label for="PartyDate">Date</label>
-                        <input name="PartyDate" type="text" m-date-time-picker="tempModel.partyDate" m-radius-picker="small" readonly />
+                        <div class="pos-relative margin-bottom-small">
+                            <span class="form-field-ico icon-icon_calendar"></span>
+                            <input class="input-with-icon" name="PartyDate" type="text" m-date-time-picker="tempModel.partyDate" m-radius-picker="small" readonly />
+                        </div>
                     </div>
                 </div>
 
                 <div class="grid-4 grid-tablet-12 parent margin-bottom-large">
                     <label for="PartyTime">Time</label>
-                    <select name="PartyTime" ng-model="tempModel.partyTime" ng-options="x for x in tempModel.times" m-radius-picker="small">
-                    </select>
+                        <div class="pos-relative margin-bottom-small">
+                            <span class="form-field-ico icon-icon_clock"></span>
+                            <select class="input-with-icon" name="PartyTime" ng-model="tempModel.partyTime" ng-options="x for x in tempModel.times" m-radius-picker="small"></select>
+                        </div>
                 </div>
             </div>
 

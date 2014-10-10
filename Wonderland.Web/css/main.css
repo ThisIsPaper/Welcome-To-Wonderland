@@ -4960,8 +4960,8 @@ abstract
 }
 @font-face {
   font-family: 'icomoon';
-  src: url("/fonts/icomoon.eot?-my7vwe");
-  src: url("/fonts/icomoon.eot?#iefix-my7vwe") format("embedded-opentype"), url("/fonts/icomoon.woff?-my7vwe") format("woff"), url("/fonts/icomoon.ttf?-my7vwe") format("truetype"), url("/fonts/icomoon.svg?-my7vwe#icomoon") format("svg");
+  src: url("/fonts/icomoon.eot?-clohpx");
+  src: url("/fonts/icomoon.eot?#iefix-clohpx") format("embedded-opentype"), url("/fonts/icomoon.woff?-clohpx") format("woff"), url("/fonts/icomoon.ttf?-clohpx") format("truetype"), url("/fonts/icomoon.svg?-clohpx#icomoon") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -4980,191 +4980,196 @@ abstract
 }
 
 /* line 27, sass/partials/icomoon/_icomoon.scss */
+.icon-icon_calendar:before {
+  content: "\e626";
+}
+
+/* line 30, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_minus:before {
   content: "\e624";
 }
 
-/* line 30, sass/partials/icomoon/_icomoon.scss */
+/* line 33, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_plus:before {
   content: "\e625";
 }
 
-/* line 33, sass/partials/icomoon/_icomoon.scss */
+/* line 36, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_pinterest:before {
   content: "\e623";
 }
 
-/* line 36, sass/partials/icomoon/_icomoon.scss */
+/* line 39, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_trophy:before {
   content: "\e622";
 }
 
-/* line 39, sass/partials/icomoon/_icomoon.scss */
+/* line 42, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_alert:before {
   content: "\e620";
 }
 
-/* line 42, sass/partials/icomoon/_icomoon.scss */
+/* line 45, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_gift:before {
   content: "\e621";
 }
 
-/* line 45, sass/partials/icomoon/_icomoon.scss */
+/* line 48, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_back:before {
   content: "\e61e";
 }
 
-/* line 48, sass/partials/icomoon/_icomoon.scss */
+/* line 51, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_tick:before {
   content: "\e61f";
 }
 
-/* line 51, sass/partials/icomoon/_icomoon.scss */
+/* line 54, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_anon_user:before {
   content: "\e61b";
 }
 
-/* line 54, sass/partials/icomoon/_icomoon.scss */
+/* line 57, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_piggy:before {
   content: "\e61c";
 }
 
-/* line 57, sass/partials/icomoon/_icomoon.scss */
+/* line 60, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_question_mark:before {
   content: "\e61d";
 }
 
-/* line 60, sass/partials/icomoon/_icomoon.scss */
+/* line 63, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_envelope:before {
   content: "\e618";
 }
 
-/* line 63, sass/partials/icomoon/_icomoon.scss */
+/* line 66, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_facebook_f:before {
   content: "\e619";
 }
 
-/* line 66, sass/partials/icomoon/_icomoon.scss */
+/* line 69, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_twitter_bird:before {
   content: "\e61a";
 }
 
-/* line 69, sass/partials/icomoon/_icomoon.scss */
+/* line 72, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_chevron_left:before {
   content: "\e600";
 }
 
-/* line 72, sass/partials/icomoon/_icomoon.scss */
+/* line 75, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_chevron_right:before {
   content: "\e601";
 }
 
-/* line 75, sass/partials/icomoon/_icomoon.scss */
+/* line 78, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_chevron_up:before {
   content: "\e602";
 }
 
-/* line 78, sass/partials/icomoon/_icomoon.scss */
+/* line 81, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_chevron_down:before {
   content: "\e603";
 }
 
-/* line 81, sass/partials/icomoon/_icomoon.scss */
+/* line 84, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_hamburger_menu:before {
   content: "\e604";
 }
 
-/* line 84, sass/partials/icomoon/_icomoon.scss */
+/* line 87, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_home:before {
   content: "\e605";
 }
 
-/* line 87, sass/partials/icomoon/_icomoon.scss */
+/* line 90, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_camera:before {
   content: "\e606";
 }
 
-/* line 90, sass/partials/icomoon/_icomoon.scss */
+/* line 93, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_clock:before {
   content: "\e607";
 }
 
-/* line 93, sass/partials/icomoon/_icomoon.scss */
+/* line 96, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_cog:before {
   content: "\e608";
 }
 
-/* line 96, sass/partials/icomoon/_icomoon.scss */
+/* line 99, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_crown:before {
   content: "\e609";
 }
 
-/* line 99, sass/partials/icomoon/_icomoon.scss */
+/* line 102, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_cutlery:before {
   content: "\e60a";
 }
 
-/* line 102, sass/partials/icomoon/_icomoon.scss */
+/* line 105, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_edit:before {
   content: "\e60b";
 }
 
-/* line 105, sass/partials/icomoon/_icomoon.scss */
+/* line 108, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_fingerpost:before {
   content: "\e60c";
 }
 
-/* line 108, sass/partials/icomoon/_icomoon.scss */
+/* line 111, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_padlock_unlocked:before {
   content: "\e60d";
 }
 
-/* line 111, sass/partials/icomoon/_icomoon.scss */
+/* line 114, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_padlock:before {
   content: "\e60e";
 }
 
-/* line 114, sass/partials/icomoon/_icomoon.scss */
+/* line 117, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_person:before {
   content: "\e60f";
 }
 
-/* line 117, sass/partials/icomoon/_icomoon.scss */
+/* line 120, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_question:before {
   content: "\e610";
 }
 
-/* line 120, sass/partials/icomoon/_icomoon.scss */
+/* line 123, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_snowflake:before {
   content: "\e611";
 }
 
-/* line 123, sass/partials/icomoon/_icomoon.scss */
+/* line 126, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_star:before {
   content: "\e612";
 }
 
-/* line 126, sass/partials/icomoon/_icomoon.scss */
+/* line 129, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_t-shirt:before {
   content: "\e613";
 }
 
-/* line 129, sass/partials/icomoon/_icomoon.scss */
+/* line 132, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_twitter:before {
   content: "\e614";
 }
 
-/* line 132, sass/partials/icomoon/_icomoon.scss */
+/* line 135, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_facebook:before {
   content: "\e615";
 }
 
-/* line 135, sass/partials/icomoon/_icomoon.scss */
+/* line 138, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_google_plus:before {
   content: "\e616";
 }
 
-/* line 138, sass/partials/icomoon/_icomoon.scss */
+/* line 141, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_x:before {
   content: "\e617";
 }
@@ -6922,7 +6927,7 @@ Media query variables
 /* line 175, sass/partials/_forms.scss */
 label {
   text-transform: uppercase;
-  color: #7B7A6D;
+  color: #474740;
   font-weight: bold;
   line-height: 3rem;
 }
@@ -6969,7 +6974,7 @@ input[type="text"][readonly] {
 }
 
 /* line 230, sass/partials/_forms.scss */
-input[type='password'] {
+input[type='password'], input[type="text"].input-with-icon, select.input-with-icon {
   padding-left: 4rem;
 }
 
@@ -10328,7 +10333,7 @@ Media query variables
 /* line 175, sass/partials/_forms.scss */
 label {
   text-transform: uppercase;
-  color: #7B7A6D;
+  color: #474740;
   font-weight: bold;
   line-height: 3rem;
 }
@@ -10375,7 +10380,7 @@ input[type="text"][readonly] {
 }
 
 /* line 230, sass/partials/_forms.scss */
-input[type='password'] {
+input[type='password'], input[type="text"].input-with-icon, select.input-with-icon {
   padding-left: 4rem;
 }
 

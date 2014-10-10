@@ -175,7 +175,7 @@ $btnPaddingLarge: $btnPaddingMedium*2;
 label {
     @extend .body-small;
     text-transform: uppercase;
-    color: $greyDark;
+    color: $greyReallyDark;
     font-weight: bold;
     line-height: 3rem;
 
@@ -227,13 +227,14 @@ input[type="text"][readonly] {
     cursor: pointer;
 }
 
-input[type='password'] {
+input[type='password'], input[type="text"].input-with-icon, select.input-with-icon {
     padding-left: 4rem;
 }
 
 input[type="text"].currency {
     padding-left: 3rem;
 }
+
 
 
 input[type=submit][disabled=disabled],

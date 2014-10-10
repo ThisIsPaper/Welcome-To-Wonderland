@@ -23,3 +23,51 @@ overrides
 	}
 }
 
+
+
+
+//****************************************************
+// PIKADAY
+//****************************************************
+.pika-table th {
+	color: $greyDark;
+}
+
+.pika-table abbr {
+	border: none;
+}
+
+.pika-single {
+	font-family: $fontFaceFutura;
+	color: $greyReallyDark;
+}
+
+.pika-button {
+	color: $SecondaryColour;
+    background: white;
+    text-align: center;
+}
+
+
+.is-today .pika-button {
+    color: $SecondaryColour;
+	background: $greyReallyLight;
+    border-radius: 2rem;
+}
+
+.is-selected .pika-button {
+    background: $PrimaryColour;
+    box-shadow: none;
+    border-radius: 2rem;
+}
+
+.is-disabled .pika-button {
+    color: $greyDark;
+}
+
+.pika-button:hover {
+	color: $SecondaryColour !important;
+    background: $greyReallyLight !important;
+    box-shadow: none !important;
+    border-radius: 2rem !important;
+}
