@@ -91,13 +91,13 @@ namespace Wonderland.Logic.DotMailer
             }
         }
 
-        //internal static void UpdatePartyDate(PartyHost partyHost)
-        //{
-        //    if (DotMailerEnabled)
-        //    {
-        //        // TODO: need to update all guests for this party
-        //    }            
-        //}
+        internal static void UpdatePartyDetails(PartyHost partyHost)
+        {
+            if (DotMailerEnabled)
+            {
+                // TODO: for all people going to the party (inc host) update their party time, and party address
+            }
+        }
 
         private static bool DotMailerEnabled
         {
