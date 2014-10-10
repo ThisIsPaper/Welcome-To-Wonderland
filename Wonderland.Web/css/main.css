@@ -11908,44 +11908,49 @@ Media query variables
 /*
 /*****************************/
 @media only screen and (max-width: 450px) {
-  /* line 346, sass/partials/_media-queries.scss */
+  /* line 347, sass/partials/_media-queries.scss */
   .hide-on-mobile {
     display: none;
   }
 
-  /* line 350, sass/partials/_media-queries.scss */
+  /* line 351, sass/partials/_media-queries.scss */
   .gutter, .margins {
     padding-left: 1.2rem;
     padding-right: 1.2rem;
   }
 
-  /* line 355, sass/partials/_media-queries.scss */
+  /* line 356, sass/partials/_media-queries.scss */
   .float-mobile-left {
     float: left;
   }
 
-  /* line 359, sass/partials/_media-queries.scss */
+  /* line 360, sass/partials/_media-queries.scss */
   .margin-mobile-bottom-small {
     margin-bottom: 1.2rem;
   }
 
-  /* line 363, sass/partials/_media-queries.scss */
+  /* line 364, sass/partials/_media-queries.scss */
   .width-mobile-100p {
     width: 100%;
   }
 
-  /* line 370, sass/partials/_media-queries.scss */
+  /* line 368, sass/partials/_media-queries.scss */
+  .pos-mobile-static {
+    position: static;
+  }
+
+  /* line 375, sass/partials/_media-queries.scss */
   .hero-explain {
     margin-right: 0;
   }
-  /* line 372, sass/partials/_media-queries.scss */
+  /* line 377, sass/partials/_media-queries.scss */
   .hero-explain h1 {
     text-align: center;
     font-size: 2.9rem;
     line-height: 2.9rem;
   }
 
-  /* line 379, sass/partials/_media-queries.scss */
+  /* line 384, sass/partials/_media-queries.scss */
   .money-raised {
     width: 21rem;
     height: 9.1rem;
@@ -11953,25 +11958,25 @@ Media query variables
     right: auto;
   }
 
-  /* line 386, sass/partials/_media-queries.scss */
+  /* line 391, sass/partials/_media-queries.scss */
   .raised-amount {
     font-size: 2.9rem;
     width: 16rem;
     margin-top: 0.6rem;
   }
 
-  /* line 392, sass/partials/_media-queries.scss */
+  /* line 397, sass/partials/_media-queries.scss */
   .iframe-mobile {
     height: 16.2rem;
   }
 
-  /* line 398, sass/partials/_media-queries.scss */
+  /* line 403, sass/partials/_media-queries.scss */
   .image-shift-details, .party-details, .wall-details, .party-details, .wall-details {
     margin-left: 0;
     margin-top: 7.2rem;
   }
 
-  /* line 403, sass/partials/_media-queries.scss */
+  /* line 408, sass/partials/_media-queries.scss */
   .choose-file-wrapper:after {
     width: 100%;
   }

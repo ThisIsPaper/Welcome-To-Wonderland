@@ -10,23 +10,10 @@
         <div m-profile-image="{{ pageProfile.imageUrl }}" m-radius-picker="small"></div>
 
 
-        <div class="image-shift-details">
+        <div class="image-shift-details width-mobile-100p">
             <div m-image-upload m-on-start-event="profileImageUploadStart" m-on-success-event="profileImageUpdated">
 
 
-                @* TODO: This form doesn't return the correct image url so i have swapped it out for the form used on the profile page  *@@*
-                @using (Html.BeginUmbracoForm<ProfileSurfaceController>("HandleProfileImageForm", FormMethod.Post, new { enctype = "multipart/form-data" }))
-                {
-                    @Html.AntiForgeryToken()
-
-                    <div class="choose-file-wrapper icon-icon_camera margin-bottom-small" ng-class="{'disabled': pageFeedback.profileImageProcessing}">
-                        <input class="choose-file" type="file" name="profileImage" accept="image/jpeg,image/gif,image/png" m-file-selected="submit()" />
-                    </div>
-                }
-                *@
-
-
-                @* TODO: SWAPPED WITH THIS ONE THAT RETURNS THE CORRECT IMAGE URL *@
                 @(Html.Action<ProfileSurfaceController>("RenderProfileImageForm"))
 
 

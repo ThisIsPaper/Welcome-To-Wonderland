@@ -46,9 +46,9 @@
 
 
 
-        <div class="clear width-50p">
+        <div class="clear width-50p width-mobile-100p">
             <label>Or a custom amount</label>
-            <div class="pos-relative width-50p">
+            <div class="pos-relative width-50p width-mobile-100p">
                 <span class="form-field-ico">£</span>
                 @Html.TextBoxFor(x => x.Amount, new { @class="currency", @ng_model="guideDonation.donation", @m_radius_picker="small", @m_valid_number="", @m_value_matcher="", @ng_readonly="processing", @ng_class="{'error': errorAmountMessage.length>0}" })
                 <div class="margin-bottom-small" ng-show="errorAmountMessage.length>0" ng-init="errorAmountMessage='@Html.ValidationMessageFor(x => x.Amount)'">@Html.ValidationMessageFor(x => x.Amount)</div>
@@ -125,9 +125,9 @@
         </div>
 
         <div class="grid-12 parent">
-            <button type="submit" class="btn-primary float-right" m-radius-picker="small" ng-disabled="processing">Join <span class="icon-icon_chevron_right"></span></button>
+            <button type="submit" class="btn-primary float-right width-mobile-100p" m-radius-picker="small" ng-disabled="processing">Join <span class="icon-icon_chevron_right"></span></button>
             <span class="cancel margin-right-1 float-right">Cancel</span>
-            <div class="loader" ng-show="processing"></div>
+            <div class="loader pos-mobile-static float-mobile-left" ng-show="processing"></div>
         </div>
 
     }
