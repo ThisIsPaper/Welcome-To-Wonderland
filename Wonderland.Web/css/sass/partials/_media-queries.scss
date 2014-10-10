@@ -102,6 +102,10 @@
 		display: none;
 	}
 
+	.body-mega {
+		font-size: $HeadingFontSizeSmall;
+	}
+
 	//***************************** ABSTRACT
 	.radius-tablet-0 {
 		@include m-border-radius(0, 0, 0, 0, 0, 0, 0, 0);
@@ -345,6 +349,10 @@
 
 	h1 {
 		word-wrap: break-word;
+	}
+
+	.body-mega {
+		font-size: $FontSizeLarge;
 	}
 
 	.hide-on-mobile {
