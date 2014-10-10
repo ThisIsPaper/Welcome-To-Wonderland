@@ -9,6 +9,7 @@ namespace Wonderland.Logic.DotMailer
     using Wonderland.Logic.DotMailerApi;
     using Wonderland.Logic.Extensions;
     using Wonderland.Logic.Interfaces;
+    using Wonderland.Logic.Models.Entities;
     using Wonderland.Logic.Models.Members;
 
     public class Contact : ApiContact
@@ -70,6 +71,30 @@ namespace Wonderland.Logic.DotMailer
                 this.contactData.Add(new ApiContactData()
                     {
                         Key = "Partier_Type",
+                        Value = value
+                    }
+                );
+            }
+        }
+
+        private Address PartyAddress
+        {
+            set
+            {
+                this.contactData.Add(new ApiContactData() { Key = "Party_Address_1", Value = value.Address1 });
+                this.contactData.Add(new ApiContactData() { Key = "Party_Address_2", Value = value.Address2 });
+                this.contactData.Add(new ApiContactData() { Key = "Party_Town_City", Value = value.TownCity });
+                this.contactData.Add(new ApiContactData() { Key = "Party_Postcode", Value = value.Postcode });
+            }
+        }
+
+        private string PartyUrlIdentifier
+        {
+            set
+            {
+                this.contactData.Add(new ApiContactData()
+                    {
+                        Key = "Party_Url_Identifier",
                         Value = value
                     }
                 );
@@ -148,6 +173,8 @@ namespace Wonderland.Logic.DotMailer
             contact.LastName = partyHost.LastName;
             contact.PartyDate = partyHost.PartyDateTime;
             contact.PartierType = PartyHost.Alias;
+            contact.PartyAddress = partyHost.PartyAddress;
+            contact.PartyUrlIdentifier = partyHost.PartyUrlIdentifier;
             contact.GuestCount = members.GetPartiers(partyHost.PartyGuid).Count();
             contact.DonationAmount = partyHost.AmountRaised;
             contact.PartyPagePopulated = !string.IsNullOrWhiteSpace(partyHost.PartyImage)
@@ -168,7 +195,9 @@ namespace Wonderland.Logic.DotMailer
             contact.LastName = partyGuest.LastName;
             contact.PartyDate = partyHost.PartyDateTime;
             contact.PartierType = PartyGuest.Alias;
-            
+            contact.PartyAddress = partyHost.PartyAddress;
+            contact.PartyUrlIdentifier = partyHost.PartyUrlIdentifier;
+
             return contact;
         }
     }
