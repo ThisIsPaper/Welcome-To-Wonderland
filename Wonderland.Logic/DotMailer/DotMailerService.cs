@@ -4,7 +4,6 @@ namespace Wonderland.Logic.DotMailer
     using System.Net;
     using System.Web.Configuration;
     using Wonderland.Logic.DotMailerApi;
-    using Wonderland.Logic.Models.Members;
 
     internal static class DotMailerService
     {
@@ -15,7 +14,7 @@ namespace Wonderland.Logic.DotMailer
         private const int PartyGuestsAddressBookId = 115144;
 
         /// <summary>
-        /// add contact to the 'Host Registration Started' address book
+        /// add new contact (marked as a PartyHost)
         /// </summary>
         /// <param name="contact"></param>
         internal static void HostRegistrationStarted(Contact contact)
@@ -28,22 +27,19 @@ namespace Wonderland.Logic.DotMailer
         }
 
         /// <summary>
-        /// move contact from the 'Host Registration Started' to the 'Host Registration Completed' address book
+        /// add contact to the Party Hosts address book
         /// </summary>
         /// <param name="contact"></param>
         internal static void HostRegistrationCompleted(Contact contact)
         {
             ApiService apiService = DotMailerService.GetApiService();
 
-            // update Contact not needed, as contact is updated when adding to the address book
-            //apiService.UpdateContact(contact.ToApiContact()); // we now have firstname & lastname
-
-            // add host to address book - dotmailer will fire off email 2.
+            // add host to address book (this also updates the contact details) - dotmailer will fire off email 2.
             apiService.AddContactToAddressBook(DotMailerService.PartyHostsAddressBookId, contact.ToApiContact());
         }
 
         /// <summary>
-        /// add contact to the 'Guest Registration Started' address book
+        /// add new contact (marked as a Party Guest)
         /// </summary>
         /// <param name="contact"></param>
         internal static void GuestRegistrationStarted(Contact contact)
@@ -57,15 +53,12 @@ namespace Wonderland.Logic.DotMailer
         }
 
         /// <summary>
-        /// move contact from the 'Guest Registration Started' to the 'Guest Registration Completed' address book
+        /// add contact to the Party Guest address book
         /// </summary>
         /// <param name="contac"></param>
         internal static void GuestRegistrationCompleted(Contact contact)
         {
             ApiService apiService = DotMailerService.GetApiService();
-
-            //// hit 2: update guest contact - can we avoid this ?
-            //apiService.UpdateContact(contact.ToApiContact()); // we now have firstname & lastname
 
             // add guest to address book - dotMailer will fire off email 18
             apiService.AddContactToAddressBook(DotMailerService.PartyGuestsAddressBookId, contact.ToApiContact());            
