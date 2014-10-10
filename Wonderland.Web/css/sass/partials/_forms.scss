@@ -175,7 +175,7 @@ $btnPaddingLarge: $btnPaddingMedium*2;
 label {
     @extend .body-small;
     text-transform: uppercase;
-    color: $greyDark;
+    color: $greyReallyDark;
     font-weight: bold;
     line-height: 3rem;
 
@@ -213,9 +213,11 @@ input[type='text'], input[type='password'], select {
     line-height: 5rem;
 }
 
+
 input[type='text'], input[type='password'], textarea, select {
     border: .1rem solid $greyLight;
     background-color: white;
+	font-family: $fontFaceFutura;
 
     &.error {
         border: .1rem solid $redDark;
@@ -226,7 +228,7 @@ input[type="text"][readonly] {
     cursor: pointer;
 }
 
-input[type='password'] {
+input[type='password'], input[type="text"].input-with-icon, select.input-with-icon {
     padding-left: 4rem;
 }
 

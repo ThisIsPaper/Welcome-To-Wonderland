@@ -9,7 +9,7 @@
 
     <h3>Enter your donation amount</h3>
 
-    <div class="clear width-50p">
+    <div class="clear width-50p width-mobile-100p">
         <div class="errorred margin-bottom-small" ng-show="guideDonation.donation>=1000">Are you sure you want to donate this amount of money, it seems like a lot!</div>
         <div class="pos-relative">
             <span class="form-field-ico">£</span>
@@ -86,9 +86,9 @@
 
 
     <div class="grid-12 parent">
-        <button type="submit" class="btn-primary float-right" m-radius-picker="small" ng-disabled="processing">Proceed</button>
+        <button type="submit" class="btn-primary float-right width-mobile-100p" m-radius-picker="small" ng-disabled="processing">Proceed</button>
         <span class="cancel margin-right-1 float-right">Cancel</span>
-        <div class="loader" ng-show="processing"></div>
+        <div class="loader pos-mobile-static float-mobile-left" ng-show="processing"></div>
     </div>
 
 }

@@ -4960,8 +4960,8 @@ abstract
 }
 @font-face {
   font-family: 'icomoon';
-  src: url("/fonts/icomoon.eot?-my7vwe");
-  src: url("/fonts/icomoon.eot?#iefix-my7vwe") format("embedded-opentype"), url("/fonts/icomoon.woff?-my7vwe") format("woff"), url("/fonts/icomoon.ttf?-my7vwe") format("truetype"), url("/fonts/icomoon.svg?-my7vwe#icomoon") format("svg");
+  src: url("/fonts/icomoon.eot?-clohpx");
+  src: url("/fonts/icomoon.eot?#iefix-clohpx") format("embedded-opentype"), url("/fonts/icomoon.woff?-clohpx") format("woff"), url("/fonts/icomoon.ttf?-clohpx") format("truetype"), url("/fonts/icomoon.svg?-clohpx#icomoon") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -4980,191 +4980,196 @@ abstract
 }
 
 /* line 27, sass/partials/icomoon/_icomoon.scss */
+.icon-icon_calendar:before {
+  content: "\e626";
+}
+
+/* line 30, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_minus:before {
   content: "\e624";
 }
 
-/* line 30, sass/partials/icomoon/_icomoon.scss */
+/* line 33, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_plus:before {
   content: "\e625";
 }
 
-/* line 33, sass/partials/icomoon/_icomoon.scss */
+/* line 36, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_pinterest:before {
   content: "\e623";
 }
 
-/* line 36, sass/partials/icomoon/_icomoon.scss */
+/* line 39, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_trophy:before {
   content: "\e622";
 }
 
-/* line 39, sass/partials/icomoon/_icomoon.scss */
+/* line 42, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_alert:before {
   content: "\e620";
 }
 
-/* line 42, sass/partials/icomoon/_icomoon.scss */
+/* line 45, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_gift:before {
   content: "\e621";
 }
 
-/* line 45, sass/partials/icomoon/_icomoon.scss */
+/* line 48, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_back:before {
   content: "\e61e";
 }
 
-/* line 48, sass/partials/icomoon/_icomoon.scss */
+/* line 51, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_tick:before {
   content: "\e61f";
 }
 
-/* line 51, sass/partials/icomoon/_icomoon.scss */
+/* line 54, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_anon_user:before {
   content: "\e61b";
 }
 
-/* line 54, sass/partials/icomoon/_icomoon.scss */
+/* line 57, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_piggy:before {
   content: "\e61c";
 }
 
-/* line 57, sass/partials/icomoon/_icomoon.scss */
+/* line 60, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_question_mark:before {
   content: "\e61d";
 }
 
-/* line 60, sass/partials/icomoon/_icomoon.scss */
+/* line 63, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_envelope:before {
   content: "\e618";
 }
 
-/* line 63, sass/partials/icomoon/_icomoon.scss */
+/* line 66, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_facebook_f:before {
   content: "\e619";
 }
 
-/* line 66, sass/partials/icomoon/_icomoon.scss */
+/* line 69, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_twitter_bird:before {
   content: "\e61a";
 }
 
-/* line 69, sass/partials/icomoon/_icomoon.scss */
+/* line 72, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_chevron_left:before {
   content: "\e600";
 }
 
-/* line 72, sass/partials/icomoon/_icomoon.scss */
+/* line 75, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_chevron_right:before {
   content: "\e601";
 }
 
-/* line 75, sass/partials/icomoon/_icomoon.scss */
+/* line 78, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_chevron_up:before {
   content: "\e602";
 }
 
-/* line 78, sass/partials/icomoon/_icomoon.scss */
+/* line 81, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_chevron_down:before {
   content: "\e603";
 }
 
-/* line 81, sass/partials/icomoon/_icomoon.scss */
+/* line 84, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_hamburger_menu:before {
   content: "\e604";
 }
 
-/* line 84, sass/partials/icomoon/_icomoon.scss */
+/* line 87, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_home:before {
   content: "\e605";
 }
 
-/* line 87, sass/partials/icomoon/_icomoon.scss */
+/* line 90, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_camera:before {
   content: "\e606";
 }
 
-/* line 90, sass/partials/icomoon/_icomoon.scss */
+/* line 93, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_clock:before {
   content: "\e607";
 }
 
-/* line 93, sass/partials/icomoon/_icomoon.scss */
+/* line 96, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_cog:before {
   content: "\e608";
 }
 
-/* line 96, sass/partials/icomoon/_icomoon.scss */
+/* line 99, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_crown:before {
   content: "\e609";
 }
 
-/* line 99, sass/partials/icomoon/_icomoon.scss */
+/* line 102, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_cutlery:before {
   content: "\e60a";
 }
 
-/* line 102, sass/partials/icomoon/_icomoon.scss */
+/* line 105, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_edit:before {
   content: "\e60b";
 }
 
-/* line 105, sass/partials/icomoon/_icomoon.scss */
+/* line 108, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_fingerpost:before {
   content: "\e60c";
 }
 
-/* line 108, sass/partials/icomoon/_icomoon.scss */
+/* line 111, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_padlock_unlocked:before {
   content: "\e60d";
 }
 
-/* line 111, sass/partials/icomoon/_icomoon.scss */
+/* line 114, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_padlock:before {
   content: "\e60e";
 }
 
-/* line 114, sass/partials/icomoon/_icomoon.scss */
+/* line 117, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_person:before {
   content: "\e60f";
 }
 
-/* line 117, sass/partials/icomoon/_icomoon.scss */
+/* line 120, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_question:before {
   content: "\e610";
 }
 
-/* line 120, sass/partials/icomoon/_icomoon.scss */
+/* line 123, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_snowflake:before {
   content: "\e611";
 }
 
-/* line 123, sass/partials/icomoon/_icomoon.scss */
+/* line 126, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_star:before {
   content: "\e612";
 }
 
-/* line 126, sass/partials/icomoon/_icomoon.scss */
+/* line 129, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_t-shirt:before {
   content: "\e613";
 }
 
-/* line 129, sass/partials/icomoon/_icomoon.scss */
+/* line 132, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_twitter:before {
   content: "\e614";
 }
 
-/* line 132, sass/partials/icomoon/_icomoon.scss */
+/* line 135, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_facebook:before {
   content: "\e615";
 }
 
-/* line 135, sass/partials/icomoon/_icomoon.scss */
+/* line 138, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_google_plus:before {
   content: "\e616";
 }
 
-/* line 138, sass/partials/icomoon/_icomoon.scss */
+/* line 141, sass/partials/icomoon/_icomoon.scss */
 .icon-icon_x:before {
   content: "\e617";
 }
@@ -6922,7 +6927,7 @@ Media query variables
 /* line 175, sass/partials/_forms.scss */
 label {
   text-transform: uppercase;
-  color: #7B7A6D;
+  color: #474740;
   font-weight: bold;
   line-height: 3rem;
 }
@@ -6952,32 +6957,33 @@ input[type='text'], input[type='password'], select {
   line-height: 5rem;
 }
 
-/* line 216, sass/partials/_forms.scss */
+/* line 217, sass/partials/_forms.scss */
 input[type='text'], input[type='password'], textarea, select {
   border: 0.1rem solid #D4D3CC;
   background-color: white;
+  font-family: "Futura BT W01 Book";
 }
-/* line 220, sass/partials/_forms.scss */
+/* line 222, sass/partials/_forms.scss */
 input[type='text'].error, input[type='password'].error, textarea.error, select.error {
   border: 0.1rem solid #E32333;
 }
 
-/* line 225, sass/partials/_forms.scss */
+/* line 227, sass/partials/_forms.scss */
 input[type="text"][readonly] {
   cursor: pointer;
 }
 
-/* line 229, sass/partials/_forms.scss */
-input[type='password'] {
+/* line 231, sass/partials/_forms.scss */
+input[type='password'], input[type="text"].input-with-icon, select.input-with-icon {
   padding-left: 4rem;
 }
 
-/* line 233, sass/partials/_forms.scss */
+/* line 235, sass/partials/_forms.scss */
 input[type="text"].currency {
   padding-left: 3rem;
 }
 
-/* line 238, sass/partials/_forms.scss */
+/* line 240, sass/partials/_forms.scss */
 input[type=submit][disabled=disabled],
 input[type=submit][disabled=disabled]:hover,
 button[disabled=disabled],
@@ -6987,17 +6993,17 @@ button[disabled=disabled]:hover {
   cursor: default;
 }
 
-/* line 247, sass/partials/_forms.scss */
+/* line 249, sass/partials/_forms.scss */
 select.auto-width {
   width: auto;
 }
 
-/* line 251, sass/partials/_forms.scss */
+/* line 253, sass/partials/_forms.scss */
 *:focus {
   outline: 0;
 }
 
-/* line 257, sass/partials/_forms.scss */
+/* line 259, sass/partials/_forms.scss */
 .choose-file-wrapper {
   width: 16.2rem;
   height: 4rem;
@@ -7005,7 +7011,7 @@ select.auto-width {
   position: relative;
   cursor: pointer;
 }
-/* line 265, sass/partials/_forms.scss */
+/* line 267, sass/partials/_forms.scss */
 .choose-file-wrapper:before {
   position: relative;
   z-index: 10;
@@ -7015,7 +7021,7 @@ select.auto-width {
   font-size: 1.4rem;
   line-height: 3.8rem;
 }
-/* line 276, sass/partials/_forms.scss */
+/* line 278, sass/partials/_forms.scss */
 .choose-file-wrapper:after {
   content: "Upload file";
   position: absolute;
@@ -7027,14 +7033,14 @@ select.auto-width {
   padding-right: 4.4rem;
   line-height: 1.6rem;
 }
-/* line 294, sass/partials/_forms.scss */
+/* line 296, sass/partials/_forms.scss */
 .choose-file-wrapper.disabled:after {
   cursor: default;
   background-color: #D4D3CC;
   color: #A19F91;
 }
 
-/* line 302, sass/partials/_forms.scss */
+/* line 304, sass/partials/_forms.scss */
 .choose-file {
   width: 200%;
   height: 100%;
@@ -7048,7 +7054,7 @@ select.auto-width {
   opacity: 0;
 }
 
-/* line 315, sass/partials/_forms.scss */
+/* line 317, sass/partials/_forms.scss */
 .form-field-ico {
   position: absolute;
   top: 0;
@@ -10028,7 +10034,7 @@ ul, ol, dl {
 
 /* line 303, sass/partials/_type.scss */
 .body-dephasize {
-  color: #D4D3CC;
+  color: #7B7A6D;
 }
 
 /* line 307, sass/partials/_type.scss */
@@ -10327,7 +10333,7 @@ Media query variables
 /* line 175, sass/partials/_forms.scss */
 label {
   text-transform: uppercase;
-  color: #7B7A6D;
+  color: #474740;
   font-weight: bold;
   line-height: 3rem;
 }
@@ -10357,32 +10363,33 @@ input[type='text'], input[type='password'], select {
   line-height: 5rem;
 }
 
-/* line 216, sass/partials/_forms.scss */
+/* line 217, sass/partials/_forms.scss */
 input[type='text'], input[type='password'], textarea, select {
   border: 0.1rem solid #D4D3CC;
   background-color: white;
+  font-family: "Futura BT W01 Book";
 }
-/* line 220, sass/partials/_forms.scss */
+/* line 222, sass/partials/_forms.scss */
 input[type='text'].error, input[type='password'].error, textarea.error, select.error {
   border: 0.1rem solid #E32333;
 }
 
-/* line 225, sass/partials/_forms.scss */
+/* line 227, sass/partials/_forms.scss */
 input[type="text"][readonly] {
   cursor: pointer;
 }
 
-/* line 229, sass/partials/_forms.scss */
-input[type='password'] {
+/* line 231, sass/partials/_forms.scss */
+input[type='password'], input[type="text"].input-with-icon, select.input-with-icon {
   padding-left: 4rem;
 }
 
-/* line 233, sass/partials/_forms.scss */
+/* line 235, sass/partials/_forms.scss */
 input[type="text"].currency {
   padding-left: 3rem;
 }
 
-/* line 238, sass/partials/_forms.scss */
+/* line 240, sass/partials/_forms.scss */
 input[type=submit][disabled=disabled],
 input[type=submit][disabled=disabled]:hover,
 button[disabled=disabled],
@@ -10392,17 +10399,17 @@ button[disabled=disabled]:hover {
   cursor: default;
 }
 
-/* line 247, sass/partials/_forms.scss */
+/* line 249, sass/partials/_forms.scss */
 select.auto-width {
   width: auto;
 }
 
-/* line 251, sass/partials/_forms.scss */
+/* line 253, sass/partials/_forms.scss */
 *:focus {
   outline: 0;
 }
 
-/* line 257, sass/partials/_forms.scss */
+/* line 259, sass/partials/_forms.scss */
 .choose-file-wrapper {
   width: 16.2rem;
   height: 4rem;
@@ -10410,7 +10417,7 @@ select.auto-width {
   position: relative;
   cursor: pointer;
 }
-/* line 265, sass/partials/_forms.scss */
+/* line 267, sass/partials/_forms.scss */
 .choose-file-wrapper:before {
   position: relative;
   z-index: 10;
@@ -10420,7 +10427,7 @@ select.auto-width {
   font-size: 1.4rem;
   line-height: 3.8rem;
 }
-/* line 276, sass/partials/_forms.scss */
+/* line 278, sass/partials/_forms.scss */
 .choose-file-wrapper:after {
   content: "Upload file";
   position: absolute;
@@ -10432,14 +10439,14 @@ select.auto-width {
   padding-right: 4.4rem;
   line-height: 1.6rem;
 }
-/* line 294, sass/partials/_forms.scss */
+/* line 296, sass/partials/_forms.scss */
 .choose-file-wrapper.disabled:after {
   cursor: default;
   background-color: #D4D3CC;
   color: #A19F91;
 }
 
-/* line 302, sass/partials/_forms.scss */
+/* line 304, sass/partials/_forms.scss */
 .choose-file {
   width: 200%;
   height: 100%;
@@ -10453,7 +10460,7 @@ select.auto-width {
   opacity: 0;
 }
 
-/* line 315, sass/partials/_forms.scss */
+/* line 317, sass/partials/_forms.scss */
 .form-field-ico {
   position: absolute;
   top: 0;
@@ -10554,7 +10561,7 @@ ul, ol, dl {
 
 /* line 303, sass/partials/_type.scss */
 .body-dephasize {
-  color: #D4D3CC;
+  color: #7B7A6D;
 }
 
 /* line 307, sass/partials/_type.scss */
@@ -11642,7 +11649,12 @@ Media query variables
     display: none;
   }
 
-  /* line 106, sass/partials/_media-queries.scss */
+  /* line 105, sass/partials/_media-queries.scss */
+  .body-mega {
+    font-size: 2.9rem;
+  }
+
+  /* line 110, sass/partials/_media-queries.scss */
   .radius-tablet-0 {
     -moz-border-radius-topleft: 0 0;
     -webkit-border-top-left-radius: 0 0;
@@ -11658,61 +11670,66 @@ Media query variables
     border-bottom-left-radius: 0 0;
   }
 
-  /* line 110, sass/partials/_media-queries.scss */
+  /* line 114, sass/partials/_media-queries.scss */
   .anti-image-shift-details {
     margin-left: 0;
   }
 
-  /* line 114, sass/partials/_media-queries.scss */
+  /* line 118, sass/partials/_media-queries.scss */
   .margin-mobile-bottom-0 {
     margin-bottom: 0;
   }
 
-  /* line 120, sass/partials/_media-queries.scss */
+  /* line 124, sass/partials/_media-queries.scss */
+  .page-bg {
+    padding-top: 6rem;
+  }
+
+  /* line 128, sass/partials/_media-queries.scss */
   .site-header.showing-side-nav-menu {
     left: 25.6rem;
   }
 
-  /* line 124, sass/partials/_media-queries.scss */
+  /* line 132, sass/partials/_media-queries.scss */
   .site-header.showing-side-account-menu {
     left: -25.6rem;
   }
 
-  /* line 128, sass/partials/_media-queries.scss */
+  /* line 136, sass/partials/_media-queries.scss */
   .logo {
     top: -16rem;
   }
 
-  /* line 132, sass/partials/_media-queries.scss */
+  /* line 140, sass/partials/_media-queries.scss */
   .logo-ribbon, .site-header.compress .logo-ribbon {
     padding: 1.95rem 9.6rem;
     margin: 12.9rem -9.6rem;
   }
 
-  /* line 137, sass/partials/_media-queries.scss */
+  /* line 145, sass/partials/_media-queries.scss */
   .nav-end-block {
     display: none;
     left: 1.5rem;
     color: #007eac;
   }
 
-  /* line 143, sass/partials/_media-queries.scss */
+  /* line 151, sass/partials/_media-queries.scss */
   .nav-end-block.end-block-right {
     left: auto;
     right: 1.5rem;
   }
 
-  /* line 148, sass/partials/_media-queries.scss */
+  /* line 156, sass/partials/_media-queries.scss */
   .nav-burger, .nav-account {
     display: block;
   }
 
-  /* line 152, sass/partials/_media-queries.scss */
+  /* line 160, sass/partials/_media-queries.scss */
   .nav-end-block, .site-header.compress .nav-end-block {
     top: 1.8rem;
   }
 
-  /* line 156, sass/partials/_media-queries.scss */
+  /* line 164, sass/partials/_media-queries.scss */
   .nav-end-block a, a.nav-end-block {
     font-size: 3rem;
   }
@@ -11720,7 +11737,7 @@ Media query variables
   /**********************/
   /* NAV SIDE MENU
     /**********************/
-  /* line 163, sass/partials/_media-queries.scss */
+  /* line 171, sass/partials/_media-queries.scss */
   .nav-menu {
     position: absolute;
     left: -25.6rem;
@@ -11734,7 +11751,7 @@ Media query variables
   /**********************/
   /* NAV SIDE ACCOUNT MENU
     /**********************/
-  /* line 176, sass/partials/_media-queries.scss */
+  /* line 184, sass/partials/_media-queries.scss */
   .account-menu-holder, .site-header.compress .account-menu-holder {
     top: 0;
     right: -25.6rem;
@@ -11743,48 +11760,48 @@ Media query variables
     width: 25.6rem;
     overflow: hidden;
   }
-  /* line 184, sass/partials/_media-queries.scss */
+  /* line 192, sass/partials/_media-queries.scss */
   .account-menu-holder .profile-image, .account-menu-holder .profile-image.small, .site-header.compress .account-menu-holder .profile-image, .site-header.compress .account-menu-holder .profile-image.small {
     width: 16rem;
     height: 16rem;
     margin: 2.3rem 0 0 4.9rem;
     cursor: default;
   }
-  /* line 190, sass/partials/_media-queries.scss */
+  /* line 198, sass/partials/_media-queries.scss */
   .account-menu-holder .profile-image:before, .account-menu-holder .profile-image.small:before, .site-header.compress .account-menu-holder .profile-image:before, .site-header.compress .account-menu-holder .profile-image.small:before {
     font-size: 14.2rem;
     line-height: 17.6rem;
   }
 
-  /* line 197, sass/partials/_media-queries.scss */
+  /* line 205, sass/partials/_media-queries.scss */
   .account-menu {
     display: block !important;
     position: relative;
     width: 100%;
   }
 
-  /* line 203, sass/partials/_media-queries.scss */
+  /* line 211, sass/partials/_media-queries.scss */
   .account-name {
     display: none;
   }
 
   /**********************/
-  /* line 208, sass/partials/_media-queries.scss */
+  /* line 216, sass/partials/_media-queries.scss */
   .menu {
     width: 100%;
   }
-  /* line 211, sass/partials/_media-queries.scss */
+  /* line 219, sass/partials/_media-queries.scss */
   .menu .side-only {
     display: block;
   }
 
-  /* line 216, sass/partials/_media-queries.scss */
+  /* line 224, sass/partials/_media-queries.scss */
   .menu ul {
     float: none;
     margin: 0;
   }
 
-  /* line 221, sass/partials/_media-queries.scss */
+  /* line 229, sass/partials/_media-queries.scss */
   .menu li {
     display: block;
     margin: 0;
@@ -11792,100 +11809,100 @@ Media query variables
     border-bottom: .1rem solid #55554d;
   }
 
-  /* line 228, sass/partials/_media-queries.scss */
+  /* line 236, sass/partials/_media-queries.scss */
   .menu li a {
     line-height: normal;
     color: #d4d3cc;
     font-size: 1.4rem;
     font-weight: bold;
   }
-  /* line 234, sass/partials/_media-queries.scss */
+  /* line 242, sass/partials/_media-queries.scss */
   .menu li a.selected {
     background: none;
     padding: 0;
   }
 
-  /* line 241, sass/partials/_media-queries.scss */
+  /* line 249, sass/partials/_media-queries.scss */
   .menu li span[class^="icon-"]:before, .menu li span[class*=" icon-"]:before {
     color: #7b7a6d;
     margin-right: 1rem;
     display: inline;
   }
 
-  /* line 247, sass/partials/_media-queries.scss */
+  /* line 255, sass/partials/_media-queries.scss */
   .menu li a:hover {
     color: #a5a395;
     text-decoration: none;
   }
 
-  /* line 252, sass/partials/_media-queries.scss */
+  /* line 260, sass/partials/_media-queries.scss */
   .site-header.compress .left-side ul, .site-header.compress .right-side ul {
     margin-left: 0;
     margin-right: 0;
   }
 
-  /* line 257, sass/partials/_media-queries.scss */
+  /* line 265, sass/partials/_media-queries.scss */
   .site-header.compress .menu li a {
     line-height: normal;
   }
 
-  /* line 266, sass/partials/_media-queries.scss */
+  /* line 274, sass/partials/_media-queries.scss */
   .party-image-container {
     float: none;
   }
 
-  /* line 272, sass/partials/_media-queries.scss */
+  /* line 280, sass/partials/_media-queries.scss */
   .only-on-tablet {
     display: block !important;
   }
 
-  /* line 278, sass/partials/_media-queries.scss */
+  /* line 286, sass/partials/_media-queries.scss */
   .idea-sizer, .idea-tile, .idea-tile.wide {
     width: 100%;
   }
 
-  /* line 282, sass/partials/_media-queries.scss */
+  /* line 290, sass/partials/_media-queries.scss */
   .idea-details {
     width: 100%;
     top: 11%;
     left: 0;
     padding: 0 1.2rem;
   }
-  /* line 288, sass/partials/_media-queries.scss */
+  /* line 296, sass/partials/_media-queries.scss */
   .idea-details.over-the-top {
     position: inherit;
     color: inherit;
   }
-  /* line 292, sass/partials/_media-queries.scss */
+  /* line 300, sass/partials/_media-queries.scss */
   .idea-details.over-the-top h1 {
     color: #025b45;
     font-size: 2.3rem;
     line-height: 2.3rem;
   }
-  /* line 298, sass/partials/_media-queries.scss */
+  /* line 306, sass/partials/_media-queries.scss */
   .idea-details.over-the-top .spotify-logo {
-    background-position-x: 2.8rem;
+    margin-left: 7.6rem;
   }
 
-  /* line 306, sass/partials/_media-queries.scss */
+  /* line 314, sass/partials/_media-queries.scss */
   .hero-explain {
     margin-right: 0;
   }
-  /* line 308, sass/partials/_media-queries.scss */
+  /* line 316, sass/partials/_media-queries.scss */
   .hero-explain h1 {
     text-align: center;
     font-size: 2.9rem;
     line-height: 2.9rem;
   }
 
-  /* line 315, sass/partials/_media-queries.scss */
+  /* line 323, sass/partials/_media-queries.scss */
   .money-raised {
     position: relative;
     float: right;
     margin-bottom: 3rem;
   }
 
-  /* line 325, sass/partials/_media-queries.scss */
+  /* line 333, sass/partials/_media-queries.scss */
   .date-details-shifter {
     padding-right: 0;
   }
@@ -11896,23 +11913,65 @@ Media query variables
 /*
 /*****************************/
 @media only screen and (max-width: 450px) {
-  /* line 339, sass/partials/_media-queries.scss */
+  /* line 350, sass/partials/_media-queries.scss */
+  h1 {
+    word-wrap: break-word;
+  }
+
+  /* line 354, sass/partials/_media-queries.scss */
+  .body-mega {
+    font-size: 2.3rem;
+  }
+
+  /* line 358, sass/partials/_media-queries.scss */
   .hide-on-mobile {
     display: none;
   }
 
-  /* line 345, sass/partials/_media-queries.scss */
+  /* line 362, sass/partials/_media-queries.scss */
+  .gutter, .margins {
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
+  }
+
+  /* line 367, sass/partials/_media-queries.scss */
+  .float-mobile-left {
+    float: left;
+  }
+
+  /* line 371, sass/partials/_media-queries.scss */
+  .margin-mobile-bottom-small {
+    margin-bottom: 1.2rem;
+  }
+
+  /* line 375, sass/partials/_media-queries.scss */
+  .width-mobile-100p {
+    width: 100%;
+  }
+
+  /* line 379, sass/partials/_media-queries.scss */
+  .pos-mobile-static {
+    position: static;
+  }
+
+  /* line 383, sass/partials/_media-queries.scss */
+  .pad-mobile-no-side {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  /* line 391, sass/partials/_media-queries.scss */
   .hero-explain {
     margin-right: 0;
   }
-  /* line 347, sass/partials/_media-queries.scss */
+  /* line 393, sass/partials/_media-queries.scss */
   .hero-explain h1 {
     text-align: center;
     font-size: 2.9rem;
     line-height: 2.9rem;
   }
 
-  /* line 354, sass/partials/_media-queries.scss */
+  /* line 400, sass/partials/_media-queries.scss */
   .money-raised {
     width: 21rem;
     height: 9.1rem;
@@ -11920,15 +11979,36 @@ Media query variables
     right: auto;
   }
 
-  /* line 361, sass/partials/_media-queries.scss */
+  /* line 407, sass/partials/_media-queries.scss */
   .raised-amount {
     font-size: 2.9rem;
     width: 16rem;
     margin-top: 0.6rem;
   }
 
-  /* line 367, sass/partials/_media-queries.scss */
+  /* line 413, sass/partials/_media-queries.scss */
   .iframe-mobile {
     height: 16.2rem;
+  }
+
+  /* line 419, sass/partials/_media-queries.scss */
+  .image-shift-details, .party-details, .wall-details, .party-details, .wall-details {
+    margin-left: 0;
+    margin-top: 7.2rem;
+  }
+
+  /* line 424, sass/partials/_media-queries.scss */
+  .choose-file-wrapper:after {
+    width: 100%;
+  }
+
+  /* line 431, sass/partials/_media-queries.scss */
+  .spotify-holder {
+    width: auto;
+  }
+
+  /* line 435, sass/partials/_media-queries.scss */
+  .width-mobile-spotify {
+    width: 100%;
   }
 }

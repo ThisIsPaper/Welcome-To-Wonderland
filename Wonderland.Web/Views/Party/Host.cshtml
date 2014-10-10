@@ -79,13 +79,11 @@
 
 
             <div class="wgrid-full parent">
-                <div class="boxx" ng-class="{'error': fundraisingTargetData.FundraisingTarget<=0}" m-radius-picker ng-init="amountRaised=@Model.PartyHost.AmountRaised">
+                <div class="boxx" m-radius-picker ng-init="amountRaised=@Model.PartyHost.AmountRaised">
 
                     <h4 class="top margin-right-3">Set your fundraising target</h4>
 
                     <m-totaliser m-raised="{{ amountRaised }}" m-total="{{ fundraisingTargetData.FundraisingTarget }}"></m-totaliser>
-
-                    <div class="errorred margin-top-5" ng-show="fundraisingTargetData.FundraisingTarget<=0">You need to set a fundraising target</div>
 
                     <div class="edit-trigger" ng-click="openPageModal('partials/fundraisingTargetForm.html', 'suggestedDonationModal', {'fundraisingTargetData': fundraisingTargetDataForForm})"><span class="edit-label">Edit</span><span class="icon-icon_edit"></span></div>
 
@@ -95,7 +93,7 @@
 
 
             <div class="wgrid-full parent">
-                <div class="boxx" ng-class="{'error': suggestedDonationData.SuggestedDonation<=0}" m-radius-picker>
+                <div class="boxx" m-radius-picker>
                     <h4 class="top margin-right-3">Suggested ticket price</h4>
 
                     <div class="ticket selected centered max-width-25">
@@ -105,8 +103,6 @@
                             <div class="price" ng-bind="suggestedDonationData.SuggestedDonation|mCurrency:'£'"></div>
                         </div>
                     </div>
-
-                    <div class="errorred margin-top-large" ng-show="suggestedDonationData.SuggestedDonation<=0">You need to set a suggested ticket price</div>
 
                     <div class="edit-trigger" ng-click="openPageModal('partials/suggestedDonationForm.html', 'suggestedDonationModal', {'suggestedDonationData': suggestedDonationDataForForm})"><span class="edit-label">Edit</span><span class="icon-icon_edit"></span></div>
                 </div>

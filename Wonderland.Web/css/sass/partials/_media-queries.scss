@@ -102,6 +102,10 @@
 		display: none;
 	}
 
+	.body-mega {
+		font-size: $HeadingFontSizeSmall;
+	}
+
 	//***************************** ABSTRACT
 	.radius-tablet-0 {
 		@include m-border-radius(0, 0, 0, 0, 0, 0, 0, 0);
@@ -116,6 +120,10 @@
 	}
 
 	//***************************** BASE
+
+	.page-bg {
+		padding-top: 6rem;
+	}
 
 	.site-header.showing-side-nav-menu {
 		left: 25.6rem;
@@ -296,7 +304,7 @@
 			}
 
 			.spotify-logo {
-				background-position-x: 2.8rem;
+				margin-left: 7.6rem;
 			}
 		}
 	}
@@ -334,11 +342,49 @@
 /*
 /*****************************/
 
+
 @media only screen and (max-width: 450px) {
+
+	//***************************** abstract
+
+	h1 {
+		word-wrap: break-word;
+	}
+
+	.body-mega {
+		font-size: $FontSizeLarge;
+	}
 
 	.hide-on-mobile {
 		display: none;
 	}
+
+	.gutter, .margins {
+		padding-left: 1.2rem;
+		padding-right: 1.2rem;
+	}
+
+	.float-mobile-left {
+		float: left;
+	}
+
+	.margin-mobile-bottom-small {
+		margin-bottom: $marginSmallValue;
+	}
+
+	.width-mobile-100p {
+		width: 100%;
+	}
+
+	.pos-mobile-static {
+		position: static;
+	}
+
+	.pad-mobile-no-side {
+		padding-left: 0;
+		padding-right: 0;
+	}
+
 
 	//***************************** Home page
 
@@ -366,6 +412,28 @@
 
 	.iframe-mobile {
 		height: 16.2rem;
+	}
+
+	//***************************** General
+
+	.image-shift-details, .party-details, .wall-details {
+		margin-left: 0;
+		margin-top: 7.2rem;
+	}
+
+	.choose-file-wrapper:after {
+		width: 100%;
+	}
+
+
+	//***************************** Spotify page
+
+	.spotify-holder {
+		width: auto;
+	}
+
+	.width-mobile-spotify {
+		width: 100%;
 	}
 
 }
