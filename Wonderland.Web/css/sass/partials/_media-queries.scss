@@ -117,6 +117,10 @@
 
 	//***************************** BASE
 
+	.page-bg {
+		padding-top: 6rem;
+	}
+
 	.site-header.showing-side-nav-menu {
 		left: 25.6rem;
 	}
@@ -334,12 +338,33 @@
 /*
 /*****************************/
 
+
 @media only screen and (max-width: 450px) {
+
+	//***************************** abstract
 
 	.hide-on-mobile {
 		display: none;
 	}
 
+	.gutter, .margins {
+		padding-left: 1.2rem;
+		padding-right: 1.2rem;
+	}
+
+	.float-mobile-left {
+		float: left;
+	}
+
+	.margin-mobile-bottom-small {
+		margin-bottom: $marginSmallValue;
+	}
+
+	.width-mobile-100p {
+		width: 100%;
+	}
+
+	
 	//***************************** Home page
 
 	.hero-explain {
@@ -366,6 +391,17 @@
 
 	.iframe-mobile {
 		height: 16.2rem;
+	}
+
+	//***************************** General
+
+	.image-shift-details, .party-details, .wall-details {
+		margin-left: 0;
+		margin-top: 7.2rem;
+	}
+
+	.choose-file-wrapper:after {
+		width: 100%;
 	}
 
 }

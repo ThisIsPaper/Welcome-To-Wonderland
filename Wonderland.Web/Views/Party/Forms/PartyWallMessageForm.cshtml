@@ -35,8 +35,8 @@
 
 
         </div>
-@* || wall.formModel.Message.length>600 *@
-        <button type="submit" class="btn-secondary float-right" ng-disabled="(!wall.formModel.PartyWallImage && !wall.formModel.Message) || wall.feedback.messageProcessing" m-radius-picker="small">Post message</button>
+
+        <button type="submit" class="btn-secondary float-right float-mobile-left margin-mobile-bottom-small width-mobile-100p" ng-disabled="(!wall.formModel.PartyWallImage && !wall.formModel.Message) || wall.feedback.messageProcessing || wall.formModel.Message.length>600" m-radius-picker="small">Post message</button>
     }
 
 </div>
