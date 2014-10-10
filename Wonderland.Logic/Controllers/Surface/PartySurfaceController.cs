@@ -180,9 +180,19 @@ namespace Wonderland.Logic.Controllers.Surface
             {
                 PartyHost partyHost = (PartyHost)this.Members.GetCurrentMember();
 
-                partyHost.PartyHeading = partyDetailsForm.PartyHeading;
+                bool updateDotMailer = false;
 
-                partyHost.PartyDateTime = partyDetailsForm.PartyDateTime;
+                if (partyHost.PartyHeading != partyDetailsForm.PartyHeading)
+                {
+                    partyHost.PartyHeading = partyDetailsForm.PartyHeading;
+                }
+
+                if (partyHost.PartyDateTime != partyDetailsForm.PartyDateTime)
+                {
+                    partyHost.PartyDateTime = partyDetailsForm.PartyDateTime;
+
+                    updateDotMailer = true;
+                }
 
                 Address address = new Address(
                                             partyDetailsForm.Address1,
@@ -190,7 +200,17 @@ namespace Wonderland.Logic.Controllers.Surface
                                             partyDetailsForm.TownCity,
                                             partyDetailsForm.Postcode);
 
-                partyHost.PartyAddress = address;
+                if (partyHost.PartyAddress.ToString() != address.ToString())
+                {
+                    partyHost.PartyAddress = address;
+
+                    updateDotMailer = true;
+                }
+
+                if (updateDotMailer)
+                {
+                    DotMailerService.UpdatePartyDetails(partyHost);
+                }
 
                 formResponse.Success = true;
             }
