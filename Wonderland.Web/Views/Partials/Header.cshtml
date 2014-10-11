@@ -63,13 +63,26 @@
                 <li class="menu left-side">
                     <ul>
                         <li class="side-only"><a href="/"><span class="icon-icon_home"></span>Home</a></li>
-                        <li class="side-only"><a href="#"><span class="icon-icon_person"></span>My Party</a></li>
 
-                        @foreach (SitePage sitePage in Model.HeaderNavigationLeft)
+                        @if (!this.Members.IsLoggedInPartier())
                         {
-                        <li>
-                            <a @{if(currentSitePage.IsInPathOf(sitePage)){<text>class="selected"</text>}} href="@sitePage.Url"><span class="icon-icon_fingerpost"></span><span>@sitePage.Name</span></a>
-                        </li>
+                            <li class="side-only"><a href="#"><span class="icon-icon_person"></span>Host a party</a></li>
+                        }
+                        else
+                        {
+                            <li class="side-only"><a href="#"><span class="icon-icon_person"></span>My Party</a></li>
+                        }
+
+                        @{
+                            string[] icons = new string[] {"fingerpost", "star", "crown", "camera", "snowflake", "t-shirt", "question", "cutlery", "cog"};
+                            int i=-1;
+                            foreach (SitePage sitePage in Model.HeaderNavigationLeft)
+                            {
+                                i++;
+                                <li>
+                                    <a @{if(currentSitePage.IsInPathOf(sitePage)){<text>class="selected"</text>}} href="@sitePage.Url"><span class="icon-icon_@icons[@i]"></span><span>@sitePage.Name</span></a>
+                                </li>
+                            }
                         }
 
                     </ul>
@@ -79,9 +92,10 @@
 
                         @foreach (SitePage sitePage in Model.HeaderNavigationRight)
                         {
-                        <li>
-                            <a @{if (currentSitePage.IsInPathOf(sitePage)) { <text> class="selected" </text> }} href="@sitePage.Url"><span class="icon-icon_fingerpost"></span><span>@sitePage.Name</span></a>
-                        </li>
+                            i++;
+                            <li>
+                                <a @{if (currentSitePage.IsInPathOf(sitePage)) { <text> class="selected" </text> }} href="@sitePage.Url"><span class="icon-icon_@icons[@i]"></span><span>@sitePage.Name</span></a>
+                            </li>
                         }
 
                     </ul>
