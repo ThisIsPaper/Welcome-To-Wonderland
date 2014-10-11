@@ -11,11 +11,11 @@
 
         @if (!this.Members.IsLoggedInPartier())
         {
-            <a href="@Model.SiteSettings.RegisterHostUrl" class="btn-primary btn-large pad-top-small pad-bottom-small" m-radius-picker="small medium">Host a party <span class="icon-icon_chevron_right"></span></a>
+            <a href="@Model.SiteSettings.RegisterHostUrl" class="btn-primary btn-large pad-top-small pad-bottom-small hide-on-tablet" m-radius-picker="small medium">Host a party <span class="icon-icon_chevron_right"></span></a>
         }
         else
         {
-            <a href="@(((IPartier)this.Members.GetCurrentMember()).PartyUrl)" class="btn-primary btn-large pad-top-small pad-bottom-small" m-radius-picker="small medium">My party <span class="icon-icon_chevron_right"></span></a>
+            <a href="@(((IPartier)this.Members.GetCurrentMember()).PartyUrl)" class="btn-primary btn-large pad-top-small pad-bottom-small hide-on-tablet" m-radius-picker="small medium">My party <span class="icon-icon_chevron_right"></span></a>
         }
 
     </div>
