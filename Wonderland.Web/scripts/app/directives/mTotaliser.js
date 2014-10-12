@@ -21,7 +21,7 @@ wonderlandApp.directive('mTotaliser', ['$filter', function ($filter) {
         },
 
         template:   '<div>' +
-                        '<span class="body-mega color-brand" ng-bind="raised|mCurrency:\'£\'"></span>' +
+                        '<span class="body-mega color-brand margin-right-tiny" ng-bind="raised|mCurrency:\'£\'"></span>' +
                         '<span class="dis-inline-block"><span> raised of the </span>' +
                         '<span class="body-highlight color-brand" ng-bind="total|mCurrency:\'£\'"></span>' +
                         '<span> target</span></span>' +
