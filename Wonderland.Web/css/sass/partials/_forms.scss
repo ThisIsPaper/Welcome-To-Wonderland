@@ -63,6 +63,21 @@ $btnPaddingLarge: $btnPaddingMedium*2;
     }
 }
 
+.btn-facebook-login {
+	@extend .btn-primary;
+	background: $colorFacebook;
+
+    &:hover, &:focus {
+        background: darken($colorFacebook, 3%);
+    }
+
+	&:before {
+		font-family: $fontFaceIcomoon;
+		content: "\e615";
+		margin-right: $marginSmallValue;
+	}
+}
+
 .cancel {
     line-height: 4rem;
     color: $SecondaryColour;

@@ -41,6 +41,7 @@ module.exports = function (grunt) {
                                          '<%= pkg.jsPath %>app/directives/mDateTimePicker.js',
                                          '<%= pkg.jsPath %>app/directives/mImageUpload.js',
                                          '<%= pkg.jsPath %>app/directives/mKeyEnterTrigger.js',
+                                         '<%= pkg.jsPath %>app/directives/mFacebookLoginButton.js',
                                          '<%= pkg.jsPath %>app/directives/mFileSelected.js',
                                          '<%= pkg.jsPath %>app/directives/mHeightMatchWidth.js',
                                          '<%= pkg.jsPath %>app/directives/mImageLoadedBroadcaster.js',
@@ -59,6 +60,7 @@ module.exports = function (grunt) {
                                          '<%= pkg.jsPath %>app/filters/all.js',
 
                                          '<%= pkg.jsPath %>app/services/debounce.js',
+                                         '<%= pkg.jsPath %>app/services/facebook.js',
                                          '<%= pkg.jsPath %>app/services/fileUpload.js',
                                          '<%= pkg.jsPath %>app/services/mHttp.js',
                                          '<%= pkg.jsPath %>app/services/paf.js',
