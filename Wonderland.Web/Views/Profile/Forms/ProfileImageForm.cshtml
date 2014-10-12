@@ -7,4 +7,6 @@
     <div class="choose-file-wrapper icon-icon_camera margin-bottom-small width-mobile-100p" ng-class="{'disabled': pageFeedback.profileImageProcessing}">
         <input class="choose-file" type="file" name="profileImage" accept="image/jpeg,image/gif,image/png" m-file-selected="submit()" ng-disabled="pageFeedback.profileImageProcessing" />
     </div>
+
+    <div class="warning clickable body-mini" ng-click="submitBlank()" ng-show="pageProfile.imageUrl"><span class="icon-icon_x margin-right-tiny"></span>Remove current profile image</div>
 }
