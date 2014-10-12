@@ -30,7 +30,13 @@ wonderlandApp.factory('fileUpload', ['$document', '$q', 'uniqueId',
                     response = response.replace(/<\/?[^>]+>/gi, '');
 
                     targetIframe.remove();
-                    deferred.resolve(angular.fromJson(response));
+
+                    var responseJson = null;
+                    try {
+                        responseJson = angular.fromJson(response);
+                    } catch (e) {}
+
+                    deferred.resolve(responseJson);
                 });
             });
 

@@ -61,7 +61,6 @@ wonderlandApp.controller('PageCtrl', ['debounce', 'paf', 'safeApply', '$rootScop
     });
     $scope.$onRootScope('profileImageUpdated', function(event, response, dataObject) {
 
-
         /**
          * safe apply the feedback response
          */
