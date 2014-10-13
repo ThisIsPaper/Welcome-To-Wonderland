@@ -9,6 +9,7 @@ namespace Wonderland.Logic.Controllers.Surface
     using Wonderland.Logic.Models.Content;
     using Wonderland.Logic.Models.Database;
     using Wonderland.Logic.Models.Forms;
+    using Wonderland.Logic.Models.Members;
     using Wonderland.Logic.SagePay;
 
     public class DonateSurfaceController : SurfaceController
@@ -20,13 +21,21 @@ namespace Wonderland.Logic.Controllers.Surface
             // set hidden field with party guid
             donateForm.PartyGuid = ((Donate)this.CurrentPage).PartyHost.PartyGuid;
 
-            // set the default amount to the party host's suggested donation
-            donateForm.Amount = this.Members.GetPartyHost(donateForm.PartyGuid).SuggestedDonation;
+            PartyHost partyHost = this.Members.GetPartyHost(donateForm.PartyGuid);
+            IPartier partier = this.Members.GetCurrentPartier();
 
-            if (this.Members.IsLoggedInPartier())
+            // set the default amount to the party host's suggested donation (only if user isn't the party host)            
+            if (partier is PartyHost && partier.Id == partyHost.Id)
             {
-                IPartier partier = (IPartier)this.Members.GetCurrentMember();
+                donateForm.Amount = 0;
+            }
+            else
+            {
+                donateForm.Amount = partyHost.SuggestedDonation;
+            }
 
+            if (partier != null)
+            {
                 donateForm.FirstName = partier.FirstName;
                 donateForm.LastName = partier.LastName;
 
