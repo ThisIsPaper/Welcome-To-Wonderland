@@ -5,25 +5,39 @@ wonderlandApp.directive('mVerticalAlign', ['debounce', '$timeout', '$window', fu
         link: function (scope, element, attrs) {
 
             var hasInited = false,
+                isActive = false,
                 myParent = angular.element(element).parent(),
                 reAlign = debounce(function () {
-                    element.css('top', (scope.parentHeight() - element.height())/2);
-                }, 200);
+                    element.css('top', (parentHeight() - myHeight())/2);
+                }, 200),
+                parentHeight = function () { return myParent.height() + Number(myParent.css('padding-top').replace('px', ''));},
+                myHeight = function () { return $(element).height() + Number($(element).css('padding-top').replace('px', '')) + Number($(element).css('padding-bottom').replace('px', '')); };
 
-            scope.parentHeight = function () { return myParent.height() + Number(myParent.css('padding-top').replace('px', '')) + Number(myParent.css('padding-bottom').replace('px', '')); };
-            scope.parentWidth = function () { return myParent.width(); };
 
             attrs.$observe('mVerticalAlign', function (newVal) {
-                if (!hasInited && !!newVal===true) {
 
-                    scope.$watch('parentHeight() + parentWidth()', reAlign);
+                if (!hasInited && !!newVal===true) {
+                    isActive = true;
+
                     angular.element($window).bind('resize', reAlign);
 
                     reAlign();
                     $timeout(reAlign, 500);
                 }
+
                 if (!hasInited) {
                     hasInited=true;
+                }
+
+                if (newVal === false) {
+                    isActive = false;
+                }
+            });
+
+
+            scope.$on('childImageLoadedBroadcast', function () {
+                if (isActive) {
+                    reAlign();
                 }
             });
 

@@ -9,7 +9,7 @@
         @* TODO: strip tags from validation message *@
         <div ng-show="errorMessage.length>0" ng-init="errorMessage='@Html.ValidationMessage("LoginValidation")'">@Html.ValidationMessage("LoginValidation")</div>
 
-        <div class="grid-8 grid-mobile-12 margin-bottom-large">
+        <div class="grid-8 grid-mobile-12 parent margin-bottom-large">
             <label for="EmailAddress">Email</label>
             @Html.TextBoxFor(x => x.EmailAddress, new { @m_radius_picker="small", @ng_readonly="processing", @ng_class="{'error': errorEmailMessage.length>0}" })
             <div class="margin-bottom-small" ng-show="errorEmailMessage.length>0" ng-init="errorEmailMessage='@Html.ValidationMessageFor(x => x.EmailAddress)'">@Html.ValidationMessageFor(x => x.EmailAddress)</div>
@@ -27,7 +27,7 @@
             @*@Html.ActionLink("Forgotten Password?", "NavigateToForgottenPasswordUrl", "ForgottenPasswordSurface", null, new { @class="body-highlight" })*@
         </div>
 
-        <div class="grid-12">
+        <div class="grid-12 parent">
             <hr/>
             <button type="submit" class="width-mobile-100p btn-primary float-right" m-radius-picker="small" ng-disabled="processing">Login <span class="icon-icon_chevron_right"></span></button>
             <a href="/" class="cancel margin-right-1 float-right">Cancel</a>

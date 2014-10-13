@@ -3,8 +3,16 @@ wonderlandApp.directive('mImageUpload', ['fileUpload', '$rootScope', function(fi
         scope: true,
         link: function(scope, element, attrs) {
 
-            var onStartEvent = attrs.mOnStartEvent;
-            var onSuccessEvent = attrs.mOnSuccessEvent;
+            var onStartEvent = attrs.mOnStartEvent,
+                onSuccessEvent = attrs.mOnSuccessEvent,
+                resetInputValue = function () {
+                    element.find('input[type=file]').val(null);
+                };
+
+            scope.submitBlank = function () {
+                resetInputValue();
+                scope.submit();
+            };
 
             scope.submit = function() {
                 // TODO: Check file extension
@@ -27,7 +35,7 @@ wonderlandApp.directive('mImageUpload', ['fileUpload', '$rootScope', function(fi
 
                     // Clone and replace the element to clear the input value, so attempt
                     // to re-upload the same file works
-                    element.find('input[type=file]').val(null);
+                    resetInputValue();
                 });
             };
         }

@@ -5,14 +5,14 @@
 
 <header class="site-header"  ng-class="{'showing-side-nav-menu': pageShowingSideNavMenu, 'showing-side-account-menu': pageShowingSideAccountMenu, 'compress': pageHeaderCompress}">
 
-    <a class="nav-burger nav-end-block icon-icon_hamburger_menu" ng-click="pageShowingSideNavMenu=!pageShowingSideNavMenu" ng-class="{'icon-icon_x': pageShowingSideNavMenu}"></a>
+    <a class="nav-burger nav-end-block icon-icon_hamburger_menu icon-only" ng-click="pageShowingSideNavMenu=!pageShowingSideNavMenu" ng-class="{'icon-icon_x': pageShowingSideNavMenu}"><span>Open side menu</span></a>
     @if (!this.Members.IsLoggedInPartier())
     {
-    <a class="nav-account nav-end-block end-block-right icon-icon_person" href="@Model.LoginUrl"></a>
+    <a class="nav-account nav-end-block end-block-right icon-icon_person icon-only" href="@Model.LoginUrl"><span>Login</span></a>
     }
     else
     {
-    <a class="nav-account nav-end-block end-block-right icon-icon_person" ng-click="pageShowingSideAccountMenu=!pageShowingSideAccountMenu" ng-class="{'icon-icon_x': pageShowingSideAccountMenu}"></a>
+    <a class="nav-account nav-end-block end-block-right icon-icon_person icon-only" ng-click="pageShowingSideAccountMenu=!pageShowingSideAccountMenu" ng-class="{'icon-icon_x': pageShowingSideAccountMenu}"><span>Open side account menu</span></a>
     }
 
 
@@ -63,13 +63,26 @@
                 <li class="menu left-side">
                     <ul>
                         <li class="side-only"><a href="/"><span class="icon-icon_home"></span>Home</a></li>
-                        <li class="side-only"><a href="#"><span class="icon-icon_person"></span>My Party</a></li>
 
-                        @foreach (SitePage sitePage in Model.HeaderNavigationLeft)
+                        @if (!this.Members.IsLoggedInPartier())
                         {
-                        <li>
-                            <a @{if(currentSitePage.IsInPathOf(sitePage)){<text>class="selected"</text>}} href="@sitePage.Url"><span class="icon-icon_fingerpost"></span><span>@sitePage.Name</span></a>
-                        </li>
+                            <li class="side-only"><a href="#"><span class="icon-icon_person"></span>Host a party</a></li>
+                        }
+                        else
+                        {
+                            <li class="side-only"><a href="#"><span class="icon-icon_person"></span>My Party</a></li>
+                        }
+
+                        @{
+                            string[] icons = new string[] {"fingerpost", "star", "crown", "camera", "snowflake", "t-shirt", "question", "cutlery", "cog"};
+                            int i=-1;
+                            foreach (SitePage sitePage in Model.HeaderNavigationLeft)
+                            {
+                                i++;
+                                <li>
+                                    <a @{if(currentSitePage.IsInPathOf(sitePage)){<text>class="selected"</text>}} href="@sitePage.Url"><span class="icon-icon_@icons[@i]"></span><span>@sitePage.Name</span></a>
+                                </li>
+                            }
                         }
 
                     </ul>
@@ -79,9 +92,10 @@
 
                         @foreach (SitePage sitePage in Model.HeaderNavigationRight)
                         {
-                        <li>
-                            <a @{if (currentSitePage.IsInPathOf(sitePage)) { <text> class="selected" </text> }} href="@sitePage.Url"><span class="icon-icon_fingerpost"></span><span>@sitePage.Name</span></a>
-                        </li>
+                            i++;
+                            <li>
+                                <a @{if (currentSitePage.IsInPathOf(sitePage)) { <text> class="selected" </text> }} href="@sitePage.Url"><span class="icon-icon_@icons[@i]"></span><span>@sitePage.Name</span></a>
+                            </li>
                         }
 
                     </ul>

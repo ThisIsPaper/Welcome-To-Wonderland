@@ -10,14 +10,7 @@
         <div class="grid-3 grid-tablet-12 footer-menu">
             <h2 class="top margin-bottom-tiny">Pages</h2>
             <ul>
-                @foreach (SitePage sitePage in Model.HeaderNavigationLeft)
-                {
-                <li>
-                    <a href="@sitePage.Url">@sitePage.Name</a>
-                </li>
-                }
-
-                @foreach (SitePage sitePage in Model.HeaderNavigationRight)
+                @foreach (SitePage sitePage in Model.FooterNavigation)
                 {
                 <li>
                     <a href="@sitePage.Url">@sitePage.Name</a>

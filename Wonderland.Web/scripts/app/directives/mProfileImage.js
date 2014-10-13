@@ -37,6 +37,7 @@ wonderlandApp.directive('mProfileImage', ['safeApply', function (safeApply) {
 
                 if (!newVal || !angular.isString(newVal) || !hasExt) {
 
+                    element.css('background-image', 'none');
                     scope.hasBackgroundImage = false;
                     return;
                 }
@@ -46,12 +47,7 @@ wonderlandApp.directive('mProfileImage', ['safeApply', function (safeApply) {
             });
 
 
-            scope.$watch('hasBackgroundImage', function (newVal, oldVal) {
-
-                // weird onload bug if the url is hard coded
-                if (newVal===false && oldVal===true) {
-                    return;
-                }
+            scope.$watch('hasBackgroundImage', function (newVal) {
 
                 if (newVal===true) {
                     element.removeClass(NOT_SET_CLASS);
