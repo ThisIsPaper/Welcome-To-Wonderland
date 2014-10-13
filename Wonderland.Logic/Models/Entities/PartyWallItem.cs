@@ -22,7 +22,7 @@ namespace Wonderland.Logic.Models.Entities
             this.PartyWallItemType = PartyWallItemType.Donation;
             this.ThumbnailUrl = partier.ProfileImageUrl;
             this.IsPartyHost = partier is PartyHost;
-            this.Name = partier.FirstName + partier.LastName;
+            this.Name = partier.FirstName + " " + partier.LastName;
             this.Text = donation.Amount.ToString();
             this.Timestamp = donation.Timestamp.ToUniversalTime();
         }
@@ -35,7 +35,7 @@ namespace Wonderland.Logic.Models.Entities
             this.PartyWallItemType = PartyWallItemType.Message; 
             this.ThumbnailUrl = partier.ProfileImageUrl;
             this.IsPartyHost = partier is PartyHost;
-            this.Name = partier.FirstName + partier.LastName;
+            this.Name = partier.FirstName + " " + partier.LastName;
             this.Text = message.Text;
             
             if (message.Image != null)
