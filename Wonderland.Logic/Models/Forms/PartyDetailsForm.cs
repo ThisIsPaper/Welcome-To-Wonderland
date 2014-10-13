@@ -23,7 +23,6 @@ namespace Wonderland.Logic.Models.Forms
         [DataType(DataType.Text)]
         public string Address1 { get; set; }
 
-        [Required]
         [DisplayName("Address Line 2")]
         [DataType(DataType.Text)]
         public string Address2 { get; set; }
