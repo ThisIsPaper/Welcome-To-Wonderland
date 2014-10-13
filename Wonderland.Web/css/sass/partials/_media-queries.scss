@@ -93,6 +93,10 @@
 		line-height: $HeadingFontSizeSmall;
 	}
 
+	h1 {
+		word-wrap: break-word;
+	}
+
 	.hero {
 		height: 26rem;
 		padding-top: 7rem;
@@ -284,7 +288,7 @@
 	//***************************** Party Ideas
 
 	.idea-sizer, .idea-tile, .idea-tile.wide {
-		width: 100%;
+		width: 50%;
 	}
 
 	.idea-details {
@@ -304,7 +308,7 @@
 			}
 
 			.spotify-logo {
-				margin-left: 7.6rem;
+				background-position: 2.7rem 0;
 			}
 		}
 	}
@@ -346,10 +350,6 @@
 @media only screen and (max-width: 450px) {
 
 	//***************************** abstract
-
-	h1 {
-		word-wrap: break-word;
-	}
 
 	.body-mega {
 		font-size: $FontSizeLarge;
@@ -433,6 +433,12 @@
 	}
 
 	.width-mobile-spotify {
+		width: 100%;
+	}
+
+	//***************************** Party Ideas
+
+	.idea-sizer, .idea-tile, .idea-tile.wide {
 		width: 100%;
 	}
 

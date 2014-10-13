@@ -61,7 +61,6 @@ wonderlandApp.controller('PageCtrl', ['debounce', 'paf', 'safeApply', '$rootScop
     });
     $scope.$onRootScope('profileImageUpdated', function(event, response, dataObject) {
 
-
         /**
          * safe apply the feedback response
          */
@@ -89,9 +88,9 @@ wonderlandApp.controller('PageCtrl', ['debounce', 'paf', 'safeApply', '$rootScop
     HARDCODED
     /*************************/
     $rootScope.hardcodedFundraisingTargets = [
-        {imageUrl: '/img/test_default_image_1.jpg', title: 'Standard', info: 'Get a round of applause and enjoy your party kit'},
-        {imageUrl: '/img/test_default_image_2.jpg', title: '£150 or more', info: 'Party kit and an exclusive Wonderland t-shirt by Ashish'},
-        {imageUrl: '/img/test_default_image_3.jpg', title: '£300 or more', info: 'Party kit, t-shirt and an exclusive invite to our celebrity after party'}
+        {imageUrl: '/img/test_default_image_1.jpg', title: 'Raise £150 or more', info: 'Sunglasses are essential Wonderland accessories - look cool as an alpine stream!'},
+        {imageUrl: '/img/test_default_image_2.jpg', title: 'Raise £180 or more', info: 'Get the above and a T-Shirt, designed by world famous fashion designer Ashish - specifically designed for Macmillan\'s Wonderland.'},
+        {imageUrl: '/img/test_default_image_3.jpg', title: 'Raise £240 or more', info: 'Get all the above and an invitation to an evening at the Snowdome for some real fake snow.'}
     ];
 
 }]);

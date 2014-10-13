@@ -33,7 +33,7 @@
                                 <div class="body-emphasize">@partyHost.FirstName @partyHost.LastName</div>
                                 <div class="body-dephasize">@partyHost.PartyHeading</div>
                             </div>
-                            <div class="scoreboard-value" ng-init="amountRaised@i=@partyHost.AmountRaised" ng-bind="amountRaised@i|mCurrency:'£'"></div>
+                            <div class="scoreboard-value" ng-init="amountRaised_@i=@partyHost.AmountRaised" ng-bind="amountRaised_@i|mCurrency:'£'"></div>
                             <div class="clear"></div>
                         </div>
                         <hr ng-show="{{ @i < @t }}" />

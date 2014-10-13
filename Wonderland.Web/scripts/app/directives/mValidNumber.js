@@ -7,7 +7,8 @@ wonderlandApp.directive('mValidNumber', function() {
             }
 
             ngModelCtrl.$parsers.push(function(val) {
-                var clean = val.replace( /[^0-9]+/g, '');
+
+                var clean = val.replace( /[^0-9|.]+/g, '');
                 if (val !== clean) {
                     ngModelCtrl.$setViewValue(clean);
                     ngModelCtrl.$render();
