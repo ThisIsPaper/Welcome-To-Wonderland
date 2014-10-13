@@ -276,6 +276,7 @@
     <Content Include="fonts\d37fcd2f-d43f-4eae-b192-c48028c02797.svg" />
     <Content Include="fonts\icomoon.svg" />
     <Content Include="fonts\macmillan_headline_02_12-webfont.svg" />
+    <Content Include="Global.asax" />
     <Content Include="img\.gitignore" />
     <Content Include="img\amount-raised-ph.png" />
     <Content Include="img\badge_0000_pro.png" />
