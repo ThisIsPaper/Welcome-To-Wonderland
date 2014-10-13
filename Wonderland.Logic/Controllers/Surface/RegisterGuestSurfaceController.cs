@@ -138,6 +138,14 @@ namespace Wonderland.Logic.Controllers.Surface
                                                         });
             }
 
+            if (registerGuestBillingForm.Amount == 0)
+            {
+                // update dot mailer to indicate guest has fully registered
+                DotMailerService.GuestRegistrationCompleted((Contact)partyGuest);
+
+                return this.Redirect(partyGuest.PartyUrl);
+            }
+
             DonationRow donationRow = new DonationRow()
             {
                 PartyGuid = registerGuestBillingForm.PartyGuid,
