@@ -17,6 +17,6 @@
 
 
 <hr />
-<asp:Button runat="server" id="deleteDonationButton" UseSubmitBehavior="true" Text="Delete Donation" />
+<asp:Button runat="server" id="addDonationButton" UseSubmitBehavior="true" Text="Add Donation" />
 
 <asp:literal runat="server" ID="resultLiteral" EnableViewState="false" />
