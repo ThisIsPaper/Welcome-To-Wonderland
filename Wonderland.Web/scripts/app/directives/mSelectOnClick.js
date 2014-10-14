@@ -3,7 +3,7 @@ wonderlandApp.directive('mSelectOnClick', function () {
         restrict: 'A',
         link: function (scope, element) {
 
-            element.on('mousedown', function () {
+            element.on('mouseup', function () {
                 this.select();
             });
         }
