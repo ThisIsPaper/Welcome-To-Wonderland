@@ -7,16 +7,17 @@ namespace Wonderland.Logic.Models.Database
 
     [TableName("wonderlandDonation")]
     [ExplicitColumns]
-    [PrimaryKey("VendorTxCode", autoIncrement=true)]
+    [PrimaryKey("VendorTxCode", autoIncrement=false)]
     public class DonationRow
     {
         public DonationRow()
         {
+            this.VendorTxCode = Guid.NewGuid();
             this.Timestamp = DateTime.UtcNow;
         }
 
         [Column("VendorTxCode")]
-        public int VendorTxCode { get; set; }
+        public Guid VendorTxCode { get; set; }
 
         [Column("PartyGuid")]
         public Guid PartyGuid { get; set; }
