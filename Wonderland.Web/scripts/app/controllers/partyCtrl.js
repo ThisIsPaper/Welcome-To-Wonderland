@@ -1,4 +1,4 @@
-wonderlandApp.controller('PartyCtrl', ['safeApply', '$filter', '$ocModal', '$sce', '$scope', '$timeout', function (safeApply, $filter, $ocModal, $sce, $scope, $timeout) {
+wonderlandApp.controller('PartyCtrl', ['safeApply', '$filter', '$ocModal', '$rootScope', '$sce', '$scope', '$timeout', function (safeApply, $filter, $ocModal, $rootScope, $sce, $scope, $timeout) {
 
 
     /**********************/
@@ -44,57 +44,23 @@ wonderlandApp.controller('PartyCtrl', ['safeApply', '$filter', '$ocModal', '$sce
 
         $scope.partyDetailsFormattedAddress = $filter('addressJoiner')(address.join(":~:"), ":~:");
 
-        console.log('partyDetailsDataInit', partyDetailsData);
-
         $scope.partyDetailsData = partyDetailsData;
         $scope.partyDetailsDataForForm = angular.copy($scope.partyDetailsData);
     };
 
     $scope.$onRootScope('partyDetailsDataUpdated', function(event, response, dataObject) {
-        console.log('partyDetailsDataUpdated', response, dataObject);
-        $scope.partyDetailsDataInit(dataObject);
-        $ocModal.close('partyDetailsModal');
+        console.log('deets', response);
+
+        $scope.partyDetailsDataForForm.processing = false;
+
+        if (response && response.Success === true) {
+            dataObject.error = null;
+            $scope.partyDetailsDataInit(dataObject);
+            $ocModal.close('partyDetailsModal');
+        } else if (response.Errors) {
+            $scope.partyDetailsDataForForm.error = response.Errors[0].ErrorMessages[0];
+        }
     });
-
-
-
-    /**********************/
-    /* PROFILE IMAGE DETAILS */
-    /**********************/
-//    $scope.profileImage = {
-//        url: null,
-//        showFeedbackSuccess: false,
-//        showFeedbackError: false
-//    };
-//
-//
-//    $scope.profileImageUrlInit = function (profileImageUrl) {
-//        $scope.profileImage.url = profileImageUrl;
-//    };
-//
-//    $scope.$onRootScope('profileImageUrlUpdated', function(event, response) {
-//
-//        var timeoutTime = 3000;
-//
-//        if (response && response.Success === true && response.Message) {
-//            $scope.profileImage.url = response.Message;
-//            $scope.profileImage.showFeedbackSuccess = true;
-//
-//            // close modal
-//            $timeout(function () {
-//                $ocModal.close('profileImageModal');
-//            }, timeoutTime);
-//
-//        } else {
-//            $scope.profileImage.showFeedbackError = true;
-//        }
-//
-//        // hide feedback
-//        $timeout(function () {
-//            $scope.profileImage.showFeedbackSuccess = false;
-//            $scope.profileImage.showFeedbackError = false;
-//        }, timeoutTime);
-//    });
 
 
 
@@ -121,11 +87,19 @@ wonderlandApp.controller('PartyCtrl', ['safeApply', '$filter', '$ocModal', '$sce
     /**********************/
     $scope.fundraisingTargetData = null;
     $scope.fundraisingTargetDataForForm = null;
+    var fundraisingTargetFirstSet = true;
 
     $scope.fundraisingTargetDataInit = function (fundraisingTargetData) {
 
         $scope.fundraisingTargetData = fundraisingTargetData;
         $scope.fundraisingTargetDataForForm = angular.copy($scope.fundraisingTargetData);
+
+        if (fundraisingTargetFirstSet) {
+            fundraisingTargetFirstSet = false;
+            if (fundraisingTargetData.FundraisingTarget <= 0) {
+                $rootScope.openPageModal('partials/fundraisingTargetForm.html', 'suggestedDonationModal', {'fundraisingTargetData': $scope.fundraisingTargetDataForForm})
+            }
+        }
     };
 
     $scope.$onRootScope('fundraisingTargetDataUpdated', function(event, response, dataObject) {

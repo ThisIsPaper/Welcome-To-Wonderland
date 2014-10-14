@@ -8,6 +8,34 @@
 
     <div class="container gutter" ng-controller="PartyCtrl" ng-init="profileImageUrlInit('@Model.PartyHost.ProfileImageUrl')">
 
+
+
+        <div class="wgrid-full parent" ng-hide="fundraisingTargetData.FundraisingTarget > 0 && suggestedDonationData.SuggestedDonation > 0 && partyDetailsData.PartyHeading" ng-cloak>
+            <div class="boxx pad-large" m-radius-picker="large">
+
+                <h1 class="text-align-left">Hi @Model.PartyHost.FirstName</h1>
+                <p class="margin-bottom-large">These 3 simple steps will get your party set up and ready to raise funds for Macmillan.</p>
+
+                <div class="grid-4 grid-tablet-12 margin-bottom-medium pad-0"
+                     ng-click="openPageModal(fundraisingTargetData.FundraisingTarget > 0 ? null : 'partials/fundraisingTargetForm.html', 'suggestedDonationModal', {'fundraisingTargetData': fundraisingTargetDataForForm})">
+                    <div class="btn-primary" ng-class="{'disabled': fundraisingTargetData.FundraisingTarget>0}" m-radius-picker="small">1. Fundariasing target <span class="icon-icon_edit margin-left-small"></span></div>
+                </div>
+
+                <div class="grid-4 grid-tablet-12 margin-bottom-medium pad-tablet-0"
+                     ng-click="openPageModal(suggestedDonationData.SuggestedDonation > 0 ? null : 'partials/suggestedDonationForm.html', 'suggestedDonationModal', {'suggestedDonationData': suggestedDonationDataForForm})">
+                    <div class="btn-primary" ng-class="{'disabled': suggestedDonationData.SuggestedDonation>0}" m-radius-picker="small">2. Ticket price <span class="icon-icon_edit margin-left-small"></span></div>
+                </div>
+
+                <div class="grid-4 grid-tablet-12 margin-bottom-medium pad-0"
+                     ng-click="openPageModal(partyDetailsData.PartyHeading ? null : 'partials/partyDetailsForm.html', 'partyDetailsModal', {'partyDetailsData': partyDetailsDataForForm})">
+                    <div class="btn-primary" ng-class="{'disabled': partyDetailsData.PartyHeading}" m-radius-picker="small">3. Party details <span class="icon-icon_edit margin-left-small"></span></div>
+                </div>
+
+            </div>
+        </div>
+
+
+
         <div class="wgrid-main wgrid-no-bottom-margin">
 
             <div class="wgrid-full parent">
