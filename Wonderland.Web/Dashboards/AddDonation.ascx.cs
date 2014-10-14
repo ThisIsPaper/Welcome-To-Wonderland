@@ -55,7 +55,7 @@ namespace Wonderland.Web.Dashboards
 
                         this.partyGuidTextBox.Text = string.Empty;
                         this.amountTextBox.Text = string.Empty;
-                        this.resultLiteral.Text = "Added: " + amount.ToString() + " to Party: " + partyGuid.ToString();
+                        this.resultLiteral.Text = "Added: £" + amount.ToString() + ", to Party: " + partyGuid.ToString();
 
                     }
                     else

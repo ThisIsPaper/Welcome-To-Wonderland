@@ -1,5 +1,7 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="DeleteDonation.ascx.cs" Inherits="Wonderland.Web.Dashboards.DeleteDonation" %>
 
+<h3>Delete Donation</h3>
+
 <asp:Label runat="server" AssociatedControlID="vendorTxCodeTextBox" Text="VendorTxCode" />
 <asp:TextBox runat="server" ID="vendorTxCodeTextBox" />
 <asp:RequiredFieldValidator runat="server" ControlToValidate="vendorTxCodeTextBox" Text="required" />

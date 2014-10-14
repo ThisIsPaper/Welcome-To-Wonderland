@@ -29,7 +29,7 @@ namespace Wonderland.Web.Dashboards
 
                 if (result == 1)
                 {
-                    this.resultLiteral.Text = "Deleted - " + this.vendorTxCodeTextBox.Text;
+                    this.resultLiteral.Text = "Deleted: " + this.vendorTxCodeTextBox.Text;
                     this.vendorTxCodeTextBox.Text = string.Empty;
                 }
                 else
