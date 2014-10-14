@@ -147,20 +147,20 @@ namespace Wonderland.Logic.Controllers.Surface
             }
 
             DonationRow donationRow = new DonationRow()
-            {
-                PartyGuid = registerGuestBillingForm.PartyGuid,
-                Amount = registerGuestBillingForm.Amount,
-                GiftAid = registerGuestBillingForm.AllowGiftAid,
-                MemberId = this.Members.GetCurrentMemberId(),
-                FirstName = registerGuestBillingForm.FirstName,
-                LastName = registerGuestBillingForm.LastName,
-                Address1 = registerGuestBillingForm.Address1,
-                Address2 = registerGuestBillingForm.Address2,
-                TownCity = registerGuestBillingForm.TownCity,
-                Postcode = registerGuestBillingForm.Postcode,
-                PaymentJourney = PaymentJourney.RegisterGuest,
-                Success = false
-            };
+                                        {
+                                            PartyGuid = registerGuestBillingForm.PartyGuid,
+                                            Amount = registerGuestBillingForm.Amount,
+                                            GiftAid = registerGuestBillingForm.AllowGiftAid,
+                                            MemberId = this.Members.GetCurrentMemberId(),
+                                            FirstName = registerGuestBillingForm.FirstName,
+                                            LastName = registerGuestBillingForm.LastName,
+                                            Address1 = registerGuestBillingForm.Address1,
+                                            Address2 = registerGuestBillingForm.Address2,
+                                            TownCity = registerGuestBillingForm.TownCity,
+                                            Postcode = registerGuestBillingForm.Postcode,
+                                            PaymentJourney = PaymentJourney.RegisterGuest,
+                                            Success = false
+                                        };
 
             // insert new record
             this.DatabaseContext.Database.Insert(donationRow);
