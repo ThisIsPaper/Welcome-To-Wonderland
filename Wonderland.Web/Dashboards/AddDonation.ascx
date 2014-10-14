@@ -1,5 +1,7 @@
 ﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="AddDonation.ascx.cs" Inherits="Wonderland.Web.Dashboards.AddDonation" %>
 
+<h3>Add Donation</h3>
+
 <asp:Label runat="server" AssociatedControlID="partyGuidTextBox" Text="Party Guid" />
 <asp:TextBox runat="server" ID="partyGuidTextBox" />
 <asp:RequiredFieldValidator runat="server" ControlToValidate ="partyGuidTextBox" Text="required" />
