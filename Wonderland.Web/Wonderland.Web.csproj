@@ -240,6 +240,20 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dashboards\AddDonation.ascx.cs">
+      <DependentUpon>AddDonation.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboards\AddDonation.ascx.designer.cs">
+      <DependentUpon>AddDonation.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboards\DeleteDonation.ascx.cs">
+      <DependentUpon>DeleteDonation.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboards\DeleteDonation.ascx.designer.cs">
+      <DependentUpon>DeleteDonation.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Dashboards\ExportFinancials.ascx.cs">
       <DependentUpon>ExportFinancials.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -271,6 +285,8 @@
     <Content Include="App_Plugins\Archetype\views\archetype.default.html" />
     <Content Include="App_Plugins\Archetype\views\archetype.html" />
     <Content Include="css\all.min.css" />
+    <Content Include="Dashboards\AddDonation.ascx" />
+    <Content Include="Dashboards\DeleteDonation.ascx" />
     <Content Include="Dashboards\ExportFinancials.ascx" />
     <Content Include="fonts\71710047-b807-47eb-9874-7db8f4904492.svg" />
     <Content Include="fonts\d37fcd2f-d43f-4eae-b192-c48028c02797.svg" />
