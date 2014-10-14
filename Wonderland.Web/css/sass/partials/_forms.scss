@@ -30,7 +30,7 @@ $btnPaddingLarge: $btnPaddingMedium*2;
         background: darken($PrimaryColour, 10%);
     }
 
-    .disabled {
+    &.disabled, .disabled {
         background-color: $greyLight;
         color: $greyMedium;
         cursor: default;
@@ -244,7 +244,7 @@ input[type="text"][readonly] {
 }
 
 input[type='password'], input[type="text"].input-with-icon, select.input-with-icon {
-    padding-left: 4rem;
+    text-indent: 4rem;
 }
 
 input[type="text"].currency {

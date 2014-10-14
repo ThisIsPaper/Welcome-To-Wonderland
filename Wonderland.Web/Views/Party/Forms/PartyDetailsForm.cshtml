@@ -3,15 +3,17 @@
 <div ng-init="partyDetailsDataInit(@Html.Raw(Json.Encode(Model)))"></div>
 
 <script type="text/ng-template" id="partials/partyDetailsForm.html">
-    <div class="form-holder" ng-controller="PartyDetailsFormCtrl" ng-init="processing">
-        @using (Html.BeginUmbracoForm<PartySurfaceController>("HandlePartyDetailsForm", FormMethod.Post, new { m_serialized="", m_post_on_submit="partyDetailsData", m_on_success_event="partyDetailsDataUpdated", ng_submit="processing=true" }))
+    <div class="form-holder" ng-controller="PartyDetailsFormCtrl">
+        @using (Html.BeginUmbracoForm<PartySurfaceController>("HandlePartyDetailsForm", FormMethod.Post, new { m_serialized="", m_post_on_submit="partyDetailsData", m_on_success_event="partyDetailsDataUpdated", ng_submit="partyDetailsData.processing=true" }))
         {
             @Html.AntiForgeryToken()
 
             <h4>Your Party Details</h4>
 
+            <div class="errorred" ng-show="partyDetailsData.error" ng-cloak ng-bind="partyDetailsData.error"></div>
+
             <label for="PartyHeading">Your party heading</label>
-            <input name="PartyHeading" type="text" ng-model="partyDetailsData.PartyHeading" m-radius-picker="small" ng-readonly="processing" />
+            <input name="PartyHeading" type="text" ng-model="partyDetailsData.PartyHeading" m-radius-picker="small" ng-readonly="partyDetailsData.processing" />
 
             <div class="container">
                 <div class="grid-8 grid-tablet-12 parent">
@@ -50,22 +52,22 @@
 
 
             <label for="Address1">Address 1</label>
-            <input name="Address1" type="text" ng-model="partyDetailsData.Address1" m-radius-picker="small" ng-readonly="processing" />
+            <input name="Address1" type="text" ng-model="partyDetailsData.Address1" m-radius-picker="small" ng-readonly="partyDetailsData.processing" />
 
             <label for="Address2">Address 2</label>
-            <input name="Address2" type="text" ng-model="partyDetailsData.Address2" m-radius-picker="small" ng-readonly="processing" />
+            <input name="Address2" type="text" ng-model="partyDetailsData.Address2" m-radius-picker="small" ng-readonly="partyDetailsData.processing" />
 
             <label for="TownCity">Town/City</label>
-            <input name="TownCity" type="text" ng-model="partyDetailsData.TownCity" m-radius-picker="small" ng-readonly="processing" />
+            <input name="TownCity" type="text" ng-model="partyDetailsData.TownCity" m-radius-picker="small" ng-readonly="partyDetailsData.processing" />
 
             <label for="Postcode">Postcode</label>
-            <input class="margin-bottom-3" name="Postcode" type="text" ng-model="partyDetailsData.Postcode" m-radius-picker="small" ng-readonly="processing" />
+            <input class="margin-bottom-3" name="Postcode" type="text" ng-model="partyDetailsData.Postcode" m-radius-picker="small" ng-readonly="partyDetailsData.processing" />
 
 
-            <button type="submit" class="btn-primary float-right" m-radius-picker="small" ng-disabled="processing">Save changes</button>
+            <button type="submit" class="btn-primary float-right" m-radius-picker="small" ng-disabled="partyDetailsData.processing">Save changes</button>
             <span ng-click="closePageModal()" class="cancel margin-right-1 float-right">Cancel</span>
             <div ng-click="closePageModal()" class="modal-close"></div>
-            <div class="loader" ng-show="processing"></div>
+            <div class="loader" ng-show="partyDetailsData.processing"></div>
         }
     </div>
 </script>
