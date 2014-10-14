@@ -1,13 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-
+﻿
 namespace Wonderland.Web.Dashboards
 {
-    public partial class AddDonation : System.Web.UI.UserControl
+    using System;
+    using System.Text;
+    using Umbraco.Core;
+    using Umbraco.Web;
+    using Umbraco.Web.Security;
+    using Wonderland.Logic.Models.Database;
+    using Wonderland.Logic.Extensions;
+    using Wonderland.Logic.Interfaces;
+
+    public partial class AddDonation : BaseUserControl
     {
         protected void Page_Load(object sender, EventArgs e)
         {
