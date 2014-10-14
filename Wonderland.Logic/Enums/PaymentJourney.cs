@@ -14,6 +14,11 @@ namespace Wonderland.Logic.Enums
         /// <summary>
         /// payment being made on the main donate page
         /// </summary>
-        Donate
+        Donate,
+
+        /// <summary>
+        /// payment being made in cms (no sage pay)
+        /// </summary>
+        Manual
     }
 }
