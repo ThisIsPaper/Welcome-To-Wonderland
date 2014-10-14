@@ -40,13 +40,13 @@ namespace Wonderland.Web.Dashboards {
         protected global::System.Web.UI.WebControls.CheckBox giftAidCheckBox;
         
         /// <summary>
-        /// deleteDonationButton control.
+        /// addDonationButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button deleteDonationButton;
+        protected global::System.Web.UI.WebControls.Button addDonationButton;
         
         /// <summary>
         /// resultLiteral control.
