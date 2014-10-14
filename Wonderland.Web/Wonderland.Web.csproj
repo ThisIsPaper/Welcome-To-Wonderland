@@ -237,6 +237,9 @@
     <Compile Include="Dashboards\AddDonation.ascx.designer.cs">
       <DependentUpon>AddDonation.ascx</DependentUpon>
     </Compile>
+    <Compile Include="Dashboards\BaseUserControl.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
     <Compile Include="Dashboards\DeleteDonation.ascx.cs">
       <DependentUpon>DeleteDonation.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
