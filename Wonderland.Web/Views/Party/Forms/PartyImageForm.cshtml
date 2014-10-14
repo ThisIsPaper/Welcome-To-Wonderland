@@ -45,10 +45,18 @@
                 </div>
             </div>
 
+
             @(Html.Action<PartySurfaceController>("RenderCustomPartyImageForm"))
 
-            <div class="file-upload-info">Recommended dimensions of <span class="dis-inline-block">1125 x 555</span></div>
-            @*<div class="file-upload-info">Maximum file size of 1MB</div>*@
+
+            <div class="dis-inline-block ng-hide" m-ios-version m-max-ios="5" m-ios-remove-class="ng-hide">
+                <div class="errorred">Your version of iOS does not support image uploads, you need to have iOS 6 or above</div>
+            </div>
+
+            <div class="ng-hide" m-ios-version m-min-ios="6" m-ios-remove-class="ng-hide">
+                <div class="file-upload-info">Recommended dimensions of <span class="dis-inline-block">1125 x 555</span></div>
+                @*<div class="file-upload-info">Maximum file size of 1MB</div>*@
+            </div>
         </div>
     </div>
 
