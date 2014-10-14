@@ -105,6 +105,7 @@
 
                 </div>
 
+                @*
                 @if (this.Members.GetCurrentPartier() is PartyHost)
                 { 
                     <div class="grid-12 parent margin-bottom-large" ng-init="profileShirtData.TShirtSize='@(((PartyHost)this.Members.GetCurrentMember()).TShirtSize)'">
@@ -117,6 +118,7 @@
                         @(Html.Action<ProfileSurfaceController>("RenderProfileTShirtSizeForm"))
                     </div>
                 }
+                *@
 
             </div>
 
