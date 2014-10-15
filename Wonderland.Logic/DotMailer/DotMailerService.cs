@@ -1,10 +1,12 @@
 ﻿
 namespace Wonderland.Logic.DotMailer
 {
+    using System;
     using System.Net;
     using System.Web;
     using System.Web.Caching;
     using System.Web.Configuration;
+    using Umbraco.Core.Logging;
     using Wonderland.Logic.DotMailerApi;
     using Wonderland.Logic.Models.Members;
 
@@ -24,11 +26,18 @@ namespace Wonderland.Logic.DotMailer
         {
             if (DotMailerService.DotMailerEnabled)
             {
-                // create contact
-                ApiContact apiContact = DotMailerService.GetApiService().CreateContact(contact.ToApiContact());
+                try
+                {
+                    // create contact
+                    ApiContact apiContact = DotMailerService.GetApiService().CreateContact(contact.ToApiContact());
 
-                // update local member with dotMailerId
-                contact.Partier.DotMailerId = apiContact.Id;
+                    // update local member with dotMailerId
+                    contact.Partier.DotMailerId = apiContact.Id;
+                }
+                catch(Exception exception)
+                {
+                    LogHelper.Error(typeof(DotMailerService), "HostRegistrationStarted", exception);
+                }
             }
         }
 
@@ -40,12 +49,19 @@ namespace Wonderland.Logic.DotMailer
         {
             if (DotMailerService.DotMailerEnabled)
             {
-                ApiService apiService = DotMailerService.GetApiService();
+                try
+                {
+                    ApiService apiService = DotMailerService.GetApiService();
 
-                // add host to address book (this also updates the contact details) - dotmailer will fire off email 2.
-                apiService.AddContactToAddressBook(DotMailerService.PartyHostsAddressBookId, contact.ToApiContact());
+                    // add host to address book (this also updates the contact details) - dotmailer will fire off email 2.
+                    apiService.AddContactToAddressBook(DotMailerService.PartyHostsAddressBookId, contact.ToApiContact());
 
-                contact.Partier.DotMailerRegistrationComplete = true;
+                    contact.Partier.DotMailerRegistrationComplete = true;
+                }
+                catch (Exception exception)
+                {
+                    LogHelper.Error(typeof(DotMailerService), "HostRegistrationCompleted", exception);
+                }
             }
         }
 
@@ -57,11 +73,18 @@ namespace Wonderland.Logic.DotMailer
         {
             if (DotMailerService.DotMailerEnabled)
             {
-                // create contact
-                ApiContact apiContact = DotMailerService.GetApiService().CreateContact(contact.ToApiContact());
+                try
+                {
+                    // create contact
+                    ApiContact apiContact = DotMailerService.GetApiService().CreateContact(contact.ToApiContact());
 
-                // update local member with dotMailerId
-                contact.Partier.DotMailerId = apiContact.Id;
+                    // update local member with dotMailerId
+                    contact.Partier.DotMailerId = apiContact.Id;
+                }
+                catch (Exception exception)
+                {
+                    LogHelper.Error(typeof(DotMailerService), "GuestRegistrationStarted", exception);
+                }
             }
         }
 
@@ -73,12 +96,19 @@ namespace Wonderland.Logic.DotMailer
         {
             if (DotMailerService.DotMailerEnabled)
             {
-                ApiService apiService = DotMailerService.GetApiService();
+                try
+                {
+                    ApiService apiService = DotMailerService.GetApiService();
 
-                // add guest to address book - dotMailer will fire off email 18
-                apiService.AddContactToAddressBook(DotMailerService.PartyGuestsAddressBookId, contact.ToApiContact());
+                    // add guest to address book - dotMailer will fire off email 18
+                    apiService.AddContactToAddressBook(DotMailerService.PartyGuestsAddressBookId, contact.ToApiContact());
 
-                contact.Partier.DotMailerRegistrationComplete = true;
+                    contact.Partier.DotMailerRegistrationComplete = true;
+                }
+                catch(Exception exception)
+                {
+                    LogHelper.Error(typeof(DotMailerService), "GuestRegistrationCompleted", exception);
+                }
             }
         }
 
@@ -86,8 +116,15 @@ namespace Wonderland.Logic.DotMailer
         {
             if (DotMailerService.DotMailerEnabled)
             {
-                // (hit 3: in guest signup journey, or hit 1 in donation journey)
-                DotMailerService.GetApiService().UpdateContact(contact.ToApiContact());
+                try
+                {
+                    // (hit 3: in guest signup journey, or hit 1 in donation journey)
+                    DotMailerService.GetApiService().UpdateContact(contact.ToApiContact());
+                }
+                catch (Exception exception)
+                {
+                    LogHelper.Error(typeof(DotMailerService), "UpdateContact", exception);
+                }
             }
         }
 
@@ -95,7 +132,14 @@ namespace Wonderland.Logic.DotMailer
         {
             if (DotMailerEnabled)
             {
-                // TODO: for all people going to the party (inc host) update their party time, and party address
+                try
+                {
+                    // TODO: for all people going to the party (inc host) update their party time, and party address
+                }
+                catch (Exception exception)
+                {
+                    LogHelper.Error(typeof(DotMailerService), "UpdatePartyDetails", exception);
+                }
             }
         }
 
