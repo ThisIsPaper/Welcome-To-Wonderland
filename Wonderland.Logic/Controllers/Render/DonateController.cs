@@ -31,6 +31,10 @@ namespace Wonderland.Logic.Controllers.Render
                     {
                         return this.View("Donate/Complete", model);
                     }
+                    else if (donationRow.Cancelled)
+                    {
+                        return this.View("Donate/Cancelled", model);
+                    }
                     else
                     {
                         return this.View("Donate/Failed", model);

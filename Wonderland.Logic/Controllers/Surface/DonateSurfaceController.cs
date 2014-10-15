@@ -100,10 +100,6 @@ namespace Wonderland.Logic.Controllers.Surface
 
                 return this.Redirect(transactionRegistrationResponse.NextURL);
             }
-            else
-            {
-                // delete row ? (as transaction will never happen)
-            }
 
             this.ViewData["errorMessage"] = transactionRegistrationResponse.StatusDetail;
 

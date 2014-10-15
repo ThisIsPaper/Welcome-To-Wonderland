@@ -3150,6 +3150,8 @@
     <Content Include="App_Plugins\RJP.MultiUrlPicker\package.manifest" />
     <None Include="Properties\PublishProfiles\AWS Macmillan.pubxml" />
     <Content Include="Views\Profile\Forms\ProfileTShirtSizeForm.cshtml" />
+    <Content Include="Views\Donate\Cancelled.cshtml" />
+    <Content Include="Views\RegisterGuest\Cancelled.cshtml" />
     <None Include="Views\RegisterHost\Forms\RegisterHostForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
