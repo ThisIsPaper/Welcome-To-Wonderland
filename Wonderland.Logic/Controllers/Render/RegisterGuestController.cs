@@ -17,24 +17,28 @@ namespace Wonderland.Logic.Controllers.Render
             RegisterGuest model = (RegisterGuest)renderModel.Content;
 
             // if VendorTxCode can be found on the querystring, then get party guid from transaction table
-            int vendorTxCode;
-            if (int.TryParse(this.Request.QueryString["VendorTxCode"], out vendorTxCode))
+            Guid vendorTxCode;
+            if (Guid.TryParse(this.Request.QueryString["VendorTxCode"], out vendorTxCode))
             {
-                if (vendorTxCode > 0)
+                DonationRow donationRow = this.DatabaseContext.Database.Fetch<DonationRow>("SELECT TOP 1 * FROM wonderlandDonation WHERE VendorTxCode = @0", vendorTxCode).SingleOrDefault();
+
+                if (donationRow != null)
                 {
-                    DonationRow donationRow = this.DatabaseContext.Database.Fetch<DonationRow>("SELECT TOP 1 * FROM wonderlandDonation WHERE VendorTxCode = @0", vendorTxCode).SingleOrDefault();
+                    model.PartyHost = this.Members.GetPartyHost(donationRow.PartyGuid);
+                    model.DonationRow = donationRow;
 
-                    if (donationRow != null)
+                    if (donationRow.Success)
                     {
-                        model.PartyHost = this.Members.GetPartyHost(donationRow.PartyGuid);
-                        model.DonationRow = donationRow;
-
                         return this.View("RegisterGuest/Complete", model);
                     }
                     else
                     {
-                        return this.View("RegisterGuest/UnknownTransaction", model);
-                    }
+                        return this.View("RegisterGuest/Failed", model);
+                    }                    
+                }
+                else
+                {
+                    return this.View("RegisterGuest/UnknownTransaction", model);
                 }
             }
 
