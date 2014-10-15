@@ -36,31 +36,31 @@ namespace Wonderland.Web.Dashboards
                     string.Join(
                         ", ",
                         new object[] {
-                            donationRow.VPSTxId,                                                                                        //  1. VpsTxId
-                            donationRow.VendorTxCode,                                                                                   //  2. VendorTxCode
-                            donationRow.Success ? "Y" : "N",                                                                            //  3. Success
-                            donationRow.MemberId,                                                                                       //  4. Member Id
-                            donationRow.MemberId.HasValue ? ((IPartier)this.Members.GetById(donationRow.MemberId.Value)).Email : null,  //  5. Donor Email
-                            donationRow.FirstName.Replace(',', ' '),                                                                    //  6. Donor First Name
-                            donationRow.LastName.Replace(',', ' '),                                                                     //  7. Donor Last Name
-                            donationRow.Address1.Replace(',', ' '),                                                                     //  8. Donor Billing Address 1
-                            donationRow.Address2 != null ? donationRow.Address2.Replace(',',' ') : null,                                //  9. Donor Billing Address 2
-                            donationRow.TownCity.Replace(',', ' '),                                                                     // 10. Donor Billing Town City
-                            donationRow.Postcode.Replace(',', ' '),                                                                     // 11. Donor Billing Postcode
-                            donationRow.Amount,                                                                                         // 12. Amount Donated
-                            donationRow.Timestamp.Date,                                                                                 // 13. Date
-                            donationRow.Timestamp.TimeOfDay,                                                                            // 14. Time
-                            donationRow.GiftAid ? "Y" : "N",                                                                            // 15. Gift Aid
-                            donationRow.PaymentJourney.ToString(),                                                                      // 16. Payment Journey
-                            "Y",                                                                                                        // 17. Opt In
-                            donationRow.PartyGuid,                                                                                      // 18. Party Guid
-                            partyHost.Id,                                                                                               // 19. Party Host Id
-                            partyHost.FirstName,                                                                                        // 20. Party Host First Name
-                            partyHost.LastName,                                                                                         // 21. Party Host Last Name
-                            partyHost.BillingAddress.Address1,                                                                          // 22. Party Host Billing Address 1
-                            partyHost.BillingAddress.Address2,                                                                          // 23. Party Host Billing Address 2
-                            partyHost.BillingAddress.TownCity,                                                                          // 24. Party Host Billing Town City
-                            partyHost.BillingAddress.Postcode                                                                           // 25. Party Host Billing Postcode
+                            donationRow.VPSTxId ?? string.Empty,                                                                                //  1. VpsTxId
+                            donationRow.VendorTxCode,                                                                                           //  2. VendorTxCode
+                            donationRow.Success ? "Y" : "N",                                                                                    //  3. Success
+                            donationRow.MemberId,                                                                                               //  4. Member Id
+                            donationRow.MemberId.HasValue ? ((IPartier)this.Members.GetById(donationRow.MemberId.Value)).Email : string.Empty,  //  5. Donor Email
+                            donationRow.FirstName.Replace(',', ' '),                                                                            //  6. Donor First Name
+                            donationRow.LastName.Replace(',', ' '),                                                                             //  7. Donor Last Name
+                            donationRow.Address1.Replace(',', ' '),                                                                             //  8. Donor Billing Address 1
+                            donationRow.Address2 != null ? donationRow.Address2.Replace(',',' ') : string.Empty,                                //  9. Donor Billing Address 2
+                            donationRow.TownCity.Replace(',', ' '),                                                                             // 10. Donor Billing Town City
+                            donationRow.Postcode.Replace(',', ' '),                                                                             // 11. Donor Billing Postcode
+                            donationRow.Amount,                                                                                                 // 12. Amount Donated
+                            donationRow.Timestamp.Date,                                                                                         // 13. Date
+                            donationRow.Timestamp.TimeOfDay,                                                                                    // 14. Time
+                            donationRow.GiftAid ? "Y" : "N",                                                                                    // 15. Gift Aid
+                            donationRow.PaymentJourney.ToString(),                                                                              // 16. Payment Journey
+                            "Y",                                                                                                                // 17. Opt In
+                            donationRow.PartyGuid,                                                                                              // 18. Party Guid
+                            partyHost.Id,                                                                                                       // 19. Party Host Id
+                            partyHost.FirstName,                                                                                                // 20. Party Host First Name
+                            partyHost.LastName,                                                                                                 // 21. Party Host Last Name
+                            partyHost.BillingAddress.Address1,                                                                                  // 22. Party Host Billing Address 1
+                            partyHost.BillingAddress.Address2,                                                                                  // 23. Party Host Billing Address 2
+                            partyHost.BillingAddress.TownCity,                                                                                  // 24. Party Host Billing Town City
+                            partyHost.BillingAddress.Postcode                                                                                   // 25. Party Host Billing Postcode
                         })
                     );
             }
