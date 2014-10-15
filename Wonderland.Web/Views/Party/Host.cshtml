@@ -81,7 +81,7 @@
                             </div>
 
                             <div class="grid-6 grid-tablet-12">
-                                <input type="text" ng-value="currentPageUrl" m-radius-picker="small" readonly="readonly" m-select-on-click/>
+                                <textarea class="body-medium" type="text" m-radius-picker="small" readonly="readonly" m-select-on-click ng-bind="currentPageUrl"></textarea>
                             </div>
                         </div>
                     </div>
@@ -167,7 +167,7 @@
         {imageUrl: '/img/badge_0005_chalet.png', badgeTitle: '15+ guests', badgeCopy: 'Chalet', complete: @this.Model.Partiers.Count() >= 15},
         {imageUrl: '/img/badge_0002_beginner.png', badgeTitle: 'First donation', badgeCopy: 'Beginner', complete: @Model.PartyHost.AmountRaised > 0 },
         {imageUrl: '/img/badge_0001_intermediate.png', badgeTitle: '£180+', badgeCopy: 'Intermediate', complete: @Model.PartyHost.AmountRaised >= 180},
-        {imageUrl: '/img/badge_0000_pro.png', badgeTitle: '£240+', badgeCopy: 'Pro', complete: @Model.PartyHost.AmountRaised >= 240}
+        {imageUrl: '/img/badge_0000_pro.png', badgeTitle: '£250+', badgeCopy: 'Pro', complete: @Model.PartyHost.AmountRaised >= 250}
     ]">
                 <div class="boxx" m-radius-picker="small medium">
                     <h4 class="top">Badges <span ng-bind="guideBadges|formatAmountComplete"></span></h4>
