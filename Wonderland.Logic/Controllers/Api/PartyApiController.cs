@@ -52,7 +52,8 @@ namespace Wonderland.Logic.Controllers.Api
                                             [Timestamp] 
                                 FROM        wonderlandDonation
                                 WHERE       Success = 1
-                                            AND MemberId IN (SELECT MemberId FROM wonderlandMemberParty WHERE PartyGuid = @0)
+                                            AND PartyGuid = @0
+                                            AND MemberId IS NOT NULL
                                             AND [Timestamp] < @1
                                 UNION ALL
                                 SELECT      PartyWallItemType = " + (int)PartyWallItemType.Message + @", 
@@ -84,7 +85,8 @@ namespace Wonderland.Logic.Controllers.Api
                                     [Timestamp] 
                         FROM        wonderlandDonation
                         WHERE       Success = 1
-                                    AND MemberId IN (SELECT MemberId FROM wonderlandMemberParty WHERE PartyGuid = @0)
+                                    AND PartyGuid = @0
+                                    AND MemberId IS NOT NULL
                                     AND [Timestamp] < @1
                         ORDER BY    [Timestamp] DESC
                     ";
