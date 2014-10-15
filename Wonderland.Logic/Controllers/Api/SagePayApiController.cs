@@ -27,36 +27,34 @@ namespace Wonderland.Logic.Controllers.Api
         [HttpPost]
         public HttpResponseMessage Notifcation([FromBody] NotificationRequest notificationRequest)
         {
+            // create response obj to send back to Sage Pay (defaulting to error)
             NotificationResponse notificationResponse = new NotificationResponse();
             notificationResponse.Status = NotificationStatus.ERROR;
 
-            // get transaction details from the database via primary key
-            // DonationRow donationRow = this.DatabaseContext.Database.Single<DonationRow>(notificationRequest.VendorTxCode); // doens't work with enums
+            // get associated transaction details from the database
             DonationRow donationRow = this.DatabaseContext.Database.Fetch<DonationRow>("SELECT TOP 1 * FROM wonderlandDonation WHERE VendorTxCode = @0", notificationRequest.VendorTxCode).Single();
 
-            // TODO: sage pay will retry sending if a request if a response isn't recieved quickly
-
-            // safety check
+            // safety checks
             if (notificationRequest.VPSTxId != donationRow.VPSTxId)
             {
-                notificationResponse.StatusDetail += "VPSTxIDs didn't match" + Environment.NewLine;
+                notificationResponse.StatusDetail += "VPSTxID Invalid" + Environment.NewLine;
             }
-
-            if (notificationRequest.Status == NotificationStatus.OK)
+            else if (!this.IsSignatureValid(donationRow, notificationRequest))
             {
-                //if (!this.IsSignatureValid(donationRow, notificationRequest))
-                //{
-                //    notificationResponse.StatusDetail += "Signature MD5 didn't match" + Environment.NewLine;
-                //}
-                //else
-                //{
-                    notificationResponse.Status = NotificationStatus.OK;
+                notificationResponse.StatusDetail += "Signature Invalid" + Environment.NewLine;
+            }
+            else
+            {
+                // change response status from Error to OK, as valid inbound data is valid
+                notificationResponse.Status = NotificationStatus.OK;
 
-                    // set success flag in db
+                // if Sage Pay reports a valid transaction then mark as success in database
+                if (notificationRequest.Status == NotificationStatus.OK)
+                {
                     donationRow.Success = true;
 
                     this.DatabaseContext.Database.Update(donationRow);
-                //}
+                }
             }
 
             // determine redirect url
@@ -66,7 +64,8 @@ namespace Wonderland.Logic.Controllers.Api
             {
                 case PaymentJourney.RegisterGuest:
 
-                    if (donationRow.MemberId.HasValue) // safety check - memberId should alwayws be present
+                    // safety check (memberId should always have a value)
+                    if (donationRow.MemberId.HasValue)
                     {
                         // update dot mailer to indicate guest has fully registered
                         DotMailerService.GuestRegistrationCompleted((Contact)(PartyGuest)this.Members.GetById(donationRow.MemberId.Value));
@@ -86,8 +85,7 @@ namespace Wonderland.Logic.Controllers.Api
 
             notificationResponse.RedirectURL = redirectUrl + "?VendorTxCode=" + notificationRequest.VendorTxCode;
 
-
-            // HACK: to ensure the return type is plain text
+            // ensure the return type is plain text
             return new HttpResponseMessage(System.Net.HttpStatusCode.OK)
             {
                 Content = new StringContent(
