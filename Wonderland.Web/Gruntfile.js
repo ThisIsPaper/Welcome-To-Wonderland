@@ -8,7 +8,7 @@ module.exports = function (grunt) {
                                  mangle: false,
                                  banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n',
                                  compress: {
-                                     drop_console: true
+                                     drop_console: false
                                  }
                              },
                              all: {
@@ -46,6 +46,7 @@ module.exports = function (grunt) {
                                          '<%= pkg.jsPath %>app/directives/mHeightMatchWidth.js',
                                          '<%= pkg.jsPath %>app/directives/mImageLoadedBroadcaster.js',
                                          '<%= pkg.jsPath %>app/directives/mImageLoadedNotifier.js',
+                                         '<%= pkg.jsPath %>app/directives/mIosVersion.js',
                                          '<%= pkg.jsPath %>app/directives/mPostOnSubmit.js',
                                          '<%= pkg.jsPath %>app/directives/mProfileImage.js',
                                          '<%= pkg.jsPath %>app/directives/mRadiusPicker.js',

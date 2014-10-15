@@ -3,13 +3,7 @@ wonderlandApp.directive('mSelectOnClick', function () {
         restrict: 'A',
         link: function (scope, element) {
 
-            var startEventType = 'mouseup';
-
-            if (Modernizr.touch === true) {
-                startEventType = 'touchstart';
-            }
-
-            element.on(startEventType, function () {
+            element.on('mouseup', function () {
                 this.select();
             });
         }

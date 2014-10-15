@@ -18,7 +18,7 @@
                 <p class="form-info">Set your target to let your guests know how much you are trying to raise for Macmillan.</p>
 
                 <h4>Choose your target</h4>
-                <label class="dis-inline-block margin-right-small"><input class="margin-right-small" type="radio" name="selectar" ng-click="showChoose=false" ng-model="fundraisingTargetData.FundraisingTarget" value="150" ng-readonly="processing" />£150</label>
+                <label class="dis-inline-block margin-right-small"><input class="margin-right-small" type="radio" name="selectar" ng-click="showChoose=false" ng-model="fundraisingTargetData.FundraisingTarget" value="180" ng-readonly="processing" />£180</label>
                 <label class="dis-inline-block margin-right-small"><input class="margin-right-small" type="radio" name="selectar" ng-click="showChoose=false" ng-model="fundraisingTargetData.FundraisingTarget" value="250" ng-readonly="processing" />£250</label>
                 <label class="dis-inline-block margin-right-small"><input class="margin-right-small" type="radio" name="selectar" ng-click="showChoose=false" ng-model="fundraisingTargetData.FundraisingTarget" value="400" ng-readonly="processing" />£400</label>
                 <label class="dis-inline-block "><input type="checkbox" name="chooser" ng-model="showChoose" ng-readonly="processing" />I'll choose</label>
@@ -32,7 +32,8 @@
                 <hr/>
 
                 <h4>Aim for piste points</h4>
-                <p>Reaching Wonderland piste points means prizes! The more your raise, the bigger the prize and every penny you raise will go to help the 2 million people living with cancer in the UK and help them to take back control and live their lives to the fullest.</p>
+                @* TODO: remove hardcoded url *@
+                <p>Reaching Wonderland <a class="body-highlight" href="/piste-points/">piste points</a> means prizes! The more your raise, the bigger the prize and every penny you raise will go to help the 2 million people living with cancer in the UK and help them to take back control and live their lives to the fullest.</p>
 
                 <div class="grid-4 grid-tablet-6 grid-mobile-12 pad-small text-align-center" ng-repeat="fund in hardcodedFundraisingTargets">
                     <div class="reference-image" ng-style="{'background-image': 'url(' + fund.imageUrl + ')'}" m-radius-picker="small"></div>
