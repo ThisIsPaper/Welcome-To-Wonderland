@@ -48,13 +48,18 @@ namespace Wonderland.Logic.Controllers.Api
                 // change response status from Error to OK, as valid inbound data is valid
                 notificationResponse.Status = NotificationStatus.OK;
 
-                // if Sage Pay reports a valid transaction then mark as success in database
-                if (notificationRequest.Status == NotificationStatus.OK)
+                switch (notificationRequest.Status)
                 {
-                    donationRow.Success = true;
+                    case NotificationStatus.OK:                       
+                        donationRow.Success = true;
+                        break;
 
-                    this.DatabaseContext.Database.Update(donationRow);
+                    case NotificationStatus.ABORT:
+                        donationRow.Cancelled = true;
+                        break;                    
                 }
+
+                this.DatabaseContext.Database.Update(donationRow);
             }
 
             // determine redirect url

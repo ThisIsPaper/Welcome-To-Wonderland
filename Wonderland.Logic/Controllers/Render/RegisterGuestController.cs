@@ -31,10 +31,14 @@ namespace Wonderland.Logic.Controllers.Render
                     {
                         return this.View("RegisterGuest/Complete", model);
                     }
+                    else if (donationRow.Cancelled)
+                    {
+                        return this.View("RegisterGuest/Cancelled", model);
+                    }                    
                     else
                     {
                         return this.View("RegisterGuest/Failed", model);
-                    }                    
+                    }
                 }
                 else
                 {

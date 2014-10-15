@@ -588,6 +588,8 @@
     <Content Include="fonts\macmillan_headline_02_12-webfont.woff" />
     <None Include="Properties\PublishProfiles\AWS Macmillan.pubxml" />
     <Content Include="Views\Profile\Forms\ProfileTShirtSizeForm.cshtml" />
+    <Content Include="Views\Donate\Cancelled.cshtml" />
+    <Content Include="Views\RegisterGuest\Cancelled.cshtml" />
     <None Include="Views\RegisterHost\Forms\RegisterHostForm.cshtml" />
     <Content Include="Wonderland.Web.wpp.targets" />
     <Content Include="Wonderland.Web.targets" />
