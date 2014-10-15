@@ -46,6 +46,7 @@ namespace Wonderland.Logic.Models.Members
         private string firstName = null;
         private string lastName = null;
         private Address billingAddress = null;
+        private Address partyAddress = null;
         private DateTime? partyDateTime = null;
         private string partyUrlIdentifier = null;
         private bool? dotMailerPartyPageComplete = null;
@@ -180,10 +181,16 @@ namespace Wonderland.Logic.Models.Members
         {
             get
             {
+                if (this.partyAddress != null)
+                {
+                    return this.partyAddress;
+                }
+
                 return new Address(this.GetPropertyValue<string>(PartyHost.PartyAddressAlias));
             }
             set
             {
+                this.partyAddress = value;
                 this.SetPropertyValue(PartyHost.PartyAddressAlias, value.ToString());
             }
         }

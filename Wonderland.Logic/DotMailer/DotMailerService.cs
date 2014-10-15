@@ -3,11 +3,16 @@ namespace Wonderland.Logic.DotMailer
 {
     using System;
     using System.Net;
+    using System.Text;
     using System.Web;
     using System.Web.Caching;
     using System.Web.Configuration;
     using Umbraco.Core.Logging;
+    using Umbraco.Web;
+    using Umbraco.Web.Security;
     using Wonderland.Logic.DotMailerApi;
+    using Wonderland.Logic.Extensions;
+    using Wonderland.Logic.Interfaces;
     using Wonderland.Logic.Models.Members;
 
     internal static class DotMailerService
@@ -132,9 +137,31 @@ namespace Wonderland.Logic.DotMailer
         {
             if (DotMailerEnabled)
             {
+                // http://api.dotmailer.com/v2/api.svc#op.ApiService.ImportContacts
+
+                StringBuilder stringBuilder = new StringBuilder();
+
+                stringBuilder.AppendLine("Email, Party_Date, Party_Address_1, Party_Address_2, Party_Town_City, Party_Postcode");
+                
+                foreach(IPartier partier in new MembershipHelper(UmbracoContext.Current).GetPartiers(partyHost.PartyGuid))
+                {
+                    stringBuilder.AppendLine(
+                        string.Join(
+                            ", ",
+                            new object[] {
+                                partier.Email,
+                                partyHost.PartyDateTime,
+                                partyHost.PartyAddress.Address1,
+                                partyHost.PartyAddress.Address2,
+                                partyHost.PartyAddress.TownCity,
+                                partyHost.PartyAddress.Postcode
+                            })
+                        );
+                }
+                
                 try
                 {
-                    // TODO: for all people going to the party (inc host) update their party time, and party address
+                    DotMailerService.GetApiService().ImportContacts(Encoding.UTF8.GetBytes(stringBuilder.ToString()), "csv");
                 }
                 catch (Exception exception)
                 {
