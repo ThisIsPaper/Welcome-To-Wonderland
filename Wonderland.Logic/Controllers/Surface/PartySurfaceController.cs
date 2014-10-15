@@ -125,22 +125,28 @@ namespace Wonderland.Logic.Controllers.Surface
             FormResponse formResponse = new FormResponse();
 
             if (this.ModelState.IsValid)
-            {                
-                if (profileImageForm.ProfileImage.ContentLength > 0 && profileImageForm.ProfileImage.InputStream.IsImage())
+            {
+                //update PartyHost property
+                PartyHost partyHost = (PartyHost)this.Members.GetCurrentMember();
+
+                if (profileImageForm.ProfileImage != null && profileImageForm.ProfileImage.ContentLength > 0 && profileImageForm.ProfileImage.InputStream.IsImage())
                 {
                     // WARNING: user may upload an image, but use an incorrect extension !
                     string fileName = Guid.NewGuid().ToString() + "." + profileImageForm.ProfileImage.ContentType.Split('/')[1];
 
                     profileImageForm.ProfileImage.SaveAs(Server.MapPath("~/Uploads/Profile/" + fileName));
 
-                    //update PartyHost property
-                    PartyHost partyHost = (PartyHost)this.Members.GetCurrentMember();
                     partyHost.ProfileImage = fileName;
 
                     // re-inflate the current user model (to take into account newly set property)
                     formResponse.Message = new PartyHost(this.Umbraco.TypedMember(partyHost.Id)).ProfileImageUrl;
-                    formResponse.Success = true;
                 }
+                else
+                {
+                    partyHost.ProfileImage = string.Empty;
+                }
+
+                formResponse.Success = true;
             }
             else
             {

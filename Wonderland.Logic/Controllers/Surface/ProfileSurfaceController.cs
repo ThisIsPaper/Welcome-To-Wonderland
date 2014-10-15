@@ -119,9 +119,9 @@ namespace Wonderland.Logic.Controllers.Surface
             {
                 formResponse.Success = true;
 
-                IPartier partier = this.Members.GetCurrentPartier();                
+                IPartier partier = this.Members.GetCurrentPartier();
 
-                if (profileImageForm.ProfileImage.ContentLength > 0 && profileImageForm.ProfileImage.InputStream.IsImage())
+                if (profileImageForm.ProfileImage != null && profileImageForm.ProfileImage.ContentLength > 0 && profileImageForm.ProfileImage.InputStream.IsImage())
                 {
                     // WARNING: user may upload an image, but use an incorrect extension !
                     string fileName = Guid.NewGuid().ToString() + "." + profileImageForm.ProfileImage.ContentType.Split('/')[1];
@@ -138,7 +138,6 @@ namespace Wonderland.Logic.Controllers.Surface
                 {
                     partier.ProfileImage = string.Empty;
                 }
-
 
                 formResponse.Success = true;
             }
