@@ -278,11 +278,21 @@ namespace Wonderland.Logic.Models.Members
             }
         }
 
+        /// <summary>
+        /// Gets the party heading for the current party host, or if not set, then returns the default party heading
+        /// </summary>
         public string PartyHeading
         {
             get
             {
-                return this.GetPropertyValue<string>(PartyHost.PartyHeadingAlias);
+                string partyHeading = this.GetPropertyValue<string>(PartyHost.PartyHeadingAlias);
+
+                if (string.IsNullOrWhiteSpace(partyHeading))
+                {
+                    partyHeading = ((Party)new UmbracoHelper(UmbracoContext.Current).TypedContentSingleAtXPath("//" + Party.Alias)).DefaultHeading;
+                }
+
+                return partyHeading;
             }
             set
             {
@@ -290,11 +300,21 @@ namespace Wonderland.Logic.Models.Members
             }
         }
 
+        /// <summary>
+        /// Gets the party copy for the current party host, or if not set, then returns the default party copy
+        /// </summary>
         public string PartyCopy
         {
             get
-            {
-                return this.GetPropertyValue<string>(PartyHost.PartyCopyAlias);
+            {                
+                string partyCopy = this.GetPropertyValue<string>(PartyHost.PartyCopyAlias);
+
+                if(string.IsNullOrWhiteSpace(partyCopy))
+                {
+                    partyCopy = ((Party)new UmbracoHelper(UmbracoContext.Current).TypedContentSingleAtXPath("//" + Party.Alias)).DefaultCopy;
+                }
+
+                return partyCopy;
             }
             set
             {
