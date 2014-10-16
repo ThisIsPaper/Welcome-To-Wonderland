@@ -4,6 +4,7 @@ namespace Wonderland.Logic.Controllers.Api
     using System;
     using System.Linq;
     using System.Net.Http;
+    using System.Net.Mail;
     using System.Text;
     using System.Web.Configuration;
     using System.Web.Http;
@@ -12,11 +13,12 @@ namespace Wonderland.Logic.Controllers.Api
     using Wonderland.Logic.DotMailer;
     using Wonderland.Logic.Enums;
     using Wonderland.Logic.Extensions;
+    using Wonderland.Logic.Interfaces;
     using Wonderland.Logic.Models.Content;
     using Wonderland.Logic.Models.Database;
     using Wonderland.Logic.Models.Members;
     using Wonderland.Logic.SagePay;
-    
+
     public class SagePayApiController : UmbracoApiController
     {
         /// <summary>
@@ -52,6 +54,7 @@ namespace Wonderland.Logic.Controllers.Api
                 {
                     case NotificationStatus.OK:                       
                         donationRow.Success = true;
+                        this.SendPaymentConfirmationEmail(donationRow);
                         break;
 
                     case NotificationStatus.ABORT:
@@ -131,6 +134,33 @@ namespace Wonderland.Logic.Controllers.Api
             //return notificationRequest.VPSSignature == hash;
 
             return true; // HACK !!! hash calculation fails when using the test card data (although works correctly when cancelling in Sage Pay)
+        }
+
+        private void SendPaymentConfirmationEmail(DonationRow donationRow)
+        {
+            if (donationRow.MemberId.HasValue)
+            {
+                Donate donate = (Donate)this.Umbraco.TypedContentSingleAtXPath("//" + Donate.Alias);
+
+                IPartier partier = (IPartier)this.Members.GetById(donationRow.MemberId.Value);
+
+                MailMessage mailMessage = new MailMessage();
+
+                mailMessage.From = new MailAddress(donate.ServerEmailAddress);
+                mailMessage.To.Add(new MailAddress(partier.Email));
+                mailMessage.Subject = donate.EmailSubject;
+                mailMessage.IsBodyHtml = false;
+
+                mailMessage.Body = donate.EmailBody
+                                        .Replace("[%FIRST_NAME%]", partier.FirstName)
+                                        .Replace("[%LAST_NAME%]", partier.LastName)
+                                        .Replace("[%AMOUNT%]", donationRow.Amount.ToString());
+                                            
+                using(SmtpClient smtpClient = new SmtpClient())
+                {
+                    smtpClient.Send(mailMessage);
+                }
+            }
         }
     }
 }
