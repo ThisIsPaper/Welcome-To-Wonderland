@@ -58,7 +58,7 @@
             @foreach (PromotionTile promotionTile in Model.PromotionTiles)
             {
 
-            <div class="grid-4 grid-tablet-6 grid-mobile-12" m-rotate>
+            <div class="grid-4 grid-tablet-6 grid-mobile-12" m-rotate m-rotate-hover>
                 <div class="home-tile" m-height-match-width>
                     <div class="home-tile-image" ng-style="{'background-image': 'url(@promotionTile.Image.GetResponsiveCropUrl("Square"))'}" ></div>
                     <img class="home-tile-label" src="@promotionTile.OverlayImage.Url" alt="@promotionTile.AltText" />
