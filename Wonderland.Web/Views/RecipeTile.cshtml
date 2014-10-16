@@ -16,19 +16,32 @@
 
 
 
-        <div class="wgrid-main">
+        <div class="wgrid-main no-margin-bottom">
 
-            <div class="boxx collapse" m-radius-picker="large">
+            <div class="wgrid-full parent">
+                <div class="boxx collapse" m-radius-picker="large">
 
-                <div class="wgrid-full parent wgrid-no-bottom-margin">
-                    @*<div class="grid-12 party-main-image" style="background-image: url(@Model.TileImage.Url)"></div>*@
-                    <img ng-src="{{ '@Model.TileImage.GetResponsiveCropUrl("Letterbox")'|mQuality:50|mWidth:850 }}" alt=""/>
-                    <div class="boxx-twerk"></div>
+                    <div class="wgrid-full parent wgrid-no-bottom-margin">
+                        @*<div class="grid-12 party-main-image" style="background-image: url(@Model.TileImage.Url)"></div>*@
+                        <img ng-src="{{ '@Model.TileImage.GetResponsiveCropUrl("Letterbox")'|mQuality:50|mWidth:850 }}" alt=""/>
+                        <div class="boxx-twerk"></div>
+                    </div>
+
+                    <div class="wgrid-full pad-large">
+                        <h1>@Model.TileHeading</h1>
+                        @Html.Raw(Model.TileCopy)
+                    </div>
                 </div>
+            </div>
 
-                <div class="wgrid-full pad-large">
-                    <h1>@Model.TileHeading</h1>
-                    @Html.Raw(Model.TileCopy)
+            <div class="wgrid-full parent">
+                <div class="boxx" m-radius-picker="medium">
+
+                    <h4>Method</h4>
+
+
+                    @Html.Raw(Model.PreparationCopy)
+
                 </div>
             </div>
 
@@ -53,25 +66,13 @@
             </div>
 
 
-            <div class="wgrid-full parent">
+            <!--<div class="wgrid-full">-->
+            <div class="wgrid-full centered parent text-align-center centered-share-holder">
 
                 @Html.Partial("Share")
 
             </div>
 
-        </div>
-
-
-
-        <div class="wgrid-main">
-            <div class="boxx" m-radius-picker="medium">
-
-                <h4>Method</h4>
-
-
-                @Html.Raw(Model.PreparationCopy)
-
-            </div>
         </div>
 
 
