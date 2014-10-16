@@ -21,7 +21,7 @@
 
             <div class="form-info" ng-show="wall.formModel.Message.length<=maxCharLength">
                 <span ng-bind="maxCharLength-wall.formModel.Message.length"></span>
-                <ng-pluralize count="maxCharLength-wall.formModel.Message.length" when="{'one': 'character', 'other': 'characters'}"></ng-pluralize>
+                <div ng-pluralize count="maxCharLength-wall.formModel.Message.length" when="{'one': 'character', 'other': 'characters'}"></div>
                 <span> remaining</span>
             </div>
 
@@ -30,7 +30,7 @@
                 <span class="icon-icon_alert"></span>
                 <span>You have exceeded the maximum length by </span>
                 <span ng-bind="wall.formModel.Message.length-maxCharLength"></span>
-                <ng-pluralize count="wall.formModel.Message.length-maxCharLength" when="{'one': 'character', 'other': 'characters'}"></ng-pluralize>
+                <div ng-pluralize count="wall.formModel.Message.length-maxCharLength" when="{'one': 'character', 'other': 'characters'}"></div>
             </div>
 
 
