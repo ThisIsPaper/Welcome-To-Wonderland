@@ -111,7 +111,7 @@
 
                     <h4 class="top margin-right-3">Set your fundraising target</h4>
 
-                    <m-totaliser m-raised="{{ amountRaised }}" m-total="{{ fundraisingTargetData.FundraisingTarget }}"></m-totaliser>
+                    <div m-totaliser m-raised="{{ amountRaised }}" m-total="{{ fundraisingTargetData.FundraisingTarget }}"></div>
 
                     <div class="edit-trigger" ng-click="openPageModal('partials/fundraisingTargetForm.html', 'suggestedDonationModal', {'fundraisingTargetData': fundraisingTargetDataForForm})"><span class="edit-label">Edit</span><span class="icon-icon_edit"></span></div>
 
