@@ -76,6 +76,7 @@ img, object, embed {
 	margin: 0;
 	padding: 0;
 	display: block;
+	border: none;
 }
 
 iframe {
@@ -559,7 +560,6 @@ One-off uses
 }
 
 .home-tile {
-	@extend .pad-small;
 	@extend .margin-bottom-large;
 	background-color: white;
 	position: relative;
@@ -685,6 +685,7 @@ One-off uses
 }
 
 .idea-link {
+	@extend .pad-small;
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -693,6 +694,10 @@ One-off uses
 
 	z-index: 5;
 	text-indent: -999rem;
+
+	span.label {
+		display: none;
+	}
 }
 
 .share-title {

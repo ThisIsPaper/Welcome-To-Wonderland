@@ -83,6 +83,12 @@ wonderlandApp.controller('PageCtrl', ['debounce', 'paf', 'safeApply', '$rootScop
     });
 
 
+    /**
+     * HACKY TEMPLATE FILTER
+     */
+    $scope.isExternalLink = function (url) {
+        return url.indexOf('http') === 0;
+    };
 
 
     /*************************

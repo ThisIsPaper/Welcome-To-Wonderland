@@ -406,7 +406,7 @@ abstract
 }
 
 /* line 16, sass/partials/_abstract.scss */
-.pad-small, .btn-primary.btn-small, .btn-small.btn-secondary, .btn-small.btn-facebook-login, .btn-small.choose-file-wrapper:after, textarea, .home-tile {
+.pad-small, .btn-primary.btn-small, .btn-small.btn-secondary, .btn-small.btn-facebook-login, .btn-small.choose-file-wrapper:after, textarea, .idea-link {
   padding: 1.2rem;
 }
 
@@ -5594,7 +5594,7 @@ abstract
 }
 
 /* line 16, sass/partials/_abstract.scss */
-.pad-small, .btn-primary.btn-small, .btn-small.btn-secondary, .btn-small.btn-facebook-login, .btn-small.choose-file-wrapper:after, textarea, .home-tile {
+.pad-small, .btn-primary.btn-small, .btn-small.btn-secondary, .btn-small.btn-facebook-login, .btn-small.choose-file-wrapper:after, textarea, .idea-link {
   padding: 1.2rem;
 }
 
@@ -7897,7 +7897,7 @@ abstract
 }
 
 /* line 16, sass/partials/_abstract.scss */
-.pad-small, .btn-primary.btn-small, .btn-small.btn-secondary, .btn-small.btn-facebook-login, .btn-small.choose-file-wrapper:after, textarea, .home-tile {
+.pad-small, .btn-primary.btn-small, .btn-small.btn-secondary, .btn-small.btn-facebook-login, .btn-small.choose-file-wrapper:after, textarea, .idea-link {
   padding: 1.2rem;
 }
 
@@ -9095,7 +9095,7 @@ abstract
 }
 
 /* line 16, sass/partials/_abstract.scss */
-.pad-small, .btn-primary.btn-small, .btn-small.btn-secondary, .btn-small.btn-facebook-login, .btn-small.choose-file-wrapper:after, textarea, .home-tile {
+.pad-small, .btn-primary.btn-small, .btn-small.btn-secondary, .btn-small.btn-facebook-login, .btn-small.choose-file-wrapper:after, textarea, .idea-link {
   padding: 1.2rem;
 }
 
@@ -10918,9 +10918,10 @@ img, object, embed {
   margin: 0;
   padding: 0;
   display: block;
+  border: none;
 }
 
-/* line 81, sass/partials/_base.scss */
+/* line 82, sass/partials/_base.scss */
 iframe {
   border: none;
 }
@@ -10928,19 +10929,19 @@ iframe {
 /* =============================================================================
 Base page structure
 ========================================================================== */
-/* line 88, sass/partials/_base.scss */
+/* line 89, sass/partials/_base.scss */
 .page-container {
   position: relative;
   width: 100%;
   left: 0;
 }
 
-/* line 94, sass/partials/_base.scss */
+/* line 95, sass/partials/_base.scss */
 main {
   padding-top: 8.4rem;
 }
 
-/* line 98, sass/partials/_base.scss */
+/* line 99, sass/partials/_base.scss */
 .page-bg {
   background-color: #ECECEC;
   background-image: url('/img/bg_simple.png?1412505523');
@@ -10952,19 +10953,19 @@ main {
 /* =============================================================================
 Event Page specific - move these out of here eventually
 ========================================================================== */
-/* line 109, sass/partials/_base.scss */
+/* line 110, sass/partials/_base.scss */
 .party-main-image {
   background-color: #D4D3CC;
   background-position: center center;
   background-size: cover;
   height: 37.2rem;
 }
-/* line 115, sass/partials/_base.scss */
+/* line 116, sass/partials/_base.scss */
 .party-main-image.side {
   height: 18rem;
 }
 
-/* line 120, sass/partials/_base.scss */
+/* line 121, sass/partials/_base.scss */
 .party-image-default {
   position: absolute;
   text-align: center;
@@ -10976,13 +10977,13 @@ Event Page specific - move these out of here eventually
   padding-top: 9rem;
 }
 
-/* line 131, sass/partials/_base.scss */
+/* line 132, sass/partials/_base.scss */
 .no-party-image {
   background-color: #D4D3CC;
   min-height: 25rem;
 }
 
-/* line 136, sass/partials/_base.scss */
+/* line 137, sass/partials/_base.scss */
 .edit-trigger {
   position: absolute;
   top: 2rem;
@@ -11008,23 +11009,23 @@ Event Page specific - move these out of here eventually
   -webkit-border-bottom-left-radius: 3rem 3rem;
   border-bottom-left-radius: 3rem 3rem;
 }
-/* line 150, sass/partials/_base.scss */
+/* line 151, sass/partials/_base.scss */
 .edit-trigger .edit-label {
   display: none;
   margin-right: 1rem;
   text-transform: uppercase;
 }
-/* line 156, sass/partials/_base.scss */
+/* line 157, sass/partials/_base.scss */
 .edit-trigger:hover {
   padding: 0 .95rem;
   width: auto;
 }
-/* line 159, sass/partials/_base.scss */
+/* line 160, sass/partials/_base.scss */
 .edit-trigger:hover .edit-label {
   display: inline;
 }
 
-/* line 165, sass/partials/_base.scss */
+/* line 166, sass/partials/_base.scss */
 .profile-image {
   width: 6rem;
   height: 6rem;
@@ -11033,17 +11034,17 @@ Event Page specific - move these out of here eventually
   background-color: #A19F91;
   float: left;
 }
-/* line 173, sass/partials/_base.scss */
+/* line 174, sass/partials/_base.scss */
 .profile-image.profile-image-notset {
   background-image: url('/img/avatar.png?1413451250');
 }
-/* line 177, sass/partials/_base.scss */
+/* line 178, sass/partials/_base.scss */
 .profile-image.small {
   width: 4.2rem;
   height: 4.2rem;
 }
 
-/* line 183, sass/partials/_base.scss */
+/* line 184, sass/partials/_base.scss */
 .profile-image-remover {
   color: #E32333;
   font-size: 1.1rem;
@@ -11054,34 +11055,34 @@ Event Page specific - move these out of here eventually
   width: 6rem;
 }
 
-/* line 194, sass/partials/_base.scss */
+/* line 195, sass/partials/_base.scss */
 .image-shift-details, .party-details, .wall-details {
   margin-left: 7.2rem;
 }
-/* line 197, sass/partials/_base.scss */
+/* line 198, sass/partials/_base.scss */
 .image-shift-details.bigger, .bigger.party-details, .bigger.wall-details {
   margin-left: 12.2rem;
 }
 
-/* line 203, sass/partials/_base.scss */
+/* line 204, sass/partials/_base.scss */
 .anti-image-shift-details {
   margin-left: -7.2rem;
 }
-/* line 206, sass/partials/_base.scss */
+/* line 207, sass/partials/_base.scss */
 .anti-image-shift-details.bigger {
   margin-left: -12.2rem;
 }
 
-/* line 211, sass/partials/_base.scss */
+/* line 212, sass/partials/_base.scss */
 .party-details {
   color: #7B7A6D;
 }
-/* line 215, sass/partials/_base.scss */
+/* line 216, sass/partials/_base.scss */
 .party-details [class^="icon-"], .party-details [class*=" icon-"] {
   color: #D4D3CC;
 }
 
-/* line 220, sass/partials/_base.scss */
+/* line 221, sass/partials/_base.scss */
 .badge {
   width: 100%;
   height: 7.8rem;
@@ -11090,33 +11091,33 @@ Event Page specific - move these out of here eventually
   background-repeat: no-repeat;
   background-position: bottom center;
 }
-/* line 229, sass/partials/_base.scss */
+/* line 230, sass/partials/_base.scss */
 .badge.badge.collected {
   background-position: top center;
 }
 
-/* line 234, sass/partials/_base.scss */
+/* line 235, sass/partials/_base.scss */
 .icon-only span {
   display: block;
   text-indent: -999rem;
 }
 
 /*******************************/
-/* line 241, sass/partials/_base.scss */
+/* line 242, sass/partials/_base.scss */
 .party-image-container {
   float: left;
 }
-/* line 246, sass/partials/_base.scss */
+/* line 247, sass/partials/_base.scss */
 .party-image-container input[type="radio"] {
   display: none;
 }
-/* line 250, sass/partials/_base.scss */
+/* line 251, sass/partials/_base.scss */
 .party-image-container .warner {
   width: 16rem;
   text-align: center;
   display: none;
 }
-/* line 259, sass/partials/_base.scss */
+/* line 260, sass/partials/_base.scss */
 .party-image-container.selected .party-image-selecter:after {
   content: "\e61f";
   font-family: "icomoon";
@@ -11127,18 +11128,18 @@ Event Page specific - move these out of here eventually
   opacity: .8;
   line-height: 8rem;
 }
-/* line 270, sass/partials/_base.scss */
+/* line 271, sass/partials/_base.scss */
 .party-image-container.selected .party-image-selecter:before {
   content: "";
   margin-left: 0;
 }
-/* line 275, sass/partials/_base.scss */
+/* line 276, sass/partials/_base.scss */
 .party-image-container.selected .warner {
   display: block;
   cursor: pointer;
 }
 
-/* line 282, sass/partials/_base.scss */
+/* line 283, sass/partials/_base.scss */
 .party-image-selecter {
   width: 16rem;
   height: 7.5rem;
@@ -11148,86 +11149,86 @@ Event Page specific - move these out of here eventually
   position: relative;
   overflow: hidden;
 }
-/* line 292, sass/partials/_base.scss */
+/* line 293, sass/partials/_base.scss */
 .party-image-selecter:before {
   color: white;
   font-size: 4.7rem;
   line-height: 7.5rem;
   margin-left: 6.8rem;
 }
-/* line 299, sass/partials/_base.scss */
+/* line 300, sass/partials/_base.scss */
 .party-image-selecter.image-unset {
   cursor: default;
 }
-/* line 303, sass/partials/_base.scss */
+/* line 304, sass/partials/_base.scss */
 .party-image-selecter.image-set:before {
   content: "";
 }
 
-/* line 308, sass/partials/_base.scss */
+/* line 309, sass/partials/_base.scss */
 .reference-image {
   width: 100%;
   height: 9rem;
   background-size: cover;
 }
 
-/* line 320, sass/partials/_base.scss */
+/* line 321, sass/partials/_base.scss */
 .date-details-shifter {
   padding-right: 1.2rem;
 }
 
 /*******************************/
-/* line 326, sass/partials/_base.scss */
+/* line 327, sass/partials/_base.scss */
 .wall-details {
   color: #A19F91;
   min-height: 6rem;
 }
 
-/* line 332, sass/partials/_base.scss */
+/* line 333, sass/partials/_base.scss */
 .wall-name, wall-type {
   font-weight: bold;
   color: #474740;
 }
 
-/* line 337, sass/partials/_base.scss */
+/* line 338, sass/partials/_base.scss */
 .wall-type {
   display: inline-block;
   text-transform: uppercase;
 }
-/* line 341, sass/partials/_base.scss */
+/* line 342, sass/partials/_base.scss */
 .wall-type.donation {
   color: #007eac;
 }
-/* line 345, sass/partials/_base.scss */
+/* line 346, sass/partials/_base.scss */
 .wall-type.party-host {
   color: orange;
 }
 
-/* line 350, sass/partials/_base.scss */
+/* line 351, sass/partials/_base.scss */
 .wall-time {
   display: inline-block;
   color: #7B7A6D;
 }
 
-/* line 355, sass/partials/_base.scss */
+/* line 356, sass/partials/_base.scss */
 .wall-remove {
   position: absolute;
   top: 0;
   right: 0;
   margin: 0;
 }
-/* line 361, sass/partials/_base.scss */
+/* line 362, sass/partials/_base.scss */
 .wall-remove.loader {
   margin-top: -3rem;
 }
 
-/* line 366, sass/partials/_base.scss */
+/* line 367, sass/partials/_base.scss */
 .donation-copy {
   color: #007eac;
   font-size: 2.3rem;
 }
 
-/* line 371, sass/partials/_base.scss */
+/* line 372, sass/partials/_base.scss */
 .wall-textarea {
   font: "Futura BT W01 Book";
   font-size: 1.8rem;
@@ -11242,7 +11243,7 @@ Event Page specific - move these out of here eventually
   border-bottom-right-radius: 0;
 }
 
-/* line 380, sass/partials/_base.scss */
+/* line 381, sass/partials/_base.scss */
 .wall-image-preview {
   border: 0.1rem solid #D4D3CC;
   margin-top: 0;
@@ -11258,22 +11259,22 @@ Event Page specific - move these out of here eventually
   -webkit-border-top-right-radius: 0;
   border-top-right-radius: 0;
 }
-/* line 392, sass/partials/_base.scss */
+/* line 393, sass/partials/_base.scss */
 .wall-image-preview.error {
   border: 0.1rem solid #E32333;
 }
 
 /*******************************/
-/* line 400, sass/partials/_base.scss */
+/* line 401, sass/partials/_base.scss */
 .ticket {
   position: relative;
 }
-/* line 403, sass/partials/_base.scss */
+/* line 404, sass/partials/_base.scss */
 .ticket .stub {
   background-color: #D4D3CC;
   overflow: hidden;
 }
-/* line 408, sass/partials/_base.scss */
+/* line 409, sass/partials/_base.scss */
 .ticket .stub .holes, .ticket .stub .holes-right {
   position: absolute;
   left: -.1rem;
@@ -11283,13 +11284,13 @@ Event Page specific - move these out of here eventually
   background-image: url('/img/raffle.svg?1412505524');
   background-repeat: no-repeat;
 }
-/* line 418, sass/partials/_base.scss */
+/* line 419, sass/partials/_base.scss */
 .ticket .stub .holes-right {
   left: auto;
   right: -.1rem;
   background-image: url('/img/raffle_r.svg?1412505524');
 }
-/* line 424, sass/partials/_base.scss */
+/* line 425, sass/partials/_base.scss */
 .ticket .stub .price {
   -moz-border-radius: 1rem;
   -webkit-border-radius: 1rem;
@@ -11300,34 +11301,34 @@ Event Page specific - move these out of here eventually
   text-align: center;
   line-height: 7.3rem;
 }
-/* line 440, sass/partials/_base.scss */
+/* line 441, sass/partials/_base.scss */
 .ticket.selected .stub {
   background-color: #025b45;
 }
-/* line 443, sass/partials/_base.scss */
+/* line 444, sass/partials/_base.scss */
 .ticket.selected .stub .price {
   color: white !important;
   border: 0.1rem solid #4e8f82;
 }
-/* line 451, sass/partials/_base.scss */
+/* line 452, sass/partials/_base.scss */
 .ticket input[type="radio"] {
   display: none;
 }
 
-/* line 458, sass/partials/_base.scss */
+/* line 459, sass/partials/_base.scss */
 label .ticket span {
   color: inherit;
 }
 
 /*******************************/
-/* line 466, sass/partials/_base.scss */
+/* line 467, sass/partials/_base.scss */
 .totaliser {
   -moz-border-radius: 0.6rem;
   -webkit-border-radius: 0.6rem;
   border-radius: 0.6rem;
   background-color: #D4D3CC;
 }
-/* line 471, sass/partials/_base.scss */
+/* line 472, sass/partials/_base.scss */
 .totaliser .current-total {
   -moz-border-radius: 0.6rem;
   -webkit-border-radius: 0.6rem;
@@ -11360,24 +11361,24 @@ label .ticket span {
 /* =============================================================================
 One-off uses
 ========================================================================== */
-/* line 492, sass/partials/_base.scss */
+/* line 493, sass/partials/_base.scss */
 #twitter-widget-0 {
   width: 100% !important;
 }
 
-/* line 496, sass/partials/_base.scss */
+/* line 497, sass/partials/_base.scss */
 .home-twitter-boxx {
   height: 35.6rem;
 }
 
-/* line 500, sass/partials/_base.scss */
+/* line 501, sass/partials/_base.scss */
 .piggy-donater:after {
   content: "\e61c";
   font-family: "icomoon";
   color: white;
 }
 
-/* line 507, sass/partials/_base.scss */
+/* line 508, sass/partials/_base.scss */
 .join-party-ico:after {
   content: "\e601";
   font-family: "icomoon";
@@ -11385,7 +11386,7 @@ One-off uses
 }
 
 /*******************************/
-/* line 517, sass/partials/_base.scss */
+/* line 518, sass/partials/_base.scss */
 .hero {
   height: 45rem;
   background-image: url('/img/hero-ph.jpg?1412505524');
@@ -11396,27 +11397,27 @@ One-off uses
   padding-top: 10rem;
 }
 
-/* line 527, sass/partials/_base.scss */
+/* line 528, sass/partials/_base.scss */
 .planking {
   background: url('/img/wood_texture.jpg?1412768263') repeat top center;
 }
 
-/* line 531, sass/partials/_base.scss */
+/* line 532, sass/partials/_base.scss */
 .home-content-adjust {
   margin-top: -8rem;
 }
 
-/* line 535, sass/partials/_base.scss */
+/* line 536, sass/partials/_base.scss */
 .hero-explain {
   margin-right: 35rem;
   text-align: left;
 }
-/* line 539, sass/partials/_base.scss */
+/* line 540, sass/partials/_base.scss */
 .hero-explain.full-width {
   margin-right: 0;
 }
 
-/* line 544, sass/partials/_base.scss */
+/* line 545, sass/partials/_base.scss */
 .money-raised {
   position: absolute;
   top: 2.4rem;
@@ -11426,7 +11427,7 @@ One-off uses
   width: 34rem;
 }
 
-/* line 553, sass/partials/_base.scss */
+/* line 554, sass/partials/_base.scss */
 .raised-amount {
   color: white;
   width: 27.5rem;
@@ -11434,7 +11435,7 @@ One-off uses
   line-height: 4.7rem;
 }
 
-/* line 561, sass/partials/_base.scss */
+/* line 562, sass/partials/_base.scss */
 .home-tile {
   background-color: white;
   position: relative;
@@ -11580,8 +11581,12 @@ One-off uses
   z-index: 5;
   text-indent: -999rem;
 }
-
 /* line 698, sass/partials/_base.scss */
+.idea-link span.label {
+  display: none;
+}
+
+/* line 703, sass/partials/_base.scss */
 .share-title {
   width: 27.8rem;
   height: 11.6rem;
@@ -11590,7 +11595,7 @@ One-off uses
   background-size: 27.8rem 11.6rem;
 }
 
-/* line 707, sass/partials/_base.scss */
+/* line 712, sass/partials/_base.scss */
 .share-facebook, .share-twitter, .share-email {
   background-color: #3c5898;
   font-family: "macmillan";
@@ -11599,33 +11604,33 @@ One-off uses
   padding: 1.2rem;
   line-height: 5.5rem;
 }
-/* line 715, sass/partials/_base.scss */
+/* line 720, sass/partials/_base.scss */
 .share-facebook:before, .share-twitter:before, .share-email:before {
   font-family: "icomoon";
   content: "\e619";
   margin-right: 1.2rem;
 }
 
-/* line 722, sass/partials/_base.scss */
+/* line 727, sass/partials/_base.scss */
 .share-twitter {
   background-color: #17abed;
 }
-/* line 724, sass/partials/_base.scss */
+/* line 729, sass/partials/_base.scss */
 .share-twitter:before {
   content: "\e61a";
 }
 
-/* line 729, sass/partials/_base.scss */
+/* line 734, sass/partials/_base.scss */
 .share-email {
   background-color: #007eac;
 }
-/* line 731, sass/partials/_base.scss */
+/* line 736, sass/partials/_base.scss */
 .share-email:before {
   content: "\e618";
   margin-right: 0;
 }
 
-/* line 738, sass/partials/_base.scss */
+/* line 743, sass/partials/_base.scss */
 .centered-share-holder .share-title {
   display: block;
   float: none;
@@ -11635,23 +11640,23 @@ One-off uses
 }
 
 /*******************************/
-/* line 750, sass/partials/_base.scss */
+/* line 755, sass/partials/_base.scss */
 .color-facebook {
   color: #3c5898 !important;
 }
 
-/* line 754, sass/partials/_base.scss */
+/* line 759, sass/partials/_base.scss */
 .color-twitter {
   color: #17abed !important;
 }
 
-/* line 758, sass/partials/_base.scss */
+/* line 763, sass/partials/_base.scss */
 .color-pinterest {
   color: #cc2127 !important;
 }
 
 /*******************************/
-/* line 765, sass/partials/_base.scss */
+/* line 770, sass/partials/_base.scss */
 .giftaid-logo {
   width: 10rem;
   height: 3.5rem;
@@ -11664,7 +11669,7 @@ One-off uses
   top: 0;
 }
 
-/* line 778, sass/partials/_base.scss */
+/* line 783, sass/partials/_base.scss */
 .fsb-logo {
   width: 8rem;
   height: 38rem;
@@ -11677,7 +11682,7 @@ One-off uses
   top: 0;
 }
 
-/* line 791, sass/partials/_base.scss */
+/* line 796, sass/partials/_base.scss */
 .ticket-label {
   line-height: 2rem;
 }
