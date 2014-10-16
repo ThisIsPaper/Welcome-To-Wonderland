@@ -6,6 +6,7 @@ namespace Wonderland.Logic.Controllers.Api
     using System.Net.Http;
     using System.Net.Mail;
     using System.Text;
+    using System.Threading.Tasks;
     using System.Web.Configuration;
     using System.Web.Http;
     using System.Web.Security;
@@ -149,17 +150,22 @@ namespace Wonderland.Logic.Controllers.Api
                 mailMessage.From = new MailAddress(donate.ServerEmailAddress);
                 mailMessage.To.Add(new MailAddress(partier.Email));
                 mailMessage.Subject = donate.EmailSubject;
-                mailMessage.IsBodyHtml = false;
+                mailMessage.IsBodyHtml = true;
 
                 mailMessage.Body = donate.EmailBody
                                         .Replace("[%FIRST_NAME%]", partier.FirstName)
                                         .Replace("[%LAST_NAME%]", partier.LastName)
                                         .Replace("[%AMOUNT%]", donationRow.Amount.ToString());
-                                            
-                using(SmtpClient smtpClient = new SmtpClient())
+
+                // Fire and forget
+                Task.Run(() =>
                 {
-                    smtpClient.Send(mailMessage);
-                }
+                    using (SmtpClient smtpClient = new SmtpClient())
+                    {
+                        smtpClient.Send(mailMessage);
+                    }
+
+                });
             }
         }
     }
