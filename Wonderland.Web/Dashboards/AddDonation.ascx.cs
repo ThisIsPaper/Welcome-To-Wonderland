@@ -31,36 +31,46 @@ namespace Wonderland.Web.Dashboards
 
                 if (partyHost != null)
                 {
-                    decimal amount;
-                    if (decimal.TryParse(this.amountTextBox.Text, out amount))
+                    if (!string.IsNullOrWhiteSpace(partyHost.FirstName)
+                        && !string.IsNullOrWhiteSpace(partyHost.LastName)
+                        && !string.IsNullOrWhiteSpace(partyHost.BillingAddress.ToString()))
                     {
-                        // add row to wonderland donation
-                        this.DatabaseContext.Database.Insert(
-                             new DonationRow()
-                             {
-                                 PartyGuid = partyGuid,
-                                 Amount = amount,
-                                 GiftAid = this.giftAidCheckBox.Checked,
-                                 MemberId = partyHost.Id,
-                                 FirstName = partyHost.FirstName,
-                                 LastName = partyHost.LastName,
-                                 Address1 = partyHost.BillingAddress.Address1,
-                                 Address2 = partyHost.BillingAddress.Address2,
-                                 TownCity = partyHost.BillingAddress.TownCity,
-                                 Postcode = partyHost.BillingAddress.Postcode,
-                                 PaymentJourney = PaymentJourney.Manual,
-                                 Success = true
-                             }
-                        );
 
-                        this.partyGuidTextBox.Text = string.Empty;
-                        this.amountTextBox.Text = string.Empty;
-                        this.resultLiteral.Text = "Added: £" + amount.ToString() + ", to Party: " + partyGuid.ToString();
+                        decimal amount;
+                        if (decimal.TryParse(this.amountTextBox.Text, out amount))
+                        {
+                            // add row to wonderland donation
+                            this.DatabaseContext.Database.Insert(
+                                 new DonationRow()
+                                 {
+                                     PartyGuid = partyGuid,
+                                     Amount = amount,
+                                     GiftAid = this.giftAidCheckBox.Checked,
+                                     MemberId = partyHost.Id,
+                                     FirstName = partyHost.FirstName,
+                                     LastName = partyHost.LastName,
+                                     Address1 = partyHost.BillingAddress.Address1,
+                                     Address2 = partyHost.BillingAddress.Address2,
+                                     TownCity = partyHost.BillingAddress.TownCity,
+                                     Postcode = partyHost.BillingAddress.Postcode,
+                                     PaymentJourney = PaymentJourney.Manual,
+                                     Success = true
+                                 }
+                            );
 
+                            this.partyGuidTextBox.Text = string.Empty;
+                            this.amountTextBox.Text = string.Empty;
+                            this.resultLiteral.Text = "Added: £" + amount.ToString() + ", to Party: " + partyGuid.ToString();
+
+                        }
+                        else
+                        {
+                            this.resultLiteral.Text = "Invalid Amount";
+                        }
                     }
                     else
                     {
-                        this.resultLiteral.Text = "Invalid Amount";
+                        this.resultLiteral.Text = "Missing Party Host Details";
                     }
                 }
                 else
