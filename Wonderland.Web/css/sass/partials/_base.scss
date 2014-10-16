@@ -414,31 +414,35 @@ Event Page specific - move these out of here eventually
 
 		.holes, .holes-right {
 			position: absolute;
-			left: -.1rem;
-			top: -.1rem;
-			width: 1.2rem;
+			@include rem-fallback(left, -.1rem);
+			@include rem-fallback(top, -.1rem);
+			@include rem-fallback(width, 1.2rem);
 			height: 101%;
 			background-image: image-url('raffle.svg');
+			/* TODO: background image fallback */
 			background-repeat: no-repeat;
 		}
 
 		.holes-right {
 			left: auto;
-			right: -.1rem;
+			@include rem-fallback(right, -.1rem);
 			background-image: image-url('raffle_r.svg');
+			/* TODO: background image fallback */
 		}
 
 		.price {
 			@extend .heading-small;
+			@include border-radius(16px);
 			@include border-radius(1rem);
 
 			font-family: $fontFaceMacmillan;
 			color: $FourthColour;
 
+			border: 1px solid white;
 			border: .1rem solid white;
 			text-align: center;
 
-			line-height: 7.3rem;
+			@include rem-fallback(line-height, 7.3rem);
 		}
 
 	}
@@ -449,6 +453,7 @@ Event Page specific - move these out of here eventually
 
 			.price {
 				color: white !important;
+				border: 1px solid $greenMedium;
 				border: .1rem solid $greenMedium;
 			}
 
@@ -472,10 +477,12 @@ label .ticket {
 
 .totaliser {
 	@extend .pad-tiny;
+	@include border-radius(9.6px);
 	@include border-radius($padSmallValue/2);
 	background-color: $greyLight;
 
 	.current-total {
+		@include border-radius(9.6px);
 		@include border-radius($padSmallValue/2);
 		background-color: $FourthColour;
 		background-image: image-url('frost.png');
@@ -483,7 +490,7 @@ label .ticket {
 		background-position: top left;
 		width: 0;
 		max-width: 100%;
-		height: 3rem;
+		@include rem-fallback(height, 3rem);
 
 		@include transition-property(width);
 		@include transition-duration(.5s);
@@ -501,7 +508,7 @@ One-off uses
 }
 
 .home-twitter-boxx {
-	height: 35.6rem; // includes 1.8rem padding // TODO - might need to change this
+	@include rem-fallback(height, 35.6rem);
 }
 
 .piggy-donater:after {
@@ -522,14 +529,14 @@ One-off uses
 // home page
 
 .hero {
-	height: 45rem;
+	@include rem-fallback(height, 45rem);
 	background-image: image-url('hero-ph.jpg');
 	-pie-background: image-url('hero-ph.jpg');
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
 	margin: 0;
-	padding-top: 10rem;
+	@include rem-fallback(padding-top, 10rem);
 
 	position: relative;
 	zoom: 1;
@@ -542,11 +549,11 @@ One-off uses
 }
 
 .home-content-adjust {
-	margin-top: -8rem;
+	@include rem-fallback(margin-top, -8rem);
 }
 
 .hero-explain {
-	margin-right: 35rem;
+	@include rem-fallback(margin-right, 35rem);
 	text-align: left;
 
 	&.full-width {
@@ -556,19 +563,18 @@ One-off uses
 
 .money-raised {
 	position: absolute;
-	top: $padSmallValue * 2;
-	right: $padSmallValue * 2;
+	@include rem-fallback(top, $padSmallValue * 2);
+	@include rem-fallback(right, $padSmallValue * 2);
+	@include rem-fallback(height, 15rem);
+	@include rem-fallback(width, 34rem);
 	background: image-url('amount-raised-ph.png') no-repeat center right transparent;
-	height: 15rem;
-	width: 34rem;
 }
 
 .raised-amount {
 	color: white;
-	width: 27.5rem;
-
-	font-size: 3.5rem;
-	line-height: 4.7rem;
+	@include rem-fallback(width, 27.5rem);
+	@include rem-fallback(font-size, 3.5rem);
+	@include rem-fallback(line-height, 4.7rem);
 }
 
 .home-tile {
@@ -581,6 +587,7 @@ One-off uses
 }
 
 .home-tile-image {
+	@include border-radius(11.2px);
 	@include border-radius(.7rem);
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -599,8 +606,8 @@ One-off uses
 // spotfiy
 
 .spotify-holder {
-	width: 35.6rem;
-	margin-top: -7rem;
+	@include rem-fallback(line-height, 35.6rem);
+	@include rem-fallback(margin-top, -7rem);
 }
 
 .spotify-info-holder {
@@ -620,7 +627,7 @@ One-off uses
 
 .scoreboard-place {
 	float: left;
-	width: 5rem;
+	@include rem-fallback(width, 5rem);
 }
 
 .scoreboard-value {
@@ -640,7 +647,7 @@ One-off uses
 .idea-tile {
 	@extend .radius-v1-small;
 	width: 25%;
-	padding: $padSmallValue;
+	@include rem-fallback(padding, $padSmallValue);
 
 	&.wide {
 		width: 50%;
@@ -648,7 +655,7 @@ One-off uses
 }
 
 .idea {
-	padding: $padSmallValue;
+	@include rem-fallback(padding, $padSmallValue);
 	background-color: white;
 	text-transform: uppercase;
 	text-align: center;
@@ -659,6 +666,7 @@ One-off uses
 	width: 100%;
 	top: 11%;
 	left: 0;
+	padding: 0 19.2px;
 	padding: 0 $padSmallValue;
 
 	&.over-the-top {
@@ -676,6 +684,7 @@ One-off uses
 }
 
 .idea-polaroid {
+	@include border-radius(11.2px);
 	@include border-radius(.7rem);
 }
 
@@ -686,10 +695,11 @@ One-off uses
 }
 
 .spotify-logo {
-	width: 8rem;
-	height: 2.4rem;
+	@include rem-fallback(width, 8rem);
+	@include rem-fallback(height, 2.4rem);
 	background-image: image-url('spotify_logo@2x.png');
 	background-repeat: no-repeat;
+	background-size: 128px 38.4px;
 	background-size: 8rem 2.4rem;
 	overflow: hidden;
 
@@ -705,7 +715,7 @@ One-off uses
 	height: 100%;
 
 	z-index: 5;
-	text-indent: -999rem;
+	@include rem-fallback(text-indent, -999rem);
 
 	span.label {
 		display: none;
@@ -713,10 +723,11 @@ One-off uses
 }
 
 .share-title {
-	width: 27.8rem;
-	height: 11.6rem;
+	@include rem-fallback(width, 27.8rem);
+	@include rem-fallback(height, 11.6rem);
 	background-image: image-url('share-title@2x.png');
 	background-repeat: no-repeat;
+	background-size: 444.8px 185.6px;
 	background-size: 27.8rem 11.6rem;
 
 }
@@ -724,15 +735,15 @@ One-off uses
 .share-facebook, .share-twitter, .share-email {
 	background-color: $colorFacebook;
 	font-family: $fontFaceMacmillan;
-	font-size: $FontSizeLarge;
+	@include rem-fallback(font-size, $FontSizeLarge);
+	@include rem-fallback(padding, $padSmallValue);
+	@include rem-fallback(line-height, 5.5rem);
 	color: white;
-	padding: $padSmallValue;
-	line-height: 5.5rem;
 
 	&:before {
 		font-family: $fontFaceIcomoon;
 		content: "\e619";
-		margin-right: $marginSmallValue;
+		@include rem-fallback(margin-right, $marginSmallValue);
 	}
 }
 
@@ -780,11 +791,12 @@ One-off uses
 // donate
 
 .giftaid-logo {
-	width: 10rem;
-	height: 3.5rem;
+	@include rem-fallback(width, 10rem);
+	@include rem-fallback(height, 3.5rem);
 	overflow: hidden;
 	background-image: image-url('giftaid-logo.jpg');
 	background-repeat: no-repeat;
+	background-size: 160px 56px;
 	background-size: 10rem 3.5rem;
 
 	position: absolute;
@@ -793,11 +805,12 @@ One-off uses
 }
 
 .fsb-logo {
-	width: 8rem;
-	height: 38rem;
+	@include rem-fallback(width, 8rem);
+	@include rem-fallback(width, 38rem);
 	overflow: hidden;
 	background-image: image-url('fsb.jpg');
 	background-repeat: no-repeat;
+	background-size: 128px 128px;
 	background-size: 8rem 8rem;
 
 	position: absolute;
@@ -806,5 +819,5 @@ One-off uses
 }
 
 .ticket-label {
-	line-height: 2rem;
+	@include rem-fallback(line-height, 2rem);
 }
