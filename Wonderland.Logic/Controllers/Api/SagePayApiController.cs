@@ -92,7 +92,19 @@ namespace Wonderland.Logic.Controllers.Api
             //update dot mailer donation_amount and guest_count for associated party host
             DotMailerService.UpdateContact((Contact)this.Members.GetPartyHost(donationRow.PartyGuid));
 
-            notificationResponse.RedirectURL = redirectUrl + "?VendorTxCode=" + notificationRequest.VendorTxCode;
+            notificationResponse.RedirectURL = redirectUrl; 
+            
+            if (donationRow.Success)
+            {
+                notificationResponse.RedirectURL += "complete/";
+            }
+            
+            if (donationRow.Cancelled)
+            {
+                notificationResponse.RedirectURL += "cancelled/";
+            }
+
+            notificationResponse.RedirectURL += "?VendorTxCode=" + notificationRequest.VendorTxCode;
 
             // ensure the return type is plain text
             return new HttpResponseMessage(System.Net.HttpStatusCode.OK)

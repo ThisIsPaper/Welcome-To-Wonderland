@@ -247,6 +247,7 @@
     <Compile Include="Events\SetPageNotFoundContentFinder.cs" />
     <Compile Include="Events\SetPartyContentFinder.cs" />
     <Compile Include="Events\SetPublishedContentModelFactory.cs" />
+    <Compile Include="Events\SetSagePayResultContentFinder.cs" />
     <Compile Include="Extensions\HtmlHelperExtensions.cs" />
     <Compile Include="Extensions\MembershipHelperExtensions.cs" />
     <Compile Include="Extensions\ModelStateDictionaryExtensions.cs" />
