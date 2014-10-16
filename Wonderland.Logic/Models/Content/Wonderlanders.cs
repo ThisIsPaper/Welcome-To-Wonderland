@@ -93,29 +93,8 @@ namespace Wonderland.Logic.Models.Content
             }
         }
 
-        public Leaderboard GetLeaderboard()
-        {
-            return this.Children<Leaderboard>().Single();
-        }
-
         public IEnumerable<PartyHost> TopFundraisers { get; internal set; }
 
         public IEnumerable<PartyHost> MostGuests  { get; internal set; }
-
-        //public IEnumerable<PartyHost> BadgesToday
-        //{  
-        //    get
-        //    {
-        //        return Enumerable.Empty<PartyHost>();
-        //    }
-        //}
-
-        //public IEnumerable<PartyHost> RecentHosts
-        //{
-        //    get
-        //    {
-        //        return Enumerable.Empty<PartyHost>();
-        //    }
-        //}
     }
 }

@@ -221,7 +221,6 @@
     <Compile Include="Controllers\Render\DonateController.cs" />
     <Compile Include="Controllers\Render\FashionTileController.cs" />
     <Compile Include="Controllers\Render\HomeController.cs" />
-    <Compile Include="Controllers\Render\LeaderboardController.cs" />
     <Compile Include="Controllers\Render\LegalController.cs" />
     <Compile Include="Controllers\Render\ProfileController.cs" />
     <Compile Include="Controllers\Render\PartyController.cs" />
@@ -266,7 +265,6 @@
     <Compile Include="Models\Content\Profile.cs" />
     <Compile Include="Models\Content\PageNotFound.cs" />
     <Compile Include="Models\Content\Donate.cs" />
-    <Compile Include="Models\Content\Leaderboard.cs" />
     <Compile Include="Models\Content\Legal.cs" />
     <Compile Include="Models\Content\Login.cs" />
     <Compile Include="Models\Content\Party.cs" />
