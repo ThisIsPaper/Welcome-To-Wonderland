@@ -155,7 +155,7 @@ namespace Wonderland.Logic.Controllers.Api
                 mailMessage.Body = donate.EmailBody
                                         .Replace("[%FIRST_NAME%]", partier.FirstName)
                                         .Replace("[%LAST_NAME%]", partier.LastName)
-                                        .Replace("[%AMOUNT%]", donationRow.Amount.ToString());
+                                        .Replace("[%AMOUNT%]", donationRow.Amount.ToString("F"));
 
                 // Fire and forget
                 Task.Run(() =>
