@@ -11,6 +11,7 @@ namespace Wonderland.Logic.Controllers.Surface
     using Wonderland.Logic.Models.Forms;
     using Wonderland.Logic.Models.Members;
     using Wonderland.Logic.Models.Content;
+    using Wonderland.Logic.DotMailer;
 
     public class ProfileSurfaceController : SurfaceController
     {
@@ -48,6 +49,8 @@ namespace Wonderland.Logic.Controllers.Surface
                 IPartier partier = this.Members.GetCurrentPartier();
 
                 partier.BillingAddress = address;
+
+                this.CheckRegistrationComplete(partier);           
 
                 formResponse.Success = true;
             }
@@ -116,9 +119,9 @@ namespace Wonderland.Logic.Controllers.Surface
             {
                 formResponse.Success = true;
 
-                IPartier partier = this.Members.GetCurrentPartier();                
+                IPartier partier = this.Members.GetCurrentPartier();
 
-                if (profileImageForm.ProfileImage.ContentLength > 0 && profileImageForm.ProfileImage.InputStream.IsImage())
+                if (profileImageForm.ProfileImage != null && profileImageForm.ProfileImage.ContentLength > 0 && profileImageForm.ProfileImage.InputStream.IsImage())
                 {
                     // WARNING: user may upload an image, but use an incorrect extension !
                     string fileName = Guid.NewGuid().ToString() + "." + profileImageForm.ProfileImage.ContentType.Split('/')[1];
@@ -135,7 +138,6 @@ namespace Wonderland.Logic.Controllers.Surface
                 {
                     partier.ProfileImage = string.Empty;
                 }
-
 
                 formResponse.Success = true;
             }
@@ -174,6 +176,8 @@ namespace Wonderland.Logic.Controllers.Surface
 
                 partier.FirstName = profileNamesForm.FirstName;
                 partier.LastName = profileNamesForm.LastName;
+
+                this.CheckRegistrationComplete(partier);           
 
                 formResponse.Success = true;
             }
@@ -223,6 +227,31 @@ namespace Wonderland.Logic.Controllers.Surface
             }
 
             return Json(formResponse);
+        }
+
+        /// <summary>
+        /// a member can register, and skip the 2nd step
+        /// if these values are then set afterwards when editing this profile, then we can then mark the registration as complete
+        /// </summary>
+        /// <param name="partier"></param>
+        private void CheckRegistrationComplete(IPartier partier)
+        {
+            // once it has been completed, we never revert back, so only process if dot mailer thinks the host hasn't yet completed registration
+            if (!partier.DotMailerRegistrationComplete)
+            {
+                if (!string.IsNullOrWhiteSpace(partier.FirstName) && !string.IsNullOrWhiteSpace(partier.LastName) && !string.IsNullOrWhiteSpace(partier.BillingAddress.ToString()))
+                {
+                    if (partier is PartyHost)
+                    {
+                        DotMailerService.HostRegistrationCompleted((Contact)(PartyHost)partier);
+
+                    }
+                    else if (partier is PartyGuest)
+                    {
+                        DotMailerService.GuestRegistrationCompleted((Contact)(PartyGuest)partier);
+                    }
+                }
+            }
         }
     }
 }

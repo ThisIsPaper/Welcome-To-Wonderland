@@ -9,45 +9,58 @@ namespace Wonderland.Web.Dashboards
     using Wonderland.Logic.Models.Database;
     using Wonderland.Logic.Extensions;
     using Wonderland.Logic.Interfaces;
+    using Wonderland.Logic.Models.Members;
 
-    public partial class ExportFinancials : System.Web.UI.UserControl
+    public partial class ExportFinancials : BaseUserControl
     {
-        protected void Page_Load(object sender, EventArgs e)
+        protected override void OnInit(EventArgs e)
         {
+            base.OnInit(e);
+
             this.exportFinancialsButton.Click += this.ExportFinancialsButton_Click;
         }
 
         private void ExportFinancialsButton_Click(object sender, EventArgs e)
         {
-            DatabaseContext databaseContext = ApplicationContext.Current.DatabaseContext;
-            MembershipHelper membershipHelper = new MembershipHelper(UmbracoContext.Current);
-
             StringBuilder stringBuilder = new StringBuilder();
 
-            // headings
-            stringBuilder.AppendLine("VendorTxCode, Party Guid, Party Host Email, Amount, Gift Aid, Member Email, First Name, Last Name, Address 1, Address 2, Town City, Postcode, Timestamp, VPSTxID, Success");
-
+            // headings            
+            stringBuilder.AppendLine(@"VpsTxId, VendorTxCode, Success, Member Id, Donor Email, Donor First Name, Donor Last Name, Donor Billing Address 1, Donor Billing Address 2, Donor Billing Town City, Donor Billing Postcode, Amount Donated, Date, Time, Gift Aid, Payment Journey, Opt In, Party Guid, Party Host Id, Party Host First Name, Party Host Last Name, Party Host Billing Address 1, Party Host Billing Address 2, Party Host Billing Town City, Party Host Billing Postcode");
+                        
             // get all db rows from wonderlandDonation
-            foreach (DonationRow donationRow in databaseContext.Database.Fetch<DonationRow>("SELECT * FROM wonderlandDonation ORDER BY [Timestamp] DESC"))
+            foreach (DonationRow donationRow in this.DatabaseContext.Database.Fetch<DonationRow>("SELECT * FROM wonderlandDonation ORDER BY [Timestamp] DESC"))
             {
+                PartyHost partyHost = this.Members.GetPartyHost(donationRow.PartyGuid);
+
                 stringBuilder.AppendLine(
-                    string.Join(", ",
+                    string.Join(
+                        ", ",
                         new object[] {
-                            donationRow.VendorTxCode,
-                            donationRow.PartyGuid,
-                            membershipHelper.GetPartyHost(donationRow.PartyGuid).Email,
-                            donationRow.Amount,
-                            donationRow.GiftAid,
-                            donationRow.MemberId == null ? "Anonymous" : ((IPartier)membershipHelper.GetById(donationRow.MemberId.Value)).Email,
-                            donationRow.FirstName,
-                            donationRow.LastName,
-                            donationRow.Address1,
-                            donationRow.Address2,
-                            donationRow.TownCity,
-                            donationRow.Postcode,
-                            donationRow.Timestamp,
-                            donationRow.VPSTxId,
-                            donationRow.Success
+                            donationRow.VPSTxId ?? string.Empty,                                                                                //  1. VpsTxId
+                            donationRow.VendorTxCode,                                                                                           //  2. VendorTxCode
+                            donationRow.Success ? "Y" : "N",                                                                                    //  3. Success
+                            donationRow.MemberId,                                                                                               //  4. Member Id
+                            donationRow.MemberId.HasValue ? ((IPartier)this.Members.GetById(donationRow.MemberId.Value)).Email : string.Empty,  //  5. Donor Email
+                            donationRow.FirstName.Replace(',', ' '),                                                                            //  6. Donor First Name
+                            donationRow.LastName.Replace(',', ' '),                                                                             //  7. Donor Last Name
+                            donationRow.Address1.Replace(',', ' '),                                                                             //  8. Donor Billing Address 1
+                            donationRow.Address2 != null ? donationRow.Address2.Replace(',',' ') : string.Empty,                                //  9. Donor Billing Address 2
+                            donationRow.TownCity.Replace(',', ' '),                                                                             // 10. Donor Billing Town City
+                            donationRow.Postcode.Replace(',', ' '),                                                                             // 11. Donor Billing Postcode
+                            donationRow.Amount,                                                                                                 // 12. Amount Donated
+                            donationRow.Timestamp.Date,                                                                                         // 13. Date
+                            donationRow.Timestamp.TimeOfDay,                                                                                    // 14. Time
+                            donationRow.GiftAid ? "Y" : "N",                                                                                    // 15. Gift Aid
+                            donationRow.PaymentJourney.ToString(),                                                                              // 16. Payment Journey
+                            "Y",                                                                                                                // 17. Opt In
+                            donationRow.PartyGuid,                                                                                              // 18. Party Guid
+                            partyHost.Id,                                                                                                       // 19. Party Host Id
+                            partyHost.FirstName,                                                                                                // 20. Party Host First Name
+                            partyHost.LastName,                                                                                                 // 21. Party Host Last Name
+                            partyHost.BillingAddress.Address1,                                                                                  // 22. Party Host Billing Address 1
+                            partyHost.BillingAddress.Address2,                                                                                  // 23. Party Host Billing Address 2
+                            partyHost.BillingAddress.TownCity,                                                                                  // 24. Party Host Billing Town City
+                            partyHost.BillingAddress.Postcode                                                                                   // 25. Party Host Billing Postcode
                         })
                     );
             }

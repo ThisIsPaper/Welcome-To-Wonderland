@@ -5,6 +5,7 @@ namespace Wonderland.Logic.Controllers.Surface
     using System.Linq;
     using System.Web.Mvc;
     using Umbraco.Web.Mvc;
+    using Wonderland.Logic.DotMailer;
     using Wonderland.Logic.Extensions;
     using Wonderland.Logic.Models.Content;
     using Wonderland.Logic.Models.Database;
@@ -124,22 +125,28 @@ namespace Wonderland.Logic.Controllers.Surface
             FormResponse formResponse = new FormResponse();
 
             if (this.ModelState.IsValid)
-            {                
-                if (profileImageForm.ProfileImage.ContentLength > 0 && profileImageForm.ProfileImage.InputStream.IsImage())
+            {
+                //update PartyHost property
+                PartyHost partyHost = (PartyHost)this.Members.GetCurrentMember();
+
+                if (profileImageForm.ProfileImage != null && profileImageForm.ProfileImage.ContentLength > 0 && profileImageForm.ProfileImage.InputStream.IsImage())
                 {
                     // WARNING: user may upload an image, but use an incorrect extension !
                     string fileName = Guid.NewGuid().ToString() + "." + profileImageForm.ProfileImage.ContentType.Split('/')[1];
 
                     profileImageForm.ProfileImage.SaveAs(Server.MapPath("~/Uploads/Profile/" + fileName));
 
-                    //update PartyHost property
-                    PartyHost partyHost = (PartyHost)this.Members.GetCurrentMember();
                     partyHost.ProfileImage = fileName;
 
                     // re-inflate the current user model (to take into account newly set property)
                     formResponse.Message = new PartyHost(this.Umbraco.TypedMember(partyHost.Id)).ProfileImageUrl;
-                    formResponse.Success = true;
                 }
+                else
+                {
+                    partyHost.ProfileImage = string.Empty;
+                }
+
+                formResponse.Success = true;
             }
             else
             {
@@ -179,9 +186,19 @@ namespace Wonderland.Logic.Controllers.Surface
             {
                 PartyHost partyHost = (PartyHost)this.Members.GetCurrentMember();
 
-                partyHost.PartyHeading = partyDetailsForm.PartyHeading;
+                bool updateDotMailer = false;
 
-                partyHost.PartyDateTime = partyDetailsForm.PartyDateTime;
+                if (partyHost.PartyHeading != partyDetailsForm.PartyHeading)
+                {
+                    partyHost.PartyHeading = partyDetailsForm.PartyHeading;
+                }
+
+                if (partyHost.PartyDateTime != partyDetailsForm.PartyDateTime)
+                {
+                    partyHost.PartyDateTime = partyDetailsForm.PartyDateTime;
+
+                    updateDotMailer = true;
+                }
 
                 Address address = new Address(
                                             partyDetailsForm.Address1,
@@ -189,7 +206,17 @@ namespace Wonderland.Logic.Controllers.Surface
                                             partyDetailsForm.TownCity,
                                             partyDetailsForm.Postcode);
 
-                partyHost.PartyAddress = address;
+                if (partyHost.PartyAddress.ToString() != address.ToString())
+                {
+                    partyHost.PartyAddress = address;
+
+                    updateDotMailer = true;
+                }
+
+                if (updateDotMailer)
+                {
+                    DotMailerService.UpdatePartyDetails(partyHost);
+                }
 
                 formResponse.Success = true;
             }
@@ -284,6 +311,7 @@ namespace Wonderland.Logic.Controllers.Surface
         public JsonResult HandlePartyWallMessageForm(PartyWallMessageForm partyWallMessageForm)
         {
             // TODO: safety check that current member is associated with this party
+            //Party party = (Party)this.Umbraco.AssignedContentItem;;
 
             FormResponse formResponse = new FormResponse();
 
@@ -346,6 +374,22 @@ namespace Wonderland.Logic.Controllers.Surface
             }
 
             return Json(formResponse);
+        }
+
+        private void CheckPartyPageComplete(PartyHost partyHost)
+        {
+            if (!partyHost.DotMailerPartyPageComplete)
+            {
+                if (!string.IsNullOrWhiteSpace(partyHost.PartyImage)
+                    && partyHost.FundraisingTarget > 0
+                    && !string.IsNullOrWhiteSpace(partyHost.PartyAddress.ToString()))
+                {
+                    partyHost.DotMailerPartyPageComplete = true;
+
+                    // update the host to indicate that their party page is now complete
+                    DotMailerService.UpdateContact((Contact)partyHost);
+                }
+            }
         }
     }
 }

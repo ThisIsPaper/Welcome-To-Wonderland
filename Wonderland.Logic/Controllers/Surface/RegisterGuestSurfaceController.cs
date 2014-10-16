@@ -7,10 +7,12 @@ namespace Wonderland.Logic.Controllers.Surface
     using Umbraco.Core;
     using Umbraco.Core.Security;
     using Umbraco.Web.Mvc;
+    using Wonderland.Logic.DotMailer;
     using Wonderland.Logic.Enums;
     using Wonderland.Logic.Extensions;
     using Wonderland.Logic.Models.Content;
     using Wonderland.Logic.Models.Database;
+    using Wonderland.Logic.Models.Entities;
     using Wonderland.Logic.Models.Forms;
     using Wonderland.Logic.Models.Members;
     using Wonderland.Logic.SagePay;
@@ -77,6 +79,9 @@ namespace Wonderland.Logic.Controllers.Surface
             // (duplicate data) store party guid in cms cache
             partyGuest.PartyGuid = registerGuestForm.PartyGuid;
 
+            // add member to DotMailer
+            DotMailerService.GuestRegistrationStarted((Contact)partyGuest);
+
             // send cookie
             FormsAuthentication.SetAuthCookie(partyGuest.Username, true);
 
@@ -109,6 +114,19 @@ namespace Wonderland.Logic.Controllers.Surface
                 return this.CurrentUmbracoPage();
             }
 
+            PartyGuest partyGuest = (PartyGuest)this.Members.GetCurrentMember();
+
+            partyGuest.FirstName = registerGuestBillingForm.FirstName;
+            partyGuest.LastName = registerGuestBillingForm.LastName;
+
+            Address address = new Address(
+                            registerGuestBillingForm.Address1,
+                            registerGuestBillingForm.Address2,
+                            registerGuestBillingForm.TownCity,
+                            registerGuestBillingForm.Postcode);
+
+            partyGuest.BillingAddress = address;
+
             if (!string.IsNullOrWhiteSpace(registerGuestBillingForm.Message))
             {
                 // post message to party wall
@@ -120,21 +138,29 @@ namespace Wonderland.Logic.Controllers.Surface
                                                         });
             }
 
-            DonationRow donationRow = new DonationRow()
+            if (registerGuestBillingForm.Amount == 0)
             {
-                PartyGuid = registerGuestBillingForm.PartyGuid,
-                Amount = registerGuestBillingForm.Amount,
-                GiftAid = registerGuestBillingForm.AllowGiftAid,
-                MemberId = this.Members.GetCurrentMemberId(),
-                FirstName = registerGuestBillingForm.FirstName,
-                LastName = registerGuestBillingForm.LastName,
-                Address1 = registerGuestBillingForm.Address1,
-                Address2 = registerGuestBillingForm.Address2,
-                TownCity = registerGuestBillingForm.TownCity,
-                Postcode = registerGuestBillingForm.Postcode,
-                PaymentJourney = PaymentJourney.RegisterGuest,
-                Success = false
-            };
+                // update dot mailer to indicate guest has fully registered
+                DotMailerService.GuestRegistrationCompleted((Contact)partyGuest);
+
+                return this.Redirect(partyGuest.PartyUrl);
+            }
+
+            DonationRow donationRow = new DonationRow()
+                                        {
+                                            PartyGuid = registerGuestBillingForm.PartyGuid,
+                                            Amount = registerGuestBillingForm.Amount,
+                                            GiftAid = registerGuestBillingForm.AllowGiftAid,
+                                            MemberId = this.Members.GetCurrentMemberId(),
+                                            FirstName = registerGuestBillingForm.FirstName,
+                                            LastName = registerGuestBillingForm.LastName,
+                                            Address1 = registerGuestBillingForm.Address1,
+                                            Address2 = registerGuestBillingForm.Address2,
+                                            TownCity = registerGuestBillingForm.TownCity,
+                                            Postcode = registerGuestBillingForm.Postcode,
+                                            PaymentJourney = PaymentJourney.RegisterGuest,
+                                            Success = false
+                                        };
 
             // insert new record
             this.DatabaseContext.Database.Insert(donationRow);
@@ -155,10 +181,6 @@ namespace Wonderland.Logic.Controllers.Surface
                 this.DatabaseContext.Database.Update(donationRow);
 
                 return this.Redirect(transactionRegistrationResponse.NextURL);
-            }
-            else
-            {
-                // delete row ? (as transaction will never happen)
             }
 
             this.ViewData["errorMessage"] = transactionRegistrationResponse.StatusDetail;

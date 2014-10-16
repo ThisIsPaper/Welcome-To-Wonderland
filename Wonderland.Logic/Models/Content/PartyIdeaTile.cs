@@ -5,6 +5,7 @@ namespace Wonderland.Logic.Models.Content
     using System.Linq;
     using Umbraco.Core.Models;
     using Umbraco.Web;
+    using Wonderland.Logic.Extensions;
     using Wonderland.Logic.Enums;
     using Wonderland.Logic.Models.Media;
 
@@ -22,6 +23,30 @@ namespace Wonderland.Logic.Models.Content
         public PartyIdeaTile(IPublishedContent content)
             : base(content)
         {
+        }
+
+        public override string MetaOgTitle
+        {
+            get
+            {
+                return this.TileHeading;
+            }
+        }
+
+        public override string MetaOgDescription
+        {
+            get
+            {
+                return this.TileCopy.StripHtml();
+            }
+        }
+
+        public override Image MetaOgImage
+        {
+            get
+            {
+                return this.TileImage;
+            }
         }
 
         /// <summary>

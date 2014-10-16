@@ -1,15 +1,16 @@
 ﻿
 namespace Wonderland.Logic.Models.Forms
 {
+
     using System;
     using System.ComponentModel.DataAnnotations;
     using System.Web.Mvc;
 
     public class RegisterGuestBillingForm
-    {        
+    {
         [Required]
         [DataType(DataType.Text)]
-        [Range(1, 100000)]
+        [Range(0, 100000)]
         public decimal Amount { get; set; }
 
         [DataType(DataType.MultilineText)]

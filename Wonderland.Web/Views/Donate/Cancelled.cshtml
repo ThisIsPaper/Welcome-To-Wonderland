@@ -1,0 +1,62 @@
+﻿@inherits UmbracoViewPage<Donate>
+@{
+    Layout = "~/Views/SitePage.cshtml";
+}
+
+<div class="page-bg">
+
+    <div class="container gutter">
+
+        <div class="wgrid-main">
+
+            <div class="boxx" m-radius-picker>
+
+                <h1 class="error"><span class="lighter"><span class="icon-icon_alert margin-right-small"></span>Payment </span><br /><span class="bigger margin-top-medium">cancelled</span></h1>
+
+                <hr />
+
+                <h4>Order details</h4>
+
+                <table>
+                    <tr><td>Payment #:</td><td>@Model.DonationRow.VendorTxCode</td></tr>
+                    <tr><td>Payment status:</td><td>Cancelled</td></tr>
+                    <tr><td>Date:</td><td ng-bind="'@Model.DonationRow.Timestamp'|datePreviewFormat"></td></tr>
+                    <tr><td>Total amount:</td><td ng-bind="@Model.DonationRow.Amount|mCurrency:'£'"></td></tr>
+                </table>
+
+                <hr class="margin-top-large margin-bottom-large" />
+
+                <a href="@Model.PartyHost.PartyUrl" class="btn-primary float-right" m-radius-picker="small medium">Go to the party page ></a>
+
+            </div>
+
+        </div>
+
+
+        <div class="wgrid-side parent">
+
+            <div class="wgrid-full parent">
+
+                <div class="boxx collapse" m-radius-picker="medium">
+
+                    @Html.Partial("PartyDetailsSide")
+
+                </div>
+
+            </div>
+
+            <div class="wgrid-full pad-0">
+
+                <div class="boxx radius-v1-small">
+
+                    <m-totaliser m-raised="@Model.PartyHost.AmountRaised" m-total="@Model.PartyHost.FundraisingTarget"></m-totaliser>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

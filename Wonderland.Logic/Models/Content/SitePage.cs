@@ -8,6 +8,7 @@ namespace Wonderland.Logic.Models.Content
     using Umbraco.Core.Models.PublishedContent;
     using Umbraco.Web;
     using Wonderland.Logic.Models.Entities;
+    using Wonderland.Logic.Models.Media;
 
     public class SitePage : BaseContentType
     {
@@ -17,6 +18,7 @@ namespace Wonderland.Logic.Models.Content
         // Properties
         public const string MetaDescriptionAlias = "metaDescription";
         public const string MetaKeywordsAlias = "metaKeywords";
+        public const string MetaOgTitleAlias = "metaOgTitle";
 
         public SitePage(IPublishedContent content) : base(content)
         {
@@ -42,6 +44,45 @@ namespace Wonderland.Logic.Models.Content
             get
             {
                 return this.GetPropertyValue<string>(SitePage.MetaKeywordsAlias);
+            }
+        }
+
+        public virtual string MetaOgTitle
+        {
+            get
+            {
+                string metaOgTitle = this.GetPropertyValue<string>(SitePage.MetaOgTitleAlias);
+
+                if (string.IsNullOrWhiteSpace(metaOgTitle))
+                {
+                    metaOgTitle = this.SiteSettings.DefaultMetaOgTitle;
+                }
+
+                return metaOgTitle;
+            }
+        }
+
+        public virtual string MetaOgDescription
+        {
+            get
+            {
+                return this.MetaDescription;
+            }
+        }
+
+        public virtual Image MetaOgImage
+        {
+            get
+            {
+                return this.SiteSettings.DefaultMetaOgImage;
+            }
+        }
+
+        public string DomainUrl
+        {
+            get
+            {
+                return Home.GetCurrentHome(this).UrlWithDomain().TrimEnd('/');
             }
         }
 
