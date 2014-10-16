@@ -87,16 +87,16 @@ wonderlandApp.directive('mRotate', ['$timeout', function ($timeout) {
 
             originalDeg = doNewRotation();
 
-            if ("mRotateHover" in attrs) {
-                angular.element(element).bind('mouseover', function () {
-                    doNewRotation(originalDeg*-1);
-                });
-
-                angular.element(element).bind('mouseout', function () {
-                    doNewRotation(originalDeg);
-                });
-
-            }
+//            if ("mRotateHover" in attrs) {
+//                angular.element(element).bind('mouseover', function () {
+//                    doNewRotation(originalDeg*-1);
+//                });
+//
+//                angular.element(element).bind('mouseout', function () {
+//                    doNewRotation(originalDeg);
+//                });
+//
+//            }
 
         }
     };
