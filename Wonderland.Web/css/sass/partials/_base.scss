@@ -170,29 +170,13 @@ Event Page specific - move these out of here eventually
 	background-color: $greyMedium;
 	float: left;
 
-	&:before {
-		font-family: $fontFaceIcomoon;
-		content: " ";
-		color: white;
-		font-size: 5rem;
-		line-height: 7rem;
-		width: 100%;
-		text-align: center;
-		display: block;
-	}
-
-	&.profile-image-notset:before {
-		content: "\e61b";
+	&.profile-image-notset {
+		background-image: image-url('avatar.png');
 	}
 
 	&.small {
 		width: $profileImageSize * .7;
 		height: $profileImageSize * .7;
-
-		&:before {
-			font-size: 3.8rem;
-			line-height: 5.2rem;
-		}
 	}
 }
 
