@@ -83,14 +83,6 @@ wonderlandApp.controller('PageCtrl', ['debounce', 'paf', 'safeApply', '$rootScop
     });
 
 
-    /**
-     *
-     * PAGE INACTIVITY TIMEOUT
-     *
-     */
-
-
-
 
 
     /*************************
