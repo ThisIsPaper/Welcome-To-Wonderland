@@ -141,7 +141,7 @@ namespace Wonderland.Logic.DotMailer
 
                 StringBuilder stringBuilder = new StringBuilder();
 
-                stringBuilder.AppendLine("Email, Party_Date, Party_Address_1, Party_Address_2, Party_Town_City, Party_Postcode");
+                stringBuilder.AppendLine("Email, Party_Date, Party_Time, Party_Address_1, Party_Address_2, Party_Town_City, Party_Postcode");
                 
                 foreach(IPartier partier in new MembershipHelper(UmbracoContext.Current).GetPartiers(partyHost.PartyGuid))
                 {
@@ -151,6 +151,7 @@ namespace Wonderland.Logic.DotMailer
                             new object[] {
                                 partier.Email,
                                 partyHost.PartyDateTime,
+                                partyHost.PartyDateTime.ToString("HH:mm"),
                                 partyHost.PartyAddress.Address1,
                                 partyHost.PartyAddress.Address2,
                                 partyHost.PartyAddress.TownCity,

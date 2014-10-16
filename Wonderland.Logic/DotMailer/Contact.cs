@@ -64,6 +64,19 @@ namespace Wonderland.Logic.DotMailer
             }
         }
 
+        private string PartyTime
+        {
+            set
+            {
+                this.contactData.Add(new ApiContactData()
+                    {
+                        Key = "Party_Time",
+                        Value = value
+                    }
+                );
+            }
+        }
+
         private string PartierType
         {
             set
@@ -172,6 +185,7 @@ namespace Wonderland.Logic.DotMailer
             contact.FirstName = partyHost.FirstName;
             contact.LastName = partyHost.LastName;
             contact.PartyDate = partyHost.PartyDateTime;
+            contact.PartyTime = partyHost.PartyDateTime.ToString("HH:mm");
             contact.PartierType = PartyHost.Alias;
             contact.PartyAddress = partyHost.PartyAddress;
             contact.PartyUrlIdentifier = partyHost.PartyUrlIdentifier;
@@ -192,6 +206,7 @@ namespace Wonderland.Logic.DotMailer
             contact.FirstName = partyGuest.FirstName;
             contact.LastName = partyGuest.LastName;
             contact.PartyDate = partyHost.PartyDateTime;
+            contact.PartyTime = partyHost.PartyDateTime.ToString("HH:mm");
             contact.PartierType = PartyGuest.Alias;
             contact.PartyAddress = partyHost.PartyAddress;
             contact.PartyUrlIdentifier = partyHost.PartyUrlIdentifier;
