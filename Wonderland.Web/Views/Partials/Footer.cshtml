@@ -25,7 +25,7 @@
             <ul>
                 <li><a class="icon-icon_facebook color-facebook" href="@Model.FacebookUrl" target="_blank"><span>Find us on Facebook</span></a></li>
                 <li><a class="icon-icon_twitter color-twitter" href="@Model.TwitterUrl" target="_blank"><span>Find us on Twitter</span></a></li>
-                <li><a class="icon-icon_google_plus color-gplus" href="@Model.GooglePlusUrl" target="_blank"><span>Find us on Google+</span></a></li>
+                <li><a class="icon-icon_google_plus color-pinterest" href="@Model.GooglePlusUrl" target="_blank"><span>Find us on Google+</span></a></li>
             </ul>
             <div class="margin-bottom-small clear"></div>
             <div class="clear color-twitter body-large body-bold font-futura">@Model.CampaignHashtag</div>
@@ -47,7 +47,7 @@
                 @foreach (SitePage sitePage in Model.LegalNavigation)
                 {
                 <li>
-                    <a href="@sitePage.Url">@sitePage.Name</a>
+                    <a href="@sitePage.Url" target="_blank">@sitePage.Name</a>
                 </li>
                 }
             </ul>

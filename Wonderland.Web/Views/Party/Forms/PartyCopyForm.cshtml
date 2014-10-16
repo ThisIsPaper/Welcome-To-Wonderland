@@ -16,7 +16,7 @@
 
                 <div class="form-info" ng-show="partyCopyData.Copy.length<=maxCharLength">
                     <span ng-bind="maxCharLength-partyCopyData.Copy.length"></span>
-                    <ng-pluralize count="maxCharLength-partyCopyData.Copy.length" when="{'one': 'character', 'other': 'characters'}"></ng-pluralize>
+                    <div ng-pluralize count="maxCharLength-partyCopyData.Copy.length" when="{'one': 'character', 'other': 'characters'}"></div>
                     <span> remaining</span>
                 </div>
 
@@ -24,7 +24,7 @@
                     <span class="icon-icon_alert"></span>
                     <span>You have exceeded the maximum length by </span>
                     <span ng-bind="partyCopyData.Copy.length-maxCharLength"></span>
-                    <ng-pluralize count="partyCopyData.Copy.length-maxCharLength" when="{'one': 'character', 'other': 'characters'}"></ng-pluralize>
+                    <div ng-pluralize count="partyCopyData.Copy.length-maxCharLength" when="{'one': 'character', 'other': 'characters'}"></div>
                 </div>
             </div>
 

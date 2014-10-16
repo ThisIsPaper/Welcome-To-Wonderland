@@ -18,17 +18,17 @@
 
                 <div class="grid-4 grid-tablet-12 margin-bottom-medium pad-0"
                      ng-click="openPageModal(fundraisingTargetData.FundraisingTarget > 0 ? null : 'partials/fundraisingTargetForm.html', 'suggestedDonationModal', {'fundraisingTargetData': fundraisingTargetDataForForm})">
-                    <div class="btn-primary" ng-class="{'disabled': fundraisingTargetData.FundraisingTarget>0}" m-radius-picker="small">1. Fundariasing target <span class="icon-icon_edit margin-left-small"></span></div>
+                    <div class="btn-primary" ng-class="{'disabled': fundraisingTargetData.FundraisingTarget>0}" m-radius-picker="small">1. Fundariasing target <span class="icon-icon_edit_circle margin-left-small"></span></div>
                 </div>
 
                 <div class="grid-4 grid-tablet-12 margin-bottom-medium pad-tablet-0"
                      ng-click="openPageModal(suggestedDonationData.SuggestedDonation > 0 ? null : 'partials/suggestedDonationForm.html', 'suggestedDonationModal', {'suggestedDonationData': suggestedDonationDataForForm})">
-                    <div class="btn-primary" ng-class="{'disabled': suggestedDonationData.SuggestedDonation>0}" m-radius-picker="small">2. Ticket price <span class="icon-icon_edit margin-left-small"></span></div>
+                    <div class="btn-primary" ng-class="{'disabled': suggestedDonationData.SuggestedDonation>0}" m-radius-picker="small">2. Ticket price <span class="icon-icon_edit_circle margin-left-small"></span></div>
                 </div>
 
                 <div class="grid-4 grid-tablet-12 margin-bottom-medium pad-0"
                      ng-click="openPageModal(partyDetailsData.PartyHeading ? null : 'partials/partyDetailsForm.html', 'partyDetailsModal', {'partyDetailsData': partyDetailsDataForForm})">
-                    <div class="btn-primary" ng-class="{'disabled': partyDetailsData.PartyHeading}" m-radius-picker="small">3. Party details <span class="icon-icon_edit margin-left-small"></span></div>
+                    <div class="btn-primary" ng-class="{'disabled': partyDetailsData.PartyHeading}" m-radius-picker="small">3. Party details <span class="icon-icon_edit_circle margin-left-small"></span></div>
                 </div>
 
             </div>
@@ -76,11 +76,11 @@
 
                     <div class="wgrid-full pad-large">
                         <div class="boxx internal highlight" m-radius-picker="small">
-                            <div class="grid-6 grid-tablet-12 text-align-center margin-bottom-small">
-                                It takes more than one to party. Share this link to invite guests.
+                            <div class="grid-12 text-align-center margin-bottom-small">
+                                <p>It takes more than one to party. Share this link to invite guests. When they sign up we'll send them their passport to Wonderland.</p>
                             </div>
 
-                            <div class="grid-6 grid-tablet-12">
+                            <div class="grid-12">
                                 <textarea class="body-medium" type="text" m-radius-picker="small" readonly="readonly" m-select-on-click ng-bind="currentPageUrl"></textarea>
                             </div>
                         </div>
@@ -92,7 +92,7 @@
 
             <div class="wgrid-full parent">
                 <div class="boxx" m-radius-picker="medium large">
-                    <h1 class="pad-right-3 pad-left-3">Join the Wonderland Party</h1>
+                    <h1 class="pad-right-3 pad-left-3">Join the Apr&egrave;s-Ski party</h1>
                     <pre class="body-medium font-futura" ng-bind-html="partyCopyData.CopyHtmlSafe">@this.Model.Copy</pre>
                     <div class="edit-trigger" ng-click="openPageModal('partials/partyCopyForm.html', 'partyCopyModal', {'partyCopyData': partyCopyDataForForm})"><span class="edit-label">Edit</span><span class="icon-icon_edit"></span></div>
                 </div>
@@ -111,7 +111,7 @@
 
                     <h4 class="top margin-right-3">Set your fundraising target</h4>
 
-                    <m-totaliser m-raised="{{ amountRaised }}" m-total="{{ fundraisingTargetData.FundraisingTarget }}"></m-totaliser>
+                    <div m-totaliser m-raised="{{ amountRaised }}" m-total="{{ fundraisingTargetData.FundraisingTarget }}"></div>
 
                     <div class="edit-trigger" ng-click="openPageModal('partials/fundraisingTargetForm.html', 'suggestedDonationModal', {'fundraisingTargetData': fundraisingTargetDataForForm})"><span class="edit-label">Edit</span><span class="icon-icon_edit"></span></div>
 

@@ -22,10 +22,11 @@ wonderlandApp.controller('PageCtrl', ['debounce', 'paf', 'safeApply', '$rootScop
     /*************************
     SITE HEADER COMPRESS VIEW
     /*************************/
+    var scrollCheckLimit = 50;
     var runScrollCheck = function () {
 
-            var diff = ((angular.element($window).scrollTop() > 100 && !$scope.pageHeaderCompress) ||
-                        (angular.element($window).scrollTop() <= 100 && $scope.pageHeaderCompress));
+            var diff = ((angular.element($window).scrollTop() > scrollCheckLimit && !$scope.pageHeaderCompress) ||
+                        (angular.element($window).scrollTop() <= scrollCheckLimit && $scope.pageHeaderCompress));
 
             if (diff) {
                 if ($scope.$$phase) {
@@ -37,7 +38,7 @@ wonderlandApp.controller('PageCtrl', ['debounce', 'paf', 'safeApply', '$rootScop
 
         },
         updateCompressValue = function () {
-            $scope.pageHeaderCompress = angular.element($window).scrollTop() > 100;
+            $scope.pageHeaderCompress = angular.element($window).scrollTop() > scrollCheckLimit;
         };
 
 
@@ -82,6 +83,12 @@ wonderlandApp.controller('PageCtrl', ['debounce', 'paf', 'safeApply', '$rootScop
     });
 
 
+    /**
+     * HACKY TEMPLATE FILTER
+     */
+    $scope.isExternalLink = function (url) {
+        return url.indexOf('http') === 0;
+    };
 
 
     /*************************

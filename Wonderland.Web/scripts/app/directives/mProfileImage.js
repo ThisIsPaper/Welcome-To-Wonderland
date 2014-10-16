@@ -36,8 +36,6 @@ wonderlandApp.directive('mProfileImage', ['safeApply', function (safeApply) {
                 }
 
                 if (!newVal || !angular.isString(newVal) || !hasExt) {
-
-                    element.css('background-image', 'none');
                     scope.hasBackgroundImage = false;
                     return;
                 }

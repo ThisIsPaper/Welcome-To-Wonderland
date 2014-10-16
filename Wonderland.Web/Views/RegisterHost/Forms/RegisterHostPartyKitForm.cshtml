@@ -55,7 +55,7 @@
 
     <div class="grid-8 grid-mobile-12 margin-bottom-large parent">
         <h4>T-Shirt Size</h4>
-        <p>Here at Wonderland we love prizes. We've created some great rewards for you, from sunglasses to hip and happening t-shirts. Add your t-shirt size here (they are unisex) and we'll send you a top secret t-shirt shaped prize when you raise £250 :)</p>
+        <p>Here at Wonderland we love prizes. We've created some great rewards for you, from sunglasses to hip and happening t-shirts. Add your t-shirt size here and we'll send you a top secret t-shirt shaped prize when you raise £250 :)</p>
 
         @foreach(string tShirtSize in this.ViewBag.TShirtSizes)
         {
@@ -70,6 +70,12 @@
         <hr/>
         <button type="submit" class="btn-primary float-right width-mobile-100p float-mobile-left" m-radius-picker="small" ng-disabled="processing">Register <span class="icon-icon_chevron_right"></span></button>
         <div class="loader pos-mobile-static float-mobile-left" ng-show="processing"></div>
+    </div>
+
+    <div class="grid-12 pad-0 body-small">
+        <hr/>
+        @* TODO: remove harcoded links *@
+        <p>By clicking "Register" you agree to us recording your details on our database. Please read our <a href="/privacy-statement/" target="_blank" class="body-highlight">Privacy Policy</a> and <a href="/terms-and-conditions/" target="_blank" class="body-highlight">Terms and Conditions</a> if you would like to know more about how we use your data.</p>
     </div>
 
 }

@@ -8,6 +8,7 @@ wonderlandApp.controller('PartyCtrl', ['safeApply', '$filter', '$ocModal', '$roo
     $scope.partyCopyDataForForm = null;
 
     $scope.partyCopyDataInit = function (partyCopyData) {
+
         $scope.partyCopyData = partyCopyData;
 
         $scope.partyCopyDataForForm = angular.copy($scope.partyCopyData);

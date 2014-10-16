@@ -18,7 +18,7 @@
                                                )
                                         )">
 
-    <h1 class="secondary margin-bottom-4"><span class="icon-icon_cutlery margin-right-small"></span>Party <br/><span class="bigger">Ideas</span></h1>
+    <h1 class="secondary margin-bottom-4">Party <br/><span class="bigger">Ideas</span></h1>
 
     @{
         IEnumerable<string> tileTypes = this.Model.Select(x => x.TileType).Distinct();
@@ -56,18 +56,19 @@
 
                 <div class="idea-tile" masonry-tile ng-repeat="item in guidePartyIdeas | filter: {tileType: guideIdeaFilter}" ng-class="{'wide': item.wide}">
 
-                    <div class="idea" m-rotate m-image-loaded-broadcaster>
-                        <img class="idea-polaroid" ng-src="{{ item.imageUrl|mQuality:50|mWidth:600 }}" width="100%" m-image-loaded-notifier />
-                        <div class="idea-details" ng-class="{'over-the-top': item.spotify, 'wide': item.wide}" m-vertical-align="{{ item.spotify }}">
-                            <div class="body-small margin-small" ng-bind="item.tileType"></div>
-                            <div class="icon-icon_snowflake margin-bottom-small" ng-show="item.spotify && item.wide"></div>
-                            <h1 class="margin-bottom-small" ng-class="{'smaller': !item.wide}" ng-bind="item.tileHeading"></h1>
-                            <div class="body-mini margin-bottom-small" ng-bind="item.tileCopy|striptags" ng-show="item.spotify"></div>
-                            <div class="spotify-logo" ng-show="item.spotify"></div>
-                            <div class="pinterest-ico" ng-show="item.pinterest"></div>
-                        </div>
-                        <a class="idea-link" ng-href="{{ item.link }}" ng-hide="item.pinterest">Goto idea</a>
-                        <a class="idea-link" ng-href="{{ item.link }}" target="_blank" ng-show="item.pinterest">Goto idea</a>
+                    <div class="idea" m-rotate m-rotate-hover m-image-loaded-broadcaster>
+
+                        <a class="hide-span" ng-href="{{ item.link }}" target="{{ item.pinterest ? '_blank' : '_self' }}">
+                            <img class="idea-polaroid" ng-src="{{ item.imageUrl|mQuality:50|mWidth:600 }}" width="100%" m-image-loaded-notifier />
+                            <div class="idea-details" ng-class="{'over-the-top': item.spotify, 'wide': item.wide}" m-vertical-align="{{ item.spotify }}">
+                                <div class="body-small margin-small" ng-bind="item.tileType"></div>
+                                <h1 class="margin-bottom-small" ng-class="{'smaller': !item.wide}" ng-bind="item.tileHeading"></h1>
+                                <div class="body-mini margin-bottom-small" ng-bind="item.tileCopy|striptags" ng-show="item.spotify"></div>
+                                <div class="spotify-logo" ng-show="item.spotify"></div>
+                                <div class="pinterest-ico" ng-show="item.pinterest"></div>
+                            </div>
+                            <span>Goto idea</span>
+                        </a>
                     </div>
 
                 </div>

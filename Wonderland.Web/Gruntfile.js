@@ -11,7 +11,7 @@ module.exports = function (grunt) {
                                      drop_console: false
                                  }
                              },
-                             all: {
+                             base: {
                                  files: {
                                      '<%= pkg.jsPath %>all.min.js': [
                                          '<%= pkg.jsPath %>slimmage.min.js',
@@ -68,6 +68,13 @@ module.exports = function (grunt) {
                                          '<%= pkg.jsPath %>app/services/safeApply.js',
                                          '<%= pkg.jsPath %>app/services/uniqueId.js'
 
+                                     ]
+                                 }
+                             },
+                             ie7: {
+                                 files: {
+                                     '<%= pkg.jsPath %>ie7.min.js': [
+                                         '<%= pkg.jsPath %>bower_components/JSON-js/json2.js',
                                      ]
                                  }
                              }

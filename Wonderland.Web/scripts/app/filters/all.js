@@ -58,9 +58,10 @@ wonderlandApp.filter('percentageRounder', function () {
             if (capAt100) {
                 p = p > 100 ? 100 : p;
             }
-            p = p < 0 ? 0 : p;
-            p = isNaN(p) ? 0 : p;
         }
+
+        p = p < 0 ? 0 : p;
+        p = isNaN(p) ? 0 : p;
 
         return p;
     };

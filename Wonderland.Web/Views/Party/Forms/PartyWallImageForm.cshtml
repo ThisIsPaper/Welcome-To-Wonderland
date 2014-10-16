@@ -5,8 +5,10 @@
     {
         @Html.AntiForgeryToken()
 
-        <div class="choose-file-wrapper icon-icon_camera margin-bottom-small width-mobile-100p" ng-class="{'disabled': (wall.feedback.imageProcessing||wall.feedback.messageProcessing)}">
-            <input type="file" class="choose-file" name="partyWallImage" accept="image/jpeg,image/gif,image/png" m-file-selected="submit()" />
+        <div class="ng-hide" m-ios-version m-min-ios="6" m-ios-remove-class="ng-hide">
+            <div class="choose-file-wrapper icon-icon_camera margin-bottom-small width-mobile-100p" ng-class="{'disabled': (wall.feedback.imageProcessing||wall.feedback.messageProcessing)}">
+                <input type="file" class="choose-file" name="partyWallImage" accept="image/jpeg,image/gif,image/png" m-file-selected="submit()" />
+            </div>
         </div>
     }
 </div>

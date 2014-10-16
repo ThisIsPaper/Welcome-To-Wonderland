@@ -8,7 +8,7 @@ wonderlandApp.directive('mFacebookLoginButton', ['facebook', function (facebook)
             label: '='
         },
         template: '<div>' +
-            '<div class="btn-large btn-facebook-login radius-v2-small" ng-click="login()" ng-class="{\'disabled\': loading}" ng-bind="label"></div>' +
+            '<div class="btn-facebook-login radius-v2-small" ng-click="login()" ng-class="{\'disabled\': loading}" ng-bind="label"></div>' +
             '<div class="loader pos-static" ng-show="loading"></div>' +
             '<div class="successful" ng-show="formattedDetails">The user has logged in via Facebook! Hendy at this stage, we need to log the users in using their facebook app id.</div>' +
             '<div class="boxx internal highlight radius-v3-small" ng-show="formattedDetails">' +

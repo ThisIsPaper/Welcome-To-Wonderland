@@ -26,7 +26,9 @@ wonderlandApp.directive('mIosVersion', [function () {
                 };
 
             if (!iOS) {
-                applyClasses();
+                if (!("mClassOnlyOnIos" in attrs)) {
+                    applyClasses();
+                }
                 return;
             }
 
