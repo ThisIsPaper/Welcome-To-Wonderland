@@ -279,20 +279,13 @@ namespace Wonderland.Logic.Models.Members
         }
 
         /// <summary>
-        /// Gets the party heading for the current party host, or if not set, then returns the default party heading
+        /// Gets the party heading for the current party host
         /// </summary>
         public string PartyHeading
         {
             get
             {
-                string partyHeading = this.GetPropertyValue<string>(PartyHost.PartyHeadingAlias);
-
-                if (string.IsNullOrWhiteSpace(partyHeading))
-                {
-                    partyHeading = ((Party)new UmbracoHelper(UmbracoContext.Current).TypedContentSingleAtXPath("//" + Party.Alias)).DefaultHeading;
-                }
-
-                return partyHeading;
+                return this.GetPropertyValue<string>(PartyHost.PartyHeadingAlias);
             }
             set
             {
