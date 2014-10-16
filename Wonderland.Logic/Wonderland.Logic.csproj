@@ -252,6 +252,7 @@
     <Compile Include="Extensions\MembershipHelperExtensions.cs" />
     <Compile Include="Extensions\ModelStateDictionaryExtensions.cs" />
     <Compile Include="Extensions\StreamExtensions.cs" />
+    <Compile Include="Extensions\StringExtensions.cs" />
     <Compile Include="Models\Content\BaseContentType.cs" />
     <Compile Include="Models\Content\DecorationCategory.cs" />
     <Compile Include="Models\Content\DecorationTile.cs" />
