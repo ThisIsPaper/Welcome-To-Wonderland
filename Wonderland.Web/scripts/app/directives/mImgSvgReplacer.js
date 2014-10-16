@@ -5,7 +5,7 @@ wonderlandApp.directive('mImgSvgReplacer', [function () {
         link: function (scope, element, attrs) {
 
             if (!Modernizr.svg) {
-                alert('image replace!');
+                angular.element(element).attr('src', attrs["mImgSvgReplacer"]);
             }
 
         }

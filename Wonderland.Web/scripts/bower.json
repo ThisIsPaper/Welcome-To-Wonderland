@@ -23,6 +23,7 @@
     "masonry": "~3.1.5",
     "angular-macgyver": "~0.4.0",
     "JSON-js": "douglascrockford/JSON-js",
-    "es5-shim": "es-shims/es5-shim#~4.0.3"
+    "es5-shim": "es-shims/es5-shim#~4.0.3",
+    "PIE": "lojjic/PIE#~1.0.0"
   }
 }

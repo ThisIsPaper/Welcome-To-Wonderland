@@ -12,13 +12,13 @@
  This file is responsible for establishing base styles for the Macmillan - Wonderland app.
  --------------------------------------------------------------------------------------------------------------------- */
 @import "compass/css3";
-@import "partials/variables";
-@import "partials/helpers";
-@import "partials/abstract";
-@import "partials/mixins";
-@import "partials/forms";
-@import "partials/type";
-@import "partials/vars";
+@import "variables";
+@import "helpers";
+@import "abstract";
+@import "mixins";
+@import "forms";
+@import "type";
+@import "vars";
 
 html {
 	font-size: 62.5%;
@@ -27,9 +27,9 @@ html {
 body {
 	color: $greyReallyDark;
 	background: $BodyBackground;
-	line-height: $LineHeight;
+	@include rem-fallback(line-height, $LineHeight);
 	font-family: $BaseFontFamily;
-	font-size: $FontSizeMedium;
+	@include rem-fallback(font-size, $FontSizeMedium);
 	@extend %margin-none;
 	@extend %padding-none;
 }
@@ -50,7 +50,7 @@ pre {
 }
 
 td {
-	padding-right: $padSmallValue * $multiplierLarge;
+	@include rem-fallback(padding-right, $padSmallValue * $multiplierLarge);
 }
 
 /************************************************************************** ANGULAR
@@ -65,6 +65,7 @@ td {
 Shadows
 ========================================================================== */
 .shadowed {
+	@include box-shadow(0 0 4.8px fade-out($TextColour, .3));
 	@include box-shadow(0 0 3rem fade-out($TextColour, .3));
 }
 
@@ -72,7 +73,7 @@ Shadows
 images
 ========================================================================== */
 img, object, embed {
-	max-width: $RowWidth; //prevent images from going beyond the viewport
+	@include rem-fallback(max-width, $RowWidth);
 	margin: 0;
 	padding: 0;
 	display: block;
@@ -93,7 +94,7 @@ Base page structure
 }
 
 main {
-	padding-top: 8.4rem;
+	@include rem-fallback(padding-top, 8.4rem);
 }
 
 .page-bg {
@@ -101,6 +102,7 @@ main {
 	background-image: image-url('bg_simple.png');
 	background-repeat: repeat-x;
 	background-position: top center;
+	padding: 208px 0 96px;
 	padding: 13rem 0 6rem;
 }
 
@@ -124,37 +126,39 @@ Event Page specific - move these out of here eventually
 	width: 100%;
 	height: 100%;
 	color: $SecondaryColour;
-	font-size: $FontSizeLarge;
+	@include rem-fallback(font-size, $FontSizeLarge);
 	background-color: $greyLight;
-	padding-top: 9rem;
+	@include rem-fallback(padding-top, 9rem);
 }
 
 .no-party-image {
 	background-color: $greyLight;
-	min-height: 25rem;
+	@include rem-fallback(min-height, 25rem);
 }
 
 .edit-trigger {
 	position: absolute;
-	top: 2rem;
-	right: 2rem;
+	@include rem-fallback(top, 2rem);
+	@include rem-fallback(right, 2rem);
+	@include rem-fallback(line-height, 3rem);
+	@include rem-fallback(width, 3rem);
+	@include rem-fallback(height, 3rem);
+	@include rem-fallback(font-size, $FontSizeSmall);
 	cursor: pointer;
 	color: white;
-	font-size: $FontSizeSmall;
-	line-height: 3rem;
 	text-align: center;
-	width: 3rem;
-	height: 3rem;
 	background-color: $FourthColour;
+	@include m-border-radius(4.8px, 4.8px, 4.8px, 4.8px, 4.8px, 4.8px, 4.8px, 4.8px);
 	@include m-border-radius(3rem, 3rem, 3rem, 3rem, 3rem, 3rem, 3rem, 3rem);
 
 	.edit-label {
 		display: none;
-		margin-right: 1rem;
+		@include rem-fallback(margin-right, 1rem);
 		text-transform: uppercase;
 	}
 
 	&:hover {
+		padding: 0 15px;
 		padding: 0 .95rem;
 		width: auto;
 		.edit-label {
@@ -164,8 +168,8 @@ Event Page specific - move these out of here eventually
 }
 
 .profile-image {
-	width: $profileImageSize;
-	height: $profileImageSize;
+	@include rem-fallback(width, $profileImageSize);
+	@include rem-fallback(height, $profileImageSize);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-color: $greyMedium;
@@ -176,36 +180,36 @@ Event Page specific - move these out of here eventually
 	}
 
 	&.small {
-		width: $profileImageSize * .7;
-		height: $profileImageSize * .7;
+		@include rem-fallback(width, $profileImageSize * .7);
+		@include rem-fallback(height, $profileImageSize * .7);
 	}
 }
 
 .profile-image-remover {
 	color: $redDark;
-	font-size: $FontSizeMini;
+	@include rem-fallback(font-size, $FontSizeMini);
 	cursor: pointer;
 
 	position: absolute;
-	top: $profileImageSize + .6rem;
-	left: .3rem;
-	width: $profileImageSize;
+	@include rem-fallback(top, $profileImageSize + .6rem);
+	@include rem-fallback(left, .3rem);
+	@include rem-fallback(width, $profileImageSize);
 }
 
 .image-shift-details {
-	margin-left: $profileImageSize + $padSmallValue;
+	@include rem-fallback(margin-left, $profileImageSize + $padSmallValue);
 
 	&.bigger {
-		margin-left: $profileImageSize + $padSmallValue + 5rem;
+		@include rem-fallback(margin-left, $profileImageSize + $padSmallValue + 5rem);
 	}
 
 }
 
 .anti-image-shift-details {
-	margin-left: -($profileImageSize + $padSmallValue);
+	@include rem-fallback(margin-left, -($profileImageSize + $padSmallValue));
 
 	&.bigger {
-		margin-left: -($profileImageSize + $padSmallValue + 5rem);
+		@include rem-fallback(margin-left, -($profileImageSize + $padSmallValue + 5rem));
 	}
 }
 
@@ -220,10 +224,11 @@ Event Page specific - move these out of here eventually
 
 .badge {
 	width: 100%;
-	height: 7.8rem;
+	@include rem-fallback(height, 7.8rem);
+	background-size: 112px 250px;
+	background-size: 7rem 15.6rem;
 	overflow: hidden;
 
-	background-size: 7rem 15.6rem;
 	background-repeat: no-repeat;
 	background-position: bottom center;
 
@@ -234,7 +239,7 @@ Event Page specific - move these out of here eventually
 
 .icon-only span {
 	display: block;
-	text-indent: -999rem;
+	@include rem-fallback(text-indent, -999rem);
 }
 
 /*******************************/
@@ -250,7 +255,7 @@ Event Page specific - move these out of here eventually
 
 	.warner {
 		@extend .warning;
-		width: 16rem;
+		@include rem-fallback(width, 16rem);
 		text-align: center;
 		display: none;
 	}
@@ -262,10 +267,11 @@ Event Page specific - move these out of here eventually
 			font-family: "icomoon";
 			background-color: $SecondaryColour;
 			color: white;
-			font-size: 4rem;
+			@include rem-fallback(font-size, 4rem);
+			padding: 32px 112px 32px 92.8px;
 			padding: 2rem 7rem 2rem 5.8rem;
+			@include rem-fallback(line-height, 8rem);
 			opacity: .8;
-			line-height: 8rem;
 		}
 
 		.party-image-selecter:before {
@@ -282,8 +288,8 @@ Event Page specific - move these out of here eventually
 
 .party-image-selecter {
 	@extend .margin-right-small;
-	width: 16rem;
-	height: 7.5rem;
+	@include rem-fallback(width, 16rem);
+	@include rem-fallback(height, 7.5rem);
 	background-size: cover;
 	background-color: $greyLight;
 	cursor: pointer;
@@ -292,9 +298,9 @@ Event Page specific - move these out of here eventually
 
 	&:before {
 		color: white;
-		font-size: $HeadingFontSizeLarge;
-		line-height: 7.5rem;
-		margin-left: 6.8rem;
+		@include rem-fallback(font-size, $HeadingFontSizeLarge);
+		@include rem-fallback(line-height, 7.5rem);
+		@include rem-fallback(margin-left, 6.8rem);
 	}
 
 	&.image-unset {
@@ -308,18 +314,16 @@ Event Page specific - move these out of here eventually
 
 .reference-image {
 	width: 100%;
-	height: 9rem;
+	@include rem-fallback(height, 9rem);
 	background-size: cover;
 }
 
 .file-upload-info {
 	@extend .body-small;
-
-	//margin-left: 17.2rem;
 }
 
 .date-details-shifter {
-	padding-right: $padSmallValue;
+	@include rem-fallback(padding-right, $padSmallValue);
 }
 
 /*******************************/
@@ -327,10 +331,10 @@ Event Page specific - move these out of here eventually
 .wall-details {
 	@extend .image-shift-details;
 	color: $greyMedium;
-	min-height: 6rem;
+	@include rem-fallback(min-height, 6rem);
 }
 
-.wall-name, wall-type {
+.wall-name, .wall-type {
 	font-weight: bold;
 	color: $greyReallyDark;
 }
@@ -360,18 +364,18 @@ Event Page specific - move these out of here eventually
 	margin: 0;
 
 	&.loader {
-		margin-top: -3rem;
+		@include rem-fallback(margin-top, -3rem);
 	}
 }
 
 .donation-copy {
 	color: $SecondaryColour;
-	font-size: $FontSizeLarge;
+	@include rem-fallback(font-size, $FontSizeLarge);
 }
 
 .wall-textarea {
 	font: $fontFaceFutura;
-	font-size: $FontSizeMedium;
+	@include rem-fallback(font-size, $FontSizeMedium);
 	margin-bottom: 0;
 	padding-bottom: 0;
 	border-bottom: none !important;
@@ -379,18 +383,20 @@ Event Page specific - move these out of here eventually
 }
 
 .wall-image-preview {
+	border: 1px solid $greyLight;
 	border: .1rem solid $greyLight;
 	margin-top: 0;
 	padding-top: 0;
 	border-top: none !important;
 	background-color: white;
-	margin-top: -.6rem;
+	@include rem-fallback(margin-top, -.6rem);
 
 	width: 100%;
 
 	@include border-top-radius(0);
 
 	&.error {
+		border: 1px solid $redDark;
 		border: .1rem solid $redDark;
 	}
 }
@@ -518,11 +524,17 @@ One-off uses
 .hero {
 	height: 45rem;
 	background-image: image-url('hero-ph.jpg');
+	-pie-background: image-url('hero-ph.jpg');
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
 	margin: 0;
 	padding-top: 10rem;
+
+	position: relative;
+	zoom: 1;
+
+	behavior: stylesheet-url('PIE.htc');
 }
 
 .planking {

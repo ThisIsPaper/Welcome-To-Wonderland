@@ -1,6 +1,7 @@
 @import "abstract";
 @import "type";
 @import "variables";
+@import "mixins";
 
 
 //********************************************** Buttons
@@ -18,12 +19,12 @@ $btnPaddingLarge: $btnPaddingMedium*2;
     text-decoration: none;
     text-transform: uppercase;
     background: $PrimaryColour;
-    font-size: $FontSizeSmall;
+	@include rem-fallback(font-size, $FontSizeSmall);
     border: none;
     text-align: center;
-    letter-spacing: .2rem;
+	@include rem-fallback(letter-spacing, .2rem);
 
-    padding: $btnPaddingMedium;
+	@include rem-fallback(padding, $btnPaddingMedium);
     margin: 0;
 
     &:hover, &:focus {
@@ -38,18 +39,18 @@ $btnPaddingLarge: $btnPaddingMedium*2;
 
     &.btn-mini {
         @extend .pad-tiny;
-        font-size: 1.1rem;
+		@include rem-fallback(font-size, 1.1rem);
     }
 
     &.btn-small {
         @extend .pad-small;
-        font-size: 1.4rem;
+		@include rem-fallback(font-size, 1.4rem);
     }
 
     &.btn-large {
         @extend .pad-large;
-        font-size: 2.3rem;
-        letter-spacing: .3rem;
+		@include rem-fallback(font-size, 2.3rem);
+		@include rem-fallback(letter-spacing, .3rem);
     }
 }
 
@@ -74,12 +75,12 @@ $btnPaddingLarge: $btnPaddingMedium*2;
 	&:before {
 		font-family: $fontFaceIcomoon;
 		content: "\e615";
-		margin-right: $marginSmallValue;
+		@include rem-fallback(margin-right, $marginSmallValue);
 	}
 }
 
 .cancel {
-    line-height: 4rem;
+	@include rem-fallback(line-height, 4rem);
     color: $SecondaryColour;
     font-size: $FontSizeMedium;
     cursor: pointer;
@@ -147,12 +148,13 @@ $btnPaddingLarge: $btnPaddingMedium*2;
 .loader {
     position: absolute;
     background-image: image-url('loading-icon.svg');
+	/**/// TODO: have a background-image fallback
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100%;
-    width: 8rem;
-    height: 8rem;
-    margin-top: -2rem;
+	@include rem-fallback(width, 8rem);
+	@include rem-fallback(height, 8rem);
+	@include rem-fallback(margin-top, -2rem);
 
     &.pos-static {
         position: static;
@@ -163,17 +165,17 @@ $btnPaddingLarge: $btnPaddingMedium*2;
 //********************************************** Inputs
 
 .form-holder {
-    max-width: 50rem;
+	@include rem-fallback(max-width, 50rem);
 
     &.wide {
-        max-width: 70rem;
+	@include rem-fallback(max-width, 70rem);
     }
 }
 
 .modal-close {
     position: absolute;
-    top: 2rem;
-    right: 2rem;
+	@include rem-fallback(top, 2rem);
+	@include rem-fallback(right, 2rem);
     overflow: hidden;
     cursor: pointer;
 
@@ -181,7 +183,7 @@ $btnPaddingLarge: $btnPaddingMedium*2;
         content: "\e617";
         font-family: $fontFaceIcomoon;
         color: $greyMedium;
-        font-size: $FontSizeLarge;
+		@include rem-fallback(font-size, $FontSizeLarge);
     }
 }
 
@@ -192,7 +194,7 @@ label {
     text-transform: uppercase;
     color: $greyReallyDark;
     font-weight: bold;
-    line-height: 3rem;
+	@include rem-fallback(line-height, 3rem);
 
     span {
         text-transform: none;
@@ -215,7 +217,7 @@ label {
 textarea {
     @extend .pad-small;
     width: 100%;
-    height: 15rem;
+	@include rem-fallback(height, 15rem);
     resize: none;
 }
 
@@ -223,19 +225,21 @@ input[type='text'], input[type='password'], select {
     @extend .pad-left-small;
     @extend .pad-right-small;
     width: 100%;
-    height: 5rem;
+	@include rem-fallback(height, 5rem);
     font-size: $FontSizeMedium;
-    line-height: 5rem;
+	@include rem-fallback(line-height, 5rem);
 }
 
 
 input[type='text'], input[type='password'], textarea, select {
-    border: .1rem solid $greyLight;
+	border: 1px solid $greyLight;
+	border: .1rem solid $greyLight;
     background-color: white;
 	font-family: $fontFaceFutura;
 
     &.error {
-        border: .1rem solid $redDark;
+		border: 1px solid $redDark;
+		border: .1rem solid $redDark;
     }
 }
 
@@ -244,11 +248,11 @@ input[type="text"][readonly] {
 }
 
 input[type='password'], input[type="text"].input-with-icon, select.input-with-icon {
-    text-indent: 4rem;
+	@include rem-fallback(text-indent, 4rem);
 }
 
 input[type="text"].currency {
-    padding-left: 3rem;
+	@include rem-fallback(padding-left, 3rem);
 }
 
 
@@ -272,9 +276,9 @@ select.auto-width {
 //********************************************** File upload
 
 .choose-file-wrapper {
+	@include rem-fallback(width, 16.2rem);
+	@include rem-fallback(height, 4rem);
 
-    width: 16.2rem;
-    height: 4rem;
     overflow: hidden;
     position: relative;
     cursor: pointer;
@@ -284,9 +288,9 @@ select.auto-width {
         z-index: 10;
         color: white;
         float: right;
-        margin-right: 1.2rem;
-        font-size: 1.4rem;
-        line-height: 3.8rem;
+		@include rem-fallback(margin-right, 1.2rem);
+		@include rem-fallback(font-size, 1.4rem);
+		@include rem-fallback(line-height, 3.8rem);
     }
 
 
@@ -304,8 +308,8 @@ select.auto-width {
 
         color: white;
         font-family: $fontFaceFutura;
-        padding-right: 4.4rem;
-        line-height: 1.6rem;
+		@include rem-fallback(padding-right, 4.4rem);
+		@include rem-fallback(line-height, 1.6rem);
     }
 
     &.disabled:after {
@@ -332,7 +336,7 @@ select.auto-width {
 .form-field-ico {
     position: absolute;
     top: 0;
-    left: $padSmallValue;
-    line-height: 5rem;
+	@include rem-fallback(left, $padSmallValue);
+	@include rem-fallback(line-height, 5rem);
     color: $greyLight;
 }
