@@ -11225,6 +11225,7 @@ Event Page specific - move these out of here eventually
 /* line 371, sass/partials/_base.scss */
 .wall-textarea {
   font: "Futura BT W01 Book";
+  font-size: 1.8rem;
   margin-bottom: 0;
   padding-bottom: 0;
   border-bottom: none !important;
@@ -11236,7 +11237,7 @@ Event Page specific - move these out of here eventually
   border-bottom-right-radius: 0;
 }
 
-/* line 379, sass/partials/_base.scss */
+/* line 380, sass/partials/_base.scss */
 .wall-image-preview {
   border: 0.1rem solid #D4D3CC;
   margin-top: 0;
@@ -11252,22 +11253,22 @@ Event Page specific - move these out of here eventually
   -webkit-border-top-right-radius: 0;
   border-top-right-radius: 0;
 }
-/* line 391, sass/partials/_base.scss */
+/* line 392, sass/partials/_base.scss */
 .wall-image-preview.error {
   border: 0.1rem solid #E32333;
 }
 
 /*******************************/
-/* line 399, sass/partials/_base.scss */
+/* line 400, sass/partials/_base.scss */
 .ticket {
   position: relative;
 }
-/* line 402, sass/partials/_base.scss */
+/* line 403, sass/partials/_base.scss */
 .ticket .stub {
   background-color: #D4D3CC;
   overflow: hidden;
 }
-/* line 407, sass/partials/_base.scss */
+/* line 408, sass/partials/_base.scss */
 .ticket .stub .holes, .ticket .stub .holes-right {
   position: absolute;
   left: -.1rem;
@@ -11277,13 +11278,13 @@ Event Page specific - move these out of here eventually
   background-image: url('/img/raffle.svg?1412505524');
   background-repeat: no-repeat;
 }
-/* line 417, sass/partials/_base.scss */
+/* line 418, sass/partials/_base.scss */
 .ticket .stub .holes-right {
   left: auto;
   right: -.1rem;
   background-image: url('/img/raffle_r.svg?1412505524');
 }
-/* line 423, sass/partials/_base.scss */
+/* line 424, sass/partials/_base.scss */
 .ticket .stub .price {
   -moz-border-radius: 1rem;
   -webkit-border-radius: 1rem;
@@ -11294,34 +11295,34 @@ Event Page specific - move these out of here eventually
   text-align: center;
   line-height: 7.3rem;
 }
-/* line 439, sass/partials/_base.scss */
+/* line 440, sass/partials/_base.scss */
 .ticket.selected .stub {
   background-color: #025b45;
 }
-/* line 442, sass/partials/_base.scss */
+/* line 443, sass/partials/_base.scss */
 .ticket.selected .stub .price {
   color: white !important;
   border: 0.1rem solid #4e8f82;
 }
-/* line 450, sass/partials/_base.scss */
+/* line 451, sass/partials/_base.scss */
 .ticket input[type="radio"] {
   display: none;
 }
 
-/* line 457, sass/partials/_base.scss */
+/* line 458, sass/partials/_base.scss */
 label .ticket span {
   color: inherit;
 }
 
 /*******************************/
-/* line 465, sass/partials/_base.scss */
+/* line 466, sass/partials/_base.scss */
 .totaliser {
   -moz-border-radius: 0.6rem;
   -webkit-border-radius: 0.6rem;
   border-radius: 0.6rem;
   background-color: #D4D3CC;
 }
-/* line 470, sass/partials/_base.scss */
+/* line 471, sass/partials/_base.scss */
 .totaliser .current-total {
   -moz-border-radius: 0.6rem;
   -webkit-border-radius: 0.6rem;
@@ -11354,24 +11355,24 @@ label .ticket span {
 /* =============================================================================
 One-off uses
 ========================================================================== */
-/* line 491, sass/partials/_base.scss */
+/* line 492, sass/partials/_base.scss */
 #twitter-widget-0 {
   width: 100% !important;
 }
 
-/* line 495, sass/partials/_base.scss */
+/* line 496, sass/partials/_base.scss */
 .home-twitter-boxx {
   height: 35.6rem;
 }
 
-/* line 499, sass/partials/_base.scss */
+/* line 500, sass/partials/_base.scss */
 .piggy-donater:after {
   content: "\e61c";
   font-family: "icomoon";
   color: white;
 }
 
-/* line 506, sass/partials/_base.scss */
+/* line 507, sass/partials/_base.scss */
 .join-party-ico:after {
   content: "\e601";
   font-family: "icomoon";
@@ -11379,7 +11380,7 @@ One-off uses
 }
 
 /*******************************/
-/* line 516, sass/partials/_base.scss */
+/* line 517, sass/partials/_base.scss */
 .hero {
   height: 45rem;
   background-image: url('/img/hero-ph.jpg?1412505524');
@@ -11390,27 +11391,27 @@ One-off uses
   padding-top: 10rem;
 }
 
-/* line 526, sass/partials/_base.scss */
+/* line 527, sass/partials/_base.scss */
 .planking {
   background: url('/img/wood_texture.jpg?1412768263') repeat top center;
 }
 
-/* line 530, sass/partials/_base.scss */
+/* line 531, sass/partials/_base.scss */
 .home-content-adjust {
   margin-top: -8rem;
 }
 
-/* line 534, sass/partials/_base.scss */
+/* line 535, sass/partials/_base.scss */
 .hero-explain {
   margin-right: 35rem;
   text-align: left;
 }
-/* line 538, sass/partials/_base.scss */
+/* line 539, sass/partials/_base.scss */
 .hero-explain.full-width {
   margin-right: 0;
 }
 
-/* line 543, sass/partials/_base.scss */
+/* line 544, sass/partials/_base.scss */
 .money-raised {
   position: absolute;
   top: 2.4rem;
@@ -11420,7 +11421,7 @@ One-off uses
   width: 34rem;
 }
 
-/* line 552, sass/partials/_base.scss */
+/* line 553, sass/partials/_base.scss */
 .raised-amount {
   color: white;
   width: 27.5rem;
@@ -11428,7 +11429,7 @@ One-off uses
   line-height: 4.7rem;
 }
 
-/* line 560, sass/partials/_base.scss */
+/* line 561, sass/partials/_base.scss */
 .home-tile {
   background-color: white;
   position: relative;
@@ -11438,7 +11439,7 @@ One-off uses
   box-shadow: 0px 14px 30px 0px rgba(0, 0, 0, 0.6);
 }
 
-/* line 570, sass/partials/_base.scss */
+/* line 571, sass/partials/_base.scss */
 .home-tile-image {
   -moz-border-radius: 0.7rem;
   -webkit-border-radius: 0.7rem;
@@ -11449,7 +11450,7 @@ One-off uses
   width: 100%;
 }
 
-/* line 578, sass/partials/_base.scss */
+/* line 579, sass/partials/_base.scss */
 .home-tile-label {
   position: absolute;
   bottom: 0;
@@ -11458,32 +11459,32 @@ One-off uses
 }
 
 /*******************************/
-/* line 588, sass/partials/_base.scss */
+/* line 589, sass/partials/_base.scss */
 .spotify-holder {
   width: 35.6rem;
   margin-top: -7rem;
 }
 
-/* line 593, sass/partials/_base.scss */
+/* line 594, sass/partials/_base.scss */
 .spotify-info-holder {
   position: absolute;
   left: 0;
   color: white;
   text-align: center;
 }
-/* line 600, sass/partials/_base.scss */
+/* line 601, sass/partials/_base.scss */
 .spotify-info-holder h1 {
   color: white;
 }
 
 /*******************************/
-/* line 608, sass/partials/_base.scss */
+/* line 609, sass/partials/_base.scss */
 .scoreboard-place {
   float: left;
   width: 5rem;
 }
 
-/* line 613, sass/partials/_base.scss */
+/* line 614, sass/partials/_base.scss */
 .scoreboard-value {
   position: absolute;
   top: 0;
@@ -11492,22 +11493,22 @@ One-off uses
 }
 
 /*******************************/
-/* line 623, sass/partials/_base.scss */
+/* line 624, sass/partials/_base.scss */
 .idea-sizer {
   width: 25%;
 }
 
-/* line 627, sass/partials/_base.scss */
+/* line 628, sass/partials/_base.scss */
 .idea-tile {
   width: 25%;
   padding: 1.2rem;
 }
-/* line 632, sass/partials/_base.scss */
+/* line 633, sass/partials/_base.scss */
 .idea-tile.wide {
   width: 50%;
 }
 
-/* line 637, sass/partials/_base.scss */
+/* line 638, sass/partials/_base.scss */
 .idea {
   padding: 1.2rem;
   background-color: white;
@@ -11518,42 +11519,42 @@ One-off uses
   box-shadow: 0px 14px 30px 0px rgba(0, 0, 0, 0.6);
 }
 
-/* line 645, sass/partials/_base.scss */
+/* line 646, sass/partials/_base.scss */
 .idea-details {
   width: 100%;
   top: 11%;
   left: 0;
   padding: 0 1.2rem;
 }
-/* line 651, sass/partials/_base.scss */
+/* line 652, sass/partials/_base.scss */
 .idea-details.over-the-top {
   position: absolute;
   color: white;
 }
-/* line 655, sass/partials/_base.scss */
+/* line 656, sass/partials/_base.scss */
 .idea-details.over-the-top h1 {
   color: white;
 }
-/* line 660, sass/partials/_base.scss */
+/* line 661, sass/partials/_base.scss */
 .idea-details.wide {
   top: 23%;
 }
 
-/* line 665, sass/partials/_base.scss */
+/* line 666, sass/partials/_base.scss */
 .idea-polaroid {
   -moz-border-radius: 0.7rem;
   -webkit-border-radius: 0.7rem;
   border-radius: 0.7rem;
 }
 
-/* line 669, sass/partials/_base.scss */
+/* line 670, sass/partials/_base.scss */
 .pinterest-ico:before {
   content: "\e623";
   font-family: "icomoon";
   color: #E32333;
 }
 
-/* line 675, sass/partials/_base.scss */
+/* line 676, sass/partials/_base.scss */
 .spotify-logo {
   width: 8rem;
   height: 2.4rem;
@@ -11564,7 +11565,7 @@ One-off uses
   margin: 0 auto;
 }
 
-/* line 686, sass/partials/_base.scss */
+/* line 687, sass/partials/_base.scss */
 .idea-link {
   position: absolute;
   top: 0;
@@ -11575,7 +11576,7 @@ One-off uses
   text-indent: -999rem;
 }
 
-/* line 697, sass/partials/_base.scss */
+/* line 698, sass/partials/_base.scss */
 .share-title {
   width: 27.8rem;
   height: 11.6rem;
@@ -11584,7 +11585,7 @@ One-off uses
   background-size: 27.8rem 11.6rem;
 }
 
-/* line 706, sass/partials/_base.scss */
+/* line 707, sass/partials/_base.scss */
 .share-facebook, .share-twitter, .share-email {
   background-color: #3c5898;
   font-family: "macmillan";
@@ -11593,33 +11594,33 @@ One-off uses
   padding: 1.2rem;
   line-height: 5.5rem;
 }
-/* line 714, sass/partials/_base.scss */
+/* line 715, sass/partials/_base.scss */
 .share-facebook:before, .share-twitter:before, .share-email:before {
   font-family: "icomoon";
   content: "\e619";
   margin-right: 1.2rem;
 }
 
-/* line 721, sass/partials/_base.scss */
+/* line 722, sass/partials/_base.scss */
 .share-twitter {
   background-color: #17abed;
 }
-/* line 723, sass/partials/_base.scss */
+/* line 724, sass/partials/_base.scss */
 .share-twitter:before {
   content: "\e61a";
 }
 
-/* line 728, sass/partials/_base.scss */
+/* line 729, sass/partials/_base.scss */
 .share-email {
   background-color: #007eac;
 }
-/* line 730, sass/partials/_base.scss */
+/* line 731, sass/partials/_base.scss */
 .share-email:before {
   content: "\e618";
   margin-right: 0;
 }
 
-/* line 737, sass/partials/_base.scss */
+/* line 738, sass/partials/_base.scss */
 .centered-share-holder .share-title {
   display: block;
   float: none;
@@ -11629,23 +11630,23 @@ One-off uses
 }
 
 /*******************************/
-/* line 749, sass/partials/_base.scss */
+/* line 750, sass/partials/_base.scss */
 .color-facebook {
   color: #3c5898 !important;
 }
 
-/* line 753, sass/partials/_base.scss */
+/* line 754, sass/partials/_base.scss */
 .color-twitter {
   color: #17abed !important;
 }
 
-/* line 757, sass/partials/_base.scss */
+/* line 758, sass/partials/_base.scss */
 .color-gplus {
   color: #cd3627 !important;
 }
 
 /*******************************/
-/* line 764, sass/partials/_base.scss */
+/* line 765, sass/partials/_base.scss */
 .giftaid-logo {
   width: 10rem;
   height: 3.5rem;
@@ -11658,7 +11659,7 @@ One-off uses
   top: 0;
 }
 
-/* line 777, sass/partials/_base.scss */
+/* line 778, sass/partials/_base.scss */
 .fsb-logo {
   width: 8rem;
   height: 38rem;
@@ -11671,7 +11672,7 @@ One-off uses
   top: 0;
 }
 
-/* line 790, sass/partials/_base.scss */
+/* line 791, sass/partials/_base.scss */
 .ticket-label {
   line-height: 2rem;
 }
