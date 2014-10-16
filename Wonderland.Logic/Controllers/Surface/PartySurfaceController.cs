@@ -311,6 +311,7 @@ namespace Wonderland.Logic.Controllers.Surface
         public JsonResult HandlePartyWallMessageForm(PartyWallMessageForm partyWallMessageForm)
         {
             // TODO: safety check that current member is associated with this party
+            //Party party = (Party)this.Umbraco.AssignedContentItem;;
 
             FormResponse formResponse = new FormResponse();
 

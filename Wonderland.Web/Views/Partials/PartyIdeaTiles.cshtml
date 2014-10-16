@@ -35,10 +35,8 @@
             </div>
         } else {
 
-            @* TODO: Hendy can you replace the href with the dynamic link back to the main party ideas page *@
-
         <div class="wgrid-full text-align-center">
-            <a class="back" href="/party-ideas/"><span class="icon-icon_back"></span>Show all party ideas</a>
+            <a class="back" href="@Umbraco.TypedContentSingleAtXPath("//" + PartyIdeas.Alias).Url"><span class="icon-icon_back"></span>Show all party ideas</a>
         </div>
 
         }

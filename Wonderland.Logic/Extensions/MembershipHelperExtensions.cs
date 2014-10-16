@@ -149,7 +149,7 @@ namespace Wonderland.Logic.Extensions
 
 
         /// <summary>
-        /// TODO: consider refactoring this, so that the additional data of 'partier count' and 'amount raised' is returned and used
+        /// 
         /// </summary>
         /// <param name="members"></param>
         /// <param name="leaderboardType"></param>

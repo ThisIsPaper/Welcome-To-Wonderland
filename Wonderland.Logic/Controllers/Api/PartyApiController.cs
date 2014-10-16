@@ -13,7 +13,6 @@ namespace Wonderland.Logic.Controllers.Api
     using Wonderland.Logic.Models.Forms;
     using Wonderland.Logic.Models.Members;
     
-
     public class PartyApiController : UmbracoApiController
     {
         [HttpGet]
@@ -136,7 +135,6 @@ namespace Wonderland.Logic.Controllers.Api
             
             if (messageRow != null)
             {
-                // TODO: consider marking as deleted instead, and adapting all queries to account for this
                 this.DatabaseContext.Database.Delete(messageRow);
 
                 formResponse.Success = true;

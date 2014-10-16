@@ -10,7 +10,7 @@ namespace Wonderland.Logic.Models.Forms
     {
         [Required]
         [DataType(DataType.Text)]
-        [Range(0, 100000)] // TODO: skip sage pay and go to party page
+        [Range(0, 100000)]
         public decimal Amount { get; set; }
 
         [DataType(DataType.MultilineText)]
