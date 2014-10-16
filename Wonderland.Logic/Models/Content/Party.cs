@@ -22,8 +22,6 @@ namespace Wonderland.Logic.Models.Content
         public Party(IPublishedContent content)
             : base(content)
         {
-            this.Heading = this.DefaultHeading;
-            this.Copy = this.DefaultCopy;
             this.Partiers = Enumerable.Empty<IPartier>();
         }
 
@@ -35,7 +33,7 @@ namespace Wonderland.Logic.Models.Content
             }
         }
 
-        private string DefaultHeading
+        internal string DefaultHeading
         {
             get
             {
@@ -43,7 +41,7 @@ namespace Wonderland.Logic.Models.Content
             }
         }
 
-        private string DefaultCopy
+        internal string DefaultCopy
         {
             get
             {

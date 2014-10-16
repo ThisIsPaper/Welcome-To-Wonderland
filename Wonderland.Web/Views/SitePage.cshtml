@@ -15,6 +15,13 @@
     <meta name="keywords" content="@Model.MetaKeywords" />
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0" />
 
+    <meta name="og:site_name" content="@Model.SiteSettings.MetaOgSiteName"/>
+    <meta name="og:url" content="@Model.UrlWithDomain()" />
+    <meta name="og:title" content="@Model.MetaOgTitle" />
+    <meta name="og:description" content="@Model.MetaOgDescription" />
+    <meta name="og:image" content="@Model.DomainUrl@Model.MetaOgImage.Url" />
+    @*<meta name="fb:app_id" content="" />*@
+
     <link rel="icon" href="/img/favicon.ico" type="image/x-icon" />
 
     <link href="/css/all.min.css" type="text/css" rel="stylesheet" />

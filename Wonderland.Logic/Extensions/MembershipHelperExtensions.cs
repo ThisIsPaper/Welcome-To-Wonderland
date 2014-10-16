@@ -13,8 +13,9 @@ namespace Wonderland.Logic.Extensions
     using UmbracoExamine;
     using Wonderland.Logic.Enums;
     using Wonderland.Logic.Interfaces;
+    using Wonderland.Logic.Models.Database;
     using Wonderland.Logic.Models.Members;
-
+    
     public static class MembershipHelperExtensions
     {
         public static bool IsLoggedInPartier(this MembershipHelper members)
@@ -114,9 +115,41 @@ namespace Wonderland.Logic.Extensions
             //return null;
         }
 
+        public static IEnumerable<IPartier> GetAllPartiers(this MembershipHelper members)
+        {
+            List<IPartier> partiers = new List<IPartier>();
+
+            partiers.AddRange(
+                ApplicationContext
+                    .Current
+                    .Services
+                    .MemberService
+                    .GetMembersByMemberType(PartyHost.Alias)
+                    .Select(x => (IPartier)members.GetById(x.Id))
+                );
+
+            partiers.AddRange(
+                ApplicationContext
+                    .Current
+                    .Services
+                    .MemberService
+                    .GetMembersByMemberType(PartyGuest.Alias)
+                    .Select(x => (IPartier)members.GetById(x.Id))
+                );
+            
+            //DatabaseContext databaseContext = ApplicationContext.Current.DatabaseContext;
+
+            //foreach(MemberPartyRow memberPartyRow in databaseContext.Database.Fetch<MemberPartyRow>(@"SELECT MemberId, PartyGuid, Timestamp FROM wonderlandMemberParty"))
+            //{
+            //    partiers.Add((IPartier)members.GetById(memberPartyRow.MemberId));
+            //}
+
+            return partiers;
+        }
+
 
         /// <summary>
-        /// TODO: consider refactoring this, so that the additional data of 'partier count' and 'amount raised' is returned and used
+        /// 
         /// </summary>
         /// <param name="members"></param>
         /// <param name="leaderboardType"></param>

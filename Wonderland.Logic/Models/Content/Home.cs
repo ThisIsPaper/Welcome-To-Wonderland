@@ -8,6 +8,7 @@ namespace Wonderland.Logic.Models.Content
     using Umbraco.Core.Models;
     using Umbraco.Web;
     using Wonderland.Logic.Models.Entities;
+    using Wonderland.Logic.Models.Media;
 
     public class Home : SitePage
     {
@@ -21,6 +22,9 @@ namespace Wonderland.Logic.Models.Content
         public const string HeaderNavigationAlias = "headerNavigation";
         public const string FooterNavigationAlias = "footerNavigation";
         public const string LegalNavigationAlias = "legalNavigation";
+        public const string MetaOgSiteNameAlias = "metaOgSiteName";
+        public const string DefaultMetaOgTitleAlias = "defaultMetaOgTitle";
+        public const string DefaultMetaOgImageAlias = "defaultMetaOgImage";
         public const string CampaignHashtagAlias = "campaignHashtag";
         public const string FacebookUrlAlias = "facebookUrl";
         public const string TwitterUrlAlias = "twitterUrl";
@@ -85,6 +89,30 @@ namespace Wonderland.Logic.Models.Content
             get
             {
                 return this.GetPropertyValue<Picker>(Home.LegalNavigationAlias).AsPublishedContent().Select(x => new SitePage(x));
+            }
+        }
+
+        internal string MetaOgSiteName
+        {
+            get
+            {
+                return this.GetPropertyValue<string>(Home.MetaOgSiteNameAlias);
+            }
+        }
+
+        internal string DefaultMetaOgTitle
+        {
+            get
+            {
+                return this.GetPropertyValue<string>(Home.DefaultMetaOgTitleAlias);
+            }
+        }
+
+        internal Image DefaultMetaOgImage
+        {
+            get
+            {
+                return new Image(this.GetPropertyValue<IPublishedContent>(Home.DefaultMetaOgImageAlias));
             }
         }
 

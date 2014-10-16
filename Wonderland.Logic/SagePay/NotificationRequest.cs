@@ -1,4 +1,5 @@
 ﻿
+using System;
 namespace Wonderland.Logic.SagePay
 {
     /// <summary>
@@ -10,7 +11,7 @@ namespace Wonderland.Logic.SagePay
 
         public string TxType { get; set; }
 
-        public int VendorTxCode { get; set; } // NOTE: this may need to be a string
+        public Guid VendorTxCode { get; set; } // NOTE: this may need to be a string
 
         public string VPSTxId { get; set; } // added after examining supplied post
 

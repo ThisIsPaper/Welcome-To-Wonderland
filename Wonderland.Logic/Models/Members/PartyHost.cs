@@ -38,6 +38,20 @@ namespace Wonderland.Logic.Models.Members
         public const string SuggestedDonationAlias = "suggestedDonation";
         public const string FundraisingTargetAlias = "fundraisingTarget";
         public const string ForgottenPasswordGuidAlias = "forgottenPasswordGuid";
+        public const string DotMailerIdAlias = "dotMailerId";
+        public const string DotMailerRegistrationCompleteAlias = "dotMailerRegistrationComplete";
+        public const string DotMailerPartyPageCompleteAlias = "dotMailerPartyPageComplete";
+
+        private Guid? partyGuid = null;
+        private string firstName = null;
+        private string lastName = null;
+        private Address billingAddress = null;
+        private Address partyAddress = null;
+        private DateTime? partyDateTime = null;
+        private string partyUrlIdentifier = null;
+        private bool? dotMailerPartyPageComplete = null;
+        private decimal? amountRaised = null;
+        private int? totalGuests = null;
 
         public PartyHost(IPublishedContent content)
             : base(content)
@@ -51,10 +65,16 @@ namespace Wonderland.Logic.Models.Members
         {
             get
             {
+                if (this.partyGuid.HasValue)
+                {
+                    return this.partyGuid.Value;
+                }
+
                 return this.GetPropertyValue<Guid>(PartyHost.PartyGuidAlias);
             }
             set
             {
+                this.partyGuid = value;
                 this.SetPropertyValue(PartyHost.PartyGuidAlias, value.ToString());
             }
         }
@@ -63,10 +83,16 @@ namespace Wonderland.Logic.Models.Members
         {
             get
             {
+                if (this.firstName != null)
+                {
+                    return this.firstName;
+                }
+
                 return this.GetPropertyValue<string>(PartyHost.FirstNameAlias);
             }
             set
             {
+                this.firstName = value;
                 this.SetPropertyValue(PartyHost.FirstNameAlias, value);
             }
         }
@@ -75,10 +101,16 @@ namespace Wonderland.Logic.Models.Members
         {
             get
             {
+                if (this.lastName != null)
+                {
+                    return this.lastName;
+                }
+
                 return this.GetPropertyValue<string>(PartyHost.LastNameAlias);
             }
             set
             {
+                this.lastName = value;
                 this.SetPropertyValue(PartyHost.LastNameAlias, value);
             }
         }
@@ -87,10 +119,16 @@ namespace Wonderland.Logic.Models.Members
         {
             get
             {
+                if (this.billingAddress != null)
+                {
+                    return this.billingAddress;
+                }
+
                 return new Address(this.GetPropertyValue<string>(PartyHost.BillingAddressAlias));
             }
             set
             {
+                this.billingAddress = value;
                 this.SetPropertyValue(PartyHost.BillingAddressAlias, value.ToString());
             }
         }
@@ -143,10 +181,16 @@ namespace Wonderland.Logic.Models.Members
         {
             get
             {
+                if (this.partyAddress != null)
+                {
+                    return this.partyAddress;
+                }
+
                 return new Address(this.GetPropertyValue<string>(PartyHost.PartyAddressAlias));
             }
             set
             {
+                this.partyAddress = value;
                 this.SetPropertyValue(PartyHost.PartyAddressAlias, value.ToString());
             }
         }
@@ -155,10 +199,16 @@ namespace Wonderland.Logic.Models.Members
         {
             get
             {
+                if (this.partyDateTime.HasValue)
+                {
+                    return this.partyDateTime.Value;
+                }
+
                 return this.GetPropertyValue<DateTime>(PartyHost.PartyDateTimeAlias);
             }
             set
             {
+                this.partyDateTime = value;
                 this.SetPropertyValue(PartyHost.PartyDateTimeAlias, value.ToString());
             }
         }
@@ -194,10 +244,16 @@ namespace Wonderland.Logic.Models.Members
         {
             get
             {
+                if (!string.IsNullOrWhiteSpace(this.partyUrlIdentifier))
+                {
+                    return this.partyUrlIdentifier;
+                }
+
                 return this.GetPropertyValue<string>(PartyHost.PartyUrlIdentifierAlias);
             }
             set
             {
+                this.partyUrlIdentifier = value;
                 this.SetPropertyValue(PartyHost.PartyUrlIdentifierAlias, value);
             }
         }
@@ -222,11 +278,21 @@ namespace Wonderland.Logic.Models.Members
             }
         }
 
+        /// <summary>
+        /// Gets the party heading for the current party host, or if not set, then returns the default party heading
+        /// </summary>
         public string PartyHeading
         {
             get
             {
-                return this.GetPropertyValue<string>(PartyHost.PartyHeadingAlias);
+                string partyHeading = this.GetPropertyValue<string>(PartyHost.PartyHeadingAlias);
+
+                if (string.IsNullOrWhiteSpace(partyHeading))
+                {
+                    partyHeading = ((Party)new UmbracoHelper(UmbracoContext.Current).TypedContentSingleAtXPath("//" + Party.Alias)).DefaultHeading;
+                }
+
+                return partyHeading;
             }
             set
             {
@@ -234,11 +300,21 @@ namespace Wonderland.Logic.Models.Members
             }
         }
 
+        /// <summary>
+        /// Gets the party copy for the current party host, or if not set, then returns the default party copy
+        /// </summary>
         public string PartyCopy
         {
             get
-            {
-                return this.GetPropertyValue<string>(PartyHost.PartyCopyAlias);
+            {                
+                string partyCopy = this.GetPropertyValue<string>(PartyHost.PartyCopyAlias);
+
+                if(string.IsNullOrWhiteSpace(partyCopy))
+                {
+                    partyCopy = ((Party)new UmbracoHelper(UmbracoContext.Current).TypedContentSingleAtXPath("//" + Party.Alias)).DefaultCopy;
+                }
+
+                return partyCopy;
             }
             set
             {
@@ -282,6 +358,48 @@ namespace Wonderland.Logic.Models.Members
             }
         }
 
+        public int DotMailerId
+        {
+            get
+            {
+                return this.GetPropertyValue<int>(PartyHost.DotMailerIdAlias);
+            }
+            set
+            {
+                this.SetPropertyValue(PartyHost.DotMailerIdAlias, value);
+            }
+        }
+
+        public bool DotMailerRegistrationComplete
+        {
+            get
+            {
+                return this.GetPropertyValue<bool>(PartyHost.DotMailerRegistrationCompleteAlias);
+            }
+            set
+            {
+                this.SetPropertyValue(PartyHost.DotMailerRegistrationCompleteAlias, value);
+            }
+        }
+        
+        public bool DotMailerPartyPageComplete
+        {
+            get
+            {
+                if (this.dotMailerPartyPageComplete.HasValue)
+                {
+                    return this.dotMailerPartyPageComplete.Value;
+                }
+
+                return this.GetPropertyValue<bool>(PartyHost.DotMailerPartyPageCompleteAlias);
+            }
+            set
+            {
+                this.dotMailerPartyPageComplete = value;
+                this.SetPropertyValue(PartyHost.DotMailerPartyPageCompleteAlias, value);
+            }
+        }
+
         public string ProfileImageUrl
         {
             get
@@ -303,7 +421,6 @@ namespace Wonderland.Logic.Models.Members
             }
         }
 
-        private decimal? amountRaised = null;
         public decimal AmountRaised
         {
             get
@@ -332,8 +449,7 @@ namespace Wonderland.Logic.Models.Members
                 this.amountRaised = value;
             }
         }
-
-        private int? totalGuests = null;
+        
         public int TotalGuests
         {
             get

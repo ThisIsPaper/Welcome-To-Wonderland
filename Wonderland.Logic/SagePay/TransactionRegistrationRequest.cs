@@ -1,6 +1,7 @@
 ﻿
 namespace Wonderland.Logic.SagePay
 {
+    using System;
     using System.Web.Configuration;
     using Umbraco.Web;
     using Umbraco.Web.Security;
@@ -50,7 +51,7 @@ namespace Wonderland.Logic.SagePay
 
         public string Vendor { get { return WebConfigurationManager.AppSettings["SagePay:Vendor"]; } }
 
-        public int VendorTxCode { get; private set; }
+        public Guid VendorTxCode { get; private set; }
 
         public decimal Amount { get; private set; }
 

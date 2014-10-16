@@ -50,7 +50,7 @@ namespace Wonderland.Logic.Models.Content
         {
             get
             {
-                return this.GetPropertyValue<string[]>(RecipeTile.IngredientsAlias);
+                return this.GetPropertyValue<string[]>(RecipeTile.IngredientsAlias).Where(x => !string.IsNullOrWhiteSpace(x));
             }
         }
 

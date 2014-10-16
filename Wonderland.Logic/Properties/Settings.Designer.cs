@@ -44,5 +44,15 @@ namespace Wonderland.Logic.Properties {
                 return ((string)(this["Wonderland_Logic_RetrieveById_WebService"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://api.dotmailer.com/v2/Api.svc")]
+        public string Wonderland_Logic_DotMailerApi_ApiService {
+            get {
+                return ((string)(this["Wonderland_Logic_DotMailerApi_ApiService"]));
+            }
+        }
     }
 }

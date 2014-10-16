@@ -2,6 +2,7 @@
 namespace Wonderland.Logic.Models.Content
 {
     using System.Collections.Generic;
+    using System.Linq;
     using Umbraco.Core.Models;
     using Umbraco.Web;
 
@@ -23,7 +24,7 @@ namespace Wonderland.Logic.Models.Content
         {
             get
             {
-                return this.GetPropertyValue<string[]>(RegisterHost.MarketingSourcesAlias);
+                return this.GetPropertyValue<string[]>(RegisterHost.MarketingSourcesAlias).Where(x => !string.IsNullOrWhiteSpace(x));
             }
         }
 
@@ -31,7 +32,7 @@ namespace Wonderland.Logic.Models.Content
         {
             get
             {
-                return this.GetPropertyValue<string[]>(RegisterHost.TShirtSizesAlias);
+                return this.GetPropertyValue<string[]>(RegisterHost.TShirtSizesAlias).Where(x => !string.IsNullOrWhiteSpace(x));
             }
         }
     }

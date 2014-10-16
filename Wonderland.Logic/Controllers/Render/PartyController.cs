@@ -33,24 +33,16 @@ namespace Wonderland.Logic.Controllers.Render
                     return this.Redirect(((IPartier)this.Members.GetCurrentMember()).PartyUrl);
                 }
 
-                // fallback
-                return this.Redirect(Home.GetCurrentHome(model).Url);
+                // fallback to login
+                return this.Redirect(model.SiteSettings.LoginUrl);
             }
 
             // known host, so set the party host for this cms page, and build the model
             model.PartyHost = partyHost;
             
-            // heading - use custom heading if set by host
-            if (!string.IsNullOrWhiteSpace(partyHost.PartyHeading))
-            {
-                model.Heading = partyHost.PartyHeading;
-            }
-            
-            // copy - use custom copy if set by host
-            if (!string.IsNullOrWhiteSpace(partyHost.PartyCopy))
-            {
-                model.Copy = partyHost.PartyCopy;
-            }
+            model.Heading = partyHost.PartyHeading;
+
+            model.Copy = partyHost.PartyCopy;
 
             // partiers - the host + all guests            
             model.Partiers = this.Members.GetPartiers(partyHost.PartyGuid);
