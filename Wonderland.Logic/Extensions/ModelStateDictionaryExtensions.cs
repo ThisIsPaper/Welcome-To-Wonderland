@@ -4,7 +4,7 @@ namespace Wonderland.Logic.Extensions
     using System.Collections.Generic;
     using System.Linq;
     using System.Web.Mvc;
-    using Wonderland.Logic.Models.Forms;
+    using Wonderland.Logic.Models.Messages;
 
     public static class ModelStateDictionaryExtensions
     {
