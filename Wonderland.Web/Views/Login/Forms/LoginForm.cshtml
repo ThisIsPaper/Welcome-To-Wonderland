@@ -1,5 +1,16 @@
 ﻿@model LoginForm
 
+<!--
+    @(Url.GetUmbracoApiService<FacebookApiController>("Login"))
+    {
+        'accessToken' : 'xxx',
+        'userId' : '123',
+        'signedRequest' : "xxx",
+        'emailAddress' : 'someone@facebook.com',
+        'firstName' : 'first',
+        'lastName' : 'last'
+    }
+-->
 
 <div ng-init="processing=false">
     @using (Html.BeginUmbracoForm<LoginSurfaceController>("HandleLoginForm", FormMethod.Post, new { ng_submit="processing=true" }))
