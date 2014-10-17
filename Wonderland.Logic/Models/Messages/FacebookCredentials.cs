@@ -16,14 +16,5 @@ namespace Wonderland.Logic.Models.Messages
 
         [JsonProperty("signedRequest")]
         public string SignedRequest { get; set; }
-
-        [JsonProperty("emailAddress")]
-        public string EmailAddress { get; set; }
-
-        [JsonProperty("firstName")]
-        public string FirstName { get; set; }
-
-        [JsonProperty("lastName")]
-        public string LastName { get; set; }
     }
 }
