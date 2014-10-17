@@ -42,6 +42,7 @@ namespace Wonderland.Logic.Models.Members
         public const string DotMailerRegistrationCompleteAlias = "dotMailerRegistrationComplete";
         public const string DotMailerPartyPageCompleteAlias = "dotMailerPartyPageComplete";
 
+        // local cache variables (avoids waiting for round trip to update umbraco cache values)
         private Guid? partyGuid = null;
         private string firstName = null;
         private string lastName = null;
