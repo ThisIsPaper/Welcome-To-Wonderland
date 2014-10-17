@@ -10,58 +10,65 @@
 @media only screen and (max-width: 1100px) {
 
 	.logo {
+		padding: 89.44px 52.32px;
 		padding: 4.59rem 3.27rem;
+		margin: 0 -52.32px;
 		margin: 0 -3.27rem;
 	}
 
 	.logo-ribbon {
+		padding: 18.72px 92.16px;
 		padding: 1.17rem 5.76rem;
+		margin: 19.2px -92.16px;
 		margin: 1.2rem -5.76rem;
 	}
 
 	.left-side ul {
 		float: right;
-		margin-right: 4.47rem;
+		@include rem-fallback(margin-right, 4.47rem);
 	}
 
 	.right-side ul {
-		margin-left: 4.47rem;
+		@include rem-fallback(margin-left, 4.47rem);
 	}
 
 	.menu li {
-		margin: 0 .3rem;
+		margin-top: 0;
+		margin-bottom: 0;
+		@include rem-fallback(margin-left, .3rem);
+		@include rem-fallback(margin-right, .3rem);
 	}
 
 	.menu li a {
-		font-size: 1.1rem;
+		@include rem-fallback(font-size, 1.1rem);
 	}
 
 	.nav-end-block {
-		left: .5rem;
+		@include rem-fallback(left, .5rem);
 	}
 
 	.nav-end-block.end-block-right {
-		right: .5rem;
+		@include rem-fallback(right, .5rem);
 		left: auto;
 	}
 
 	.nav-end-block a, a.nav-end-block {
-		font-size: 1.1rem;
+		@include rem-fallback(font-size, 1.1rem);
 	}
 
 	/********************/
 	/* COMPRESSED VIEW  */
 	/********************/
 	.site-header.compress .logo-ribbon {
-		margin-top: 13.7rem;
+		@include rem-fallback(margin-top, 13.7rem);
 	}
 
 	.site-header.compress .left-side ul {
-		margin-right: 6.2rem;
+		@include rem-fallback(margin-right, 6.2rem);
 	}
 
 	.site-header.compress .right-side ul {
-		margin-left: 6.2rem;
+		@include rem-fallback(margin-left, 6.2rem);
 	}
 
 	//***************************** Party Ideas
@@ -85,12 +92,12 @@
 @media only screen and (max-width: 850px) {
 
 	main {
-		padding-top: 6.6rem;
+		@include rem-fallback(padding-top, 6.6rem);
 	}
 
 	h1, h1.bigger, h1.smaller, h1 .bigger, h1 .smaller {
-		font-size: $HeadingFontSizeSmall;
-		line-height: $HeadingFontSizeSmall;
+		@include rem-fallback(font-size, $HeadingFontSizeSmall);
+		@include rem-fallback(line-height, $HeadingFontSizeSmall);
 	}
 
 	h1 {
@@ -98,7 +105,7 @@
 	}
 
 	.hero {
-		height: 26rem;
+		@include rem-fallback(height, 26rem);
 		padding-top: 7rem;
 	}
 
@@ -107,7 +114,7 @@
 	}
 
 	.body-mega {
-		font-size: $HeadingFontSizeSmall;
+		@include rem-fallback(font-size, $HeadingFontSizeSmall);
 	}
 
 	.pad-tablet-0 {
@@ -130,35 +137,42 @@
 	//***************************** BASE
 
 	.page-bg {
-		padding-top: 6rem;
+		@include rem-fallback(padding-top, 6rem);
 	}
 
 	.site-header.showing-side-nav-menu {
-		left: 25.6rem;
+		@include rem-fallback(left, 25.6rem);
 	}
 
 	.site-header.showing-side-account-menu {
-		left: -25.6rem;
+		@include rem-fallback(left, -25.6rem);
 	}
 
 	.logo {
-		top: -16rem;
+		@include rem-fallback(topl, -16rem);
 	}
 
 	.logo-ribbon, .site-header.compress .logo-ribbon {
-		padding: 1.95rem 9.6rem;
-		margin: 12.9rem -9.6rem;
+		@include rem-fallback(padding-top, 1.95rem);
+		@include rem-fallback(padding-bottom, 1.95rem);
+		@include rem-fallback(padding-left, 9.6rem);
+		@include rem-fallback(padding-right, 9.6rem);
+
+		@include rem-fallback(margin-top, 12.9rem);
+		@include rem-fallback(margin-bottom, 12.9rem);
+		@include rem-fallback(margin-left, -9.6rem);
+		@include rem-fallback(margin-right, -9.6rem);
 	}
 
 	.nav-end-block {
 		display: none;
-		left: 1.5rem;
+		@include rem-fallback(left, 1.5rem);
 		color: $SecondaryColour;
 	}
 
 	.nav-end-block.end-block-right {
 		left: auto;
-		right: 1.5rem;
+		@include rem-fallback(right, 1.5rem);
 	}
 
 	.nav-burger, .nav-account {
@@ -166,11 +180,11 @@
 	}
 
 	.nav-end-block, .site-header.compress .nav-end-block {
-		top: 1.8rem;
+		@include rem-fallback(top, 1.8rem);
 	}
 
 	.nav-end-block a, a.nav-end-block {
-		font-size: 3rem;
+		@include rem-fallback(font-size, 3rem);
 	}
 
 	/**********************/
@@ -178,9 +192,9 @@
 	  /**********************/
 	.nav-menu {
 		position: absolute;
-		left: -25.6rem;
-		width: 25.6rem;
-		height: 300rem;
+		@include rem-fallback(left, -25.6rem);
+		@include rem-fallback(width, 25.6rem);
+		@include rem-fallback(height, 300rem);
 		background: #474740;
 		display: block;
 		overflow: hidden;
@@ -191,16 +205,19 @@
 	  /**********************/
 	.account-menu-holder, .site-header.compress .account-menu-holder {
 		top: 0;
-		right: -25.6rem;
+		@include rem-fallback(right, -25.6rem);
 		background-color: $greyReallyDark;
-		height: 300rem;
-		width: 25.6rem;
+		@include rem-fallback(height, 300rem);
+		@include rem-fallback(width, 25.6rem);
 		overflow: hidden;
 
 		.profile-image, .profile-image.small {
-			width: 16rem;
-			height: 16rem;
-			margin: 2.3rem 0 0 4.9rem;
+			@include rem-fallback(width, 16rem);
+			@include rem-fallback(height, 16rem);
+			@include rem-fallback(margin-top, 2.3rem);
+			@include rem-fallback(margin-left, 4.9rem);
+			margin-bottom: 0;
+			margin-right: 0;
 			cursor: default;
 		}
 	}
@@ -232,14 +249,15 @@
 	.menu li {
 		display: block;
 		margin: 0;
-		padding: 1.2rem;
+		@include rem-fallback(padding, 1.2rem);
+		border-bottom: 1px solid #55554d;
 		border-bottom: .1rem solid #55554d;
 	}
 
 	.menu li a {
 		line-height: normal;
 		color: #d4d3cc;
-		font-size: 1.4rem;
+		@include rem-fallback(font-size, 1.4rem);
 		font-weight: bold;
 
 		&.selected {
@@ -251,7 +269,7 @@
 
 	.menu li span[class^="icon-"]:before, .menu li span[class*=" icon-"]:before {
 		color: #7b7a6d;
-		margin-right: 1rem;
+		@include rem-fallback(margin-right, 1rem);
 		display: inline;
 	}
 
@@ -302,11 +320,12 @@
 
 			h1 {
 				color: $FourthColour;
-				font-size: $FontSizeLarge;
-				line-height: 2.3rem;
+				@include rem-fallback(font-size, $FontSizeLarge);
+				@include rem-fallback(line-height, 2.3rem);
 			}
 
 			.spotify-logo {
+				background-position: 43.2px 0;
 				background-position: 2.7rem 0;
 			}
 		}
@@ -318,15 +337,15 @@
 		margin-right: 0;
 		h1 {
 			text-align: center;
-			font-size: $HeadingFontSizeSmall;
-			line-height: $HeadingFontSizeSmall;
+			@include rem-fallback(font-size, $HeadingFontSizeSmall);
+			@include rem-fallback(line-height, $HeadingFontSizeSmall);
 		}
 	}
 
 	.money-raised {
 		position: relative;
 		float: right;
-		margin-bottom: 3rem;
+		@include rem-fallback(margin-bottom, 3rem);
 	}
 
 
@@ -359,8 +378,8 @@
 	}
 
 	.gutter, .margins {
-		padding-left: 1.2rem;
-		padding-right: 1.2rem;
+		@include rem-fallback(padding-left, 1.2rem);
+		@include rem-fallback(padding-right, 1.2rem);
 	}
 
 	.float-mobile-left {
@@ -391,33 +410,33 @@
 		margin-right: 0;
 		h1 {
 			text-align: center;
-			font-size: $HeadingFontSizeSmall;
-			line-height: $HeadingFontSizeSmall;
+			@include rem-fallback(font-size, $HeadingFontSizeSmall);
+			@include rem-fallback(line-height, $HeadingFontSizeSmall);
 		}
 	}
 
 	.money-raised {
-		width: 21rem;
-		height: 9.1rem;
-		background-size: 21rem;
+		@include rem-fallback(width, 21rem);
+		@include rem-fallback(height, 9.1rem);
+		@include rem-fallback(background-size, 21rem);
 		right: auto;
 	}
 
 	.raised-amount {
-		font-size: $HeadingFontSizeSmall;
-		width: 16rem;
-		margin-top: 0.6rem;
+		@include rem-fallback(font-size, $HeadingFontSizeSmall);
+		@include rem-fallback(width, 16rem);
+		@include rem-fallback(margin-top, 0.6rem);
 	}
 
 	.iframe-mobile {
-		height: 16.2rem;
+		@include rem-fallback(height, 16.2rem);
 	}
 
 	//***************************** General
 
 	.image-shift-details, .party-details, .wall-details {
 		margin-left: 0;
-		margin-top: 7.2rem;
+		@include rem-fallback(margin-top, 7.2rem);
 	}
 
 	.choose-file-wrapper:after {
