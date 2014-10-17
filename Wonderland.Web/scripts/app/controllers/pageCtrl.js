@@ -68,8 +68,8 @@ wonderlandApp.controller('PageCtrl', ['debounce', 'paf', 'safeApply', '$rootScop
         safeApply($scope, function () {
             $scope.pageFeedback.profileImageProcessing = false;
 
-            if (response && response.Success === true && response.Message) {
-                $scope.pageProfile.imageUrl = response.Message;
+            if (response && response.Success === true) {
+                $scope.pageProfile.imageUrl = response.Message || null;
                 $scope.pageFeedback.profileImageShowSuccess = true;
             } else {
                 $scope.pageFeedback.profileImageShowError = true;
