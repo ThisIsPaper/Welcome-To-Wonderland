@@ -29,12 +29,7 @@ namespace Wonderland.Logic.DotMailer
         {
             set
             {
-                this.contactData.Add(new ApiContactData()
-                    {
-                        Key = "Firstname",
-                        Value = value
-                    }
-                );
+                this.contactData.Add(new ApiContactData() { Key = "Firstname", Value = value } );
             }
         }
 
@@ -42,12 +37,7 @@ namespace Wonderland.Logic.DotMailer
         {
             set
             {
-                this.contactData.Add(new ApiContactData()
-                    {
-                        Key = "Lastname",
-                        Value = value
-                    }
-                );
+                this.contactData.Add(new ApiContactData() { Key = "Lastname", Value = value } );
             }
         }
 
@@ -55,12 +45,7 @@ namespace Wonderland.Logic.DotMailer
         {
             set
             {
-                this.contactData.Add(new ApiContactData()
-                    {
-                        Key = "Party_Date",
-                        Value = value
-                    }
-                );
+                this.contactData.Add(new ApiContactData() { Key = "Party_Date", Value = value } );
             }
         }
 
@@ -68,12 +53,7 @@ namespace Wonderland.Logic.DotMailer
         {
             set
             {
-                this.contactData.Add(new ApiContactData()
-                    {
-                        Key = "Party_Time",
-                        Value = value
-                    }
-                );
+                this.contactData.Add(new ApiContactData() { Key = "Party_Time", Value = value } );
             }
         }
 
@@ -81,12 +61,7 @@ namespace Wonderland.Logic.DotMailer
         {
             set
             {
-                this.contactData.Add(new ApiContactData()
-                    {
-                        Key = "Partier_Type",
-                        Value = value
-                    }
-                );
+                this.contactData.Add(new ApiContactData() { Key = "Partier_Type", Value = value } );
             }
         }
 
@@ -105,12 +80,7 @@ namespace Wonderland.Logic.DotMailer
         {
             set
             {
-                this.contactData.Add(new ApiContactData()
-                    {
-                        Key = "Party_Url_Identifier",
-                        Value = value
-                    }
-                );
+                this.contactData.Add(new ApiContactData() { Key = "Party_Url_Identifier", Value = value } );
             }
         }
 
@@ -118,12 +88,7 @@ namespace Wonderland.Logic.DotMailer
         {
             set
             {
-                this.contactData.Add(new ApiContactData()
-                    {
-                        Key = "Guest_Count",
-                        Value = value
-                    }
-                );
+                this.contactData.Add(new ApiContactData() { Key = "Guest_Count", Value = value } );
             }
         }
 
@@ -131,12 +96,7 @@ namespace Wonderland.Logic.DotMailer
         {
             set
             {
-                this.contactData.Add(new ApiContactData()
-                    {
-                        Key = "Donation_Amount",
-                        Value = value
-                    }
-                );
+                this.contactData.Add(new ApiContactData() { Key = "Donation_Amount", Value = value } );
             }
         }
 
@@ -144,12 +104,7 @@ namespace Wonderland.Logic.DotMailer
         {
             set
             {
-                this.contactData.Add(new ApiContactData()
-                    {
-                        Key = "Party_Page_Complete",
-                        Value = value
-                    }
-                );
+                this.contactData.Add(new ApiContactData() { Key = "Party_Page_Complete", Value = value } );
             }
         }
 
