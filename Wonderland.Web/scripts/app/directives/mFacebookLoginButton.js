@@ -1,4 +1,4 @@
-wonderlandApp.directive('mFacebookLoginButton', ['facebook', function (facebook) {
+wonderlandApp.directive('mFacebookLoginButton', ['facebook', 'mHttp', function (facebook, mHttp) {
 
     return {
 
@@ -21,12 +21,13 @@ wonderlandApp.directive('mFacebookLoginButton', ['facebook', function (facebook)
             '</div>' +
             '</div>',
 
-        link: function (scope) {
+        link: function (scope, element, attrs) {
 
             scope.loading = false;
             scope.formattedDetails = null;
 
-            var fbStatus = null,
+            var loginUrl = attrs['loginUrl'],
+                fbStatus = null,
                 fbLogin = null,
                 fbDetails = null,
                 getUserDetails = function () {
@@ -36,6 +37,29 @@ wonderlandApp.directive('mFacebookLoginButton', ['facebook', function (facebook)
                         scope.loading = false;
                         formatUserDetails();
                     });
+                },
+                loginToServer = function () {
+
+                    if (!loginUrl) {
+                        return;
+                    }
+
+                    var auth = facebook.authenticationDetails().authResponse;
+                    console.log('LOGIN', loginUrl, auth);
+                    var serverLogin = mHttp.post(loginUrl, {
+                        data: {
+                            'accessToken': auth.accessToken,
+                            'userId': auth.userID,
+                            'signedRequest': auth.signedRequest
+                        },
+                        headers: {
+                            'Content-Type': 'application/json'
+                        }
+                    });
+                    serverLogin.then(function (response) {
+                        console.log('BANG', response);
+                    });
+
                 },
                 formatUserDetails = function () {
                     var deets = [];
@@ -70,21 +94,17 @@ wonderlandApp.directive('mFacebookLoginButton', ['facebook', function (facebook)
                 scope.loading = true;
 
                 fbStatus.then(function (status) {
-                    if (status !== 'connected') {
-                        // login
-                        fbLogin = facebook.doLogin();
-                        fbLogin.then(function (newStatus) {
+                    fbLogin = facebook.doLogin();
+                    fbLogin.then(function (newStatus) {
 
-                            if (newStatus !== 'connected') {
-                                scope.loading = false;
-                            } else {
-                                getUserDetails();
-                            }
+                        if (newStatus !== 'connected') {
+                            scope.loading = false;
+                        } else {
 
-                        });
-                    } else { // already authorized
-                        getUserDetails();
-                    }
+                            loginToServer();
+                        }
+
+                    });
                 });
             };
 
