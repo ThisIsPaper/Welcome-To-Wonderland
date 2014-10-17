@@ -1,3 +1,5 @@
+@import "mixins";
+
 //////////////////////////
 //
 //  Legacy | Sam
@@ -9,7 +11,7 @@ a {
 }
 
 ul, ol, dl {
-  padding-left: ($PaddingLarge * $Multiplier);
+  @include rem-fallback(padding-left, ($PaddingLarge * $Multiplier));
   @extend %normal-margin-top-bottom;
 }
 
@@ -127,11 +129,11 @@ ul, ol, dl {
 h1 {
     font-family: 'macmillan';
     color: $FourthColour;
-    font-size: $HeadingFontSizeLarge;
+    @include rem-fallback(font-size, $HeadingFontSizeLarge);
     margin: 0;
     width: 100%;
     text-align: center;
-    line-height: 4.2rem;
+    @include rem-fallback(line-height, 4.2rem);
 
     &.lighter, .lighter {
         color: $greenDark;
@@ -139,7 +141,7 @@ h1 {
 
     &.bigger, .bigger {
         font-size: $HeadingFontSizeExtraLarge;
-        line-height: 5.5rem;
+        @include rem-fallback(line-height, 5.5rem);
     }
 
     &.secondary, .secondary {
@@ -147,8 +149,8 @@ h1 {
     }
 
     &.smaller, .smaller {
-        font-size: $FontSizeLarge;
-        line-height: 2.3rem;
+        @include rem-fallback(font-size, $FontSizeLarge);
+        @include rem-fallback(line-height, 2.3rem);
     }
 
     &.error {
@@ -162,24 +164,33 @@ h1 {
 h2 {
     font-family: 'macmillan';
     color: $SecondaryColour;
-    font-size: $FontSizeMedium;
-    margin: .5rem 0;
+    @include rem-fallback(font-size, $FontSizeMedium);
+    @include rem-fallback(margin-top, .5rem);
+    @include rem-fallback(margin-bottom, .5rem);
+	margin-left: 0;
+	margin-right: 0;
 }
 
 h3 {
     color: $FourthColour;
-    font-size: $FontSizeLarge;
-    margin: 2rem 0;
+    @include rem-fallback(font-size, $FontSizeLarge);
+    @include rem-fallback(margin-top, 2rem);
+    @include rem-fallback(margin-bottom, 2rem);
+	margin-left: 0;
+	margin-right: 0;
     font-weight: bold;
-    line-height: 2.6rem;
+    @include rem-fallback(line-height, 2.6rem);
 }
 
 h4 {
     color: $greyReallyDark;
-    font-size: $FontSizeLarge;
-    margin: 2rem 0;
+    @include rem-fallback(font-size, $FontSizeLarge);
+    @include rem-fallback(margin-top, 2rem);
+    @include rem-fallback(margin-bottom, 2rem);
+	margin-left: 0;
+	margin-right: 0;
     font-weight: bold;
-	line-height: 2.6rem;
+	@include rem-fallback(line-height, 2.6rem);
 
     span {
         color: $greyDark;
@@ -204,8 +215,12 @@ h3, h4 {
 
 hr {
     border: none;
+    border-bottom: 1px solid $greyReallyLight;
     border-bottom: .1rem solid $greyReallyLight;
-    margin: $padSmallValue 0;
+    @include rem-fallback(margin-top, $padSmallValue);
+    @include rem-fallback(margin-bottom, $padSmallValue);
+	margin-left: 0;
+	margin-right: 0;
 }
 
 .back {

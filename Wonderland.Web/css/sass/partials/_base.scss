@@ -1,16 +1,3 @@
-/*------------------------------------------------------------------------------------------------------------------------
- @author: Sam Latif
- @www: http://www.samlatif.co.uk
- @github: samlatif
-
- @twitter: samlatifuk
-
- @copyright: COPYRIGHT 8-21-2014 On behalf of Paper Partnerships Ltd
- =============================================================================
- Filename: _base.scss
- =============================================================================
- This file is responsible for establishing base styles for the Macmillan - Wonderland app.
- --------------------------------------------------------------------------------------------------------------------- */
 @import "compass/css3";
 @import "variables";
 @import "helpers";
@@ -18,11 +5,8 @@
 @import "mixins";
 @import "forms";
 @import "type";
-@import "vars";
 
-html {
-	font-size: 62.5%;
-}
+
 
 body {
 	color: $greyReallyDark;
@@ -73,7 +57,7 @@ Shadows
 images
 ========================================================================== */
 img, object, embed {
-	@include rem-fallback(max-width, $RowWidth);
+	@include rem-fallback(max-width, 100%);
 	margin: 0;
 	padding: 0;
 	display: block;
@@ -529,9 +513,10 @@ One-off uses
 // home page
 
 .hero {
+	@extend %clearfix;
 	@include rem-fallback(height, 45rem);
 	background-image: image-url('hero-ph.jpg');
-	-pie-background: image-url('hero-ph.jpg');
+	-pie-background-image: image-url('hero-ph.jpg');
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
@@ -593,6 +578,8 @@ One-off uses
 	background-size: cover;
 	height: 100%;
 	width: 100%;
+
+	behavior: stylesheet-url('PIE.htc');
 }
 
 .home-tile-label {

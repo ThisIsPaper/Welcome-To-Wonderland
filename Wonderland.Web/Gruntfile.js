@@ -80,8 +80,19 @@ module.exports = function (grunt) {
                                  }
                              }
                          },
+                         remfallback: {
+                             options: {
+                                 replace: true
+                             },
+                             replaced_rem: {
+                                 files: {
+                                     '<%= pkg.cssPath %>main_rem_fallback.css': ['<%= pkg.cssPath %>main.css'],
+                                     '<%= pkg.cssPath %>overrides_rem_fallback.css': ['<%= pkg.cssPath %>overrides.css']
+                                 }
+                             }
+                         },
                          cssmin: {
-                             add_banner_and_min: {
+                             main: {
                                  options: {
                                      keepSpecialComments: 0,
                                      banner: '/* <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */'
@@ -95,6 +106,23 @@ module.exports = function (grunt) {
                                          '<%= pkg.cssPath %>overrides.css'
                                      ]
                                  }
+                             },
+                             ie: {
+                                 options: {
+                                     compatibility: 'ie7',
+                                     keepSpecialComments: 0,
+                                     banner: '/* <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */'
+                                 },
+                                 files: {
+                                     '<%= pkg.cssPath %>all_ie.min.css': [
+                                         '<%= pkg.cssPath %>main_rem_fallback.css',
+                                         '<%= pkg.jsPath %>bower_components/ocModal/dist/css/ocModal.full.css',
+                                         '<%= pkg.jsPath %>bower_components/pikaday/css/pikaday.css',
+                                         '<%= pkg.jsPath %>bower_components/angular-macgyver/lib/macgyver.css',
+                                         '<%= pkg.cssPath %>overrides_rem_fallback.css',
+                                         '<%= pkg.cssPath %>ie8.css'
+                                     ]
+                                 }
                              }
                          }
                      });
@@ -102,6 +130,7 @@ module.exports = function (grunt) {
     // Load the plugin that provides the "uglify" task.
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
+    grunt.loadNpmTasks('grunt-remfallback');
 
     // Default task(s).
     grunt.registerTask('default', ['uglify']);

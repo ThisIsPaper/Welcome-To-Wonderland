@@ -149,7 +149,7 @@
 	}
 
 	.logo {
-		@include rem-fallback(topl, -16rem);
+		@include rem-fallback(top, -16rem);
 	}
 
 	.logo-ribbon, .site-header.compress .logo-ribbon {

@@ -3,14 +3,15 @@ overrides
 ========================================================================== */
 @import "partials/mixins";
 @import "partials/variables";
-@import "partials/vars";
+
 
 .modal-backdrop {
 	background-color: black !important;
 }
 
 .modal .modal-dialog .modal-content {
-	padding: $padSmallValue * $multiplierLarge;
+	@include rem-fallback(padding, $padSmallValue * $multiplierLarge);
+	@include m-border-radius(26.24px, 17.6px, 14.4px, 12.8px, 14.4px, 22.4px, 14.4px, 20.8px, 2);
 	@include m-border-radius(1.64rem, 1.1rem, .9rem, .8rem, .9rem, 1.4rem, .9rem, 1.3rem, 2);
 	width: auto;
 }
@@ -52,13 +53,13 @@ overrides
 .is-today .pika-button {
     color: $SecondaryColour;
 	background: $greyReallyLight;
-    border-radius: 2rem;
+    @include rem-fallback(border-radius, 2rem);
 }
 
 .is-selected .pika-button {
     background: $PrimaryColour;
     box-shadow: none;
-    border-radius: 2rem;
+    @include rem-fallback(border-radius, 2rem);
 }
 
 .is-disabled .pika-button {
@@ -69,5 +70,6 @@ overrides
 	color: $SecondaryColour !important;
     background: $greyReallyLight !important;
     box-shadow: none !important;
+    border-radius: 32px !important;
     border-radius: 2rem !important;
 }

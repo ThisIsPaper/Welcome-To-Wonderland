@@ -1,5 +1,6 @@
 @import "compass/css3/transition";
-
+@import "_mixins";
+@import "_variables";
 
 
 .site-header {
@@ -17,46 +18,71 @@
     width: 100%;
     background: #fff;
     position: relative;
-    min-height: 6.6rem;
+    @include rem-fallback(min-height, 6.6rem);
 }
 
 .logo {
     position: absolute;
+	zoom: 1;
     background: image-url('wonderland-crest.svg') no-repeat;
-    top: 1rem;
+	-pie-background: image-url('wonderland-crest.png') no-repeat;
+    @include rem-fallback(top, 1rem);
     left: 50%;
-    padding: 7.65rem 5.45rem;
-    margin: 0 -5.45rem;
+
+	@include rem-fallback(padding-top, 7.65rem);
+	@include rem-fallback(padding-bottom, 7.65rem);
+	@include rem-fallback(padding-left, 5.45rem);
+	@include rem-fallback(padding-right, 5.45rem);
+
+	margin-top: 0;
+	margin-bottom: 0;
+	@include rem-fallback(margin-left, -5.45rem);
+	@include rem-fallback(margin-right, -5.45rem);
 
     @include transition(top .3s linear 0);
+
+	behavior: stylesheet-url('PIE.htc');
 }
 
 .logo-ribbon {
     position: absolute;
+	zoom: 1;
     background: image-url('wonderland-logo.svg') no-repeat center;
-    padding: 1.95rem 9.6rem;
-    margin: 2rem -9.6rem;
+	-pie-background: image-url('wonderland-logo.png') no-repeat center;
+
+	@include rem-fallback(padding-top, 1.95rem);
+	@include rem-fallback(padding-bottom, 1.95rem);
+	@include rem-fallback(padding-left, 9.6rem);
+	@include rem-fallback(padding-right, 9.6rem);
+
+	@include rem-fallback(margin-top, 2rem);
+	@include rem-fallback(margin-bottom, 2rem);
+	@include rem-fallback(margin-left, -9.6rem);
+	@include rem-fallback(margin-right, -9.6rem);
+
     z-index: 1;
+
+	behavior: stylesheet-url('PIE.htc');
 }
 
 .logo-copy {
     position: absolute;
-    text-indent: -999rem;
+    @include rem-fallback(text-indent, -999rem);
 }
 
 .menu li a {
     text-transform: uppercase;
-    font-size: 1.4rem;
+    @include rem-fallback(font-size, 1.4rem);
     font-weight: bold;
     color: #007eac;
     cursor: pointer;
-    line-height: 8.4rem;
-    letter-spacing: .2rem;
+    @include rem-fallback(line-height, 8.4rem);
+    @include rem-fallback(letter-spacing, .2rem);
 
     &.selected {
         @extend .radius-v1-small;
         background-color: $blueLight;
-        padding: $padSmallValue;
+        @include rem-fallback(padding, $padSmallValue);
     }
 
     @include transition(line-height .3s linear 0);
@@ -86,11 +112,11 @@
 
 .left-side ul {
     float: right;
-    margin-right: 6.65rem;
+    @include rem-fallback(margin-right, 6.65rem);
 }
 
 .right-side ul {
-    margin-left: 6.65rem;
+    @include rem-fallback(margin-left, 6.65rem);
 }
 
 .logo-ribbon, .menu ul {
@@ -98,20 +124,23 @@
 }
 
 .menu li {
-    margin: 0 1.2rem;
+    margin-top: 0;
+    margin-bottom: 0;
+	@include rem-fallback(margin-left, 1.2rem);
+	@include rem-fallback(margin-right, 1.2rem);
     padding: 0;
 }
 
 .snow-brush-overlay {
     width: 100%;
     background: image-url('header_texture.png') repeat center;
-    padding-top: 1.2rem;
+    @include rem-fallback(padding-top, 1.2rem);
 }
 
 .nav-end-block {
     position: absolute;
-    top: 2.5rem;
-    left: 2rem;
+    @include rem-fallback(top, 2.5rem);
+    @include rem-fallback(left, 2rem);
     z-index: 3;
 
     @include transition(top .3s linear 0);
@@ -119,7 +148,7 @@
 
 .nav-end-block.end-block-right {
     left: auto;
-    right: 2rem;
+    @include rem-fallback(right, 2rem);
 }
 
 .nav-burger, .nav-account {
@@ -129,8 +158,8 @@
 
 .account-menu-holder {
     position: absolute;
-    right: .8rem;
-    top: 2.3rem;
+    @include rem-fallback(right, .8rem);
+    @include rem-fallback(top, 2.3rem);
     z-index: 10;
     @include transition(top .3s linear 0);
 }
@@ -138,10 +167,11 @@
 .account-menu {
     display: none;
     position: absolute;
-    top: 4.7rem;
+    @include rem-fallback(top, 4.7rem);
     right: 0;
-    width: 17rem;
+    @include rem-fallback(width, 17rem);
     background-color: $greyReallyDark;
+    @include border-radius(11.2px);
     @include border-radius(.7rem);
 
 
@@ -156,20 +186,23 @@
         span[class^="icon-"]:before, span[class*=" icon-"]:before {
             color: $greyMedium;
 
-            width: 3.5rem;
+            @include rem-fallback(width, 3.5rem);
             float: left;
-            line-height: 4.4rem;
-            font-size: $FontSizeLarge;
+            @include rem-fallback(line-height, 4.4rem);
+            @include rem-fallback(font-size, $FontSizeLarge);
             text-align: center;
         }
 
         a {
             color: $greyReallyLight;
-            letter-spacing: .1rem;
-            padding: 0 $padSmallValue;
+            @include rem-fallback(letter-spacing, .1rem);
+			padding-top: 0;
+			padding-bottom: 0;
+			@include rem-fallback(padding-left, $padSmallValue);
+			@include rem-fallback(padding-right, $padSmallValue);
             text-transform: uppercase;
-            font-size: $FontSizeSmall;
-            line-height: 4.4rem;
+            @include rem-fallback(font-size, $FontSizeSmall);
+            @include rem-fallback(line-height, 4.4rem);
             display: block;
             width: 100%;
             float: left;
@@ -192,10 +225,15 @@
 
 .arrow-up {
     position: absolute;
-    top: -1rem;
-    right: 2.5rem;
+    @include rem-fallback(top, -1rem);
+    @include rem-fallback(right, 2.5rem);
 	width: 0;
 	height: 0;
+
+	border-left: 16px solid transparent;
+	border-right: 16px solid transparent;
+	border-bottom: 16px solid $greyReallyDark;
+
 	border-left: 1rem solid transparent;
 	border-right: 1rem solid transparent;
 	border-bottom: 1rem solid $greyReallyDark;
@@ -204,17 +242,17 @@
 
 .account-name {
     float: left;
-    line-height: 4.2rem;
-    margin-left: 0.6rem;
-    font-size: $FontSizeSmall;
+    @include rem-fallback(line-height, 4.2rem);
+    @include rem-fallback(margin-left, 0.6rem);
+    @include rem-fallback(font-size, $FontSizeSmall);
     font-weight: bold;
-    letter-spacing: .1rem;
+    @include rem-fallback(letter-spacing, .1rem);
     text-transform: uppercase;
     cursor: pointer;
     color: $SecondaryColour;
 
     span[class^="icon-"]:before, span[class*=" icon-"]:before {
-        font-size: .7rem;
+        @include rem-fallback(font-size, .7rem);
         color: $greyLight;
     }
 }
@@ -224,30 +262,30 @@
 /* COMPRESSED VIEW  */
 /********************/
 .site-header.compress .logo {
-    top: -16rem;
+    @include rem-fallback(top, -16rem);
 }
 
 .site-header.compress .logo-ribbon {
-    margin-top: 9.7rem;
+    @include rem-fallback(margin-top, 9.7rem);
 }
 
 .site-header.compress .left-side ul {
-    margin-right: 10.8rem;
+    @include rem-fallback(margin-right, 10.8rem);
 }
 
 .site-header.compress .right-side ul {
-    margin-left: 10.8rem;
+    @include rem-fallback(margin-left, 10.8rem);
 }
 
 .site-header.compress .menu li a {
-    line-height: 6.6rem;
+    @include rem-fallback(line-height, 6.6rem);
 }
 
 .site-header.compress .nav-end-block {
-    top: 1.6rem;
+    @include rem-fallback(top, 1.6rem);
 }
 .site-header.compress .account-menu-holder {
-    top: 1.3rem;
+    @include rem-fallback(top, 1.3rem);
 }
 
 footer {
@@ -257,11 +295,11 @@ footer {
 
 footer [class*="grid-"] {
 
-    margin-bottom: 2rem;
+    @include rem-fallback(margin-bottom, 2rem);
 
     @include gridle_state(mobile) {
 
-        margin-bottom: 4rem;
+        @include rem-fallback(margin-bottom, 4rem);
 
     }
 }
@@ -278,7 +316,7 @@ footer [class*="grid-"] {
 
 .footer-menu li a {
     text-transform: uppercase;
-    font-size: $FontSizeSmall;
+    @include rem-fallback(font-size, $FontSizeSmall);
     font-weight: bold;
     color: #007eac;
     cursor: pointer;
@@ -291,15 +329,15 @@ footer [class*="grid-"] {
 
 .footer-menu.single-line li {
     float: left;
-    margin-right: 1rem;
+    @include rem-fallback(margin-right, 1rem);
 }
 
 .footer-menu.single-line li a {
-    font-size: $FontSizeMini;
+    @include rem-fallback(font-size, $FontSizeMini);
 }
 
 .footer-menu.single-line.icon-list li a {
-    font-size: $HeadingFontSizeLarge;
+    @include rem-fallback(font-size, $HeadingFontSizeLarge);
     text-decoration: none;
 }
 
@@ -310,7 +348,7 @@ footer [class*="grid-"] {
 .footer-snow-brush-overlay {
   @extend %row-width;
   background: image-url('footer_texture.png') repeat-x center;
-  padding-top: 1.2rem;
-  height: 4rem;
-  margin-top: -4rem;
+  @include rem-fallback(padding-top, 1.2rem);
+  @include rem-fallback(height, 4rem);
+  @include rem-fallback(margin-top, -4rem);
 }
