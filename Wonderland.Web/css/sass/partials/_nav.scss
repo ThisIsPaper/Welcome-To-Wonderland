@@ -2,231 +2,233 @@
 @import "_mixins";
 @import "_variables";
 
-
 .site-header {
-    position: fixed;
-    width: 100%;
-    z-index: 999;
-    left: 0;
+	position: fixed;
+	width: 100%;
+	z-index: 999;
+	left: 0;
 
-    @include transition-property(left);
-    @include transition-duration(.2s);
-    @include transition-timing-function(ease-in-out);
+	@include transition-property(left);
+	@include transition-duration(.2s);
+	@include transition-timing-function(ease-in-out);
 }
 
 .nav {
-    width: 100%;
-    background: #fff;
-    position: relative;
-    @include rem-fallback(min-height, 6.6rem);
+	width: 100%;
+	background: #fff;
+	position: relative;
+	@include rem-fallback(min-height, 6.6rem);
 }
 
-.logo {
-    position: absolute;
+.nav-logo-holder {
+	position: absolute;
+	left: 50%;
+	top: 0;
+}
+
+.nav-logo {
+	position: absolute;
+	left: -5.45rem;
+	top: 0;
+
+	span {
+		display: block;
+		text-indent: -999rem;
+	}
+}
+
+.crest {
+	position: absolute;
+	left: 0;
+	top: 2rem;
+	width: 10.9rem;
+	overflow: hidden;
+	height: 15.3rem;
+
 	zoom: 1;
-    background: image-url('wonderland-crest.svg') no-repeat;
+
+	background: image-url('wonderland-crest.svg') no-repeat;
 	-pie-background: image-url('wonderland-crest.png') no-repeat;
-    @include rem-fallback(top, 1rem);
-    left: 50%;
 
-	@include rem-fallback(padding-top, 7.65rem);
-	@include rem-fallback(padding-bottom, 7.65rem);
-	@include rem-fallback(padding-left, 5.45rem);
-	@include rem-fallback(padding-right, 5.45rem);
-
-	margin-top: 0;
-	margin-bottom: 0;
-	@include rem-fallback(margin-left, -5.45rem);
-	@include rem-fallback(margin-right, -5.45rem);
-
-    @include transition(top .3s linear 0);
+	@include transition(top .3s linear 0);
 
 	behavior: stylesheet-url('PIE.htc');
 }
 
-.logo-ribbon {
-    position: absolute;
+.banner {
+	position: absolute;
+	left: 0;
+	top: 12rem;
+	width: 19.2rem;
+	height: 3.9rem;
+	overflow: hidden;
+
 	zoom: 1;
-    background: image-url('wonderland-logo.svg') no-repeat center;
+
+	background: image-url('wonderland-logo.svg') no-repeat center;
 	-pie-background: image-url('wonderland-logo.png') no-repeat center;
 
-	@include rem-fallback(padding-top, 1.95rem);
-	@include rem-fallback(padding-bottom, 1.95rem);
-	@include rem-fallback(padding-left, 9.6rem);
-	@include rem-fallback(padding-right, 9.6rem);
-
-	@include rem-fallback(margin-top, 2rem);
-	@include rem-fallback(margin-bottom, 2rem);
-	@include rem-fallback(margin-left, -9.6rem);
-	@include rem-fallback(margin-right, -9.6rem);
-
-    z-index: 1;
+	@include transition(top .3s linear 0);
 
 	behavior: stylesheet-url('PIE.htc');
-}
-
-.logo-copy {
-    position: absolute;
-    @include rem-fallback(text-indent, -999rem);
 }
 
 .menu li a {
-    text-transform: uppercase;
-    @include rem-fallback(font-size, 1.4rem);
-    font-weight: bold;
-    color: #007eac;
-    cursor: pointer;
-    @include rem-fallback(line-height, 8.4rem);
-    @include rem-fallback(letter-spacing, .2rem);
+	text-transform: uppercase;
+	@include rem-fallback(font-size, 1.4rem);
+	font-weight: bold;
+	color: #007eac;
+	cursor: pointer;
+	@include rem-fallback(line-height, 8.4rem);
+	@include rem-fallback(letter-spacing, .2rem);
 
-    &.selected {
-        @extend .radius-v1-small;
-        background-color: $blueLight;
-        @include rem-fallback(padding, $padSmallValue);
-    }
+	&.selected {
+		@extend .radius-v1-small;
+		background-color: $blueLight;
+		@include rem-fallback(padding, $padSmallValue);
+	}
 
-    @include transition(line-height .3s linear 0);
+	@include transition(line-height .3s linear 0);
 }
 
 .menu li a:hover {
-    color: #006593;
-    text-decoration: underline;
+	color: #006593;
+	text-decoration: underline;
 }
 
 .menu li span[class^="icon-"]:before, .menu li span[class*=" icon-"]:before {
-    display: none;
+	display: none;
 }
 
 .menu {
-    width: 50%;
+	width: 50%;
 
-    .side-only {
-        display: none;
-    }
+	.side-only {
+		display: none;
+	}
 
 }
 
 .right-side {
-    float: right;
+	float: right;
 }
 
 .left-side ul {
-    float: right;
-    @include rem-fallback(margin-right, 6.65rem);
+	float: right;
+	@include rem-fallback(margin-right, 6.65rem);
 }
 
 .right-side ul {
-    @include rem-fallback(margin-left, 6.65rem);
+	@include rem-fallback(margin-left, 6.65rem);
 }
 
 .logo-ribbon, .menu ul {
-    @include transition(margin .3s linear 0);
+	@include transition(margin .3s linear 0);
 }
 
 .menu li {
-    margin-top: 0;
-    margin-bottom: 0;
+	margin-top: 0;
+	margin-bottom: 0;
 	@include rem-fallback(margin-left, 1.2rem);
 	@include rem-fallback(margin-right, 1.2rem);
-    padding: 0;
+	padding: 0;
 }
 
 .snow-brush-overlay {
-    width: 100%;
-    background: image-url('header_texture.png') repeat center;
-    @include rem-fallback(padding-top, 1.2rem);
+	width: 100%;
+	background: image-url('header_texture.png') repeat center;
+	@include rem-fallback(padding-top, 1.2rem);
 }
 
 .nav-end-block {
-    position: absolute;
-    @include rem-fallback(top, 2.5rem);
-    @include rem-fallback(left, 2rem);
-    z-index: 3;
+	position: absolute;
+	@include rem-fallback(top, 2.5rem);
+	@include rem-fallback(left, 2rem);
+	z-index: 3;
 
-    @include transition(top .3s linear 0);
+	@include transition(top .3s linear 0);
 }
 
 .nav-end-block.end-block-right {
-    left: auto;
-    @include rem-fallback(right, 2rem);
+	left: auto;
+	@include rem-fallback(right, 2rem);
 }
 
 .nav-burger, .nav-account {
-    display: none;
-    cursor: pointer;
+	display: none;
+	cursor: pointer;
 }
 
 .account-menu-holder {
-    position: absolute;
-    @include rem-fallback(right, .8rem);
-    @include rem-fallback(top, 2.3rem);
-    z-index: 10;
-    @include transition(top .3s linear 0);
+	position: absolute;
+	@include rem-fallback(right, .8rem);
+	@include rem-fallback(top, 2.3rem);
+	z-index: 10;
+	@include transition(top .3s linear 0);
 }
 
 .account-menu {
-    display: none;
-    position: absolute;
-    @include rem-fallback(top, 4.7rem);
-    right: 0;
-    @include rem-fallback(width, 17rem);
-    background-color: $greyReallyDark;
-    @include border-radius(11.2px);
-    @include border-radius(.7rem);
+	display: none;
+	position: absolute;
+	@include rem-fallback(top, 4.7rem);
+	right: 0;
+	@include rem-fallback(width, 17rem);
+	background-color: $greyReallyDark;
+	@include border-radius(11.2px);
+	@include border-radius(.7rem);
 
+	ul {
+		padding: 0;
+		margin: 0;
+	}
 
-    ul {
-        padding: 0;
-        margin: 0;
-    }
+	li {
+		list-style: none;
 
-    li {
-        list-style: none;
+		span[class^="icon-"]:before, span[class*=" icon-"]:before {
+			color: $greyMedium;
 
-        span[class^="icon-"]:before, span[class*=" icon-"]:before {
-            color: $greyMedium;
+			@include rem-fallback(width, 3.5rem);
+			float: left;
+			@include rem-fallback(line-height, 4.4rem);
+			@include rem-fallback(font-size, $FontSizeLarge);
+			text-align: center;
+		}
 
-            @include rem-fallback(width, 3.5rem);
-            float: left;
-            @include rem-fallback(line-height, 4.4rem);
-            @include rem-fallback(font-size, $FontSizeLarge);
-            text-align: center;
-        }
-
-        a {
-            color: $greyReallyLight;
-            @include rem-fallback(letter-spacing, .1rem);
+		a {
+			color: $greyReallyLight;
+			@include rem-fallback(letter-spacing, .1rem);
 			padding-top: 0;
 			padding-bottom: 0;
 			@include rem-fallback(padding-left, $padSmallValue);
 			@include rem-fallback(padding-right, $padSmallValue);
-            text-transform: uppercase;
-            @include rem-fallback(font-size, $FontSizeSmall);
-            @include rem-fallback(line-height, 4.4rem);
-            display: block;
-            width: 100%;
-            float: left;
-            border-bottom: 1px solid $greyDark;
+			text-transform: uppercase;
+			@include rem-fallback(font-size, $FontSizeSmall);
+			@include rem-fallback(line-height, 4.4rem);
+			display: block;
+			width: 100%;
+			float: left;
+			border-bottom: 1px solid $greyDark;
 
-            &.last {
-                border-bottom: none;
-            }
+			&.last {
+				border-bottom: none;
+			}
 
-            &:hover {
-                color: white;
-            }
-        }
-    }
+			&:hover {
+				color: white;
+			}
+		}
+	}
 
-    &.opened {
-        display: block;
-    }
+	&.opened {
+		display: block;
+	}
 }
 
 .arrow-up {
-    position: absolute;
-    @include rem-fallback(top, -1rem);
-    @include rem-fallback(right, 2.5rem);
+	position: absolute;
+	@include rem-fallback(top, -1rem);
+	@include rem-fallback(right, 2.5rem);
 	width: 0;
 	height: 0;
 
@@ -239,116 +241,115 @@
 	border-bottom: 1rem solid $greyReallyDark;
 }
 
-
 .account-name {
-    float: left;
-    @include rem-fallback(line-height, 4.2rem);
-    @include rem-fallback(margin-left, 0.6rem);
-    @include rem-fallback(font-size, $FontSizeSmall);
-    font-weight: bold;
-    @include rem-fallback(letter-spacing, .1rem);
-    text-transform: uppercase;
-    cursor: pointer;
-    color: $SecondaryColour;
+	float: left;
+	@include rem-fallback(line-height, 4.2rem);
+	@include rem-fallback(margin-left, 0.6rem);
+	@include rem-fallback(font-size, $FontSizeSmall);
+	font-weight: bold;
+	@include rem-fallback(letter-spacing, .1rem);
+	text-transform: uppercase;
+	cursor: pointer;
+	color: $SecondaryColour;
 
-    span[class^="icon-"]:before, span[class*=" icon-"]:before {
-        @include rem-fallback(font-size, .7rem);
-        color: $greyLight;
-    }
+	span[class^="icon-"]:before, span[class*=" icon-"]:before {
+		@include rem-fallback(font-size, .7rem);
+		color: $greyLight;
+	}
 }
-
 
 /********************/
 /* COMPRESSED VIEW  */
 /********************/
-.site-header.compress .logo {
-    @include rem-fallback(top, -16rem);
+.site-header.compress .crest {
+	@include rem-fallback(top, -16rem);
 }
 
-.site-header.compress .logo-ribbon {
-    @include rem-fallback(margin-top, 9.7rem);
+.site-header.compress .banner {
+	@include rem-fallback(margin-top, -10.5rem);
 }
 
 .site-header.compress .left-side ul {
-    @include rem-fallback(margin-right, 10.8rem);
+	@include rem-fallback(margin-right, 10.8rem);
 }
 
 .site-header.compress .right-side ul {
-    @include rem-fallback(margin-left, 10.8rem);
+	@include rem-fallback(margin-left, 10.8rem);
 }
 
 .site-header.compress .menu li a {
-    @include rem-fallback(line-height, 6.6rem);
+	@include rem-fallback(line-height, 6.6rem);
 }
 
 .site-header.compress .nav-end-block {
-    @include rem-fallback(top, 1.6rem);
+	@include rem-fallback(top, 1.6rem);
 }
+
 .site-header.compress .account-menu-holder {
-    @include rem-fallback(top, 1.3rem);
+	@include rem-fallback(top, 1.3rem);
 }
 
 footer {
-    z-index: 998;
-    color: #666666;
+	z-index: 998;
+	color: #666666;
 }
 
 footer [class*="grid-"] {
 
-    @include rem-fallback(margin-bottom, 2rem);
+	@include rem-fallback(margin-bottom, 2rem);
 
-    @include gridle_state(mobile) {
+	@include gridle_state(mobile) {
 
-        @include rem-fallback(margin-bottom, 4rem);
+		@include rem-fallback(margin-bottom, 4rem);
 
-    }
+	}
 }
 
 .footer-menu ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
 
-    &:after {
-        clear: both;
-    }
+	&:after {
+		clear: both;
+	}
 }
 
 .footer-menu li a {
-    text-transform: uppercase;
-    @include rem-fallback(font-size, $FontSizeSmall);
-    font-weight: bold;
-    color: #007eac;
-    cursor: pointer;
+	text-transform: uppercase;
+	@include rem-fallback(font-size, $FontSizeSmall);
+	font-weight: bold;
+	color: #007eac;
+	cursor: pointer;
 }
 
 .footer-menu li a:hover {
-    color: #006593;
-    text-decoration: underline;
+	color: #006593;
+	text-decoration: underline;
 }
 
 .footer-menu.single-line li {
-    float: left;
-    @include rem-fallback(margin-right, 1rem);
+	float: left;
+	@include rem-fallback(margin-right, 1rem);
 }
 
 .footer-menu.single-line li a {
-    @include rem-fallback(font-size, $FontSizeMini);
+	@include rem-fallback(font-size, $FontSizeMini);
 }
 
 .footer-menu.single-line.icon-list li a {
-    @include rem-fallback(font-size, $HeadingFontSizeLarge);
-    text-decoration: none;
+	@include rem-fallback(font-size, $HeadingFontSizeLarge);
+	text-decoration: none;
 }
 
 .footer-menu.single-line.icon-list li a span {
-    display: none;
+	display: none;
 }
 
 .footer-snow-brush-overlay {
-  @extend %row-width;
-  background: image-url('footer_texture.png') repeat-x center;
-  @include rem-fallback(padding-top, 1.2rem);
-  @include rem-fallback(height, 4rem);
-  @include rem-fallback(margin-top, -4rem);
+	@extend %row-width;
+	background: image-url('footer_texture.png') repeat-x center;
+	@include rem-fallback(padding-top, 1.2rem);
+	@include rem-fallback(height, 4rem);
+	@include rem-fallback(margin-top, -4rem);
 }

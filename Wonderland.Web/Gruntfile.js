@@ -3,12 +3,19 @@ module.exports = function (grunt) {
     // Project configuration.
     grunt.initConfig({
                          pkg: grunt.file.readJSON('package.json'),
+                         compass: {
+                             dist: {
+                                 options: {
+                                     config: '.compass/config.rb'
+                                 }
+                             }
+                         },
                          uglify: {
                              options: {
                                  mangle: false,
                                  banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n',
                                  compress: {
-                                     drop_console: false
+                                     drop_console: true
                                  }
                              },
                              base: {
@@ -82,12 +89,13 @@ module.exports = function (grunt) {
                          },
                          remfallback: {
                              options: {
-                                 replace: true
+                                 replace: true,
+                                 ignoreUnsupported: false
                              },
                              replaced_rem: {
                                  files: {
-                                     '<%= pkg.cssPath %>ie/compiled/main_rem_fallback.css': ['<%= pkg.cssPath %>main.css'],
-                                     '<%= pkg.cssPath %>ie/compiled/overrides_rem_fallback.css': ['<%= pkg.cssPath %>overrides.css'],
+                                     '<%= pkg.cssPath %>ie/compiled/main_rem_fallback.css': ['<%= pkg.cssPath %>compiled/main.css'],
+                                     '<%= pkg.cssPath %>ie/compiled/overrides_rem_fallback.css': ['<%= pkg.cssPath %>compiled/overrides.css'],
                                      '<%= pkg.cssPath %>ie/compiled/bower_rem_fallback.css': [
                                          '<%= pkg.jsPath %>bower_components/ocModal/dist/css/ocModal.full.css',
                                          '<%= pkg.jsPath %>bower_components/pikaday/css/pikaday.css',
@@ -104,11 +112,11 @@ module.exports = function (grunt) {
                                  },
                                  files: {
                                      '<%= pkg.cssPath %>all.min.css': [
-                                         '<%= pkg.cssPath %>main.css',
+                                         '<%= pkg.cssPath %>compiled/main.css',
                                          '<%= pkg.jsPath %>bower_components/ocModal/dist/css/ocModal.full.css',
                                          '<%= pkg.jsPath %>bower_components/pikaday/css/pikaday.css',
                                          '<%= pkg.jsPath %>bower_components/angular-macgyver/lib/macgyver.css',
-                                         '<%= pkg.cssPath %>overrides.css'
+                                         '<%= pkg.cssPath %>compiled/overrides.css'
                                      ]
                                  }
                              },
@@ -134,8 +142,10 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-remfallback');
+    grunt.loadNpmTasks('grunt-contrib-compass');
 
     // Default task(s).
     grunt.registerTask('default', ['uglify']);
+    grunt.registerTask('css', ['compass', 'remfallback', 'cssmin']);
 
 };
