@@ -137,9 +137,7 @@ namespace Wonderland.Logic.Controllers.Surface
                 else // remove reference to image
                 {
                     partier.ProfileImage = string.Empty;
-                }
-
-                formResponse.Success = true;
+                }            
             }
             else
             {

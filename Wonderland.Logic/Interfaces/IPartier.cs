@@ -56,5 +56,7 @@ namespace Wonderland.Logic.Interfaces
         int DotMailerId { get; set; }
 
         bool DotMailerRegistrationComplete { get; set; }
+
+        bool FacebookRegistration { get; set; }
     }
 }

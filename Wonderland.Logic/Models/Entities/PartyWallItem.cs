@@ -16,7 +16,7 @@ namespace Wonderland.Logic.Models.Entities
     {
         internal PartyWallItem(DonationRow donation)
         {
-            IPartier partier = (IPartier)new MembershipHelper(UmbracoContext.Current).GetById((int)donation.MemberId);   // NOTE: exlicit cast from int? to int
+            IPartier partier = (IPartier)new MembershipHelper(UmbracoContext.Current).GetById((int)donation.MemberId);
 
             this.Id = -1;
             this.PartyWallItemType = PartyWallItemType.Donation;

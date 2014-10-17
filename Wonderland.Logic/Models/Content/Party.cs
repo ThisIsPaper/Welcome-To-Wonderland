@@ -16,7 +16,6 @@ namespace Wonderland.Logic.Models.Content
 
         // Properties
         public const string DefaultImagesAlias = "defaultImages";
-        public const string DefaultHeadingAlias = "defaultHeading";
         public const string DefaultCopyAlias = "defaultCopy";
 
         public Party(IPublishedContent content)
@@ -30,14 +29,6 @@ namespace Wonderland.Logic.Models.Content
             get
             {
                 return this.GetPropertyValue<IEnumerable<IPublishedContent>>(Party.DefaultImagesAlias, Enumerable.Empty<IPublishedContent>()).Select(x => new Image(x));
-            }
-        }
-
-        internal string DefaultHeading
-        {
-            get
-            {
-                return this.GetPropertyValue<string>(Party.DefaultHeadingAlias);
             }
         }
 
