@@ -2,7 +2,6 @@
 namespace Wonderland.Logic.Controllers.Surface
 {
     using System;
-    using System.Linq;
     using System.Web.Mvc;
     using Umbraco.Web.Mvc;
     using Wonderland.Logic.DotMailer;
@@ -12,6 +11,7 @@ namespace Wonderland.Logic.Controllers.Surface
     using Wonderland.Logic.Models.Entities;
     using Wonderland.Logic.Models.Forms;
     using Wonderland.Logic.Models.Members;
+    using Wonderland.Logic.Models.Messages;
 
     public class PartySurfaceController : SurfaceController
     {

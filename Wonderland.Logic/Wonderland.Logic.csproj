@@ -213,6 +213,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\Api\FacebookApiController.cs" />
     <Compile Include="Controllers\Api\PartyApiController.cs" />
     <Compile Include="Controllers\Api\PostcodeAnywhereApiController.cs" />
     <Compile Include="Controllers\Api\SagePayApiController.cs" />
@@ -289,7 +290,8 @@
     <Compile Include="Models\Database\MessageRow.cs" />
     <Compile Include="Models\Database\PartyRow.cs" />
     <Compile Include="Models\Entities\Address.cs" />
-    <Compile Include="Models\Entities\PartyWallItem.cs">
+    <Compile Include="Models\Messages\FacebookCredentials.cs" />
+    <Compile Include="Models\Messages\PartyWallItem.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Models\Entities\PromotionTile.cs" />
@@ -298,8 +300,8 @@
     <Compile Include="Models\Entities\SiteSettings.cs" />
     <Compile Include="Models\Forms\DonateForm.cs" />
     <Compile Include="Models\Forms\ForgottenPasswordForm.cs" />
-    <Compile Include="Models\Forms\FormResponse.cs" />
-    <Compile Include="Models\Forms\FormResponseFieldErrors.cs" />
+    <Compile Include="Models\Messages\FormResponse.cs" />
+    <Compile Include="Models\Messages\FormResponseFieldErrors.cs" />
     <Compile Include="Models\Forms\FundraisingTargetForm.cs" />
     <Compile Include="Models\Forms\LoginForm.cs" />
     <Compile Include="Models\Forms\PartyCopyForm.cs" />

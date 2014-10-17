@@ -1,6 +1,5 @@
 ﻿
-
-namespace Wonderland.Logic.Models.Entities
+namespace Wonderland.Logic.Models.Messages
 {
     using Newtonsoft.Json;
     using System;
