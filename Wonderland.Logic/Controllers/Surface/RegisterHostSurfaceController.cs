@@ -82,6 +82,8 @@ namespace Wonderland.Logic.Controllers.Surface
             // cast from MembershipUser rather than use this.Members.GetCurrentMember() helper (which needs a round trip for the login)
             PartyHost partyHost = (PartyHost)membershipUser;
 
+            partyHost.FacebookRegistration = false;
+
             partyHost.MarketingSource = registerHostForm.MarketingSource;
 
             Guid partyGuid = Guid.NewGuid();

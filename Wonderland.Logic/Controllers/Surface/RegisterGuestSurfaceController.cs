@@ -73,6 +73,8 @@ namespace Wonderland.Logic.Controllers.Surface
             // cast from MembershipUser rather than use this.Members.GetCurrentMember() helper (which needs a round trip for the login)
             PartyGuest partyGuest = (PartyGuest)membershipUser;
 
+            partyGuest.FacebookRegistration = false;
+
             // update database with member and party guid (duplicated data, but never changes)
             this.DatabaseContext.Database.Insert(new MemberPartyRow(partyGuest.Id, registerGuestForm.PartyGuid));
 
