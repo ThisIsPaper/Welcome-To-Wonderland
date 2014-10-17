@@ -100,7 +100,7 @@ namespace Wonderland.Logic.Controllers.Surface
             partyHost.PartyUrlIdentifier = partyGuid.ToString();
 
             // set default party date
-            partyHost.PartyDateTime = new DateTime(2014, 12, 5, 20, 0, 0);
+            partyHost.PartyDateTime = PartyHost.DefaultPartyDate;
 
             // add member to DotMailer
             DotMailerService.HostRegistrationStarted((Contact)partyHost);

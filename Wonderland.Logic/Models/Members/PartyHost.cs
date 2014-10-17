@@ -15,6 +15,8 @@ namespace Wonderland.Logic.Models.Members
 
     public class PartyHost : BaseMemberType, IPartier
     {
+        public static DateTime DefaultPartyDate = new DateTime(2014, 12, 5, 20, 0, 0);
+
         // Member Type
         public const string Alias = "PartyHost";
 

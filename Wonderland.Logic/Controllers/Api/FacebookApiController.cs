@@ -16,11 +16,6 @@ namespace Wonderland.Logic.Controllers.Api
 
     public class FacebookApiController : UmbracoApiController
     {
-        /// <summary>
-        /// salt used to generate a password from the supplied facebook user id
-        /// </summary>
-        private const string Salt = "70E5B25D-8A18-4302-AE04-79CBD3FC1EE0";
-
         [HttpPost]
         public FormResponse RegisterHost([FromBody] FacebookCredentials facebookCredentials)
         {
@@ -77,7 +72,7 @@ namespace Wonderland.Logic.Controllers.Api
             partyHost.PartyUrlIdentifier = partyGuid.ToString();
 
             // set default party date
-            partyHost.PartyDateTime = new DateTime(2014, 12, 5, 20, 0, 0);
+            partyHost.PartyDateTime = PartyHost.DefaultPartyDate;
 
             // add member to DotMailer
             DotMailerService.HostRegistrationStarted((Contact)partyHost);
@@ -171,7 +166,10 @@ namespace Wonderland.Logic.Controllers.Api
 
         private string GetPassword(FacebookCredentials facebookCredentials)
         {
-            return facebookCredentials.UserId + facebookCredentials.LastName;
+            // HACK: 
+            string passwordPreHash = facebookCredentials.UserId + "70E5B25D-8A18-4302-AE04-79CBD3FC1EE0";
+
+            return FormsAuthentication.HashPasswordForStoringInConfigFile(passwordPreHash, "sha1");
         }
     }
 }
