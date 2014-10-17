@@ -41,6 +41,7 @@ namespace Wonderland.Logic.Models.Members
         public const string DotMailerIdAlias = "dotMailerId";
         public const string DotMailerRegistrationCompleteAlias = "dotMailerRegistrationComplete";
         public const string DotMailerPartyPageCompleteAlias = "dotMailerPartyPageComplete";
+        public const string FacebookRegistrationAlias = "facebookRegistration";
 
         // local cache variables (avoids waiting for round trip to update umbraco cache values)
         private Guid? partyGuid = null;
@@ -391,6 +392,18 @@ namespace Wonderland.Logic.Models.Members
             {
                 this.dotMailerPartyPageComplete = value;
                 this.SetPropertyValue(PartyHost.DotMailerPartyPageCompleteAlias, value);
+            }
+        }
+
+        public bool FacebookRegistration
+        {
+            get
+            {
+                return this.GetPropertyValue<bool>(PartyHost.FacebookRegistrationAlias);
+            }
+            set
+            {
+                this.SetPropertyValue(PartyHost.FacebookRegistrationAlias, value);
             }
         }
 

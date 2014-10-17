@@ -26,7 +26,7 @@ namespace Wonderland.Logic.Models.Members
         public const string ForgottenPasswordGuidAlias = "forgottenPasswordGuid";
         public const string DotMailerIdAlias = "dotMailerId";
         public const string DotMailerRegistrationCompleteAlias = "dotMailerRegistrationComplete";
-
+        public const string FacebookRegistrationAlias = "facebookRegistration";
 
         private Guid? partyGuid = null; // used as a local cache, as the setter / getter normally requires a full round trip
         private string firstName = null;
@@ -151,6 +151,18 @@ namespace Wonderland.Logic.Models.Members
             set
             {
                 this.SetPropertyValue(PartyGuest.DotMailerRegistrationCompleteAlias, value);
+            }
+        }
+
+        public bool FacebookRegistration
+        {
+            get
+            {
+                return this.GetPropertyValue<bool>(PartyHost.FacebookRegistrationAlias);
+            }
+            set
+            {
+                this.SetPropertyValue(PartyHost.FacebookRegistrationAlias, value);
             }
         }
 
