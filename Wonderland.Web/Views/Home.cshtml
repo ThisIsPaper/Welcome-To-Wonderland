@@ -5,7 +5,7 @@
 
 <section class="hero">
     <div class="container">
-        <img src="/img/welcome-to-wonderland.svg" alt="Welcome to Wonderland" class="centered margin-bottom-4 pad-left-large pad-right-large grid-8">
+        <img src="/img/welcome-to-wonderland.svg" m-img-svg-replacer="/img/welcome-to-wonderland.png" alt="Welcome to Wonderland" class="centered margin-bottom-4 pad-left-large pad-right-large grid-8">
     </div>
     <div class="text-align-center">
 
@@ -61,7 +61,7 @@
             <div class="grid-4 grid-tablet-6 grid-mobile-12" m-rotate m-rotate-hover>
                 <div class="home-tile" m-height-match-width>
                     <a class="idea-link" href="@promotionTile.Link" target="{{ isExternalLink('@promotionTile.Link') ? '_blank' : '_self' }}">
-                        <div class="home-tile-image" ng-style="{'background-image': 'url(@promotionTile.Image.GetResponsiveCropUrl("Square"))'}" ></div>
+                        <div class="home-tile-image" ng-style="{'background-image': 'url(@promotionTile.Image.GetResponsiveCropUrl("Square"))', '-pie-background-image': 'url(@promotionTile.Image.GetResponsiveCropUrl("Square"))'}" ></div>
                         <img class="home-tile-label" src="@promotionTile.OverlayImage.Url" alt="@promotionTile.AltText" />
                         <span class="label">Goto resource</span>
                     </a>

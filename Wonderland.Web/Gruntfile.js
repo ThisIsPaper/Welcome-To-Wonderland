@@ -86,8 +86,13 @@ module.exports = function (grunt) {
                              },
                              replaced_rem: {
                                  files: {
-                                     '<%= pkg.cssPath %>main_rem_fallback.css': ['<%= pkg.cssPath %>main.css'],
-                                     '<%= pkg.cssPath %>overrides_rem_fallback.css': ['<%= pkg.cssPath %>overrides.css']
+                                     '<%= pkg.cssPath %>ie/compiled/main_rem_fallback.css': ['<%= pkg.cssPath %>main.css'],
+                                     '<%= pkg.cssPath %>ie/compiled/overrides_rem_fallback.css': ['<%= pkg.cssPath %>overrides.css'],
+                                     '<%= pkg.cssPath %>ie/compiled/bower_rem_fallback.css': [
+                                         '<%= pkg.jsPath %>bower_components/ocModal/dist/css/ocModal.full.css',
+                                         '<%= pkg.jsPath %>bower_components/pikaday/css/pikaday.css',
+                                         '<%= pkg.jsPath %>bower_components/angular-macgyver/lib/macgyver.css'
+                                     ]
                                  }
                              }
                          },
@@ -115,12 +120,10 @@ module.exports = function (grunt) {
                                  },
                                  files: {
                                      '<%= pkg.cssPath %>all_ie.min.css': [
-                                         '<%= pkg.cssPath %>main_rem_fallback.css',
-                                         '<%= pkg.jsPath %>bower_components/ocModal/dist/css/ocModal.full.css',
-                                         '<%= pkg.jsPath %>bower_components/pikaday/css/pikaday.css',
-                                         '<%= pkg.jsPath %>bower_components/angular-macgyver/lib/macgyver.css',
-                                         '<%= pkg.cssPath %>overrides_rem_fallback.css',
-                                         '<%= pkg.cssPath %>ie8.css'
+                                         '<%= pkg.cssPath %>ie/compiled/main_rem_fallback.css',
+                                         '<%= pkg.cssPath %>ie/compiled/bower_rem_fallback.css',
+                                         '<%= pkg.cssPath %>ie/compiled/overrides_rem_fallback.css',
+                                         '<%= pkg.cssPath %>ie/ie8.css'
                                      ]
                                  }
                              }
