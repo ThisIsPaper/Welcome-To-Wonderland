@@ -41,7 +41,9 @@ namespace Wonderland.Logic.Models.Members
         public const string DotMailerIdAlias = "dotMailerId";
         public const string DotMailerRegistrationCompleteAlias = "dotMailerRegistrationComplete";
         public const string DotMailerPartyPageCompleteAlias = "dotMailerPartyPageComplete";
+        public const string FacebookRegistrationAlias = "facebookRegistration";
 
+        // local cache variables (avoids waiting for round trip to update umbraco cache values)
         private Guid? partyGuid = null;
         private string firstName = null;
         private string lastName = null;
@@ -279,20 +281,13 @@ namespace Wonderland.Logic.Models.Members
         }
 
         /// <summary>
-        /// Gets the party heading for the current party host, or if not set, then returns the default party heading
+        /// Gets the party heading for the current party host
         /// </summary>
         public string PartyHeading
         {
             get
             {
-                string partyHeading = this.GetPropertyValue<string>(PartyHost.PartyHeadingAlias);
-
-                if (string.IsNullOrWhiteSpace(partyHeading))
-                {
-                    partyHeading = ((Party)new UmbracoHelper(UmbracoContext.Current).TypedContentSingleAtXPath("//" + Party.Alias)).DefaultHeading;
-                }
-
-                return partyHeading;
+                return this.GetPropertyValue<string>(PartyHost.PartyHeadingAlias);
             }
             set
             {
@@ -397,6 +392,18 @@ namespace Wonderland.Logic.Models.Members
             {
                 this.dotMailerPartyPageComplete = value;
                 this.SetPropertyValue(PartyHost.DotMailerPartyPageCompleteAlias, value);
+            }
+        }
+
+        public bool FacebookRegistration
+        {
+            get
+            {
+                return this.GetPropertyValue<bool>(PartyHost.FacebookRegistrationAlias);
+            }
+            set
+            {
+                this.SetPropertyValue(PartyHost.FacebookRegistrationAlias, value);
             }
         }
 

@@ -7,12 +7,12 @@ namespace Wonderland.Logic.Models.Forms
 
     public class ProfileNamesForm
     {
-        [Required]
-        [MaxLength(20)]
+        [Required(ErrorMessage="First Name Required")]
+        [MaxLength(20, ErrorMessage="Max Length of 20")]
         public string FirstName { get; set; }
 
-        [Required]
-        [MaxLength(20)]
+        [Required(ErrorMessage="Last Name Required")]
+        [MaxLength(20, ErrorMessage="Max Length of 20")]
         public string LastName { get; set; }
     }
 }

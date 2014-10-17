@@ -1,20 +1,18 @@
 ﻿
 namespace Wonderland.Logic.Models.Forms
 {
-    using System.ComponentModel;
     using System.ComponentModel.DataAnnotations;
-    using System.Web.Mvc;
 
     public class ResetPasswordForm
     {
-        [Required]
+        [Required(ErrorMessage = "New Password Required")]
         [DataType(DataType.Password)]
-        [MinLength(4)]
+        [MinLength(4, ErrorMessage = "Max Length of 4")]
         public string Password { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "Confirm Password Required")]
         [DataType(DataType.Password)]
-        [System.Web.Mvc.Compare("Password")]
+        [System.Web.Mvc.Compare("Password", ErrorMessage = "Passwords Not Matching")]
         public string ConfirmPassword { get; set; }
     }
 }

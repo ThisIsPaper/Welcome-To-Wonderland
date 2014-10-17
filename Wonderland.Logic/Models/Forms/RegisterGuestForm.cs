@@ -20,15 +20,16 @@ namespace Wonderland.Logic.Models.Forms
             this.PartyGuid = partyGuid;
         }
 
-        [Required]
+        [Required(ErrorMessage="Required Email")]
         [DataType(DataType.EmailAddress)]
+        [EmailAddress(ErrorMessage = "Invalid Email")]
         //[Remote("ValidateIsEmailAvailable", "RegisterHostSurface", ErrorMessage="Email already registered")]
         [DisplayName("Email Address")]
         public string EmailAddress { get; set; }
 
-        [Required]
+        [Required(ErrorMessage="Required Password")]
         [DataType(DataType.Password)]
-        [MinLength(4)]
+        [MinLength(4, ErrorMessage="Min Length of 4")]
         public string Password { get; set; }
 
         [ScaffoldColumn(false)]
