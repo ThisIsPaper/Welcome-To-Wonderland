@@ -21,7 +21,8 @@ namespace Wonderland.Logic.Models.Forms
         }
 
         [Required(ErrorMessage="Required Email")]
-        [DataType(DataType.EmailAddress, ErrorMessage="Invalid Email")]
+        [DataType(DataType.EmailAddress)]
+        [EmailAddress(ErrorMessage = "Invalid Email")]
         //[Remote("ValidateIsEmailAvailable", "RegisterHostSurface", ErrorMessage="Email already registered")]
         [DisplayName("Email Address")]
         public string EmailAddress { get; set; }

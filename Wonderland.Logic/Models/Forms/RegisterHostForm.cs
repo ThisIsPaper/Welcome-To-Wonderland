@@ -3,12 +3,12 @@ namespace Wonderland.Logic.Models.Forms
 {
     using System.ComponentModel;
     using System.ComponentModel.DataAnnotations;
-    using System.Web.Mvc;
 
     public class RegisterHostForm
     {
         [Required(ErrorMessage="Required Email")]
         [DataType(DataType.EmailAddress, ErrorMessage="Invalid Email")]
+        [EmailAddress(ErrorMessage = "Invalid Email")]
         //[Remote("ValidateIsEmailAvailable", "RegisterHostSurface", ErrorMessage="Email already registered")]
         [DisplayName("Email Address")]
         public string EmailAddress { get; set; }

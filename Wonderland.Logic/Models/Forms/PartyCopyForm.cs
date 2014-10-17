@@ -7,9 +7,9 @@ namespace Wonderland.Logic.Models.Forms
 
     public class PartyCopyForm
     {
-        [Required]
+        [Required(ErrorMessage="Party Description Required")]
         [DisplayName("Party Description")]
-        [MaxLength(600)]
+        [MaxLength(600, ErrorMessage="Max Length of 600")]
         [DataType(DataType.MultilineText)]
         public string Copy { get; set; }
     }
