@@ -9,6 +9,7 @@ namespace Wonderland.Logic.Controllers.Api
     using Umbraco.Web.WebApi;
     using Wonderland.Logic.DotMailer;
     using Wonderland.Logic.Extensions;
+    using Wonderland.Logic.Interfaces;
     using Wonderland.Logic.Models.Database;
     using Wonderland.Logic.Models.Members;
     using Wonderland.Logic.Models.Messages;
@@ -33,14 +34,13 @@ namespace Wonderland.Logic.Controllers.Api
             MembershipUser membershipUser = membersUmbracoMembershipProvider.CreateUser(
                                                PartyHost.Alias,                                // member type alias
                                                facebookCredentials.EmailAddress,               // username
-                                               this.GetPassword(facebookCredentials.UserId),   // password
+                                               this.GetPassword(facebookCredentials),          // password
                                                facebookCredentials.EmailAddress,               // email
                                                null,                                           // forgotten password question
                                                null,                                           // forgotten password answer
                                                true,                                           // is approved 
                                                null,                                           // provider user key
                                                out membershipCreateStatus);
-
 
             if (membershipCreateStatus != MembershipCreateStatus.Success)
             {
@@ -105,7 +105,7 @@ namespace Wonderland.Logic.Controllers.Api
             MembershipUser membershipUser = membersUmbracoMembershipProvider.CreateUser(
                                                PartyGuest.Alias,                               // member type alias
                                                facebookCredentials.EmailAddress,               // username
-                                               this.GetPassword(facebookCredentials.UserId),   // password
+                                               this.GetPassword(facebookCredentials),          // password
                                                facebookCredentials.EmailAddress,               // email
                                                null,                                           // forgotten password question
                                                null,                                           // forgotten password answer
@@ -159,15 +159,19 @@ namespace Wonderland.Logic.Controllers.Api
         {
             FormResponse formResponse = new FormResponse();
 
+            if (this.Members.Login(facebookCredentials.EmailAddress, this.GetPassword(facebookCredentials)))
+            {
+                formResponse.Success = true;
 
-
+                formResponse.Message = ((IPartier)this.Members.GetByUsername(facebookCredentials.EmailAddress)).PartyUrl;
+            }
 
             return formResponse;
         }
 
-        private string GetPassword(string userId)
+        private string GetPassword(FacebookCredentials facebookCredentials)
         {
-            return userId;
+            return facebookCredentials.UserId + facebookCredentials.LastName;
         }
     }
 }
