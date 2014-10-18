@@ -26,6 +26,7 @@
   @return $num / ($num * 0 + 1);
 }
 
+// i'm such a retard, didn't need to do this at all, but can't be arsed to undo it all in the css files!
 @mixin rem-fallback($property, $values...) {
 //  $max: length($values);
 //  $pxValues: '';

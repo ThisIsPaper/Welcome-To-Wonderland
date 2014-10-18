@@ -1,43 +1,30 @@
 /* =============================================================================
 overrides
 ========================================================================== */
-
 /* =============================================================================
 Sizes and Spacing
 ========================================================================== */
-
 /* Padding */
-
 /* Margin */
-
 /* =============================================================================
 Type
 ========================================================================== */
-
 /* =============================================================================
 Colours
 ========================================================================== */
-
 /* Links */
-
 /* Greys */
-
 /* Reds */
-
 /* Green */
-
 /* Blue */
-
 /* line 8, ../sass/overrides.scss */
-
 .modal-backdrop {
   background-color: black !important;
 }
 
 /* line 12, ../sass/overrides.scss */
-
 .modal .modal-dialog .modal-content {
-  padding: 38.4px;
+  padding: 24px;
   -moz-border-radius-topleft: 52.48px 35.2px;
   -webkit-border-top-left-radius: 52.48px 35.2px;
   border-top-left-radius: 52.48px 35.2px;
@@ -50,54 +37,47 @@ Colours
   -moz-border-radius-bottomleft: 28.8px 41.6px;
   -webkit-border-bottom-left-radius: 28.8px 41.6px;
   border-bottom-left-radius: 28.8px 41.6px;
-  -moz-border-radius-topleft: 52.5px 35.2px;
-  -webkit-border-top-left-radius: 3.28rem 2.2rem;
-  border-top-left-radius: 52.5px 35.2px;
-  -moz-border-radius-topright: 1.8rem 1.6rem;
-  -webkit-border-top-right-radius: 28.8px 25.6px;
-  border-top-right-radius: 1.8rem 1.6rem;
-  -moz-border-radius-bottomright: 28.8px 44.8px;
-  -webkit-border-bottom-right-radius: 1.8rem 2.8rem;
-  border-bottom-right-radius: 28.8px 44.8px;
-  -moz-border-radius-bottomleft: 1.8rem 2.6rem;
-  -webkit-border-bottom-left-radius: 28.8px 41.6px;
-  border-bottom-left-radius: 1.8rem 2.6rem;
+  -moz-border-radius-topleft: 32px 22px;
+  -webkit-border-top-left-radius: 32px 22px;
+  border-top-left-radius: 32px 22px;
+  -moz-border-radius-topright: 18px 16px;
+  -webkit-border-top-right-radius: 18px 16px;
+  border-top-right-radius: 18px 16px;
+  -moz-border-radius-bottomright: 18px 28px;
+  -webkit-border-bottom-right-radius: 18px 28px;
+  border-bottom-right-radius: 18px 28px;
+  -moz-border-radius-bottomleft: 18px 26px;
+  -webkit-border-bottom-left-radius: 18px 26px;
+  border-bottom-left-radius: 18px 26px;
   width: auto;
 }
 
 /* line 19, ../sass/overrides.scss */
-
 .mac-tooltip {
   background-color: #474740;
 }
-
 /* line 22, ../sass/overrides.scss */
-
 .mac-tooltip.top:after {
   border-top: 6px solid #474740;
 }
 
 /* line 33, ../sass/overrides.scss */
-
 .pika-table th {
   color: #7B7A6D;
 }
 
 /* line 37, ../sass/overrides.scss */
-
 .pika-table abbr {
   border: none;
 }
 
 /* line 41, ../sass/overrides.scss */
-
 .pika-single {
   font-family: "Futura BT W01 Book";
   color: #474740;
 }
 
 /* line 46, ../sass/overrides.scss */
-
 .pika-button {
   color: #007eac;
   background: white;
@@ -105,33 +85,30 @@ Colours
 }
 
 /* line 53, ../sass/overrides.scss */
-
 .is-today .pika-button {
   color: #007eac;
   background: #ECECEC;
-  border-radius: 32px;
+  border-radius: 20px;
 }
 
 /* line 59, ../sass/overrides.scss */
-
 .is-selected .pika-button {
   background: #682c88;
   box-shadow: none;
-  border-radius: 32px;
+  border-radius: 20px;
 }
 
 /* line 65, ../sass/overrides.scss */
-
 .is-disabled .pika-button {
   color: #7B7A6D;
 }
 
 /* line 69, ../sass/overrides.scss */
-
 .pika-button:hover {
   color: #007eac !important;
   background: #ECECEC !important;
   box-shadow: none !important;
   border-radius: 32px !important;
-  border-radius: 32px !important;
+  border-radius: 20px !important;
 }
+
