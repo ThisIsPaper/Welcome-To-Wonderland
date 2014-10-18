@@ -32,13 +32,13 @@ wonderlandApp.directive('mPostOnSubmit', ['safeApply', 'mHttp', '$parse', '$root
                     // check for ufprt as hidden value
                     var ufprtElement = element.find("[name='ufprt']");
                     if (ufprtElement && ufprtElement.length) {
-                        sendData['ufprt'] = ufprtElement[0].value;
+                        sendData.ufprt = ufprtElement[0].value;
                     }
 
                     // check for ufprt as hidden value
                     var rvtElement = element.find("[name='__RequestVerificationToken']");
                     if (rvtElement && rvtElement.length) {
-                        sendData['__RequestVerificationToken'] = rvtElement[0].value;
+                        sendData.__RequestVerificationToken = rvtElement[0].value;
                     }
 
                     formSubmitRequest = mHttp.post(attrs.action, {

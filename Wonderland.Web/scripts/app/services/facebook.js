@@ -49,7 +49,7 @@ wonderlandApp.factory('facebook', ['$window', '$q', function ($window, $q) {
                     fbAuthentication = response;
                     var resultingStatus = 'not_logged_in';
                     if (response.status === 'connected' || response.status === 'not_authorized') {
-                        resultingStatus = response.status
+                        resultingStatus = response.status;
                     }
                     loginStatusDeferred.resolve(resultingStatus);
 
@@ -70,7 +70,7 @@ wonderlandApp.factory('facebook', ['$window', '$q', function ($window, $q) {
                 fbAuthentication = response;
                 var resultingStatus = 'not_logged_in';
                 if (response.status === 'connected' || response.status === 'not_authorized') {
-                    resultingStatus = response.status
+                    resultingStatus = response.status;
                 }
                 loginDeferred.resolve(resultingStatus);
 

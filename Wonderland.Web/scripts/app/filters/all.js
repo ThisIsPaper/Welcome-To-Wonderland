@@ -128,7 +128,7 @@ wonderlandApp.filter('formatAmountComplete', [function () {
 
         if (angular.isArray(col)) {
             for (var i=0; i<total; i++) {
-                if (col[i]["complete"]===true) {
+                if (col[i].complete===true) {
                     complete++;
                 }
             }

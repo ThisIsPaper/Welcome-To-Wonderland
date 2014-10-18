@@ -37,7 +37,7 @@ wonderlandApp.run(['$rootScope', '$ocModal', '$window', function ($rootScope, $o
         };
 
         if (modalId) {
-            modal['id'] = modalId;
+            modal.id = modalId;
         }
 
         $ocModal.open(modal);
@@ -52,6 +52,6 @@ wonderlandApp.run(['$rootScope', '$ocModal', '$window', function ($rootScope, $o
     moment.fn.toASP = function () {
 //        return '/Date(' + (+this) + this.format('ZZ') + ')/'; // with timezone, maybe add later
         return '/Date(' + (+this) + ')/';
-    }
+    };
 
 }]);

@@ -63,7 +63,8 @@ wonderlandApp.directive('mRotate', ['$timeout', function ($timeout) {
         dummy = document.createElement("div");
         dummy.innerHTML = '<!--[if gte IE 9]><br /><![endif]-->';
         if (dummy.getElementsByTagName("br").length == 1) elem.style.filter = "none";
-        delete dummy;
+        dummy.parentNode.removeChild(dummy);
+        dummy = null;
     }
 
 

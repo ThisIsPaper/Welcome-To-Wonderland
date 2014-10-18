@@ -46,7 +46,7 @@ wonderlandApp.controller('WallCtrl', ['mHttp', 'safeApply', '$filter', '$scope',
             'take': $scope.wall.feedLimit
         };
         if (beforeDateTime) {
-            sendFormData['beforeDateTime'] = beforeDateTime;
+            sendFormData.beforeDateTime = beforeDateTime;
         }
 
         feedRequest = mHttp.get(wallFeed, {
