@@ -16,7 +16,7 @@ wonderlandApp.directive('mVerticalAlign', ['debounce', '$timeout', '$window', fu
 
             attrs.$observe('mVerticalAlign', function (newVal) {
 
-                if (!hasInited && !!newVal===true) {
+                if (!hasInited && (myValue === 'true' || myValue === true)) {
                     isActive = true;
 
                     angular.element($window).bind('resize', reAlign);

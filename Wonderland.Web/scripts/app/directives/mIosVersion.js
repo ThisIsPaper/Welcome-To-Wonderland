@@ -14,8 +14,8 @@ wonderlandApp.directive('mIosVersion', [function () {
         restrict: 'A',
         link: function (scope, element, attrs) {
 
-            var addClassName = attrs["mIosAddClass"],
-                removeClassName = attrs["mIosRemoveClass"],
+            var addClassName = attrs.mIosAddClass,
+                removeClassName = attrs.mIosRemoveClass,
                 applyClasses = function () {
                     if (addClassName) {
                         angular.element(element).addClass(addClassName);
@@ -32,11 +32,11 @@ wonderlandApp.directive('mIosVersion', [function () {
                 return;
             }
 
-            if ("mMinIos" in attrs && parseInt(attrs["mMinIos"], 10) > iOS) {
+            if ("mMinIos" in attrs && parseInt(attrs.mMinIos, 10) > iOS) {
                 return;
             }
 
-            if ("mMaxIos" in attrs && parseInt(attrs["mMaxIos"], 10) < iOS) {
+            if ("mMaxIos" in attrs && parseInt(attrs.mMaxIos, 10) < iOS) {
                 return;
             }
 

@@ -22,6 +22,6 @@ wonderlandApp.directive('mWindowClickToggle', ['safeApply', '$document', functio
             });
 
         }
-    }
+    };
 
 }]);

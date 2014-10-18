@@ -98,7 +98,7 @@ wonderlandApp.controller('PartyCtrl', ['safeApply', '$filter', '$ocModal', '$roo
         if (fundraisingTargetFirstSet) {
             fundraisingTargetFirstSet = false;
             if (fundraisingTargetData.FundraisingTarget <= 0) {
-                $rootScope.openPageModal('partials/fundraisingTargetForm.html', 'suggestedDonationModal', {'fundraisingTargetData': $scope.fundraisingTargetDataForForm})
+                $rootScope.openPageModal('partials/fundraisingTargetForm.html', 'suggestedDonationModal', {'fundraisingTargetData': $scope.fundraisingTargetDataForForm});
             }
         }
     };

@@ -10,6 +10,9 @@ module.exports = function (grunt) {
                                  }
                              }
                          },
+                         jshint: {
+                             all: ['Gruntfile.js', '<%= pkg.jsPath %>app/**/*.js']
+                         },
                          uglify: {
                              options: {
                                  mangle: false,
@@ -153,9 +156,11 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-pixrem');
     grunt.loadNpmTasks('grunt-contrib-compass');
+    grunt.loadNpmTasks('grunt-contrib-jshint');
 
     // Default task(s).
-    grunt.registerTask('default', ['uglify']);
+    grunt.registerTask('js', ['jshint', 'uglify']);
     grunt.registerTask('css', ['compass', 'pixrem', 'cssmin']);
+    grunt.registerTask('default', ['js', 'css']);
 
 };

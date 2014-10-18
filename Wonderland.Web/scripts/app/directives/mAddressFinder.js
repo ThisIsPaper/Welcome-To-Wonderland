@@ -94,7 +94,7 @@ wonderlandApp.directive('mAddressFinder', ['paf', 'safeApply', '$timeout', funct
 
             scope.$watch('selectedAddress', function (newVal, oldVal) {
 
-                if (newVal==null || newVal==oldVal) {
+                if (newVal===null || newVal==oldVal) {
                     return;
                 }
 
