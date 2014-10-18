@@ -13,6 +13,7 @@ module.exports = function (grunt) {
                          uglify: {
                              options: {
                                  mangle: false,
+                                 beautify: false,
                                  banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n',
                                  compress: {
                                      drop_console: true
@@ -79,10 +80,19 @@ module.exports = function (grunt) {
                                      ]
                                  }
                              },
+                             ie8: {
+                                 files: {
+                                     '<%= pkg.jsPath %>ie8.min.js': [
+                                         '<%= pkg.jsPath %>bower_components/es5-shim/es5-shim.min.js',
+                                         '<%= pkg.jsPath %>bower_components/es5-shim/es5-sham.min.js',
+                                         '<%= pkg.jsPath %>bower_components/respond/dest/respond.min.js'
+                                     ]
+                                 }
+                             },
                              ie7: {
                                  files: {
                                      '<%= pkg.jsPath %>ie7.min.js': [
-                                         '<%= pkg.jsPath %>bower_components/JSON-js/json2.js',
+                                         '<%= pkg.jsPath %>bower_components/JSON-js/json2.js'
                                      ]
                                  }
                              }

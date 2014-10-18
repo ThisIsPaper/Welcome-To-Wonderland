@@ -44,15 +44,15 @@
 	width: 10.9rem;
 	overflow: hidden;
 	height: 15.3rem;
+	background-size: 10.9rem 15.3rem; // ie fix
 
 	zoom: 1;
 
-	background: image-url('wonderland-crest.svg') no-repeat;
-	-pie-background: image-url('wonderland-crest.png') no-repeat;
+	background: image-url('wonderland-crest.svg') no-repeat center;
 
 	@include transition(top .3s linear 0);
 
-	behavior: stylesheet-url('PIE.htc');
+	-ms-behavior: stylesheet-url('backgroundsize.min.htc');
 }
 
 .banner {
@@ -62,15 +62,15 @@
 	width: 19.2rem;
 	height: 3.9rem;
 	overflow: hidden;
+	background-size: 19.2rem 3.9rem; // ie fix
 
 	zoom: 1;
 
 	background: image-url('wonderland-logo.svg') no-repeat center;
-	-pie-background: image-url('wonderland-logo.png') no-repeat center;
 
 	@include transition(top .3s linear 0);
 
-	behavior: stylesheet-url('PIE.htc');
+	-ms-behavior: stylesheet-url('backgroundsize.min.htc');
 }
 
 .menu li a {
@@ -262,11 +262,11 @@
 /* COMPRESSED VIEW  */
 /********************/
 .site-header.compress .crest {
-	@include rem-fallback(top, -16rem);
+	top: -16rem;
 }
 
 .site-header.compress .banner {
-	@include rem-fallback(margin-top, -10.5rem);
+	top: 1.5rem;
 }
 
 .site-header.compress .left-side ul {
