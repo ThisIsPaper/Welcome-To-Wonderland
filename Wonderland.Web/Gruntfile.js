@@ -87,10 +87,10 @@ module.exports = function (grunt) {
                                  }
                              }
                          },
-                         remfallback: {
+                         pixrem: {
                              options: {
-                                 replace: true,
-                                 ignoreUnsupported: false
+                                 rootvalue: "62.5%",
+                                 replace: true
                              },
                              replaced_rem: {
                                  files: {
@@ -141,11 +141,11 @@ module.exports = function (grunt) {
     // Load the plugin that provides the "uglify" task.
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
-    grunt.loadNpmTasks('grunt-remfallback');
+    grunt.loadNpmTasks('grunt-pixrem');
     grunt.loadNpmTasks('grunt-contrib-compass');
 
     // Default task(s).
     grunt.registerTask('default', ['uglify']);
-    grunt.registerTask('css', ['compass', 'remfallback', 'cssmin']);
+    grunt.registerTask('css', ['compass', 'pixrem', 'cssmin']);
 
 };

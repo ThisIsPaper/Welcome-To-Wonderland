@@ -6,8 +6,6 @@
 @import "forms";
 @import "type";
 
-
-
 body {
 	color: $greyReallyDark;
 	background: $BodyBackground;
@@ -86,7 +84,6 @@ main {
 	background-image: image-url('bg_simple.png');
 	background-repeat: repeat-x;
 	background-position: top center;
-	padding: 208px 0 96px;
 	padding: 13rem 0 6rem;
 }
 
@@ -152,12 +149,15 @@ Event Page specific - move these out of here eventually
 }
 
 .profile-image {
-	@include rem-fallback(width, $profileImageSize);
-	@include rem-fallback(height, $profileImageSize);
+	width: $profileImageSize;
+	height: $profileImageSize;
 	background-repeat: no-repeat;
+	background-position: center;
 	background-size: cover;
 	background-color: $greyMedium;
 	float: left;
+	zoom: 1;
+	position: relative;
 
 	&.profile-image-notset {
 		background-image: image-url('avatar.png');
@@ -167,6 +167,8 @@ Event Page specific - move these out of here eventually
 		@include rem-fallback(width, $profileImageSize * .7);
 		@include rem-fallback(height, $profileImageSize * .7);
 	}
+
+	-ms-behavior: stylesheet-url('backgroundsize.min.htc');
 }
 
 .profile-image-remover {
@@ -516,17 +518,16 @@ One-off uses
 	@extend %clearfix;
 	@include rem-fallback(height, 45rem);
 	background-image: image-url('hero-ph.jpg');
-	-pie-background-image: image-url('hero-ph.jpg');
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
 	margin: 0;
-	@include rem-fallback(padding-top, 10rem);
+	padding-top: 10rem;
 
 	position: relative;
 	zoom: 1;
 
-	behavior: stylesheet-url('PIE.htc');
+	-ms-behavior: stylesheet-url('backgroundsize.min.htc');
 }
 
 .planking {
@@ -579,7 +580,7 @@ One-off uses
 	height: 100%;
 	width: 100%;
 
-	behavior: stylesheet-url('PIE.htc');
+	-ms-behavior: stylesheet-url('backgroundsize.min.htc');
 }
 
 .home-tile-label {
@@ -717,6 +718,7 @@ One-off uses
 	background-size: 444.8px 185.6px;
 	background-size: 27.8rem 11.6rem;
 
+	-ms-behavior: stylesheet-url('backgroundsize.min.htc');
 }
 
 .share-facebook, .share-twitter, .share-email {
