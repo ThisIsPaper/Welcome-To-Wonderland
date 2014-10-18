@@ -1,8 +1,8 @@
-wonderlandApp.directive('mFacebookLoginButton', ['facebook', 'mHttp', function (facebook, mHttp) {
+wonderlandApp.directive('mFacebookLoginButton', ['facebook', 'mHttp', '$timeout', '$window', function (facebook, mHttp, $timeout, $window) {
 
     return {
 
-        restrict: 'E',
+        restrict: 'A',
         replace: true,
         scope: {
             label: '='
@@ -11,76 +11,61 @@ wonderlandApp.directive('mFacebookLoginButton', ['facebook', 'mHttp', function (
             '<div class="btn-facebook-login radius-v2-small" ng-click="login()" ng-class="{\'disabled\': loading}" ng-bind="label"></div>' +
             '<div class="loader pos-static" ng-show="loading"></div>' +
             '<div class="successful" ng-show="formattedDetails">The user has logged in via Facebook! Hendy at this stage, we need to log the users in using their facebook app id.</div>' +
-            '<div class="boxx internal highlight radius-v3-small" ng-show="formattedDetails">' +
-            '<table>' +
-            '<tr ng-repeat="deet in formattedDetails">' +
-            '<td ng-bind="deet.key"></td>' +
-            '<td ng-bind="deet.value"></td>' +
-            '</tr>' +
-            '</table>' +
-            '</div>' +
+            '<div class="errorred" ng-show="showError" ng-bind="errorMessage"></div>' +
             '</div>',
 
         link: function (scope, element, attrs) {
 
             scope.loading = false;
             scope.formattedDetails = null;
+            scope.showError = false;
+            scope.errorMessage = attrs['errorMessage'] || "Oops, something went wrong!";
+
 
             var loginUrl = attrs['loginUrl'],
                 fbStatus = null,
                 fbLogin = null,
-                fbDetails = null,
-                getUserDetails = function () {
-
-                    fbDetails = facebook.getUserDetails();
-                    fbDetails.then(function () {
-                        scope.loading = false;
-                        formatUserDetails();
-                    });
-                },
                 loginToServer = function () {
 
                     if (!loginUrl) {
                         return;
                     }
 
-                    var auth = facebook.authenticationDetails().authResponse;
-                    console.log('LOGIN', loginUrl, auth);
+                    var auth = facebook.authenticationDetails().authResponse,
+                        formBody = angular.toJson({
+                                                        'accessToken': auth.accessToken,
+                                                        'userId': auth.userID,
+                                                        'signedRequest': auth.signedRequest
+                                                    });
+
                     var serverLogin = mHttp.post(loginUrl, {
-                        data: {
-                            'accessToken': auth.accessToken,
-                            'userId': auth.userID,
-                            'signedRequest': auth.signedRequest
-                        },
+                        data: formBody,
                         headers: {
                             'Content-Type': 'application/json'
                         }
                     });
                     serverLogin.then(function (response) {
-                        console.log('BANG', response);
+                        if (response && response.success === true) {
+
+                            if ("message" in response && response.message.length > 0) {
+                                $window.location = response.message;
+                            } else {
+                                $window.location.reload();
+                            }
+
+                        } else {
+
+                            if (response && "errors" in response && response.errors.length > 0) {
+                                scope.errorMessage = response.errors[0].errorMessages[0];
+                            }
+
+                            scope.loading = false;
+                            scope.showError = true;
+                        }
+
+                        $timeout(function () { scope.showError = false; }, 5000);
                     });
 
-                },
-                formatUserDetails = function () {
-                    var deets = [];
-
-                    angular.forEach(facebook.authenticationDetails().authResponse, function (value, key) {
-                        deets.push({
-                                       'key': key,
-                                       'value': value
-                                   });
-                    });
-
-                    angular.forEach(facebook.userDetails(), function (value, key) {
-                        deets.push({
-                                       'key': key,
-                                       'value': value
-                                   });
-                    });
-
-                    if (deets.length) {
-                        scope.formattedDetails = deets;
-                    }
                 };
 
 
@@ -94,17 +79,22 @@ wonderlandApp.directive('mFacebookLoginButton', ['facebook', 'mHttp', function (
                 scope.loading = true;
 
                 fbStatus.then(function (status) {
-                    fbLogin = facebook.doLogin();
-                    fbLogin.then(function (newStatus) {
 
-                        if (newStatus !== 'connected') {
-                            scope.loading = false;
-                        } else {
+                    if (status !== 'connected') {
+                        fbLogin = facebook.doLogin();
+                        fbLogin.then(function (newStatus) {
 
-                            loginToServer();
-                        }
+                            if (newStatus !== 'connected') {
+                                scope.loading = false;
+                            } else {
 
-                    });
+                                loginToServer();
+                            }
+
+                        });
+                    } else {
+                        loginToServer();
+                    }
                 });
             };
 
