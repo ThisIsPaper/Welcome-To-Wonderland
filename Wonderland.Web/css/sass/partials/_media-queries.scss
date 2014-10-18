@@ -9,18 +9,20 @@
 
 @media only screen and (max-width: 1100px) {
 
-	.logo {
-		padding: 89.44px 52.32px;
-		padding: 4.59rem 3.27rem;
-		margin: 0 -52.32px;
-		margin: 0 -3.27rem;
+	.crest {
+		width: 6.7rem;
+		height: 9.18rem;
+		left: 1.93rem;
+		top: 3rem;
+		background-size: 6.7rem 9.18rem; // ie fix
 	}
 
-	.logo-ribbon {
-		padding: 18.72px 92.16px;
-		padding: 1.17rem 5.76rem;
-		margin: 19.2px -92.16px;
-		margin: 1.2rem -5.76rem;
+	.banner {
+		width: 11.8rem;
+		height: 2.34rem;
+		left: -0.9rem;
+		top: 9rem;
+		background-size: 11.8rem 2.34rem; // ie fix
 	}
 
 	.left-side ul {
@@ -59,16 +61,17 @@
 	/********************/
 	/* COMPRESSED VIEW  */
 	/********************/
-	.site-header.compress .logo-ribbon {
-		@include rem-fallback(margin-top, 13.7rem);
+	.site-header.compress .banner {
+
+		top: 2.2rem;
 	}
 
 	.site-header.compress .left-side ul {
-		@include rem-fallback(margin-right, 6.2rem);
+		margin-right: 6.2rem;
 	}
 
 	.site-header.compress .right-side ul {
-		@include rem-fallback(margin-left, 6.2rem);
+		margin-left: 6.2rem;
 	}
 
 	//***************************** Party Ideas
@@ -148,20 +151,16 @@
 		@include rem-fallback(left, -25.6rem);
 	}
 
-	.logo {
-		@include rem-fallback(top, -16rem);
+	.crest {
+		top: -16rem;
 	}
 
-	.logo-ribbon, .site-header.compress .logo-ribbon {
-		@include rem-fallback(padding-top, 1.95rem);
-		@include rem-fallback(padding-bottom, 1.95rem);
-		@include rem-fallback(padding-left, 9.6rem);
-		@include rem-fallback(padding-right, 9.6rem);
-
-		@include rem-fallback(margin-top, 12.9rem);
-		@include rem-fallback(margin-bottom, 12.9rem);
-		@include rem-fallback(margin-left, -9.6rem);
-		@include rem-fallback(margin-right, -9.6rem);
+	.banner, .site-header.compress .banner {
+		height: 3.9rem;
+		top: 1.5rem;
+		width: 19.2rem;
+		left: -4.4rem;
+		background-size: 19.2rem 3.9rem; // ie fix
 	}
 
 	.nav-end-block {
@@ -385,6 +384,7 @@
 	.float-mobile-left {
 		float: left;
 	}
+
 
 	.margin-mobile-bottom-small {
 		margin-bottom: $marginSmallValue;

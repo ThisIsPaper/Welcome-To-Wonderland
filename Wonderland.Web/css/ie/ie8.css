@@ -14,3 +14,11 @@ because they need to be *16 not *10 that the default 62.5% inflicts
 .hero {
 	padding-top: 180px;
 }
+
+.crest {
+	background: url('/img/wonderland-crest.png') no-repeat center;
+}
+
+.banner {
+	background: url('/img/wonderland-logo.png') no-repeat center;
+}
