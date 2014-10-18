@@ -23,6 +23,7 @@ wonderlandApp.directive('mPostOnSubmit', ['safeApply', 'mHttp', '$parse', '$root
                     if (serialized && mHttp.isInProgress(formSubmitRequest)) {
                         return;
                     }
+
                     prepareForSubmit();
                     setProgressState('in-progress');
 
@@ -40,12 +41,10 @@ wonderlandApp.directive('mPostOnSubmit', ['safeApply', 'mHttp', '$parse', '$root
                     if (rvtElement && rvtElement.length) {
                         sendData.__RequestVerificationToken = rvtElement[0].value;
                     }
-
                     formSubmitRequest = mHttp.post(attrs.action, {
                         formData: sendData,
                         dataType: 'json'
                     });
-
 
                     formSubmitRequest.then(function(response) {
 
