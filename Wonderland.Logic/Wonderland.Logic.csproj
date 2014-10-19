@@ -216,6 +216,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Attributes\ValidateAntiForgeryTokenAttribute.cs" />
     <Compile Include="Controllers\Api\FacebookApiController.cs" />
     <Compile Include="Controllers\Api\PartyApiController.cs" />
     <Compile Include="Controllers\Api\PostcodeAnywhereApiController.cs" />

@@ -8,6 +8,7 @@ namespace Wonderland.Logic.Controllers.Api
     using Umbraco.Core;
     using Umbraco.Core.Security;
     using Umbraco.Web.WebApi;
+    using Wonderland.Logic.Attributes;
     using Wonderland.Logic.DotMailer;
     using Wonderland.Logic.Extensions;
     using Wonderland.Logic.Interfaces;
@@ -18,6 +19,7 @@ namespace Wonderland.Logic.Controllers.Api
     public class FacebookApiController : UmbracoApiController
     {
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public FormResponse RegisterHost([FromBody] FacebookCredentials facebookCredentials)
         {
             FormResponse formResponse = new FormResponse();
@@ -92,6 +94,7 @@ namespace Wonderland.Logic.Controllers.Api
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public FormResponse RegisterGuest([FromUri] Guid partyGuid, [FromBody] FacebookCredentials facebookCredentials)
         {
             FormResponse formResponse = new FormResponse();
@@ -156,6 +159,7 @@ namespace Wonderland.Logic.Controllers.Api
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public FormResponse Login([FromBody] FacebookCredentials facebookCredentials)
         {
             FormResponse formResponse = new FormResponse();
