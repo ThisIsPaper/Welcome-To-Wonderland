@@ -2,11 +2,15 @@
 abstract
 ========================================================================== */
 
+@import "helpers";
 @import "variables";
 @import "mixins";
 @import "../../scripts/bower_components/gridle/sass/gridle/gridle";
 
 
+//**************************************** CLEARFIX
+
+.clearfix { @extend %clearfix; }
 
 //**************************************** PADDING
 

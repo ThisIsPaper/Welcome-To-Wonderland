@@ -7,7 +7,7 @@
 
 
 
-    <div ng-init="processing=false;">
+    <div class="clearfix" ng-init="processing=false;">
         @using (Html.BeginUmbracoForm<PartySurfaceController>("HandleFundraisingTargetForm", FormMethod.Post, new { m_serialized="", m_post_on_submit="fundraisingTargetData", m_on_success_event="fundraisingTargetDataUpdated", @name="targetForm", ng_submit="processing=true" }))
         {
             @Html.AntiForgeryToken()

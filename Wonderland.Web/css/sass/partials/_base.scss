@@ -240,6 +240,7 @@ Event Page specific - move these out of here eventually
 	@extend .margin-bottom-medium;
 
 	float: left;
+	cursor: pointer;
 
 	input[type="radio"] {
 		display: none;
@@ -280,13 +281,15 @@ Event Page specific - move these out of here eventually
 
 .party-image-selecter {
 	@extend .margin-right-small;
-	@include rem-fallback(width, 16rem);
-	@include rem-fallback(height, 7.5rem);
+	width: 16rem;
+	height: 7.5rem;
 	background-size: cover;
 	background-color: $greyLight;
 	cursor: pointer;
 	position: relative;
 	overflow: hidden;
+
+	-ms-behavior: stylesheet-url('backgroundsize.min.htc');
 
 	&:before {
 		color: white;
