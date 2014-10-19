@@ -84,13 +84,6 @@ module.exports = function (grunt) {
                                      ]
                                  }
                              },
-                             ie9: {
-                                 files: {
-                                     '<%= pkg.jsPath %>ie9.min.js': [
-                                         '<%= pkg.jsPath %>app/polyfills/jquery.validate.unobtrusive.mvc4.js'
-                                     ]
-                                 }
-                             },
                              ie8: {
                                  files: {
                                      '<%= pkg.jsPath %>ie8.min.js': [

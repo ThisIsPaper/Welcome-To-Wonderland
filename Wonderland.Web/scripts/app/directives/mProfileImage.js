@@ -1,4 +1,4 @@
-wonderlandApp.directive('mProfileImage', ['safeApply', function (safeApply) {
+wonderlandApp.directive('mProfileImage', ['$timeout', function ($timeout) {
 
     var MAIN_CLASS = 'profile-image',
         NOT_SET_CLASS = 'profile-image-notset',
@@ -19,7 +19,7 @@ wonderlandApp.directive('mProfileImage', ['safeApply', function (safeApply) {
 
                 $(img).on('load', function () {
                     element.css('background-image', 'url('+ newImgSrc +')');
-                    safeApply(scope, function () {
+                    $timeout(function () {
                         scope.hasBackgroundImage = true;
                     });
                 });
