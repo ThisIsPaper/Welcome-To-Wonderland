@@ -35,7 +35,7 @@ namespace Wonderland.Logic.Controllers.Api
             MembershipUser membershipUser = membersUmbracoMembershipProvider.CreateUser(
                                                PartyHost.Alias,                                // member type alias
                                                facebookDetails.EmailAddress,                   // username
-                                               this.GetPassword(facebookCredentials),          // password
+                                               this.GetPassword(facebookDetails),              // password
                                                facebookDetails.EmailAddress,                   // email
                                                null,                                           // forgotten password question
                                                null,                                           // forgotten password answer
@@ -109,7 +109,7 @@ namespace Wonderland.Logic.Controllers.Api
             MembershipUser membershipUser = membersUmbracoMembershipProvider.CreateUser(
                                                PartyGuest.Alias,                               // member type alias
                                                facebookDetails.EmailAddress,                   // username
-                                               this.GetPassword(facebookCredentials),          // password
+                                               this.GetPassword(facebookDetails),              // password
                                                facebookDetails.EmailAddress,                   // email
                                                null,                                           // forgotten password question
                                                null,                                           // forgotten password answer
@@ -166,7 +166,7 @@ namespace Wonderland.Logic.Controllers.Api
 
             FacebookDetails facebookDetails = this.GetFacebookDetails(facebookCredentials);
 
-            if (this.Members.Login(facebookDetails.EmailAddress, this.GetPassword(facebookCredentials)))
+            if (this.Members.Login(facebookDetails.EmailAddress, this.GetPassword(facebookDetails)))
             {
                 formResponse.Success = true;
 
@@ -184,22 +184,25 @@ namespace Wonderland.Logic.Controllers.Api
 
             return new FacebookDetails()
                 {
+                    UserId = facebookCredentials.UserId, // TODO get value from facebook instead
                     EmailAddress = me.email,
                     FirstName = me.first_name,
                     LastName = me.last_name
                 };
         }
 
-        private string GetPassword(FacebookCredentials facebookCredentials)
+        private string GetPassword(FacebookDetails facebookDetails)
         {
             // HACK: 
-            string passwordPreHash = facebookCredentials.UserId + "70E5B25D-8A18-4302-AE04-79CBD3FC1EE0";
+            string passwordPreHash = facebookDetails.UserId + "70E5B25D-8A18-4302-AE04-79CBD3FC1EE0";
 
             return FormsAuthentication.HashPasswordForStoringInConfigFile(passwordPreHash, "sha1");
         }
 
         private struct FacebookDetails
         {
+            internal string UserId { get; set; }
+
             internal string EmailAddress { get; set; }
 
             internal string FirstName { get; set; }
