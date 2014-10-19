@@ -6,6 +6,8 @@
     {
         @Html.AntiForgeryToken()
 
+        <input id="PartyWallImage" name="PartyWallImage" type="hidden" ng-value="wall.formModel.PartyWallImage|forceNullString">
+
         <div class="image-shift-details margin-bottom-small">
             <textarea name="Message" ng-model="wall.formModel.Message" m-radius-picker="small" class="wall-textarea" ng-class="{'error': wall.formModel.Message.length>600}"></textarea>
 
