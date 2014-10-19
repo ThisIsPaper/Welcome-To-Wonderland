@@ -27,6 +27,24 @@
     <script type="text/javascript">window.slimmage = { verbose: false };</script>
 
     <!--[if lt IE 9]>
+        <!--<script type="text/javascript"
+        src="https://getfirebug.com/firebug-lite.js">
+        {
+            overrideConsole: true,
+            startInNewWindow: true,
+            startOpened: true,
+            enableTrace: true
+        }
+        </script> -->
+    <![endif]-->
+
+
+    <!--[if lte IE 7]>
+        <script src="/scripts/ie7.min.js"></script>
+    <![endif]-->
+
+
+    <!--[if lt IE 9]>
         <script>
           document.createElement('header');
           document.createElement('nav');
@@ -73,19 +91,24 @@
 
     </div>
 
-    <script src="~/scripts/all.min.js" type="text/javascript"></script>
+    <script src="/scripts/all.min.js" type="text/javascript"></script>
 
-    <!--[if lt IE 9]>
-        <script src="/scripts/ie8.min.js"></script>
-    <![endif]-->
+    <!--[if gt IE 7]><!-->
+    <script src="/scripts/base_above_ie7.min.js" type="text/javascript"></script>
+    <!--<![endif]-->
 
-    <!--[if lte IE 7]>
-        <script src="/scripts/ie7.min.js"></script>
+
+    <!--[if lte IE 8]>
+    <!--<script type="text/javascript">-->
+        <!--$(document).ready(function() {-->
+<!--//            alert('bootstrap!');-->
+            <!--angular.bootstrap(document);-->
+        <!--});-->
+    <!--</script>-->
     <![endif]-->
 
 
     <script>angular.bootstrap(document.getElementsByTagName("html")[0], ['wonderlandApp']);</script>
-
 
     @* TODO: Hendy these values need to be populated, prob best to check with Craig, seems like it just for payments *@
     <!-- Google Tag Manager Variables -->

@@ -16,10 +16,10 @@ module.exports = function (grunt) {
                          uglify: {
                              options: {
                                  mangle: false,
-                                 beautify: true,
+                                 beautify: false,
                                  banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n',
                                  compress: {
-                                     drop_console: false
+                                     drop_console: true
                                  }
                              },
                              base: {
@@ -29,14 +29,12 @@ module.exports = function (grunt) {
                                          '<%= pkg.jsPath %>vendor/modernizr-2.6.2.min.js',
 
                                          '<%= pkg.jsPath %>vendor/jquery-1.10.2.js',
-                                         '<%= pkg.jsPath %>bower_components/masonry/dist/masonry.pkgd.js',
                                          '<%= pkg.jsPath %>bower_components/imagesloaded/imagesloaded.pkgd.js',
                                          '<%= pkg.jsPath %>bower_components/angular/angular.js',
                                          '<%= pkg.jsPath %>bower_components/ocModal/dist/ocModal.js',
                                          '<%= pkg.jsPath %>bower_components/moment/moment.js',
                                          '<%= pkg.jsPath %>bower_components/pikaday/pikaday.js',
                                          '<%= pkg.jsPath %>bower_components/angular-macgyver/lib/macgyver-core.js',
-//                                         '<%= pkg.jsPath %>bower_components/8b5adedd84c0d36aba64/html5-formdata-polyfilll.js',
 
                                          '<%= pkg.jsPath %>app/app.js',
 
@@ -84,6 +82,13 @@ module.exports = function (grunt) {
                                      ]
                                  }
                              },
+                             base_above_ie7: {
+                                 files: {
+                                     '<%= pkg.jsPath %>base_above_ie7.min.js': [
+                                         '<%= pkg.jsPath %>bower_components/masonry/dist/masonry.pkgd.js'
+                                     ]
+                                 }
+                             },
                              ie8: {
                                  files: {
                                      '<%= pkg.jsPath %>ie8.min.js': [
@@ -96,7 +101,9 @@ module.exports = function (grunt) {
                              ie7: {
                                  files: {
                                      '<%= pkg.jsPath %>ie7.min.js': [
-                                         '<%= pkg.jsPath %>bower_components/JSON-js/json2.js'
+//                                         '<%= pkg.jsPath %>bower_components/JSON-js/json2.js',
+                                         '<%= pkg.jsPath %>bower_components/8960575/querySelector.polyfill.js',
+                                         '<%= pkg.jsPath %>bower_components/json3/lib/json3.min.js'
                                      ]
                                  }
                              }

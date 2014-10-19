@@ -1,6 +1,5 @@
 wonderlandApp.controller('PartyCtrl', ['$filter', '$ocModal', '$rootScope', '$sce', '$scope', '$timeout', function ($filter, $ocModal, $rootScope, $sce, $scope, $timeout) {
 
-
     /**********************/
     /* PARTY COPY */
     /**********************/
