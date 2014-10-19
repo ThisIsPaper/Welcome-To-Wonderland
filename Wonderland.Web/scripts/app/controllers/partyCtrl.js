@@ -92,10 +92,6 @@ wonderlandApp.controller('PartyCtrl', ['$filter', '$ocModal', '$rootScope', '$sc
                      $scope.fundraisingTargetData = fundraisingTargetData;
                      $scope.fundraisingTargetDataForForm = angular.copy($scope.fundraisingTargetData);
 
-                     for (var x in $scope.fundraisingTargetDataForForm) {
-                        console.log(x + ' : ', $scope.fundraisingTargetDataForForm[x]);
-                     }
-
                      if (fundraisingTargetFirstSet) {
                          fundraisingTargetFirstSet = false;
                          if (fundraisingTargetData.FundraisingTarget <= 0) {
