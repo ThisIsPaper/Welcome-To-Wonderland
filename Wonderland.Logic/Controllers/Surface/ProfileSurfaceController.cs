@@ -5,13 +5,14 @@ namespace Wonderland.Logic.Controllers.Surface
     using System.Web.Mvc;
     using Umbraco.Core.Models;
     using Umbraco.Web.Mvc;
+    using Wonderland.Logic.DotMailer;
     using Wonderland.Logic.Extensions;
     using Wonderland.Logic.Interfaces;
+    using Wonderland.Logic.Models.Content;
     using Wonderland.Logic.Models.Entities;
     using Wonderland.Logic.Models.Forms;
     using Wonderland.Logic.Models.Members;
-    using Wonderland.Logic.Models.Content;
-    using Wonderland.Logic.DotMailer;
+    using Wonderland.Logic.Models.Messages;
 
     public class ProfileSurfaceController : SurfaceController
     {
@@ -59,7 +60,7 @@ namespace Wonderland.Logic.Controllers.Surface
                 formResponse.Errors = this.ModelState.GetErrors();
             }
 
-            return Json(formResponse);
+            return Json(formResponse, "text/html");
         }
 
         [ChildActionOnly]
@@ -97,7 +98,7 @@ namespace Wonderland.Logic.Controllers.Surface
                 formResponse.Errors = this.ModelState.GetErrors();
             }
 
-            return Json(formResponse);
+            return Json(formResponse, "text/html");
         }
 
 
@@ -144,7 +145,7 @@ namespace Wonderland.Logic.Controllers.Surface
                 formResponse.Errors = this.ModelState.GetErrors();
             }
 
-            return Json(formResponse);
+            return Json(formResponse, "text/html");
         }
 
         [ChildActionOnly]
@@ -184,7 +185,7 @@ namespace Wonderland.Logic.Controllers.Surface
                 formResponse.Errors = this.ModelState.GetErrors();
             }
 
-            return Json(formResponse);
+            return Json(formResponse, "text/html");
         }
 
         [ChildActionOnly]
@@ -224,7 +225,7 @@ namespace Wonderland.Logic.Controllers.Surface
                 formResponse.Errors = this.ModelState.GetErrors();
             }
 
-            return Json(formResponse);
+            return Json(formResponse, "text/html");
         }
 
         /// <summary>

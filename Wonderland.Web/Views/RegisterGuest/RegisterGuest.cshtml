@@ -3,6 +3,7 @@
     Layout = "~/Views/SitePage.cshtml";
 }
 
+
 <div class="page-bg">
 
     <div class="container gutter">
@@ -16,6 +17,8 @@
             </div>
 
         </div>
+
+
 
 
         <div class="wgrid-side parent wgrid-no-bottom-margin">
@@ -32,6 +35,15 @@
         <div class="wgrid-main">
 
             <div class="boxx radius-top-0" m-radius-picker>
+
+                <hr/>
+
+
+                <div class="grid-8 grid-mobile-12 parent centered margin-top-3 margin-bottom-3">
+                    <div m-facebook-login-button label="'Register with Facebook'" login-url="@(Url.GetUmbracoApiService<FacebookApiController>("RegisterGuest"))?partyGuid=@Model.PartyHost.PartyGuid"></div>
+                </div>
+
+
                 <hr/>
 
                 @(Html.Action<RegisterGuestSurfaceController>("RenderRegisterGuestForm"))

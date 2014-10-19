@@ -82,6 +82,8 @@ namespace Wonderland.Logic.Controllers.Surface
             // cast from MembershipUser rather than use this.Members.GetCurrentMember() helper (which needs a round trip for the login)
             PartyHost partyHost = (PartyHost)membershipUser;
 
+            partyHost.FacebookRegistration = false;
+
             partyHost.MarketingSource = registerHostForm.MarketingSource;
 
             Guid partyGuid = Guid.NewGuid();
@@ -98,7 +100,7 @@ namespace Wonderland.Logic.Controllers.Surface
             partyHost.PartyUrlIdentifier = partyGuid.ToString();
 
             // set default party date
-            partyHost.PartyDateTime = new DateTime(2014, 12, 5, 20, 0, 0);
+            partyHost.PartyDateTime = PartyHost.DefaultPartyDate;
 
             // add member to DotMailer
             DotMailerService.HostRegistrationStarted((Contact)partyHost);

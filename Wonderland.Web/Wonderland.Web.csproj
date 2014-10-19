@@ -516,6 +516,7 @@
     <Content Include="scripts\app\directives\mWindowClickToggle.js" />
     <Content Include="scripts\app\filters\all.js" />
     <Content Include="scripts\app\services\debounce.js" />
+    <Content Include="scripts\app\services\facebook.js" />
     <Content Include="scripts\app\services\fileUpload.js" />
     <Content Include="scripts\app\services\formset.js" />
     <Content Include="scripts\app\services\mHttp.js" />

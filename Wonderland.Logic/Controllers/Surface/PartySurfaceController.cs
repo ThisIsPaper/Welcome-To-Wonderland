@@ -2,7 +2,6 @@
 namespace Wonderland.Logic.Controllers.Surface
 {
     using System;
-    using System.Linq;
     using System.Web.Mvc;
     using Umbraco.Web.Mvc;
     using Wonderland.Logic.DotMailer;
@@ -12,6 +11,7 @@ namespace Wonderland.Logic.Controllers.Surface
     using Wonderland.Logic.Models.Entities;
     using Wonderland.Logic.Models.Forms;
     using Wonderland.Logic.Models.Members;
+    using Wonderland.Logic.Models.Messages;
 
     public class PartySurfaceController : SurfaceController
     {
@@ -44,7 +44,7 @@ namespace Wonderland.Logic.Controllers.Surface
                 formResponse.Errors = this.ModelState.GetErrors();
             }
 
-            return Json(formResponse);
+            return Json(formResponse, "text/html");
         }
 
         [ChildActionOnly]
@@ -72,7 +72,7 @@ namespace Wonderland.Logic.Controllers.Surface
                 formResponse.Success = true;
             }
 
-            return Json(formResponse);
+            return Json(formResponse, "text/html");
         }
 
         [ChildActionOnly]
@@ -107,7 +107,7 @@ namespace Wonderland.Logic.Controllers.Surface
                 formResponse.Errors = this.ModelState.GetErrors();
             }
 
-            return Json(formResponse);
+            return Json(formResponse, "text/html");
         }
 
         [ChildActionOnly]
@@ -153,7 +153,7 @@ namespace Wonderland.Logic.Controllers.Surface
                 formResponse.Errors = this.ModelState.GetErrors();
             }
 
-            return Json(formResponse);
+            return Json(formResponse, "text/html");
         }
 
         [ChildActionOnly]
@@ -225,7 +225,7 @@ namespace Wonderland.Logic.Controllers.Surface
                 formResponse.Errors = this.ModelState.GetErrors();
             }
 
-            return Json(formResponse);
+            return Json(formResponse, "text/html");
         }
 
         [ChildActionOnly]
@@ -259,7 +259,7 @@ namespace Wonderland.Logic.Controllers.Surface
                 formResponse.Errors = this.ModelState.GetErrors();
             }
 
-            return Json(formResponse);
+            return Json(formResponse, "text/html");
         }
 
         [ChildActionOnly]
@@ -293,7 +293,7 @@ namespace Wonderland.Logic.Controllers.Surface
                 formResponse.Errors = this.ModelState.GetErrors();
             }
 
-            return Json(formResponse);
+            return Json(formResponse, "text/html");
         }
 
         [ChildActionOnly]
@@ -337,7 +337,7 @@ namespace Wonderland.Logic.Controllers.Surface
                 formResponse.Success = true;
             }
 
-            return Json(formResponse);
+            return Json(formResponse, "text/html");
         }
 
         [ChildActionOnly]
@@ -373,7 +373,7 @@ namespace Wonderland.Logic.Controllers.Surface
                 formResponse.Errors = this.ModelState.GetErrors();
             }
 
-            return Json(formResponse);
+            return Json(formResponse, "text/html");
         }
 
         private void CheckPartyPageComplete(PartyHost partyHost)
