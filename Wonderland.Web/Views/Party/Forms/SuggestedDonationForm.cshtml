@@ -15,14 +15,14 @@
         {
             @Html.AntiForgeryToken()
 
-            @Html.EditorForModel()
+            <input id="SuggestedDonation" name="SuggestedDonation" type="hidden" ng-value="suggestedDonationData.SuggestedDonation">
 
             <div class="container margin-bottom-medium">
 
                 <div class="pos-relative grid-3 grid-tablet-6 grid-mobile-12 pad-0" ng-repeat="donation in hardcodedDonationSuggestions">
                     <label >
 
-                        <div class="ticket clickable" ng-class="{'selected': suggestedDonationData.SuggestedDonation==donation.amount}">
+                        <div class="ticket clickable" ng-class="{'selected': suggestedDonationData.SuggestedDonation==donation.amount}" ng-click="suggestedDonationData.SuggestedDonation=donation.amount">
 
                             <div class="stub">
                                 <div class="holes"></div>
@@ -32,7 +32,7 @@
 
                             <div class="body-highlight text-align-center" ng-bind="donation.label"></div>
 
-                            <input type="radio" name="SuggestedDonation" ng-value="donation.amount" ng-model="suggestedDonationData.SuggestedDonation" ng-readonly="processing" />
+                            <!--<input type="radio" name="SuggestedDonation" ng-value="donation.amount" ng-model="suggestedDonationData.SuggestedDonation" ng-readonly="processing" />-->
 
                         </div>
 
