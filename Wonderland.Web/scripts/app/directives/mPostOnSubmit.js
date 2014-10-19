@@ -36,7 +36,7 @@ wonderlandApp.directive('mPostOnSubmit', ['mHttp', 'uniqueId', '$parse', '$rootS
                  */
                 if (window.File && window.FileReader) {
 
-                    $timeout(scope.$apply(function () {
+                    $timeout(function () {
                         // check for ufprt as hidden value
                         var ufprtElement = element.find("[name='ufprt']");
                         if (ufprtElement && ufprtElement.length) {
@@ -48,6 +48,8 @@ wonderlandApp.directive('mPostOnSubmit', ['mHttp', 'uniqueId', '$parse', '$rootS
                         if (rvtElement && rvtElement.length) {
                             sendData.__RequestVerificationToken = rvtElement[0].value;
                         }
+
+
                         formSubmitRequest = mHttp.post(attrs.action + '?t=' + new Date().getTime(), {
                             formData: sendData,
                             dataType: 'json'
@@ -58,7 +60,7 @@ wonderlandApp.directive('mPostOnSubmit', ['mHttp', 'uniqueId', '$parse', '$rootS
                         }, function () {
                             setProgressState('ready');
                         });
-                    }));
+                    });
 
 
                     /**
@@ -70,13 +72,11 @@ wonderlandApp.directive('mPostOnSubmit', ['mHttp', 'uniqueId', '$parse', '$rootS
                     var target = 'form_target_iframe_' + uniqueId();
 
                     var $targetIframe = $('<iframe/>', { name: target, id: target, frameborder: '0' }).insertAfter(element).css({ width: 0, height: 0 }).load(function () {
-                        $timeout(scope.$apply(function () {
+                        $timeout(function () {
                             var response = $targetIframe.contents().find("body").html();
 
-                            console.log('RESPONSE', response);
-
                             handleResponse(JSON.parse(response), originalData);
-                        }));
+                        });
                     });
 
                     var $postForm = $('<form></form>', { target: target, method: 'post', enctype: 'multipart/form-data' }).insertAfter(element);
