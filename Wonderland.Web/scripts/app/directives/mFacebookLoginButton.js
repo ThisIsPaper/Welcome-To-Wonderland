@@ -22,7 +22,8 @@ wonderlandApp.directive('mFacebookLoginButton', ['facebook', 'mHttp', '$timeout'
             scope.errorMessage = attrs['errorMessage'] || "Oops, something went wrong!";
 
 
-            var loginUrl = attrs['loginUrl'],
+            var requestVerificationToken = null,
+                loginUrl = attrs['loginUrl'],
                 fbStatus = null,
                 fbLogin = null,
                 loginToServer = function () {
@@ -41,9 +42,9 @@ wonderlandApp.directive('mFacebookLoginButton', ['facebook', 'mHttp', '$timeout'
                             'Content-Type': 'application/json'
                         };
 
-                    if ("mAntiForgeryToken" in attrs) {
+                    if (requestVerificationToken !== null) {
                         angular.extend(postHeaders, {
-                            'RequestVerificationToken': attrs.mAntiForgeryToken
+                            '__RequestVerificationToken': requestVerificationToken
                         });
                     }
 
@@ -107,6 +108,13 @@ wonderlandApp.directive('mFacebookLoginButton', ['facebook', 'mHttp', '$timeout'
                 });
             };
 
+
+            /**
+             *
+             */
+            scope.$on('requestVerificationToken', function (event, token) {
+                requestVerificationToken = token;
+            });
 
             /**
              * This needs to run on page load. If it is part of the login sequence

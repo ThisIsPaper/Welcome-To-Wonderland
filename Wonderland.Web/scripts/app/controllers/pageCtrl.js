@@ -91,6 +91,14 @@ wonderlandApp.controller('PageCtrl', ['debounce', 'paf', 'safeApply', '$rootScop
     };
 
 
+    /**
+     * HACKY FORM TOKEN SCRAPE
+     */
+    $scope.$on('formToken', function (event, token) {
+        $scope.$broadcast('requestVerificationToken', token);
+    });
+
+
     /*************************
     HARDCODED
     /*************************/

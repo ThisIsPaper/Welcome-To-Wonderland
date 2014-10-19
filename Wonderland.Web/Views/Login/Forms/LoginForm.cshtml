@@ -13,7 +13,7 @@
 -->
 
 <div ng-init="processing=false">
-    @using (Html.BeginUmbracoForm<LoginSurfaceController>("HandleLoginForm", FormMethod.Post, new { ng_submit="processing=true" }))
+    @using (Html.BeginUmbracoForm<LoginSurfaceController>("HandleLoginForm", FormMethod.Post, new { ng_submit="processing=true", m_form_token_dispatcher="" }))
     {
         @Html.AntiForgeryToken()
 
