@@ -43,6 +43,7 @@ module.exports = function (grunt) {
                                          '<%= pkg.jsPath %>app/directives/mKeyEnterTrigger.js',
                                          '<%= pkg.jsPath %>app/directives/mFacebookLoginButton.js',
                                          '<%= pkg.jsPath %>app/directives/mFileSelected.js',
+                                         '<%= pkg.jsPath %>app/directives/mFormTokenDispatcher.js',
                                          '<%= pkg.jsPath %>app/directives/mHeightMatchWidth.js',
                                          '<%= pkg.jsPath %>app/directives/mImageLoadedBroadcaster.js',
                                          '<%= pkg.jsPath %>app/directives/mImageLoadedNotifier.js',
