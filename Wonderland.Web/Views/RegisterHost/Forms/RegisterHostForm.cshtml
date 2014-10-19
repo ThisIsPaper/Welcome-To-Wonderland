@@ -1,5 +1,16 @@
 ﻿@model RegisterHostForm
 
+<!--
+    @(Url.GetUmbracoApiService<FacebookApiController>("RegisterHost"))
+    {
+        'accessToken' : 'xxx',
+        'userId' : '123',
+        'signedRequest' : "xxx",
+        'emailAddress' : 'someone@facebook.com',
+        'firstName' : 'first',
+        'lastName' : 'last'
+    }
+-->
 
 @using(Html.BeginUmbracoForm<RegisterHostSurfaceController>("HandleRegisterHostForm", FormMethod.Post, new { ng_submit="processing=true" }))
 {

@@ -9,9 +9,8 @@ namespace Wonderland.Logic.Controllers.Api
     using Wonderland.Logic.Extensions;
     using Wonderland.Logic.Interfaces;
     using Wonderland.Logic.Models.Database;
-    using Wonderland.Logic.Models.Entities;
-    using Wonderland.Logic.Models.Forms;
     using Wonderland.Logic.Models.Members;
+    using Wonderland.Logic.Models.Messages;
     
     public class PartyApiController : UmbracoApiController
     {

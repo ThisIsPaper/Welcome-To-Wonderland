@@ -1,5 +1,5 @@
 ﻿
-namespace Wonderland.Logic.Models.Forms
+namespace Wonderland.Logic.Models.Messages
 {
     using Newtonsoft.Json;
     using System.Collections.Generic;

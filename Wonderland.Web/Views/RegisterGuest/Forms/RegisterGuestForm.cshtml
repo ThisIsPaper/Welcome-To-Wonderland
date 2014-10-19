@@ -1,5 +1,19 @@
 ﻿@model RegisterGuestForm
 
+<!--
+    @(Url.GetUmbracoApiService<FacebookApiController>("RegisterGuest"))
+
+get variable on queryString: partyGuid=
+post Json
+{
+    'accessToken' : 'xxx',
+    'userId' : '123',
+    'signedRequest' : "xxx",
+    'emailAddress' : 'someone@facebook.com',
+    'firstName' : 'first',
+    'lastName' : 'last'
+}
+-->
 
 <div ng-init="processing=false">
     @using (Html.BeginUmbracoForm<RegisterGuestSurfaceController>("HandleRegisterGuestForm", FormMethod.Post, new { ng_submit="processing=true" }))
@@ -9,7 +23,7 @@
 
         <div class="grid-8 grid-mobile-12 margin-bottom-large">
 
-            <h3>Your details</h3>
+            <h3>Or by email</h3>
             @Html.AntiForgeryToken()
 
 
