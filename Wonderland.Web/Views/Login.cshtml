@@ -17,7 +17,7 @@
                 <hr/>
 
                 <div class="grid-8 grid-mobile-12 parent centered margin-top-3 margin-bottom-3">
-                    <div m-facebook-login-button label="'Login with Facebook'" login-url="@(Url.GetUmbracoApiService<FacebookApiController>("Login"))"></div>
+                    <div m-facebook-login-button label="'Login with Facebook'" m-anti-forgery-token="@GetAntiForgeryToken()" login-url="@(Url.GetUmbracoApiService<FacebookApiController>("Login"))"></div>
                 </div>
 
                 <hr/>

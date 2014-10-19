@@ -32,17 +32,24 @@ wonderlandApp.directive('mFacebookLoginButton', ['facebook', 'mHttp', '$timeout'
                     }
 
                     var auth = facebook.authenticationDetails().authResponse,
-                        formBody = angular.toJson({
-                                                        'accessToken': auth.accessToken,
-                                                        'userId': auth.userID,
-                                                        'signedRequest': auth.signedRequest
-                                                    });
+                        jsonData = {
+                            'accessToken': auth.accessToken,
+                            'userId': auth.userID,
+                            'signedRequest': auth.signedRequest
+                        },
+                        postHeaders = {
+                            'Content-Type': 'application/json'
+                        };
+
+                    if ("mAntiForgeryToken" in attrs) {
+                        angular.extend(postHeaders, {
+                            'RequestVerificationToken': attrs.mAntiForgeryToken
+                        });
+                    }
 
                     var serverLogin = mHttp.post(loginUrl, {
-                        data: formBody,
-                        headers: {
-                            'Content-Type': 'application/json'
-                        }
+                        data: angular.toJson(jsonData),
+                        headers: postHeaders
                     });
                     serverLogin.then(function (response) {
                         if (response && response.success === true) {
@@ -63,7 +70,9 @@ wonderlandApp.directive('mFacebookLoginButton', ['facebook', 'mHttp', '$timeout'
                             scope.showError = true;
                         }
 
-                        $timeout(function () { scope.showError = false; }, 5000);
+                        $timeout(function () {
+                            scope.showError = false;
+                        }, 5000);
                     });
 
                 };
