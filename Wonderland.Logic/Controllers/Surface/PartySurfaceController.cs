@@ -44,7 +44,7 @@ namespace Wonderland.Logic.Controllers.Surface
                 formResponse.Errors = this.ModelState.GetErrors();
             }
 
-            return Json(formResponse, "text/html");
+            return Json(formResponse, "text/plain");
         }
 
         [ChildActionOnly]
@@ -72,7 +72,7 @@ namespace Wonderland.Logic.Controllers.Surface
                 formResponse.Success = true;
             }
 
-            return Json(formResponse, "text/html");
+            return Json(formResponse, "text/plain");
         }
 
         [ChildActionOnly]
@@ -107,7 +107,7 @@ namespace Wonderland.Logic.Controllers.Surface
                 formResponse.Errors = this.ModelState.GetErrors();
             }
 
-            return Json(formResponse, "text/html");
+            return Json(formResponse, "text/plain");
         }
 
         [ChildActionOnly]
@@ -153,7 +153,7 @@ namespace Wonderland.Logic.Controllers.Surface
                 formResponse.Errors = this.ModelState.GetErrors();
             }
 
-            return Json(formResponse, "text/html");
+            return Json(formResponse, "text/plain");
         }
 
         [ChildActionOnly]
@@ -225,7 +225,7 @@ namespace Wonderland.Logic.Controllers.Surface
                 formResponse.Errors = this.ModelState.GetErrors();
             }
 
-            return Json(formResponse, "text/html");
+            return Json(formResponse, "text/plain");
         }
 
         [ChildActionOnly]
@@ -259,7 +259,7 @@ namespace Wonderland.Logic.Controllers.Surface
                 formResponse.Errors = this.ModelState.GetErrors();
             }
 
-            return Json(formResponse, "text/html");
+            return Json(formResponse, "text/plain");
         }
 
         [ChildActionOnly]
@@ -293,7 +293,7 @@ namespace Wonderland.Logic.Controllers.Surface
                 formResponse.Errors = this.ModelState.GetErrors();
             }
 
-            return Json(formResponse, "text/html");
+            return Json(formResponse, "text/plain");
         }
 
         [ChildActionOnly]
@@ -337,7 +337,7 @@ namespace Wonderland.Logic.Controllers.Surface
                 formResponse.Success = true;
             }
 
-            return Json(formResponse, "text/html");
+            return Json(formResponse, "text/plain");
         }
 
         [ChildActionOnly]
@@ -373,7 +373,7 @@ namespace Wonderland.Logic.Controllers.Surface
                 formResponse.Errors = this.ModelState.GetErrors();
             }
 
-            return Json(formResponse, "text/html");
+            return Json(formResponse, "text/plain");
         }
 
         private void CheckPartyPageComplete(PartyHost partyHost)
