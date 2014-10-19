@@ -1,0 +1,15 @@
+{
+  "name": "winf.unobtrusiveAjax.js",
+  "homepage": "https://github.com/dhlavaty/winf.unobtrusiveAjax.js",
+  "version": "0.2.0",
+  "_release": "0.2.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.2.0",
+    "commit": "780c744642c977b8a1f9d15c867d533c7acf9279"
+  },
+  "_source": "git://github.com/dhlavaty/winf.unobtrusiveAjax.js.git",
+  "_target": "~0.2.0",
+  "_originalSource": "dhlavaty/winf.unobtrusiveAjax.js",
+  "_direct": true
+}

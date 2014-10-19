@@ -36,6 +36,7 @@ module.exports = function (grunt) {
                                          '<%= pkg.jsPath %>bower_components/moment/moment.js',
                                          '<%= pkg.jsPath %>bower_components/pikaday/pikaday.js',
                                          '<%= pkg.jsPath %>bower_components/angular-macgyver/lib/macgyver-core.js',
+//                                         '<%= pkg.jsPath %>bower_components/8b5adedd84c0d36aba64/html5-formdata-polyfilll.js',
 
                                          '<%= pkg.jsPath %>app/app.js',
 
@@ -80,6 +81,13 @@ module.exports = function (grunt) {
                                          '<%= pkg.jsPath %>app/services/safeApply.js',
                                          '<%= pkg.jsPath %>app/services/uniqueId.js'
 
+                                     ]
+                                 }
+                             },
+                             ie9: {
+                                 files: {
+                                     '<%= pkg.jsPath %>ie9.min.js': [
+                                         '<%= pkg.jsPath %>app/polyfills/jquery.validate.unobtrusive.mvc4.js'
                                      ]
                                  }
                              },
@@ -149,18 +157,21 @@ module.exports = function (grunt) {
                                  }
                              }
                          }
-                     });
+                     }
+    )
+    ;
 
-    // Load the plugin that provides the "uglify" task.
+// Load the plugin that provides the "uglify" task.
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-pixrem');
     grunt.loadNpmTasks('grunt-contrib-compass');
     grunt.loadNpmTasks('grunt-contrib-jshint');
 
-    // Default task(s).
+// Default task(s).
     grunt.registerTask('js', ['jshint', 'uglify']);
     grunt.registerTask('css', ['compass', 'pixrem', 'cssmin']);
     grunt.registerTask('default', ['js', 'css']);
 
-};
+}
+;

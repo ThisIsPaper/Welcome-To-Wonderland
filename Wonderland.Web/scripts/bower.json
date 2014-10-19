@@ -25,6 +25,9 @@
     "JSON-js": "douglascrockford/JSON-js",
     "es5-shim": "es-shims/es5-shim#~4.0.3",
     "PIE": "lojjic/PIE#~1.0.0",
-    "background-size-polyfill": "louisremi/background-size-polyfill#~0.2.0"
+    "background-size-polyfill": "louisremi/background-size-polyfill#~0.2.0",
+    "8b5adedd84c0d36aba64": "https://gist.github.com/Rob--W/8b5adedd84c0d36aba64.git",
+    "webshim": "aFarkas/webshim#~1.15.3",
+    "winf.unobtrusiveAjax.js": "dhlavaty/winf.unobtrusiveAjax.js#~0.2.0"
   }
 }

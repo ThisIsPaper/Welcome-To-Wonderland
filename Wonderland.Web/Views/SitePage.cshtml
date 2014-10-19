@@ -26,7 +26,6 @@
 
     <script type="text/javascript">window.slimmage = { verbose: false };</script>
 
-
     <!--[if lt IE 9]>
         <script>
           document.createElement('header');
@@ -44,11 +43,6 @@
     <!--[if gt IE 8]><!-->
         <link href="/css/all.min.css" type="text/css" rel="stylesheet" />
     <!--<![endif]-->
-
-
-    <!--[if lte IE 7]>
-        <script src="/scripts/ie7.min.js"></script>
-    <![endif]-->
 
 
     <!-- Google Tracking Info -->
@@ -79,6 +73,19 @@
     </div>
 
     <script src="~/scripts/all.min.js" type="text/javascript"></script>
+
+    <!--[if lte IE 9]>
+        <!--<script src="/scripts/ie9.min.js"></script>-->
+    <![endif]-->
+
+    <!--[if lt IE 9]>
+        <script src="/scripts/ie8.min.js"></script>
+    <![endif]-->
+
+    <!--[if lte IE 7]>
+        <script src="/scripts/ie7.min.js"></script>
+    <![endif]-->
+
 
     <script>angular.bootstrap(document.getElementsByTagName("html")[0], ['wonderlandApp']);</script>
 
