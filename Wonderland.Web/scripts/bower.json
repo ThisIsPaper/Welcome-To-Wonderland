@@ -16,6 +16,8 @@
     "tests"
   ],
   "dependencies": {
+    "4673695": "https://gist.github.com/Fusselwurm/4673695.git",
+    "8960575": "https://gist.github.com/chrisjlee/8960575.git",
     "html5shiv": "~3.7.2",
     "angular": "~1.2.24",
     "moment": "~2.8.3",
@@ -28,6 +30,7 @@
     "background-size-polyfill": "louisremi/background-size-polyfill#~0.2.0",
     "8b5adedd84c0d36aba64": "https://gist.github.com/Rob--W/8b5adedd84c0d36aba64.git",
     "webshim": "aFarkas/webshim#~1.15.3",
-    "winf.unobtrusiveAjax.js": "dhlavaty/winf.unobtrusiveAjax.js#~0.2.0"
+    "winf.unobtrusiveAjax.js": "dhlavaty/winf.unobtrusiveAjax.js#~0.2.0",
+    "json3": "bestiejs/json3#~3.3.2"
   }
 }

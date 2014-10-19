@@ -1,0 +1,12 @@
+{
+  "name": "4673695",
+  "_release": "0983342362",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "098334236211efe3d12d1084cada7000ef19d7e2"
+  },
+  "_source": "https://gist.github.com/Fusselwurm/4673695.git",
+  "_target": "*",
+  "_originalSource": "https://gist.github.com/Fusselwurm/4673695.git"
+}
