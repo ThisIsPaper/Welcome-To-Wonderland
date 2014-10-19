@@ -14,8 +14,6 @@ wonderlandApp.controller('PageCtrl', ['debounce', 'paf', '$rootScope', '$scope',
 
     };
 
-alert('pagectrl');
-
     /*************************
     SITE HEADER COMPRESS VIEW
     /*************************/
