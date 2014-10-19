@@ -2,7 +2,7 @@
  * <div m-address-finder="{POSTCODE}" m-address="" m-trigger-event=""></div>
  */
 
-wonderlandApp.directive('mAddressFinder', ['paf', 'safeApply', '$timeout', function (paf, safeApply, $timeout) {
+wonderlandApp.directive('mAddressFinder', ['paf', '$timeout', function (paf, $timeout) {
 
     return {
 
@@ -105,7 +105,7 @@ wonderlandApp.directive('mAddressFinder', ['paf', 'safeApply', '$timeout', funct
             if (triggerEvent) {
                 scope.$onRootScope(triggerEvent, function() {
 
-                    safeApply(scope, function () {
+                    $timeout(function () {
                         scope.findAddressFromPostcode();
                     });
 

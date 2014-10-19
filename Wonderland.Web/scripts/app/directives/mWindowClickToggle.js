@@ -1,4 +1,4 @@
-wonderlandApp.directive('mWindowClickToggle', ['safeApply', '$document', function (safeApply, $document) {
+wonderlandApp.directive('mWindowClickToggle', ['$document', '$timeout', function ($document, $timeout) {
 
     return {
         scope: {
@@ -16,7 +16,7 @@ wonderlandApp.directive('mWindowClickToggle', ['safeApply', '$document', functio
                 if (isClickedElementChildOfPopup)
                     return;
 
-                safeApply(scope, function () {
+                $timeout(function () {
                     scope.toggle = false;
                 });
             });

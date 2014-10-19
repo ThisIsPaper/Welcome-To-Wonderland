@@ -1,4 +1,4 @@
-wonderlandApp.controller('PartyCtrl', ['safeApply', '$filter', '$ocModal', '$rootScope', '$sce', '$scope', '$timeout', function (safeApply, $filter, $ocModal, $rootScope, $sce, $scope, $timeout) {
+wonderlandApp.controller('PartyCtrl', ['$filter', '$ocModal', '$rootScope', '$sce', '$scope', '$timeout', function ($filter, $ocModal, $rootScope, $sce, $scope, $timeout) {
 
 
     /**********************/
@@ -50,7 +50,6 @@ wonderlandApp.controller('PartyCtrl', ['safeApply', '$filter', '$ocModal', '$roo
     };
 
     $scope.$onRootScope('partyDetailsDataUpdated', function(event, response, dataObject) {
-        console.log('deets', response);
 
         $scope.partyDetailsDataForForm.processing = false;
 
@@ -147,7 +146,7 @@ wonderlandApp.controller('PartyCtrl', ['safeApply', '$filter', '$ocModal', '$roo
     $scope.$onRootScope('partyImageCustomUrlUploaded', function(event, response) {
         if (response && response.Success === true && response.Message) {
 
-            safeApply($scope, function () {
+            $timeout(function () {
                 $scope.partyCustomImage.url = response.Message;
                 $scope.partyImageDataForForm.PartyImage = $scope.partyCustomImage.url;
             });
