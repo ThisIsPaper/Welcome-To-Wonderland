@@ -170,3 +170,11 @@ wonderlandApp.filter('mWidth', [function () {
     };
 
 }]);
+
+wonderlandApp.filter('forceNullString', [function () {
+
+    return function (str) {
+        return str || 'null';
+    };
+
+}]);

@@ -73,14 +73,22 @@ wonderlandApp.directive('mPostOnSubmit', ['mHttp', 'uniqueId', '$parse', '$rootS
 
                     var $targetIframe = $('<iframe/>', { name: target, id: target, frameborder: '0' }).insertAfter(element).css({ width: 0, height: 0 }).load(function () {
                         $timeout(function () {
-                            var response = $targetIframe.contents().find("body").html();
+                            var response = $targetIframe.contents().find("body").html(),
+                                parsedJson = null;
 
-                            handleResponse(JSON.parse(response), originalData);
+                            try {
+                                parsedJson = JSON.parse(response);
+                            } catch (er) {}
+
+                            handleResponse(parsedJson, originalData);
                         });
                     });
 
                     var $postForm = $('<form></form>', { target: target, method: 'post', enctype: 'multipart/form-data' }).insertAfter(element);
                     element.appendTo($postForm);
+
+                    console.log('element', $(element).serialize());
+                    console.log('postForm', $postForm.serialize());
 
                     $postForm.attr('action', attrs.action);
                     $postForm.submit();
