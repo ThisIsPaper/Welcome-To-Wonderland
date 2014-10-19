@@ -52,7 +52,7 @@ wonderlandApp.factory('mHttp', ['$compile', '$document', '$q', '$rootScope', '$w
             headers: {},
             invokeApply: true
         }, opts);
-console.log('mHttp', 1);
+
         var xhrOpts = {
             url: optsWithDefaults.url,
             type: optsWithDefaults.method,
@@ -71,7 +71,7 @@ console.log('mHttp', 1);
                 onResponse(arguments, false);
             }
         };
-console.log('mHttp', 2);
+
         if (optsWithDefaults.requestProgress) {
             xhrOpts.xhr = function() {
                 var xhr = $.ajaxSettings.xhr();
@@ -101,7 +101,7 @@ console.log('mHttp', 2);
                 return xhr;
             };
         }
-console.log('mHttp', 3);
+
         if (optsWithDefaults.formData && !optsWithDefaults.data) {
             var formData = new $window.FormData();
 
@@ -113,7 +113,7 @@ console.log('mHttp', 3);
             xhrOpts.processData = false;
             xhrOpts.contentType = false;
         }
-console.log('mHttp', 4);
+
         var deferred = $q.defer(),
             promise = deferred.promise;
 
@@ -121,11 +121,11 @@ console.log('mHttp', 4);
         cancelFns[promise._requestId] = function() {
             xhr.abort();
         };
-console.log('mHttp', 4);
+
         promise.then(cleanup, cleanup);
 
         var xhr = mHttpBackend(xhrOpts);
-console.log('mHttp', 5);
+
         return promise;
 
 

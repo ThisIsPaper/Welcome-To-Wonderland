@@ -1,4 +1,4 @@
-wonderlandApp.directive('mPostOnSubmit', ['safeApply', 'mHttp', '$parse', '$rootScope', '$timeout', function (safeApply, mHttp, $parse, $rootScope, $timeout) {
+wonderlandApp.directive('mPostOnSubmit', ['safeApply', 'mHttp', 'uniqueId', '$q', '$parse', '$rootScope', '$timeout', function (safeApply, mHttp, uniqueId, $q, $parse, $rootScope, $timeout) {
 
 
     var SAVED_CONFIRMATION_PERIOD = 2000; // milliseconds
@@ -6,7 +6,7 @@ wonderlandApp.directive('mPostOnSubmit', ['safeApply', 'mHttp', '$parse', '$root
 
     return {
         scope: true,
-        link: function(scope, element, attrs) {
+        link: function (scope, element, attrs) {
 
             var progressState,
                 progressVar = attrs.mProgressVar && $parse(attrs.mProgressVar),
@@ -18,8 +18,48 @@ wonderlandApp.directive('mPostOnSubmit', ['safeApply', 'mHttp', '$parse', '$root
 
             setProgressState('ready');
 
-            element.on('submit', function() {
-                safeApply(scope, function() {
+
+            element.on('submit', function () {
+                var $targetIframe = null,
+                    $postForm = null,
+                    postDeferred;
+
+                function postTo() {
+                    postDeferred = $q.defer();
+
+                    if (!$postForm) {
+                        var target = 'form_target_iframe_' + uniqueId();
+
+                        $targetIframe = $('<iframe/>', { name: target, id: target, frameborder: '0' }).insertAfter(element).css({ width: 0, height: 0 }).load(function () {
+                            var iframe = this;
+
+                            scope.$apply(function () {
+                                var response = iframe.contentWindow.document.body.innerHTML;
+                                postDeferred.resolve(JSON.parse(response));
+                            });
+                        });
+
+                        // TODO: who knows if this will work in IE!?
+                        $postForm = $('<form></form>', { target: target, method: 'post', enctype: 'multipart/form-data' }).insertAfter(element);
+//                        $postForm.append('<input type="hidden" name="csrfmiddlewaretoken" value="' + mHttp.getCsrfCookie() + '">');
+                        element.appendTo($postForm);
+                    }
+
+                    $postForm.attr('action', attrs.action);
+                    $postForm.submit();
+
+                    return postDeferred.promise;
+                }
+
+                postTo();
+
+                return false;
+            });
+
+
+            element.on('esubmit', function () {
+
+                safeApply(scope, function () {
                     if (serialized && mHttp.isInProgress(formSubmitRequest)) {
                         return;
                     }
@@ -41,12 +81,12 @@ wonderlandApp.directive('mPostOnSubmit', ['safeApply', 'mHttp', '$parse', '$root
                     if (rvtElement && rvtElement.length) {
                         sendData.__RequestVerificationToken = rvtElement[0].value;
                     }
-                    formSubmitRequest = mHttp.post(attrs.action, {
+                    formSubmitRequest = mHttp.post(attrs.action + '?t='+date.getTime(), {
                         formData: sendData,
                         dataType: 'json'
                     });
 
-                    formSubmitRequest.then(function(response) {
+                    formSubmitRequest.then(function (response) {
 
                         if (response && response.data) {
                             dataVar.assign(scope.$parent, response.data);
@@ -56,7 +96,7 @@ wonderlandApp.directive('mPostOnSubmit', ['safeApply', 'mHttp', '$parse', '$root
                             setProgressState('ready');
                         } else {
                             setProgressState('saved');
-                            savedConfirmTimer = $timeout(function() {
+                            savedConfirmTimer = $timeout(function () {
                                 setProgressState('ready');
                                 savedConfirmTimer = null;
                             }, SAVED_CONFIRMATION_PERIOD);
@@ -65,7 +105,7 @@ wonderlandApp.directive('mPostOnSubmit', ['safeApply', 'mHttp', '$parse', '$root
                                 $rootScope.$emit(onSuccessEvent, response, angular.copy(originalData));
                             }
                         }
-                    }, function() {
+                    }, function () {
                         setProgressState('ready');
                     });
 
@@ -84,11 +124,11 @@ wonderlandApp.directive('mPostOnSubmit', ['safeApply', 'mHttp', '$parse', '$root
 
             function prepareForSubmit() {
                 mHttp.cancel(formSubmitRequest);
-                if(savedConfirmTimer) {
+                if (savedConfirmTimer) {
                     $timeout.cancel(savedConfirmTimer);
                     savedConfirmTimer = null;
                 }
-                if(progressState === 'saved') {
+                if (progressState === 'saved') {
                     setProgressState('in-progress');
                 }
             }
