@@ -12597,8 +12597,8 @@ One-off uses
 /*******************************/
 /* line 605, ../sass/partials/_base.scss */
 .spotify-holder {
-  line-height: 35.6rem;
   margin-top: -7rem;
+  text-align: center;
 }
 
 /* line 610, ../sass/partials/_base.scss */

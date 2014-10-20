@@ -603,8 +603,8 @@ One-off uses
 // spotfiy
 
 .spotify-holder {
-	@include rem-fallback(line-height, 35.6rem);
 	@include rem-fallback(margin-top, -7rem);
+	text-align: center;
 }
 
 .spotify-info-holder {
