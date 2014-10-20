@@ -121,7 +121,16 @@ namespace Wonderland.Logic.Controllers.Surface
 
             this.ViewBag.TShirtSizes = model.TShirtSizes;
 
-            return this.PartialView("RegisterHost/Forms/RegisterHostPartyKitForm", new RegisterHostPartyKitForm());
+            // set first / last name, as this will be available if user connected via facebook
+
+            RegisterHostPartyKitForm registerHostPartyKitForm = new RegisterHostPartyKitForm();
+
+            PartyHost partyHost = (PartyHost)this.Members.GetCurrentMember();
+
+            registerHostPartyKitForm.FirstName = partyHost.FirstName;
+            registerHostPartyKitForm.LastName = partyHost.LastName;
+
+            return this.PartialView("RegisterHost/Forms/RegisterHostPartyKitForm", registerHostPartyKitForm);
         }
 
         [HttpPost]
@@ -136,9 +145,16 @@ namespace Wonderland.Logic.Controllers.Surface
 
             PartyHost partyHost = (PartyHost)this.Members.GetCurrentMember();
 
-            partyHost.FirstName = registerHostPartyKitForm.FirstName;
-            partyHost.LastName = registerHostPartyKitForm.LastName;
+            if (partyHost.FirstName != registerHostPartyKitForm.FirstName)
+            {
+                partyHost.FirstName = registerHostPartyKitForm.FirstName;
+            }
 
+            if (partyHost.LastName != registerHostPartyKitForm.LastName)
+            {
+                partyHost.LastName = registerHostPartyKitForm.LastName;
+            }
+            
             Address address = new Address(
                                         registerHostPartyKitForm.Address1,
                                         registerHostPartyKitForm.Address2,
