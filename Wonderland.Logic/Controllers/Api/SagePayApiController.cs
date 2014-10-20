@@ -157,6 +157,8 @@ namespace Wonderland.Logic.Controllers.Api
 
                 IPartier partier = (IPartier)this.Members.GetById(donationRow.MemberId.Value);
 
+                PartyHost partyhost = this.Members.GetPartyHost(donationRow.PartyGuid);
+
                 MailMessage mailMessage = new MailMessage();
 
                 mailMessage.From = new MailAddress(donate.ServerEmailAddress);
@@ -167,7 +169,11 @@ namespace Wonderland.Logic.Controllers.Api
                 mailMessage.Body = donate.EmailBody
                                         .Replace("[%FIRST_NAME%]", partier.FirstName)
                                         .Replace("[%LAST_NAME%]", partier.LastName)
-                                        .Replace("[%AMOUNT%]", donationRow.Amount.ToString("F"));
+                                        .Replace("[%PARTY_HOST%]", partyhost.FirstName + " " + partyhost.LastName)
+                                        .Replace("[%EMAIL%]", partier.Email) 
+                                        .Replace("[%AMOUNT%]", "£" + donationRow.Amount.ToString("F"))
+                                        .Replace("[%DONATION_TIMESTAMP%]", donationRow.Timestamp.ToShortDateString())
+                                        .Replace("[%VENDOR_TX_CODE%]", donationRow.VendorTxCode.ToString());
 
                 // Fire and forget
                 Task.Run(() =>
