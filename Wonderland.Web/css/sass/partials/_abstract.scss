@@ -2,116 +2,119 @@
 abstract
 ========================================================================== */
 
-
-@import "partials/vars";
-@import "partials/mixins";
+@import "helpers";
+@import "variables";
+@import "mixins";
 @import "../../scripts/bower_components/gridle/sass/gridle/gridle";
 
 
+//**************************************** CLEARFIX
+
+.clearfix { @extend %clearfix; }
 
 //**************************************** PADDING
 
 
-.pad-tiny { padding: $padSmallValue/2; }
-.pad-small { padding: $padSmallValue; }
-.pad-medium { padding: $padSmallValue * $multiplierMedium; }
-.pad-large { padding: $padSmallValue * $multiplierLarge; }
-.pad-mega { padding: ($padSmallValue * $multiplierLarge)*2; }
+.pad-tiny { @include rem-fallback(padding, ($padSmallValue/2)); }
+.pad-small { @include rem-fallback(padding, $padSmallValue); }
+.pad-medium { @include rem-fallback(padding, ($padSmallValue * $multiplierMedium)); }
+.pad-large { @include rem-fallback(padding, ($padSmallValue * $multiplierLarge)); }
+.pad-mega { @include rem-fallback(padding, (($padSmallValue * $multiplierLarge)*2)); }
 
-.pad-right-tiny { padding-right: $padSmallValue/2; }
-.pad-right-small { padding-right: $padSmallValue; }
-.pad-right-medium { padding-right: $padSmallValue * $multiplierMedium; }
-.pad-right-large { padding-right: $padSmallValue * $multiplierLarge; }
+.pad-right-tiny { @include rem-fallback(padding-right, ($padSmallValue/2)); }
+.pad-right-small { @include rem-fallback(padding-right, $padSmallValue); }
+.pad-right-medium { @include rem-fallback(padding-right, ($padSmallValue * $multiplierMedium)); }
+.pad-right-large { @include rem-fallback(padding-right, ($padSmallValue * $multiplierLarge)); }
 
-.pad-left-tiny { padding-left: $padSmallValue/2; }
-.pad-left-small { padding-left: $padSmallValue; }
-.pad-left-medium { padding-left: $padSmallValue * $multiplierMedium; }
-.pad-left-large { padding-left: $padSmallValue * $multiplierLarge; }
+.pad-left-tiny { @include rem-fallback(padding-left, ($padSmallValue/2)); }
+.pad-left-small { @include rem-fallback(padding-left, $padSmallValue); }
+.pad-left-medium { @include rem-fallback(padding-left, ($padSmallValue * $multiplierMedium)); }
+.pad-left-large { @include rem-fallback(padding-left, ($padSmallValue * $multiplierLarge)); }
 
-.pad-top-tiny { padding-top: $padSmallValue/2; }
-.pad-top-small { padding-top: $padSmallValue; }
-.pad-top-medium { padding-top: $padSmallValue * $multiplierMedium; }
-.pad-top-large { padding-top: $padSmallValue * $multiplierLarge; }
+.pad-top-tiny { @include rem-fallback(padding-top, ($padSmallValue/2)); }
+.pad-top-small { @include rem-fallback(padding-top, $padSmallValue); }
+.pad-top-medium { @include rem-fallback(padding-top, ($padSmallValue * $multiplierMedium)); }
+.pad-top-large { @include rem-fallback(padding-top, ($padSmallValue * $multiplierLarge)); }
 
-.pad-bottom-tiny { padding-bottom: $padSmallValue/2; }
-.pad-bottom-small { padding-bottom: $padSmallValue; }
-.pad-bottom-medium { padding-bottom: $padSmallValue * $multiplierMedium; }
-.pad-bottom-large { padding-bottom: $padSmallValue * $multiplierLarge; }
+.pad-bottom-tiny { @include rem-fallback(padding-bottom, ($padSmallValue/2)); }
+.pad-bottom-small { @include rem-fallback(padding-bottom, $padSmallValue); }
+.pad-bottom-medium { @include rem-fallback(padding-bottom, ($padSmallValue * $multiplierMedium)); }
+.pad-bottom-large { @include rem-fallback(padding-bottom, ($padSmallValue * $multiplierLarge)); }
 
 .pad-0 { padding: 0; }
-.pad-1 { padding: 1; }
-.pad-2 { padding: 2; }
-.pad-3 { padding: 3; }
-.pad-4 { padding: 4; }
-.pad-5 { padding: 5; }
-.pad-6 { padding: 6; }
-.pad-7 { padding: 7; }
-.pad-8 { padding: 8; }
-.pad-9 { padding: 9; }
-.pad-10 { padding: 10; }
+.pad-1 { @include rem-fallback(padding, 1rem); }
+.pad-2 { @include rem-fallback(padding, 2rem); }
+.pad-3 { @include rem-fallback(padding, 3rem); }
+.pad-4 { @include rem-fallback(padding, 4rem); }
+.pad-5 { @include rem-fallback(padding, 5rem); }
+.pad-6 { @include rem-fallback(padding, 6rem); }
+.pad-7 { @include rem-fallback(padding, 7rem); }
+.pad-8 { @include rem-fallback(padding, 8rem); }
+.pad-9 { @include rem-fallback(padding, 9rem); }
+.pad-10 { @include rem-fallback(padding, 10rem); }
 
 .pad-right-0 { padding-right: 0;}
-.pad-right-1 { padding-right: 1rem;}
-.pad-right-2 { padding-right: 2rem;}
-.pad-right-3 { padding-right: 3rem;}
-.pad-right-4 { padding-right: 4rem;}
+.pad-right-1 { @include rem-fallback(padding-right, 1rem);}
+.pad-right-2 { @include rem-fallback(padding-right, 2rem);}
+.pad-right-3 { @include rem-fallback(padding-right, 3rem);}
+.pad-right-4 { @include rem-fallback(padding-right, 4rem);}
 
 .pad-left-0 { padding-left: 0;}
-.pad-left-1 { padding-left: 1rem;}
-.pad-left-2 { padding-left: 2rem;}
-.pad-left-3 { padding-left: 3rem;}
-.pad-left-4 { padding-left: 4rem;}
+.pad-left-1 { @include rem-fallback(padding-left, 1rem);}
+.pad-left-2 { @include rem-fallback(padding-left, 2rem);}
+.pad-left-3 { @include rem-fallback(padding-left, 3rem);}
+.pad-left-4 { @include rem-fallback(padding-left, 4rem);}
 
 .pad-top-0 { padding-top: 0;}
-.pad-top-1 { padding-top: 1rem;}
-.pad-top-2 { padding-top: 2rem;}
-.pad-top-3 { padding-top: 3rem;}
-.pad-top-4 { padding-top: 4rem;}
-.pad-top-5 { padding-top: 5rem;}
-.pad-top-6 { padding-top: 6rem;}
-.pad-top-7 { padding-top: 7rem;}
-.pad-top-8 { padding-top: 8rem;}
-.pad-top-9 { padding-top: 9rem;}
-.pad-top-10 { padding-top: 10rem;}
+.pad-top-1 { @include rem-fallback(padding-top,  1rem);}
+.pad-top-2 { @include rem-fallback(padding-top,  2rem);}
+.pad-top-3 { @include rem-fallback(padding-top,  3rem);}
+.pad-top-4 { @include rem-fallback(padding-top,  4rem);}
+.pad-top-5 { @include rem-fallback(padding-top,  5rem);}
+.pad-top-6 { @include rem-fallback(padding-top,  6rem);}
+.pad-top-7 { @include rem-fallback(padding-top,  7rem);}
+.pad-top-8 { @include rem-fallback(padding-top,  8rem);}
+.pad-top-9 { @include rem-fallback(padding-top,  9rem);}
+.pad-top-10 { @include rem-fallback(padding-top,  10rem);}
 
 .pad-bottom-0 { padding-bottom: 0;}
-.pad-bottom-1 { padding-bottom: 1rem;}
-.pad-bottom-2 { padding-bottom: 2rem;}
-.pad-bottom-3 { padding-bottom: 3rem;}
-.pad-bottom-4 { padding-bottom: 4rem;}
-.pad-bottom-5 { padding-bottom: 5rem;}
-.pad-bottom-6 { padding-bottom: 6rem;}
-.pad-bottom-7 { padding-bottom: 7rem;}
-.pad-bottom-8 { padding-bottom: 8rem;}
-.pad-bottom-9 { padding-bottom: 9rem;}
-.pad-bottom-10 { padding-bottom: 10rem;}
+.pad-bottom-1 { @include rem-fallback(padding-bottom, 1rem);}
+.pad-bottom-2 { @include rem-fallback(padding-bottom, 2rem);}
+.pad-bottom-3 { @include rem-fallback(padding-bottom, 3rem);}
+.pad-bottom-4 { @include rem-fallback(padding-bottom, 4rem);}
+.pad-bottom-5 { @include rem-fallback(padding-bottom, 5rem);}
+.pad-bottom-6 { @include rem-fallback(padding-bottom, 6rem);}
+.pad-bottom-7 { @include rem-fallback(padding-bottom, 7rem);}
+.pad-bottom-8 { @include rem-fallback(padding-bottom, 8rem);}
+.pad-bottom-9 { @include rem-fallback(padding-bottom, 9rem);}
+.pad-bottom-10 { @include rem-fallback(padding-bottom, 10rem);}
 
 //**************************************** MARGIN
 
-.margin-tiny { margin: $marginSmallValue/2; }
-.margin-small { margin: $marginSmallValue; }
-.margin-medium { margin: $marginSmallValue * $multiplierMedium; }
-.margin-large { margin: $marginSmallValue * $multiplierLarge; }
+.margin-tiny { @include rem-fallback(margin, $marginSmallValue/2); }
+.margin-small { @include rem-fallback(margin, $marginSmallValue); }
+.margin-medium { @include rem-fallback(margin, $marginSmallValue * $multiplierMedium); }
+.margin-large { @include rem-fallback(margin, $marginSmallValue * $multiplierLarge); }
 
-.margin-right-tiny { margin-right: $marginSmallValue/2; }
-.margin-right-small { margin-right: $marginSmallValue; }
-.margin-right-medium { margin-right: $marginSmallValue * $multiplierMedium; }
-.margin-right-large { margin-right: $marginSmallValue * $multiplierLarge; }
+.margin-right-tiny { @include rem-fallback(margin-right, $marginSmallValue/2); }
+.margin-right-small { @include rem-fallback(margin-right, $marginSmallValue); }
+.margin-right-medium { @include rem-fallback(margin-right, $marginSmallValue * $multiplierMedium); }
+.margin-right-large { @include rem-fallback(margin-right, $marginSmallValue * $multiplierLarge); }
 
-.margin-left-tiny { margin-left: $marginSmallValue/2; }
-.margin-left-small { margin-left: $marginSmallValue; }
-.margin-left-medium { margin-left: $marginSmallValue * $multiplierMedium; }
-.margin-left-large { margin-left: $marginSmallValue * $multiplierLarge; }
+.margin-left-tiny { @include rem-fallback(margin-left, $marginSmallValue/2); }
+.margin-left-small { @include rem-fallback(margin-left, $marginSmallValue); }
+.margin-left-medium { @include rem-fallback(margin-left, $marginSmallValue * $multiplierMedium); }
+.margin-left-large { @include rem-fallback(margin-left, $marginSmallValue * $multiplierLarge); }
 
-.margin-bottom-tiny { margin-bottom: $marginSmallValue/2; }
-.margin-bottom-small { margin-bottom: $marginSmallValue; }
-.margin-bottom-medium { margin-bottom: $marginSmallValue * $multiplierMedium; }
-.margin-bottom-large { margin-bottom: $marginSmallValue * $multiplierLarge; }
+.margin-bottom-tiny { @include rem-fallback(margin-bottom, $marginSmallValue/2); }
+.margin-bottom-small { @include rem-fallback(margin-bottom, $marginSmallValue); }
+.margin-bottom-medium { @include rem-fallback(margin-bottom, $marginSmallValue * $multiplierMedium); }
+.margin-bottom-large { @include rem-fallback(margin-bottom, $marginSmallValue * $multiplierLarge); }
 
-.margin-top-tiny { margin-top: $marginSmallValue/2; }
-.margin-top-small { margin-top: $marginSmallValue; }
-.margin-top-medium { margin-top: $marginSmallValue * $multiplierMedium; }
-.margin-top-large { margin-top: $marginSmallValue * $multiplierLarge; }
+.margin-top-tiny { @include rem-fallback(margin-top, $marginSmallValue/2); }
+.margin-top-small { @include rem-fallback(margin-top, $marginSmallValue); }
+.margin-top-medium { @include rem-fallback(margin-top, $marginSmallValue * $multiplierMedium); }
+.margin-top-large { @include rem-fallback(margin-top, $marginSmallValue * $multiplierLarge); }
 
 .margin-0 { margin: 0; }
 
@@ -121,52 +124,52 @@ abstract
 }
 
 .margin-right-0 { margin-right: 0;}
-.margin-right-1 { margin-right: 1rem;}
-.margin-right-2 { margin-right: 2rem;}
-.margin-right-3 { margin-right: 3rem;}
-.margin-right-4 { margin-right: 4rem;}
-.margin-right-5 { margin-right: 5rem;}
-.margin-right-6 { margin-right: 6rem;}
-.margin-right-7 { margin-right: 7rem;}
-.margin-right-8 { margin-right: 8rem;}
-.margin-right-9 { margin-right: 9rem;}
-.margin-right-10 { margin-right: 10rem;}
+.margin-right-1 { @include rem-fallback(margin-right, 1rem);}
+.margin-right-2 { @include rem-fallback(margin-right, 2rem);}
+.margin-right-3 { @include rem-fallback(margin-right, 3rem);}
+.margin-right-4 { @include rem-fallback(margin-right, 4rem);}
+.margin-right-5 { @include rem-fallback(margin-right, 5rem);}
+.margin-right-6 { @include rem-fallback(margin-right, 6rem);}
+.margin-right-7 { @include rem-fallback(margin-right, 7rem);}
+.margin-right-8 { @include rem-fallback(margin-right, 8rem);}
+.margin-right-9 { @include rem-fallback(margin-right, 9rem);}
+.margin-right-10 { @include rem-fallback(margin-right, 10rem);}
 
 .margin-left-0 { margin-left: 0;}
-.margin-left-1 { margin-left: 1rem;}
-.margin-left-2 { margin-left: 2rem;}
-.margin-left-3 { margin-left: 3rem;}
-.margin-left-4 { margin-left: 4rem;}
-.margin-left-5 { margin-left: 5rem;}
-.margin-left-6 { margin-left: 6rem;}
-.margin-left-7 { margin-left: 7rem;}
-.margin-left-8 { margin-left: 8rem;}
-.margin-left-9 { margin-left: 9rem;}
-.margin-left-10 { margin-left: 10rem;}
+.margin-left-1 { @include rem-fallback(margin-left, 1rem);}
+.margin-left-2 { @include rem-fallback(margin-left, 2rem);}
+.margin-left-3 { @include rem-fallback(margin-left, 3rem);}
+.margin-left-4 { @include rem-fallback(margin-left, 4rem);}
+.margin-left-5 { @include rem-fallback(margin-left, 5rem);}
+.margin-left-6 { @include rem-fallback(margin-left, 6rem);}
+.margin-left-7 { @include rem-fallback(margin-left, 7rem);}
+.margin-left-8 { @include rem-fallback(margin-left, 8rem);}
+.margin-left-9 { @include rem-fallback(margin-left, 9rem);}
+.margin-left-10 { @include rem-fallback(margin-left, 10rem);}
 
 .margin-bottom-0 { margin-bottom: 0;}
-.margin-bottom-1 { margin-bottom: 1rem;}
-.margin-bottom-2 { margin-bottom: 2rem;}
-.margin-bottom-3 { margin-bottom: 3rem;}
-.margin-bottom-4 { margin-bottom: 4rem;}
-.margin-bottom-5 { margin-bottom: 5rem;}
-.margin-bottom-6 { margin-bottom: 6rem;}
-.margin-bottom-7 { margin-bottom: 7rem;}
-.margin-bottom-8 { margin-bottom: 8rem;}
-.margin-bottom-9 { margin-bottom: 9rem;}
-.margin-bottom-10 { margin-bottom: 10rem;}
+.margin-bottom-1 { @include rem-fallback(margin-bottom,  1rem);}
+.margin-bottom-2 { @include rem-fallback(margin-bottom,  2rem);}
+.margin-bottom-3 { @include rem-fallback(margin-bottom,  3rem);}
+.margin-bottom-4 { @include rem-fallback(margin-bottom,  4rem);}
+.margin-bottom-5 { @include rem-fallback(margin-bottom,  5rem);}
+.margin-bottom-6 { @include rem-fallback(margin-bottom,  6rem);}
+.margin-bottom-7 { @include rem-fallback(margin-bottom,  7rem);}
+.margin-bottom-8 { @include rem-fallback(margin-bottom,  8rem);}
+.margin-bottom-9 { @include rem-fallback(margin-bottom,  9rem);}
+.margin-bottom-10 { @include rem-fallback(margin-bottom,  10rem);}
 
 .margin-top-0 { margin-top: 0;}
-.margin-top-1 { margin-top: 1rem;}
-.margin-top-2 { margin-top: 2rem;}
-.margin-top-3 { margin-top: 3rem;}
-.margin-top-4 { margin-top: 4rem;}
-.margin-top-5 { margin-top: 5rem;}
-.margin-top-6 { margin-top: 6rem;}
-.margin-top-7 { margin-top: 7rem;}
-.margin-top-8 { margin-top: 8rem;}
-.margin-top-9 { margin-top: 9rem;}
-.margin-top-10 { margin-top: 10rem;}
+.margin-top-1 { @include rem-fallback(margin-top,  1rem);}
+.margin-top-2 { @include rem-fallback(margin-top,  2rem);}
+.margin-top-3 { @include rem-fallback(margin-top,  3rem);}
+.margin-top-4 { @include rem-fallback(margin-top,  4rem);}
+.margin-top-5 { @include rem-fallback(margin-top,  5rem);}
+.margin-top-6 { @include rem-fallback(margin-top,  6rem);}
+.margin-top-7 { @include rem-fallback(margin-top,  7rem);}
+.margin-top-8 { @include rem-fallback(margin-top,  8rem);}
+.margin-top-9 { @include rem-fallback(margin-top,  9rem);}
+.margin-top-10 { @include rem-fallback(margin-top,  10rem);}
 
 
 //**************************************** FLOATS
@@ -175,18 +178,47 @@ abstract
 
 
 //**************************************** RADIUS
+// X*16/10
+.radius-v1-small {
+	@include m-border-radius(2.6px, 1.7px, 1.4px, 1.3px, 1.4px, 2.2px, 1.4px, 2px);
+	@include m-border-radius(1.64rem, 1.1rem, .9rem, .8rem, .9rem, 1.4rem, .9rem, 1.3rem);
+}
+.radius-v1-medium {
+	@include m-border-radius(2.6px, 1.7px, 1.4px, 1.3px, 1.4px, 2.2px, 1.4px, 2px, 2);
+	@include m-border-radius(1.64rem, 1.1rem, .9rem, .8rem, .9rem, 1.4rem, .9rem, 1.3rem, 2);
+}
+.radius-v1-large {
+	@include m-border-radius(2.6px, 1.7px, 1.4px, 1.3px, 1.4px, 2.2px, 1.4px, 2px, 4);
+	@include m-border-radius(1.64rem, 1.1rem, .9rem, .8rem, .9rem, 1.4rem, .9rem, 1.3rem, 4);
+}
 
-.radius-v1-small { @include m-border-radius(1.64rem, 1.1rem, .9rem, .8rem, .9rem, 1.4rem, .9rem, 1.3rem); }
-.radius-v1-medium { @include m-border-radius(1.64rem, 1.1rem, .9rem, .8rem, .9rem, 1.4rem, .9rem, 1.3rem, 2); }
-.radius-v1-large { @include m-border-radius(1.64rem, 1.1rem, .9rem, .8rem, .9rem, 1.4rem, .9rem, 1.3rem, 4); }
 
-.radius-v2-small { @include m-border-radius(.7rem, .6rem, 1.2rem, .7rem, 1.7rem, 1.1rem, 1.6rem, 1rem); }
-.radius-v2-medium { @include m-border-radius(.7rem, .6rem, 1.2rem, .7rem, 1.7rem, 1.1rem, 1.6rem, 1rem, 2); }
-.radius-v2-large { @include m-border-radius(.7rem, .6rem, 1.2rem, .7rem, 1.7rem, 1.1rem, 1.6rem, 1rem, 4); }
+.radius-v2-small {
+	@include m-border-radius(1.1px, .9px, 1.9px, 1.1px, 2.7px, 1.8px, 2.6px, 1.6px);
+	@include m-border-radius(.7rem, .6rem, 1.2rem, .7rem, 1.7rem, 1.1rem, 1.6rem, 1rem);
+}
+.radius-v2-medium {
+	@include m-border-radius(1.1px, .9px, 1.9px, 1.1px, 2.7px, 1.8px, 2.6px, 1.6px, 2);
+	@include m-border-radius(.7rem, .6rem, 1.2rem, .7rem, 1.7rem, 1.1rem, 1.6rem, 1rem, 2);
+}
+.radius-v2-large {
+	@include m-border-radius(1.1px, .9px, 1.9px, 1.1px, 2.7px, 1.8px, 2.6px, 1.6px, 4);
+	@include m-border-radius(.7rem, .6rem, 1.2rem, .7rem, 1.7rem, 1.1rem, 1.6rem, 1rem, 4);
+}
 
-.radius-v3-small { @include m-border-radius(.9rem, 1.4rem, 1.4rem, 1rem, .9rem, 1.7rem, .9rem, .8rem); }
-.radius-v3-medium { @include m-border-radius(.9rem, 1.4rem, 1.4rem, 1rem, .9rem, 1.7rem, .9rem, .8rem, 2); }
-.radius-v3-large { @include m-border-radius(.9rem, 1.4rem, 1.4rem, 1rem, .9rem, 1.7rem, .9rem, .8rem, 4); }
+
+.radius-v3-small {
+	@include m-border-radius(1.4px, 2.2px, 2.2px, 1.6px, 1.4px, 2.7px, 1.4px, 1.3px);
+	@include m-border-radius(.9rem, 1.4rem, 1.4rem, 1rem, .9rem, 1.7rem, .9rem, .8rem);
+}
+.radius-v3-medium {
+	@include m-border-radius(1.4px, 2.2px, 2.2px, 1.6px, 1.4px, 2.7px, 1.4px, 1.3px, 2);
+	@include m-border-radius(.9rem, 1.4rem, 1.4rem, 1rem, .9rem, 1.7rem, .9rem, .8rem, 2);
+}
+.radius-v3-large {
+	@include m-border-radius(1.4px, 2.2px, 2.2px, 1.6px, 1.4px, 2.7px, 1.4px, 1.3px, 4);
+	@include m-border-radius(.9rem, 1.4rem, 1.4rem, 1rem, .9rem, 1.7rem, .9rem, .8rem, 4);
+}
 
 .radius-bottom-0 { @include border-bottom-radius(0); }
 .radius-top-0 { @include border-top-radius(0); }
@@ -273,25 +305,25 @@ abstract
 }
 
 
-.max-width-25 { max-width: 25rem; }
-.max-width-30 { max-width: 30rem; }
+.max-width-25 { @include rem-fallback(max-width, 25rem); }
+.max-width-30 { @include rem-fallback(max-width, 30rem); }
 
 //**************************************** WIDTH
 
 .min-height-0 { min-height: 0; }
-.min-height-1 { min-height: 1rem; }
-.min-height-2 { min-height: 2rem; }
-.min-height-3 { min-height: 3rem; }
-.min-height-4 { min-height: 4rem; }
-.min-height-5 { min-height: 5rem; }
-.min-height-6 { min-height: 6rem; }
-.min-height-7 { min-height: 7rem; }
-.min-height-8 { min-height: 8rem; }
-.min-height-9 { min-height: 9rem; }
-.min-height-10 { min-height: 10rem; }
-.min-height-11 { min-height: 11rem; }
-.min-height-12 { min-height: 12rem; }
-.min-height-20 { min-height: 20rem; }
+.min-height-1 { @include rem-fallback(min-height, 1rem); }
+.min-height-2 { @include rem-fallback(min-height, 2rem); }
+.min-height-3 { @include rem-fallback(min-height, 3rem); }
+.min-height-4 { @include rem-fallback(min-height, 4rem); }
+.min-height-5 { @include rem-fallback(min-height, 5rem); }
+.min-height-6 { @include rem-fallback(min-height, 6rem); }
+.min-height-7 { @include rem-fallback(min-height, 7rem); }
+.min-height-8 { @include rem-fallback(min-height, 8rem); }
+.min-height-9 { @include rem-fallback(min-height, 9rem); }
+.min-height-10 { @include rem-fallback(min-height, 10rem); }
+.min-height-11 { @include rem-fallback(min-height, 11rem); }
+.min-height-12 { @include rem-fallback(min-height, 12rem); }
+.min-height-20 { @include rem-fallback(min-height, 20rem); }
 
 //**************************************** COLOR
 

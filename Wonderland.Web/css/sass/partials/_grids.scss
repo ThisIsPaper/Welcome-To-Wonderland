@@ -2,7 +2,6 @@
 @import "compass/css3";
 @import "variables";
 @import "abstract";
-@import "susy";
 @import "../../scripts/bower_components/gridle/sass/gridle/gridle";
 
 
@@ -12,10 +11,11 @@
 
 
 $settings : (
-    context : 12,                     // number of columns in your grid
-    gutter-width : $padSmallValue*4,  // size of the gutters
-    direction : ltr,                  // direction
-    name-multiplicator : 1            // to generate like grid-5, grid-10, etc...
+    context : 12,
+    gutter-width : $padSmallValue*4,
+    direction : ltr,
+    name-multiplicator : 1,
+	ie7-support: true
 );
 
 @include gridle_setup($settings);
@@ -35,7 +35,7 @@ $settings : (
 // BASIC GRID
 /**********************************/
 .container {
-	max-width : 114rem;
+	@include rem-fallback(max-width, 114rem);
 	margin : 0 auto;
     position: relative;
 }
@@ -47,11 +47,8 @@ $settings : (
 .wgrid-full {
     @extend %relative;
     @include gridle(12);
-    //@include gridle(12, tablet);
     @include gridle_gutter(bottom);
-    //@include gridle_gutter(bottom, mobile);
     @include gridle_no_gutter(left right);
-    //@include gridle_no_gutter(left right, mobile);
 }
 
 .wgrid-main {
@@ -59,7 +56,6 @@ $settings : (
     @include gridle(8);
     @include gridle(12, tablet);
     @include gridle_gutter(bottom);
-    //@include gridle_gutter(bottom, mobile);
     @include gridle_no_gutter(left);
     @include gridle_no_gutter(left right, tablet);
 }
@@ -69,7 +65,6 @@ $settings : (
     @include gridle(6);
     @include gridle(12, tablet);
     @include gridle_gutter(bottom);
-    //@include gridle_gutter(bottom, mobile);
     @include gridle_no_gutter(left);
     @include gridle_no_gutter(left right, tablet);
 }
@@ -79,9 +74,7 @@ $settings : (
     @include gridle(4);
     @include gridle(12, tablet);
     @include gridle_gutter(bottom);
-    //@include gridle_gutter(bottom, mobile);
     @include gridle_no_gutter(left right);
-    //@include gridle_no_gutter(left right, mobile);
     @include gridle_float(right);
     @include gridle_float(left, tablet);
 }
@@ -106,7 +99,7 @@ $settings : (
 /**********************************/
 
 .boxx {
-    padding: $FontSizeMedium;
+	@include rem-fallback(padding, $FontSizeMedium);
     background: #ffffff;
     overflow: hidden;
 
@@ -115,6 +108,7 @@ $settings : (
     }
 
 	&.error {
+		border: 6.4px solid $redDark;
 		border: .4rem solid $redDark;
 	}
 
@@ -128,7 +122,7 @@ $settings : (
     }
 
     &.mega-pad {
-        padding: 3.3rem;
+		@include rem-fallback(padding, 3.3rem);
     }
 
 }
@@ -141,6 +135,7 @@ $settings : (
     width: 0;
     height: 0;
     border-style: solid;
+    border-width: 0 0 48px 1360px;
     border-width: 0 0 3rem 85rem;
     border-color: transparent transparent white transparent;
     z-index: 300;

@@ -53,7 +53,7 @@ wonderlandApp.filter('percentageRounder', function () {
         current = Number(current);
         total = Number(total);
 
-        if (!isNaN(current) && !isNaN(total)) {
+        if (!isNaN(current) && !isNaN(total) && total > 0) {
             p = Math.floor((current/total)*100);
             if (capAt100) {
                 p = p > 100 ? 100 : p;
@@ -128,7 +128,7 @@ wonderlandApp.filter('formatAmountComplete', [function () {
 
         if (angular.isArray(col)) {
             for (var i=0; i<total; i++) {
-                if (col[i]["complete"]===true) {
+                if (col[i].complete===true) {
                     complete++;
                 }
             }
@@ -167,6 +167,14 @@ wonderlandApp.filter('mWidth', [function () {
             newStr = str.replace(/width=\d+/i, "width=" + width);
         }
         return newStr;
+    };
+
+}]);
+
+wonderlandApp.filter('forceNullString', [function () {
+
+    return function (str) {
+        return str || 'null';
     };
 
 }]);

@@ -1,4 +1,4 @@
-wonderlandApp.controller('WallCtrl', ['mHttp', 'safeApply', '$filter', '$scope', '$timeout', function (mHttp, safeApply, $filter, $scope, $timeout) {
+wonderlandApp.controller('WallCtrl', ['mHttp', '$filter', '$scope', '$timeout', function (mHttp, $filter, $scope, $timeout) {
 
     var wallFeed, partyGuid, wallDelete, deleteRequest, feedRequest, initialFormModel, hasSetInitialFormModel = false;
 
@@ -37,7 +37,7 @@ wonderlandApp.controller('WallCtrl', ['mHttp', 'safeApply', '$filter', '$scope',
 
     $scope.getFeed = function (beforeDateTime) {
 
-        safeApply($scope, function () {
+        $timeout(function () {
             $scope.wall.feedback.feedProcessingPost = true;
         });
 
@@ -46,7 +46,7 @@ wonderlandApp.controller('WallCtrl', ['mHttp', 'safeApply', '$filter', '$scope',
             'take': $scope.wall.feedLimit
         };
         if (beforeDateTime) {
-            sendFormData['beforeDateTime'] = beforeDateTime;
+            sendFormData.beforeDateTime = beforeDateTime;
         }
 
         feedRequest = mHttp.get(wallFeed, {
@@ -123,7 +123,7 @@ wonderlandApp.controller('WallCtrl', ['mHttp', 'safeApply', '$filter', '$scope',
             initialFormModel = formModel;
         }
 
-        safeApply($scope, function () {
+        $timeout(function () {
             $scope.wall.formModel = angular.copy(formModel);
 
             $scope.wall.previewImageUrl = null;
@@ -152,7 +152,7 @@ wonderlandApp.controller('WallCtrl', ['mHttp', 'safeApply', '$filter', '$scope',
     });
 
     $scope.$onRootScope('wallImageUploadStart', function () {
-        safeApply($scope, function () {
+        $timeout(function () {
             $scope.wall.previewImageUrl = null;
             $scope.wall.formModel.PartyWallImage = null;
             $scope.wall.feedback.imageProcessing = true;
@@ -164,7 +164,7 @@ wonderlandApp.controller('WallCtrl', ['mHttp', 'safeApply', '$filter', '$scope',
         /**
          * safe apply the feedback response
          */
-        safeApply($scope, function () {
+        $timeout(function () {
             $scope.wall.feedback.imageProcessing = false;
 
             if (response && response.Success === true && response.Message) {

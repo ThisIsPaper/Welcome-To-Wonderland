@@ -1,0 +1,13 @@
+{
+  "name": "8960575",
+  "_release": "773c8f0012",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "773c8f0012522dc98f03d0f738e81bd17a95930b"
+  },
+  "_source": "https://gist.github.com/chrisjlee/8960575.git",
+  "_target": "*",
+  "_originalSource": "https://gist.github.com/chrisjlee/8960575.git",
+  "_direct": true
+}

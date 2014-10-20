@@ -1,0 +1,32 @@
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section {
+    display:block;
+}
+
+/*************************************
+PIXREM based on 62.5% font size, but large padding values get effected
+because they need to be *16 not *10 that the default 62.5% inflicts
+*************************************/
+.page-bg {
+	padding: 228px 0 96px;
+}
+
+.hero {
+	padding-top: 180px;
+}
+
+.crest {
+	background: url('/img/wonderland-crest.png') no-repeat center;
+}
+
+.banner {
+	background: url('/img/wonderland-logo.png') no-repeat center;
+}
+
+.form-holder {
+	width: 500px;
+}
+
+.form-holder.wide {
+	width: 700px;
+}

@@ -4,7 +4,7 @@
 
 <script type="text/ng-template" id="partials/partyCopyForm.html">
 
-    <div ng-init="processing=false;maxCharLength=600">
+    <div class="clearfix" ng-init="processing=false;maxCharLength=600">
         @using (Html.BeginUmbracoForm<PartySurfaceController>("HandlePartyCopyForm", FormMethod.Post, new { m_serialized="", m_post_on_submit="partyCopyData", m_on_success_event="partyCopyDataUpdated", ng_submit="processing=true" }))
         {
             @Html.AntiForgeryToken()

@@ -1,5 +1,4 @@
-wonderlandApp.controller('PartyCtrl', ['safeApply', '$filter', '$ocModal', '$rootScope', '$sce', '$scope', '$timeout', function (safeApply, $filter, $ocModal, $rootScope, $sce, $scope, $timeout) {
-
+wonderlandApp.controller('PartyCtrl', ['$filter', '$ocModal', '$rootScope', '$sce', '$scope', '$timeout', function ($filter, $ocModal, $rootScope, $sce, $scope, $timeout) {
 
     /**********************/
     /* PARTY COPY */
@@ -15,11 +14,10 @@ wonderlandApp.controller('PartyCtrl', ['safeApply', '$filter', '$ocModal', '$roo
         $scope.partyCopyData.CopyHtmlSafe = $sce.trustAsHtml($scope.partyCopyData.Copy);
     };
 
-    $scope.$onRootScope('partyCopyDataUpdated', function(event, response, dataObject) {
+    $scope.$onRootScope('partyCopyDataUpdated', function (event, response, dataObject) {
         $scope.partyCopyDataInit(dataObject);
         $ocModal.close('partyCopyModal');
     });
-
 
 
     /**********************/
@@ -49,8 +47,7 @@ wonderlandApp.controller('PartyCtrl', ['safeApply', '$filter', '$ocModal', '$roo
         $scope.partyDetailsDataForForm = angular.copy($scope.partyDetailsData);
     };
 
-    $scope.$onRootScope('partyDetailsDataUpdated', function(event, response, dataObject) {
-        console.log('deets', response);
+    $scope.$onRootScope('partyDetailsDataUpdated', function (event, response, dataObject) {
 
         $scope.partyDetailsDataForForm.processing = false;
 
@@ -64,7 +61,6 @@ wonderlandApp.controller('PartyCtrl', ['safeApply', '$filter', '$ocModal', '$roo
     });
 
 
-
     /**********************/
     /* SUGGESTED DONATION */
     /**********************/
@@ -76,11 +72,10 @@ wonderlandApp.controller('PartyCtrl', ['safeApply', '$filter', '$ocModal', '$roo
         $scope.suggestedDonationDataForForm = angular.copy($scope.suggestedDonationData);
     };
 
-    $scope.$onRootScope('suggestedDonationDataUpdated', function(event, response, dataObject) {
+    $scope.$onRootScope('suggestedDonationDataUpdated', function (event, response, dataObject) {
         $scope.suggestedDonationDataInit(dataObject);
         $ocModal.close('suggestedDonationModal');
     });
-
 
 
     /**********************/
@@ -92,23 +87,25 @@ wonderlandApp.controller('PartyCtrl', ['safeApply', '$filter', '$ocModal', '$roo
 
     $scope.fundraisingTargetDataInit = function (fundraisingTargetData) {
 
-        $scope.fundraisingTargetData = fundraisingTargetData;
-        $scope.fundraisingTargetDataForForm = angular.copy($scope.fundraisingTargetData);
+        $timeout(function () {
+                     $scope.fundraisingTargetData = fundraisingTargetData;
+                     $scope.fundraisingTargetDataForForm = angular.copy($scope.fundraisingTargetData);
 
-        if (fundraisingTargetFirstSet) {
-            fundraisingTargetFirstSet = false;
-            if (fundraisingTargetData.FundraisingTarget <= 0) {
-                $rootScope.openPageModal('partials/fundraisingTargetForm.html', 'suggestedDonationModal', {'fundraisingTargetData': $scope.fundraisingTargetDataForForm})
-            }
-        }
+                     if (fundraisingTargetFirstSet) {
+                         fundraisingTargetFirstSet = false;
+                         if (fundraisingTargetData.FundraisingTarget <= 0) {
+                             $rootScope.openPageModal('partials/fundraisingTargetForm.html', 'suggestedDonationModal', {'fundraisingTargetData': $scope.fundraisingTargetDataForForm});
+                         }
+                     }
+                 }
+        );
     };
 
-    $scope.$onRootScope('fundraisingTargetDataUpdated', function(event, response, dataObject) {
+    $scope.$onRootScope('fundraisingTargetDataUpdated', function (event, response, dataObject) {
 
         $scope.fundraisingTargetDataInit(dataObject);
         $ocModal.close('fundraisingTargetDataModal');
     });
-
 
 
     /**********************/
@@ -128,7 +125,7 @@ wonderlandApp.controller('PartyCtrl', ['safeApply', '$filter', '$ocModal', '$roo
 
 
         // hacky check to see if the url is one of the default images
-        if ( $scope.partyImageDefaultData.indexOf(initUrl) >= 0 ) {
+        if ($scope.partyImageDefaultData.indexOf(initUrl) >= 0) {
             return;
         }
 
@@ -136,7 +133,7 @@ wonderlandApp.controller('PartyCtrl', ['safeApply', '$filter', '$ocModal', '$roo
 
     };
 
-    $scope.$onRootScope('partyImageUpdated', function(event, response) {
+    $scope.$onRootScope('partyImageUpdated', function (event, response) {
 
         $scope.partyImageData.PartyImage = $scope.partyImageDataForForm.PartyImage;
 
@@ -144,16 +141,15 @@ wonderlandApp.controller('PartyCtrl', ['safeApply', '$filter', '$ocModal', '$roo
     });
 
 
-    $scope.$onRootScope('partyImageCustomUrlUploaded', function(event, response) {
+    $scope.$onRootScope('partyImageCustomUrlUploaded', function (event, response) {
         if (response && response.Success === true && response.Message) {
 
-            safeApply($scope, function () {
+            $timeout(function () {
                 $scope.partyCustomImage.url = response.Message;
                 $scope.partyImageDataForForm.PartyImage = $scope.partyCustomImage.url;
             });
         }
     });
-
 
 
     $scope.hardCodedCurrentPartyImageUrlInit = function (url) {

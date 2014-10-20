@@ -1,199 +1,9 @@
-/*------------------------------------------------------------------------------------------------------------------------
- @package: Macmillan - Wonderland (app)
+@import "mixins";
 
- @author: Sam Latif
- @www: http://www.samlatif.co.uk
- @github: samlatif
-
- @twitter: samlatifuk
-
- @copyright: COPYRIGHT 8-21-2014 On behalf of Paper Partnerships Ltd
- =============================================================================
- Filename: _type.scss
- =============================================================================
- This file is responsible for typographic elements on the Macmillan - Wonderland app.  Styles should be compiled using compass and sass.
- --------------------------------------------------------------------------------------------------------------------- */
-
+//////////////////////////
 //
-// Golden Ratio Typography
-// --------------------------------------------------
- 
- 
-// Golden Ratio Math
+//  Legacy | Sam
 //
-// Let's do some math so we can build beautiful typography and vertical rhythm.
-// For any magic to happen, set the $Container-width variable on _variables.scss
-// to match your content box width (normally this is 640px, 740px, etc...).
-//
-// Many thanks to Chris Pearson's scary math skills http://t.co/KoeUoEWrNS
-// and his Golden Ratio Calculator http://t.co/6MyXPtRrlu
-//
-// @author Greg Rickaby
-// @since 1.0
-// @requires $Container-width
-// ----------------------------------
-$phi: (1 + sqrt(5)) / 2; // 1.61803398874989 or "The Golden Ratio"
-$xoo: 1 / (2 * $phi);
-$yoo: sqrt($Container-width) / $phi; // Line-height
-$zoo: $phi - $xoo * (1 - ($Container-width / $yoo));
- 
- 
-// Title Size
-//
-// Calculated title size based on $Container-width.
-//
-// @author Greg Rickaby
-// @since 1.0
-//
-// Usage: @include grTitleSize();
-// --------------------------------
-@function calcTitleSize() {
-  $foo: calcFontSize() * pow($phi, 2);
-    @return round($foo);
-}
- 
-@mixin grTitleSize() {
-  font-size: calcTitleSize();
-  font-size: (calcTitleSize() / calcFontSize()) + rem;
-  line-height: calcTitleSize() / $yoo;
-}
- 
- 
-// Headline Size
-//
-// Calculated headline size based on $Container-width.
-//
-// @author Greg Rickaby
-// @since 1.0
-//
-// Usage: @include grHeadlineSize
-// --------------------------------
-@function calcHeadlineSize() {
-  $foo: calcFontSize() * pow($phi, 1);
-    @return round($foo);
-}
- 
-@mixin grHeadlineSize() {
-  font-size: (calcHeadlineSize() / calcFontSize()) + rem;
-  line-height: calcHeadlineSize() / $yoo;
-}
- 
- 
-// Sub-headline Size
-//
-// Caclulated sub-headline size based on $Container-width.
-//
-// @author Greg Rickaby
-// @since 1.0
-//
-// Usage: @include grSubHeadlineSize();
-// --------------------------------
-@function calcSubHeadlineSize() {
-  $foo: calcFontSize() * sqrt($phi);
-    @return round($foo);
-}
- 
-@mixin grSubHeadlineSize() {
-  font-size: calcSubHeadlineSize();
-  font-size: (calcSubHeadlineSize() / calcFontSize()) + rem;
-  line-height: calcSubHeadlineSize() / $yoo;
-}
- 
- 
-// Font Size
-//
-// Calculated font size based on $Container-width.
-//
-// @author Greg Rickaby
-// @since 1.0
-//
-// Usage: @include grFontSize();
-// --------------------------------
-@function calcFontSize() {
-  $foo: sqrt($Container-width) / $phi;
-    @return round($foo);
-}
- 
-@mixin grFontSize() {
-  font-size: calcFontSize() + px;
-  font-size: (calcFontSize() / calcFontSize()) + rem;
-  line-height: calcFontSize() / $yoo;
-}
- 
- 
-// Secondary Text
-//
-// Calculated secondary text size based on $Container-width.
-//
-// @author Greg Rickaby
-// @since 1.0
-//
-// Usage: @include grSecondaryText();
-// --------------------------------
-@function calcSecondaryText() {
-  $foo: calcFontSize() * (1 / sqrt($phi));
-    @return round($foo);
-}
- 
-@mixin grSecondaryText() {
-  font-size: calcSecondaryText() + px;
-  font-size: (calcSecondaryText() / calcFontSize()) + rem;
-  line-height: calcSecondaryText() / $yoo;
-}
- 
- 
-// Default Line Height
-//
-// Calculate default line-height based on $Container-width.
-//
-// @author Greg Rickaby
-// @since 1.0
-//
-// Usage: @include grBaseLineHeight();
-// --------------------------------
-@function calcBaseLineHeight() {
-  $foobar: sqrt($Container-width) / $phi;
-  $foo: calcFontSize() * ($phi - $xoo * (1 - ($Container-width / pow(calcFontSize() * $phi, 2))));
-  $fo: $foo / $foobar;
-    @return $fo;
-}
- 
-@mixin grBaseLineHeight() {
-  line-height: calcBaseLineHeight();
-}
- 
- 
-// Custom Line Height
-//
-// Calculate a Golden Ratio line-height based on a custom
-// value specified by you.
-//
-// @author Greg Rickaby
-// @since 1.0
-//
-// Usage: @include grCustomLineHeight(26);
-// --------------------------------
-@function calcCustomLineHeight($target) {
-  $foobar: sqrt($Container-width) / $phi;
-  $foo: $target / $foobar;
-    @return $foo;
-}
- 
-@mixin grCustomLineHeight($target) {
-  line-height: calcCustomLineHeight($target);
-}
-
-/* Type */
-#{headings(all)} {
-  font-weight: $HeadingFontWeight;
-}
-
-// @for $i from 1 through 6 {
-//  #{$i} {
-//    font-size: (($Em * $MultiplierLarge) - (($i * (($Em * $MultiplierLarge) / 6 )))) + ($Em * $Multiplier);
-//  }
-// }
-
 a {
   //@extend %transition-all;
   color: $InverseTextColour;
@@ -201,7 +11,7 @@ a {
 }
 
 ul, ol, dl {
-  padding-left: ($PaddingLarge * $Multiplier);
+  @include rem-fallback(padding-left, ($PaddingLarge * $Multiplier));
   @extend %normal-margin-top-bottom;
 }
 
@@ -319,11 +129,11 @@ ul, ol, dl {
 h1 {
     font-family: 'macmillan';
     color: $FourthColour;
-    font-size: $HeadingFontSizeLarge;
+    @include rem-fallback(font-size, $HeadingFontSizeLarge);
     margin: 0;
     width: 100%;
     text-align: center;
-    line-height: 4.2rem;
+    @include rem-fallback(line-height, 4.2rem);
 
     &.lighter, .lighter {
         color: $greenDark;
@@ -331,7 +141,7 @@ h1 {
 
     &.bigger, .bigger {
         font-size: $HeadingFontSizeExtraLarge;
-        line-height: 5.5rem;
+        @include rem-fallback(line-height, 5.5rem);
     }
 
     &.secondary, .secondary {
@@ -339,8 +149,8 @@ h1 {
     }
 
     &.smaller, .smaller {
-        font-size: $FontSizeLarge;
-        line-height: 2.3rem;
+        @include rem-fallback(font-size, $FontSizeLarge);
+        @include rem-fallback(line-height, 2.3rem);
     }
 
     &.error {
@@ -354,24 +164,33 @@ h1 {
 h2 {
     font-family: 'macmillan';
     color: $SecondaryColour;
-    font-size: $FontSizeMedium;
-    margin: .5rem 0;
+    @include rem-fallback(font-size, $FontSizeMedium);
+    @include rem-fallback(margin-top, .5rem);
+    @include rem-fallback(margin-bottom, .5rem);
+	margin-left: 0;
+	margin-right: 0;
 }
 
 h3 {
     color: $FourthColour;
-    font-size: $FontSizeLarge;
-    margin: 2rem 0;
+    @include rem-fallback(font-size, $FontSizeLarge);
+    @include rem-fallback(margin-top, 2rem);
+    @include rem-fallback(margin-bottom, 2rem);
+	margin-left: 0;
+	margin-right: 0;
     font-weight: bold;
-    line-height: 2.6rem;
+    @include rem-fallback(line-height, 2.6rem);
 }
 
 h4 {
     color: $greyReallyDark;
-    font-size: $FontSizeLarge;
-    margin: 2rem 0;
+    @include rem-fallback(font-size, $FontSizeLarge);
+    @include rem-fallback(margin-top, 2rem);
+    @include rem-fallback(margin-bottom, 2rem);
+	margin-left: 0;
+	margin-right: 0;
     font-weight: bold;
-	line-height: 2.6rem;
+	@include rem-fallback(line-height, 2.6rem);
 
     span {
         color: $greyDark;
@@ -396,8 +215,12 @@ h3, h4 {
 
 hr {
     border: none;
+    border-bottom: 1px solid $greyReallyLight;
     border-bottom: .1rem solid $greyReallyLight;
-    margin: $padSmallValue 0;
+    @include rem-fallback(margin-top, $padSmallValue);
+    @include rem-fallback(margin-bottom, $padSmallValue);
+	margin-left: 0;
+	margin-right: 0;
 }
 
 .back {

@@ -20,3 +20,37 @@
     @include border-bottom-left-radius($blh*$multiplier $blv*$multiplier);
 
 }
+
+
+@function strip-unit($num) {
+  @return $num / ($num * 0 + 1);
+}
+
+// i'm such a retard, didn't need to do this at all, but can't be arsed to undo it all in the css files!
+@mixin rem-fallback($property, $values...) {
+//  $max: length($values);
+//  $pxValues: '';
+//  $remValues: '';
+//
+//  @for $i from 1 through $max {
+//    $value: strip-unit(nth($values, $i));
+//    $pxValues: #{$pxValues + $value*16}px;
+//
+//    @if $i < $max {
+//      $pxValues: #{$pxValues + " "};
+//    }
+//  }
+//
+//  @for $i from 1 through $max {
+//    $value: strip-unit(nth($values, $i));
+//    $remValues: #{$remValues + $value}rem;
+//
+//    @if $i < $max {
+//      $remValues: #{$remValues + " "};
+//    }
+//  }
+//
+//  #{$property}: $pxValues;
+//  #{$property}: $remValues;
+	#{$property}: $values;
+}

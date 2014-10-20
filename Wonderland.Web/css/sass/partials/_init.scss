@@ -1,0 +1,5 @@
+@import "variables";
+
+html {
+  font-size: $BaseFontSize; // put this in here before anything to normalise the initial rem setting to 10px
+}

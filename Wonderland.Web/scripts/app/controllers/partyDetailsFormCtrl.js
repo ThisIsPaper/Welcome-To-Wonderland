@@ -1,6 +1,6 @@
 /*
 
-TODO - NEED THIS TO SPLIT OUT DATE AND TIME
+ TODO - NEED THIS TO SPLIT OUT DATE AND TIME
 
  */
 
@@ -19,14 +19,15 @@ wonderlandApp.controller('PartyDetailsFormCtrl', ['$scope', function ($scope) {
      *
      * CREATE OPTIONS FOR TIME
      */
-    for (var i=0; i<24; i++) {
-        angular.forEach(minute, function (valueMinute) {
+    var funcValueMinute = function (valueMinute) {
 
-            var t = (i<10?'0':'') + i + ":" + (valueMinute<10?'0':'') + valueMinute;
+        var t = (i < 10 ? '0' : '') + i + ":" + (valueMinute < 10 ? '0' : '') + valueMinute;
 
-            $scope.tempModel.times.push(t);
-        });
+        $scope.tempModel.times.push(t);
     };
+    for (var i = 0; i < 24; i++) {
+        angular.forEach(minute, funcValueMinute);
+    }
 
     $scope.$watch('partyDetailsData.PartyDateTime', function (newVal, oldVal) {
 
@@ -43,7 +44,7 @@ wonderlandApp.controller('PartyDetailsFormCtrl', ['$scope', function ($scope) {
     });
 
     $scope.$watch('tempModel.partyDate + tempModel.partyTime', function () {
-        
+
         if (!$scope.tempModel.partyDate || !$scope.tempModel.partyTime) {
             return;
         }

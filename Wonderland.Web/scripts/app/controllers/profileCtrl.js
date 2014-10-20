@@ -1,4 +1,4 @@
-wonderlandApp.controller('ProfileCtrl', ['safeApply', '$scope', '$timeout', function (safeApply, $scope, $timeout) {
+wonderlandApp.controller('ProfileCtrl', ['$scope', '$timeout', function ($scope, $timeout) {
 
 
     /***
@@ -33,7 +33,7 @@ wonderlandApp.controller('ProfileCtrl', ['safeApply', '$scope', '$timeout', func
      */
     $scope.$onRootScope('profileNameDataUpdated', function(event, response, dataObject) {
 
-        safeApply( $scope, function () {
+        $timeout( function () {
 
             $scope.feedback.profileNameProcessing = false;
 
@@ -64,7 +64,7 @@ wonderlandApp.controller('ProfileCtrl', ['safeApply', '$scope', '$timeout', func
      */
     $scope.$onRootScope('profileBillingAddressDataUpdated', function(event, response, dataObject) {
 
-        safeApply( $scope, function () {
+        $timeout(function () {
 
             $scope.feedback.profileBillingAddressProcessing = false;
 
@@ -92,7 +92,7 @@ wonderlandApp.controller('ProfileCtrl', ['safeApply', '$scope', '$timeout', func
      */
     $scope.$onRootScope('profilePasswordUpdated', function(event, response, dataObject) {
 
-        safeApply( $scope, function () {
+        $timeout( function () {
 
             $scope.feedback.profilePasswordProcessing = false;
 
@@ -122,7 +122,7 @@ wonderlandApp.controller('ProfileCtrl', ['safeApply', '$scope', '$timeout', func
      */
     $scope.$onRootScope('profileShirtUpdated', function(event, response) {
 
-        safeApply( $scope, function () {
+        $timeout( function () {
 
             $scope.feedback.profileShirtProcessing = false;
 
