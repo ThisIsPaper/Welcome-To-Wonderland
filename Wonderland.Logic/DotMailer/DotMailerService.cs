@@ -150,7 +150,7 @@ namespace Wonderland.Logic.DotMailer
                             ", ",
                             new object[] {
                                 partier.Email,
-                                partyHost.PartyDateTime,
+                                partyHost.PartyDateTime.ToString("dd/MM/yyyy"),
                                 partyHost.PartyDateTime.ToString("HH:mm"),
                                 partyHost.PartyAddress.Address1,
                                 partyHost.PartyAddress.Address2,
