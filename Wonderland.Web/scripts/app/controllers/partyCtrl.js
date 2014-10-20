@@ -5,6 +5,7 @@ wonderlandApp.controller('PartyCtrl', ['$filter', '$ocModal', '$rootScope', '$sc
     /**********************/
     $scope.partyCopyData = null;
     $scope.partyCopyDataForForm = null;
+    $scope.partyCopyDataFeedback = {};
 
     $scope.partyCopyDataInit = function (partyCopyData) {
 
@@ -15,8 +16,18 @@ wonderlandApp.controller('PartyCtrl', ['$filter', '$ocModal', '$rootScope', '$sc
     };
 
     $scope.$onRootScope('partyCopyDataUpdated', function (event, response, dataObject) {
+        $scope.partyCopyDataFeedback.processing = false;
         $scope.partyCopyDataInit(dataObject);
         $ocModal.close('partyCopyModal');
+    });
+
+    $scope.$onRootScope('partyCopyDataErrored', function () {
+        $scope.partyCopyDataFeedback.processing = false;
+        $scope.partyCopyDataFeedback.showNetworkError = true;
+
+        $timeout(function () {
+            $scope.partyCopyDataFeedback.showNetworkError = false;
+        }, 5000);
     });
 
 
@@ -83,6 +94,7 @@ wonderlandApp.controller('PartyCtrl', ['$filter', '$ocModal', '$rootScope', '$sc
     /**********************/
     $scope.fundraisingTargetData = null;
     $scope.fundraisingTargetDataForForm = null;
+    $scope.fundraisingTargetDataFeedback = {};
     var fundraisingTargetFirstSet = true;
 
     $scope.fundraisingTargetDataInit = function (fundraisingTargetData) {
@@ -103,8 +115,18 @@ wonderlandApp.controller('PartyCtrl', ['$filter', '$ocModal', '$rootScope', '$sc
 
     $scope.$onRootScope('fundraisingTargetDataUpdated', function (event, response, dataObject) {
 
+        $scope.fundraisingTargetDataFeedback.processing = false;
         $scope.fundraisingTargetDataInit(dataObject);
         $ocModal.close('fundraisingTargetDataModal');
+    });
+
+    $scope.$onRootScope('fundraisingTargetDataError', function () {
+        $scope.fundraisingTargetDataFeedback.processing = false;
+        $scope.fundraisingTargetDataFeedback.showNetworkError = true;
+
+        $timeout(function () {
+            $scope.fundraisingTargetDataFeedback.showNetworkError = false;
+        }, 5000);
     });
 
 
