@@ -309,8 +309,9 @@ Event Page specific - move these out of here eventually
 
 .reference-image {
 	width: 100%;
-	@include rem-fallback(height, 9rem);
+	height: 9rem;
 	background-size: cover;
+	background-position: center;
 }
 
 .file-upload-info {

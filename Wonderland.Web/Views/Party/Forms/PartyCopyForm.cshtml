@@ -12,7 +12,7 @@
                 <h4>Party description</h4>
 
                 <label for="Copy">Description <span>(Max. <span ng-bind="maxCharLength"></span> characters)</span></label>
-                <textarea name="Copy" ng-model="partyCopyData.Copy" ng-readonly="processing" m-radius-picker="small" ng-class="{'error': partyCopyData.Copy.length>maxCharLength}"></textarea>
+                <textarea class="body-medium font-futura" name="Copy" ng-model="partyCopyData.Copy" ng-readonly="processing" m-radius-picker="small" ng-class="{'error': partyCopyData.Copy.length>maxCharLength}"></textarea>
 
                 <div class="form-info" ng-show="partyCopyData.Copy.length<=maxCharLength">
                     <span ng-bind="maxCharLength-partyCopyData.Copy.length"></span>
@@ -28,10 +28,10 @@
                 </div>
             </div>
 
-            <button type="submit" class="btn-primary float-right" ng-disabled="partyCopyData.Copy.length>maxCharLength || processing" m-radius-picker="small medium">Save changes</button>
+            <button type="submit" class="btn-primary float-right width-mobile-100p" ng-disabled="partyCopyData.Copy.length>maxCharLength || processing" m-radius-picker="small medium">Save changes</button>
             <span ng-click="closePageModal()" class="cancel margin-right-1 float-right">Cancel</span>
             <div ng-click="closePageModal()" class="modal-close"></div>
-            <div class="loader" ng-show="processing"></div>
+            <div class="loader pos-mobile-static float-mobile-left" ng-show="processing"></div>
         }
     </div>
 </script>

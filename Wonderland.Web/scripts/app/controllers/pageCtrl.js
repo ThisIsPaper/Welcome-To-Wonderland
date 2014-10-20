@@ -98,9 +98,9 @@ wonderlandApp.controller('PageCtrl', ['debounce', 'paf', '$rootScope', '$scope',
     HARDCODED
     /*************************/
     $rootScope.hardcodedFundraisingTargets = [
-        {imageUrl: '/img/test_default_image_1.jpg', title: 'Raise £180 or more', info: 'Sunglasses are essential Wonderland accessories - look cool as an alpine stream!'},
-        {imageUrl: '/img/test_default_image_2.jpg', title: 'Raise £250 or more', info: 'Also get a T-Shirt, specifically designed for Macmillan\'s Wonderland.'},
-        {imageUrl: '/img/test_default_image_3.jpg', title: 'Raise £400 or more', info: 'On top of the sunnies and t-shirt, be entered into the prize draw to win a ski-tastic prize.'}
+        {imageUrl: '/img/sunnies.png', title: 'Raise £180 or more', info: 'Sunglasses are essential Wonderland accessories - look cool as an alpine stream!'},
+        {imageUrl: '/img/tee.png', title: 'Raise £250 or more', info: 'Also get a T-Shirt, specifically designed for Macmillan\'s Wonderland.'},
+        {imageUrl: '/img/mystery.png', title: 'Raise £400 or more', info: 'On top of the sunnies and t-shirt, be entered into the prize draw to win a ski-tastic prize.'}
     ];
 
 }]);
