@@ -184,13 +184,18 @@ namespace Wonderland.Logic.Controllers.Api
 
             return new FacebookDetails()
                 {
-                    UserId = facebookCredentials.UserId, // TODO get value from facebook instead
+                    UserId = me.id,
                     EmailAddress = me.email,
                     FirstName = me.first_name,
                     LastName = me.last_name
                 };
         }
 
+        /// <summary>
+        /// using the details requested from facebook, generate a password for this user
+        /// </summary>
+        /// <param name="facebookDetails"></param>
+        /// <returns></returns>
         private string GetPassword(FacebookDetails facebookDetails)
         {
             // HACK: 
