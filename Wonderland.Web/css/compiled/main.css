@@ -12139,7 +12139,7 @@ Event Page specific - move these out of here eventually
 }
 /* line 166, ../sass/partials/_base.scss */
 .profile-image.profile-image-notset {
-  background-image: url('/img/avatar.png?1413451250');
+  background-image: url('/img/avatar.png?1413451250') !important;
 }
 /* line 170, ../sass/partials/_base.scss */
 .profile-image.small {
