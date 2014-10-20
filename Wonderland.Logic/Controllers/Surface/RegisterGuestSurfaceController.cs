@@ -103,6 +103,11 @@ namespace Wonderland.Logic.Controllers.Surface
             // set the default amount to the party host's suggested donation
             registerGuestBillingForm.Amount = this.Members.GetPartyHost(registerGuestBillingForm.PartyGuid).SuggestedDonation;
 
+            PartyGuest partyGuest = (PartyGuest)this.Members.GetCurrentMember();
+
+            registerGuestBillingForm.FirstName = partyGuest.FirstName;
+            registerGuestBillingForm.LastName = partyGuest.LastName;
+
             return this.PartialView("RegisterGuest/Forms/RegisterGuestBillingForm", registerGuestBillingForm);
         }
 
@@ -118,9 +123,16 @@ namespace Wonderland.Logic.Controllers.Surface
 
             PartyGuest partyGuest = (PartyGuest)this.Members.GetCurrentMember();
 
-            partyGuest.FirstName = registerGuestBillingForm.FirstName;
-            partyGuest.LastName = registerGuestBillingForm.LastName;
-
+            if (partyGuest.FirstName != registerGuestBillingForm.FirstName)
+            {
+                partyGuest.FirstName = registerGuestBillingForm.FirstName;
+            }
+            
+            if (partyGuest.LastName != registerGuestBillingForm.LastName)
+            {
+                partyGuest.LastName = registerGuestBillingForm.LastName;
+            }
+            
             Address address = new Address(
                             registerGuestBillingForm.Address1,
                             registerGuestBillingForm.Address2,
