@@ -6,17 +6,19 @@ wonderlandApp.directive('mVerticalAlign', ['debounce', '$timeout', '$window', fu
 
             var hasInited = false,
                 isActive = false,
-                myParent = angular.element(element).parent(),
+                $possibleParent = $(element).closest("." + attrs.mAlignParent),
+                $myParent = $possibleParent && $possibleParent.length ? $possibleParent[0] : $(element).parent(),
+
                 reAlign = debounce(function () {
                     element.css('top', (parentHeight() - myHeight())/2);
                 }, 200),
-                parentHeight = function () { return myParent.height() + Number(myParent.css('padding-top').replace('px', ''));},
+                parentHeight = function () { return $($myParent).height() + Number($($myParent).css('padding-top').replace('px', '')) + Number($($myParent).css('padding-bottom').replace('px', ''));},
                 myHeight = function () { return $(element).height() + Number($(element).css('padding-top').replace('px', '')) + Number($(element).css('padding-bottom').replace('px', '')); };
 
 
             attrs.$observe('mVerticalAlign', function (newVal) {
 
-                if (!hasInited && (myValue === 'true' || myValue === true)) {
+                if (!hasInited && (newVal === 'true' || newVal === true)) {
                     isActive = true;
 
                     angular.element($window).bind('resize', reAlign);
@@ -29,7 +31,7 @@ wonderlandApp.directive('mVerticalAlign', ['debounce', '$timeout', '$window', fu
                     hasInited=true;
                 }
 
-                if (newVal === false) {
+                if (newVal !== 'true' && newVal !== true) {
                     isActive = false;
                 }
             });

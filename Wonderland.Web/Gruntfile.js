@@ -16,10 +16,10 @@ module.exports = function (grunt) {
                          uglify: {
                              options: {
                                  mangle: false,
-                                 beautify: false,
+                                 beautify: true,
                                  banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n',
                                  compress: {
-                                     drop_console: true
+                                     drop_console: false
                                  }
                              },
                              base: {
