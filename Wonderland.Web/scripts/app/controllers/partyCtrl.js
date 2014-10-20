@@ -37,8 +37,13 @@ wonderlandApp.controller('PartyCtrl', ['$filter', '$ocModal', '$rootScope', '$sc
     $scope.partyDetailsData = null;
     $scope.partyDetailsFormattedAddress = null;
     $scope.partyDetailsDataForForm = null;
+    $scope.partyDetailsDataFeedback = {};
 
     $scope.partyDetailsDataInit = function (partyDetailsData) {
+
+        angular.forEach(partyDetailsData, function (value, key) {
+            partyDetailsData[key] = value === "null" ? null : value;
+        });
 
         // convert date to javascript Date
         if (partyDetailsData && partyDetailsData.PartyDateTime) {
@@ -60,15 +65,25 @@ wonderlandApp.controller('PartyCtrl', ['$filter', '$ocModal', '$rootScope', '$sc
 
     $scope.$onRootScope('partyDetailsDataUpdated', function (event, response, dataObject) {
 
-        $scope.partyDetailsDataForForm.processing = false;
+        $scope.partyDetailsDataFeedback.processing = false;
 
         if (response && response.Success === true) {
             dataObject.error = null;
             $scope.partyDetailsDataInit(dataObject);
             $ocModal.close('partyDetailsModal');
         } else if (response.Errors) {
-            $scope.partyDetailsDataForForm.error = response.Errors[0].ErrorMessages[0];
+            $scope.partyDetailsDataFeedback.error = response.Errors[0].ErrorMessages[0];
         }
+    });
+
+    $scope.$onRootScope('partyDetailsDataError', function () {
+
+        $scope.partyDetailsDataFeedback.processing = false;
+        $scope.partyDetailsDataFeedback.showNetworkError = true;
+
+        $timeout(function () {
+            $scope.partyDetailsDataFeedback.showNetworkError = false;
+        }, 5000);
     });
 
 
