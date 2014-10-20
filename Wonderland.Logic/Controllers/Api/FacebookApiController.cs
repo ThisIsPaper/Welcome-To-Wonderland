@@ -174,7 +174,9 @@ namespace Wonderland.Logic.Controllers.Api
             }
             else
             {
-                formResponse.Message = "Invalid Login";
+                this.ModelState.AddModelError("LoginValidation", "Unknown user");
+
+                formResponse.Errors = this.ModelState.GetErrors();
             }
 
             return formResponse;
