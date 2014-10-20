@@ -68,10 +68,10 @@
 
                 <input name="PartyImage" type="hidden" ng-value="partyImageData.PartyImage">
 
-                <button type="submit" class="btn-primary float-right" ng-disabled="!partyImageData.PartyImage||processing" m-radius-picker="small medium">Save changes</button>
+                <button type="submit" class="btn-primary float-right width-mobile-100p" ng-disabled="!partyImageData.PartyImage||processing" m-radius-picker="small medium">Save changes</button>
                 <span ng-click="closePageModal()" class="cancel margin-right-1 float-right">Cancel</span>
                 <div ng-click="closePageModal()" class="modal-close"></div>
-                <div class="loader float-left" ng-show="processing"></div>
+                <div class="loader float-left pos-mobile-static float-mobile-left" ng-show="processing"></div>
             }
         </div>
 

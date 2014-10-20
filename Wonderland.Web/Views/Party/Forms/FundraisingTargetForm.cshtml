@@ -36,7 +36,7 @@
                 <p>Reaching Wonderland <a class="body-highlight" href="/piste-points/">piste points</a> means prizes! The more your raise, the bigger the prize and every penny you raise will go to help the 2 million people living with cancer in the UK and help them to take back control and live their lives to the fullest.</p>
 
                 <div class="grid-4 grid-tablet-6 grid-mobile-12 pad-small text-align-center" ng-repeat="fund in hardcodedFundraisingTargets">
-                    <div class="reference-image" ng-style="{'background-image': 'url(' + fund.imageUrl + ')'}" m-radius-picker="small"></div>
+                    <img ng-src="{{ fund.imageUrl }}" width="100%" alt="" m-radius-picker="small" />
                     <div class="form-info body-emphasize" ng-bind="fund.title"></div>
                     <div class="form-info" ng-bind="fund.info"></div>
                 </div>
@@ -46,10 +46,12 @@
 
                 <input type="hidden" name="FundraisingTarget" ng-value="fundraisingTargetData.FundraisingTarget" />
 
-                <button type="submit" class="btn-primary float-right" ng-disabled="!fundraisingTargetData.FundraisingTarget || processing" m-radius-picker="small medium">Save changes</button>
-                <span ng-click="closePageModal()" class="cancel margin-right-1 float-right">Cancel</span>
-                <div ng-click="closePageModal()" class="modal-close"></div>
-                <div class="loader" ng-show="processing"></div>
+                <div class="grid-12 parent">
+                    <button type="submit" class="btn-primary float-right width-mobile-100p" ng-disabled="!fundraisingTargetData.FundraisingTarget || processing" m-radius-picker="small medium">Save changes</button>
+                    <span ng-click="closePageModal()" class="cancel margin-right-1 float-right">Cancel</span>
+                    <div ng-click="closePageModal()" class="modal-close"></div>
+                    <div class="loader pos-mobile-static float-mobile-left" ng-show="processing"></div>
+                </div>
 
             </div>
         }
