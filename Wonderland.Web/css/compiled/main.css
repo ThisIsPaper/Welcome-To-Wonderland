@@ -12810,7 +12810,7 @@ One-off uses
 /* line 805, ../sass/partials/_base.scss */
 .fsb-logo {
   width: 8rem;
-  width: 38rem;
+  height: 8rem;
   overflow: hidden;
   background-image: url('/img/fsb.jpg?1412541620');
   background-repeat: no-repeat;
