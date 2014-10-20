@@ -14,7 +14,8 @@ wonderlandApp.directive('mPostOnSubmit', ['mHttp', 'uniqueId', '$parse', '$rootS
                 formSubmitRequest = null,
                 savedConfirmTimer = null,
                 serialized = attrs.hasOwnProperty('mSerialized'),
-                onSuccessEvent = attrs.mOnSuccessEvent;
+                onSuccessEvent = attrs.mOnSuccessEvent,
+                onErrorEvent = attrs.mOnErrorEvent;
 
             setProgressState('ready');
 
@@ -56,8 +57,12 @@ wonderlandApp.directive('mPostOnSubmit', ['mHttp', 'uniqueId', '$parse', '$rootS
                         });
 
                         formSubmitRequest.then(function (response) {
-                            handleResponse(response, originalData);
-                        }, function () {
+//                            handleResponse(response, originalData);
+                            // TODO: REMOVE!
+                            emitError();
+                            setProgressState('ready');
+                        }, function (response) {
+                            emitError();
                             setProgressState('ready');
                         });
                     });
@@ -78,7 +83,8 @@ wonderlandApp.directive('mPostOnSubmit', ['mHttp', 'uniqueId', '$parse', '$rootS
 
                             try {
                                 parsedJson = JSON.parse(response);
-                            } catch (er) {}
+                            } catch (er) {
+                            }
 
                             handleResponse(parsedJson, originalData);
                         });
@@ -109,6 +115,7 @@ wonderlandApp.directive('mPostOnSubmit', ['mHttp', 'uniqueId', '$parse', '$rootS
                 }
 
                 if (response && response.success === false) {
+                    emitError();
                     setProgressState('ready');
                 } else {
                     setProgressState('saved');
@@ -122,6 +129,12 @@ wonderlandApp.directive('mPostOnSubmit', ['mHttp', 'uniqueId', '$parse', '$rootS
                     }
                 }
 
+            }
+
+            function emitError() {
+                if (onErrorEvent) {
+                    $rootScope.$emit(onErrorEvent);
+                }
             }
 
             function setProgressState(state) {
