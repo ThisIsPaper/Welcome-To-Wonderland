@@ -198,16 +198,17 @@ namespace Wonderland.Logic.Controllers.Api
         }
 
         /// <summary>
-        /// using the details requested from facebook, generate a password for this user
+        /// using the details requested from facebook, generate a password for this user (requires consistant email address + facebook userId)
         /// </summary>
         /// <param name="facebookDetails"></param>
         /// <returns></returns>
         private string GetPassword(FacebookDetails facebookDetails)
         {
-            // HACK: 
-            string passwordPreHash = facebookDetails.UserId + "70E5B25D-8A18-4302-AE04-79CBD3FC1EE0";
+            string salt = FormsAuthentication.HashPasswordForStoringInConfigFile(facebookDetails.EmailAddress.ToLower() + "70E5B25D-8A18-4302-AE04-79CBD3FC1EE0", "MD5");
 
-            return FormsAuthentication.HashPasswordForStoringInConfigFile(passwordPreHash, "sha1");
+            string password = FormsAuthentication.HashPasswordForStoringInConfigFile(facebookDetails.UserId + salt, "SHA1");
+
+            return password;
         }
 
         private struct FacebookDetails
