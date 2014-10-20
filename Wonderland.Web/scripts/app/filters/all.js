@@ -53,7 +53,7 @@ wonderlandApp.filter('percentageRounder', function () {
         current = Number(current);
         total = Number(total);
 
-        if (!isNaN(current) && !isNaN(total)) {
+        if (!isNaN(current) && !isNaN(total) && total > 0) {
             p = Math.floor((current/total)*100);
             if (capAt100) {
                 p = p > 100 ? 100 : p;
