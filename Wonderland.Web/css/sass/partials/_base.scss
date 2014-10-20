@@ -164,7 +164,7 @@ Event Page specific - move these out of here eventually
 	position: relative;
 
 	&.profile-image-notset {
-		background-image: image-url('avatar.png');
+		background-image: image-url('avatar.png')!important;
 	}
 
 	&.small {
