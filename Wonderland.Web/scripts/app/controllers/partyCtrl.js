@@ -137,6 +137,7 @@ wonderlandApp.controller('PartyCtrl', ['$filter', '$ocModal', '$rootScope', '$sc
     $scope.partyImageData = null;
     $scope.partyImageDefaultData = null;
     $scope.partyImageDataForForm = null;
+    $scope.partyImageDataFeedback = {};
     $scope.partyCustomImage = {
         url: null
     };
@@ -157,9 +158,19 @@ wonderlandApp.controller('PartyCtrl', ['$filter', '$ocModal', '$rootScope', '$sc
 
     $scope.$onRootScope('partyImageUpdated', function (event, response) {
 
+        $scope.partyImageDataFeedback.processing = false;
         $scope.partyImageData.PartyImage = $scope.partyImageDataForForm.PartyImage;
 
         $ocModal.close('partyImageModal');
+    });
+
+    $scope.$onRootScope('partyImageUpdateError', function () {
+        $scope.partyImageDataFeedback.processing = false;
+        $scope.partyImageDataFeedback.showNetworkError = true;
+
+        $timeout(function () {
+            $scope.partyImageDataFeedback.showNetworkError = false;
+        }, 5000);
     });
 
 

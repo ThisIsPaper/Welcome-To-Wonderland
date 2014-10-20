@@ -38,7 +38,7 @@
                     <div class="party-image-container"ng-class="{'selected': (partyImageData.PartyImage==partyCustomImage.url && partyCustomImage.url)}">
                         <label>
                             <input type="radio" name="urlSelectar" ng-model="partyImageData.PartyImage" value="{{ partyCustomImage.url }}" ng-disabled="!partyCustomImage.url"  />
-                            <div class="party-image-selecter icon-icon_question_mark" ng-style="{'background-image': 'url(' + partyCustomImage.url + ')'}" ng-class="{'image-set': partyCustomImage.url, 'image-unset': !partyCustomImage.url}" m-radius-picker="small"></div>
+                            <div class="party-image-selecter icon-icon_question_mark" ng-style="{'background-image': partyCustomImage.url ? 'url(' + partyCustomImage.url + ')' : 'none'}" ng-class="{'image-set': partyCustomImage.url, 'image-unset': !partyCustomImage.url}" m-radius-picker="small"></div>
                         </label>
                         <div class="warner" ng-click="partyImageData.PartyImage=null">Deselect image <span class="icon-icon_x"></span></div>
                     </div>
@@ -58,20 +58,22 @@
             </div>
         </div>
 
-        <div class="grid-12" ng-init="processing=false">
+        <div class="grid-12">
 
             <hr/>
 
-            @using (Html.BeginUmbracoForm<PartySurfaceController>("HandlePartyImageForm", FormMethod.Post, new { m_serialized="", m_post_on_submit="partyImageData", m_on_success_event="partyImageUpdated", ng_submit="processing=true" }))
+            @using (Html.BeginUmbracoForm<PartySurfaceController>("HandlePartyImageForm", FormMethod.Post, new { m_serialized="", m_post_on_submit="partyImageData", m_on_success_event="partyImageUpdated", m_on_error_event="partyImageUpdateError", ng_submit="feedback.processing=true" }))
             {
                 @Html.AntiForgeryToken()
 
                 <input name="PartyImage" type="hidden" ng-value="partyImageData.PartyImage">
 
-                <button type="submit" class="btn-primary float-right width-mobile-100p" ng-disabled="!partyImageData.PartyImage||processing" m-radius-picker="small medium">Save changes</button>
+                <div class="errorred" ng-show="feedback.showNetworkError" ng-cloak>The session may have timed out, <br/>please refresh the page and make sure you are still logged in</div>
+
+                <button type="submit" class="btn-primary float-right width-mobile-100p" ng-disabled="!partyImageData.PartyImage||feedback.processing" m-radius-picker="small medium">Save changes</button>
                 <span ng-click="closePageModal()" class="cancel margin-right-1 float-right">Cancel</span>
                 <div ng-click="closePageModal()" class="modal-close"></div>
-                <div class="loader float-left pos-mobile-static float-mobile-left" ng-show="processing"></div>
+                <div class="loader float-left pos-mobile-static float-mobile-left" ng-show="feedback.processing"></div>
             }
         </div>
 
