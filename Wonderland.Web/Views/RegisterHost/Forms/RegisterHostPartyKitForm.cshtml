@@ -59,7 +59,7 @@
 
         @foreach(string tShirtSize in this.ViewBag.TShirtSizes)
         {
-            <label>
+            <label class="dis-block">
                 @Html.RadioButtonFor(x => x.TShirtSize, tShirtSize) @tShirtSize
             </label>
         }
