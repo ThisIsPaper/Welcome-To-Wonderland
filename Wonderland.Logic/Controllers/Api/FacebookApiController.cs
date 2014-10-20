@@ -64,6 +64,9 @@ namespace Wonderland.Logic.Controllers.Api
 
             partyHost.FacebookRegistration = true;
 
+            partyHost.FirstName = facebookDetails.FirstName;
+            partyHost.LastName = facebookDetails.LastName;
+
             Guid partyGuid = Guid.NewGuid();
 
             this.DatabaseContext.Database.Insert(new PartyRow(partyGuid));
@@ -138,6 +141,9 @@ namespace Wonderland.Logic.Controllers.Api
             PartyGuest partyGuest = (PartyGuest)membershipUser;
 
             partyGuest.FacebookRegistration = true;
+
+            partyGuest.FirstName = facebookDetails.FirstName;
+            partyGuest.LastName = facebookDetails.LastName;
 
             // update database with member and party guid (duplicated data, but never changes)
             this.DatabaseContext.Database.Insert(new MemberPartyRow(partyGuest.Id, partyGuid));
