@@ -1,4 +1,4 @@
-wonderlandApp.directive('mDateTimePicker', ['safeApply', function (safeApply) {
+wonderlandApp.directive('mDateTimePicker', ['$timeout', function ($timeout) {
 
     return {
 
@@ -47,7 +47,7 @@ wonderlandApp.directive('mDateTimePicker', ['safeApply', function (safeApply) {
 
                     onSelect: function (date) {
 
-                        safeApply(scope, function () {
+                        $timeout(function () {
                             scope.theDate = moment(date);
                         });
 

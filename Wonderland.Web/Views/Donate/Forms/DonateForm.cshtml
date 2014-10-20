@@ -44,20 +44,7 @@
     </div>
 
 
-    <div class="grid-12 parent margin-bottom-large">
-
-        <div class="grid-8 grid-tablet-12 parent">
-            <label for="Postcode2">Postcode</label>
-            <input type="text" class="margin-bottom-small" name="Postcode2" ng-model="billingAddressData.Postcode" m-radius-picker="small" on-key-enter-trigger="pafAddressFinderPostcodeSearch1"/>
-            <div m-address-finder="{{ billingAddressData.Postcode }}" m-address="billingAddressData" m-trigger-event="pafAddressFinderPostcodeSearch1"></div>
-        </div>
-        <div class="clear"></div>
-        <hr/>
-    </div>
-
-
-
-    <div class="grid-8 grid-tablet-12 parent margin-bottom-large">
+    <div class="grid-8 grid-tablet-12 parent margin-bottom-small clearfix">
         <label for="FirstName">First name</label>
         @Html.TextBoxFor(x => x.FirstName, new { @m_radius_picker="small", @ng_readonly="processing", @ng_class="{'error': errorFirstNameMessage.length>0}" })
         <div class="margin-bottom-small" ng-show="errorFirstNameMessage.length>0" ng-init="errorFirstNameMessage='@Html.ValidationMessageFor(x => x.FirstName)'">@Html.ValidationMessageFor(x => x.FirstName)</div>
@@ -65,8 +52,23 @@
         <label for="LastName">Last name</label>
         @Html.TextBoxFor(x => x.LastName, new { @m_radius_picker="small", @ng_readonly="processing", @ng_class="{'error': errorLastNameMessage.length>0}" })
         <div class="margin-bottom-small" ng-show="errorLastNameMessage.length>0" ng-init="errorLastNameMessage='@Html.ValidationMessageFor(x => x.LastName)'">@Html.ValidationMessageFor(x => x.LastName)</div>
+    </div>
+
+
+    <div class="grid-12 parent margin-bottom-large clearfix">
 
         <h4>Your address</h4>
+
+        <div class="grid-8 grid-tablet-12 parent">
+            <label for="Postcode2">Postcode</label>
+            <input type="text" class="margin-bottom-small" name="Postcode2" ng-model="billingAddressData.Postcode" m-radius-picker="small" on-key-enter-trigger="pafAddressFinderPostcodeSearch1"/>
+            <div m-address-finder="{{ billingAddressData.Postcode }}" m-address="billingAddressData" m-trigger-event="pafAddressFinderPostcodeSearch1"></div>
+        </div>
+    </div>
+
+
+
+    <div class="grid-8 grid-tablet-12 parent margin-bottom-large">
 
         <label for="Address1">Address 1</label>
         @Html.TextBoxFor(x => x.Address1, new { @m_radius_picker="small", @ng_model="billingAddressData.Address1", @m_value_matcher="", @ng_readonly="processing", @ng_class="{'error': errorAddress1Message.length>0}" })

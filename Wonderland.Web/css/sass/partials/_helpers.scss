@@ -20,7 +20,7 @@
 // @import "compass/css3/pie";
 @import "compass/css3";
 @import "compass/utilities";
-@import "partials/mixins";
+@import "mixins";
 
 /* =============================================================================
 Visibility Helpers
@@ -334,161 +334,9 @@ Padding
   padding-left: $PaddingMini;
 }
 
-/* =============================================================================
-Border radius
-========================================================================== */
-
-/* Normal border radii */
-
-%rounded {
-  @include border-radius($BorderRadius);
-}
-
-%rounded-left {
-  @include border-top-left-radius($BorderRadius);
-  @include border-bottom-left-radius($BorderRadius);
-}
-
-%rounded-right {
-  @include border-top-right-radius($BorderRadius);
-  @include border-bottom-right-radius($BorderRadius);
-}
-
-%rounded-top {
-  @include border-top-left-radius($BorderRadius);
-  @include border-top-right-radius($BorderRadius);
-}
-
-%rounded-bottom {
-  @include border-bottom-left-radius($BorderRadius);
-  @include border-bottom-right-radius($BorderRadius);
-}
-
-%rounded-left-none {
-  @include border-top-left-radius(0);
-  @include border-bottom-left-radius(0);
-}
-
-/* Large border radii */
-
-%rounded-large {
-  @include border-radius($BorderRadiusLarge);
-}
-
-%rounded-left-large {
-  @include border-top-left-radius($BorderRadiusLarge);
-  @include border-bottom-left-radius($BorderRadiusLarge);
-}
-
-%rounded-right-large {
-  @include border-top-right-radius($BorderRadiusLarge);
-  @include border-bottom-right-radius($BorderRadiusLarge);
-}
-
-%rounded-top-large {
-  @include border-top-left-radius($BorderRadiusLarge);
-  @include border-top-right-radius($BorderRadiusLarge);
-}
-
-%rounded-bottom-large {
-  @include border-bottom-left-radius($BorderRadiusLarge);
-  @include border-bottom-right-radius($BorderRadiusLarge);
-}
-
-/* No rounded radii (useful for overriding other elements with radii) */
-
-%rounded-none {
-  @include border-radius(0);
-}
-
-%rounded-left-none {
-  @include border-top-left-radius(0);
-  @include border-bottom-left-radius(0);
-}
-
-%rounded-right-none {
-  @include border-top-right-radius(0);
-  @include border-bottom-right-radius(0);
-}
-
-%rounded-top-none {
-  @include border-top-left-radius(0);
-  @include border-top-right-radius(0);
-}
-
-%rounded-bottom-none {
-  @include border-bottom-left-radius(0);
-  @include border-bottom-right-radius(0);
-}
-
-/* Uneven border radii */
-
-%rounded-left-skew-one {
-  @include border-top-left-radius(0.5rem 1.1rem);
-  @include border-bottom-left-radius(0.5rem 1.3rem);
-}
-
-%rounded-left-skew-two {
-  @include border-top-left-radius(0.3rem 0.6rem);
-  @include border-bottom-left-radius(0.5rem 1.3rem);
-}
-
-%rounded-left-skew-three {
-  @include border-top-left-radius(1.64rem 1.1rem);
-  @include border-bottom-left-radius(0.5rem 1.3rem);
-}
-
-%rounded-left-skew-four {
-  @include border-top-left-radius(0.7rem 0.6rem);
-  @include border-bottom-left-radius(0.9rem 0.8rem);
-}
-
-%rounded-right-skew-one {
-  @include border-top-right-radius(0.9rem 0.8rem);
-  @include border-bottom-right-radius(0.6rem 1.4rem);
-}
-
-%rounded-right-skew-two {
-  @include border-top-right-radius(1rem 0.4rem);
-  @include border-bottom-right-radius(1.1rem 1.4rem);
-}
-
-%rounded-right-skew-three {
-  @include border-top-right-radius(0.9rem 0.8rem);
-  @include border-bottom-right-radius(0.9rem 1.4rem);
-}
-
-%rounded-right-skew-four {
-  @include border-top-right-radius(1.2rem 0.7rem);
-  @include border-bottom-right-radius(1.7rem 1.1rem);
-}
-
-%rounded-right-skew-five {
-  @include border-top-right-radius(1.4rem 1rem);
-  @include border-bottom-right-radius(0.9rem 1.7rem);
-}
-
-%rounded-skew-one {
-  @extend %rounded-left-skew-one;
-  @extend %rounded-right-skew-one;
-}
-
-%rounded-skew-two {
-  @extend %rounded-left-skew-four;
-  @extend %rounded-right-skew-four;
-}
-
-%rounded-skew-three {
-  @extend %rounded-left-skew-three;
-  @extend %rounded-right-skew-three;
-}
 
 %border-box {
   @include box-sizing(border-box);
-}
-
-%use-GPU-hack {
-  @include translateZ(0);
 }
 
 
@@ -497,19 +345,19 @@ Border radius
 Font Sizes
 ========================================================================== */
 %large {
-  font-size: $FontSizeLarge;
+  @include rem-fallback(font-size, $FontSizeLarge);
 }
 
 %medium {
-  font-size: $FontSizeMedium;
+  @include rem-fallback(font-size, $FontSizeMedium);
 }
 
 %small {
-  font-size: $FontSizeSmall;
+  @include rem-fallback(font-size, $FontSizeSmall);
 }
 
 %mini {
-  font-size: $FontSizeMini;
+  @include rem-fallback(font-size, $FontSizeMini);
 }
 
 /* =============================================================================
@@ -527,32 +375,6 @@ Opacity/visibility
   @include opacity(1);
 }
 
-/* =============================================================================
-Borders
-========================================================================== */
-%bordered {
-  border: $Border;
-}
-
-%bordered-right {
-  border-right: $Border;
-}
-
-%bordered-left {
-  border-left: $Border;
-}
-
-%bordered-top {
-  border-top: $Border;
-}
-
-%bordered-bottom {
-  border-bottom: $Border;
-}
-
-%border-none {
-  border: 0;
-}
 
 /* =============================================================================
 Floats
@@ -612,7 +434,7 @@ Links
 Widths
 ========================================================================== */
 %row-width {
-  width: $RowWidth;
+  width: 100%;
 }
 
 /* =============================================================================
@@ -622,7 +444,8 @@ Project Specific helpers
   @extend %relative;
   @extend %pull-left;
   @extend %border-box;
-  @include box-shadow(0rem 1rem 2rem 0.5rem fade-out(black, 0.5));
+  @include box-shadow(0 16px 32px 8px fade-out(black, 0.5));
+  @include box-shadow(0 1rem 2rem 0.5rem fade-out(black, 0.5));
   background: white;
 }
 

@@ -19,10 +19,10 @@ wonderlandApp.directive('mFacebookLoginButton', ['facebook', 'mHttp', '$timeout'
             scope.loading = false;
             scope.formattedDetails = null;
             scope.showError = false;
-            scope.errorMessage = attrs['errorMessage'] || "Oops, something went wrong!";
+            scope.errorMessage = attrs.errorMessage || "Oops, something went wrong!";
 
 
-            var loginUrl = attrs['loginUrl'],
+            var loginUrl = attrs.loginUrl,
                 fbStatus = null,
                 fbLogin = null,
                 loginToServer = function () {

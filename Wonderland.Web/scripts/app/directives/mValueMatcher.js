@@ -15,7 +15,7 @@ wonderlandApp.directive('mValueMatcher', [function () {
                 }
 
                 hasInitiallySet = true;
-                scope.m = attrs["value"];
+                scope.m = attrs.value;
 
             });
 

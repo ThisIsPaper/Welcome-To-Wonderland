@@ -32,7 +32,7 @@ wonderlandApp.directive('mTotaliser', ['$filter', function ($filter) {
                     '</div>' +
 
                     '<div class="form-info">' +
-                        '<span class="float-left"><span ng-bind="currentPercentage"></span>%</span>' +
+                        '<span class="float-left" ng-show="total>0" ng-cloak><span ng-bind="currentPercentage"></span>%</span>' +
                         '<span class="float-right" ng-show="rank">Ranked #<span ng-bind="rank"></span><span ng-show="rankTotal"> of <span ng-bind="rankTotal"></span>&nbsp;<div ng-pluralize count="rankTotal" when="{\'1\': \'party\', \'other\': \'parties\'}"></div></span></span>' +
                     '</div>',
 

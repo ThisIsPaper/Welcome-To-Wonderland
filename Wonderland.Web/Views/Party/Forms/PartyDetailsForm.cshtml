@@ -3,7 +3,7 @@
 <div ng-init="partyDetailsDataInit(@Html.Raw(Json.Encode(Model)))"></div>
 
 <script type="text/ng-template" id="partials/partyDetailsForm.html">
-    <div class="form-holder" ng-controller="PartyDetailsFormCtrl">
+    <div class="form-holder clearfix" ng-controller="PartyDetailsFormCtrl">
         @using (Html.BeginUmbracoForm<PartySurfaceController>("HandlePartyDetailsForm", FormMethod.Post, new { m_serialized="", m_post_on_submit="partyDetailsData", m_on_success_event="partyDetailsDataUpdated", ng_submit="partyDetailsData.processing=true" }))
         {
             @Html.AntiForgeryToken()
