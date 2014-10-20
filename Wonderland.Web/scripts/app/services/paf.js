@@ -75,27 +75,32 @@ wonderlandApp.factory('paf', ['mHttp', '$q', function (mHttp, $q) {
 
         formatAddress: function (address) {
 
-            var newAddress = angular.copy(address);
+            var newAddress = angular.copy(address),
+                combiners = [
+                    address.companyField,
+                    address.line1Field,
+                    address.line2Field,
+                    address.line3Field,
+                    address.line4Field,
+                    address.line5Field
+                ],
+                firstValidInLoop = true,
+                remainder = [];
 
             /**
-             * Combine 3 line address into 2 lines
+             * Combine the company field and lines 1-5 all together on add2
              */
-            if (address.line3Field) {
-                newAddress.line1Field = [address.line1Field, address.line2Field].join(", ");
-                newAddress.line2Field = address.line3Field;
-            }
-
-            /**
-             * If there is a companyField move everything down a line
-             */
-            if (address.companyField) {
-                newAddress.line1Field = address.companyField;
-                if (address.line2Field) {
-                    newAddress.line2Field = [address.line1Field, address.line2Field].join(", ");
-                } else {
-                    newAddress.line2Field = address.line1Field;
+            angular.forEach(combiners, function (value) {
+                if (value) {
+                    if (firstValidInLoop) {
+                        firstValidInLoop = false;
+                        newAddress.line1Field = value;
+                    } else {
+                        remainder.push(value);
+                    }
                 }
-            }
+            });
+            newAddress.line2Field = remainder.join(", ");
 
             return newAddress;
         }
