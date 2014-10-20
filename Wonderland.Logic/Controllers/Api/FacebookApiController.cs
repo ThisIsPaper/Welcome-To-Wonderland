@@ -172,6 +172,10 @@ namespace Wonderland.Logic.Controllers.Api
 
                 formResponse.Message = ((IPartier)this.Members.GetByUsername(facebookDetails.EmailAddress)).PartyUrl;
             }
+            else
+            {
+                formResponse.Message = "Invalid Login";
+            }
 
             return formResponse;
         }
