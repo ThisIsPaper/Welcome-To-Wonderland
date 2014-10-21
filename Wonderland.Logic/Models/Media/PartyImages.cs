@@ -11,17 +11,17 @@ namespace Wonderland.Logic.Models.Media
     {
         private const int Id = 5581;
 
-        internal static string CreatePartyImage(HttpPostedFileBase customPartyImage)
+        internal static int CreatePartyImage(HttpPostedFileBase customPartyImageFile)
         {
             IMediaService mediaService = ApplicationContext.Current.Services.MediaService;
 
             IMedia partyImage = mediaService.CreateMedia(Guid.NewGuid().ToString(), PartyImages.Id, PartyImage.Alias);
             
-            partyImage.SetValue("umbracoFile", customPartyImage);
+            partyImage.SetValue("umbracoFile", customPartyImageFile);
 
             mediaService.Save(partyImage);
-                        
-            return partyImage.Path;
+            
+            return partyImage.Id;
         }
     }
 }

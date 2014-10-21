@@ -64,13 +64,11 @@ namespace Wonderland.Logic.Controllers.Surface
 
             if (this.ModelState.IsValid && customPartyImageForm.CustomPartyImage.ContentLength > 0 && customPartyImageForm.CustomPartyImage.InputStream.IsImage())
             {
-                formResponse.Message = PartyImages.CreatePartyImage(customPartyImageForm.CustomPartyImage);
+                // NOTE: should update to return cms image ID in addition to the image url
 
-                //string fileName = Guid.NewGuid().ToString() + "." + customPartyImageForm.CustomPartyImage.ContentType.Split('/')[1];
+                int id = PartyImages.CreatePartyImage(customPartyImageForm.CustomPartyImage);
 
-                //customPartyImageForm.CustomPartyImage.SaveAs(Server.MapPath("~/Uploads/PartyImage/" + fileName));
-
-                //formResponse.Message = "/Uploads/PartyImage/" + fileName;
+                formResponse.Message = this.Umbraco.TypedMedia(id).Url;
 
                 formResponse.Success = true;
             }
@@ -134,15 +132,15 @@ namespace Wonderland.Logic.Controllers.Surface
 
                 if (profileImageForm.ProfileImage != null && profileImageForm.ProfileImage.ContentLength > 0 && profileImageForm.ProfileImage.InputStream.IsImage())
                 {
-                    // WARNING: user may upload an image, but use an incorrect extension !
-                    string fileName = Guid.NewGuid().ToString() + "." + profileImageForm.ProfileImage.ContentType.Split('/')[1];
+                    int id = ProfileImages.CreateProfileImage(profileImageForm.ProfileImage);
 
-                    profileImageForm.ProfileImage.SaveAs(Server.MapPath("~/Uploads/Profile/" + fileName));
-
-                    partyHost.ProfileImage = fileName;
+                    string url = this.Umbraco.TypedMedia(id).Url;
+                    
+                    // TODO: change this to id ?
+                    partyHost.ProfileImage = url;
 
                     // re-inflate the current user model (to take into account newly set property)
-                    formResponse.Message = new PartyHost(this.Umbraco.TypedMember(partyHost.Id)).ProfileImageUrl;
+                    formResponse.Message = url; //new PartyHost(this.Umbraco.TypedMember(partyHost.Id)).ProfileImageUrl;
                 }
                 else
                 {
@@ -324,11 +322,6 @@ namespace Wonderland.Logic.Controllers.Surface
 
                 string partyWallImage = partyWallMessageForm.PartyWallImage;
 
-                if (partyWallImage.StartsWith("/Uploads/PartyWall/"))
-                {
-                    partyWallImage = partyWallImage.Remove(0, "/Uploads/PartyWall/".Length);
-                }
-
                 //// insert message into DB
                 this.DatabaseContext.Database.Insert(new MessageRow()
                                                             {
@@ -363,13 +356,11 @@ namespace Wonderland.Logic.Controllers.Surface
 
             if (this.ModelState.IsValid && partyWallImageForm.PartyWallImage.ContentLength > 0 && partyWallImageForm.PartyWallImage.InputStream.IsImage())
             {
-                string fileName = Guid.NewGuid().ToString() + "." + partyWallImageForm.PartyWallImage.ContentType.Split('/')[1];
+                int id = PartyWallImages.CreatePartyWallImage(partyWallImageForm.PartyWallImage);
 
-                // TODO: upload image to umbraco, and change db field to int (from uniqueidentifier)
+                string url = this.Umbraco.TypedMedia(id).Url;
 
-                partyWallImageForm.PartyWallImage.SaveAs(Server.MapPath("~/Uploads/PartyWall/" + fileName));
-
-                formResponse.Message = "/Uploads/PartyWall/" + fileName;
+                formResponse.Message = url;
 
                 formResponse.Success = true;
             }

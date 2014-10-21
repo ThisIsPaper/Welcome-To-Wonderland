@@ -172,7 +172,7 @@ namespace Wonderland.Logic.Models.Members
             {
                 if (!string.IsNullOrWhiteSpace(this.ProfileImage))
                 {
-                    return "/Uploads/Profile/" + this.ProfileImage;
+                    return this.ProfileImage;
                 }
 
                 return null;                

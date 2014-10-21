@@ -39,7 +39,7 @@ namespace Wonderland.Logic.Models.Messages
             
             if (message.Image != null)
             {
-                this.ImageUrl = "/Uploads/PartyWall/" + message.Image;
+                this.ImageUrl = message.Image;
             }
             
             this.Timestamp = message.Timestamp.ToUniversalTime();

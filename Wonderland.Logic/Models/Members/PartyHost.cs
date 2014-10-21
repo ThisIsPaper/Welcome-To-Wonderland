@@ -278,7 +278,7 @@ namespace Wonderland.Logic.Models.Members
         {
             get
             {
-                return "/Uploads/PartyImage/" + this.PartyImage;
+                return this.PartyImage;
             }
         }
 
@@ -415,7 +415,7 @@ namespace Wonderland.Logic.Models.Members
             {
                 if (!string.IsNullOrWhiteSpace(this.ProfileImage))
                 {
-                    return "/Uploads/Profile/" + this.ProfileImage;
+                    return this.ProfileImage;
                 }
 
                 return null;                
