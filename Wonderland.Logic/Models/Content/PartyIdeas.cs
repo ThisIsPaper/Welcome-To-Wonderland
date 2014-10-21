@@ -19,6 +19,9 @@ namespace Wonderland.Logic.Models.Content
         public const string PageHeadingAlias = "pageHeading";
         public const string PriorityTilesAlias = "priorityTiles";
 
+        // local caching
+        private IEnumerable<PartyIdeaTile> priorityTiles = null;
+
         public PartyIdeas(IPublishedContent content)
             : base(content)
         {
@@ -39,9 +42,14 @@ namespace Wonderland.Logic.Models.Content
         {
             get
             {
-                return this.GetPropertyValue<Picker>(PartyIdeas.PriorityTilesAlias)
-                            .AsPublishedContent()
-                            .Select(x => (PartyIdeaTile)PublishedContentModelFactoryResolver.Current.Factory.CreateModel(x));
+                if (this.priorityTiles == null)
+                {
+                    this.priorityTiles = this.GetPropertyValue<Picker>(PartyIdeas.PriorityTilesAlias)
+                                                .AsPublishedContent()
+                                                .Select(x => (PartyIdeaTile)PublishedContentModelFactoryResolver.Current.Factory.CreateModel(x));
+                }
+
+                return this.priorityTiles;
             }
         }
 
