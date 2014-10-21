@@ -64,7 +64,7 @@
             <input class="margin-bottom-3" name="Postcode" type="text" ng-model="partyDetailsData.Postcode" m-radius-picker="small" ng-readonly="feedback.processing" />
 
 
-            <div class="errorred" ng-show="feedback.showNetworkError" ng-cloak>The session may have timed out, <br/>please refresh the page and make sure you are still logged in</div>
+            <div class="errorred" ng-show="feedback.showNetworkError" ng-cloak>Sorry, your connection timed out. <br/>Please login again.</div>
 
             <button type="submit" class="btn-primary float-right width-mobile-100p" m-radius-picker="small" ng-disabled="feedback.processing">Save changes</button>
             <span ng-click="closePageModal()" class="cancel margin-right-1 float-right">Cancel</span>
