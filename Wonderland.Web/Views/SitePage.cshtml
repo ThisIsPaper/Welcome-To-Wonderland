@@ -83,11 +83,11 @@
         <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
-        @if (Model.ShowHeaderAndFooter) { @Html.Partial("Header", Model.SiteSettings) }
+        @Html.Partial("Header", Model.SiteSettings)
         <main id="content" role="main">
         @RenderBody()
         </main>
-        @if (Model.ShowHeaderAndFooter) { @Html.Partial("Footer", Model.SiteSettings) }
+        @Html.Partial("Footer", Model.SiteSettings)
 
     </div>
 
