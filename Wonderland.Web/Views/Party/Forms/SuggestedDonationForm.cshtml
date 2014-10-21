@@ -4,14 +4,14 @@
 
 <script type="text/ng-template" id="partials/suggestedDonationForm.html">
 
-    <div class="form-holder wide clearfix" ng-controller="SuggestedDonationFormCtrl" ng-init="processing=false">
+    <div class="form-holder wide clearfix" ng-controller="SuggestedDonationFormCtrl">
 
         <h4>Suggest a ticket price</h4>
         <p class="body-medium margin-bottom-medium">
             You're a ski-tastic host so suggest a donation to your guests for your Wonderland Eggnog-anza! Every penny will go to support the two million people living  with cancer in the UK, and help  them to take back control and live their lives to the fullest. That's cooler than an Alpine stream.
         </p>
 
-        @using (Html.BeginUmbracoForm<PartySurfaceController>("HandleSuggestedDonationForm", FormMethod.Post, new { m_serialized="", m_post_on_submit="suggestedDonationData", m_on_success_event="suggestedDonationDataUpdated", ng_submit="processing=true" }))
+        @using (Html.BeginUmbracoForm<PartySurfaceController>("HandleSuggestedDonationForm", FormMethod.Post, new { m_serialized="", m_post_on_submit="suggestedDonationData", m_on_success_event="suggestedDonationDataUpdated", m_on_error_event="suggestedDonationDataError", ng_submit="feedback.processing=true" }))
         {
             @Html.AntiForgeryToken()
 
@@ -32,8 +32,6 @@
 
                             <div class="body-highlight text-align-center" ng-bind="donation.label"></div>
 
-                            <!--<input type="radio" name="SuggestedDonation" ng-value="donation.amount" ng-model="suggestedDonationData.SuggestedDonation" ng-readonly="processing" />-->
-
                         </div>
 
                     </label>
@@ -43,10 +41,12 @@
             </div>
 
 
-            <button type="submit" class="btn-primary float-right width-mobile-100p" m-radius-picker="small" ng-disabled="processing">Save changes</button>
+            <div class="errorred" ng-show="feedback.showNetworkError" ng-cloak>The session may have timed out, <br/>please refresh the page and make sure you are still logged in</div>
+
+            <button type="submit" class="btn-primary float-right width-mobile-100p" m-radius-picker="small" ng-disabled="feedback.processing">Save changes</button>
             <span ng-click="closePageModal()" class="cancel margin-right-1 float-right">Cancel</span>
             <div ng-click="closePageModal()" class="modal-close"></div>
-            <div class="loader pos-mobile-static float-mobile-left" ng-show="processing"></div>
+            <div class="loader pos-mobile-static float-mobile-left" ng-show="feedback.processing"></div>
         }
 
     </div>

@@ -151,6 +151,18 @@ wonderlandApp.controller('WallCtrl', ['mHttp', '$filter', '$scope', '$timeout', 
 
     });
 
+    $scope.$onRootScope('wallMessagePostError', function () {
+
+        $scope.wall.feedback.messageProcessing = false;
+        $scope.wall.feedback.messageShowError = true;
+
+        $timeout(function () {
+            $scope.wall.feedback.messageShowSuccess = false;
+            $scope.wall.feedback.messageShowError = false;
+        }, 5000);
+
+    });
+
     $scope.$onRootScope('wallImageUploadStart', function () {
         $timeout(function () {
             $scope.wall.previewImageUrl = null;
