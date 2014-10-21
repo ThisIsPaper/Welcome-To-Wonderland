@@ -57,11 +57,8 @@ wonderlandApp.directive('mPostOnSubmit', ['mHttp', 'uniqueId', '$parse', '$rootS
                         });
 
                         formSubmitRequest.then(function (response) {
-//                            handleResponse(response, originalData);
-                            // TODO: REMOVE!
-                            emitError();
-                            setProgressState('ready');
-                        }, function (response) {
+                            handleResponse(response, originalData);
+                        }, function () {
                             emitError();
                             setProgressState('ready');
                         });

@@ -92,6 +92,7 @@ wonderlandApp.controller('PartyCtrl', ['$filter', '$ocModal', '$rootScope', '$sc
     /**********************/
     $scope.suggestedDonationData = null;
     $scope.suggestedDonationDataForForm = null;
+    $scope.suggestedDonationDataFeedback = {};
 
     $scope.suggestedDonationDataInit = function (suggestedDonationData) {
         $scope.suggestedDonationData = suggestedDonationData;
@@ -99,8 +100,18 @@ wonderlandApp.controller('PartyCtrl', ['$filter', '$ocModal', '$rootScope', '$sc
     };
 
     $scope.$onRootScope('suggestedDonationDataUpdated', function (event, response, dataObject) {
+        $scope.suggestedDonationDataFeedback.processing = false;
         $scope.suggestedDonationDataInit(dataObject);
         $ocModal.close('suggestedDonationModal');
+    });
+
+    $scope.$onRootScope('suggestedDonationDataError', function () {
+        $scope.suggestedDonationDataFeedback.processing = false;
+        $scope.suggestedDonationDataFeedback.showNetworkError = true;
+
+        $timeout(function () {
+            $scope.suggestedDonationDataFeedback.showNetworkError = false;
+        }, 5000);
     });
 
 
