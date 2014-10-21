@@ -12,6 +12,8 @@ namespace Wonderland.Logic.Models.Content
 
     public class SitePage : BaseContentType
     {
+        public const int CacheDuration = 3600;
+
         // Document Type
         public const string Alias = "SitePage";
 
