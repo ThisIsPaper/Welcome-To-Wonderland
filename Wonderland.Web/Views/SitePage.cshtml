@@ -87,7 +87,7 @@
         <main id="content" role="main">
         @RenderBody()
         </main>
-        @Html.Partial("Footer", Model.SiteSettings)
+        @Html.CachedPartial("Footer", Model.SiteSettings, SitePage.CacheDuration)
 
     </div>
 
