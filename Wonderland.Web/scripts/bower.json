@@ -31,6 +31,7 @@
     "8b5adedd84c0d36aba64": "https://gist.github.com/Rob--W/8b5adedd84c0d36aba64.git",
     "webshim": "aFarkas/webshim#~1.15.3",
     "winf.unobtrusiveAjax.js": "dhlavaty/winf.unobtrusiveAjax.js#~0.2.0",
-    "json3": "bestiejs/json3#~3.3.2"
+    "json3": "bestiejs/json3#~3.3.2",
+    "AngularJS": "https://github.com/fbenz/angular.js.git#~1.2.9"
   }
 }
