@@ -22,13 +22,6 @@ namespace Wonderland.Logic.Models.Content
 
         public SitePage(IPublishedContent content) : base(content)
         {
-            this.ShowHeaderAndFooter = true; // not cms managed
-        }
-
-        public bool ShowHeaderAndFooter
-        {
-            get;
-            internal set;
         }
 
         public string MetaDescription
