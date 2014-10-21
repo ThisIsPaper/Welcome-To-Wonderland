@@ -11,6 +11,7 @@ namespace Wonderland.Logic.Controllers.Surface
     using Wonderland.Logic.Models.Content;
     using Wonderland.Logic.Models.Entities;
     using Wonderland.Logic.Models.Forms;
+    using Wonderland.Logic.Models.Media;
     using Wonderland.Logic.Models.Members;
     using Wonderland.Logic.Models.Messages;
 
@@ -124,16 +125,14 @@ namespace Wonderland.Logic.Controllers.Surface
 
                 if (profileImageForm.ProfileImage != null && profileImageForm.ProfileImage.ContentLength > 0 && profileImageForm.ProfileImage.InputStream.IsImage())
                 {
-                    // WARNING: user may upload an image, but use an incorrect extension !
-                    string fileName = Guid.NewGuid().ToString() + "." + profileImageForm.ProfileImage.ContentType.Split('/')[1];
+                    int id = ProfileImages.CreateProfileImage(profileImageForm.ProfileImage);
 
-                    profileImageForm.ProfileImage.SaveAs(Server.MapPath("~/Uploads/Profile/" + fileName));
+                    string url = this.Umbraco.TypedMedia(id).Url;
 
-                    //update property
-                    partier.ProfileImage = fileName;
-
-                    // re-inflate the current user model (to take into account newly set property)
-                    formResponse.Message = "/Uploads/Profile/" + fileName;
+                    //TODO: change this to id ?
+                    partier.ProfileImage = url;
+                    
+                    formResponse.Message = url;
                 }
                 else // remove reference to image
                 {
