@@ -127,7 +127,7 @@ namespace Wonderland.Logic.Controllers.Surface
                 {
                     int id = ProfileImages.CreateProfileImage(profileImageForm.ProfileImage);
 
-                    string url = this.Umbraco.TypedMedia(id).Url;
+                    string url = this.Umbraco.TypedMedia(id).GetProperty("umbracoFile").Value.ToString();
 
                     //TODO: change this to id ?
                     partier.ProfileImage = url;
