@@ -295,6 +295,12 @@
     <Compile Include="Models\Database\MessageRow.cs" />
     <Compile Include="Models\Database\PartyRow.cs" />
     <Compile Include="Models\Entities\Address.cs" />
+    <Compile Include="Models\Media\PartyImage.cs" />
+    <Compile Include="Models\Media\PartyImages.cs" />
+    <Compile Include="Models\Media\PartyWallImage.cs" />
+    <Compile Include="Models\Media\PartyWallImages.cs" />
+    <Compile Include="Models\Media\ProfileImage.cs" />
+    <Compile Include="Models\Media\ProfileImages.cs" />
     <Compile Include="Models\Messages\FacebookCredentials.cs" />
     <Compile Include="Models\Messages\PartyWallItem.cs">
       <SubType>Code</SubType>

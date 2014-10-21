@@ -10,6 +10,7 @@ namespace Wonderland.Logic.Controllers.Surface
     using Wonderland.Logic.Models.Database;
     using Wonderland.Logic.Models.Entities;
     using Wonderland.Logic.Models.Forms;
+    using Wonderland.Logic.Models.Media;
     using Wonderland.Logic.Models.Members;
     using Wonderland.Logic.Models.Messages;
 
@@ -63,11 +64,13 @@ namespace Wonderland.Logic.Controllers.Surface
 
             if (this.ModelState.IsValid && customPartyImageForm.CustomPartyImage.ContentLength > 0 && customPartyImageForm.CustomPartyImage.InputStream.IsImage())
             {
-                string fileName = Guid.NewGuid().ToString() + "." + customPartyImageForm.CustomPartyImage.ContentType.Split('/')[1];
+                formResponse.Message = PartyImages.CreatePartyImage(customPartyImageForm.CustomPartyImage);
 
-                customPartyImageForm.CustomPartyImage.SaveAs(Server.MapPath("~/Uploads/PartyImage/" + fileName));
+                //string fileName = Guid.NewGuid().ToString() + "." + customPartyImageForm.CustomPartyImage.ContentType.Split('/')[1];
 
-                formResponse.Message = "/Uploads/PartyImage/" + fileName;
+                //customPartyImageForm.CustomPartyImage.SaveAs(Server.MapPath("~/Uploads/PartyImage/" + fileName));
+
+                //formResponse.Message = "/Uploads/PartyImage/" + fileName;
 
                 formResponse.Success = true;
             }
@@ -361,6 +364,8 @@ namespace Wonderland.Logic.Controllers.Surface
             if (this.ModelState.IsValid && partyWallImageForm.PartyWallImage.ContentLength > 0 && partyWallImageForm.PartyWallImage.InputStream.IsImage())
             {
                 string fileName = Guid.NewGuid().ToString() + "." + partyWallImageForm.PartyWallImage.ContentType.Split('/')[1];
+
+                // TODO: upload image to umbraco, and change db field to int (from uniqueidentifier)
 
                 partyWallImageForm.PartyWallImage.SaveAs(Server.MapPath("~/Uploads/PartyWall/" + fileName));
 
