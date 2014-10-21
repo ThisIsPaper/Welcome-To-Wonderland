@@ -3,10 +3,10 @@
     Layout = null;
 }
 <!DOCTYPE html>
-<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en" id="ng-app"><![endif]-->
-<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8" lang="en" id="ng-app"><![endif]-->
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" id="ng-app"><![endif]-->
-<!--[if gt IE 8]><!--><html class="no-js" lang="en" id="ng-app"><!--<![endif]-->
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en" xmlns:ng="http://angularjs.org" id="ng-app" ng-app="wonderlandApp"><![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8" lang="en" xmlns:ng="http://angularjs.org" id="ng-app" ng-app="wonderlandApp"><![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" xmlns:ng="http://angularjs.org" id="ng-app"><![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js" lang="en" xmlns:ng="http://angularjs.org" id="ng-app"><!--<![endif]-->
 <head>
     <title>Welcome to Wonderland</title>
     <meta charset="utf-8">
@@ -45,22 +45,25 @@
 
 
     <!--[if lt IE 9]>
+        <script src="/scripts/ie8.min.js"></script>
+
+        <link rel="stylesheet" href="/css/all_ie.min.css" type="text/css"/>
+
         <script>
           document.createElement('header');
           document.createElement('nav');
           document.createElement('section');
           document.createElement('footer');
        </script>
-
-
-        <link rel="stylesheet" href="/css/all_ie.min.css" type="text/css"/>
-
-        <script src="/scripts/ie8.min.js"></script>
     <![endif]-->
 
     <!--[if gt IE 8]><!-->
         <link href="/css/all.min.css" type="text/css" rel="stylesheet" />
     <!--<![endif]-->
+
+    <!--[if lte IE 7]>
+        <link rel="stylesheet" href="/css/ie7.min.css" type="text/css"/>
+    <![endif]-->
 
 
     <!-- Google Tracking Info -->
@@ -99,16 +102,17 @@
 
 
     <!--[if lte IE 8]>
-    <!--<script type="text/javascript">-->
-        <!--$(document).ready(function() {-->
-<!--//            alert('bootstrap!');-->
-            <!--angular.bootstrap(document);-->
-        <!--});-->
-    <!--</script>-->
+    <script type="text/javascript">
+        $(document).ready(function() {
+//            alert('bootstrap!');
+//            angular.bootstrap(document);
+//            angular.bootstrap(document.getElementById("ng-app"), ['wonderlandApp']);
+        });
+    </script>
     <![endif]-->
 
 
-    <script>angular.bootstrap(document.getElementsByTagName("html")[0], ['wonderlandApp']);</script>
+    <!--<script>angular.bootstrap(document.getElementsByTagName("html")[0], ['wonderlandApp']);</script>-->
 
     @* TODO: Hendy these values need to be populated, prob best to check with Craig, seems like it just for payments *@
     <!-- Google Tag Manager Variables -->
