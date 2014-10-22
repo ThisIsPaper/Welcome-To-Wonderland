@@ -43,9 +43,9 @@ namespace Wonderland.Logic.Controllers.Surface
                 IPartyImage partyImage = (IPartyImage)this.Umbraco.TypedMedia(partyImageForm.PartyImage);
 
                 // if selected image is different to that stored
-                if (partyHost.PartyImage.Id != partyImage.Id)
+                if (partyHost.PartyImage == null || (partyHost.PartyImage != null && partyHost.PartyImage.Id != partyImage.Id))
                 {
-                    // if it's a custom upload (default umages are of type 'Image')
+                    // if it's a custom upload (default umages are of type 'Image') then delete the old one from the cms
                     if (partyHost.PartyImage is PartyImage)
                     {
                         IMedia media = this.Services.MediaService.GetById(partyHost.PartyImage.Id);
