@@ -11,6 +11,7 @@ namespace Wonderland.Logic.Models.Members
     using Wonderland.Logic.Interfaces;
     using Wonderland.Logic.Models.Content;
     using Wonderland.Logic.Models.Entities;
+    using Wonderland.Logic.Models.Media;
 
     public class PartyGuest : BaseMemberType, IPartier
     {
@@ -106,15 +107,31 @@ namespace Wonderland.Logic.Models.Members
             }
         }
 
-        public string ProfileImage
+        public ProfileImage ProfileImage
         {
             get
             {
-                return this.GetPropertyValue<string>(PartyGuest.ProfileImageAlias);
+                int? imageId = (int?)this.GetPropertyValue(PartyHost.ProfileImageAlias);
+
+                if (imageId.HasValue && imageId > 0)
+                {
+                    return (ProfileImage)this.Umbraco.TypedMedia(imageId);
+                }
+
+                return null;
             }
             set
             {
-                this.SetPropertyValue(PartyGuest.ProfileImageAlias, value);
+                if (value != null)
+                {
+                    this.SetPropertyValue(PartyHost.ProfileImageAlias, value.Id);
+                }
+                else
+                {
+                    // TODO: remove any existing profile image
+
+                    this.SetPropertyValue(PartyHost.ProfileImageAlias, null);
+                }                
             }
         }
 
@@ -166,13 +183,14 @@ namespace Wonderland.Logic.Models.Members
             }
         }
 
+        // left in so as to avoid lots of view changes - ideally this woudl be removed
         public string ProfileImageUrl
         {
             get
             {
-                if (!string.IsNullOrWhiteSpace(this.ProfileImage))
+                if (this.ProfileImage != null)
                 {
-                    return "/Uploads/Profile/" + this.ProfileImage;
+                    return this.ProfileImage.Url; //TODO:S3URL
                 }
 
                 return null;                

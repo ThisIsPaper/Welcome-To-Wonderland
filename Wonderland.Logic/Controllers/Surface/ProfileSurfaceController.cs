@@ -1,6 +1,7 @@
 ﻿
 namespace Wonderland.Logic.Controllers.Surface
 {
+    using Newtonsoft.Json;
     using System;
     using System.Web.Mvc;
     using Umbraco.Core.Models;
@@ -11,6 +12,7 @@ namespace Wonderland.Logic.Controllers.Surface
     using Wonderland.Logic.Models.Content;
     using Wonderland.Logic.Models.Entities;
     using Wonderland.Logic.Models.Forms;
+    using Wonderland.Logic.Models.Media;
     using Wonderland.Logic.Models.Members;
     using Wonderland.Logic.Models.Messages;
 
@@ -124,20 +126,18 @@ namespace Wonderland.Logic.Controllers.Surface
 
                 if (profileImageForm.ProfileImage != null && profileImageForm.ProfileImage.ContentLength > 0 && profileImageForm.ProfileImage.InputStream.IsImage())
                 {
-                    // WARNING: user may upload an image, but use an incorrect extension !
-                    string fileName = Guid.NewGuid().ToString() + "." + profileImageForm.ProfileImage.ContentType.Split('/')[1];
+                    int id = ProfileImages.CreateProfileImage(profileImageForm.ProfileImage);
 
-                    profileImageForm.ProfileImage.SaveAs(Server.MapPath("~/Uploads/Profile/" + fileName));
+                    partier.ProfileImage = (ProfileImage)this.Umbraco.TypedMedia(id);
 
-                    //update property
-                    partier.ProfileImage = fileName;
+                    string url = this.Umbraco.TypedMedia(id).GetProperty("umbracoFile").Value.ToString();
 
-                    // re-inflate the current user model (to take into account newly set property)
-                    formResponse.Message = "/Uploads/Profile/" + fileName;
+                    formResponse.Message = JsonConvert.SerializeObject(this.Umbraco.TypedMedia(id)); //TODO:S3URL
+                    //formResponse.Message = JsonConvert.SerializeObject(new { id = id, url = this.Umbraco.TypedMedia(id).GetProperty("umbracoFile").Value.ToString() }); //TODO:S3URL;
                 }
                 else // remove reference to image
                 {
-                    partier.ProfileImage = string.Empty;
+                    partier.ProfileImage = null;
                 }            
             }
             else

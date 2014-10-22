@@ -178,3 +178,11 @@ wonderlandApp.filter('forceNullString', [function () {
     };
 
 }]);
+
+wonderlandApp.filter('forceBlankString', [function () {
+
+    return function (str) {
+        return str || '';
+    };
+
+}]);

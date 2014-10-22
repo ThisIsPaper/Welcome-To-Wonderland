@@ -37,9 +37,11 @@ namespace Wonderland.Logic.Models.Messages
             this.Name = partier.FirstName + " " + partier.LastName;
             this.Text = message.Text;
             
-            if (message.Image != null)
+            if (message.Image.HasValue)
             {
-                this.ImageUrl = "/Uploads/PartyWall/" + message.Image;
+                UmbracoHelper umbracoHelper = new UmbracoHelper(UmbracoContext.Current);
+
+                this.ImageUrl = umbracoHelper.TypedMedia(message.Image.Value).Url; // TODO:S3URL
             }
             
             this.Timestamp = message.Timestamp.ToUniversalTime();

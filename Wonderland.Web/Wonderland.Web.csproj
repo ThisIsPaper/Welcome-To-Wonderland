@@ -17,7 +17,7 @@
     <RootNamespace>Wonderland.Web</RootNamespace>
     <AssemblyName>Wonderland.Web</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
-    <UseIISExpress>true</UseIISExpress>
+    <UseIISExpress>false</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
@@ -501,6 +501,71 @@
     <Content Include="media\1062\80s_neon_thumb.jpg" />
     <Content Include="media\1063\vintage_ski.jpg" />
     <Content Include="media\1063\vintage_ski_thumb.jpg" />
+    <Content Include="media\1064\_0003_fashion.png" />
+    <Content Include="media\1064\_0003_fashion_thumb.jpg" />
+    <Content Include="media\1065\snowball.jpg" />
+    <Content Include="media\1065\snowball_big-thumb.jpg" />
+    <Content Include="media\1065\snowball_thumb.jpg" />
+    <Content Include="media\1066\jumper.jpg" />
+    <Content Include="media\1066\jumper_big-thumb.jpg" />
+    <Content Include="media\1066\jumper_thumb.jpg" />
+    <Content Include="media\1067\gingerbread.jpg" />
+    <Content Include="media\1067\gingerbread_big-thumb.jpg" />
+    <Content Include="media\1067\gingerbread_thumb.jpg" />
+    <Content Include="media\1068\ice.jpg" />
+    <Content Include="media\1068\ice_big-thumb.jpg" />
+    <Content Include="media\1068\ice_thumb.jpg" />
+    <Content Include="media\1069\cuckoo.jpg" />
+    <Content Include="media\1069\cuckoo_big-thumb.jpg" />
+    <Content Include="media\1069\cuckoo_thumb.jpg" />
+    <Content Include="media\1070\raffle.jpg" />
+    <Content Include="media\1070\raffle_big-thumb.jpg" />
+    <Content Include="media\1070\raffle_thumb.jpg" />
+    <Content Include="media\1071\playlist_heaven.png" />
+    <Content Include="media\1071\playlist_heaven_big-thumb.jpg" />
+    <Content Include="media\1071\playlist_heaven_thumb.jpg" />
+    <Content Include="media\1072\paty_ideas.jpg" />
+    <Content Include="media\1072\paty_ideas_big-thumb.jpg" />
+    <Content Include="media\1072\paty_ideas_thumb.jpg" />
+    <Content Include="media\1073\tee.jpg" />
+    <Content Include="media\1074\mystery.jpg" />
+    <Content Include="media\1075\sunnies.jpg" />
+    <Content Include="media\1076\sunnies.jpg" />
+    <Content Include="media\1076\sunnies_big-thumb.jpg" />
+    <Content Include="media\1076\sunnies_thumb.jpg" />
+    <Content Include="media\1077\tee.jpg" />
+    <Content Include="media\1077\tee_big-thumb.jpg" />
+    <Content Include="media\1077\tee_thumb.jpg" />
+    <Content Include="media\1078\tee.jpg" />
+    <Content Include="media\1078\tee_big-thumb.jpg" />
+    <Content Include="media\1078\tee_thumb.jpg" />
+    <Content Include="media\1079\tee.jpg" />
+    <Content Include="media\1079\tee_big-thumb.jpg" />
+    <Content Include="media\1079\tee_thumb.jpg" />
+    <Content Include="media\1080\sunnies.jpg" />
+    <Content Include="media\1080\sunnies_big-thumb.jpg" />
+    <Content Include="media\1080\sunnies_thumb.jpg" />
+    <Content Include="media\1081\tee.jpg" />
+    <Content Include="media\1081\tee_big-thumb.jpg" />
+    <Content Include="media\1081\tee_thumb.jpg" />
+    <Content Include="media\1082\sunnies.jpg" />
+    <Content Include="media\1082\sunnies_big-thumb.jpg" />
+    <Content Include="media\1082\sunnies_thumb.jpg" />
+    <Content Include="media\1083\sunnies.jpg" />
+    <Content Include="media\1083\sunnies_big-thumb.jpg" />
+    <Content Include="media\1083\sunnies_thumb.jpg" />
+    <Content Include="media\1084\mystery.jpg" />
+    <Content Include="media\1084\mystery_big-thumb.jpg" />
+    <Content Include="media\1084\mystery_thumb.jpg" />
+    <Content Include="media\1085\mystery.jpg" />
+    <Content Include="media\1085\mystery_big-thumb.jpg" />
+    <Content Include="media\1085\mystery_thumb.jpg" />
+    <Content Include="media\1086\tee.jpg" />
+    <Content Include="media\1086\tee_big-thumb.jpg" />
+    <Content Include="media\1086\tee_thumb.jpg" />
+    <Content Include="media\1087\sunnies.jpg" />
+    <Content Include="media\1087\sunnies_big-thumb.jpg" />
+    <Content Include="media\1087\sunnies_thumb.jpg" />
     <Content Include="scripts\app\app.js" />
     <Content Include="scripts\app\controllers\faqsCtrl.js" />
     <Content Include="scripts\app\controllers\pageCtrl.js" />
@@ -595,6 +660,8 @@
     <Content Include="Views\Donate\Cancelled.cshtml" />
     <Content Include="Views\RegisterGuest\Cancelled.cshtml" />
     <Content Include="Views\MacroPartials\AST S3 Media Example.cshtml" />
+    <Content Include="Views\Partials\PartyDetailsSide.cshtml" />
+    <Content Include="Views\Partials\Share.cshtml" />
     <None Include="Views\RegisterHost\Forms\RegisterHostForm.cshtml" />
     <Content Include="Wonderland.Web.wpp.targets" />
     <Content Include="Wonderland.Web.targets" />
@@ -672,6 +739,7 @@
       <Project>{9eaddebb-efd4-4bf8-9411-7d0683969413}</Project>
       <Name>Wonderland.Logic</Name>
     </ProjectReference>
+    <Folder Include="Views\MacroPartials\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -686,9 +754,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>61315</DevelopmentServerPort>
+          <DevelopmentServerPort>56407</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:61315/</IISUrl>
+          <IISUrl>http://wonderland.local</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

@@ -10,5 +10,8 @@
                 <input type="file" class="choose-file" name="partyWallImage" accept="image/jpeg,image/gif,image/png" m-file-selected="submit()" />
             </div>
         </div>
+        
+        //if an image was already uploaded, and it's id associated with posting the message, then set it here, so that we can clean up orphans
+        <input type="hidden" name="lastPartyWallImageId" value="" />
     }
 </div>
