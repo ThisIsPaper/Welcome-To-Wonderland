@@ -358,6 +358,13 @@ namespace Wonderland.Logic.Controllers.Surface
 
             if (this.ModelState.IsValid && partyWallImageForm.PartyWallImage.ContentLength > 0 && partyWallImageForm.PartyWallImage.InputStream.IsImage())
             {
+                // if previous id was set, then delete that media from the cms as it would become an orphan - there are likely to be ophans anyway, as user could upload and then disappear from that page
+                if (partyWallImageForm.LastPartyWallImageId.HasValue)
+                {
+                    IMedia media = this.Services.MediaService.GetById(partyWallImageForm.LastPartyWallImageId.Value);
+                    this.Services.MediaService.Delete(media);
+                }
+
                 int id = PartyWallImages.CreatePartyWallImage(partyWallImageForm.PartyWallImage);
 
                 formResponse.Message = JsonConvert.SerializeObject(this.Umbraco.TypedMedia(id)); //TODO:S3URL
