@@ -5,7 +5,7 @@ namespace Wonderland.Logic.Models.Media
     using Umbraco.Core.Models.PublishedContent;
     using Umbraco.Web;
 
-    public class ProfileImage : PublishedContentModel
+    public class ProfileImage : NonSerializablePublishedContentModel
     {
         // Media Type
         public const string Alias = "ProfileImage";
