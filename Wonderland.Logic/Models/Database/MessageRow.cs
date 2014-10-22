@@ -24,7 +24,7 @@ namespace Wonderland.Logic.Models.Database
         public string Text { get; set; }
 
         [Column("Image")]
-        public string Image { get; set; }
+        public int? Image { get; set; }
 
         [Column("Timestamp")]
         public DateTime Timestamp { get; set; }
