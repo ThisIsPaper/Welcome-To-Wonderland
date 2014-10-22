@@ -303,6 +303,7 @@
     <Compile Include="Models\Media\PartyWallImages.cs" />
     <Compile Include="Models\Media\ProfileImage.cs" />
     <Compile Include="Models\Media\ProfileImages.cs" />
+    <Compile Include="Models\Members\Partier.cs" />
     <Compile Include="Models\Messages\FacebookCredentials.cs" />
     <Compile Include="Models\Messages\PartyWallItem.cs">
       <SubType>Code</SubType>
