@@ -132,7 +132,8 @@ namespace Wonderland.Logic.Controllers.Surface
 
                     string url = this.Umbraco.TypedMedia(id).GetProperty("umbracoFile").Value.ToString();
 
-                    formResponse.Message = JsonConvert.SerializeObject(new { id = id, url = this.Umbraco.TypedMedia(id).GetProperty("umbracoFile").Value.ToString() }); //TODO:S3URL;
+                    formResponse.Message = JsonConvert.SerializeObject(this.Umbraco.TypedMedia(id)); //TODO:S3URL
+                    //formResponse.Message = JsonConvert.SerializeObject(new { id = id, url = this.Umbraco.TypedMedia(id).GetProperty("umbracoFile").Value.ToString() }); //TODO:S3URL;
                 }
                 else // remove reference to image
                 {
