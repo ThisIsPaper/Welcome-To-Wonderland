@@ -13,6 +13,7 @@ namespace Wonderland.Logic.Models.Members
     using Wonderland.Logic.Models.Entities;
     using Wonderland.Logic.Extensions;
     using Wonderland.Logic.Models.Media;
+    using Umbraco.Core.Services;
 
     public class PartyHost : BaseMemberType, IPartier
     {
@@ -292,9 +293,29 @@ namespace Wonderland.Logic.Models.Members
 
                 return null;
             }
-            set
+            set // value will never be null
             {
-                this.SetPropertyValue(PartyHost.PartyImageAlias, value.Id);
+                if (this.PartyImage != null) // ie. it's been set once
+                {
+                    // potentially overwriting an image
+                    if (this.PartyImage.Id != value.Id)
+                    {
+                        // if the old party image is custom upload, then delete it
+                        if (this.PartyImage is PartyImage)
+                        {
+                            IMediaService mediaService = ApplicationContext.Current.Services.MediaService;
+
+                            IMedia media = mediaService.GetById(this.PartyImage.Id);
+                            mediaService.Delete(media);
+                        }
+
+                        this.SetPropertyValue(PartyHost.PartyImageAlias, value.Id);
+                    }
+                }
+                else
+                {
+                    this.SetPropertyValue(PartyHost.PartyImageAlias, value.Id);
+                }
             }
         }
 
