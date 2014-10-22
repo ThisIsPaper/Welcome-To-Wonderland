@@ -29,24 +29,32 @@
             <div class="boxx internal margin-bottom-medium" m-radius-picker="small">
 
                 <div class="float-left">
-                    <div class="party-image-container" ng-class="{'selected': (partyImageData.PartyImage==partyCustomImage && partyCustomImage)}">
-                        <div ng-click="partyImageData.PartyImage=partyCustomImage;">
-                            <div class="party-image-selecter icon-icon_question_mark" ng-style="{'background-image': partyCustomImage ? 'url(' + partyCustomImage.url + ')' : 'none'}" ng-class="{'image-set': partyCustomImage, 'image-unset': !partyCustomImage}" m-radius-picker="small"></div>
+                    <div class="party-image-container" ng-class="{'selected': (partyImageData.PartyImage==customImage.image && customImage.image)}">
+                        <div ng-click="partyImageData.PartyImage=customImage.image;">
+                            <div class="party-image-selecter icon-icon_question_mark" ng-style="{'background-image': customImage.image ? 'url(' + customImage.image.url + ')' : 'none'}" ng-class="{'image-set': customImage.image, 'image-unset': !customImage.image}" m-radius-picker="small"></div>
                         </div>
                         <div class="warner" ng-click="partyImageData.PartyImage=null">Deselect image <span class="icon-icon_x"></span></div>
                     </div>
                 </div>
 
 
-                @(Html.Action<PartySurfaceController>("RenderCustomPartyImageForm"))
+                <div class="float-left width-mobile-100p">
+                    @(Html.Action<PartySurfaceController>("RenderCustomPartyImageForm"))
 
 
-                <div class="dis-inline-block ng-hide" m-ios-version m-max-ios="5" m-ios-remove-class="ng-hide" m-class-only-on-ios>
-                    <div class="errorred">Your version of iOS does not support image uploads, you need to have iOS 6 or above</div>
-                </div>
+                    <div class="dis-inline-block ng-hide" m-ios-version m-max-ios="5" m-ios-remove-class="ng-hide" m-class-only-on-ios>
+                        <div class="errorred">Your version of iOS does not support image uploads, you need to have iOS 6 or above</div>
+                    </div>
 
-                <div class="ng-hide" m-ios-version m-min-ios="6" m-ios-remove-class="ng-hide">
-                    <div class="file-upload-info">Recommended dimensions of <span class="dis-inline-block">1125 x 555</span></div>
+                    <div class="ng-hide" m-ios-version m-min-ios="6" m-ios-remove-class="ng-hide">
+
+                        <div class="loader pos-static" ng-show="customImage.feedback.processing"></div>
+
+                        <div class="successful" ng-show="customImage.feedback.showSuccess">Image uploaded successfully</div>
+                        <div class="errorred" ng-show="customImage.feedback.showError">Oops something went wrong!</div>
+
+                        <div class="file-upload-info">Recommended dimensions of <span class="dis-inline-block">1125 x 555</span></div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -59,7 +67,7 @@
             {
                 @Html.AntiForgeryToken()
 
-                <input name="PartyImage" type="text" ng-value="partyImageData.PartyImage.id" ng-model="partyImageData.PartyImage.id">
+                <input name="PartyImage" type="hidden" ng-value="partyImageData.PartyImage.id" ng-model="partyImageData.PartyImage.id">
 
                 <div class="errorred" ng-show="feedback.showNetworkError" ng-cloak>Sorry, your connection timed out. <br/>Please login again.</div>
 
