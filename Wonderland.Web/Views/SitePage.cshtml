@@ -78,8 +78,8 @@
 <body>
     <div id="fb-root"></div>
 
-    @{ IPartier partier = this.Members.GetCurrentPartier(); }
-    <div class="page-container" ng-controller="PageCtrl" ng-init="pageProfile.registerHostUrl='@Model.SiteSettings.RegisterHostUrl'; pageProfile.loginUrl='@Model.SiteSettings.LoginUrl'; @{if (partier != null) { @Html.Raw("pageProfile.imageUrl='" + partier.ProfileImageUrl + "'; pageProfile.firstName='" + partier.FirstName + "'; pageProfile.partyUrl='" + partier.PartyUrl + "';") }}">
+    @{ IPartier partier = this.Members.GetCurrentPartier(); }    
+    <div class="page-container" ng-controller="PageCtrl" ng-init="pageProfile.registerHostUrl='@Model.SiteSettings.RegisterHostUrl'; pageProfile.loginUrl='@Model.SiteSettings.LoginUrl'; @{if (partier != null) { @Html.Raw("pageProfile.imageUrl=" + Json.Encode(new { id = partier.Id, url = partier.ProfileImageUrl }) + "; pageProfile.firstName='" + partier.FirstName + "'; pageProfile.partyUrl='" + partier.PartyUrl + "';") }}">
         <!--[if lt IE 7]>
         <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
