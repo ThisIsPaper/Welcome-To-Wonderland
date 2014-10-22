@@ -3153,6 +3153,8 @@
     <Content Include="Views\Profile\Forms\ProfileTShirtSizeForm.cshtml" />
     <Content Include="Views\Donate\Cancelled.cshtml" />
     <Content Include="Views\RegisterGuest\Cancelled.cshtml" />
+    <Content Include="Views\Partials\PartyDetailsSide.cshtml" />
+    <Content Include="Views\Partials\Share.cshtml" />
     <None Include="Views\RegisterHost\Forms\RegisterHostForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
