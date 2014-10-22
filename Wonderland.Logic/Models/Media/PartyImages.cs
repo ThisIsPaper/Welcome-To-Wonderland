@@ -20,7 +20,7 @@ namespace Wonderland.Logic.Models.Media
             partyImage.SetValue("umbracoFile", customPartyImageFile);
 
             mediaService.Save(partyImage);
-            
+
             return partyImage.Id;
         }
     }

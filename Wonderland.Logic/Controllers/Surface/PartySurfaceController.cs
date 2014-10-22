@@ -1,7 +1,7 @@
 ﻿
 namespace Wonderland.Logic.Controllers.Surface
 {
-    using System;
+    using Newtonsoft.Json;
     using System.Web.Mvc;
     using Umbraco.Web.Mvc;
     using Wonderland.Logic.DotMailer;
@@ -36,6 +36,10 @@ namespace Wonderland.Logic.Controllers.Surface
 
             if (this.ModelState.IsValid)
             {
+                // S3 NOTE: party image supplied will be an id
+
+                // TODO: find any existing PartyImage and if it's of type "PartyImage", rather than "Image", then delete it
+
                 ((PartyHost)this.Members.GetCurrentMember()).PartyImage = partyImageForm.PartyImage;
 
                 formResponse.Success = true;
@@ -66,9 +70,11 @@ namespace Wonderland.Logic.Controllers.Surface
             {
                 // NOTE: should update to return cms image ID in addition to the image url
 
-                int id = PartyImages.CreatePartyImage(customPartyImageForm.CustomPartyImage);
+                int id = PartyImages.CreatePartyImage(customPartyImageForm.CustomPartyImage);                
 
-                formResponse.Message = this.Umbraco.TypedMedia(id).GetProperty("umbracoFile").Value.ToString();
+                //formResponse.Message = JsonConvert.SerializeObject(this.Umbraco.TypedMedia(id)); // url is null - might need examine to be updated first
+
+                formResponse.Message = JsonConvert.SerializeObject(new { id = id, url = this.Umbraco.TypedMedia(id).GetProperty("umbracoFile").Value.ToString() });
 
                 formResponse.Success = true;
             }

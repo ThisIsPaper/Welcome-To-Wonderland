@@ -1,11 +1,7 @@
 ﻿@model PartyImageForm
 
 
-<div ng-init="partyImageDefaultDataInit(
-    @Html.Raw(Json.Encode(Model.DefaultImages.Select(x => x.Url)))
-)"></div>
-
-
+<div ng-init="partyImageDefaultDataInit(@Html.Raw(JsonConvert.SerializeObject(Model.DefaultImages)))"></div>
 
 <script type="text/ng-template" id="partials/partyImageForm.html">
 
@@ -14,7 +10,6 @@
         <div class="grid-12 parent">
             <h4>Choose a party image from our gallery</h4>
         </div>
-
 
         <div class="grid-4 grid-tablet-6 grid-mobile-12 clearfix" ng-repeat="defaultImage in partyImageDefaultData">
             <div class="party-image-container min-height-12" ng-class="{'selected': partyImageData.PartyImage==defaultImage}">
