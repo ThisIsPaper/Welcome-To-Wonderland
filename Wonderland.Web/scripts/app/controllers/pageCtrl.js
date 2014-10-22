@@ -4,7 +4,7 @@ wonderlandApp.controller('PageCtrl', ['debounce', 'paf', '$rootScope', '$scope',
     $scope.pageShowingSideNavMenu = false;
     $scope.pageShowingSideAccountMenu = false;
     $scope.pageProfile = {
-        imageUrl: null
+        image: null
     };
     $scope.pageFeedback = {
 
@@ -48,6 +48,11 @@ wonderlandApp.controller('PageCtrl', ['debounce', 'paf', '$rootScope', '$scope',
      * PROFILE IMAGE CHANGE
      *
      */
+    $scope.onPageLoadProfileImage = function (profileImageData) {
+        $scope.pageProfile.image = angular.fromJson(profileImageData);
+    };
+
+
     $scope.$onRootScope('profileImageUploadStart', function() {
 
         $timeout(function () {
@@ -64,7 +69,7 @@ wonderlandApp.controller('PageCtrl', ['debounce', 'paf', '$rootScope', '$scope',
             $scope.pageFeedback.profileImageProcessing = false;
 
             if (response && response.Success === true) {
-                $scope.pageProfile.imageUrl = angular.fromJson(response.Message);
+                $scope.pageProfile.image = angular.fromJson(response.Message);
                 $scope.pageFeedback.profileImageShowSuccess = true;
             } else {
                 $scope.pageFeedback.profileImageShowError = true;
