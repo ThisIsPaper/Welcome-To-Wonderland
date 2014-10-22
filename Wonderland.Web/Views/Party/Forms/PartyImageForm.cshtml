@@ -12,8 +12,8 @@
         </div>
 
         <div class="grid-4 grid-tablet-6 grid-mobile-12 clearfix" ng-repeat="defaultImage in partyImageDefaultData">
-            <div class="party-image-container min-height-12" ng-class="{'selected': partyImageData.PartyImage==defaultImage.id}">
-                <div ng-click="partyImageData.PartyImage=defaultImage.id; console.log()">
+            <div class="party-image-container min-height-12" ng-class="{'selected': partyImageData.PartyImage.id==defaultImage.id}">
+                <div ng-click="partyImageData.PartyImage=defaultImage;">
                     <div class="party-image-selecter" ng-style="{'background-image': 'url(' + defaultImage.url + ')'}" m-radius-picker="small"></div>
                 </div>
                 <div class="warner" ng-click="partyImageData.PartyImage=null">Deselect image <span class="icon-icon_x"></span></div>
@@ -29,11 +29,10 @@
             <div class="boxx internal margin-bottom-medium" m-radius-picker="small">
 
                 <div class="float-left">
-                    <div class="party-image-container" ng-class="{'selected': (partyImageData.PartyImage==partyCustomImage.url && partyCustomImage.url)}">
-                        <label>
-                            <input type="radio" name="urlSelectar" ng-model="partyImageData.PartyImage" value="{{ partyCustomImage.url }}" ng-disabled="!partyCustomImage.url"  />
-                            <div class="party-image-selecter icon-icon_question_mark" ng-style="{'background-image': partyCustomImage.url ? 'url(' + partyCustomImage.url + ')' : 'none'}" ng-class="{'image-set': partyCustomImage.url, 'image-unset': !partyCustomImage.url}" m-radius-picker="small"></div>
-                        </label>
+                    <div class="party-image-container" ng-class="{'selected': (partyImageData.PartyImage==partyCustomImage && partyCustomImage)}">
+                        <div ng-click="partyImageData.PartyImage=partyCustomImage;">
+                            <div class="party-image-selecter icon-icon_question_mark" ng-style="{'background-image': partyCustomImage ? 'url(' + partyCustomImage.url + ')' : 'none'}" ng-class="{'image-set': partyCustomImage, 'image-unset': !partyCustomImage}" m-radius-picker="small"></div>
+                        </div>
                         <div class="warner" ng-click="partyImageData.PartyImage=null">Deselect image <span class="icon-icon_x"></span></div>
                     </div>
                 </div>
@@ -56,11 +55,11 @@
 
             <hr/>
 
-            @using (Html.BeginUmbracoForm<PartySurfaceController>("HandlePartyImageForm", FormMethod.Post, new { m_serialized="", m_post_on_submit="partyImageData", m_on_success_event="partyImageUpdated", m_on_error_event="partyImageUpdateError", ng_submit="feedback.processing=true" }))
+            @using (Html.BeginUmbracoForm<PartySurfaceController>("HandlePartyImageForm", FormMethod.Post, new { m_serialized="", m_post_on_submit="partyImageData", m_use_legacy="true", m_on_success_event="partyImageUpdated", m_on_error_event="partyImageUpdateError", ng_submit="feedback.processing=true" }))
             {
                 @Html.AntiForgeryToken()
 
-                <input name="PartyImage" type="hidden" ng-value="partyImageData.PartyImage.id" ng-model="partyImageData.PartyImage">
+                <input name="PartyImage" type="text" ng-value="partyImageData.PartyImage.id" ng-model="partyImageData.PartyImage.id">
 
                 <div class="errorred" ng-show="feedback.showNetworkError" ng-cloak>Sorry, your connection timed out. <br/>Please login again.</div>
 
