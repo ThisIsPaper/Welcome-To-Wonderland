@@ -6,7 +6,7 @@
     {
         @Html.AntiForgeryToken()
 
-        <input id="PartyWallImage" name="PartyWallImage" type="hidden" ng-value="wall.formModel.PartyWallImage|forceNullString">
+        <input id="PartyWallImage" name="PartyWallImage" type="hidden" ng-value="wall.formModel.PartyWallImage|forceBlankString">
 
         <div class="image-shift-details margin-bottom-small">
             <textarea name="Message" ng-model="wall.formModel.Message" m-radius-picker="small" class="wall-textarea" ng-class="{'error': wall.formModel.Message.length>600}"></textarea>
@@ -17,7 +17,7 @@
                     <div class="errorred" class="margin-0" ng-show="wall.feedback.imageShowError">Oops something went wrong!</div>
                 </div>
 
-                <img class="pad-small" ng-src="{{ wall.previewImageUrl }}" ng-show="wall.previewImageUrl.length>0"/>
+                <img class="pad-small" ng-src="{{ wall.previewImageUrl.url }}" ng-show="wall.previewImageUrl"/>
             </div>
 
 

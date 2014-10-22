@@ -49,7 +49,7 @@ wonderlandApp.directive('mPostOnSubmit', ['mHttp', 'uniqueId', '$parse', '$rootS
                         if (rvtElement && rvtElement.length) {
                             sendData.__RequestVerificationToken = rvtElement[0].value;
                         }
-
+console.log('SAVE DATA', originalData, sendData);
 
                         formSubmitRequest = mHttp.post(attrs.action + '?t=' + new Date().getTime(), {
                             formData: sendData,
