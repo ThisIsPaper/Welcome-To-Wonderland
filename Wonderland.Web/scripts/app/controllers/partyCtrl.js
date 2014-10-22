@@ -164,21 +164,23 @@ wonderlandApp.controller('PartyCtrl', ['$filter', '$ocModal', '$rootScope', '$sc
     $scope.partyImageDefaultData = null;
     $scope.partyImageDataForForm = null;
     $scope.partyImageDataFeedback = {};
-    $scope.partyCustomImage = {
-        url: null
-    };
+    $scope.partyCustomImage = null;
 
     $scope.partyImageDefaultDataInit = function (defaultImages) {
 
         $scope.partyImageDefaultData = defaultImages;
-console.log(defaultImages);
 
         // hacky check to see if the url is one of the default images
-        if ($scope.partyImageDefaultData.indexOf(initUrl) >= 0) {
-            return;
+        var isCustom = true;
+        if (initUrl) {
+            angular.forEach(defaultImages, function (value) {
+                isCustom = value.id === initUrl.id ? false : isCustom;
+            });
         }
 
-        $scope.partyCustomImage.url = initUrl;
+        if (isCustom) {
+            $scope.partyCustomImage = initUrl;
+        }
 
     };
 
@@ -201,23 +203,32 @@ console.log(defaultImages);
 
 
     $scope.$onRootScope('partyImageCustomUrlUploaded', function (event, response) {
+
         if (response && response.Success === true && response.Message) {
 
-            $timeout(function () {
-                $scope.partyCustomImage.url = response.Message;
-                $scope.partyImageDataForForm.PartyImage = $scope.partyCustomImage.url;
-            });
+            var newImage = angular.fromJson(response.Message);
+
+            if (newImage) {
+                console.log('NEW IMAGE!', newImage);
+                $timeout(function () {
+                    $scope.partyCustomImage = newImage;
+                    $scope.partyImageDataForForm.PartyImage = newImage;
+                });
+            }
         }
     });
 
 
-    $scope.hardCodedCurrentPartyImageUrlInit = function (url) {
+    $scope.hardCodedCurrentPartyImageUrlInit = function (imageData) {
 
-        initUrl = url;
+        if (imageData) {
+            initUrl = angular.fromJson(imageData);
+        }
 
-        $scope.partyImageData = {
-            'PartyImage': url
-        };
+        console.log('hardCodedCurrentPartyImageUrlInit', initUrl);
+
+        $scope.partyImageData = $scope.partyImageData || {};
+        $scope.partyImageData.PartyImage = initUrl;
         $scope.partyImageDataForForm = angular.copy($scope.partyImageData);
     };
 
