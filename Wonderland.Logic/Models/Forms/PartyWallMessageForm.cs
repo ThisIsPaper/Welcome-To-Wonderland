@@ -11,6 +11,6 @@ namespace Wonderland.Logic.Models.Forms
         public string Message { get; set; }
 
         [HiddenInput(DisplayValue = false)]
-        public string PartyWallImage { get; set; }
+        public int? PartyWallImage { get; set; }
     }
 }

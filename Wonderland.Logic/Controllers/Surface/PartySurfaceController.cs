@@ -45,7 +45,7 @@ namespace Wonderland.Logic.Controllers.Surface
                 // if selected image is different to that stored
                 if (partyHost.PartyImage == null || (partyHost.PartyImage != null && partyHost.PartyImage.Id != partyImage.Id))
                 {
-                    // if it's a custom upload (default umages are of type 'Image') then delete the old one from the cms
+                    // if it's a custom upload (default images are of type 'Image') then delete the old one from the cms
                     if (partyHost.PartyImage is PartyImage)
                     {
                         IMedia media = this.Services.MediaService.GetById(partyHost.PartyImage.Id);
@@ -84,7 +84,7 @@ namespace Wonderland.Logic.Controllers.Surface
                 int id = PartyImages.CreatePartyImage(customPartyImageForm.CustomPartyImage);                
 
                 //formResponse.Message = JsonConvert.SerializeObject(this.Umbraco.TypedMedia(id)); // url is null - might need examine to be updated first
-                formResponse.Message = JsonConvert.SerializeObject(new { id = id, url = this.Umbraco.TypedMedia(id).GetProperty("umbracoFile").Value.ToString() });
+                formResponse.Message = JsonConvert.SerializeObject(new { id = id, url = this.Umbraco.TypedMedia(id).GetProperty("umbracoFile").Value.ToString() }); //TODO:S3URL
 
                 formResponse.Success = true;
             }
@@ -327,18 +327,11 @@ namespace Wonderland.Logic.Controllers.Surface
         [MemberAuthorize]
         public JsonResult HandlePartyWallMessageForm(PartyWallMessageForm partyWallMessageForm)
         {
-            // TODO: safety check that current member is associated with this party
-            //Party party = (Party)this.Umbraco.AssignedContentItem;;
-
             FormResponse formResponse = new FormResponse();
 
-            if (this.ModelState.IsValid && (!string.IsNullOrWhiteSpace(partyWallMessageForm.Message) || !string.IsNullOrWhiteSpace(partyWallMessageForm.PartyWallImage)))
+            if (this.ModelState.IsValid && (!string.IsNullOrWhiteSpace(partyWallMessageForm.Message) || partyWallMessageForm.PartyWallImage.HasValue))
             {
-                //Guid partyGuid = ((Party)this.Umbraco.AssignedContentItem).PartyHost.PartyGuid;
-
-                string partyWallImage = partyWallMessageForm.PartyWallImage;
-
-                //// insert message into DB
+                // insert message into DB
                 this.DatabaseContext.Database.Insert(new MessageRow()
                                                             {
                                                                 MemberId = this.Members.GetCurrentMemberId(),
@@ -374,9 +367,7 @@ namespace Wonderland.Logic.Controllers.Surface
             {
                 int id = PartyWallImages.CreatePartyWallImage(partyWallImageForm.PartyWallImage);
 
-                string url = this.Umbraco.TypedMedia(id).GetProperty("umbracoFile").Value.ToString();
-
-                formResponse.Message = url;
+                formResponse.Message = JsonConvert.SerializeObject(new { id = id, url = this.Umbraco.TypedMedia(id).GetProperty("umbracoFile").Value.ToString() }); //TODO:S3URL
 
                 formResponse.Success = true;
             }
