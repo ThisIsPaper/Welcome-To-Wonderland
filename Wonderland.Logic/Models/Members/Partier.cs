@@ -16,15 +16,7 @@ namespace Wonderland.Logic.Models.Members
     public abstract class Partier : BaseMemberType
     {
         // Properties
-        //public const string PartyGuidAlias = "partyGuid";
-        //public const string FirstNameAlias = "firstName";
-        //public const string LastNameAlias = "lastName";
-        //public const string BillingAddressAlias = "billingAddress";
         public const string ProfileImageAlias = "profileImage";
-        //public const string ForgottenPasswordGuidAlias = "forgottenPasswordGuid";
-        //public const string DotMailerIdAlias = "dotMailerId";
-        //public const string DotMailerRegistrationCompleteAlias = "dotMailerRegistrationComplete";
-        //public const string FacebookRegistrationAlias = "facebookRegistration";
 
         public Partier(IPublishedContent content)
             : base(content)
@@ -46,15 +38,26 @@ namespace Wonderland.Logic.Models.Members
             }
             set
             {
-                if (value != null)
+                if (value == null)
                 {
-                    this.SetPropertyValue(Partier.ProfileImageAlias, value.Id);
+                    // delete any associated profile image from media
+                    if (this.ProfileImage != null)
+                    {
+                        IMedia media = this.MediaService.GetById(this.ProfileImage.Id);
+                        this.MediaService.Delete(media);
+                    }
+
+                    // remove reference
+                    this.SetPropertyValue(Partier.ProfileImageAlias, null);                    
                 }
                 else
                 {
-                    // TODO: remove any existing profile image
-
-                    this.SetPropertyValue(Partier.ProfileImageAlias, null);
+                    // if changing
+                    if (this.ProfileImage == null || this.ProfileImage.Id != value.Id)
+                    {
+                        // update reference
+                        this.SetPropertyValue(Partier.ProfileImageAlias, value.Id);
+                    }
                 }
             }
         }
