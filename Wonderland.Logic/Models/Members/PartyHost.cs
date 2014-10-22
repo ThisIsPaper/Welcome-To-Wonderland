@@ -293,28 +293,29 @@ namespace Wonderland.Logic.Models.Members
 
                 return null;
             }
-            set // value will never be null
+            set 
             {
-                if (this.PartyImage != null) // ie. it's been set once
+                if (value == null)
                 {
-                    // potentially overwriting an image
-                    if (this.PartyImage.Id != value.Id)
+                    // if there is a custom uploaded party image (rather than a chosen default)
+                    if (this.PartyImage is PartyImage)
                     {
-                        // if the old party image is custom upload, then delete it
-                        if (this.PartyImage is PartyImage)
-                        {
-                            IMediaService mediaService = ApplicationContext.Current.Services.MediaService;
-
-                            IMedia media = mediaService.GetById(this.PartyImage.Id);
-                            mediaService.Delete(media);
-                        }
-
-                        this.SetPropertyValue(PartyHost.PartyImageAlias, value.Id);
+                        // delete image                   
+                        IMedia media = this.MediaService.GetById(this.PartyImage.Id);
+                        this.MediaService.Delete(media);
                     }
+
+                    // remove reference
+                    this.SetPropertyValue(PartyHost.PartyImageAlias, null);
                 }
                 else
                 {
-                    this.SetPropertyValue(PartyHost.PartyImageAlias, value.Id);
+                    // if changing
+                    if (this.PartyImage == null || this.PartyImage.Id != value.Id)
+                    {
+                        // update reference
+                        this.SetPropertyValue(PartyHost.PartyImageAlias, value.Id);
+                    }
                 }
             }
         }
@@ -446,7 +447,7 @@ namespace Wonderland.Logic.Models.Members
             }
         }
 
-        // left in so as to avoid lots of view changes - ideally this woudl be removed
+        // left in so as to avoid lots of view changes - ideally this would be removed
         public string ProfileImageUrl
         {
             get

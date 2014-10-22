@@ -16,7 +16,6 @@ namespace Wonderland.Logic.Models.Members
         
         private IMember member = null;
 
-
         public BaseMemberType(IPublishedContent content)
             : base(content)
         {
@@ -67,6 +66,14 @@ namespace Wonderland.Logic.Models.Members
             get
             {
                 return ApplicationContext.Current.Services.MemberService;
+            }
+        }
+
+        protected IMediaService MediaService
+        {
+            get
+            {
+                return ApplicationContext.Current.Services.MediaService;
             }
         }
 
