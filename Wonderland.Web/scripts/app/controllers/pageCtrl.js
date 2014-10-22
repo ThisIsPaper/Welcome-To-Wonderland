@@ -50,6 +50,7 @@ wonderlandApp.controller('PageCtrl', ['debounce', 'paf', '$rootScope', '$scope',
      */
     $scope.onPageLoadProfileImage = function (profileImageData) {
         $scope.pageProfile.image = angular.fromJson(profileImageData);
+console.log('onPageLoadProfileImage', $scope.pageProfile.image);
     };
 
 
@@ -70,6 +71,7 @@ wonderlandApp.controller('PageCtrl', ['debounce', 'paf', '$rootScope', '$scope',
 
             if (response && response.Success === true) {
                 $scope.pageProfile.image = angular.fromJson(response.Message);
+console.log('uploaded new image', $scope.pageProfile.image);
                 $scope.pageFeedback.profileImageShowSuccess = true;
             } else {
                 $scope.pageFeedback.profileImageShowError = true;
