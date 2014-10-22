@@ -13,6 +13,6 @@ namespace Wonderland.Logic.Models.Forms
 
         [Required]
         [HiddenInput(DisplayValue = false)]
-        public string PartyImage { get; set; }
+        public int PartyImage { get; set; }
     }
 }

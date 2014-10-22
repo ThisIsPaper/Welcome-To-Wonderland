@@ -160,25 +160,30 @@ wonderlandApp.controller('PartyCtrl', ['$filter', '$ocModal', '$rootScope', '$sc
     /* PARTY IMAGE DETAILS */
     /**********************/
     var initUrl = null;
-    $scope.partyImageData = null;
+    $scope.partyImageData = {};
     $scope.partyImageDefaultData = null;
     $scope.partyImageDataForForm = null;
     $scope.partyImageDataFeedback = {};
     $scope.partyCustomImage = {
-        url: null
+        image: null,
+        feedback: {}
     };
 
     $scope.partyImageDefaultDataInit = function (defaultImages) {
 
         $scope.partyImageDefaultData = defaultImages;
 
-
         // hacky check to see if the url is one of the default images
-        if ($scope.partyImageDefaultData.indexOf(initUrl) >= 0) {
-            return;
+        var isCustom = true;
+        if (initUrl) {
+            angular.forEach(defaultImages, function (value) {
+                isCustom = value.id === initUrl.id ? false : isCustom;
+            });
         }
 
-        $scope.partyCustomImage.url = initUrl;
+        if (isCustom) {
+            $scope.partyCustomImage.image = initUrl;
+        }
 
     };
 
@@ -201,23 +206,37 @@ wonderlandApp.controller('PartyCtrl', ['$filter', '$ocModal', '$rootScope', '$sc
 
 
     $scope.$onRootScope('partyImageCustomUrlUploaded', function (event, response) {
-        if (response && response.Success === true && response.Message) {
+        $timeout(function () {
+            $scope.partyCustomImage.feedback.processing = false;
 
-            $timeout(function () {
-                $scope.partyCustomImage.url = response.Message;
-                $scope.partyImageDataForForm.PartyImage = $scope.partyCustomImage.url;
-            });
-        }
+            if (response && response.Success === true && response.Message) {
+
+                var newImage = angular.fromJson(response.Message);
+                $scope.partyCustomImage.feedback.showSuccess = true;
+
+                if (newImage) {
+                    $scope.partyCustomImage.image = newImage;
+                    $scope.partyImageDataForForm.PartyImage = newImage;
+                }
+            } else {
+                $scope.partyCustomImage.feedback.showError = true;
+            }
+        });
+
+        $timeout(function () {
+            $scope.partyCustomImage.feedback.showSuccess = false;
+            $scope.partyCustomImage.feedback.showError = false;
+        }, 5000);
     });
 
 
-    $scope.hardCodedCurrentPartyImageUrlInit = function (url) {
+    $scope.hardCodedCurrentPartyImageUrlInit = function (imageData) {
 
-        initUrl = url;
+        if (imageData) {
+            initUrl = angular.fromJson(imageData);
+        }
 
-        $scope.partyImageData = {
-            'PartyImage': url
-        };
+        $scope.partyImageData.PartyImage = initUrl;
         $scope.partyImageDataForForm = angular.copy($scope.partyImageData);
     };
 

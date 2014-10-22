@@ -182,10 +182,10 @@ wonderlandApp.controller('WallCtrl', ['mHttp', '$filter', '$scope', '$timeout', 
             if (response && response.Success === true && response.Message) {
                 $scope.wall.feedback.imageShowSuccess = true;
 
-                // TODO: are we leaving this as is. i.e. returning the full uri of image location an javascript stripping out just the guid to save?
+                var imageObject = angular.fromJson(response.Message);
 
-                $scope.wall.previewImageUrl = response.Message;
-                $scope.wall.formModel.PartyWallImage = $scope.wall.previewImageUrl.replace('/Uploads/PartyWall/', '');
+                $scope.wall.previewImageUrl = imageObject;
+                $scope.wall.formModel.PartyWallImage = imageObject.id;
 
             } else {
                 $scope.wall.feedback.imageShowError = true;

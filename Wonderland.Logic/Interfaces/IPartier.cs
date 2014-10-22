@@ -3,6 +3,7 @@ namespace Wonderland.Logic.Interfaces
 {
     using System;
     using Wonderland.Logic.Models.Entities;
+    using Wonderland.Logic.Models.Media;
     using Wonderland.Logic.Models.Members;
 
     /// <summary>
@@ -20,7 +21,7 @@ namespace Wonderland.Logic.Interfaces
 
         string LastName { get; set; }
 
-        string ProfileImage { get; set; }
+        ProfileImage ProfileImage { get; set; }
 
         /// <summary>
         /// url to their profile image

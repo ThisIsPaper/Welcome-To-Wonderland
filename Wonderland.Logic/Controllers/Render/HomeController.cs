@@ -6,7 +6,7 @@ namespace Wonderland.Logic.Controllers.Render
 
     public class HomeController : BaseRenderMvcController
     {
-        //[OutputCache(Duration=60)]
+        [OutputCache(Duration=SitePage.CacheDuration)]
         public ActionResult Home() // method executed in preference to the Index, as Home is the template name
         {
             Home model = (Home)this.CurrentPage;

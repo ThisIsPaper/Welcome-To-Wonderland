@@ -54,8 +54,8 @@ namespace Wonderland.Web.Dashboards
                                 partyHost.PartyAddress.TownCity.Replace(',', ' '),                                              // 18. Party TownCity
                                 partyHost.PartyAddress.Postcode.Replace(',', ' '),                                              // 19. Party Postcode
                                 partyHost.PartyCopy != null ? partyHost.PartyCopy.Replace(',', ' ') : string.Empty,             // 20. Join Wonderland Story
-                                !string.IsNullOrWhiteSpace(partyHost.PartyImage) ? "Y" : "N",                                   // 21. Party Background Image
-                                !string.IsNullOrWhiteSpace(partier.ProfileImage) ? "Y" : "N",                                   // 22. Profile Photo
+                                partyHost.PartyImage != null ? "Y" : "N",                                                       // 21. Party Background Image
+                                partier.ProfileImage != null ? "Y" : "N",                                                       // 22. Profile Photo
                                 partyHost.FundraisingTarget,                                                                    // 23. Fundraising Target
                                 partyHost.SuggestedDonation,                                                                    // 24. Suggested Donation
                                 this.Members.GetPartiers(partyHost.PartyGuid).Count(),                                          // 25. Guest Count
@@ -97,7 +97,7 @@ namespace Wonderland.Web.Dashboards
                                 string.Empty,                                                                           // 19. Party Postcode
                                 string.Empty,                                                                           // 20. Join Wonderland Story
                                 string.Empty,                                                                           // 21. Party Background Image
-                                string.IsNullOrWhiteSpace(partier.ProfileImage) ? "Y" : "N",                            // 22. Profile Photo
+                                partier.ProfileImage != null ? "Y" : "N",                                               // 22. Profile Photo
                                 string.Empty,                                                                           // 23. Fundraising Target
                                 string.Empty,                                                                           // 24. Suggested Donation
                                 string.Empty,                                                                           // 25. Guest Count

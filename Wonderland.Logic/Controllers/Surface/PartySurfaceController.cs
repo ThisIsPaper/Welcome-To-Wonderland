@@ -1,15 +1,18 @@
 ﻿
 namespace Wonderland.Logic.Controllers.Surface
 {
-    using System;
+    using Newtonsoft.Json;
     using System.Web.Mvc;
+    using Umbraco.Core.Models;
     using Umbraco.Web.Mvc;
     using Wonderland.Logic.DotMailer;
     using Wonderland.Logic.Extensions;
+    using Wonderland.Logic.Interfaces;
     using Wonderland.Logic.Models.Content;
     using Wonderland.Logic.Models.Database;
     using Wonderland.Logic.Models.Entities;
     using Wonderland.Logic.Models.Forms;
+    using Wonderland.Logic.Models.Media;
     using Wonderland.Logic.Models.Members;
     using Wonderland.Logic.Models.Messages;
 
@@ -35,7 +38,9 @@ namespace Wonderland.Logic.Controllers.Surface
 
             if (this.ModelState.IsValid)
             {
-                ((PartyHost)this.Members.GetCurrentMember()).PartyImage = partyImageForm.PartyImage;
+                PartyHost partyHost = (PartyHost)this.Members.GetCurrentPartier();
+
+                partyHost.PartyImage = (IPartyImage)this.Umbraco.TypedMedia(partyImageForm.PartyImage);
 
                 formResponse.Success = true;
             }
@@ -63,11 +68,17 @@ namespace Wonderland.Logic.Controllers.Surface
 
             if (this.ModelState.IsValid && customPartyImageForm.CustomPartyImage.ContentLength > 0 && customPartyImageForm.CustomPartyImage.InputStream.IsImage())
             {
-                string fileName = Guid.NewGuid().ToString() + "." + customPartyImageForm.CustomPartyImage.ContentType.Split('/')[1];
+                int id = PartyImages.CreatePartyImage(customPartyImageForm.CustomPartyImage);
 
-                customPartyImageForm.CustomPartyImage.SaveAs(Server.MapPath("~/Uploads/PartyImage/" + fileName));
+                PartyHost partyHost = (PartyHost)this.Members.GetCurrentPartier();
 
-                formResponse.Message = "/Uploads/PartyImage/" + fileName;
+                IPartyImage partyImage = (IPartyImage)this.Umbraco.TypedMedia(id);
+
+                // set the newly uploaded file to be the selected one
+                partyHost.PartyImage = partyImage;
+
+                formResponse.Message = JsonConvert.SerializeObject(partyImage); //TODO:S3URL
+                //formResponse.Message = JsonConvert.SerializeObject(new { id = id, url = this.Umbraco.TypedMedia(id).GetProperty("umbracoFile").Value.ToString() }); //TODO:S3URL
 
                 formResponse.Success = true;
             }
@@ -131,19 +142,17 @@ namespace Wonderland.Logic.Controllers.Surface
 
                 if (profileImageForm.ProfileImage != null && profileImageForm.ProfileImage.ContentLength > 0 && profileImageForm.ProfileImage.InputStream.IsImage())
                 {
-                    // WARNING: user may upload an image, but use an incorrect extension !
-                    string fileName = Guid.NewGuid().ToString() + "." + profileImageForm.ProfileImage.ContentType.Split('/')[1];
+                    // create new profile image in the cms
+                    int id = ProfileImages.CreateProfileImage(profileImageForm.ProfileImage);
 
-                    profileImageForm.ProfileImage.SaveAs(Server.MapPath("~/Uploads/Profile/" + fileName));
+                    partyHost.ProfileImage = (ProfileImage)this.Umbraco.TypedMedia(id);
 
-                    partyHost.ProfileImage = fileName;
-
-                    // re-inflate the current user model (to take into account newly set property)
-                    formResponse.Message = new PartyHost(this.Umbraco.TypedMember(partyHost.Id)).ProfileImageUrl;
+                    formResponse.Message = JsonConvert.SerializeObject(this.Umbraco.TypedMedia(id)); //TODO:S3URL
+                    //formResponse.Message = JsonConvert.SerializeObject(new { id = id, url = this.Umbraco.TypedMedia(id).GetProperty("umbracoFile").Value.ToString() }); //TODO:S3URL
                 }
                 else
                 {
-                    partyHost.ProfileImage = string.Empty;
+                    partyHost.ProfileImage = null;
                 }
 
                 formResponse.Success = true;
@@ -310,23 +319,12 @@ namespace Wonderland.Logic.Controllers.Surface
         [MemberAuthorize]
         public JsonResult HandlePartyWallMessageForm(PartyWallMessageForm partyWallMessageForm)
         {
-            // TODO: safety check that current member is associated with this party
-            //Party party = (Party)this.Umbraco.AssignedContentItem;;
-
             FormResponse formResponse = new FormResponse();
 
-            if (this.ModelState.IsValid && (!string.IsNullOrWhiteSpace(partyWallMessageForm.Message) || !string.IsNullOrWhiteSpace(partyWallMessageForm.PartyWallImage)))
+            // this.ModelState.IsValid reports false with int? !
+            if (!string.IsNullOrWhiteSpace(partyWallMessageForm.Message) || partyWallMessageForm.PartyWallImage.HasValue)
             {
-                //Guid partyGuid = ((Party)this.Umbraco.AssignedContentItem).PartyHost.PartyGuid;
-
-                string partyWallImage = partyWallMessageForm.PartyWallImage;
-
-                if (partyWallImage.StartsWith("/Uploads/PartyWall/"))
-                {
-                    partyWallImage = partyWallImage.Remove(0, "/Uploads/PartyWall/".Length);
-                }
-
-                //// insert message into DB
+                // insert message into DB
                 this.DatabaseContext.Database.Insert(new MessageRow()
                                                             {
                                                                 MemberId = this.Members.GetCurrentMemberId(),
@@ -360,11 +358,17 @@ namespace Wonderland.Logic.Controllers.Surface
 
             if (this.ModelState.IsValid && partyWallImageForm.PartyWallImage.ContentLength > 0 && partyWallImageForm.PartyWallImage.InputStream.IsImage())
             {
-                string fileName = Guid.NewGuid().ToString() + "." + partyWallImageForm.PartyWallImage.ContentType.Split('/')[1];
+                // if previous id was set, then delete that media from the cms as it would become an orphan - there are likely to be ophans anyway, as user could upload and then disappear from that page
+                if (partyWallImageForm.LastPartyWallImageId.HasValue)
+                {
+                    IMedia media = this.Services.MediaService.GetById(partyWallImageForm.LastPartyWallImageId.Value);
+                    this.Services.MediaService.Delete(media);
+                }
 
-                partyWallImageForm.PartyWallImage.SaveAs(Server.MapPath("~/Uploads/PartyWall/" + fileName));
+                int id = PartyWallImages.CreatePartyWallImage(partyWallImageForm.PartyWallImage);
 
-                formResponse.Message = "/Uploads/PartyWall/" + fileName;
+                formResponse.Message = JsonConvert.SerializeObject(this.Umbraco.TypedMedia(id)); //TODO:S3URL
+                //formResponse.Message = JsonConvert.SerializeObject(new { id = id, url = this.Umbraco.TypedMedia(id).GetProperty("umbracoFile").Value.ToString() }); //TODO:S3URL
 
                 formResponse.Success = true;
             }
@@ -380,7 +384,7 @@ namespace Wonderland.Logic.Controllers.Surface
         {
             if (!partyHost.DotMailerPartyPageComplete)
             {
-                if (!string.IsNullOrWhiteSpace(partyHost.PartyImage)
+                if (partyHost.PartyImage != null
                     && partyHost.FundraisingTarget > 0
                     && !string.IsNullOrWhiteSpace(partyHost.PartyAddress.ToString()))
                 {

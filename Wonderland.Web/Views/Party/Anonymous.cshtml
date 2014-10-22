@@ -15,8 +15,8 @@
             <div class="wgrid-full parent">
                 <div class="boxx collapse" m-radius-picker="large">
 
-                    <div class="wgrid-full wgrid-no-bottom-margin parent" ng-init="partyImageImageUrl='@Model.PartyHost.PartyImage'">
-                        <img ng-src="{{ partyImageImageUrl }}" width="100%"/>
+                    <div class="wgrid-full wgrid-no-bottom-margin parent" ng-init="partyImageImageUrl=@{if (Model.PartyHost.PartyImage != null) {<text>'@Model.PartyHost.PartyImage.Url'</text>} else {<text>null</text>}}">
+                        <img ng-src="{{ partyImageImageUrl }}" width="100%" />
                         <div class="no-party-image" ng-show="partyImageImageUrl.length<=0" ng-cloak></div>
                         <div class="boxx-twerk"></div>
                     </div>

@@ -39,13 +39,13 @@
         <div class="wgrid-main wgrid-no-bottom-margin">
 
             <div class="wgrid-full parent">
-                <div class="boxx collapse" m-radius-picker="large">
+                <div class="boxx collapse" m-radius-picker="large">                    
 
-                    <div class="wgrid-full wgrid-no-bottom-margin parent" ng-init="hardCodedCurrentPartyImageUrlInit('@Model.PartyHost.PartyImage')">
+                    <div class="wgrid-full wgrid-no-bottom-margin parent" ng-init="hardCodedCurrentPartyImageUrlInit('@Html.Raw(JsonConvert.SerializeObject(Model.PartyHost.PartyImage))')">
 
-                        <img ng-src="{{ partyImageData.PartyImage }}" width="100%"/>
+                        <img ng-src="{{ partyImageData.PartyImage.url }}" width="100%" />
 
-                        <div class="no-party-image" ng-show="partyImageData.PartyImage.length<=0" ng-cloak>
+                        <div class="no-party-image" ng-show="!partyImageData.PartyImage.url" ng-cloak>
                             <div class="party-image-default">
                                 <div class="icon-icon_camera"></div>
                                 <div>Choose my party picture</div>
@@ -54,12 +54,12 @@
 
                         <div class="boxx-twerk"></div>
 
-                        <div class="edit-trigger" ng-click="openPageModal('partials/partyImageForm.html', 'partyImageModal', {'partyImageData': partyImageDataForForm, 'partyImageDefaultData': partyImageDefaultData, 'partyCustomImage': partyCustomImage, 'feedback': partyImageDataFeedback})"><span class="edit-label">Edit</span><span class="icon-icon_edit"></span></div>
+                        <div class="edit-trigger" ng-click="openPageModal('partials/partyImageForm.html', 'partyImageModal', {'partyImageData': partyImageDataForForm, 'partyImageDefaultData': partyImageDefaultData, 'customImage': partyCustomImage, 'feedback': partyImageDataFeedback})"><span class="edit-label">Edit</span><span class="icon-icon_edit"></span></div>
 
                     </div>
 
                     <div class="wgrid-full pad-large pad-bottom-0">
-                        <div m-profile-image="{{ pageProfile.imageUrl }}" class="clickable" m-radius-picker="small" ng-click="openPageModal('partials/profileImageForm.html', 'profileImageModal', {'pageProfile': pageProfile, 'pageFeedback': pageFeedback})"></div>
+                        <div m-profile-image="{{ pageProfile.image.url }}" class="clickable" m-radius-picker="small" ng-click="openPageModal('partials/profileImageForm.html', 'profileImageModal', {'pageProfile': pageProfile, 'pageFeedback': pageFeedback})"></div>
                         <div class="party-details">
                             <h3 class="pad-right-3 margin-top-0 margin-bottom-small" ng-bind="partyDetailsData.PartyHeading"></h3>
                             <div class="body-medium float-left margin-right-medium">
@@ -151,7 +151,7 @@
                     {
                         if (partier is PartyHost)
                         {
-                            <div class="margin-right-small margin-bottom-small" m-profile-image="{{ pageProfile.imageUrl }}" mac-tooltip="@partier.FirstName @partier.LastName" m-radius-picker="small"></div>
+                            <div class="margin-right-small margin-bottom-small" m-profile-image="{{ pageProfile.image.url }}" mac-tooltip="@partier.FirstName @partier.LastName" m-radius-picker="small"></div>
                         } else {
                             <div class="margin-right-small margin-bottom-small" m-profile-image="{{ '@partier.ProfileImageUrl' }}" mac-tooltip="@partier.FirstName @partier.LastName" m-radius-picker="small"></div>
                         }
@@ -197,7 +197,7 @@
 
                 <div class="boxx internal" m-radius-picker="small">
 
-                    <div m-profile-image="{{ pageProfile.imageUrl }}" m-radius-picker="small"></div>
+                    <div m-profile-image="{{ pageProfile.image.url }}" m-radius-picker="small"></div>
 
                     @(Html.Action<PartySurfaceController>("RenderPartyWallMessageForm"))
 

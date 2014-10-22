@@ -1,11 +1,12 @@
 ﻿
 namespace Wonderland.Logic.Models.Media
 {
+    using Newtonsoft.Json;
     using Umbraco.Core.Models;
-    using Umbraco.Core.Models.PublishedContent;
     using Umbraco.Web;
+    using Wonderland.Logic.Interfaces;
 
-    public class Image : PublishedContentModel
+    public class Image : NonSerializablePublishedContentModel, IPartyImage
     {
         // Media Type
         public const string Alias = "Image";
@@ -17,7 +18,8 @@ namespace Wonderland.Logic.Models.Media
             : base(content)
         {
         }
-
+        
+        [JsonProperty("altText")]
         public string AltText
         {
             get

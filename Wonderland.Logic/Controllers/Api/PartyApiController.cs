@@ -4,6 +4,7 @@ namespace Wonderland.Logic.Controllers.Api
     using System;
     using System.Collections.Generic;
     using System.Web.Http;
+    using Umbraco.Core.Models;
     using Umbraco.Web.WebApi;
     using Wonderland.Logic.Enums;
     using Wonderland.Logic.Extensions;
@@ -134,6 +135,12 @@ namespace Wonderland.Logic.Controllers.Api
             
             if (messageRow != null)
             {
+                if (messageRow.Image.HasValue)
+                {
+                    IMedia media = this.Services.MediaService.GetById(messageRow.Image.Value);
+                    this.Services.MediaService.Delete(media);
+                }
+
                 this.DatabaseContext.Database.Delete(messageRow);
 
                 formResponse.Success = true;
