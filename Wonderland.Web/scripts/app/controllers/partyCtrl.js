@@ -171,14 +171,18 @@ wonderlandApp.controller('PartyCtrl', ['$filter', '$ocModal', '$rootScope', '$sc
     $scope.partyImageDefaultDataInit = function (defaultImages) {
 
         $scope.partyImageDefaultData = defaultImages;
-console.log(defaultImages);
 
         // hacky check to see if the url is one of the default images
-        if ($scope.partyImageDefaultData.indexOf(initUrl) >= 0) {
-            return;
+        var isCustom = true;
+        if (initUrl) {
+            angular.forEach($scope.partyImageDefaultData, function (value) {
+                isCustom = value.id === initUrl.id ? false : isCustom;
+            });
         }
 
-        $scope.partyCustomImage.url = initUrl;
+        if (isCustom) {
+            $scope.partyCustomImage.url = initUrl;
+        }
 
     };
 
@@ -212,7 +216,7 @@ console.log(defaultImages);
 
 
     $scope.hardCodedCurrentPartyImageUrlInit = function (url) {
-
+console.log('hardCodedCurrentPartyImageUrlInit', url);
         initUrl = url;
 
         $scope.partyImageData = {
