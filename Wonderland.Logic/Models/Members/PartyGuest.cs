@@ -13,7 +13,7 @@ namespace Wonderland.Logic.Models.Members
     using Wonderland.Logic.Models.Entities;
     using Wonderland.Logic.Models.Media;
 
-    public class PartyGuest : BaseMemberType, IPartier
+    public class PartyGuest : Partier, IPartier
     {
         // Member Type
         public const string Alias = "PartyGuest";
@@ -23,7 +23,7 @@ namespace Wonderland.Logic.Models.Members
         public const string FirstNameAlias = "firstName";
         public const string LastNameAlias = "lastName";
         public const string BillingAddressAlias = "billingAddress";
-        public const string ProfileImageAlias = "profileImage";
+        //public const string ProfileImageAlias = "profileImage";
         public const string ForgottenPasswordGuidAlias = "forgottenPasswordGuid";
         public const string DotMailerIdAlias = "dotMailerId";
         public const string DotMailerRegistrationCompleteAlias = "dotMailerRegistrationComplete";
@@ -104,34 +104,6 @@ namespace Wonderland.Logic.Models.Members
             set
             {
                 this.SetPropertyValue(PartyGuest.BillingAddressAlias, value.ToString());
-            }
-        }
-
-        public ProfileImage ProfileImage
-        {
-            get
-            {
-                int? imageId = (int?)this.GetPropertyValue(PartyHost.ProfileImageAlias);
-
-                if (imageId.HasValue && imageId > 0)
-                {
-                    return (ProfileImage)this.Umbraco.TypedMedia(imageId);
-                }
-
-                return null;
-            }
-            set
-            {
-                if (value != null)
-                {
-                    this.SetPropertyValue(PartyHost.ProfileImageAlias, value.Id);
-                }
-                else
-                {
-                    // TODO: remove any existing profile image
-
-                    this.SetPropertyValue(PartyHost.ProfileImageAlias, null);
-                }                
             }
         }
 
