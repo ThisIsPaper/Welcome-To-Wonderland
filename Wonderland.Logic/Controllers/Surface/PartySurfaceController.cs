@@ -45,7 +45,7 @@ namespace Wonderland.Logic.Controllers.Surface
                 // if selected image is different to that stored
                 if (partyHost.PartyImage.Id != partyImage.Id)
                 {
-                    // if it's a custom upload
+                    // if it's a custom upload (default umages are of type 'Image')
                     if (partyHost.PartyImage is PartyImage)
                     {
                         IMedia media = this.Services.MediaService.GetById(partyHost.PartyImage.Id);

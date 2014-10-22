@@ -41,7 +41,7 @@
             <div class="wgrid-full parent">
                 <div class="boxx collapse" m-radius-picker="large">
 
-                    <div class="wgrid-full wgrid-no-bottom-margin parent" ng-init="hardCodedCurrentPartyImageUrlInit('@Model.PartyHost.PartyImage.Url')">
+                    <div class="wgrid-full wgrid-no-bottom-margin parent" ng-init="hardCodedCurrentPartyImageUrlInit(@{if (Model.PartyHost.PartyImage != null) {<text>'@Model.PartyHost.PartyImage.Url'</text>} else{<text>null</text>}})">
 
                         <img ng-src="{{ partyImageData.PartyImage }}" width="100%"/>
 
