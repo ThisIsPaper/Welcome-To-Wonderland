@@ -5,7 +5,7 @@ namespace Wonderland.Logic.Models.Media
     using Umbraco.Core.Models.PublishedContent;
     using Umbraco.Web;
 
-    public class PartyWallImage : PublishedContentModel
+    public class PartyWallImage : NonSerializablePublishedContentModel
     {
         // Media Type
         public const string Alias = "PartyWallImage";
