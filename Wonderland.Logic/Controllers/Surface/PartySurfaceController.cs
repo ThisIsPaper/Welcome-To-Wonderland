@@ -148,19 +148,16 @@ namespace Wonderland.Logic.Controllers.Surface
 
                 if (profileImageForm.ProfileImage != null && profileImageForm.ProfileImage.ContentLength > 0 && profileImageForm.ProfileImage.InputStream.IsImage())
                 {
+                    // create new profile image in the cms
                     int id = ProfileImages.CreateProfileImage(profileImageForm.ProfileImage);
 
-                    string url = this.Umbraco.TypedMedia(id).GetProperty("umbracoFile").Value.ToString();
+                    partyHost.ProfileImage = (ProfileImage)this.Umbraco.TypedMedia(id);
                     
-                    // TODO: change this to id ?
-                    partyHost.ProfileImage = url;
-
-                    // re-inflate the current user model (to take into account newly set property)
-                    formResponse.Message = url; //new PartyHost(this.Umbraco.TypedMember(partyHost.Id)).ProfileImageUrl;
+                    formResponse.Message = JsonConvert.SerializeObject(new { id = id, url = this.Umbraco.TypedMedia(id).GetProperty("umbracoFile").Value.ToString() }); //TODO:S3URL
                 }
                 else
                 {
-                    partyHost.ProfileImage = string.Empty;
+                    partyHost.ProfileImage = null;
                 }
 
                 formResponse.Success = true;
