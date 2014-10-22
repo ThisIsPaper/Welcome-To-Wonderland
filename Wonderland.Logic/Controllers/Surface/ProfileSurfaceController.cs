@@ -1,6 +1,7 @@
 ﻿
 namespace Wonderland.Logic.Controllers.Surface
 {
+    using Newtonsoft.Json;
     using System;
     using System.Web.Mvc;
     using Umbraco.Core.Models;
@@ -127,16 +128,15 @@ namespace Wonderland.Logic.Controllers.Surface
                 {
                     int id = ProfileImages.CreateProfileImage(profileImageForm.ProfileImage);
 
+                    partier.ProfileImage = (ProfileImage)this.Umbraco.TypedMedia(id);
+
                     string url = this.Umbraco.TypedMedia(id).GetProperty("umbracoFile").Value.ToString();
 
-                    //TODO: change this to id ?
-                    partier.ProfileImage = url;
-                    
-                    formResponse.Message = url;
+                    formResponse.Message = JsonConvert.SerializeObject(new { id = id, url = this.Umbraco.TypedMedia(id).GetProperty("umbracoFile").Value.ToString() }); //TODO:S3URL;
                 }
                 else // remove reference to image
                 {
-                    partier.ProfileImage = string.Empty;
+                    partier.ProfileImage = null;
                 }            
             }
             else
