@@ -160,11 +160,14 @@ wonderlandApp.controller('PartyCtrl', ['$filter', '$ocModal', '$rootScope', '$sc
     /* PARTY IMAGE DETAILS */
     /**********************/
     var initUrl = null;
-    $scope.partyImageData = null;
+    $scope.partyImageData = {};
     $scope.partyImageDefaultData = null;
     $scope.partyImageDataForForm = null;
     $scope.partyImageDataFeedback = {};
-    $scope.partyCustomImage = null;
+    $scope.partyCustomImage = {
+        image: null,
+        feedback: {}
+    };
 
     $scope.partyImageDefaultDataInit = function (defaultImages) {
 
@@ -179,7 +182,7 @@ wonderlandApp.controller('PartyCtrl', ['$filter', '$ocModal', '$rootScope', '$sc
         }
 
         if (isCustom) {
-            $scope.partyCustomImage = initUrl;
+            $scope.partyCustomImage.image = initUrl;
         }
 
     };
@@ -203,19 +206,27 @@ wonderlandApp.controller('PartyCtrl', ['$filter', '$ocModal', '$rootScope', '$sc
 
 
     $scope.$onRootScope('partyImageCustomUrlUploaded', function (event, response) {
+        $timeout(function () {
+            $scope.partyCustomImage.feedback.processing = false;
 
-        if (response && response.Success === true && response.Message) {
+            if (response && response.Success === true && response.Message) {
 
-            var newImage = angular.fromJson(response.Message);
+                var newImage = angular.fromJson(response.Message);
+                $scope.partyCustomImage.feedback.showSuccess = true;
 
-            if (newImage) {
-                console.log('NEW IMAGE!', newImage);
-                $timeout(function () {
-                    $scope.partyCustomImage = newImage;
+                if (newImage) {
+                    $scope.partyCustomImage.image = newImage;
                     $scope.partyImageDataForForm.PartyImage = newImage;
-                });
+                }
+            } else {
+                $scope.partyCustomImage.feedback.showError = true;
             }
-        }
+        });
+
+        $timeout(function () {
+            $scope.partyCustomImage.feedback.showSuccess = false;
+            $scope.partyCustomImage.feedback.showError = false;
+        }, 5000);
     });
 
 
@@ -225,9 +236,6 @@ wonderlandApp.controller('PartyCtrl', ['$filter', '$ocModal', '$rootScope', '$sc
             initUrl = angular.fromJson(imageData);
         }
 
-        console.log('hardCodedCurrentPartyImageUrlInit', initUrl);
-
-        $scope.partyImageData = $scope.partyImageData || {};
         $scope.partyImageData.PartyImage = initUrl;
         $scope.partyImageDataForForm = angular.copy($scope.partyImageData);
     };
