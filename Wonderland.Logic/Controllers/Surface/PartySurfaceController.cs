@@ -40,20 +40,7 @@ namespace Wonderland.Logic.Controllers.Surface
             {
                 PartyHost partyHost = (PartyHost)this.Members.GetCurrentPartier();
 
-                IPartyImage partyImage = (IPartyImage)this.Umbraco.TypedMedia(partyImageForm.PartyImage);
-
-                // if selected image is different to that stored
-                if (partyHost.PartyImage == null || (partyHost.PartyImage != null && partyHost.PartyImage.Id != partyImage.Id))
-                {
-                    // if it's a custom upload (default images are of type 'Image') then delete the old one from the cms
-                    if (partyHost.PartyImage is PartyImage)
-                    {
-                        IMedia media = this.Services.MediaService.GetById(partyHost.PartyImage.Id);
-                        this.Services.MediaService.Delete(media);
-                    }
-
-                    partyHost.PartyImage = partyImage;
-                }
+                partyHost.PartyImage = (IPartyImage)this.Umbraco.TypedMedia(partyImageForm.PartyImage);
 
                 formResponse.Success = true;
             }
@@ -83,7 +70,14 @@ namespace Wonderland.Logic.Controllers.Surface
             {
                 int id = PartyImages.CreatePartyImage(customPartyImageForm.CustomPartyImage);
 
-                formResponse.Message = JsonConvert.SerializeObject(this.Umbraco.TypedMedia(id)); //TODO:S3URL
+                PartyHost partyHost = (PartyHost)this.Members.GetCurrentPartier();
+
+                IPartyImage partyImage = (IPartyImage)this.Umbraco.TypedMedia(id);
+
+                // set the newly uploaded file to be the selected one
+                partyHost.PartyImage = partyImage;
+
+                formResponse.Message = JsonConvert.SerializeObject(partyImage); //TODO:S3URL
                 //formResponse.Message = JsonConvert.SerializeObject(new { id = id, url = this.Umbraco.TypedMedia(id).GetProperty("umbracoFile").Value.ToString() }); //TODO:S3URL
 
                 formResponse.Success = true;
