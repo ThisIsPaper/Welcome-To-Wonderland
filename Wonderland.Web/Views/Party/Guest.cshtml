@@ -16,8 +16,8 @@
 
                     <div class="wgrid-full wgrid-no-bottom-margin parent">
 
-                        <div class="wgrid-full wgrid-no-bottom-margin parent" ng-init="partyImageMainUrl='@this.Model.PartyHost.PartyImage'">
-                            <img ng-src="{{ partyImageMainUrl }}" width="100%"/>
+                        <div class="wgrid-full wgrid-no-bottom-margin parent" ng-init="partyImageMainUrl=@{if (Model.PartyHost.PartyImage != null) {<text>'@Model.PartyHost.PartyImage.Url'</text>} else {<text>null</text>}}">
+                            <img ng-src="{{ partyImageMainUrl }}" width="100%" />
                             <div class="no-party-image" ng-show="partyImageMainUrl.length<=0" ng-cloak></div>
                             <div class="boxx-twerk"></div>
                         </div>
