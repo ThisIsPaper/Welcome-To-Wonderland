@@ -15,10 +15,10 @@ wonderlandApp.directive('mPostOnSubmit', ['mHttp', 'uniqueId', '$parse', '$rootS
                 savedConfirmTimer = null,
                 serialized = attrs.hasOwnProperty('mSerialized'),
                 onSuccessEvent = attrs.mOnSuccessEvent,
-                onErrorEvent = attrs.mOnErrorEvent;
+                onErrorEvent = attrs.mOnErrorEvent,
+                useLegacy = (attrs.mUseLegacy === true || attrs.mUseLegacy === 'true') || false;
 
             setProgressState('ready');
-
 
             element.on('submit', function () {
 
@@ -35,7 +35,7 @@ wonderlandApp.directive('mPostOnSubmit', ['mHttp', 'uniqueId', '$parse', '$rootS
                 /**
                  * HTML 5 AJAX
                  */
-                if (window.File && window.FileReader) {
+                if (!useLegacy && window.File && window.FileReader) {
 
                     $timeout(function () {
                         // check for ufprt as hidden value
@@ -70,7 +70,6 @@ wonderlandApp.directive('mPostOnSubmit', ['mHttp', 'uniqueId', '$parse', '$rootS
                      */
                 } else {
 
-
                     var target = 'form_target_iframe_' + uniqueId();
 
                     var $targetIframe = $('<iframe/>', { name: target, id: target, frameborder: '0' }).insertAfter(element).css({ width: 0, height: 0 }).load(function () {
@@ -88,10 +87,7 @@ wonderlandApp.directive('mPostOnSubmit', ['mHttp', 'uniqueId', '$parse', '$rootS
                     });
 
                     var $postForm = $('<form></form>', { target: target, method: 'post', enctype: 'multipart/form-data' }).insertAfter(element);
-                    element.appendTo($postForm);
-
-                    console.log('element', $(element).serialize());
-                    console.log('postForm', $postForm.serialize());
+                    $(element).contents().appendTo($postForm);
 
                     $postForm.attr('action', attrs.action);
                     $postForm.submit();

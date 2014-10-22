@@ -45,9 +45,9 @@
 
 
 
-                    <div class="wgrid-full wgrid-no-bottom-margin parent" ng-init="hardCodedCurrentPartyImageUrlInit(@Html.Raw(JsonConvert.SerializeObject(Model.PartyHost.PartyImage))))">
+                    <div class="wgrid-full wgrid-no-bottom-margin parent" ng-init="hardCodedCurrentPartyImageUrlInit('@Html.Raw(JsonConvert.SerializeObject(Model.PartyHost.PartyImage))')">
 
-                        <img ng-src="{{ partyImageData.PartyImage }}" width="100%" />
+                        <img ng-src="{{ partyImageData.PartyImage.url }}" width="100%" />
 
                         <div class="no-party-image" ng-show="!partyImageData.PartyImage.url" ng-cloak>
                             <div class="party-image-default">
