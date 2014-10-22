@@ -30,7 +30,7 @@ module.exports = function (grunt) {
 
                                          '<%= pkg.jsPath %>vendor/jquery-1.10.2.js',
 //                                         '<%= pkg.jsPath %>bower_components/angular/angular.js',
-                                         '<%= pkg.jsPath %>bower_components/AngularJS/build/angular.js',
+                                         '<%= pkg.jsPath %>vendor/angular.ie7.js',
                                          '<%= pkg.jsPath %>bower_components/imagesloaded/imagesloaded.pkgd.js',
                                          '<%= pkg.jsPath %>bower_components/ocModal/dist/ocModal.js',
                                          '<%= pkg.jsPath %>bower_components/moment/moment.js',
