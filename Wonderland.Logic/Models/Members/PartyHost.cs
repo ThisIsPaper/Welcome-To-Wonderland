@@ -58,6 +58,7 @@ namespace Wonderland.Logic.Models.Members
         private bool? dotMailerPartyPageComplete = null;
         private decimal? amountRaised = null;
         private int? totalGuests = null;
+        private IPartyImage partyImage = null;
 
         public PartyHost(IPublishedContent content)
             : base(content)
@@ -251,11 +252,16 @@ namespace Wonderland.Logic.Models.Members
                 this.SetPropertyValue(PartyHost.PartyUrlIdentifierAlias, value);
             }
         }
-
+        
         public IPartyImage PartyImage
         {
             get
             {
+                if (this.partyImage != null)
+                {
+                    return this.partyImage;
+                }
+
                 int? imageId = (int?)this.GetPropertyValue(PartyHost.PartyImageAlias);
 
                 if (imageId.HasValue && imageId > 0)
@@ -267,6 +273,8 @@ namespace Wonderland.Logic.Models.Members
             }
             set 
             {
+                this.partyImage = value;
+
                 if (value == null)
                 {
                     // if there is a custom uploaded party image (rather than a chosen default)
@@ -282,12 +290,8 @@ namespace Wonderland.Logic.Models.Members
                 }
                 else
                 {
-                    // if changing
-                    if (this.PartyImage == null || this.PartyImage.Id != value.Id)
-                    {
-                        // update reference
-                        this.SetPropertyValue(PartyHost.PartyImageAlias, value.Id);
-                    }
+                    // update reference
+                    this.SetPropertyValue(PartyHost.PartyImageAlias, value.Id);
                 }
             }
         }

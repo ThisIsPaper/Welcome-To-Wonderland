@@ -297,6 +297,7 @@
     <Compile Include="Models\Database\MessageRow.cs" />
     <Compile Include="Models\Database\PartyRow.cs" />
     <Compile Include="Models\Entities\Address.cs" />
+    <Compile Include="Models\Media\BaseMediaType.cs" />
     <Compile Include="Models\Media\PartyImage.cs" />
     <Compile Include="Models\Media\PartyImages.cs" />
     <Compile Include="Models\Media\PartyWallImage.cs" />

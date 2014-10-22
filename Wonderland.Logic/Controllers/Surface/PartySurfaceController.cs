@@ -40,7 +40,16 @@ namespace Wonderland.Logic.Controllers.Surface
             {
                 PartyHost partyHost = (PartyHost)this.Members.GetCurrentPartier();
 
-                partyHost.PartyImage = (IPartyImage)this.Umbraco.TypedMedia(partyImageForm.PartyImage);
+                IPartyImage partyImage = (IPartyImage)this.Umbraco.TypedMedia(partyImageForm.PartyImage);
+
+                // if new image is a csm default and old is a custom upload, then delete the custom upload
+                if (partyImage is Image & partyHost.PartyImage is PartyImage)
+                {
+                    partyHost.PartyImage = null;
+                }
+
+                // set new
+                partyHost.PartyImage = partyImage;
 
                 formResponse.Success = true;
             }
@@ -68,16 +77,40 @@ namespace Wonderland.Logic.Controllers.Surface
 
             if (this.ModelState.IsValid && customPartyImageForm.CustomPartyImage.ContentLength > 0 && customPartyImageForm.CustomPartyImage.InputStream.IsImage())
             {
-                int id = PartyImages.CreatePartyImage(customPartyImageForm.CustomPartyImage);
+                PartyHost partyHost = (PartyHost)this.Members.GetCurrentMember();
 
-                PartyHost partyHost = (PartyHost)this.Members.GetCurrentPartier();
+                // get any existing party image
+                IPartyImage partyImage = partyHost.PartyImage;
 
-                IPartyImage partyImage = (IPartyImage)this.Umbraco.TypedMedia(id);
+                if (partyImage == null || partyImage is Image) // not set, or a cms default
+                {
+                    // create new custom party image
+                    partyImage = PartyImages.CreatePartyImage(customPartyImageForm.CustomPartyImage);
+                }
+                else // if (partyImage is PartyImage) // it's already a custom image so update the file only within the same media item
+                {
+                    // update existing media item file reference 
+                    ((PartyImage)partyImage).Image = customPartyImageForm.CustomPartyImage;                    
+                }
 
-                // set the newly uploaded file to be the selected one
+                // ensure reference
                 partyHost.PartyImage = partyImage;
 
-                formResponse.Message = JsonConvert.SerializeObject(partyImage); //TODO:S3URL
+
+
+
+
+
+                //int id = PartyImages.CreatePartyImage(customPartyImageForm.CustomPartyImage);
+
+                //PartyHost partyHost = (PartyHost)this.Members.GetCurrentPartier();
+
+                //IPartyImage partyImage = (IPartyImage)this.Umbraco.TypedMedia(id);
+
+                //// set the newly uploaded file to be the selected one
+                //partyHost.PartyImage = partyImage;
+
+                formResponse.Message = JsonConvert.SerializeObject(partyHost.PartyImage); //TODO:S3URL
                 //formResponse.Message = JsonConvert.SerializeObject(new { id = id, url = this.Umbraco.TypedMedia(id).GetProperty("umbracoFile").Value.ToString() }); //TODO:S3URL
 
                 formResponse.Success = true;
