@@ -43,7 +43,7 @@ namespace Wonderland.Logic.Events
                         IPartier partier = (IPartier)umbracoHelper.TypedContent(member.Id);
 
                         // delete media item for profile Image
-                        //partier.ProfileImage = null;
+                        partier.ProfileImage = null;
 
                         // get all wonderlandMessage, remove or mark as deleted ? (media will be on s3, so delete from there)
                         // remove from wonderlandMemberParty
