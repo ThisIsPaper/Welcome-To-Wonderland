@@ -287,10 +287,14 @@
     <Content Include="App_Plugins\RJP.MultiUrlPicker\MultiUrlPicker.html" />
     <Content Include="App_Plugins\RJP.MultiUrlPicker\MultiUrlPicker.js" />
     <Content Include="css\all.min.css" />
+    <Content Include="css\all_ie.min.css" />
+    <Content Include="css\compiled\backgroundsize.min.htc" />
+    <Content Include="css\compiled\PIE.htc" />
     <Content Include="Dashboards\AddDonation.ascx" />
     <Content Include="Dashboards\DeleteDonation.ascx" />
     <Content Include="Dashboards\ExportFinancials.ascx" />
     <Content Include="Dashboards\ExportRegistrations.ascx" />
+    <Content Include="default.aspx" />
     <Content Include="Error.html" />
     <Content Include="fonts\71710047-b807-47eb-9874-7db8f4904492.svg" />
     <Content Include="fonts\d37fcd2f-d43f-4eae-b192-c48028c02797.svg" />
