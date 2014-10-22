@@ -645,7 +645,7 @@ One-off uses
 .idea-tile {
 	@extend .radius-v1-small;
 	width: 25%;
-	@include rem-fallback(padding, $padSmallValue);
+	padding: $padSmallValue;
 
 	&.wide {
 		width: 50%;
@@ -653,7 +653,8 @@ One-off uses
 }
 
 .idea {
-	@include rem-fallback(padding, $padSmallValue);
+	position: relative;
+	padding: $padSmallValue;
 	background-color: white;
 	text-transform: uppercase;
 	text-align: center;
@@ -664,7 +665,6 @@ One-off uses
 	width: 100%;
 	top: 11%;
 	left: 0;
-	padding: 0 19.2px;
 	padding: 0 $padSmallValue;
 
 	&.over-the-top {
@@ -682,7 +682,6 @@ One-off uses
 }
 
 .idea-polaroid {
-	@include border-radius(11.2px);
 	@include border-radius(.7rem);
 }
 
@@ -693,11 +692,10 @@ One-off uses
 }
 
 .spotify-logo {
-	@include rem-fallback(width, 8rem);
-	@include rem-fallback(height, 2.4rem);
+	width: 8rem;
+	height: 2.4rem;
 	background-image: image-url('spotify_logo@2x.png');
 	background-repeat: no-repeat;
-	background-size: 128px 38.4px;
 	background-size: 8rem 2.4rem;
 	overflow: hidden;
 
@@ -725,7 +723,6 @@ One-off uses
 	@include rem-fallback(height, 11.6rem);
 	background-image: image-url('share-title@2x.png');
 	background-repeat: no-repeat;
-	background-size: 444.8px 185.6px;
 	background-size: 27.8rem 11.6rem;
 
 	-ms-behavior: stylesheet-url('backgroundsize.min.htc');

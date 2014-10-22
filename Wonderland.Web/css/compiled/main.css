@@ -12647,6 +12647,7 @@ One-off uses
 
 /* line 655, ../sass/partials/_base.scss */
 .idea {
+  position: relative;
   padding: 1.2rem;
   background-color: white;
   text-transform: uppercase;
@@ -12656,12 +12657,11 @@ One-off uses
   box-shadow: 0px 14px 30px 0px rgba(0, 0, 0, 0.6);
 }
 
-/* line 663, ../sass/partials/_base.scss */
+/* line 664, ../sass/partials/_base.scss */
 .idea-details {
   width: 100%;
   top: 11%;
   left: 0;
-  padding: 0 19.2px;
   padding: 0 1.2rem;
 }
 /* line 670, ../sass/partials/_base.scss */
@@ -12680,34 +12680,30 @@ One-off uses
 
 /* line 684, ../sass/partials/_base.scss */
 .idea-polaroid {
-  -moz-border-radius: 11.2px;
-  -webkit-border-radius: 11.2px;
-  border-radius: 11.2px;
   -moz-border-radius: 0.7rem;
   -webkit-border-radius: 0.7rem;
   border-radius: 0.7rem;
 }
 
-/* line 689, ../sass/partials/_base.scss */
+/* line 688, ../sass/partials/_base.scss */
 .pinterest-ico:before {
   content: "\e623";
   font-family: "icomoon";
   color: #E32333;
 }
 
-/* line 695, ../sass/partials/_base.scss */
+/* line 694, ../sass/partials/_base.scss */
 .spotify-logo {
   width: 8rem;
   height: 2.4rem;
   background-image: url('/img/spotify_logo@2x.png?1412505524');
   background-repeat: no-repeat;
-  background-size: 128px 38.4px;
   background-size: 8rem 2.4rem;
   overflow: hidden;
   margin: 0 auto;
 }
 
-/* line 707, ../sass/partials/_base.scss */
+/* line 705, ../sass/partials/_base.scss */
 .idea-link {
   position: absolute;
   top: 0;
@@ -12717,23 +12713,22 @@ One-off uses
   z-index: 5;
   text-indent: -999rem;
 }
-/* line 718, ../sass/partials/_base.scss */
+/* line 716, ../sass/partials/_base.scss */
 .idea-link span.label {
   display: none;
 }
 
-/* line 723, ../sass/partials/_base.scss */
+/* line 721, ../sass/partials/_base.scss */
 .share-title {
   width: 27.8rem;
   height: 11.6rem;
   background-image: url('/img/share-title@2x.png?1412505524');
   background-repeat: no-repeat;
-  background-size: 444.8px 185.6px;
   background-size: 27.8rem 11.6rem;
   -ms-behavior: url('/css/compiled/backgroundsize.min.htc');
 }
 
-/* line 734, ../sass/partials/_base.scss */
+/* line 731, ../sass/partials/_base.scss */
 .share-facebook, .share-twitter, .share-email {
   background-color: #3c5898;
   font-family: "macmillan";
@@ -12742,33 +12737,33 @@ One-off uses
   line-height: 5.5rem;
   color: white;
 }
-/* line 742, ../sass/partials/_base.scss */
+/* line 739, ../sass/partials/_base.scss */
 .share-facebook:before, .share-twitter:before, .share-email:before {
   font-family: "icomoon";
   content: "\e619";
   margin-right: 1.2rem;
 }
 
-/* line 749, ../sass/partials/_base.scss */
+/* line 746, ../sass/partials/_base.scss */
 .share-twitter {
   background-color: #17abed;
 }
-/* line 751, ../sass/partials/_base.scss */
+/* line 748, ../sass/partials/_base.scss */
 .share-twitter:before {
   content: "\e61a";
 }
 
-/* line 756, ../sass/partials/_base.scss */
+/* line 753, ../sass/partials/_base.scss */
 .share-email {
   background-color: #007eac;
 }
-/* line 758, ../sass/partials/_base.scss */
+/* line 755, ../sass/partials/_base.scss */
 .share-email:before {
   content: "\e618";
   margin-right: 0;
 }
 
-/* line 765, ../sass/partials/_base.scss */
+/* line 762, ../sass/partials/_base.scss */
 .centered-share-holder .share-title {
   display: block;
   float: none;
@@ -12778,23 +12773,23 @@ One-off uses
 }
 
 /*******************************/
-/* line 777, ../sass/partials/_base.scss */
+/* line 774, ../sass/partials/_base.scss */
 .color-facebook {
   color: #3c5898 !important;
 }
 
-/* line 781, ../sass/partials/_base.scss */
+/* line 778, ../sass/partials/_base.scss */
 .color-twitter {
   color: #17abed !important;
 }
 
-/* line 785, ../sass/partials/_base.scss */
+/* line 782, ../sass/partials/_base.scss */
 .color-pinterest {
   color: #cc2127 !important;
 }
 
 /*******************************/
-/* line 792, ../sass/partials/_base.scss */
+/* line 789, ../sass/partials/_base.scss */
 .giftaid-logo {
   width: 10rem;
   height: 3.5rem;
@@ -12808,7 +12803,7 @@ One-off uses
   top: 0;
 }
 
-/* line 806, ../sass/partials/_base.scss */
+/* line 803, ../sass/partials/_base.scss */
 .fsb-logo {
   width: 8rem;
   height: 8rem;
@@ -12822,7 +12817,7 @@ One-off uses
   top: 0;
 }
 
-/* line 820, ../sass/partials/_base.scss */
+/* line 817, ../sass/partials/_base.scss */
 .ticket-label {
   line-height: 2rem;
 }
