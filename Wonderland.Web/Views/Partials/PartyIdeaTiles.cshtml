@@ -61,7 +61,7 @@
 
                         <!--<a class="hide-span" href="{{ item.link }}" target="{{ item.pinterest ? '_blank' : '_self' }}">-->
                         <a class="hide-span" href="#" target="{{ item.pinterest ? '_blank' : '_self' }}">
-                            <img class="idea-polaroid" ng-src="{{ item.imageUrl|mQuality:50|mWidth:600 }}" width="100%" m-image-loaded-notifier />
+                            <img class="idea-polaroid" ng-src="{{ item.imageUrl|mQuality:50 }}" width="100%" m-image-loaded-notifier />
                             <div class="idea-details" ng-class="{'over-the-top': item.spotify, 'wide': item.wide}" m-vertical-align="{{ item.spotify }}" m-align-parent="idea">
                                 <div class="body-small margin-small" ng-bind="item.tileType"></div>
                                 <h1 class="margin-bottom-small" ng-class="{'smaller': !item.wide}" ng-bind="item.tileHeading"></h1>
