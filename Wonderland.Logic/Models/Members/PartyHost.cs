@@ -266,7 +266,14 @@ namespace Wonderland.Logic.Models.Members
         {
             get
             {
-                return (IPartyImage)this.GetPropertyValue<IPublishedContent>(PartyHost.PartyImageAlias);
+                int? imageId = (int?)this.GetPropertyValue(PartyHost.PartyImageAlias);
+
+                if (imageId.HasValue && imageId > 0)
+                {
+                    return (IPartyImage)this.Umbraco.TypedMedia(imageId.Value);
+                }
+
+                return null;
             }
             set
             {

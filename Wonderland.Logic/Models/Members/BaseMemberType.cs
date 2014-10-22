@@ -10,13 +10,29 @@ namespace Wonderland.Logic.Models.Members
 
     public abstract class BaseMemberType : PublishedContentModel
     {
-        private MembershipHelper membershipHelper = null;
+        private UmbracoHelper umbracoHelper = null;
 
+        private MembershipHelper membershipHelper = null;
+        
         private IMember member = null;
+
 
         public BaseMemberType(IPublishedContent content)
             : base(content)
         {
+        }
+
+        protected UmbracoHelper Umbraco
+        {
+            get
+            {
+                if (this.umbracoHelper == null)
+                {
+                    this.umbracoHelper = new UmbracoHelper(UmbracoContext.Current);
+                }
+
+                return this.umbracoHelper;
+            }
         }
 
         protected DatabaseContext DatabaseContext
