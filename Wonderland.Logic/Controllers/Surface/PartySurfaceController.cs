@@ -81,10 +81,10 @@ namespace Wonderland.Logic.Controllers.Surface
 
             if (this.ModelState.IsValid && customPartyImageForm.CustomPartyImage.ContentLength > 0 && customPartyImageForm.CustomPartyImage.InputStream.IsImage())
             {
-                int id = PartyImages.CreatePartyImage(customPartyImageForm.CustomPartyImage);                
+                int id = PartyImages.CreatePartyImage(customPartyImageForm.CustomPartyImage);
 
-                //formResponse.Message = JsonConvert.SerializeObject(this.Umbraco.TypedMedia(id)); // url is null - might need examine to be updated first
-                formResponse.Message = JsonConvert.SerializeObject(new { id = id, url = this.Umbraco.TypedMedia(id).GetProperty("umbracoFile").Value.ToString() }); //TODO:S3URL
+                formResponse.Message = JsonConvert.SerializeObject(this.Umbraco.TypedMedia(id)); //TODO:S3URL
+                //formResponse.Message = JsonConvert.SerializeObject(new { id = id, url = this.Umbraco.TypedMedia(id).GetProperty("umbracoFile").Value.ToString() }); //TODO:S3URL
 
                 formResponse.Success = true;
             }
@@ -152,8 +152,9 @@ namespace Wonderland.Logic.Controllers.Surface
                     int id = ProfileImages.CreateProfileImage(profileImageForm.ProfileImage);
 
                     partyHost.ProfileImage = (ProfileImage)this.Umbraco.TypedMedia(id);
-                    
-                    formResponse.Message = JsonConvert.SerializeObject(new { id = id, url = this.Umbraco.TypedMedia(id).GetProperty("umbracoFile").Value.ToString() }); //TODO:S3URL
+
+                    formResponse.Message = JsonConvert.SerializeObject(this.Umbraco.TypedMedia(id)); //TODO:S3URL
+                    //formResponse.Message = JsonConvert.SerializeObject(new { id = id, url = this.Umbraco.TypedMedia(id).GetProperty("umbracoFile").Value.ToString() }); //TODO:S3URL
                 }
                 else
                 {
@@ -365,7 +366,8 @@ namespace Wonderland.Logic.Controllers.Surface
             {
                 int id = PartyWallImages.CreatePartyWallImage(partyWallImageForm.PartyWallImage);
 
-                formResponse.Message = JsonConvert.SerializeObject(new { id = id, url = this.Umbraco.TypedMedia(id).GetProperty("umbracoFile").Value.ToString() }); //TODO:S3URL
+                formResponse.Message = JsonConvert.SerializeObject(this.Umbraco.TypedMedia(id)); //TODO:S3URL
+                //formResponse.Message = JsonConvert.SerializeObject(new { id = id, url = this.Umbraco.TypedMedia(id).GetProperty("umbracoFile").Value.ToString() }); //TODO:S3URL
 
                 formResponse.Success = true;
             }
