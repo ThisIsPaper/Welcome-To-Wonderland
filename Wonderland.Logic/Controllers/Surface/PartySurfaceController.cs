@@ -3,9 +3,11 @@ namespace Wonderland.Logic.Controllers.Surface
 {
     using Newtonsoft.Json;
     using System.Web.Mvc;
+    using Umbraco.Core.Models;
     using Umbraco.Web.Mvc;
     using Wonderland.Logic.DotMailer;
     using Wonderland.Logic.Extensions;
+    using Wonderland.Logic.Interfaces;
     using Wonderland.Logic.Models.Content;
     using Wonderland.Logic.Models.Database;
     using Wonderland.Logic.Models.Entities;
@@ -36,11 +38,22 @@ namespace Wonderland.Logic.Controllers.Surface
 
             if (this.ModelState.IsValid)
             {
-                // S3 NOTE: party image supplied will be an id
+                PartyHost partyHost = (PartyHost)this.Members.GetCurrentPartier();
 
-                // TODO: find any existing PartyImage and if it's of type "PartyImage", rather than "Image", then delete it
+                IPartyImage partyImage = (IPartyImage)this.Umbraco.TypedMedia(partyImageForm.PartyImage);
 
-                ((PartyHost)this.Members.GetCurrentMember()).PartyImage = partyImageForm.PartyImage;
+                // if selected image is different to that stored
+                if (partyHost.PartyImage.Id != partyImage.Id)
+                {
+                    // if it's a custom upload
+                    if (partyHost.PartyImage is PartyImage)
+                    {
+                        IMedia media = this.Services.MediaService.GetById(partyHost.PartyImage.Id);
+                        this.Services.MediaService.Delete(media);
+                    }
+
+                    partyHost.PartyImage = partyImage;
+                }
 
                 formResponse.Success = true;
             }
@@ -68,12 +81,9 @@ namespace Wonderland.Logic.Controllers.Surface
 
             if (this.ModelState.IsValid && customPartyImageForm.CustomPartyImage.ContentLength > 0 && customPartyImageForm.CustomPartyImage.InputStream.IsImage())
             {
-                // NOTE: should update to return cms image ID in addition to the image url
-
                 int id = PartyImages.CreatePartyImage(customPartyImageForm.CustomPartyImage);                
 
                 //formResponse.Message = JsonConvert.SerializeObject(this.Umbraco.TypedMedia(id)); // url is null - might need examine to be updated first
-
                 formResponse.Message = JsonConvert.SerializeObject(new { id = id, url = this.Umbraco.TypedMedia(id).GetProperty("umbracoFile").Value.ToString() });
 
                 formResponse.Success = true;
@@ -382,7 +392,7 @@ namespace Wonderland.Logic.Controllers.Surface
         {
             if (!partyHost.DotMailerPartyPageComplete)
             {
-                if (!string.IsNullOrWhiteSpace(partyHost.PartyImage)
+                if (partyHost.PartyImage != null
                     && partyHost.FundraisingTarget > 0
                     && !string.IsNullOrWhiteSpace(partyHost.PartyAddress.ToString()))
                 {

@@ -262,23 +262,15 @@ namespace Wonderland.Logic.Models.Members
             }
         }
 
-        public string PartyImage
+        public IPartyImage PartyImage
         {
             get
             {
-                return this.GetPropertyValue<string>(PartyHost.PartyImageAlias);
+                return (IPartyImage)this.GetPropertyValue<IPublishedContent>(PartyHost.PartyImageAlias);
             }
             set
             {
-                this.SetPropertyValue(PartyHost.PartyImageAlias, value);
-            }
-        }
-
-        public string PartyImageUrl
-        {
-            get
-            {
-                return this.PartyImage;
+                this.SetPropertyValue(PartyHost.PartyImageAlias, value.Id);
             }
         }
 

@@ -1,6 +1,6 @@
 
 <div class="wgrid-full wgrid-no-bottom-margin parent">
-    <div class="wgrid-full wgrid-no-bottom-margin parent" ng-init="partyImageSideImageUrl='@Model.PartyHost.PartyImage'">
+    <div class="wgrid-full wgrid-no-bottom-margin parent" ng-init="partyImageSideImageUrl='@Model.PartyHost.PartyImage.Url'">
         <img ng-src="{{ partyImageSideImageUrl }}" width="100%"/>
         <div class="no-party-image" ng-show="partyImageSideImageUrl.length<=0" ng-cloak></div>
         <div class="boxx-twerk"></div>
