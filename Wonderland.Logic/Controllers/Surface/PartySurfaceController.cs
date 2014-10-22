@@ -329,7 +329,8 @@ namespace Wonderland.Logic.Controllers.Surface
         {
             FormResponse formResponse = new FormResponse();
 
-            if (this.ModelState.IsValid && (!string.IsNullOrWhiteSpace(partyWallMessageForm.Message) || partyWallMessageForm.PartyWallImage.HasValue))
+            // this.ModelState.IsValid reports false with int? !
+            if (!string.IsNullOrWhiteSpace(partyWallMessageForm.Message) || partyWallMessageForm.PartyWallImage.HasValue)
             {
                 // insert message into DB
                 this.DatabaseContext.Database.Insert(new MessageRow()
