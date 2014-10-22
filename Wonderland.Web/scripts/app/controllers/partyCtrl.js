@@ -171,7 +171,7 @@ wonderlandApp.controller('PartyCtrl', ['$filter', '$ocModal', '$rootScope', '$sc
     $scope.partyImageDefaultDataInit = function (defaultImages) {
 
         $scope.partyImageDefaultData = defaultImages;
-
+console.log(defaultImages);
 
         // hacky check to see if the url is one of the default images
         if ($scope.partyImageDefaultData.indexOf(initUrl) >= 0) {
