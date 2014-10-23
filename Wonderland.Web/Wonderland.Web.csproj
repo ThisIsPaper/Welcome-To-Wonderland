@@ -3270,16 +3270,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="media\1004\" />
-    <Folder Include="media\1005\" />
-    <Folder Include="media\1006\" />
-    <Folder Include="media\1007\" />
-    <Folder Include="media\1088\" />
-    <Folder Include="media\1089\" />
-    <Folder Include="media\1090\" />
-    <Folder Include="media\1091\" />
-    <Folder Include="media\1092\" />
-    <Folder Include="media\1093\" />
     <Folder Include="Views\MacroPartials\" />
   </ItemGroup>
   <PropertyGroup>
