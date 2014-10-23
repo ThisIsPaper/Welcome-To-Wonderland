@@ -16,10 +16,10 @@ module.exports = function (grunt) {
                          uglify: {
                              options: {
                                  mangle: false,
-                                 beautify: false,
+                                 beautify: true,
                                  banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n',
                                  compress: {
-                                     drop_console: true
+                                     drop_console: false
                                  }
                              },
                              base: {
@@ -29,8 +29,9 @@ module.exports = function (grunt) {
                                          '<%= pkg.jsPath %>vendor/modernizr-2.6.2.min.js',
 
                                          '<%= pkg.jsPath %>vendor/jquery-1.10.2.js',
+//                                         '<%= pkg.jsPath %>bower_components/angular/angular.js',
+                                         '<%= pkg.jsPath %>vendor/angular.ie7.js',
                                          '<%= pkg.jsPath %>bower_components/imagesloaded/imagesloaded.pkgd.js',
-                                         '<%= pkg.jsPath %>bower_components/angular/angular.js',
                                          '<%= pkg.jsPath %>bower_components/ocModal/dist/ocModal.js',
                                          '<%= pkg.jsPath %>bower_components/moment/moment.js',
                                          '<%= pkg.jsPath %>bower_components/pikaday/pikaday.js',
@@ -46,7 +47,6 @@ module.exports = function (grunt) {
                                          '<%= pkg.jsPath %>app/controllers/suggestedDonationFormCtrl.js',
                                          '<%= pkg.jsPath %>app/controllers/wallCtrl.js',
 
-                                         '<%= pkg.jsPath %>app/directives/mAngularMasonry.js',
                                          '<%= pkg.jsPath %>app/directives/mAddressFinder.js',
                                          '<%= pkg.jsPath %>app/directives/mDateTimePicker.js',
                                          '<%= pkg.jsPath %>app/directives/mImageUpload.js',
@@ -86,7 +86,8 @@ module.exports = function (grunt) {
                              base_above_ie7: {
                                  files: {
                                      '<%= pkg.jsPath %>base_above_ie7.min.js': [
-                                         '<%= pkg.jsPath %>bower_components/masonry/dist/masonry.pkgd.js'
+                                         '<%= pkg.jsPath %>bower_components/masonry/dist/masonry.pkgd.js',
+                                         '<%= pkg.jsPath %>app/directives/mAngularMasonry.js'
                                      ]
                                  }
                              },
@@ -94,17 +95,24 @@ module.exports = function (grunt) {
                                  files: {
                                      '<%= pkg.jsPath %>ie8.min.js': [
                                          '<%= pkg.jsPath %>bower_components/es5-shim/es5-shim.min.js',
-                                         '<%= pkg.jsPath %>bower_components/es5-shim/es5-sham.min.js',
-                                         '<%= pkg.jsPath %>bower_components/respond/dest/respond.min.js'
+                                         '<%= pkg.jsPath %>bower_components/es5-shim/es5-sham.min.js'
+//                                         '<%= pkg.jsPath %>bower_components/respond/dest/respond.min.js'
                                      ]
                                  }
                              },
                              ie7: {
                                  files: {
                                      '<%= pkg.jsPath %>ie7.min.js': [
-//                                         '<%= pkg.jsPath %>bower_components/JSON-js/json2.js',
-                                         '<%= pkg.jsPath %>bower_components/8960575/querySelector.polyfill.js',
-                                         '<%= pkg.jsPath %>bower_components/json3/lib/json3.min.js'
+//                                         '<%= pkg.jsPath %>bower_components/JSON-js/json2.js', // not sure of the difference between these two? i'll go 3 coz it's probabbly newer
+                                         '<%= pkg.jsPath %>bower_components/json3/lib/json3.min.js',
+                                         '<%= pkg.jsPath %>bower_components/8960575/querySelector.polyfill.js'
+                                     ]
+                                 }
+                             },
+                             ie7_after_base: {
+                                 files: {
+                                     '<%= pkg.jsPath %>ie7.after_base.min.js': [
+                                         '<%= pkg.jsPath %>app/polyfills/masonry.js'
                                      ]
                                  }
                              }
@@ -154,6 +162,18 @@ module.exports = function (grunt) {
                                          '<%= pkg.cssPath %>ie/compiled/bower_rem_fallback.css',
                                          '<%= pkg.cssPath %>ie/compiled/overrides_rem_fallback.css',
                                          '<%= pkg.cssPath %>ie/ie8.css'
+                                     ]
+                                 }
+                             },
+                             ie7: {
+                                 options: {
+                                     compatibility: 'ie7',
+                                     keepSpecialComments: 0,
+                                     banner: '/* <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */'
+                                 },
+                                 files: {
+                                     '<%= pkg.cssPath %>ie7.min.css': [
+                                         '<%= pkg.cssPath %>ie/ie7.css'
                                      ]
                                  }
                              }
