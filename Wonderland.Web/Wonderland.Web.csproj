@@ -361,7 +361,6 @@
     <Content Include="scripts\app\directives\mAngularMasonry.js" />
     <Content Include="scripts\app\directives\mDateTimePicker.js" />
     <Content Include="scripts\app\directives\mFileSelected.js" />
-    <Content Include="scripts\app\directives\mFundTargetChooser.js" />
     <Content Include="scripts\app\directives\mHeightMatchWidth.js" />
     <Content Include="scripts\app\directives\mImageUpload.js" />
     <Content Include="scripts\app\directives\mKeyEnterTrigger.js" />
