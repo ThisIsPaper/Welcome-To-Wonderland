@@ -20,13 +20,16 @@ namespace Wonderland.Logic.Models.Media
         {
         }
 
-        public HttpPostedFileBase Image
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="httpPostedFileBase"></param>
+        /// <returns>the url to the newly uploaded image</returns>
+        internal string UploadImage(HttpPostedFileBase httpPostedFileBase)
         {
-            set
-            {
-                this.SetPropertyValue(PartyImage.ImageAlias, value);
-            }
-        }
+            this.SetPropertyValue(PartyImage.ImageAlias, httpPostedFileBase);
 
+            return this.Media.GetValue(PartyImage.ImageAlias).ToString();
+        }
     }
 }
