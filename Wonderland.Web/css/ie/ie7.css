@@ -50,6 +50,10 @@ input[type='password'], input[type="text"].input-with-icon, select.input-with-ic
 	width: 370px;
 }
 
+.wgrid-half {
+	width: 520px;
+}
+
 .share-group .hide-span span {
 	display: inline;
 }
@@ -59,7 +63,7 @@ input[type='password'], input[type="text"].input-with-icon, select.input-with-ic
 }
 
 .grid-4 {
-	width: 32%;
+	width: 30%;
 }
 
 .grid-5 {
@@ -68,4 +72,12 @@ input[type='password'], input[type="text"].input-with-icon, select.input-with-ic
 
 pre {
 	word-wrap: break-word;
+}
+
+.edit-trigger .edit-label {
+	display: inline;
+}
+
+.edit-trigger .icon-icon_edit {
+	display: none;
 }

@@ -31,3 +31,11 @@ because they need to be *16 not *10 that the default 62.5% inflicts
 	width: 700px;
 }
 
+.loader {
+	background-image: url('/img/loading-fallback.png');
+	behavior: url('/css/compiled/backgroundsize.min.htc');
+}
+
+.loader.pos-static {
+	position: relative;
+}

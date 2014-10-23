@@ -364,18 +364,18 @@ Event Page specific - move these out of here eventually
 	margin: 0;
 
 	&.loader {
-		@include rem-fallback(margin-top, -3rem);
+		margin-top: -3rem;
 	}
 }
 
 .donation-copy {
 	color: $SecondaryColour;
-	@include rem-fallback(font-size, $FontSizeLarge);
+	font-size: $FontSizeLarge;
 }
 
 .wall-textarea {
 	font: $fontFaceFutura;
-	@include rem-fallback(font-size, $FontSizeMedium);
+	font-size: $FontSizeMedium;
 	margin-bottom: 0;
 	padding-bottom: 0;
 	border-bottom: none !important;
@@ -383,20 +383,17 @@ Event Page specific - move these out of here eventually
 }
 
 .wall-image-preview {
-	border: 1px solid $greyLight;
 	border: .1rem solid $greyLight;
-	margin-top: 0;
 	padding-top: 0;
 	border-top: none !important;
 	background-color: white;
-	@include rem-fallback(margin-top, -.6rem);
+	margin-top: -.6rem;
 
 	width: 100%;
 
 	@include border-top-radius(0);
 
 	&.error {
-		border: 1px solid $redDark;
 		border: .1rem solid $redDark;
 	}
 }
