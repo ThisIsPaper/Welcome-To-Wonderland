@@ -176,7 +176,7 @@ Event Page specific - move these out of here eventually
 	}
 
 	behavior: stylesheet-url('backgroundsize.min.htc');
-}
+}price
 
 .profile-image-remover {
 	color: $redDark;
@@ -433,13 +433,17 @@ Event Page specific - move these out of here eventually
 			@include border-radius(1rem);
 
 			font-family: $fontFaceMacmillan;
-			color: $FourthColour;
+			color: $FourthColour;s
+
+			span {
+				color: $FourthColour!important;
+			}
 
 			border: 1px solid white;
 			border: .1rem solid white;
 			text-align: center;
 
-			@include rem-fallback(line-height, 7.3rem);
+			line-height: 7.3rem;
 		}
 
 	}
@@ -452,6 +456,10 @@ Event Page specific - move these out of here eventually
 				color: white !important;
 				border: 1px solid $greenMedium;
 				border: .1rem solid $greenMedium;
+
+				span {
+					color: white !important;
+				}
 			}
 
 		}

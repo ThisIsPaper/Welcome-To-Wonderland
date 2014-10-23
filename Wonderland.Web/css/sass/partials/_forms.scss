@@ -173,10 +173,14 @@ $btnPaddingLarge: $btnPaddingMedium*2;
 
 .modal-close {
     position: absolute;
-	@include rem-fallback(top, 2rem);
-	@include rem-fallback(right, 2rem);
+	top: 2rem;
+	right: 2rem;
     overflow: hidden;
     cursor: pointer;
+
+	span {
+		display: none;
+	}
 
     &:before {
         content: "\e617";

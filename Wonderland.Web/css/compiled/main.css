@@ -7583,6 +7583,10 @@ Colours
   cursor: pointer;
 }
 /* line 181, ../sass/partials/_forms.scss */
+.modal-close span {
+  display: none;
+}
+/* line 185, ../sass/partials/_forms.scss */
 .modal-close:before {
   content: "\e617";
   font-family: "icomoon";
@@ -7590,36 +7594,36 @@ Colours
   font-size: 2.3rem;
 }
 
-/* line 191, ../sass/partials/_forms.scss */
+/* line 195, ../sass/partials/_forms.scss */
 label {
   text-transform: uppercase;
   color: #474740;
   font-weight: bold;
   line-height: 3rem;
 }
-/* line 198, ../sass/partials/_forms.scss */
+/* line 202, ../sass/partials/_forms.scss */
 label span {
   text-transform: none;
   color: #A19F91;
 }
-/* line 203, ../sass/partials/_forms.scss */
+/* line 207, ../sass/partials/_forms.scss */
 label span.radio {
   color: #474740;
 }
-/* line 208, ../sass/partials/_forms.scss */
+/* line 212, ../sass/partials/_forms.scss */
 label.radio-form {
   text-transform: none;
   display: inline-block;
 }
 
-/* line 220, ../sass/partials/_forms.scss */
+/* line 224, ../sass/partials/_forms.scss */
 textarea {
   width: 100%;
   height: 15rem;
   resize: none;
 }
 
-/* line 227, ../sass/partials/_forms.scss */
+/* line 231, ../sass/partials/_forms.scss */
 input[type='text'], input[type='password'], select {
   width: 100%;
   height: 5rem;
@@ -7627,35 +7631,35 @@ input[type='text'], input[type='password'], select {
   line-height: 5rem;
 }
 
-/* line 237, ../sass/partials/_forms.scss */
+/* line 241, ../sass/partials/_forms.scss */
 input[type='text'], input[type='password'], textarea, select {
   border: 1px solid #D4D3CC;
   border: 0.1rem solid #D4D3CC;
   background-color: white;
   font-family: "Futura BT W01 Book";
 }
-/* line 243, ../sass/partials/_forms.scss */
+/* line 247, ../sass/partials/_forms.scss */
 input[type='text'].error, input[type='password'].error, textarea.error, select.error {
   border: 1px solid #E32333;
   border: 0.1rem solid #E32333;
 }
 
-/* line 249, ../sass/partials/_forms.scss */
+/* line 253, ../sass/partials/_forms.scss */
 input[type="text"][readonly] {
   cursor: pointer;
 }
 
-/* line 253, ../sass/partials/_forms.scss */
+/* line 257, ../sass/partials/_forms.scss */
 input[type='password'], input[type="text"].input-with-icon, select.input-with-icon {
   text-indent: 4rem;
 }
 
-/* line 257, ../sass/partials/_forms.scss */
+/* line 261, ../sass/partials/_forms.scss */
 input[type="text"].currency {
   padding-left: 3rem;
 }
 
-/* line 262, ../sass/partials/_forms.scss */
+/* line 266, ../sass/partials/_forms.scss */
 input[type=submit][disabled=disabled],
 input[type=submit][disabled=disabled]:hover,
 button[disabled=disabled],
@@ -7665,17 +7669,17 @@ button[disabled=disabled]:hover {
   cursor: default;
 }
 
-/* line 271, ../sass/partials/_forms.scss */
+/* line 275, ../sass/partials/_forms.scss */
 select.auto-width {
   width: auto;
 }
 
-/* line 275, ../sass/partials/_forms.scss */
+/* line 279, ../sass/partials/_forms.scss */
 *:focus {
   outline: 0;
 }
 
-/* line 281, ../sass/partials/_forms.scss */
+/* line 285, ../sass/partials/_forms.scss */
 .choose-file-wrapper {
   width: 16.2rem;
   height: 4rem;
@@ -7683,7 +7687,7 @@ select.auto-width {
   position: relative;
   cursor: pointer;
 }
-/* line 289, ../sass/partials/_forms.scss */
+/* line 293, ../sass/partials/_forms.scss */
 .choose-file-wrapper:before {
   position: relative;
   z-index: 10;
@@ -7693,7 +7697,7 @@ select.auto-width {
   font-size: 1.4rem;
   line-height: 3.8rem;
 }
-/* line 300, ../sass/partials/_forms.scss */
+/* line 304, ../sass/partials/_forms.scss */
 .choose-file-wrapper:after {
   content: "Upload file";
   position: absolute;
@@ -7705,14 +7709,14 @@ select.auto-width {
   padding-right: 4.4rem;
   line-height: 1.6rem;
 }
-/* line 318, ../sass/partials/_forms.scss */
+/* line 322, ../sass/partials/_forms.scss */
 .choose-file-wrapper.disabled:after {
   cursor: default;
   background-color: #D4D3CC;
   color: #A19F91;
 }
 
-/* line 326, ../sass/partials/_forms.scss */
+/* line 330, ../sass/partials/_forms.scss */
 .choose-file {
   width: 200%;
   height: 100%;
@@ -7726,7 +7730,7 @@ select.auto-width {
   opacity: 0;
 }
 
-/* line 339, ../sass/partials/_forms.scss */
+/* line 343, ../sass/partials/_forms.scss */
 .form-field-ico {
   position: absolute;
   top: 0;
@@ -11629,6 +11633,10 @@ Colours
   cursor: pointer;
 }
 /* line 181, ../sass/partials/_forms.scss */
+.modal-close span {
+  display: none;
+}
+/* line 185, ../sass/partials/_forms.scss */
 .modal-close:before {
   content: "\e617";
   font-family: "icomoon";
@@ -11636,36 +11644,36 @@ Colours
   font-size: 2.3rem;
 }
 
-/* line 191, ../sass/partials/_forms.scss */
+/* line 195, ../sass/partials/_forms.scss */
 label {
   text-transform: uppercase;
   color: #474740;
   font-weight: bold;
   line-height: 3rem;
 }
-/* line 198, ../sass/partials/_forms.scss */
+/* line 202, ../sass/partials/_forms.scss */
 label span {
   text-transform: none;
   color: #A19F91;
 }
-/* line 203, ../sass/partials/_forms.scss */
+/* line 207, ../sass/partials/_forms.scss */
 label span.radio {
   color: #474740;
 }
-/* line 208, ../sass/partials/_forms.scss */
+/* line 212, ../sass/partials/_forms.scss */
 label.radio-form {
   text-transform: none;
   display: inline-block;
 }
 
-/* line 220, ../sass/partials/_forms.scss */
+/* line 224, ../sass/partials/_forms.scss */
 textarea {
   width: 100%;
   height: 15rem;
   resize: none;
 }
 
-/* line 227, ../sass/partials/_forms.scss */
+/* line 231, ../sass/partials/_forms.scss */
 input[type='text'], input[type='password'], select {
   width: 100%;
   height: 5rem;
@@ -11673,35 +11681,35 @@ input[type='text'], input[type='password'], select {
   line-height: 5rem;
 }
 
-/* line 237, ../sass/partials/_forms.scss */
+/* line 241, ../sass/partials/_forms.scss */
 input[type='text'], input[type='password'], textarea, select {
   border: 1px solid #D4D3CC;
   border: 0.1rem solid #D4D3CC;
   background-color: white;
   font-family: "Futura BT W01 Book";
 }
-/* line 243, ../sass/partials/_forms.scss */
+/* line 247, ../sass/partials/_forms.scss */
 input[type='text'].error, input[type='password'].error, textarea.error, select.error {
   border: 1px solid #E32333;
   border: 0.1rem solid #E32333;
 }
 
-/* line 249, ../sass/partials/_forms.scss */
+/* line 253, ../sass/partials/_forms.scss */
 input[type="text"][readonly] {
   cursor: pointer;
 }
 
-/* line 253, ../sass/partials/_forms.scss */
+/* line 257, ../sass/partials/_forms.scss */
 input[type='password'], input[type="text"].input-with-icon, select.input-with-icon {
   text-indent: 4rem;
 }
 
-/* line 257, ../sass/partials/_forms.scss */
+/* line 261, ../sass/partials/_forms.scss */
 input[type="text"].currency {
   padding-left: 3rem;
 }
 
-/* line 262, ../sass/partials/_forms.scss */
+/* line 266, ../sass/partials/_forms.scss */
 input[type=submit][disabled=disabled],
 input[type=submit][disabled=disabled]:hover,
 button[disabled=disabled],
@@ -11711,17 +11719,17 @@ button[disabled=disabled]:hover {
   cursor: default;
 }
 
-/* line 271, ../sass/partials/_forms.scss */
+/* line 275, ../sass/partials/_forms.scss */
 select.auto-width {
   width: auto;
 }
 
-/* line 275, ../sass/partials/_forms.scss */
+/* line 279, ../sass/partials/_forms.scss */
 *:focus {
   outline: 0;
 }
 
-/* line 281, ../sass/partials/_forms.scss */
+/* line 285, ../sass/partials/_forms.scss */
 .choose-file-wrapper {
   width: 16.2rem;
   height: 4rem;
@@ -11729,7 +11737,7 @@ select.auto-width {
   position: relative;
   cursor: pointer;
 }
-/* line 289, ../sass/partials/_forms.scss */
+/* line 293, ../sass/partials/_forms.scss */
 .choose-file-wrapper:before {
   position: relative;
   z-index: 10;
@@ -11739,7 +11747,7 @@ select.auto-width {
   font-size: 1.4rem;
   line-height: 3.8rem;
 }
-/* line 300, ../sass/partials/_forms.scss */
+/* line 304, ../sass/partials/_forms.scss */
 .choose-file-wrapper:after {
   content: "Upload file";
   position: absolute;
@@ -11751,14 +11759,14 @@ select.auto-width {
   padding-right: 4.4rem;
   line-height: 1.6rem;
 }
-/* line 318, ../sass/partials/_forms.scss */
+/* line 322, ../sass/partials/_forms.scss */
 .choose-file-wrapper.disabled:after {
   cursor: default;
   background-color: #D4D3CC;
   color: #A19F91;
 }
 
-/* line 326, ../sass/partials/_forms.scss */
+/* line 330, ../sass/partials/_forms.scss */
 .choose-file {
   width: 200%;
   height: 100%;
@@ -11772,7 +11780,7 @@ select.auto-width {
   opacity: 0;
 }
 
-/* line 339, ../sass/partials/_forms.scss */
+/* line 343, ../sass/partials/_forms.scss */
 .form-field-ico {
   position: absolute;
   top: 0;
@@ -12175,7 +12183,8 @@ Event Page specific - move these out of here eventually
   height: 4.2rem;
 }
 
-/* line 181, ../sass/partials/_base.scss */
+/* line 179, ../sass/partials/_base.scss */
+price
 .profile-image-remover {
   color: #E32333;
   font-size: 1.1rem;
@@ -12444,28 +12453,37 @@ Event Page specific - move these out of here eventually
   text-align: center;
   line-height: 7.3rem;
 }
-/* line 448, ../sass/partials/_base.scss */
+/* line 436, ../sass/partials/_base.scss */
+.ticket .stub .price s
+span {
+  color: #025b45 !important;
+}
+/* line 452, ../sass/partials/_base.scss */
 .ticket.selected .stub {
   background-color: #025b45;
 }
-/* line 451, ../sass/partials/_base.scss */
+/* line 455, ../sass/partials/_base.scss */
 .ticket.selected .stub .price {
   color: white !important;
   border: 1px solid #4e8f82;
   border: 0.1rem solid #4e8f82;
 }
 /* line 460, ../sass/partials/_base.scss */
+.ticket.selected .stub .price span {
+  color: white !important;
+}
+/* line 468, ../sass/partials/_base.scss */
 .ticket input[type="radio"] {
   display: none;
 }
 
-/* line 467, ../sass/partials/_base.scss */
+/* line 475, ../sass/partials/_base.scss */
 label .ticket span {
   color: inherit;
 }
 
 /*******************************/
-/* line 475, ../sass/partials/_base.scss */
+/* line 483, ../sass/partials/_base.scss */
 .totaliser {
   -moz-border-radius: 9.6px;
   -webkit-border-radius: 9.6px;
@@ -12475,7 +12493,7 @@ label .ticket span {
   border-radius: 0.6rem;
   background-color: #D4D3CC;
 }
-/* line 481, ../sass/partials/_base.scss */
+/* line 489, ../sass/partials/_base.scss */
 .totaliser .current-total {
   -moz-border-radius: 9.6px;
   -webkit-border-radius: 9.6px;
@@ -12511,24 +12529,24 @@ label .ticket span {
 /* =============================================================================
 One-off uses
 ========================================================================== */
-/* line 503, ../sass/partials/_base.scss */
+/* line 511, ../sass/partials/_base.scss */
 #twitter-widget-0 {
   width: 100% !important;
 }
 
-/* line 507, ../sass/partials/_base.scss */
+/* line 515, ../sass/partials/_base.scss */
 .home-twitter-boxx {
   height: 35.6rem;
 }
 
-/* line 511, ../sass/partials/_base.scss */
+/* line 519, ../sass/partials/_base.scss */
 .piggy-donater:after {
   content: "\e61c";
   font-family: "icomoon";
   color: white;
 }
 
-/* line 518, ../sass/partials/_base.scss */
+/* line 526, ../sass/partials/_base.scss */
 .join-party-ico:after {
   content: "\e601";
   font-family: "icomoon";
@@ -12536,7 +12554,7 @@ One-off uses
 }
 
 /*******************************/
-/* line 528, ../sass/partials/_base.scss */
+/* line 536, ../sass/partials/_base.scss */
 .hero {
   height: 45rem;
   background-image: url('/img/hero-ph.jpg?1412505524');
@@ -12550,27 +12568,27 @@ One-off uses
   behavior: url('/css/compiled/backgroundsize.min.htc');
 }
 
-/* line 544, ../sass/partials/_base.scss */
+/* line 552, ../sass/partials/_base.scss */
 .planking {
   background: url('/img/wood_texture.jpg?1414068120') repeat top center;
 }
 
-/* line 548, ../sass/partials/_base.scss */
+/* line 556, ../sass/partials/_base.scss */
 .home-content-adjust {
   margin-top: -8rem;
 }
 
-/* line 552, ../sass/partials/_base.scss */
+/* line 560, ../sass/partials/_base.scss */
 .hero-explain {
   margin-right: 35rem;
   text-align: left;
 }
-/* line 556, ../sass/partials/_base.scss */
+/* line 564, ../sass/partials/_base.scss */
 .hero-explain.full-width {
   margin-right: 0;
 }
 
-/* line 561, ../sass/partials/_base.scss */
+/* line 569, ../sass/partials/_base.scss */
 .money-raised {
   position: absolute;
   top: 2.4rem;
@@ -12580,7 +12598,7 @@ One-off uses
   background: url('/img/amount-raised-ph.png?1411035906') no-repeat center right transparent;
 }
 
-/* line 570, ../sass/partials/_base.scss */
+/* line 578, ../sass/partials/_base.scss */
 .raised-amount {
   color: white;
   width: 27.5rem;
@@ -12588,7 +12606,7 @@ One-off uses
   line-height: 4.7rem;
 }
 
-/* line 577, ../sass/partials/_base.scss */
+/* line 585, ../sass/partials/_base.scss */
 .home-tile {
   background-color: white;
   position: relative;
@@ -12598,7 +12616,7 @@ One-off uses
   box-shadow: 0px 14px 30px 0px rgba(0, 0, 0, 0.6);
 }
 
-/* line 586, ../sass/partials/_base.scss */
+/* line 594, ../sass/partials/_base.scss */
 .home-tile-image {
   -moz-border-radius: 11.2px;
   -webkit-border-radius: 11.2px;
@@ -12613,7 +12631,7 @@ One-off uses
   behavior: url('/css/compiled/backgroundsize.min.htc');
 }
 
-/* line 597, ../sass/partials/_base.scss */
+/* line 605, ../sass/partials/_base.scss */
 .home-tile-label {
   position: absolute;
   bottom: 0;
@@ -12622,32 +12640,32 @@ One-off uses
 }
 
 /*******************************/
-/* line 607, ../sass/partials/_base.scss */
+/* line 615, ../sass/partials/_base.scss */
 .spotify-holder {
   margin-top: -7rem;
   text-align: center;
 }
 
-/* line 612, ../sass/partials/_base.scss */
+/* line 620, ../sass/partials/_base.scss */
 .spotify-info-holder {
   position: absolute;
   left: 0;
   color: white;
   text-align: center;
 }
-/* line 619, ../sass/partials/_base.scss */
+/* line 627, ../sass/partials/_base.scss */
 .spotify-info-holder h1 {
   color: white;
 }
 
 /*******************************/
-/* line 627, ../sass/partials/_base.scss */
+/* line 635, ../sass/partials/_base.scss */
 .scoreboard-place {
   float: left;
   width: 5rem;
 }
 
-/* line 632, ../sass/partials/_base.scss */
+/* line 640, ../sass/partials/_base.scss */
 .scoreboard-value {
   position: absolute;
   top: 0;
@@ -12656,22 +12674,22 @@ One-off uses
 }
 
 /*******************************/
-/* line 642, ../sass/partials/_base.scss */
+/* line 650, ../sass/partials/_base.scss */
 .idea-sizer {
   width: 25%;
 }
 
-/* line 646, ../sass/partials/_base.scss */
+/* line 654, ../sass/partials/_base.scss */
 .idea-tile {
   width: 25%;
   padding: 1.2rem;
 }
-/* line 651, ../sass/partials/_base.scss */
+/* line 659, ../sass/partials/_base.scss */
 .idea-tile.wide {
   width: 50%;
 }
 
-/* line 656, ../sass/partials/_base.scss */
+/* line 664, ../sass/partials/_base.scss */
 .idea {
   position: relative;
   padding: 1.2rem;
@@ -12683,42 +12701,42 @@ One-off uses
   box-shadow: 0px 14px 30px 0px rgba(0, 0, 0, 0.6);
 }
 
-/* line 665, ../sass/partials/_base.scss */
+/* line 673, ../sass/partials/_base.scss */
 .idea-details {
   width: 100%;
   top: 11%;
   left: 0;
   padding: 0 1.2rem;
 }
-/* line 671, ../sass/partials/_base.scss */
+/* line 679, ../sass/partials/_base.scss */
 .idea-details.over-the-top {
   position: absolute;
   color: white;
 }
-/* line 675, ../sass/partials/_base.scss */
+/* line 683, ../sass/partials/_base.scss */
 .idea-details.over-the-top h1 {
   color: white;
 }
-/* line 680, ../sass/partials/_base.scss */
+/* line 688, ../sass/partials/_base.scss */
 .idea-details.wide {
   top: 23%;
 }
 
-/* line 685, ../sass/partials/_base.scss */
+/* line 693, ../sass/partials/_base.scss */
 .idea-polaroid {
   -moz-border-radius: 0.7rem;
   -webkit-border-radius: 0.7rem;
   border-radius: 0.7rem;
 }
 
-/* line 689, ../sass/partials/_base.scss */
+/* line 697, ../sass/partials/_base.scss */
 .pinterest-ico:before {
   content: "\e623";
   font-family: "icomoon";
   color: #E32333;
 }
 
-/* line 695, ../sass/partials/_base.scss */
+/* line 703, ../sass/partials/_base.scss */
 .spotify-logo {
   width: 8rem;
   height: 2.4rem;
@@ -12733,7 +12751,7 @@ One-off uses
   behavior: url('/css/compiled/backgroundsize.min.htc');
 }
 
-/* line 710, ../sass/partials/_base.scss */
+/* line 718, ../sass/partials/_base.scss */
 .idea-link {
   position: absolute;
   top: 0;
@@ -12743,12 +12761,12 @@ One-off uses
   z-index: 5;
   text-indent: -999rem;
 }
-/* line 721, ../sass/partials/_base.scss */
+/* line 729, ../sass/partials/_base.scss */
 .idea-link span.label {
   display: none;
 }
 
-/* line 726, ../sass/partials/_base.scss */
+/* line 734, ../sass/partials/_base.scss */
 .share-title {
   width: 27.8rem;
   height: 11.6rem;
@@ -12759,7 +12777,7 @@ One-off uses
   behavior: url('/css/compiled/backgroundsize.min.htc');
 }
 
-/* line 737, ../sass/partials/_base.scss */
+/* line 745, ../sass/partials/_base.scss */
 .share-facebook, .share-twitter, .share-email {
   background-color: #3c5898;
   font-family: "macmillan";
@@ -12768,33 +12786,33 @@ One-off uses
   line-height: 5.5rem;
   color: white;
 }
-/* line 745, ../sass/partials/_base.scss */
+/* line 753, ../sass/partials/_base.scss */
 .share-facebook:before, .share-twitter:before, .share-email:before {
   font-family: "icomoon";
   content: "\e619";
   margin-right: 1.2rem;
 }
 
-/* line 752, ../sass/partials/_base.scss */
+/* line 760, ../sass/partials/_base.scss */
 .share-twitter {
   background-color: #17abed;
 }
-/* line 754, ../sass/partials/_base.scss */
+/* line 762, ../sass/partials/_base.scss */
 .share-twitter:before {
   content: "\e61a";
 }
 
-/* line 759, ../sass/partials/_base.scss */
+/* line 767, ../sass/partials/_base.scss */
 .share-email {
   background-color: #007eac;
 }
-/* line 761, ../sass/partials/_base.scss */
+/* line 769, ../sass/partials/_base.scss */
 .share-email:before {
   content: "\e618";
   margin-right: 0;
 }
 
-/* line 768, ../sass/partials/_base.scss */
+/* line 776, ../sass/partials/_base.scss */
 .centered-share-holder .share-title {
   display: block;
   float: none;
@@ -12804,23 +12822,23 @@ One-off uses
 }
 
 /*******************************/
-/* line 780, ../sass/partials/_base.scss */
+/* line 788, ../sass/partials/_base.scss */
 .color-facebook {
   color: #3c5898 !important;
 }
 
-/* line 784, ../sass/partials/_base.scss */
+/* line 792, ../sass/partials/_base.scss */
 .color-twitter {
   color: #17abed !important;
 }
 
-/* line 788, ../sass/partials/_base.scss */
+/* line 796, ../sass/partials/_base.scss */
 .color-pinterest {
   color: #cc2127 !important;
 }
 
 /*******************************/
-/* line 795, ../sass/partials/_base.scss */
+/* line 803, ../sass/partials/_base.scss */
 .giftaid-logo {
   width: 10rem;
   height: 3.5rem;
@@ -12834,7 +12852,7 @@ One-off uses
   top: 0;
 }
 
-/* line 809, ../sass/partials/_base.scss */
+/* line 817, ../sass/partials/_base.scss */
 .fsb-logo {
   width: 8rem;
   height: 8rem;
@@ -12848,7 +12866,7 @@ One-off uses
   top: 0;
 }
 
-/* line 823, ../sass/partials/_base.scss */
+/* line 831, ../sass/partials/_base.scss */
 .ticket-label {
   line-height: 2rem;
 }

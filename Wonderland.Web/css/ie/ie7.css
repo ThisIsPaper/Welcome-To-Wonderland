@@ -116,3 +116,7 @@ pre {
 .no-flexbox .modal-dialog {
 	left: 10px!important;
 }
+
+.modal-close span {
+	display: inline;
+}
