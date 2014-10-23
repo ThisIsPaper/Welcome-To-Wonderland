@@ -40,3 +40,15 @@ because they need to be *16 not *10 that the default 62.5% inflicts
 .loader.pos-static {
 	position: relative;
 }
+
+.party-image-container {
+	height: 125px;
+}
+
+.party-image-container .party-image-selecter {
+	border: none;
+}
+
+.party-image-container.selected .party-image-selecter {
+	border: 3px solid #007eac;
+}
