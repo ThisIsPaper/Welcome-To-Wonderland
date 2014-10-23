@@ -6,7 +6,7 @@ namespace Wonderland.Logic.Controllers.Render
 
     public class HomeController : BaseRenderMvcController
     {
-        [OutputCache(Duration=SitePage.CacheDuration)]
+        //[OutputCache(Duration=SitePage.CacheDuration)] removed as this caches the whole page (inc user specific rendering)
         public ActionResult Home() // method executed in preference to the Index, as Home is the template name
         {
             Home model = (Home)this.CurrentPage;
