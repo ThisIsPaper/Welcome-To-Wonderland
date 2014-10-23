@@ -6,7 +6,7 @@ namespace Wonderland.Logic.Models.Media
     using Umbraco.Web;
     using Wonderland.Logic.Interfaces;
 
-    public class Image : NonSerializablePublishedContentModel, IPartyImage
+    public class Image : SerializablePublishedContentModel, IPartyImage
     {
         // Media Type
         public const string Alias = "Image";
