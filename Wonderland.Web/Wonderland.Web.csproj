@@ -349,7 +349,6 @@
     <Content Include="img\wonderland-logo.png" />
     <Content Include="img\wonderland-logo.svg" />
     <Content Include="img\wood_texture.jpg" />
-       
     <Content Include="scripts\app\app.js" />
     <Content Include="scripts\app\controllers\faqsCtrl.js" />
     <Content Include="scripts\app\controllers\pageCtrl.js" />
@@ -383,9 +382,6 @@
     <Content Include="scripts\ie7.after_base.min.js" />
     <Content Include="scripts\ie7.min.js" />
     <Content Include="scripts\ie8.min.js" />
-    <Content Include="Uploads\PartyImage\.gitignore" />
-    <Content Include="Uploads\PartyWall\.gitignore" />
-    <Content Include="Uploads\Profile\.gitignore" />
     <Content Include="Views\RegisterHost\Forms\RegisterHostPartyKitForm.cshtml" />
     <Content Include="Views\Login\Forms\LoginForm.cshtml" />
     <Content Include="Views\PageNotFound.cshtml" />
@@ -526,7 +522,6 @@
       <Project>{9eaddebb-efd4-4bf8-9411-7d0683969413}</Project>
       <Name>Wonderland.Logic</Name>
     </ProjectReference>
-    <Folder Include="Views\MacroPartials\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
