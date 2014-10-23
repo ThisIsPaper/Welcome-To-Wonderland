@@ -1,8 +1,10 @@
 wonderlandApp.controller('PartyCtrl', ['$filter', '$ocModal', '$rootScope', '$sce', '$scope', '$timeout', function ($filter, $ocModal, $rootScope, $sce, $scope, $timeout) {
 
-    /**********************/
-    /* PARTY COPY */
-    /**********************/
+    /*************************
+     *
+     * PARTY COPY
+     *
+     */
     $scope.partyCopyData = null;
     $scope.partyCopyDataForForm = null;
     $scope.partyCopyDataFeedback = {};
@@ -31,9 +33,11 @@ wonderlandApp.controller('PartyCtrl', ['$filter', '$ocModal', '$rootScope', '$sc
     });
 
 
-    /**********************/
-    /* PARTY DETAILS */
-    /**********************/
+    /************************
+     *
+     * PARTY DETAILS
+     *
+     */
     $scope.partyDetailsData = null;
     $scope.partyDetailsFormattedAddress = null;
     $scope.partyDetailsDataForForm = null;
@@ -87,9 +91,11 @@ wonderlandApp.controller('PartyCtrl', ['$filter', '$ocModal', '$rootScope', '$sc
     });
 
 
-    /**********************/
-    /* SUGGESTED DONATION */
-    /**********************/
+    /************************
+     *
+     * SUGGESTED DONATION
+     *
+     */
     $scope.suggestedDonationData = null;
     $scope.suggestedDonationDataForForm = null;
     $scope.suggestedDonationDataFeedback = {};
@@ -115,9 +121,11 @@ wonderlandApp.controller('PartyCtrl', ['$filter', '$ocModal', '$rootScope', '$sc
     });
 
 
-    /**********************/
-    /* FUNDRAISING TARGET */
-    /**********************/
+    /************************
+     *
+     * FUNDRAISING TARGET
+     *
+     */
     $scope.fundraisingTargetData = null;
     $scope.fundraisingTargetDataForForm = null;
     $scope.fundraisingTargetDataFeedback = {};
@@ -125,120 +133,120 @@ wonderlandApp.controller('PartyCtrl', ['$filter', '$ocModal', '$rootScope', '$sc
 
     $scope.fundraisingTargetDataInit = function (fundraisingTargetData) {
 
-        $timeout(function () {
-                     $scope.fundraisingTargetData = fundraisingTargetData;
-                     $scope.fundraisingTargetDataForForm = angular.copy($scope.fundraisingTargetData);
+        $scope.fundraisingTargetData = fundraisingTargetData;
+        $scope.fundraisingTargetDataForForm = angular.copy($scope.fundraisingTargetData);
 
-                     if (fundraisingTargetFirstSet) {
-                         fundraisingTargetFirstSet = false;
-                         if (fundraisingTargetData.FundraisingTarget <= 0) {
-                             $rootScope.openPageModal('partials/fundraisingTargetForm.html', 'suggestedDonationModal', {'fundraisingTargetData': $scope.fundraisingTargetDataForForm});
-                         }
-                     }
-                 }
-        );
-    };
-
-    $scope.$onRootScope('fundraisingTargetDataUpdated', function (event, response, dataObject) {
-
-        $scope.fundraisingTargetDataFeedback.processing = false;
-        $scope.fundraisingTargetDataInit(dataObject);
-        $ocModal.close('fundraisingTargetDataModal');
-    });
-
-    $scope.$onRootScope('fundraisingTargetDataError', function () {
-        $scope.fundraisingTargetDataFeedback.processing = false;
-        $scope.fundraisingTargetDataFeedback.showNetworkError = true;
-
-        $timeout(function () {
-            $scope.fundraisingTargetDataFeedback.showNetworkError = false;
-        }, 5000);
-    });
-
-
-    /**********************/
-    /* PARTY IMAGE DETAILS */
-    /**********************/
-    var initUrl = null;
-    $scope.partyImageData = {};
-    $scope.partyImageDefaultData = null;
-    $scope.partyImageDataForForm = null;
-    $scope.partyImageDataFeedback = {};
-    $scope.partyCustomImage = {
-        image: null,
-        feedback: {}
-    };
-
-    $scope.partyImageDefaultDataInit = function (defaultImages) {
-
-        $scope.partyImageDefaultData = defaultImages;
-
-        // hacky check to see if the url is one of the default images
-        var isCustom = true;
-        if (initUrl) {
-            angular.forEach(defaultImages, function (value) {
-                isCustom = value.id === initUrl.id ? false : isCustom;
-            });
-        }
-
-        if (isCustom) {
-            $scope.partyCustomImage.image = initUrl;
-        }
-
-    };
-
-    $scope.$onRootScope('partyImageUpdated', function (event, response) {
-
-        $scope.partyImageDataFeedback.processing = false;
-        $scope.partyImageData.PartyImage = $scope.partyImageDataForForm.PartyImage;
-
-        $ocModal.close('partyImageModal');
-    });
-
-    $scope.$onRootScope('partyImageUpdateError', function () {
-        $scope.partyImageDataFeedback.processing = false;
-        $scope.partyImageDataFeedback.showNetworkError = true;
-
-        $timeout(function () {
-            $scope.partyImageDataFeedback.showNetworkError = false;
-        }, 5000);
-    });
-
-
-    $scope.$onRootScope('partyImageCustomUrlUploaded', function (event, response) {
-        $timeout(function () {
-            $scope.partyCustomImage.feedback.processing = false;
-
-            if (response && response.Success === true && response.Message) {
-
-                var newImage = angular.fromJson(response.Message);
-                $scope.partyCustomImage.feedback.showSuccess = true;
-
-                if (newImage) {
-                    $scope.partyCustomImage.image = newImage;
-                    $scope.partyImageDataForForm.PartyImage = newImage;
-                }
-            } else {
-                $scope.partyCustomImage.feedback.showError = true;
+        if (fundraisingTargetFirstSet) {
+            fundraisingTargetFirstSet = false;
+            if (fundraisingTargetData.FundraisingTarget <= 0) {
+                $rootScope.openPageModal('partials/fundraisingTargetForm.html', 'suggestedDonationModal', {'fundraisingTargetData': $scope.fundraisingTargetDataForForm});
             }
-        });
-
-        $timeout(function () {
-            $scope.partyCustomImage.feedback.showSuccess = false;
-            $scope.partyCustomImage.feedback.showError = false;
-        }, 5000);
-    });
-
-
-    $scope.hardCodedCurrentPartyImageUrlInit = function (imageData) {
-
-        if (imageData) {
-            initUrl = angular.fromJson(imageData);
         }
-
-        $scope.partyImageData.PartyImage = initUrl;
-        $scope.partyImageDataForForm = angular.copy($scope.partyImageData);
     };
 
+$scope.$onRootScope('fundraisingTargetDataUpdated', function (event, response, dataObject) {
 
-}]);
+    $scope.fundraisingTargetDataFeedback.processing = false;
+    $scope.fundraisingTargetDataInit(dataObject);
+    $ocModal.close('fundraisingTargetDataModal');
+});
+
+$scope.$onRootScope('fundraisingTargetDataError', function () {
+    $scope.fundraisingTargetDataFeedback.processing = false;
+    $scope.fundraisingTargetDataFeedback.showNetworkError = true;
+
+    $timeout(function () {
+        $scope.fundraisingTargetDataFeedback.showNetworkError = false;
+    }, 5000);
+});
+
+
+/****************************
+ *
+ * PARTY IMAGE DETAILS
+ *
+ */
+var initUrl = null;
+$scope.partyImageData = {};
+$scope.partyImageDefaultData = null;
+$scope.partyImageDataForForm = null;
+$scope.partyImageDataFeedback = {};
+$scope.partyCustomImage = {
+    image: null,
+    feedback: {}
+};
+
+$scope.partyImageDefaultDataInit = function (defaultImages) {
+
+    $scope.partyImageDefaultData = defaultImages;
+
+    // hacky check to see if the url is one of the default images
+    var isCustom = true;
+    if (initUrl) {
+        angular.forEach(defaultImages, function (value) {
+            isCustom = value.id === initUrl.id ? false : isCustom;
+        });
+    }
+
+    if (isCustom) {
+        $scope.partyCustomImage.image = initUrl;
+    }
+
+};
+
+$scope.$onRootScope('partyImageUpdated', function (event, response) {
+
+    $scope.partyImageDataFeedback.processing = false;
+    $scope.partyImageData.PartyImage = $scope.partyImageDataForForm.PartyImage;
+
+    $ocModal.close('partyImageModal');
+});
+
+$scope.$onRootScope('partyImageUpdateError', function () {
+    $scope.partyImageDataFeedback.processing = false;
+    $scope.partyImageDataFeedback.showNetworkError = true;
+
+    $timeout(function () {
+        $scope.partyImageDataFeedback.showNetworkError = false;
+    }, 5000);
+});
+
+
+$scope.$onRootScope('partyImageCustomUrlUploaded', function (event, response) {
+    $timeout(function () {
+        $scope.partyCustomImage.feedback.processing = false;
+
+        if (response && response.Success === true && response.Message) {
+
+            var newImage = angular.fromJson(response.Message);
+            $scope.partyCustomImage.feedback.showSuccess = true;
+
+            if (newImage) {
+                $scope.partyCustomImage.image = newImage;
+                $scope.partyImageDataForForm.PartyImage = newImage;
+            }
+        } else {
+            $scope.partyCustomImage.feedback.showError = true;
+        }
+    });
+
+    $timeout(function () {
+        $scope.partyCustomImage.feedback.showSuccess = false;
+        $scope.partyCustomImage.feedback.showError = false;
+    }, 5000);
+});
+
+
+$scope.hardCodedCurrentPartyImageUrlInit = function (imageData) {
+
+    if (imageData) {
+        initUrl = angular.fromJson(imageData);
+    }
+
+    $scope.partyImageData.PartyImage = initUrl;
+    $scope.partyImageDataForForm = angular.copy($scope.partyImageData);
+};
+
+
+}])
+;

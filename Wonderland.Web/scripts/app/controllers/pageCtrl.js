@@ -8,20 +8,20 @@ wonderlandApp.controller('PageCtrl', ['debounce', 'paf', '$rootScope', '$scope',
     };
     $scope.pageFeedback = {
 
-        profileImageProcessing:  false,
+        profileImageProcessing: false,
         profileImageShowSuccess: false,
         profileImageShowError: false
 
     };
 
     /*************************
-    SITE HEADER COMPRESS VIEW
-    /*************************/
+     SITE HEADER COMPRESS VIEW
+     /*************************/
     var scrollCheckLimit = 50;
     var runScrollCheck = function () {
 
             var diff = ((angular.element($window).scrollTop() > scrollCheckLimit && !$scope.pageHeaderCompress) ||
-                        (angular.element($window).scrollTop() <= scrollCheckLimit && $scope.pageHeaderCompress));
+                (angular.element($window).scrollTop() <= scrollCheckLimit && $scope.pageHeaderCompress));
 
             if (diff) {
                 if ($scope.$$phase) {
@@ -41,9 +41,7 @@ wonderlandApp.controller('PageCtrl', ['debounce', 'paf', '$rootScope', '$scope',
     angular.element($window).bind('scroll', runScrollCheck);
 
 
-
-
-     /***
+    /***
      *
      * PROFILE IMAGE CHANGE
      *
@@ -53,14 +51,14 @@ wonderlandApp.controller('PageCtrl', ['debounce', 'paf', '$rootScope', '$scope',
     };
 
 
-    $scope.$onRootScope('profileImageUploadStart', function() {
+    $scope.$onRootScope('profileImageUploadStart', function () {
 
         $timeout(function () {
             $scope.pageFeedback.profileImageProcessing = true;
         });
 
     });
-    $scope.$onRootScope('profileImageUpdated', function(event, response, dataObject) {
+    $scope.$onRootScope('profileImageUpdated', function (event, response, dataObject) {
 
         /**
          * safe apply the feedback response
@@ -99,14 +97,21 @@ wonderlandApp.controller('PageCtrl', ['debounce', 'paf', '$rootScope', '$scope',
     });
 
 
-
     /*************************
-    HARDCODED
-    /*************************/
-    $rootScope.hardcodedFundraisingTargets = [
-        {imageUrl: '/img/sunnies.png', title: 'Raise £180 or more', info: 'Sunglasses are essential Wonderland accessories - look cool as an alpine stream!'},
-        {imageUrl: '/img/tee.png', title: 'Raise £250 or more', info: 'Also get a T-Shirt, specifically designed for Macmillan\'s Wonderland.'},
-        {imageUrl: '/img/mystery.png', title: 'Raise £400 or more', info: 'On top of the sunnies and t-shirt, be entered into the prize draw to win a ski-tastic prize.'}
-    ];
+     HARDCODED
+     /*************************/
+    $scope.hardcoded = {
+        fundraisingTargets: [
+            {imageUrl: '/img/sunnies.png', title: 'Raise £180 or more', info: 'Sunglasses are essential Wonderland accessories - look cool as an alpine stream!'},
+            {imageUrl: '/img/tee.png', title: 'Raise £250 or more', info: 'Also get a T-Shirt, specifically designed for Macmillan\'s Wonderland.'},
+            {imageUrl: '/img/mystery.png', title: 'Raise £400 or more', info: 'On top of the sunnies and t-shirt, be entered into the prize draw to win a ski-tastic prize.'}
+            ],
+        donationSuggestions: [
+            { amount: 10, label: 'Cheesy tunes' },
+            { amount: 15, label: 'Deck the halls' },
+            { amount: 20, label: 'Sauerkraut sizzle' },
+            { amount: 25, label: 'Snowball bash' }
+        ]
+    };
 
 }]);

@@ -35,17 +35,16 @@ wonderlandApp.run(['$rootScope', '$ocModal', '$window', function ($rootScope, $o
 
     $rootScope.currentPageUrl = $window.location.href;
 
-    $rootScope.openPageModal = function (partial, modalId, initVars) {
+    $rootScope.openPageModal = function (partial, modalId, initVars, controller) {
 
         if (!partial) {
             return;
         }
 
-        console.log('openPageModal', partial);
-
         var modal = {
             template: registeredTemplates[partial],
-            init: initVars
+            init: initVars,
+            controller: controller
         };
 
         if (modalId) {

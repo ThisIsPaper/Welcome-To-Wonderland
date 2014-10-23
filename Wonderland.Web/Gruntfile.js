@@ -33,7 +33,7 @@ module.exports = function (grunt) {
                                          '<%= pkg.jsPath %>vendor/angular.ie7.js',
 //                                         '<%= pkg.jsPath %>vendor/angular.1_1_5.js',
                                          '<%= pkg.jsPath %>bower_components/imagesloaded/imagesloaded.pkgd.js',
-                                         '<%= pkg.jsPath %>bower_components/ocModal/dist/ocModal.js',
+//                                         '<%= pkg.jsPath %>bower_components/ocModal/dist/ocModal.js',
                                          '<%= pkg.jsPath %>vendor/ocModal.rawson_edit.js',
                                          '<%= pkg.jsPath %>bower_components/moment/moment.js',
                                          '<%= pkg.jsPath %>bower_components/pikaday/pikaday.js',
@@ -42,11 +42,11 @@ module.exports = function (grunt) {
                                          '<%= pkg.jsPath %>app/app.js',
 
                                          '<%= pkg.jsPath %>app/controllers/faqsCtrl.js',
+                                         '<%= pkg.jsPath %>app/controllers/fundraisingTargetCtrl.js',
                                          '<%= pkg.jsPath %>app/controllers/pageCtrl.js',
                                          '<%= pkg.jsPath %>app/controllers/partyCtrl.js',
                                          '<%= pkg.jsPath %>app/controllers/partyDetailsFormCtrl.js',
                                          '<%= pkg.jsPath %>app/controllers/profileCtrl.js',
-                                         '<%= pkg.jsPath %>app/controllers/suggestedDonationFormCtrl.js',
                                          '<%= pkg.jsPath %>app/controllers/wallCtrl.js',
 
                                          '<%= pkg.jsPath %>app/directives/mAddressFinder.js',

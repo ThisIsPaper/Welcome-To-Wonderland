@@ -2,9 +2,10 @@
 
 <div ng-init="suggestedDonationDataInit(@Html.Raw(Json.Encode(Model)))"></div>
 
-<script type="text/ng-template" id="partials/suggestedDonationForm.html">
 
-    <div class="form-holder wide clearfix" ng-controller="SuggestedDonationFormCtrl">
+<script type="text/template" m-template-creator="suggestedDonationPartial">
+
+    <div class="form-holder wide clearfix">
 
         <h4>Suggest a ticket price</h4>
         <p class="body-medium margin-bottom-medium">
@@ -19,7 +20,7 @@
 
             <div class="container margin-bottom-medium">
 
-                <div class="pos-relative grid-3 grid-tablet-6 grid-mobile-12 pad-0" ng-repeat="donation in hardcodedDonationSuggestions">
+                <div class="pos-relative grid-3 grid-tablet-6 grid-mobile-12 pad-0" ng-repeat="donation in hardcoded.donationSuggestions">
                     <label >
 
                         <div class="ticket clickable" ng-class="{'selected': suggestedDonationData.SuggestedDonation==donation.amount}" ng-click="suggestedDonationData.SuggestedDonation=donation.amount">

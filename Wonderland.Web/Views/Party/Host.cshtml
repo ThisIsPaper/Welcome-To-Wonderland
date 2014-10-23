@@ -16,12 +16,12 @@
                 <p class="margin-bottom-large">These 3 simple steps will get your party set up and ready to raise funds for Macmillan.</p>
 
                 <div class="grid-4 grid-tablet-12 margin-bottom-medium pad-0"
-                     ng-click="openPageModal(fundraisingTargetData.FundraisingTarget > 0 ? null : 'partials/fundraisingTargetForm.html', 'suggestedDonationModal', {'fundraisingTargetData': fundraisingTargetDataForForm, 'feedback': fundraisingTargetDataFeedback})">
+                     ng-click="openPageModal(fundraisingTargetData.FundraisingTarget > 0 ? null : 'fundraisingTargetPartial', 'suggestedDonationModal', {'fundraisingTargetData': fundraisingTargetDataForForm, 'hardcodedFundraisingTargets': hardcoded.fundraisingTargets, 'feedback': fundraisingTargetDataFeedback}, 'FundraisingTargetCtrl')">
                     <div class="btn-primary" ng-class="{'disabled': fundraisingTargetData.FundraisingTarget>0}" m-radius-picker="small">1. Fundariasing target <span class="icon-icon_edit_circle margin-left-small"></span></div>
                 </div>
 
                 <div class="grid-4 grid-tablet-12 margin-bottom-medium pad-tablet-0"
-                     ng-click="openPageModal(suggestedDonationData.SuggestedDonation > 0 ? null : 'partials/suggestedDonationForm.html', 'suggestedDonationModal', {'suggestedDonationData': suggestedDonationDataForForm, 'feedback': suggestedDonationDataFeedback})">
+                     ng-click="openPageModal(suggestedDonationData.SuggestedDonation > 0 ? null : 'suggestedDonationPartial', 'suggestedDonationModal', 'PartyCtrl', {'suggestedDonationData': suggestedDonationDataForForm, 'hardcoded': hardcoded, 'feedback': suggestedDonationDataFeedback})">
                     <div class="btn-primary" ng-class="{'disabled': suggestedDonationData.SuggestedDonation>0}" m-radius-picker="small">2. Ticket price <span class="icon-icon_edit_circle margin-left-small"></span></div>
                 </div>
 
@@ -53,7 +53,7 @@
 
                         <div class="boxx-twerk"></div>
 
-                        <div class="edit-trigger" ng-click="openPageModal('partials/partyImageForm.html', 'partyImageModal', {'partyImageData': partyImageDataForForm, 'partyImageDefaultData': partyImageDefaultData, 'customImage': partyCustomImage, 'feedback': partyImageDataFeedback})"><span class="edit-label">Edit</span><span class="icon-icon_edit"></span></div>
+                        <div class="edit-trigger" ng-click="openPageModal('partyImagePartial', 'partyImageModal', {'partyImageData': partyImageDataForForm, 'partyImageDefaultData': partyImageDefaultData, 'customImage': partyCustomImage, 'feedback': partyImageDataFeedback})"><span class="edit-label">Edit</span><span class="icon-icon_edit"></span></div>
 
                     </div>
 
@@ -92,7 +92,7 @@
                 <div class="boxx" m-radius-picker="medium large">
                     <h1 class="pad-right-3 pad-left-3">Join the Apr&egrave;s-Ski party</h1>
                     <pre class="body-medium font-futura" ng-bind-html="partyCopyData.CopyHtmlSafe">@this.Model.Copy</pre>
-                    <div class="edit-trigger" ng-click="openPageModal('testpartial', 'partyCopyModal', {'partyCopyData': partyCopyDataForForm, 'feedback': partyCopyDataFeedback})"><span class="edit-label">Edit</span><span class="icon-icon_edit"></span></div>
+                    <div class="edit-trigger" ng-click="openPageModal('partyCopyPartial', 'partyCopyModal', {'partyCopyData': partyCopyDataForForm, 'feedback': partyCopyDataFeedback})"><span class="edit-label">Edit</span><span class="icon-icon_edit"></span></div>
                 </div>
             </div>
 
@@ -100,14 +100,11 @@
 
         <div class="wgrid-side wgrid-no-bottom-margin parent">
 
-
-
-
             <div class="wgrid-full parent">
                 <div class="boxx" m-radius-picker ng-init="amountRaised=@Model.PartyHost.AmountRaised">
                     <h4 class="top margin-right-3">Set your fundraising target</h4>
                     <div m-totaliser m-raised="amountRaised" m-total="{{ fundraisingTargetData.FundraisingTarget }}"></div>
-                    <div class="edit-trigger" ng-click="openPageModal('partials/fundraisingTargetForm.html', 'suggestedDonationModal', {'fundraisingTargetData': fundraisingTargetDataForForm, 'feedback': fundraisingTargetDataFeedback})"><span class="edit-label">Edit</span><span class="icon-icon_edit"></span></div>
+                    <div class="edit-trigger" ng-click="openPageModal('fundraisingTargetPartial', 'suggestedDonationModal', {'fundraisingTargetData': fundraisingTargetDataForForm, 'hardcodedFundraisingTargets': hardcoded.fundraisingTargets, 'feedback': fundraisingTargetDataFeedback}, 'FundraisingTargetCtrl')"><span class="edit-label">Edit</span><span class="icon-icon_edit"></span></div>
 
                 </div>
             </div>
@@ -125,7 +122,7 @@
                         </div>
                     </div>
 
-                    <div class="edit-trigger" ng-click="openPageModal('partials/suggestedDonationForm.html', 'suggestedDonationModal', {'suggestedDonationData': suggestedDonationDataForForm, 'feedback': suggestedDonationDataFeedback})"><span class="edit-label">Edit</span><span class="icon-icon_edit"></span></div>
+                    <div class="edit-trigger" ng-click="openPageModal('suggestedDonationPartial', 'suggestedDonationModal', {'suggestedDonationData': suggestedDonationDataForForm, 'hardcoded': hardcoded, 'feedback': suggestedDonationDataFeedback})"><span class="edit-label">Edit</span><span class="icon-icon_edit"></span></div>
                 </div>
             </div>
 

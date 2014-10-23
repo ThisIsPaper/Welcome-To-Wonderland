@@ -118,13 +118,13 @@
 				}
 
 				var off = modal.$scope.$on('$includeContentLoaded', function(event) { // on view load
-					if(modal.params.init && !modal.params.isolate) {
-						angular.extend(event.targetScope, modal.params.init, true);
-					}
-					if(typeof modal.params.controller === 'string') {
-						$controller(modal.params.controller, {$scope: event.targetScope, $init: modal.params.init, $ocModalParams: modal.params}); // inject controller
-					}
-					off();
+                    if(modal.params.init && !modal.params.isolate) {
+                        angular.extend(event.targetScope, modal.params.init, true);
+                    }
+                    if(typeof modal.params.controller === 'string') {
+                        $controller(modal.params.controller, {$scope: event.targetScope, $init: modal.params.init, $ocModalParams: modal.params}); // inject controller
+                    }
+                    off();
 				});
 
 				if(modal.params.template) {
@@ -204,8 +204,8 @@
 			template:
 			'<div class="modal-dialog">' +
 				'<div class="modal-backdrop"></div>' +
-				'<div class="modal-content {{customClass}}" ng-class="{opened: modalShow}" ng-if="modalTemplate"></div>' +
-				'<div class="modal-content {{customClass}}" ng-class="{opened: modalShow}" ng-include="modalUrl"></div>' +
+				'<div class="modal-content {{ customClass }}" ng-class="{opened: modalShow}" ng-if="modalTemplate"></div>' +
+				'<div class="modal-content {{ customClass }}" ng-class="{opened: modalShow}" ng-include="modalUrl"></div>' +
 			'</div>',
 
 			link: function link($scope, $element, $attrs) {
@@ -233,8 +233,8 @@
 						if(!$templateWrapper) {
 							$templateWrapper = angular.element($element.children()[1]);
 						}
-						$templateWrapper.append($compile(newVal)($scope));
-						$scope.$emit('$includeContentLoaded');
+                        $templateWrapper.append($compile(newVal)($scope));
+                        $scope.$emit('$includeContentLoaded');
 					}
 				});
 			}
