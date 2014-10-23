@@ -4,10 +4,9 @@
 
  */
 
-wonderlandApp.controller('PartyDetailsFormCtrl', ['$scope', function ($scope) {
+wonderlandApp.controller('PartyDetailsFormCtrl', ['$scope', '$init', function ($scope, $init) {
 
-    var hasSetInitialDate = false,
-        minute = [0, 30];
+    var minute = [0, 30];
 
     $scope.tempModel = {
         partyDate: null,
@@ -15,7 +14,7 @@ wonderlandApp.controller('PartyDetailsFormCtrl', ['$scope', function ($scope) {
         times: []
     };
 
-    /**
+    /*********************
      *
      * CREATE OPTIONS FOR TIME
      */
@@ -25,23 +24,17 @@ wonderlandApp.controller('PartyDetailsFormCtrl', ['$scope', function ($scope) {
 
         $scope.tempModel.times.push(t);
     };
+
     for (var i = 0; i < 24; i++) {
         angular.forEach(minute, funcValueMinute);
     }
 
-    $scope.$watch('partyDetailsData.PartyDateTime', function (newVal, oldVal) {
+    var initialMoment = moment($init.partyDetailsData.PartyDateTime);
+    if (initialMoment.isValid()) {
+        $scope.tempModel.partyDate = initialMoment;
+        $scope.tempModel.partyTime = $scope.tempModel.times[$scope.tempModel.times.indexOf(initialMoment.format("HH:mm"))];
+    }
 
-        if (!hasSetInitialDate) {
-            hasSetInitialDate = true;
-            var mom = moment(newVal);
-            if (mom.isValid()) {
-
-                $scope.tempModel.partyDate = mom;
-                $scope.tempModel.partyTime = $scope.tempModel.times[$scope.tempModel.times.indexOf(mom.format("HH:mm"))];
-            }
-        }
-
-    });
 
     $scope.$watch('tempModel.partyDate + tempModel.partyTime', function () {
 

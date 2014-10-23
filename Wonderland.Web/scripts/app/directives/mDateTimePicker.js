@@ -6,14 +6,12 @@ wonderlandApp.directive('mDateTimePicker', ['$timeout', function ($timeout) {
             'theDate': '=mDateTimePicker'
         },
 
-        link: function (scope, element) {
+        link: function (scope, element, attrs) {
 
             var hasSetInitialValue = false,
                 pikaday = null;
 
-
             scope.$watch('theDate', function (newVal, oldVal) {
-
                 if (hasSetInitialValue) {
                     return;
                 }
@@ -30,7 +28,10 @@ wonderlandApp.directive('mDateTimePicker', ['$timeout', function ($timeout) {
                     createPicker(initialDate);
                 }
 
-            }, true);
+            });
+
+
+
 
 
 
@@ -46,11 +47,7 @@ wonderlandApp.directive('mDateTimePicker', ['$timeout', function ($timeout) {
                     yearRange: [2014,2015],
 
                     onSelect: function (date) {
-
-                        $timeout(function () {
-                            scope.theDate = moment(date);
-                        });
-
+                        scope.theDate = moment(date);
                     }
                 };
 

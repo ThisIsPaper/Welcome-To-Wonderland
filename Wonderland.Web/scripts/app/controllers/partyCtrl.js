@@ -51,6 +51,7 @@ wonderlandApp.controller('PartyCtrl', ['$filter', '$ocModal', '$rootScope', '$sc
 
         // convert date to javascript Date
         if (partyDetailsData && partyDetailsData.PartyDateTime) {
+//            var forceFormattedDate = new Date(parseInt(partyDetailsData.PartyDateTime.replace(/\/Date\((-?\d+)\)\//gi, "$1") ));
             partyDetailsData.PartyDateTime = moment(partyDetailsData.PartyDateTime).format('YYYY/MM/DD HH:mm:SS');
         }
 

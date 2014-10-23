@@ -2,8 +2,8 @@
 
 <div ng-init="partyDetailsDataInit(@Html.Raw(Json.Encode(Model)))"></div>
 
-<script type="text/ng-template" id="partials/partyDetailsForm.html">
-    <div class="form-holder clearfix" ng-controller="PartyDetailsFormCtrl">
+<script type="text/template" m-template-creator="partyDetailsPartial">
+    <div class="form-holder clearfix">
         @using (Html.BeginUmbracoForm<PartySurfaceController>("HandlePartyDetailsForm", FormMethod.Post, new { m_serialized="", m_post_on_submit="partyDetailsData", m_on_success_event="partyDetailsDataUpdated", m_on_error_event="partyDetailsDataError", ng_submit="feedback.processing=true" }))
         {
             @Html.AntiForgeryToken()
@@ -15,13 +15,16 @@
             <label for="PartyHeading">Your party heading</label>
             <input name="PartyHeading" type="text" ng-model="partyDetailsData.PartyHeading" m-radius-picker="small" ng-readonly="feedback.processing" />
 
+
+            <input type="text" name="PartyDateTime" ng-value="partyDetailsData.PartyDateTime" />
+
             <div class="container">
                 <div class="grid-8 grid-tablet-12 parent">
                     <div class="date-details-shifter">
                         <label for="PartyDate">Date</label>
                         <div class="pos-relative margin-bottom-small">
                             <span class="form-field-ico icon-icon_calendar"></span>
-                            <input class="input-with-icon" name="PartyDate" type="text" m-date-time-picker="tempModel.partyDate" m-radius-picker="small" readonly />
+                            <input class="input-with-icon" name="PartyDate" type="text" m-date-time-picker="tempModel.partyDate" m-radius-picker="small" readonly ng-disabled="feedback.processing" />
                         </div>
                     </div>
                 </div>
@@ -30,7 +33,7 @@
                     <label for="PartyTime">Time</label>
                         <div class="pos-relative margin-bottom-small">
                             <span class="form-field-ico icon-icon_clock"></span>
-                            <select class="input-with-icon" name="PartyTime" ng-model="tempModel.partyTime" ng-options="x for x in tempModel.times" m-radius-picker="small"></select>
+                            <select class="input-with-icon" name="PartyTime" ng-model="tempModel.partyTime" ng-options="x for x in tempModel.times" m-radius-picker="small" ng-disabled="feedback.processing"></select>
                         </div>
                 </div>
             </div>

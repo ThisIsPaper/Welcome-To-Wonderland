@@ -26,7 +26,7 @@
                 </div>
 
                 <div class="grid-4 grid-tablet-12 margin-bottom-medium pad-0"
-                     ng-click="openPageModal(partyDetailsData.PartyHeading ? null : 'partials/partyDetailsForm.html', 'partyDetailsModal', {'partyDetailsData': partyDetailsDataForForm, 'feedback': partyDetailsDataFeedback})">
+                     ng-click="openPageModal(partyDetailsData.PartyHeading ? null : 'partyDetailsPartial', 'partyDetailsModal', {'partyDetailsData': partyDetailsDataForForm, 'feedback': partyDetailsDataFeedback}, 'PartyDetailsFormCtrl')">
                     <div class="btn-primary" ng-class="{'disabled': partyDetailsData.PartyHeading}" m-radius-picker="small">3. Party details <span class="icon-icon_edit_circle margin-left-small"></span></div>
                 </div>
 
@@ -70,7 +70,7 @@
                                 <span ng-bind="partyDetailsFormattedAddress"></span>
                             </div>
                         </div>
-                        <div class="edit-trigger" ng-click="openPageModal('partials/partyDetailsForm.html', 'partyDetailsModal', {'partyDetailsData': partyDetailsDataForForm, 'feedback': partyDetailsDataFeedback})"><span class="edit-label">Edit</span><span class="icon-icon_edit"></span></div>
+                        <div class="edit-trigger" ng-click="openPageModal('partyDetailsPartial', 'partyDetailsModal', {'partyDetailsData': partyDetailsDataForForm, 'feedback': partyDetailsDataFeedback}, 'PartyDetailsFormCtrl')"><span class="edit-label">Edit</span><span class="icon-icon_edit"></span></div>
                     </div>
                     <div class="wgrid-full pad-large">
                         <div class="boxx internal highlight" m-radius-picker="small">
