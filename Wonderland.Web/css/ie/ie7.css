@@ -81,3 +81,12 @@ pre {
 .edit-trigger .icon-icon_edit {
 	display: none;
 }
+
+.nav-logo {
+	width: 109px;
+	height: 180px;
+}
+
+.crest {
+	cursor: pointer;
+}
