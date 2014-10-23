@@ -82,36 +82,26 @@ namespace Wonderland.Logic.Controllers.Surface
                 // get any existing party image
                 IPartyImage partyImage = partyHost.PartyImage;
 
+                string url = string.Empty;
+
                 if (partyImage == null || partyImage is Image) // not set, or a cms default
                 {
                     // create new custom party image
                     partyImage = PartyImages.CreatePartyImage(customPartyImageForm.CustomPartyImage);
+
+                    // get new url
+                    url = partyImage.Url;
+
+                    // ensure reference
+                    partyHost.PartyImage = partyImage;
                 }
                 else // if (partyImage is PartyImage) // it's already a custom image so update the file only within the same media item
                 {
                     // update existing media item file reference 
-                    ((PartyImage)partyImage).Image = customPartyImageForm.CustomPartyImage;                    
+                    url = ((PartyImage)partyImage).UploadImage(customPartyImageForm.CustomPartyImage);                    
                 }
 
-                // ensure reference
-                partyHost.PartyImage = partyImage;
-
-
-
-
-
-
-                //int id = PartyImages.CreatePartyImage(customPartyImageForm.CustomPartyImage);
-
-                //PartyHost partyHost = (PartyHost)this.Members.GetCurrentPartier();
-
-                //IPartyImage partyImage = (IPartyImage)this.Umbraco.TypedMedia(id);
-
-                //// set the newly uploaded file to be the selected one
-                //partyHost.PartyImage = partyImage;
-
-                formResponse.Message = JsonConvert.SerializeObject(partyHost.PartyImage); //TODO:S3URL
-                //formResponse.Message = JsonConvert.SerializeObject(new { id = id, url = this.Umbraco.TypedMedia(id).GetProperty("umbracoFile").Value.ToString() }); //TODO:S3URL
+                formResponse.Message = JsonConvert.SerializeObject(new { id = partyImage.Id, url = url }); //TODO:S3URL
 
                 formResponse.Success = true;
             }
@@ -161,42 +151,58 @@ namespace Wonderland.Logic.Controllers.Surface
             return this.PartialView("Party/Forms/ProfileImageForm", new ProfileImageForm());
         }
 
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        [MemberAuthorize(AllowType = PartyHost.Alias)]
-        public JsonResult HandleProfileImageForm(ProfileImageForm profileImageForm)
-        {
-            FormResponse formResponse = new FormResponse();
+        //// JS never calls this - it uses the ProfileSurfaceController instead
+        //[HttpPost]
+        //[ValidateAntiForgeryToken]
+        //[MemberAuthorize(AllowType = PartyHost.Alias)]
+        //public JsonResult HandleProfileImageForm(ProfileImageForm profileImageForm)
+        //{
+        //    FormResponse formResponse = new FormResponse();
 
-            if (this.ModelState.IsValid)
-            {
-                //update PartyHost property
-                PartyHost partyHost = (PartyHost)this.Members.GetCurrentMember();
+        //    if (this.ModelState.IsValid)
+        //    {
+        //        //update PartyHost property
+        //        PartyHost partyHost = (PartyHost)this.Members.GetCurrentMember();
 
-                if (profileImageForm.ProfileImage != null && profileImageForm.ProfileImage.ContentLength > 0 && profileImageForm.ProfileImage.InputStream.IsImage())
-                {
-                    // create new profile image in the cms
-                    int id = ProfileImages.CreateProfileImage(profileImageForm.ProfileImage);
+        //        if (profileImageForm.ProfileImage != null && profileImageForm.ProfileImage.ContentLength > 0 && profileImageForm.ProfileImage.InputStream.IsImage())
+        //        {
+        //            ProfileImage profileImage = partyHost.ProfileImage;
 
-                    partyHost.ProfileImage = (ProfileImage)this.Umbraco.TypedMedia(id);
+        //            string url = string.Empty;
 
-                    formResponse.Message = JsonConvert.SerializeObject(this.Umbraco.TypedMedia(id)); //TODO:S3URL
-                    //formResponse.Message = JsonConvert.SerializeObject(new { id = id, url = this.Umbraco.TypedMedia(id).GetProperty("umbracoFile").Value.ToString() }); //TODO:S3URL
-                }
-                else
-                {
-                    partyHost.ProfileImage = null;
-                }
+        //            if (profileImage == null)
+        //            {
+        //                // create new profile image
+        //                profileImage = ProfileImages.CreateProfileImage(profileImageForm.ProfileImage);
 
-                formResponse.Success = true;
-            }
-            else
-            {
-                formResponse.Errors = this.ModelState.GetErrors();
-            }
+        //                // get the new url
+        //                url = profileImage.Url;
 
-            return Json(formResponse, "text/plain");
-        }
+        //                // update reference on partyhost to point to media item
+        //                partyHost.ProfileImage = profileImage;
+        //            }
+        //            else
+        //            {
+        //                // update existing profile image
+        //                url = profileImage.UploadImage(profileImageForm.ProfileImage);
+        //            }
+
+        //            formResponse.Message = JsonConvert.SerializeObject(new { id = profileImage.Id, url = url } ); //TODO:S3URL
+        //        }
+        //        else
+        //        {
+        //            partyHost.ProfileImage = null;
+        //        }
+
+        //        formResponse.Success = true;
+        //    }
+        //    else
+        //    {
+        //        formResponse.Errors = this.ModelState.GetErrors();
+        //    }
+
+        //    return Json(formResponse, "text/plain");
+        //}
 
         [ChildActionOnly]
         [MemberAuthorize(AllowType = PartyHost.Alias)]

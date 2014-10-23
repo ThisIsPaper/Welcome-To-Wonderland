@@ -18,6 +18,9 @@ namespace Wonderland.Logic.Models.Members
         // Properties
         public const string ProfileImageAlias = "profileImage";
 
+        // local cache
+        private ProfileImage profileImage = null;
+
         public Partier(IPublishedContent content)
             : base(content)
         {
@@ -27,6 +30,11 @@ namespace Wonderland.Logic.Models.Members
         {
             get
             {
+                if (this.profileImage != null)
+                {
+                    return this.profileImage;
+                }
+
                 int? imageId = (int?)this.GetPropertyValue(Partier.ProfileImageAlias);
 
                 if (imageId.HasValue && imageId > 0)
@@ -38,6 +46,8 @@ namespace Wonderland.Logic.Models.Members
             }
             set
             {
+                this.profileImage = value;
+
                 if (value == null)
                 {
                     // delete any associated profile image from media
@@ -52,12 +62,8 @@ namespace Wonderland.Logic.Models.Members
                 }
                 else
                 {
-                    // if changing
-                    if (this.ProfileImage == null || this.ProfileImage.Id != value.Id)
-                    {
-                        // update reference
-                        this.SetPropertyValue(Partier.ProfileImageAlias, value.Id);
-                    }
+                    // update reference
+                    this.SetPropertyValue(Partier.ProfileImageAlias, value.Id);
                 }
             }
         }
