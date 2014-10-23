@@ -443,6 +443,8 @@
     <Content Include="Views\MacroPartials\AST S3 Media Example.cshtml" />
     <Content Include="Views\Partials\PartyDetailsSide.cshtml" />
     <Content Include="Views\Partials\Share.cshtml" />
+    <Content Include="Views\Partials\PromotionalTiles.cshtml" />
+    <Content Include="Views\Partials\FAQs.cshtml" />
     <None Include="Views\RegisterHost\Forms\RegisterHostForm.cshtml" />
     <Content Include="Wonderland.Web.wpp.targets" />
     <Content Include="Wonderland.Web.targets" />

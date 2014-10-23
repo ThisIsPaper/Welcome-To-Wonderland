@@ -55,21 +55,7 @@
 
         <section class="wgrid-full parent gutter">
 
-            @foreach (PromotionTile promotionTile in Model.PromotionTiles)
-            {
-
-            <div class="grid-4 grid-tablet-6 grid-mobile-12" m-rotate m-rotate-hover>
-                <div class="home-tile" m-height-match-width>
-                    <a class="idea-link" href="@promotionTile.Link" target="{{ isExternalLink('@promotionTile.Link') ? '_blank' : '_self' }}">
-                        <div class="home-tile-image" ng-style="{'background-image': 'url(@promotionTile.Image.GetResponsiveCropUrl("Square"))'}" ></div>
-                        <img class="home-tile-label" src="@promotionTile.OverlayImage.Url" alt="@promotionTile.AltText" />
-                        <span class="label">Goto resource</span>
-                    </a>
-                </div>
-
-            </div>
-
-            }
+            @Html.CachedPartial("PromotionalTiles", Model.PromotionTiles, SitePage.CacheDuration)
 
         </section>
 
@@ -83,7 +69,7 @@
 
         <div class="grid-6 grid-tablet-12 pull-6 pull-tablet-0 pad-0">
 
-            @Html.Partial("Share")
+            @Html.CachedPartial("Share", null, SitePage.CacheDuration)
 
         </div>
 

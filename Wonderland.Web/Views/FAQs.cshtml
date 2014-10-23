@@ -17,24 +17,7 @@
 
                 <hr/>
 
-                @{
-                    int i=0;
-                    foreach (QuestionAndAnswer questionAndAnswer in Model.QuestionsAndAnswers)
-                    {
-                        i++;
-                        <div class="pos-relative clickable" ng-click="toggleFaq('faqOp' + @i)">
-                            <div class="margin-right-5">
-                                <div class="body-emphasize margin-bottom-small">@questionAndAnswer.Question</div>
-                                <div class="body-medium" ng-show="{{ 'faqOp' + @i }}">@questionAndAnswer.Answer</div>
-                            </div>
-                            <div class="pos-absolute pos-right-0 pos-top-0">
-                                <span class="icon-icon_plus" ng-hide="{{ 'faqOp' + @i }}"></span>
-                                <span class="icon-icon_minus" ng-show="{{ 'faqOp' + @i }}"></span>
-                            </div>
-                            <hr ng-show="{{ @i < @Model.QuestionsAndAnswers.Count() }}"/>
-                        </div>
-                    }
-                }
+                @Html.CachedPartial("FAQs", Model.QuestionsAndAnswers, SitePage.CacheDuration);
 
             </div>
 
