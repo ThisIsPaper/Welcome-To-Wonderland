@@ -90,3 +90,21 @@ pre {
 .crest {
 	cursor: pointer;
 }
+
+.site-header.compress .nav-logo {
+	height: 70px;
+}
+
+.ie7AFix {
+	hasLayout: false;
+	zoom: 1;
+	display: inline-block;
+	z-index: 2;
+	position: absolute;
+}
+
+.crest, .banner {
+    display: block;
+    z-index: -1;
+    line-height: 0;
+}
