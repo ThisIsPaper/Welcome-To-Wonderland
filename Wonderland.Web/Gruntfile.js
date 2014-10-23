@@ -59,6 +59,7 @@ module.exports = function (grunt) {
                                          '<%= pkg.jsPath %>app/directives/mImageLoadedNotifier.js',
                                          '<%= pkg.jsPath %>app/directives/mImgSvgReplacer.js',
                                          '<%= pkg.jsPath %>app/directives/mIosVersion.js',
+                                         '<%= pkg.jsPath %>app/directives/mLinkTarget.js',
                                          '<%= pkg.jsPath %>app/directives/mPostOnSubmit.js',
                                          '<%= pkg.jsPath %>app/directives/mProfileImage.js',
                                          '<%= pkg.jsPath %>app/directives/mRadiusPicker.js',

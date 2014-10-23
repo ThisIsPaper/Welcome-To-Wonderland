@@ -13,7 +13,8 @@
                                                         link = (x is FashionTile ? ((FashionTile)x).PinterestBoardUrl : (x is DecorationTile ? ((DecorationTile)x).PinterestBoradUrl : x.Url)),
                                                         spotify = x is PlaylistTile,
                                                         pinterest = x is FashionTile || x is DecorationTile,
-                                                        wide = x.TileSize == PartyIdeaTileSize.Wide
+                                                        wide = x.TileSize == PartyIdeaTileSize.Wide,
+                                                        target = (x is FashionTile ? "_blank" : (x is DecorationTile ? "_blank" : "_self"))
                                                     }
                                                )
                                         )">
@@ -59,8 +60,8 @@
 
                     <div class="idea" m-rotate m-rotate-hover m-image-loaded-broadcaster>
 
-                        <!--<a class="hide-span" href="{{ item.link }}" target="{{ item.pinterest ? '_blank' : '_self' }}">-->
-                        <a class="hide-span" href="#" target="{{ item.pinterest ? '_blank' : '_self' }}">
+                        <a m-link-target="item" class="hide-span">
+                        <!--<a class="hide-span" href="#" target="{{ item.pinterest ? '_blank' : '_self' }}">-->
                             <img class="idea-polaroid" ng-src="{{ item.imageUrl|mQuality:50 }}" width="100%" m-image-loaded-notifier />
                             <div class="idea-details" ng-class="{'over-the-top': item.spotify, 'wide': item.wide}" m-vertical-align="{{ item.spotify }}" m-align-parent="idea">
                                 <div class="body-small margin-small" ng-bind="item.tileType"></div>
