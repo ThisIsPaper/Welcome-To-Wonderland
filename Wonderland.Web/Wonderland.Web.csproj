@@ -454,8 +454,6 @@
     <Content Include="web.config">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="Views\Partials\PartyDetailsSide.cshtml" />
-    <Content Include="Views\Partials\Share.cshtml" />
     <Content Include="config\ClientDependency.config" />
     <Content Include="Views\SitePage.cshtml" />
     <Content Include="Views\Partials\Footer.cshtml" />
