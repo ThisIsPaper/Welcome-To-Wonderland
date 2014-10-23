@@ -8,6 +8,7 @@ namespace Wonderland.Logic.Extensions
     using System.Collections.Generic;
     using System.Linq;
     using Umbraco.Core;
+    using Umbraco.Core.Logging;
     using Umbraco.Core.Models;
     using Umbraco.Web.Security;
     using UmbracoExamine;
@@ -72,7 +73,7 @@ namespace Wonderland.Logic.Extensions
             BaseSearchProvider searchProvider = ExamineManager.Instance.SearchProviderCollection["InternalMemberSearcher"];
             ISearchCriteria searchCriteria = searchProvider.CreateSearchCriteria(IndexTypes.Member).Field("partyGuid", partyGuid.ToString()).And().NodeTypeAlias(PartyHost.Alias.ToLower()).Compile();
             ISearchResults searchResults = searchProvider.Search(searchCriteria);
-
+            
             return searchResults.Select(x => (PartyHost)members.GetById(x.Id)).SingleOrDefault();
 
             //// WARNING: hits db            
@@ -177,8 +178,16 @@ namespace Wonderland.Logic.Extensions
                                                                                         "))
                     {
                         partyHost = members.GetPartyHost((Guid)mostGuest.PartyGuid);
-                        partyHost.TotalGuests = mostGuest.Partiers;
-                        partyHosts.Add(partyHost);
+
+                        if (partyHost != null)
+                        {
+                            partyHost.TotalGuests = mostGuest.Partiers;
+                            partyHosts.Add(partyHost);
+                        }
+                        else
+                        {
+                            LogHelper.Error(typeof(MembershipHelperExtensions), "GetTopPartyHosts", new Exception("Host with party guid: " + ((Guid)mostGuest.PartyGuid).ToString() + " not found in Examine"));
+                        }
                     }
 
                     break;
@@ -196,8 +205,16 @@ namespace Wonderland.Logic.Extensions
                                                                                             "))
                     {
                         partyHost = members.GetPartyHost((Guid)topFundraiser.PartyGuid);
-                        partyHost.AmountRaised = topFundraiser.Amount;
-                        partyHosts.Add(partyHost);
+
+                        if (partyHost != null)
+                        {
+                            partyHost.AmountRaised = topFundraiser.Amount;
+                            partyHosts.Add(partyHost);
+                        }
+                        else
+                        {
+                            LogHelper.Error(typeof(MembershipHelperExtensions), "GetTopPartyHosts", new Exception("Host with party guid: " + ((Guid)topFundraiser.PartyGuid).ToString() + " not found in Examine"));
+                        }
                     }                    
 
                     break;
