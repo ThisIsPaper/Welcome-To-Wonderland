@@ -1,0 +1,11 @@
+@inherits Umbraco.Web.Macros.PartialViewMacroPage
+@{
+    @Html.Raw(AST.S3.Helper.ContentHelper.ParseContent(Model.Content.GetPropertyValue<string>("bodyText")))
+
+    var image = AST.S3.Helper.MediaHelper.ParseMedia(Model.Content.GetPropertyValue<string>("mediaProperty"), Umbraco);
+
+    if (image != null)
+    {
+        <img src="@image.Url" />
+    }
+}
