@@ -66,6 +66,10 @@ input[type='password'], input[type="text"].input-with-icon, select.input-with-ic
 	width: 30%;
 }
 
+.grid-ie7-4 {
+	width: 28%;
+}
+
 .grid-5 {
 	width: 300px;
 }
@@ -107,4 +111,8 @@ pre {
     display: block;
     z-index: -1;
     line-height: 0;
+}
+
+.no-flexbox .modal-dialog {
+	left: 10px!important;
 }

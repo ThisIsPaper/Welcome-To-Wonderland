@@ -98,6 +98,8 @@ wonderlandApp.controller('PageCtrl', ['debounce', 'paf', '$rootScope', '$scope',
         $scope.$broadcast('requestVerificationToken', token);
     });
 
+
+
     /*************************
     HARDCODED
     /*************************/

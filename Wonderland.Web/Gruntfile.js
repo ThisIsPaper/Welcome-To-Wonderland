@@ -31,8 +31,10 @@ module.exports = function (grunt) {
                                          '<%= pkg.jsPath %>vendor/jquery-1.10.2.js',
 //                                         '<%= pkg.jsPath %>bower_components/angular/angular.js',
                                          '<%= pkg.jsPath %>vendor/angular.ie7.js',
+//                                         '<%= pkg.jsPath %>vendor/angular.1_1_5.js',
                                          '<%= pkg.jsPath %>bower_components/imagesloaded/imagesloaded.pkgd.js',
                                          '<%= pkg.jsPath %>bower_components/ocModal/dist/ocModal.js',
+                                         '<%= pkg.jsPath %>vendor/ocModal.rawson_edit.js',
                                          '<%= pkg.jsPath %>bower_components/moment/moment.js',
                                          '<%= pkg.jsPath %>bower_components/pikaday/pikaday.js',
                                          '<%= pkg.jsPath %>bower_components/angular-macgyver/lib/macgyver-core.js',
@@ -65,6 +67,7 @@ module.exports = function (grunt) {
                                          '<%= pkg.jsPath %>app/directives/mRadiusPicker.js',
                                          '<%= pkg.jsPath %>app/directives/mRotate.js',
                                          '<%= pkg.jsPath %>app/directives/mSelectOnClick.js',
+                                         '<%= pkg.jsPath %>app/directives/mTemplateCreator.js',
                                          '<%= pkg.jsPath %>app/directives/mTotaliser.js',
                                          '<%= pkg.jsPath %>app/directives/mValidnumber.js',
                                          '<%= pkg.jsPath %>app/directives/mValueMatcher.js',
@@ -104,6 +107,7 @@ module.exports = function (grunt) {
                                      '<%= pkg.jsPath %>ie8.min.js': [
                                          '<%= pkg.jsPath %>bower_components/es5-shim/es5-shim.min.js',
                                          '<%= pkg.jsPath %>bower_components/es5-shim/es5-sham.min.js'
+//                                         '<%= pkg.jsPath %>app/polyfills/array.js'
 //                                         '<%= pkg.jsPath %>bower_components/respond/dest/respond.min.js'
                                      ]
                                  }

@@ -2,8 +2,8 @@
 
 <div ng-init="partyCopyDataInit(@Html.Raw(Json.Encode(Model)))"></div>
 
-<script type="text/ng-template" id="partials/partyCopyForm.html">
-
+<!--<script type="text/ng-template" id="partials/partyCopyForm.html">-->
+<div class="dis-none" m-template-creator="testpartial">
     <div class="clearfix" ng-init="maxCharLength=600">
         @using (Html.BeginUmbracoForm<PartySurfaceController>("HandlePartyCopyForm", FormMethod.Post, new { m_serialized="", m_post_on_submit="partyCopyData", m_on_success_event="partyCopyDataUpdated", m_on_error_event="partyCopyDataErrored", ng_submit="feedback.processing=true" }))
         {
@@ -36,4 +36,5 @@
             <div class="loader pos-mobile-static float-mobile-left" ng-show="feedback.processing"></div>
         }
     </div>
-</script>
+</div>
+<!--</script>-->
