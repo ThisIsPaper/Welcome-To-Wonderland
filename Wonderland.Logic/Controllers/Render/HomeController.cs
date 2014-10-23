@@ -32,7 +32,7 @@ namespace Wonderland.Logic.Controllers.Render
                     totalAmountRaised = 0;
                 }
 
-                cache.Insert("TotalAmountRaised", totalAmountRaised); //, null, DateTime.UtcNow.AddMinutes(10), Cache.NoSlidingExpiration);
+                cache.Insert("TotalAmountRaised", totalAmountRaised, null, DateTime.UtcNow.AddMinutes(10), Cache.NoSlidingExpiration);
             }
 
             model.TotalAmountRaised = totalAmountRaised.Value;

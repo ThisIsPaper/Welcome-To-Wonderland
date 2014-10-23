@@ -58,8 +58,6 @@ namespace Wonderland.Web.Dashboards
                                  }
                             );
 
-                            this.Cache.Remove("TotalAmountRaised");
-
                             this.partyGuidTextBox.Text = string.Empty;
                             this.amountTextBox.Text = string.Empty;
                             this.resultLiteral.Text = "Added: £" + amount.ToString() + ", to Party: " + partyGuid.ToString();

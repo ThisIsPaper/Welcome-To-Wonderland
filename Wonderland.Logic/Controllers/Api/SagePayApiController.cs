@@ -7,7 +7,6 @@ namespace Wonderland.Logic.Controllers.Api
     using System.Net.Mail;
     using System.Text;
     using System.Threading.Tasks;
-    using System.Web;
     using System.Web.Configuration;
     using System.Web.Http;
     using System.Web.Security;
@@ -65,8 +64,6 @@ namespace Wonderland.Logic.Controllers.Api
                 }
 
                 this.DatabaseContext.Database.Update(donationRow);
-
-                HttpContext.Current.Cache.Remove("TotalAmountRaised");
             }
 
             // determine redirect url
