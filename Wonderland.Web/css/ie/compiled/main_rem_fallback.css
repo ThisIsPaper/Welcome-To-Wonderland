@@ -12845,28 +12845,30 @@ One-off uses
   overflow: hidden;
   background-image: url('/img/giftaid-logo.jpg?1412541557');
   background-repeat: no-repeat;
-  background-size: 160px 56px;
   background-size: 100px 35px;
   position: absolute;
   right: 0;
   top: 0;
+  zoom: 1;
+  behavior: url('/css/compiled/backgroundsize.min.htc');
 }
 
-/* line 817, ../sass/partials/_base.scss */
+/* line 819, ../sass/partials/_base.scss */
 .fsb-logo {
   width: 80px;
   height: 80px;
   overflow: hidden;
   background-image: url('/img/fsb.jpg?1412541620');
   background-repeat: no-repeat;
-  background-size: 128px 128px;
   background-size: 80px 80px;
   position: absolute;
   right: 0;
   top: 0;
+  zoom: 1;
+  behavior: url('/css/compiled/backgroundsize.min.htc');
 }
 
-/* line 831, ../sass/partials/_base.scss */
+/* line 834, ../sass/partials/_base.scss */
 .ticket-label {
   line-height: 20px;
 }

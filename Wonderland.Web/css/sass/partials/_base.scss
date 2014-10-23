@@ -801,17 +801,19 @@ One-off uses
 // donate
 
 .giftaid-logo {
-	@include rem-fallback(width, 10rem);
-	@include rem-fallback(height, 3.5rem);
+	width: 10rem;
+	height: 3.5rem;
 	overflow: hidden;
 	background-image: image-url('giftaid-logo.jpg');
 	background-repeat: no-repeat;
-	background-size: 160px 56px;
 	background-size: 10rem 3.5rem;
 
 	position: absolute;
 	right: 0;
 	top: 0;
+	zoom: 1;
+
+	behavior: stylesheet-url('backgroundsize.min.htc');
 }
 
 .fsb-logo {
@@ -820,12 +822,13 @@ One-off uses
 	overflow: hidden;
 	background-image: image-url('fsb.jpg');
 	background-repeat: no-repeat;
-	background-size: 128px 128px;
 	background-size: 8rem 8rem;
 
 	position: absolute;
 	right: 0;
 	top: 0;
+	zoom: 1;
+	behavior: stylesheet-url('backgroundsize.min.htc');
 }
 
 .ticket-label {

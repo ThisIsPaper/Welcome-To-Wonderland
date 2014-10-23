@@ -3,6 +3,10 @@ footer,header,hgroup,menu,nav,section {
     display:block;
 }
 
+.page-container {
+	min-width: 1200px;
+}
+
 /*************************************
 PIXREM based on 62.5% font size, but large padding values get effected
 because they need to be *16 not *10 that the default 62.5% inflicts
@@ -52,3 +56,4 @@ because they need to be *16 not *10 that the default 62.5% inflicts
 .party-image-container.selected .party-image-selecter {
 	border: 3px solid #007eac;
 }
+
