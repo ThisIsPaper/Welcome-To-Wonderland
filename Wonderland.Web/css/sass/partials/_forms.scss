@@ -248,11 +248,11 @@ input[type="text"][readonly] {
 }
 
 input[type='password'], input[type="text"].input-with-icon, select.input-with-icon {
-	@include rem-fallback(text-indent, 4rem);
+	text-indent: 4rem;
 }
 
 input[type="text"].currency {
-	@include rem-fallback(padding-left, 3rem);
+	padding-left: 3rem;
 }
 
 
