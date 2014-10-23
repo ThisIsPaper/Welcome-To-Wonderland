@@ -8,9 +8,12 @@ namespace Wonderland.Logic.Models
     using Umbraco.Core.Models;
     using Umbraco.Core.Models.PublishedContent;
 
-    public abstract class NonSerializablePublishedContentModel : PublishedContentModel
+    /// <summary>
+    /// prevents serialization of recursive properties & also limits serialization of unrequried properties
+    /// </summary>
+    public abstract class SerializablePublishedContentModel : PublishedContentModel
     {
-        public NonSerializablePublishedContentModel(IPublishedContent content)
+        public SerializablePublishedContentModel(IPublishedContent content)
             : base(content)
         {
         }

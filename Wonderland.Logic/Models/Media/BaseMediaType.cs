@@ -8,7 +8,7 @@ namespace Wonderland.Logic.Models.Media
     using Umbraco.Web.Security;
     using Wonderland.Logic.Models;
 
-    public abstract class BaseMediaType : NonSerializablePublishedContentModel
+    public abstract class BaseMediaType : SerializablePublishedContentModel
     {
         private UmbracoHelper umbracoHelper = null;
         private MembershipHelper membershipHelper = null;
