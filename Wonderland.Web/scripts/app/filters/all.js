@@ -186,3 +186,11 @@ wonderlandApp.filter('forceBlankString', [function () {
     };
 
 }]);
+
+wonderlandApp.filter('forceNull', [function () {
+
+    return function (str) {
+        return str || null;
+    };
+
+}]);

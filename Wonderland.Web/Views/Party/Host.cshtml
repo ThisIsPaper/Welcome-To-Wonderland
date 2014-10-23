@@ -3,7 +3,6 @@
     Layout = "~/Views/SitePage.cshtml";
 }
 
-
 <div class="page-bg">
 
     <div class="container gutter" ng-controller="PartyCtrl" ng-init="profileImageUrlInit('@Model.PartyHost.ProfileImageUrl')">
@@ -39,7 +38,7 @@
         <div class="wgrid-main wgrid-no-bottom-margin">
 
             <div class="wgrid-full parent">
-                <div class="boxx collapse" m-radius-picker="large">                    
+                <div class="boxx collapse" m-radius-picker="large">
 
                     <div class="wgrid-full wgrid-no-bottom-margin parent" ng-init="hardCodedCurrentPartyImageUrlInit('@Html.Raw(JsonConvert.SerializeObject(Model.PartyHost.PartyImage))')">
 
@@ -73,7 +72,6 @@
                         </div>
                         <div class="edit-trigger" ng-click="openPageModal('partials/partyDetailsForm.html', 'partyDetailsModal', {'partyDetailsData': partyDetailsDataForForm, 'feedback': partyDetailsDataFeedback})"><span class="edit-label">Edit</span><span class="icon-icon_edit"></span></div>
                     </div>
-
                     <div class="wgrid-full pad-large">
                         <div class="boxx internal highlight" m-radius-picker="small">
                             <div class="grid-12 text-align-center margin-bottom-small">
@@ -100,7 +98,6 @@
 
         </div>
 
-
         <div class="wgrid-side wgrid-no-bottom-margin parent">
 
 
@@ -108,16 +105,12 @@
 
             <div class="wgrid-full parent">
                 <div class="boxx" m-radius-picker ng-init="amountRaised=@Model.PartyHost.AmountRaised">
-
                     <h4 class="top margin-right-3">Set your fundraising target</h4>
-
-                    <div m-totaliser m-raised="{{ amountRaised }}" m-total="{{ fundraisingTargetData.FundraisingTarget }}"></div>
-
+                    <div m-totaliser m-raised="amountRaised" m-total="{{ fundraisingTargetData.FundraisingTarget }}"></div>
                     <div class="edit-trigger" ng-click="openPageModal('partials/fundraisingTargetForm.html', 'suggestedDonationModal', {'fundraisingTargetData': fundraisingTargetDataForForm, 'feedback': fundraisingTargetDataFeedback})"><span class="edit-label">Edit</span><span class="icon-icon_edit"></span></div>
 
                 </div>
             </div>
-
 
 
             <div class="wgrid-full parent">

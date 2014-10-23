@@ -57,3 +57,15 @@ input[type='password'], input[type="text"].input-with-icon, select.input-with-ic
 .share-group a {
 	font-size: 15px;
 }
+
+.grid-4 {
+	width: 32%;
+}
+
+.grid-5 {
+	width: 300px;
+}
+
+pre {
+	word-wrap: break-word;
+}

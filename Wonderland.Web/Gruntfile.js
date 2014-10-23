@@ -92,6 +92,13 @@ module.exports = function (grunt) {
                                      ]
                                  }
                              },
+//                             ie9: {
+//                                 files: {
+//                                     '<%= pkg.jsPath %>ie9.min.js': [
+//                                         '<%= pkg.jsPath %>vendor/IE9.js'
+//                                     ]
+//                                 }
+//                             },
                              ie8: {
                                  files: {
                                      '<%= pkg.jsPath %>ie8.min.js': [
@@ -104,6 +111,8 @@ module.exports = function (grunt) {
                              ie7: {
                                  files: {
                                      '<%= pkg.jsPath %>ie7.min.js': [
+//                                         '<%= pkg.jsPath %>vendor/IE7.js',
+//                                         '<%= pkg.jsPath %>vendor/ie7-squish.js',
 //                                         '<%= pkg.jsPath %>bower_components/JSON-js/json2.js', // not sure of the difference between these two? i'll go 3 coz it's probabbly newer
                                          '<%= pkg.jsPath %>bower_components/json3/lib/json3.min.js',
                                          '<%= pkg.jsPath %>bower_components/8960575/querySelector.polyfill.js'
