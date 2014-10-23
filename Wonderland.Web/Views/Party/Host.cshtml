@@ -214,7 +214,7 @@
                             <span class="wall-time" ng-bind="feedItem.timeFormatted"></span>
                         </div>
                         <div class="color-grey-really-dark" ng-class="{'donation-copy': feedItem.isDonation}" ng-bind="feedItem.text"></div>
-                        <img class="margin-top-small margin-bottom-small pad-small" ng-src="{{ feedItem.imageUrl }}" />
+                        <img class="margin-top-small margin-bottom-small pad-small" ng-src="{{ feedItem.imageUrl }}" ng-show="feedItem.imageUrl" />
                     </div>
                     <div ng-hide="feedItem.isDonation">
                         <div class="warning wall-remove clickable"ng-hide="wall.feedback.removeProcessingId==feedItem.id" ng-click="deleteFeedItem(feedItem.id)">Remove <span class="icon-icon_x"></span></div>
