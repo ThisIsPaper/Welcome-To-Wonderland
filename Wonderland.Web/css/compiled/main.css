@@ -12045,13 +12045,15 @@ Event Page specific - move these out of here eventually
   background-position: center center;
   background-size: cover;
   height: 37.2rem;
+  position: relative;
+  behavior: url('/css/compiled/backgroundsize.min.htc');
 }
-/* line 103, ../sass/partials/_base.scss */
+/* line 106, ../sass/partials/_base.scss */
 .party-main-image.side {
   height: 18rem;
 }
 
-/* line 108, ../sass/partials/_base.scss */
+/* line 111, ../sass/partials/_base.scss */
 .party-image-default {
   position: absolute;
   text-align: center;
@@ -12063,13 +12065,13 @@ Event Page specific - move these out of here eventually
   padding-top: 9rem;
 }
 
-/* line 119, ../sass/partials/_base.scss */
+/* line 122, ../sass/partials/_base.scss */
 .no-party-image {
   background-color: #D4D3CC;
   min-height: 25rem;
 }
 
-/* line 124, ../sass/partials/_base.scss */
+/* line 127, ../sass/partials/_base.scss */
 .edit-trigger {
   position: absolute;
   top: 2rem;
@@ -12107,24 +12109,24 @@ Event Page specific - move these out of here eventually
   -webkit-border-bottom-left-radius: 3rem 3rem;
   border-bottom-left-radius: 3rem 3rem;
 }
-/* line 139, ../sass/partials/_base.scss */
+/* line 142, ../sass/partials/_base.scss */
 .edit-trigger .edit-label {
   display: none;
   margin-right: 1rem;
   text-transform: uppercase;
 }
-/* line 145, ../sass/partials/_base.scss */
+/* line 148, ../sass/partials/_base.scss */
 .edit-trigger:hover {
   padding: 0 15px;
   padding: 0 .95rem;
   width: auto;
 }
-/* line 149, ../sass/partials/_base.scss */
+/* line 152, ../sass/partials/_base.scss */
 .edit-trigger:hover .edit-label {
   display: inline;
 }
 
-/* line 155, ../sass/partials/_base.scss */
+/* line 158, ../sass/partials/_base.scss */
 .profile-image {
   width: 6rem;
   height: 6rem;
@@ -12137,17 +12139,17 @@ Event Page specific - move these out of here eventually
   position: relative;
   behavior: url('/css/compiled/backgroundsize.min.htc');
 }
-/* line 166, ../sass/partials/_base.scss */
+/* line 169, ../sass/partials/_base.scss */
 .profile-image.profile-image-notset {
   background-image: url('/img/avatar.png?1413451250') !important;
 }
-/* line 170, ../sass/partials/_base.scss */
+/* line 173, ../sass/partials/_base.scss */
 .profile-image.small {
   width: 4.2rem;
   height: 4.2rem;
 }
 
-/* line 178, ../sass/partials/_base.scss */
+/* line 181, ../sass/partials/_base.scss */
 .profile-image-remover {
   color: #E32333;
   font-size: 1.1rem;
@@ -12158,34 +12160,34 @@ Event Page specific - move these out of here eventually
   width: 6rem;
 }
 
-/* line 189, ../sass/partials/_base.scss */
+/* line 192, ../sass/partials/_base.scss */
 .image-shift-details, .party-details, .wall-details {
   margin-left: 7.2rem;
 }
-/* line 192, ../sass/partials/_base.scss */
+/* line 195, ../sass/partials/_base.scss */
 .image-shift-details.bigger, .bigger.party-details, .bigger.wall-details {
   margin-left: 12.2rem;
 }
 
-/* line 198, ../sass/partials/_base.scss */
+/* line 201, ../sass/partials/_base.scss */
 .anti-image-shift-details {
   margin-left: -7.2rem;
 }
-/* line 201, ../sass/partials/_base.scss */
+/* line 204, ../sass/partials/_base.scss */
 .anti-image-shift-details.bigger {
   margin-left: -12.2rem;
 }
 
-/* line 206, ../sass/partials/_base.scss */
+/* line 209, ../sass/partials/_base.scss */
 .party-details {
   color: #7B7A6D;
 }
-/* line 210, ../sass/partials/_base.scss */
+/* line 213, ../sass/partials/_base.scss */
 .party-details [class^="icon-"], .party-details [class*=" icon-"] {
   color: #D4D3CC;
 }
 
-/* line 215, ../sass/partials/_base.scss */
+/* line 218, ../sass/partials/_base.scss */
 .badge {
   width: 100%;
   height: 7.8rem;
@@ -12197,34 +12199,34 @@ Event Page specific - move these out of here eventually
   position: relative;
   behavior: url('/css/compiled/backgroundsize.min.htc');
 }
-/* line 225, ../sass/partials/_base.scss */
+/* line 228, ../sass/partials/_base.scss */
 .badge.badge.collected {
   background-position: top center;
 }
 
-/* line 233, ../sass/partials/_base.scss */
+/* line 236, ../sass/partials/_base.scss */
 .icon-only span {
   display: block;
   text-indent: -999rem;
 }
 
 /*******************************/
-/* line 240, ../sass/partials/_base.scss */
+/* line 243, ../sass/partials/_base.scss */
 .party-image-container {
   float: left;
   cursor: pointer;
 }
-/* line 246, ../sass/partials/_base.scss */
+/* line 249, ../sass/partials/_base.scss */
 .party-image-container input[type="radio"] {
   display: none;
 }
-/* line 250, ../sass/partials/_base.scss */
+/* line 253, ../sass/partials/_base.scss */
 .party-image-container .warner {
   width: 16rem;
   text-align: center;
   display: none;
 }
-/* line 259, ../sass/partials/_base.scss */
+/* line 262, ../sass/partials/_base.scss */
 .party-image-container.selected .party-image-selecter:after {
   content: "\e61f";
   font-family: "icomoon";
@@ -12236,18 +12238,18 @@ Event Page specific - move these out of here eventually
   line-height: 8rem;
   opacity: .8;
 }
-/* line 271, ../sass/partials/_base.scss */
+/* line 274, ../sass/partials/_base.scss */
 .party-image-container.selected .party-image-selecter:before {
   content: "";
   margin-left: 0;
 }
-/* line 276, ../sass/partials/_base.scss */
+/* line 279, ../sass/partials/_base.scss */
 .party-image-container.selected .warner {
   display: block;
   cursor: pointer;
 }
 
-/* line 283, ../sass/partials/_base.scss */
+/* line 286, ../sass/partials/_base.scss */
 .party-image-selecter {
   width: 16rem;
   height: 7.5rem;
@@ -12258,23 +12260,23 @@ Event Page specific - move these out of here eventually
   overflow: hidden;
   behavior: url('/css/compiled/backgroundsize.min.htc');
 }
-/* line 295, ../sass/partials/_base.scss */
+/* line 298, ../sass/partials/_base.scss */
 .party-image-selecter:before {
   color: white;
   font-size: 4.7rem;
   line-height: 7.5rem;
   margin-left: 6.8rem;
 }
-/* line 302, ../sass/partials/_base.scss */
+/* line 305, ../sass/partials/_base.scss */
 .party-image-selecter.image-unset {
   cursor: default;
 }
-/* line 306, ../sass/partials/_base.scss */
+/* line 309, ../sass/partials/_base.scss */
 .party-image-selecter.image-set:before {
   content: "";
 }
 
-/* line 311, ../sass/partials/_base.scss */
+/* line 314, ../sass/partials/_base.scss */
 .reference-image {
   width: 100%;
   height: 9rem;
@@ -12282,63 +12284,63 @@ Event Page specific - move these out of here eventually
   background-position: center;
 }
 
-/* line 322, ../sass/partials/_base.scss */
+/* line 325, ../sass/partials/_base.scss */
 .date-details-shifter {
   padding-right: 1.2rem;
 }
 
 /*******************************/
-/* line 328, ../sass/partials/_base.scss */
+/* line 331, ../sass/partials/_base.scss */
 .wall-details {
   color: #A19F91;
   min-height: 6rem;
 }
 
-/* line 334, ../sass/partials/_base.scss */
+/* line 337, ../sass/partials/_base.scss */
 .wall-name, .wall-type {
   font-weight: bold;
   color: #474740;
 }
 
-/* line 339, ../sass/partials/_base.scss */
+/* line 342, ../sass/partials/_base.scss */
 .wall-type {
   display: inline-block;
   text-transform: uppercase;
 }
-/* line 343, ../sass/partials/_base.scss */
+/* line 346, ../sass/partials/_base.scss */
 .wall-type.donation {
   color: #007eac;
 }
-/* line 347, ../sass/partials/_base.scss */
+/* line 350, ../sass/partials/_base.scss */
 .wall-type.party-host {
   color: orange;
 }
 
-/* line 352, ../sass/partials/_base.scss */
+/* line 355, ../sass/partials/_base.scss */
 .wall-time {
   display: inline-block;
   color: #7B7A6D;
 }
 
-/* line 357, ../sass/partials/_base.scss */
+/* line 360, ../sass/partials/_base.scss */
 .wall-remove {
   position: absolute;
   top: 0;
   right: 0;
   margin: 0;
 }
-/* line 363, ../sass/partials/_base.scss */
+/* line 366, ../sass/partials/_base.scss */
 .wall-remove.loader {
   margin-top: -3rem;
 }
 
-/* line 368, ../sass/partials/_base.scss */
+/* line 371, ../sass/partials/_base.scss */
 .donation-copy {
   color: #007eac;
   font-size: 2.3rem;
 }
 
-/* line 373, ../sass/partials/_base.scss */
+/* line 376, ../sass/partials/_base.scss */
 .wall-textarea {
   font: "Futura BT W01 Book";
   font-size: 1.8rem;
@@ -12353,7 +12355,7 @@ Event Page specific - move these out of here eventually
   border-bottom-right-radius: 0;
 }
 
-/* line 382, ../sass/partials/_base.scss */
+/* line 385, ../sass/partials/_base.scss */
 .wall-image-preview {
   border: 1px solid #D4D3CC;
   border: 0.1rem solid #D4D3CC;
@@ -12370,23 +12372,23 @@ Event Page specific - move these out of here eventually
   -webkit-border-top-right-radius: 0;
   border-top-right-radius: 0;
 }
-/* line 395, ../sass/partials/_base.scss */
+/* line 398, ../sass/partials/_base.scss */
 .wall-image-preview.error {
   border: 1px solid #E32333;
   border: 0.1rem solid #E32333;
 }
 
 /*******************************/
-/* line 404, ../sass/partials/_base.scss */
+/* line 407, ../sass/partials/_base.scss */
 .ticket {
   position: relative;
 }
-/* line 407, ../sass/partials/_base.scss */
+/* line 410, ../sass/partials/_base.scss */
 .ticket .stub {
   background-color: #D4D3CC;
   overflow: hidden;
 }
-/* line 412, ../sass/partials/_base.scss */
+/* line 415, ../sass/partials/_base.scss */
 .ticket .stub .holes, .ticket .stub .holes-right {
   position: absolute;
   left: -0.1rem;
@@ -12397,14 +12399,14 @@ Event Page specific - move these out of here eventually
   /* TODO: background image fallback */
   background-repeat: no-repeat;
 }
-/* line 423, ../sass/partials/_base.scss */
+/* line 426, ../sass/partials/_base.scss */
 .ticket .stub .holes-right {
   left: auto;
   right: -0.1rem;
   background-image: url('/img/raffle_r.svg?1412505524');
   /* TODO: background image fallback */
 }
-/* line 430, ../sass/partials/_base.scss */
+/* line 433, ../sass/partials/_base.scss */
 .ticket .stub .price {
   -moz-border-radius: 16px;
   -webkit-border-radius: 16px;
@@ -12419,28 +12421,28 @@ Event Page specific - move these out of here eventually
   text-align: center;
   line-height: 7.3rem;
 }
-/* line 448, ../sass/partials/_base.scss */
+/* line 451, ../sass/partials/_base.scss */
 .ticket.selected .stub {
   background-color: #025b45;
 }
-/* line 451, ../sass/partials/_base.scss */
+/* line 454, ../sass/partials/_base.scss */
 .ticket.selected .stub .price {
   color: white !important;
   border: 1px solid #4e8f82;
   border: 0.1rem solid #4e8f82;
 }
-/* line 460, ../sass/partials/_base.scss */
+/* line 463, ../sass/partials/_base.scss */
 .ticket input[type="radio"] {
   display: none;
 }
 
-/* line 467, ../sass/partials/_base.scss */
+/* line 470, ../sass/partials/_base.scss */
 label .ticket span {
   color: inherit;
 }
 
 /*******************************/
-/* line 475, ../sass/partials/_base.scss */
+/* line 478, ../sass/partials/_base.scss */
 .totaliser {
   -moz-border-radius: 9.6px;
   -webkit-border-radius: 9.6px;
@@ -12450,7 +12452,7 @@ label .ticket span {
   border-radius: 0.6rem;
   background-color: #D4D3CC;
 }
-/* line 481, ../sass/partials/_base.scss */
+/* line 484, ../sass/partials/_base.scss */
 .totaliser .current-total {
   -moz-border-radius: 9.6px;
   -webkit-border-radius: 9.6px;
@@ -12486,24 +12488,24 @@ label .ticket span {
 /* =============================================================================
 One-off uses
 ========================================================================== */
-/* line 503, ../sass/partials/_base.scss */
+/* line 506, ../sass/partials/_base.scss */
 #twitter-widget-0 {
   width: 100% !important;
 }
 
-/* line 507, ../sass/partials/_base.scss */
+/* line 510, ../sass/partials/_base.scss */
 .home-twitter-boxx {
   height: 35.6rem;
 }
 
-/* line 511, ../sass/partials/_base.scss */
+/* line 514, ../sass/partials/_base.scss */
 .piggy-donater:after {
   content: "\e61c";
   font-family: "icomoon";
   color: white;
 }
 
-/* line 518, ../sass/partials/_base.scss */
+/* line 521, ../sass/partials/_base.scss */
 .join-party-ico:after {
   content: "\e601";
   font-family: "icomoon";
@@ -12511,7 +12513,7 @@ One-off uses
 }
 
 /*******************************/
-/* line 528, ../sass/partials/_base.scss */
+/* line 531, ../sass/partials/_base.scss */
 .hero {
   height: 45rem;
   background-image: url('/img/hero-ph.jpg?1412505524');
@@ -12525,27 +12527,27 @@ One-off uses
   behavior: url('/css/compiled/backgroundsize.min.htc');
 }
 
-/* line 544, ../sass/partials/_base.scss */
+/* line 547, ../sass/partials/_base.scss */
 .planking {
   background: url('/img/wood_texture.jpg?1412768263') repeat top center;
 }
 
-/* line 548, ../sass/partials/_base.scss */
+/* line 551, ../sass/partials/_base.scss */
 .home-content-adjust {
   margin-top: -8rem;
 }
 
-/* line 552, ../sass/partials/_base.scss */
+/* line 555, ../sass/partials/_base.scss */
 .hero-explain {
   margin-right: 35rem;
   text-align: left;
 }
-/* line 556, ../sass/partials/_base.scss */
+/* line 559, ../sass/partials/_base.scss */
 .hero-explain.full-width {
   margin-right: 0;
 }
 
-/* line 561, ../sass/partials/_base.scss */
+/* line 564, ../sass/partials/_base.scss */
 .money-raised {
   position: absolute;
   top: 2.4rem;
@@ -12555,7 +12557,7 @@ One-off uses
   background: url('/img/amount-raised-ph.png?1411035906') no-repeat center right transparent;
 }
 
-/* line 570, ../sass/partials/_base.scss */
+/* line 573, ../sass/partials/_base.scss */
 .raised-amount {
   color: white;
   width: 27.5rem;
@@ -12563,7 +12565,7 @@ One-off uses
   line-height: 4.7rem;
 }
 
-/* line 577, ../sass/partials/_base.scss */
+/* line 580, ../sass/partials/_base.scss */
 .home-tile {
   background-color: white;
   position: relative;
@@ -12573,7 +12575,7 @@ One-off uses
   box-shadow: 0px 14px 30px 0px rgba(0, 0, 0, 0.6);
 }
 
-/* line 586, ../sass/partials/_base.scss */
+/* line 589, ../sass/partials/_base.scss */
 .home-tile-image {
   -moz-border-radius: 11.2px;
   -webkit-border-radius: 11.2px;
@@ -12588,7 +12590,7 @@ One-off uses
   behavior: url('/css/compiled/backgroundsize.min.htc');
 }
 
-/* line 597, ../sass/partials/_base.scss */
+/* line 600, ../sass/partials/_base.scss */
 .home-tile-label {
   position: absolute;
   bottom: 0;
@@ -12597,32 +12599,32 @@ One-off uses
 }
 
 /*******************************/
-/* line 607, ../sass/partials/_base.scss */
+/* line 610, ../sass/partials/_base.scss */
 .spotify-holder {
   margin-top: -7rem;
   text-align: center;
 }
 
-/* line 612, ../sass/partials/_base.scss */
+/* line 615, ../sass/partials/_base.scss */
 .spotify-info-holder {
   position: absolute;
   left: 0;
   color: white;
   text-align: center;
 }
-/* line 619, ../sass/partials/_base.scss */
+/* line 622, ../sass/partials/_base.scss */
 .spotify-info-holder h1 {
   color: white;
 }
 
 /*******************************/
-/* line 627, ../sass/partials/_base.scss */
+/* line 630, ../sass/partials/_base.scss */
 .scoreboard-place {
   float: left;
   width: 5rem;
 }
 
-/* line 632, ../sass/partials/_base.scss */
+/* line 635, ../sass/partials/_base.scss */
 .scoreboard-value {
   position: absolute;
   top: 0;
@@ -12631,22 +12633,22 @@ One-off uses
 }
 
 /*******************************/
-/* line 642, ../sass/partials/_base.scss */
+/* line 645, ../sass/partials/_base.scss */
 .idea-sizer {
   width: 25%;
 }
 
-/* line 646, ../sass/partials/_base.scss */
+/* line 649, ../sass/partials/_base.scss */
 .idea-tile {
   width: 25%;
   padding: 1.2rem;
 }
-/* line 651, ../sass/partials/_base.scss */
+/* line 654, ../sass/partials/_base.scss */
 .idea-tile.wide {
   width: 50%;
 }
 
-/* line 656, ../sass/partials/_base.scss */
+/* line 659, ../sass/partials/_base.scss */
 .idea {
   position: relative;
   padding: 1.2rem;
@@ -12658,42 +12660,42 @@ One-off uses
   box-shadow: 0px 14px 30px 0px rgba(0, 0, 0, 0.6);
 }
 
-/* line 665, ../sass/partials/_base.scss */
+/* line 668, ../sass/partials/_base.scss */
 .idea-details {
   width: 100%;
   top: 11%;
   left: 0;
   padding: 0 1.2rem;
 }
-/* line 671, ../sass/partials/_base.scss */
+/* line 674, ../sass/partials/_base.scss */
 .idea-details.over-the-top {
   position: absolute;
   color: white;
 }
-/* line 675, ../sass/partials/_base.scss */
+/* line 678, ../sass/partials/_base.scss */
 .idea-details.over-the-top h1 {
   color: white;
 }
-/* line 680, ../sass/partials/_base.scss */
+/* line 683, ../sass/partials/_base.scss */
 .idea-details.wide {
   top: 23%;
 }
 
-/* line 685, ../sass/partials/_base.scss */
+/* line 688, ../sass/partials/_base.scss */
 .idea-polaroid {
   -moz-border-radius: 0.7rem;
   -webkit-border-radius: 0.7rem;
   border-radius: 0.7rem;
 }
 
-/* line 689, ../sass/partials/_base.scss */
+/* line 692, ../sass/partials/_base.scss */
 .pinterest-ico:before {
   content: "\e623";
   font-family: "icomoon";
   color: #E32333;
 }
 
-/* line 695, ../sass/partials/_base.scss */
+/* line 698, ../sass/partials/_base.scss */
 .spotify-logo {
   width: 8rem;
   height: 2.4rem;
@@ -12708,7 +12710,7 @@ One-off uses
   behavior: url('/css/compiled/backgroundsize.min.htc');
 }
 
-/* line 710, ../sass/partials/_base.scss */
+/* line 713, ../sass/partials/_base.scss */
 .idea-link {
   position: absolute;
   top: 0;
@@ -12718,12 +12720,12 @@ One-off uses
   z-index: 5;
   text-indent: -999rem;
 }
-/* line 721, ../sass/partials/_base.scss */
+/* line 724, ../sass/partials/_base.scss */
 .idea-link span.label {
   display: none;
 }
 
-/* line 726, ../sass/partials/_base.scss */
+/* line 729, ../sass/partials/_base.scss */
 .share-title {
   width: 27.8rem;
   height: 11.6rem;
@@ -12734,7 +12736,7 @@ One-off uses
   behavior: url('/css/compiled/backgroundsize.min.htc');
 }
 
-/* line 737, ../sass/partials/_base.scss */
+/* line 740, ../sass/partials/_base.scss */
 .share-facebook, .share-twitter, .share-email {
   background-color: #3c5898;
   font-family: "macmillan";
@@ -12743,33 +12745,33 @@ One-off uses
   line-height: 5.5rem;
   color: white;
 }
-/* line 745, ../sass/partials/_base.scss */
+/* line 748, ../sass/partials/_base.scss */
 .share-facebook:before, .share-twitter:before, .share-email:before {
   font-family: "icomoon";
   content: "\e619";
   margin-right: 1.2rem;
 }
 
-/* line 752, ../sass/partials/_base.scss */
+/* line 755, ../sass/partials/_base.scss */
 .share-twitter {
   background-color: #17abed;
 }
-/* line 754, ../sass/partials/_base.scss */
+/* line 757, ../sass/partials/_base.scss */
 .share-twitter:before {
   content: "\e61a";
 }
 
-/* line 759, ../sass/partials/_base.scss */
+/* line 762, ../sass/partials/_base.scss */
 .share-email {
   background-color: #007eac;
 }
-/* line 761, ../sass/partials/_base.scss */
+/* line 764, ../sass/partials/_base.scss */
 .share-email:before {
   content: "\e618";
   margin-right: 0;
 }
 
-/* line 768, ../sass/partials/_base.scss */
+/* line 771, ../sass/partials/_base.scss */
 .centered-share-holder .share-title {
   display: block;
   float: none;
@@ -12779,23 +12781,23 @@ One-off uses
 }
 
 /*******************************/
-/* line 780, ../sass/partials/_base.scss */
+/* line 783, ../sass/partials/_base.scss */
 .color-facebook {
   color: #3c5898 !important;
 }
 
-/* line 784, ../sass/partials/_base.scss */
+/* line 787, ../sass/partials/_base.scss */
 .color-twitter {
   color: #17abed !important;
 }
 
-/* line 788, ../sass/partials/_base.scss */
+/* line 791, ../sass/partials/_base.scss */
 .color-pinterest {
   color: #cc2127 !important;
 }
 
 /*******************************/
-/* line 795, ../sass/partials/_base.scss */
+/* line 798, ../sass/partials/_base.scss */
 .giftaid-logo {
   width: 10rem;
   height: 3.5rem;
@@ -12809,7 +12811,7 @@ One-off uses
   top: 0;
 }
 
-/* line 809, ../sass/partials/_base.scss */
+/* line 812, ../sass/partials/_base.scss */
 .fsb-logo {
   width: 8rem;
   height: 8rem;
@@ -12823,7 +12825,7 @@ One-off uses
   top: 0;
 }
 
-/* line 823, ../sass/partials/_base.scss */
+/* line 826, ../sass/partials/_base.scss */
 .ticket-label {
   line-height: 2rem;
 }

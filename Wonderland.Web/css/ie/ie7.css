@@ -40,3 +40,20 @@ input[type='password'], input[type="text"].input-with-icon, select.input-with-ic
 .idea-tile.wide {
 	width: 47%;
 }
+
+.wgrid-main {
+	width: 730px;
+	margin-right: 24px;
+}
+
+.wgrid-side {
+	width: 370px;
+}
+
+.share-group .hide-span span {
+	display: inline;
+}
+
+.share-group a {
+	font-size: 15px;
+}
