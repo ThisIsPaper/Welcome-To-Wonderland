@@ -16,24 +16,21 @@ module.exports = function (grunt) {
                          uglify: {
                              options: {
                                  mangle: false,
-                                 beautify: true,
+                                 beautify: false,
                                  banner: '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n',
                                  compress: {
-                                     drop_console: false
+                                     drop_console: true
                                  }
                              },
                              base: {
                                  files: {
                                      '<%= pkg.jsPath %>all.min.js': [
-                                         '<%= pkg.jsPath %>slimmage.min.js',
+                                         '<%= pkg.jsPath %>vendor/slimmage.min.js',
                                          '<%= pkg.jsPath %>vendor/modernizr-2.6.2.min.js',
 
                                          '<%= pkg.jsPath %>vendor/jquery-1.10.2.js',
-//                                         '<%= pkg.jsPath %>bower_components/angular/angular.js',
                                          '<%= pkg.jsPath %>vendor/angular.ie7.js',
-//                                         '<%= pkg.jsPath %>vendor/angular.1_1_5.js',
                                          '<%= pkg.jsPath %>bower_components/imagesloaded/imagesloaded.pkgd.js',
-//                                         '<%= pkg.jsPath %>bower_components/ocModal/dist/ocModal.js',
                                          '<%= pkg.jsPath %>vendor/ocModal.rawson_edit.js',
                                          '<%= pkg.jsPath %>bower_components/moment/moment.js',
                                          '<%= pkg.jsPath %>bower_components/pikaday/pikaday.js',
@@ -95,19 +92,11 @@ module.exports = function (grunt) {
                                      ]
                                  }
                              },
-//                             ie9: {
-//                                 files: {
-//                                     '<%= pkg.jsPath %>ie9.min.js': [
-//                                         '<%= pkg.jsPath %>vendor/IE9.js'
-//                                     ]
-//                                 }
-//                             },
                              ie8: {
                                  files: {
                                      '<%= pkg.jsPath %>ie8.min.js': [
                                          '<%= pkg.jsPath %>bower_components/es5-shim/es5-shim.min.js',
                                          '<%= pkg.jsPath %>bower_components/es5-shim/es5-sham.min.js'
-//                                         '<%= pkg.jsPath %>app/polyfills/array.js'
 //                                         '<%= pkg.jsPath %>bower_components/respond/dest/respond.min.js'
                                      ]
                                  }
