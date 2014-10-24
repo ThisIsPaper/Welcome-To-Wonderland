@@ -2,8 +2,14 @@
 @{
     SitePage currentSitePage = (SitePage)this.Umbraco.AssignedContentItem;
 
-    // local cache variable
+    // local cache variables
     bool isLoggedInPartier = this.Members.IsLoggedInPartier();
+
+    string partyUrl = string.Empty;
+    if (isLoggedInPartier)
+    {
+        partyUrl = ((IPartier)this.Members.GetCurrentMember()).PartyUrl;
+    }
 }
 
 <header class="site-header"  ng-class="{'showing-side-nav-menu': pageShowingSideNavMenu, 'showing-side-account-menu': pageShowingSideAccountMenu, 'compress': pageHeaderCompress}">
@@ -27,7 +33,7 @@
     }
     else
     {
-        <a href="@(((IPartier)this.Members.GetCurrentMember()).PartyUrl)" class="btn-primary btn-small nav-end-block" m-radius-picker="small">MY PARTY <span class="icon-icon_chevron_right"></span></a>
+        <a href="@partyUrl" class="btn-primary btn-small nav-end-block" m-radius-picker="small">MY PARTY <span class="icon-icon_chevron_right"></span></a>
     }
 
 
@@ -48,7 +54,7 @@
             <div class="account-menu" ng-class="{'opened': pageShowAccountDropdown}">
                 <div class="arrow-up"></div>
                 <ul>
-                    <li class=""><a href="@(((IPartier)this.Members.GetCurrentMember()).PartyUrl)"><span class="icon-icon_star"></span>My party</a></li>
+                    <li class=""><a href="@partyUrl"><span class="icon-icon_star"></span>My party</a></li>
                     <li class=""><a href="@Model.ProfileUrl"><span class="icon-icon_cog"></span>My profile</a></li>
                     <li class=""><a class="last" href="/logout"><span class="icon-icon_padlock_unlocked"></span>Logout</a></li>
                 </ul>
@@ -70,11 +76,11 @@
 
                         @if (!isLoggedInPartier)
                         {
-                            <li class="side-only"><a href="#"><span class="icon-icon_person"></span>Host a party</a></li>
+                            <li class="side-only"><a href="@Model.RegisterHostUrl"><span class="icon-icon_person"></span>Host a party</a></li>
                         }
                         else
                         {
-                            <li class="side-only"><a href="#"><span class="icon-icon_person"></span>My Party</a></li>
+                            <li class="side-only"><a href="@partyUrl"><span class="icon-icon_person"></span>My Party</a></li>
                         }
 
                         @{
@@ -115,18 +121,6 @@
                 <span>Wonderland Home</span>
             </a>
         </div>
-
-
-        @*<div class="account-menu">
-            <div class="menu">
-                <ul>
-                    <li><a class="" href="#"><span class="icon-icon_person"></span>My Party</a></li>
-                    <li><a class="" href="#"><span class="icon-icon_person"></span>My Profile</a></li>
-                    <li><a class="" href="#"><span class="icon-icon_person"></span>Logout</a></li>
-                </ul>
-            </div>
-        </div>*@
-
 
     </nav>
 

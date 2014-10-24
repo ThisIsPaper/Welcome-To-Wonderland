@@ -3,7 +3,6 @@
     Layout = "SitePage.cshtml";
 }
 
-
 <div class="page-bg" ng-controller="FaqsCtrl">
 
     <div class="container gutter">
@@ -13,11 +12,12 @@
             <div class="boxx pad-mega" m-radius-picker>
 
                 <h1 class="bigger">@Model.PageHeading</h1>
+                
                 @Html.Raw(Model.Copy)
 
                 <hr/>
 
-                @Html.CachedPartial("FAQs", Model.QuestionsAndAnswers, SitePage.CacheDuration);
+                @Html.CachedPartial("FAQs", Model.QuestionsAndAnswers, SitePage.CacheDuration)
 
             </div>
 
