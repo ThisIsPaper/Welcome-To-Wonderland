@@ -120,3 +120,7 @@ pre {
 .modal-close span {
 	display: inline;
 }
+
+.ie7-pull-fix {
+	right: 0!important;
+}

@@ -100,7 +100,7 @@ wonderlandApp.controller('PageCtrl', ['debounce', 'paf', '$rootScope', '$scope',
     /*************************
      HARDCODED
      /*************************/
-    $scope.hardcoded = {
+    $rootScope.hardcoded = {
         fundraisingTargets: [
             {imageUrl: '/img/sunnies.png', title: 'Raise £180 or more', info: 'Sunglasses are essential Wonderland accessories - look cool as an alpine stream!'},
             {imageUrl: '/img/tee.png', title: 'Raise £250 or more', info: 'Also get a T-Shirt, specifically designed for Macmillan\'s Wonderland.'},

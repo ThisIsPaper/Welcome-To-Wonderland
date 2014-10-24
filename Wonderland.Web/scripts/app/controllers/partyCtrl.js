@@ -140,7 +140,9 @@ wonderlandApp.controller('PartyCtrl', ['$filter', '$ocModal', '$rootScope', '$sc
         if (fundraisingTargetFirstSet) {
             fundraisingTargetFirstSet = false;
             if (fundraisingTargetData.FundraisingTarget <= 0) {
-                $rootScope.openPageModal('partials/fundraisingTargetForm.html', 'suggestedDonationModal', {'fundraisingTargetData': $scope.fundraisingTargetDataForForm});
+                $timeout(function () {
+                    $rootScope.openPageModal('fundraisingTargetPartial', 'fundraisingTargetModal', {'fundraisingTargetData': $scope.fundraisingTargetDataForForm, 'hardcodedFundraisingTargets': $rootScope.hardcoded.fundraisingTargets, 'feedback': $scope.fundraisingTargetDataFeedback}, 'FundraisingTargetCtrl');
+                });
             }
         }
     };
