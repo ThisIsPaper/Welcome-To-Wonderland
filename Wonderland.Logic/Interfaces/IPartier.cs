@@ -23,16 +23,9 @@ namespace Wonderland.Logic.Interfaces
 
         ProfileImage ProfileImage { get; set; }
 
-        /// <summary>
-        /// url to their profile image
-        /// </summary>
-        string ProfileImageUrl { get; }
+        string ProfileImageUrl { get; } // Helper, could be replaced with ProfileImage.Url
 
-        /// <summary>
-        /// gets the custom url associated with the host or guest
-        /// </summary>
-        /// <returns></returns>
-        string PartyUrl { get; }
+        string PartyUrl { get; } // the custom url associated with the host or guest (host and guest method differ)
 
         Guid PartyGuid { get; }
 

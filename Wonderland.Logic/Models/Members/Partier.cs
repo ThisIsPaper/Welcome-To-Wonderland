@@ -19,11 +19,14 @@ namespace Wonderland.Logic.Models.Members
         private const string FirstNameAlias = "firstName";
         private const string LastNameAlias = "lastName";
         private const string ProfileImageAlias = "profileImage";
+        private const string PartyGuidAlias = "partyGuid";
 
         // local cache
         private string firstName = null;
         private string lastName = null;
         private ProfileImage profileImage = null;
+        private Guid? partyGuid = null;
+
 
         public Partier(IPublishedContent content)
             : base(content)
@@ -107,5 +110,41 @@ namespace Wonderland.Logic.Models.Members
                 }
             }
         }
+        
+        public string ProfileImageUrl
+        {
+            get
+            {
+                if (this.ProfileImage != null)
+                {
+                    return this.ProfileImage.Url; //TODO:S3URL
+                }
+
+                return null;
+            }
+        }
+
+        /// <summary>
+        /// once created, never changes - this guid identifies a specific party
+        /// </summary>
+        public Guid PartyGuid
+        {
+            get
+            {
+                if (this.partyGuid.HasValue)
+                {
+                    return this.partyGuid.Value;
+                }
+
+                return this.GetPropertyValue<Guid>(Partier.PartyGuidAlias);
+            }
+            set
+            {
+                this.partyGuid = value;
+                this.SetPropertyValue(Partier.PartyGuidAlias, value.ToString());
+            }
+        }
+
+
     }
 }

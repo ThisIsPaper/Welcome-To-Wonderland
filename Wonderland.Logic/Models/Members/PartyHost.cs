@@ -23,7 +23,6 @@ namespace Wonderland.Logic.Models.Members
         public const string Alias = "PartyHost";
 
         // Properties
-        public const string PartyGuidAlias = "partyGuid";
         public const string BillingAddressAlias = "billingAddress";
         public const string BlockedAlias = "blocked";
         public const string MarketingSourceAlias = "marketingSource";
@@ -45,7 +44,6 @@ namespace Wonderland.Logic.Models.Members
         public const string FacebookRegistrationAlias = "facebookRegistration";
 
         // local cache variables (avoids waiting for round trip to update umbraco cache values)
-        private Guid? partyGuid = null;
         private Address billingAddress = null;
         private Address partyAddress = null;
         private DateTime? partyDateTime = null;
@@ -58,27 +56,6 @@ namespace Wonderland.Logic.Models.Members
         public PartyHost(IPublishedContent content)
             : base(content)
         {
-        }
-
-        /// <summary>
-        /// once created, never changes - this guid identifies a specific party
-        /// </summary>
-        public Guid PartyGuid
-        {
-            get
-            {
-                if (this.partyGuid.HasValue)
-                {
-                    return this.partyGuid.Value;
-                }
-
-                return this.GetPropertyValue<Guid>(PartyHost.PartyGuidAlias);
-            }
-            set
-            {
-                this.partyGuid = value;
-                this.SetPropertyValue(PartyHost.PartyGuidAlias, value.ToString());
-            }
         }
 
         public Address BillingAddress
@@ -379,20 +356,6 @@ namespace Wonderland.Logic.Models.Members
             set
             {
                 this.SetPropertyValue(PartyHost.FacebookRegistrationAlias, value);
-            }
-        }
-
-        // left in so as to avoid lots of view changes - ideally this would be removed
-        public string ProfileImageUrl
-        {
-            get
-            {
-                if (this.ProfileImage != null)
-                {
-                    return this.ProfileImage.Url; //TODO:S3URL
-                }
-
-                return null;
             }
         }
 

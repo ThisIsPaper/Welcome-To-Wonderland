@@ -19,40 +19,15 @@ namespace Wonderland.Logic.Models.Members
         public const string Alias = "PartyGuest";
 
         // Properties
-        public const string PartyGuidAlias = "partyGuid";
         public const string BillingAddressAlias = "billingAddress";
         public const string ForgottenPasswordGuidAlias = "forgottenPasswordGuid";
         public const string DotMailerIdAlias = "dotMailerId";
         public const string DotMailerRegistrationCompleteAlias = "dotMailerRegistrationComplete";
         public const string FacebookRegistrationAlias = "facebookRegistration";
 
-        // Local Cache
-        private Guid? partyGuid = null; // used as a local cache, as the setter / getter normally requires a full round trip
-
         public PartyGuest(IPublishedContent content)
             : base(content)
         {
-        }
-
-        /// <summary>
-        /// once created, never changes - this guid identifies a specific party
-        /// </summary>
-        public Guid PartyGuid
-        {
-            get
-            {
-                if (this.partyGuid.HasValue)
-                {
-                    return this.partyGuid.Value;
-                }
-
-                return this.GetPropertyValue<Guid>(PartyHost.PartyGuidAlias);
-            }
-            set
-            {
-                this.partyGuid = value;
-                this.SetPropertyValue(PartyHost.PartyGuidAlias, value.ToString());
-            }
         }
 
         public Address BillingAddress
@@ -115,19 +90,6 @@ namespace Wonderland.Logic.Models.Members
             }
         }
 
-        // left in so as to avoid lots of view changes - ideally this woudl be removed
-        public string ProfileImageUrl
-        {
-            get
-            {
-                if (this.ProfileImage != null)
-                {
-                    return this.ProfileImage.Url; //TODO:S3URL
-                }
-
-                return null;                
-            }
-        }
 
         public string PartyUrl
         {
