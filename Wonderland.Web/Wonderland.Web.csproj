@@ -528,10 +528,7 @@
     <Folder Include="App_Data\TEMP\ExamineIndexes\InternalMember\Index\" />
     <Folder Include="App_Data\TEMP\ExamineIndexes\Internal\Index\" />
     <Folder Include="App_Data\TEMP\PluginCache\" />
-    <Folder Include="media\1004\" />
-    <Folder Include="media\1005\" />
-    <Folder Include="media\1006\" />
-    <Folder Include="media\1007\" />
+    <Folder Include="media\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Wonderland.Logic\Wonderland.Logic.csproj">
