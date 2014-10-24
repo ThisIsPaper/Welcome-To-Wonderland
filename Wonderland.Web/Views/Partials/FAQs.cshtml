@@ -14,7 +14,7 @@
                 <span class="icon-icon_plus" ng-hide="{{ 'faqOp' + @i }}"></span>
                 <span class="icon-icon_minus" ng-show="{{ 'faqOp' + @i }}"></span>
             </div>
-            <hr ng-show="{{ @i >< @Model.Count() }}"/>
+            <hr ng-show="{{ @i < @Model.Count() }}"/>
         </div>
     }
 }
