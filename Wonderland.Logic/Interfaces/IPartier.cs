@@ -12,10 +12,7 @@ namespace Wonderland.Logic.Interfaces
     /// </summary>
     public interface IPartier
     {
-        /// <summary>
-        /// used for comparrison checks
-        /// </summary>
-        int Id { get; }
+        int Id { get; } // used for comparrison checks
 
         string FirstName { get; set;  }
 
@@ -31,10 +28,7 @@ namespace Wonderland.Logic.Interfaces
 
         Address BillingAddress { get; set; }
 
-        /// <summary>
-        /// common property in BaseMemberType
-        /// </summary>
-        string Email { get; }
+        string Email { get; } // common property in BaseMemberType
 
         Guid ForgottenPasswordGuid { get; set; }
 

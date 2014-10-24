@@ -2,14 +2,8 @@
 namespace Wonderland.Logic.Models.Members
 {
     using System;
-    using System.Linq;
-    using System.Web.Security;
     using Umbraco.Core.Models;
     using Umbraco.Web;
-    using Umbraco.Web.Security;
-    using Wonderland.Logic.Extensions;
-    using Wonderland.Logic.Interfaces;
-    using Wonderland.Logic.Models.Content;
     using Wonderland.Logic.Models.Entities;
     using Wonderland.Logic.Models.Media;
 
@@ -20,12 +14,18 @@ namespace Wonderland.Logic.Models.Members
         private const string LastNameAlias = "lastName";
         private const string ProfileImageAlias = "profileImage";
         private const string PartyGuidAlias = "partyGuid";
+        private const string BillingAddressAlias = "billingAddress";
+        private const string ForgottenPasswordGuidAlias = "forgottenPasswordGuid";
+        private const string DotMailerIdAlias = "dotMailerId";
+        private const string DotMailerRegistrationCompleteAlias = "dotMailerRegistrationComplete";
+        private const string FacebookRegistrationAlias = "facebookRegistration";
 
-        // local cache
+        // Local Cache
         private string firstName = null;
         private string lastName = null;
         private ProfileImage profileImage = null;
         private Guid? partyGuid = null;
+        private Address billingAddress = null;
 
 
         public Partier(IPublishedContent content)
@@ -145,6 +145,70 @@ namespace Wonderland.Logic.Models.Members
             }
         }
 
+        public Address BillingAddress
+        {
+            get
+            {
+                if (this.billingAddress != null)
+                {
+                    return this.billingAddress;
+                }
 
+                return new Address(this.GetPropertyValue<string>(PartyHost.BillingAddressAlias));
+            }
+            set
+            {
+                this.billingAddress = value;
+                this.SetPropertyValue(PartyHost.BillingAddressAlias, value.ToString());
+            }
+        }
+
+        public Guid ForgottenPasswordGuid
+        {
+            get
+            {
+                return this.GetPropertyValue<Guid>(PartyHost.ForgottenPasswordGuidAlias);
+            }
+            set
+            {
+                this.SetPropertyValue(PartyHost.ForgottenPasswordGuidAlias, value.ToString("D").ToLower());
+            }
+        }
+
+        public int DotMailerId
+        {
+            get
+            {
+                return this.GetPropertyValue<int>(Partier.DotMailerIdAlias);
+            }
+            set
+            {
+                this.SetPropertyValue(Partier.DotMailerIdAlias, value);
+            }
+        }
+
+        public bool DotMailerRegistrationComplete
+        {
+            get
+            {
+                return this.GetPropertyValue<bool>(Partier.DotMailerRegistrationCompleteAlias);
+            }
+            set
+            {
+                this.SetPropertyValue(Partier.DotMailerRegistrationCompleteAlias, value);
+            }
+        }
+
+        public bool FacebookRegistration
+        {
+            get
+            {
+                return this.GetPropertyValue<bool>(Partier.FacebookRegistrationAlias);
+            }
+            set
+            {
+                this.SetPropertyValue(Partier.FacebookRegistrationAlias, value);
+            }
+        }
     }
 }
