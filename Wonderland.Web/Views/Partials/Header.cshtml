@@ -70,11 +70,11 @@
 
                         @if (!isLoggedInPartier)
                         {
-                            <li class="side-only"><a href="#"><span class="icon-icon_person"></span>Host a party</a></li>
+                            <li class="side-only"><a href="@Model.RegisterHostUrl"><span class="icon-icon_person"></span>Host a party</a></li>
                         }
                         else
                         {
-                            <li class="side-only"><a href="#"><span class="icon-icon_person"></span>My Party</a></li>
+                            <li class="side-only"><a href="@(((IPartier)this.Members.GetCurrentMember()).PartyUrl)"><span class="icon-icon_person"></span>My Party</a></li>
                         }
 
                         @{
