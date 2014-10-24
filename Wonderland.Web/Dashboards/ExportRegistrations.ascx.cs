@@ -45,7 +45,7 @@ namespace Wonderland.Web.Dashboards
                                 partier.BillingAddress.Address2.Replace(',', ' '),                                              // 9.  Billing Address 2
                                 partier.BillingAddress.TownCity.Replace(',', ' '),                                              // 10. Billing TownCity
                                 partier.BillingAddress.Postcode.Replace(',', ' '),                                              // 11. Billing Postcode
-                                partyHost.TShirtSize,                                                                           // 12. T-Shirt Size
+                                partyHost.TShirtSize ?? string.Empty,                                                           // 12. T-Shirt Size
                                 partier.PartyGuid,                                                                              // 13. Party Guid
                                 partyHost.PartyHeading != null ? partyHost.PartyHeading.Replace(',', ' ') : string.Empty,       // 14. Party Title
                                 partyHost.PartyDateTime,                                                                        // 15. Party DateTime 

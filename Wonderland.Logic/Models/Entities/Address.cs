@@ -34,20 +34,19 @@ namespace Wonderland.Logic.Models.Entities
             }
             catch
             {
-
+                this.Address1 = string.Empty;
+                this.Address2 = string.Empty;
+                this.TownCity = string.Empty;
+                this.Postcode = string.Empty;
             }
         }
 
-        [DefaultValue("")]
         public string Address1 { get; internal set; }
 
-        [DefaultValue("")]
         public string Address2 { get; internal set; }
 
-        [DefaultValue("")]
         public string TownCity { get; internal set; }
 
-        [DefaultValue("")]
         public string Postcode { get; internal set; }
 
         /// <summary>

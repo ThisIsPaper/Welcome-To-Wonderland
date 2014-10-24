@@ -1,15 +1,17 @@
 ﻿namespace Wonderland.Logic.Events
 {
-		using Examine;
-		using Umbraco.Core;
-		using System.Linq;
+    using Examine;
+    using System.Linq;
+    using Umbraco.Core;
 
+    /// <summary>
+    /// 
+    /// </summary>
     public class RebuildExamineOnStartup : ApplicationEventHandler
     {
         protected override void ApplicationStarted(UmbracoApplicationBase umbracoApplication, ApplicationContext applicationContext)
         {
-						ExamineManager.Instance.IndexProviderCollection.ToList().ForEach(index => index.RebuildIndex());
+			ExamineManager.Instance.IndexProviderCollection.ToList().ForEach(index => index.RebuildIndex());
         }
-
     }
 }
