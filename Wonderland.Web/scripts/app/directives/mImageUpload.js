@@ -6,6 +6,7 @@ wonderlandApp.directive('mImageUpload', ['fileUpload', '$rootScope', function(fi
             var onStartEvent = attrs.mOnStartEvent,
                 onSuccessEvent = attrs.mOnSuccessEvent,
                 resetInputValue = function () {
+                    console.log('resetInputValue::form input', element.find('input[type=file]'));
                     element.find('input[type=file]').val(null);
                 };
 

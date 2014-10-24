@@ -23,29 +23,48 @@ wonderlandApp.config(['$provide', function($provide){
 
 wonderlandApp.run(['$rootScope', '$ocModal', '$window', function ($rootScope, $ocModal, $window) {
 
+
+    /**
+     * ng-template workaround for IE7
+     */
+    var registeredTemplates = {};
+    $rootScope.$on('newTemplatePartial', function (event, partialId, partialTemplate) {
+        registeredTemplates[partialId] = partialTemplate;
+    });
+
+
     $rootScope.currentPageUrl = $window.location.href;
 
-    $rootScope.openPageModal = function (partial, modalId, initVars) {
+    $rootScope.openPageModal = function (partial, modalId, initVars, controller) {
 
         if (!partial) {
             return;
         }
 
         var modal = {
-            url: partial,
-            init: initVars
+            template: registeredTemplates[partial],
+            init: initVars,
+            controller: controller
         };
 
         if (modalId) {
             modal.id = modalId;
         }
 
-        $ocModal.open(modal);
+        try {
+            $ocModal.open(modal);
+        } catch(er) {
+            console.log('modal error', er);
+        }
 
     };
 
     $rootScope.closePageModal = function () {
-        $ocModal.close();
+        try {
+            $ocModal.close();
+        } catch (er) {
+            console.log('modal close error', er);
+        }
     };
 
     moment.fn.toASP = function () {

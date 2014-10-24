@@ -1532,142 +1532,147 @@ Colours
   display: inline-block;
 }
 
-/* line 299, ../sass/partials/_abstract.scss */
+/* line 295, ../sass/partials/_abstract.scss */
+.dis-none {
+  display: none;
+}
+
+/* line 303, ../sass/partials/_abstract.scss */
 .width-100p {
   width: 100%;
 }
 
-/* line 303, ../sass/partials/_abstract.scss */
+/* line 307, ../sass/partials/_abstract.scss */
 .width-50p {
   width: 50%;
 }
 
-/* line 308, ../sass/partials/_abstract.scss */
+/* line 312, ../sass/partials/_abstract.scss */
 .max-width-25 {
   max-width: 25rem;
 }
 
-/* line 309, ../sass/partials/_abstract.scss */
+/* line 313, ../sass/partials/_abstract.scss */
 .max-width-30 {
   max-width: 30rem;
 }
 
-/* line 313, ../sass/partials/_abstract.scss */
+/* line 317, ../sass/partials/_abstract.scss */
 .min-height-0 {
   min-height: 0;
 }
 
-/* line 314, ../sass/partials/_abstract.scss */
+/* line 318, ../sass/partials/_abstract.scss */
 .min-height-1 {
   min-height: 1rem;
 }
 
-/* line 315, ../sass/partials/_abstract.scss */
+/* line 319, ../sass/partials/_abstract.scss */
 .min-height-2 {
   min-height: 2rem;
 }
 
-/* line 316, ../sass/partials/_abstract.scss */
+/* line 320, ../sass/partials/_abstract.scss */
 .min-height-3 {
   min-height: 3rem;
 }
 
-/* line 317, ../sass/partials/_abstract.scss */
+/* line 321, ../sass/partials/_abstract.scss */
 .min-height-4 {
   min-height: 4rem;
 }
 
-/* line 318, ../sass/partials/_abstract.scss */
+/* line 322, ../sass/partials/_abstract.scss */
 .min-height-5 {
   min-height: 5rem;
 }
 
-/* line 319, ../sass/partials/_abstract.scss */
+/* line 323, ../sass/partials/_abstract.scss */
 .min-height-6 {
   min-height: 6rem;
 }
 
-/* line 320, ../sass/partials/_abstract.scss */
+/* line 324, ../sass/partials/_abstract.scss */
 .min-height-7 {
   min-height: 7rem;
 }
 
-/* line 321, ../sass/partials/_abstract.scss */
+/* line 325, ../sass/partials/_abstract.scss */
 .min-height-8 {
   min-height: 8rem;
 }
 
-/* line 322, ../sass/partials/_abstract.scss */
+/* line 326, ../sass/partials/_abstract.scss */
 .min-height-9 {
   min-height: 9rem;
 }
 
-/* line 323, ../sass/partials/_abstract.scss */
+/* line 327, ../sass/partials/_abstract.scss */
 .min-height-10 {
   min-height: 10rem;
 }
 
-/* line 324, ../sass/partials/_abstract.scss */
+/* line 328, ../sass/partials/_abstract.scss */
 .min-height-11 {
   min-height: 11rem;
 }
 
-/* line 325, ../sass/partials/_abstract.scss */
+/* line 329, ../sass/partials/_abstract.scss */
 .min-height-12 {
   min-height: 12rem;
 }
 
-/* line 326, ../sass/partials/_abstract.scss */
+/* line 330, ../sass/partials/_abstract.scss */
 .min-height-20 {
   min-height: 20rem;
 }
 
-/* line 330, ../sass/partials/_abstract.scss */
+/* line 334, ../sass/partials/_abstract.scss */
 .color-primary {
   color: #682c88 !important;
 }
 
-/* line 331, ../sass/partials/_abstract.scss */
+/* line 335, ../sass/partials/_abstract.scss */
 .color-secondary {
   color: #007eac !important;
 }
 
-/* line 332, ../sass/partials/_abstract.scss */
+/* line 336, ../sass/partials/_abstract.scss */
 .color-brand {
   color: #025b45 !important;
 }
 
-/* line 334, ../sass/partials/_abstract.scss */
+/* line 338, ../sass/partials/_abstract.scss */
 .color-grey-really-light {
   color: #ECECEC;
 }
 
-/* line 335, ../sass/partials/_abstract.scss */
+/* line 339, ../sass/partials/_abstract.scss */
 .color-grey-light {
   color: #D4D3CC;
 }
 
-/* line 336, ../sass/partials/_abstract.scss */
+/* line 340, ../sass/partials/_abstract.scss */
 .color-grey-medium {
   color: #A19F91;
 }
 
-/* line 337, ../sass/partials/_abstract.scss */
+/* line 341, ../sass/partials/_abstract.scss */
 .color-grey-dark {
   color: #7B7A6D;
 }
 
-/* line 338, ../sass/partials/_abstract.scss */
+/* line 342, ../sass/partials/_abstract.scss */
 .color-grey-really-dark {
   color: #474740;
 }
 
-/* line 343, ../sass/partials/_abstract.scss */
+/* line 347, ../sass/partials/_abstract.scss */
 .z-index-0 {
   z-index: 0;
 }
 
-/* line 350, ../sass/partials/_abstract.scss */
+/* line 354, ../sass/partials/_abstract.scss */
 .hide-span span {
   display: none;
 }
@@ -7072,142 +7077,147 @@ Colours
   display: inline-block;
 }
 
-/* line 299, ../sass/partials/_abstract.scss */
+/* line 295, ../sass/partials/_abstract.scss */
+.dis-none {
+  display: none;
+}
+
+/* line 303, ../sass/partials/_abstract.scss */
 .width-100p {
   width: 100%;
 }
 
-/* line 303, ../sass/partials/_abstract.scss */
+/* line 307, ../sass/partials/_abstract.scss */
 .width-50p {
   width: 50%;
 }
 
-/* line 308, ../sass/partials/_abstract.scss */
+/* line 312, ../sass/partials/_abstract.scss */
 .max-width-25 {
   max-width: 25rem;
 }
 
-/* line 309, ../sass/partials/_abstract.scss */
+/* line 313, ../sass/partials/_abstract.scss */
 .max-width-30 {
   max-width: 30rem;
 }
 
-/* line 313, ../sass/partials/_abstract.scss */
+/* line 317, ../sass/partials/_abstract.scss */
 .min-height-0 {
   min-height: 0;
 }
 
-/* line 314, ../sass/partials/_abstract.scss */
+/* line 318, ../sass/partials/_abstract.scss */
 .min-height-1 {
   min-height: 1rem;
 }
 
-/* line 315, ../sass/partials/_abstract.scss */
+/* line 319, ../sass/partials/_abstract.scss */
 .min-height-2 {
   min-height: 2rem;
 }
 
-/* line 316, ../sass/partials/_abstract.scss */
+/* line 320, ../sass/partials/_abstract.scss */
 .min-height-3 {
   min-height: 3rem;
 }
 
-/* line 317, ../sass/partials/_abstract.scss */
+/* line 321, ../sass/partials/_abstract.scss */
 .min-height-4 {
   min-height: 4rem;
 }
 
-/* line 318, ../sass/partials/_abstract.scss */
+/* line 322, ../sass/partials/_abstract.scss */
 .min-height-5 {
   min-height: 5rem;
 }
 
-/* line 319, ../sass/partials/_abstract.scss */
+/* line 323, ../sass/partials/_abstract.scss */
 .min-height-6 {
   min-height: 6rem;
 }
 
-/* line 320, ../sass/partials/_abstract.scss */
+/* line 324, ../sass/partials/_abstract.scss */
 .min-height-7 {
   min-height: 7rem;
 }
 
-/* line 321, ../sass/partials/_abstract.scss */
+/* line 325, ../sass/partials/_abstract.scss */
 .min-height-8 {
   min-height: 8rem;
 }
 
-/* line 322, ../sass/partials/_abstract.scss */
+/* line 326, ../sass/partials/_abstract.scss */
 .min-height-9 {
   min-height: 9rem;
 }
 
-/* line 323, ../sass/partials/_abstract.scss */
+/* line 327, ../sass/partials/_abstract.scss */
 .min-height-10 {
   min-height: 10rem;
 }
 
-/* line 324, ../sass/partials/_abstract.scss */
+/* line 328, ../sass/partials/_abstract.scss */
 .min-height-11 {
   min-height: 11rem;
 }
 
-/* line 325, ../sass/partials/_abstract.scss */
+/* line 329, ../sass/partials/_abstract.scss */
 .min-height-12 {
   min-height: 12rem;
 }
 
-/* line 326, ../sass/partials/_abstract.scss */
+/* line 330, ../sass/partials/_abstract.scss */
 .min-height-20 {
   min-height: 20rem;
 }
 
-/* line 330, ../sass/partials/_abstract.scss */
+/* line 334, ../sass/partials/_abstract.scss */
 .color-primary {
   color: #682c88 !important;
 }
 
-/* line 331, ../sass/partials/_abstract.scss */
+/* line 335, ../sass/partials/_abstract.scss */
 .color-secondary {
   color: #007eac !important;
 }
 
-/* line 332, ../sass/partials/_abstract.scss */
+/* line 336, ../sass/partials/_abstract.scss */
 .color-brand {
   color: #025b45 !important;
 }
 
-/* line 334, ../sass/partials/_abstract.scss */
+/* line 338, ../sass/partials/_abstract.scss */
 .color-grey-really-light {
   color: #ECECEC;
 }
 
-/* line 335, ../sass/partials/_abstract.scss */
+/* line 339, ../sass/partials/_abstract.scss */
 .color-grey-light {
   color: #D4D3CC;
 }
 
-/* line 336, ../sass/partials/_abstract.scss */
+/* line 340, ../sass/partials/_abstract.scss */
 .color-grey-medium {
   color: #A19F91;
 }
 
-/* line 337, ../sass/partials/_abstract.scss */
+/* line 341, ../sass/partials/_abstract.scss */
 .color-grey-dark {
   color: #7B7A6D;
 }
 
-/* line 338, ../sass/partials/_abstract.scss */
+/* line 342, ../sass/partials/_abstract.scss */
 .color-grey-really-dark {
   color: #474740;
 }
 
-/* line 343, ../sass/partials/_abstract.scss */
+/* line 347, ../sass/partials/_abstract.scss */
 .z-index-0 {
   z-index: 0;
 }
 
-/* line 350, ../sass/partials/_abstract.scss */
+/* line 354, ../sass/partials/_abstract.scss */
 .hide-span span {
   display: none;
 }
@@ -7543,7 +7553,6 @@ Colours
 .loader {
   position: absolute;
   background-image: url('/img/loading-icon.svg?1412505524');
-  /**/
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100%;
@@ -7551,21 +7560,21 @@ Colours
   height: 8rem;
   margin-top: -2rem;
 }
-/* line 159, ../sass/partials/_forms.scss */
+/* line 158, ../sass/partials/_forms.scss */
 .loader.pos-static {
   position: static;
 }
 
-/* line 167, ../sass/partials/_forms.scss */
+/* line 166, ../sass/partials/_forms.scss */
 .form-holder {
   max-width: 50rem;
 }
-/* line 170, ../sass/partials/_forms.scss */
+/* line 169, ../sass/partials/_forms.scss */
 .form-holder.wide {
   max-width: 70rem;
 }
 
-/* line 175, ../sass/partials/_forms.scss */
+/* line 174, ../sass/partials/_forms.scss */
 .modal-close {
   position: absolute;
   top: 2rem;
@@ -7573,7 +7582,11 @@ Colours
   overflow: hidden;
   cursor: pointer;
 }
-/* line 182, ../sass/partials/_forms.scss */
+/* line 181, ../sass/partials/_forms.scss */
+.modal-close span {
+  display: none;
+}
+/* line 185, ../sass/partials/_forms.scss */
 .modal-close:before {
   content: "\e617";
   font-family: "icomoon";
@@ -7581,32 +7594,36 @@ Colours
   font-size: 2.3rem;
 }
 
-/* line 192, ../sass/partials/_forms.scss */
+/* line 195, ../sass/partials/_forms.scss */
 label {
   text-transform: uppercase;
   color: #474740;
   font-weight: bold;
   line-height: 3rem;
 }
-/* line 199, ../sass/partials/_forms.scss */
+/* line 202, ../sass/partials/_forms.scss */
 label span {
   text-transform: none;
   color: #A19F91;
 }
-/* line 205, ../sass/partials/_forms.scss */
+/* line 207, ../sass/partials/_forms.scss */
+label span.radio {
+  color: #474740;
+}
+/* line 212, ../sass/partials/_forms.scss */
 label.radio-form {
   text-transform: none;
   display: inline-block;
 }
 
-/* line 217, ../sass/partials/_forms.scss */
+/* line 224, ../sass/partials/_forms.scss */
 textarea {
   width: 100%;
   height: 15rem;
   resize: none;
 }
 
-/* line 224, ../sass/partials/_forms.scss */
+/* line 231, ../sass/partials/_forms.scss */
 input[type='text'], input[type='password'], select {
   width: 100%;
   height: 5rem;
@@ -7614,35 +7631,35 @@ input[type='text'], input[type='password'], select {
   line-height: 5rem;
 }
 
-/* line 234, ../sass/partials/_forms.scss */
+/* line 241, ../sass/partials/_forms.scss */
 input[type='text'], input[type='password'], textarea, select {
   border: 1px solid #D4D3CC;
   border: 0.1rem solid #D4D3CC;
   background-color: white;
   font-family: "Futura BT W01 Book";
 }
-/* line 240, ../sass/partials/_forms.scss */
+/* line 247, ../sass/partials/_forms.scss */
 input[type='text'].error, input[type='password'].error, textarea.error, select.error {
   border: 1px solid #E32333;
   border: 0.1rem solid #E32333;
 }
 
-/* line 246, ../sass/partials/_forms.scss */
+/* line 253, ../sass/partials/_forms.scss */
 input[type="text"][readonly] {
   cursor: pointer;
 }
 
-/* line 250, ../sass/partials/_forms.scss */
+/* line 257, ../sass/partials/_forms.scss */
 input[type='password'], input[type="text"].input-with-icon, select.input-with-icon {
   text-indent: 4rem;
 }
 
-/* line 254, ../sass/partials/_forms.scss */
+/* line 261, ../sass/partials/_forms.scss */
 input[type="text"].currency {
   padding-left: 3rem;
 }
 
-/* line 259, ../sass/partials/_forms.scss */
+/* line 266, ../sass/partials/_forms.scss */
 input[type=submit][disabled=disabled],
 input[type=submit][disabled=disabled]:hover,
 button[disabled=disabled],
@@ -7652,17 +7669,17 @@ button[disabled=disabled]:hover {
   cursor: default;
 }
 
-/* line 268, ../sass/partials/_forms.scss */
+/* line 275, ../sass/partials/_forms.scss */
 select.auto-width {
   width: auto;
 }
 
-/* line 272, ../sass/partials/_forms.scss */
+/* line 279, ../sass/partials/_forms.scss */
 *:focus {
   outline: 0;
 }
 
-/* line 278, ../sass/partials/_forms.scss */
+/* line 285, ../sass/partials/_forms.scss */
 .choose-file-wrapper {
   width: 16.2rem;
   height: 4rem;
@@ -7670,7 +7687,7 @@ select.auto-width {
   position: relative;
   cursor: pointer;
 }
-/* line 286, ../sass/partials/_forms.scss */
+/* line 293, ../sass/partials/_forms.scss */
 .choose-file-wrapper:before {
   position: relative;
   z-index: 10;
@@ -7680,7 +7697,7 @@ select.auto-width {
   font-size: 1.4rem;
   line-height: 3.8rem;
 }
-/* line 297, ../sass/partials/_forms.scss */
+/* line 304, ../sass/partials/_forms.scss */
 .choose-file-wrapper:after {
   content: "Upload file";
   position: absolute;
@@ -7692,14 +7709,14 @@ select.auto-width {
   padding-right: 4.4rem;
   line-height: 1.6rem;
 }
-/* line 315, ../sass/partials/_forms.scss */
+/* line 322, ../sass/partials/_forms.scss */
 .choose-file-wrapper.disabled:after {
   cursor: default;
   background-color: #D4D3CC;
   color: #A19F91;
 }
 
-/* line 323, ../sass/partials/_forms.scss */
+/* line 330, ../sass/partials/_forms.scss */
 .choose-file {
   width: 200%;
   height: 100%;
@@ -7713,7 +7730,7 @@ select.auto-width {
   opacity: 0;
 }
 
-/* line 336, ../sass/partials/_forms.scss */
+/* line 343, ../sass/partials/_forms.scss */
 .form-field-ico {
   position: absolute;
   top: 0;
@@ -7795,7 +7812,7 @@ Colours
   height: 15.3rem;
   background-size: 10.9rem 15.3rem;
   zoom: 1;
-  background: url('/img/wonderland-crest.svg?1413448662') no-repeat center;
+  background: url('/img/wonderland-crest.svg?1414068120') no-repeat center;
   -moz-transition: top 0.3s 0;
   -o-transition: top 0.3s 0;
   -webkit-transition: top 0.3s 0;
@@ -7813,7 +7830,7 @@ Colours
   overflow: hidden;
   background-size: 19.2rem 3.9rem;
   zoom: 1;
-  background: url('/img/wonderland-logo.svg?1413448662') no-repeat center;
+  background: url('/img/wonderland-logo.svg?1414068120') no-repeat center;
   -moz-transition: top 0.3s 0;
   -o-transition: top 0.3s 0;
   -webkit-transition: top 0.3s 0;
@@ -9634,142 +9651,147 @@ Colours
   display: inline-block;
 }
 
-/* line 299, ../sass/partials/_abstract.scss */
+/* line 295, ../sass/partials/_abstract.scss */
+.dis-none {
+  display: none;
+}
+
+/* line 303, ../sass/partials/_abstract.scss */
 .width-100p {
   width: 100%;
 }
 
-/* line 303, ../sass/partials/_abstract.scss */
+/* line 307, ../sass/partials/_abstract.scss */
 .width-50p {
   width: 50%;
 }
 
-/* line 308, ../sass/partials/_abstract.scss */
+/* line 312, ../sass/partials/_abstract.scss */
 .max-width-25 {
   max-width: 25rem;
 }
 
-/* line 309, ../sass/partials/_abstract.scss */
+/* line 313, ../sass/partials/_abstract.scss */
 .max-width-30 {
   max-width: 30rem;
 }
 
-/* line 313, ../sass/partials/_abstract.scss */
+/* line 317, ../sass/partials/_abstract.scss */
 .min-height-0 {
   min-height: 0;
 }
 
-/* line 314, ../sass/partials/_abstract.scss */
+/* line 318, ../sass/partials/_abstract.scss */
 .min-height-1 {
   min-height: 1rem;
 }
 
-/* line 315, ../sass/partials/_abstract.scss */
+/* line 319, ../sass/partials/_abstract.scss */
 .min-height-2 {
   min-height: 2rem;
 }
 
-/* line 316, ../sass/partials/_abstract.scss */
+/* line 320, ../sass/partials/_abstract.scss */
 .min-height-3 {
   min-height: 3rem;
 }
 
-/* line 317, ../sass/partials/_abstract.scss */
+/* line 321, ../sass/partials/_abstract.scss */
 .min-height-4 {
   min-height: 4rem;
 }
 
-/* line 318, ../sass/partials/_abstract.scss */
+/* line 322, ../sass/partials/_abstract.scss */
 .min-height-5 {
   min-height: 5rem;
 }
 
-/* line 319, ../sass/partials/_abstract.scss */
+/* line 323, ../sass/partials/_abstract.scss */
 .min-height-6 {
   min-height: 6rem;
 }
 
-/* line 320, ../sass/partials/_abstract.scss */
+/* line 324, ../sass/partials/_abstract.scss */
 .min-height-7 {
   min-height: 7rem;
 }
 
-/* line 321, ../sass/partials/_abstract.scss */
+/* line 325, ../sass/partials/_abstract.scss */
 .min-height-8 {
   min-height: 8rem;
 }
 
-/* line 322, ../sass/partials/_abstract.scss */
+/* line 326, ../sass/partials/_abstract.scss */
 .min-height-9 {
   min-height: 9rem;
 }
 
-/* line 323, ../sass/partials/_abstract.scss */
+/* line 327, ../sass/partials/_abstract.scss */
 .min-height-10 {
   min-height: 10rem;
 }
 
-/* line 324, ../sass/partials/_abstract.scss */
+/* line 328, ../sass/partials/_abstract.scss */
 .min-height-11 {
   min-height: 11rem;
 }
 
-/* line 325, ../sass/partials/_abstract.scss */
+/* line 329, ../sass/partials/_abstract.scss */
 .min-height-12 {
   min-height: 12rem;
 }
 
-/* line 326, ../sass/partials/_abstract.scss */
+/* line 330, ../sass/partials/_abstract.scss */
 .min-height-20 {
   min-height: 20rem;
 }
 
-/* line 330, ../sass/partials/_abstract.scss */
+/* line 334, ../sass/partials/_abstract.scss */
 .color-primary {
   color: #682c88 !important;
 }
 
-/* line 331, ../sass/partials/_abstract.scss */
+/* line 335, ../sass/partials/_abstract.scss */
 .color-secondary {
   color: #007eac !important;
 }
 
-/* line 332, ../sass/partials/_abstract.scss */
+/* line 336, ../sass/partials/_abstract.scss */
 .color-brand {
   color: #025b45 !important;
 }
 
-/* line 334, ../sass/partials/_abstract.scss */
+/* line 338, ../sass/partials/_abstract.scss */
 .color-grey-really-light {
   color: #ECECEC;
 }
 
-/* line 335, ../sass/partials/_abstract.scss */
+/* line 339, ../sass/partials/_abstract.scss */
 .color-grey-light {
   color: #D4D3CC;
 }
 
-/* line 336, ../sass/partials/_abstract.scss */
+/* line 340, ../sass/partials/_abstract.scss */
 .color-grey-medium {
   color: #A19F91;
 }
 
-/* line 337, ../sass/partials/_abstract.scss */
+/* line 341, ../sass/partials/_abstract.scss */
 .color-grey-dark {
   color: #7B7A6D;
 }
 
-/* line 338, ../sass/partials/_abstract.scss */
+/* line 342, ../sass/partials/_abstract.scss */
 .color-grey-really-dark {
   color: #474740;
 }
 
-/* line 343, ../sass/partials/_abstract.scss */
+/* line 347, ../sass/partials/_abstract.scss */
 .z-index-0 {
   z-index: 0;
 }
 
-/* line 350, ../sass/partials/_abstract.scss */
+/* line 354, ../sass/partials/_abstract.scss */
 .hide-span span {
   display: none;
 }
@@ -11105,142 +11127,147 @@ Colours
   display: inline-block;
 }
 
-/* line 299, ../sass/partials/_abstract.scss */
+/* line 295, ../sass/partials/_abstract.scss */
+.dis-none {
+  display: none;
+}
+
+/* line 303, ../sass/partials/_abstract.scss */
 .width-100p {
   width: 100%;
 }
 
-/* line 303, ../sass/partials/_abstract.scss */
+/* line 307, ../sass/partials/_abstract.scss */
 .width-50p {
   width: 50%;
 }
 
-/* line 308, ../sass/partials/_abstract.scss */
+/* line 312, ../sass/partials/_abstract.scss */
 .max-width-25 {
   max-width: 25rem;
 }
 
-/* line 309, ../sass/partials/_abstract.scss */
+/* line 313, ../sass/partials/_abstract.scss */
 .max-width-30 {
   max-width: 30rem;
 }
 
-/* line 313, ../sass/partials/_abstract.scss */
+/* line 317, ../sass/partials/_abstract.scss */
 .min-height-0 {
   min-height: 0;
 }
 
-/* line 314, ../sass/partials/_abstract.scss */
+/* line 318, ../sass/partials/_abstract.scss */
 .min-height-1 {
   min-height: 1rem;
 }
 
-/* line 315, ../sass/partials/_abstract.scss */
+/* line 319, ../sass/partials/_abstract.scss */
 .min-height-2 {
   min-height: 2rem;
 }
 
-/* line 316, ../sass/partials/_abstract.scss */
+/* line 320, ../sass/partials/_abstract.scss */
 .min-height-3 {
   min-height: 3rem;
 }
 
-/* line 317, ../sass/partials/_abstract.scss */
+/* line 321, ../sass/partials/_abstract.scss */
 .min-height-4 {
   min-height: 4rem;
 }
 
-/* line 318, ../sass/partials/_abstract.scss */
+/* line 322, ../sass/partials/_abstract.scss */
 .min-height-5 {
   min-height: 5rem;
 }
 
-/* line 319, ../sass/partials/_abstract.scss */
+/* line 323, ../sass/partials/_abstract.scss */
 .min-height-6 {
   min-height: 6rem;
 }
 
-/* line 320, ../sass/partials/_abstract.scss */
+/* line 324, ../sass/partials/_abstract.scss */
 .min-height-7 {
   min-height: 7rem;
 }
 
-/* line 321, ../sass/partials/_abstract.scss */
+/* line 325, ../sass/partials/_abstract.scss */
 .min-height-8 {
   min-height: 8rem;
 }
 
-/* line 322, ../sass/partials/_abstract.scss */
+/* line 326, ../sass/partials/_abstract.scss */
 .min-height-9 {
   min-height: 9rem;
 }
 
-/* line 323, ../sass/partials/_abstract.scss */
+/* line 327, ../sass/partials/_abstract.scss */
 .min-height-10 {
   min-height: 10rem;
 }
 
-/* line 324, ../sass/partials/_abstract.scss */
+/* line 328, ../sass/partials/_abstract.scss */
 .min-height-11 {
   min-height: 11rem;
 }
 
-/* line 325, ../sass/partials/_abstract.scss */
+/* line 329, ../sass/partials/_abstract.scss */
 .min-height-12 {
   min-height: 12rem;
 }
 
-/* line 326, ../sass/partials/_abstract.scss */
+/* line 330, ../sass/partials/_abstract.scss */
 .min-height-20 {
   min-height: 20rem;
 }
 
-/* line 330, ../sass/partials/_abstract.scss */
+/* line 334, ../sass/partials/_abstract.scss */
 .color-primary {
   color: #682c88 !important;
 }
 
-/* line 331, ../sass/partials/_abstract.scss */
+/* line 335, ../sass/partials/_abstract.scss */
 .color-secondary {
   color: #007eac !important;
 }
 
-/* line 332, ../sass/partials/_abstract.scss */
+/* line 336, ../sass/partials/_abstract.scss */
 .color-brand {
   color: #025b45 !important;
 }
 
-/* line 334, ../sass/partials/_abstract.scss */
+/* line 338, ../sass/partials/_abstract.scss */
 .color-grey-really-light {
   color: #ECECEC;
 }
 
-/* line 335, ../sass/partials/_abstract.scss */
+/* line 339, ../sass/partials/_abstract.scss */
 .color-grey-light {
   color: #D4D3CC;
 }
 
-/* line 336, ../sass/partials/_abstract.scss */
+/* line 340, ../sass/partials/_abstract.scss */
 .color-grey-medium {
   color: #A19F91;
 }
 
-/* line 337, ../sass/partials/_abstract.scss */
+/* line 341, ../sass/partials/_abstract.scss */
 .color-grey-dark {
   color: #7B7A6D;
 }
 
-/* line 338, ../sass/partials/_abstract.scss */
+/* line 342, ../sass/partials/_abstract.scss */
 .color-grey-really-dark {
   color: #474740;
 }
 
-/* line 343, ../sass/partials/_abstract.scss */
+/* line 347, ../sass/partials/_abstract.scss */
 .z-index-0 {
   z-index: 0;
 }
 
-/* line 350, ../sass/partials/_abstract.scss */
+/* line 354, ../sass/partials/_abstract.scss */
 .hide-span span {
   display: none;
 }
@@ -11576,7 +11603,6 @@ Colours
 .loader {
   position: absolute;
   background-image: url('/img/loading-icon.svg?1412505524');
-  /**/
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100%;
@@ -11584,21 +11610,21 @@ Colours
   height: 8rem;
   margin-top: -2rem;
 }
-/* line 159, ../sass/partials/_forms.scss */
+/* line 158, ../sass/partials/_forms.scss */
 .loader.pos-static {
   position: static;
 }
 
-/* line 167, ../sass/partials/_forms.scss */
+/* line 166, ../sass/partials/_forms.scss */
 .form-holder {
   max-width: 50rem;
 }
-/* line 170, ../sass/partials/_forms.scss */
+/* line 169, ../sass/partials/_forms.scss */
 .form-holder.wide {
   max-width: 70rem;
 }
 
-/* line 175, ../sass/partials/_forms.scss */
+/* line 174, ../sass/partials/_forms.scss */
 .modal-close {
   position: absolute;
   top: 2rem;
@@ -11606,7 +11632,11 @@ Colours
   overflow: hidden;
   cursor: pointer;
 }
-/* line 182, ../sass/partials/_forms.scss */
+/* line 181, ../sass/partials/_forms.scss */
+.modal-close span {
+  display: none;
+}
+/* line 185, ../sass/partials/_forms.scss */
 .modal-close:before {
   content: "\e617";
   font-family: "icomoon";
@@ -11614,32 +11644,36 @@ Colours
   font-size: 2.3rem;
 }
 
-/* line 192, ../sass/partials/_forms.scss */
+/* line 195, ../sass/partials/_forms.scss */
 label {
   text-transform: uppercase;
   color: #474740;
   font-weight: bold;
   line-height: 3rem;
 }
-/* line 199, ../sass/partials/_forms.scss */
+/* line 202, ../sass/partials/_forms.scss */
 label span {
   text-transform: none;
   color: #A19F91;
 }
-/* line 205, ../sass/partials/_forms.scss */
+/* line 207, ../sass/partials/_forms.scss */
+label span.radio {
+  color: #474740;
+}
+/* line 212, ../sass/partials/_forms.scss */
 label.radio-form {
   text-transform: none;
   display: inline-block;
 }
 
-/* line 217, ../sass/partials/_forms.scss */
+/* line 224, ../sass/partials/_forms.scss */
 textarea {
   width: 100%;
   height: 15rem;
   resize: none;
 }
 
-/* line 224, ../sass/partials/_forms.scss */
+/* line 231, ../sass/partials/_forms.scss */
 input[type='text'], input[type='password'], select {
   width: 100%;
   height: 5rem;
@@ -11647,35 +11681,35 @@ input[type='text'], input[type='password'], select {
   line-height: 5rem;
 }
 
-/* line 234, ../sass/partials/_forms.scss */
+/* line 241, ../sass/partials/_forms.scss */
 input[type='text'], input[type='password'], textarea, select {
   border: 1px solid #D4D3CC;
   border: 0.1rem solid #D4D3CC;
   background-color: white;
   font-family: "Futura BT W01 Book";
 }
-/* line 240, ../sass/partials/_forms.scss */
+/* line 247, ../sass/partials/_forms.scss */
 input[type='text'].error, input[type='password'].error, textarea.error, select.error {
   border: 1px solid #E32333;
   border: 0.1rem solid #E32333;
 }
 
-/* line 246, ../sass/partials/_forms.scss */
+/* line 253, ../sass/partials/_forms.scss */
 input[type="text"][readonly] {
   cursor: pointer;
 }
 
-/* line 250, ../sass/partials/_forms.scss */
+/* line 257, ../sass/partials/_forms.scss */
 input[type='password'], input[type="text"].input-with-icon, select.input-with-icon {
   text-indent: 4rem;
 }
 
-/* line 254, ../sass/partials/_forms.scss */
+/* line 261, ../sass/partials/_forms.scss */
 input[type="text"].currency {
   padding-left: 3rem;
 }
 
-/* line 259, ../sass/partials/_forms.scss */
+/* line 266, ../sass/partials/_forms.scss */
 input[type=submit][disabled=disabled],
 input[type=submit][disabled=disabled]:hover,
 button[disabled=disabled],
@@ -11685,17 +11719,17 @@ button[disabled=disabled]:hover {
   cursor: default;
 }
 
-/* line 268, ../sass/partials/_forms.scss */
+/* line 275, ../sass/partials/_forms.scss */
 select.auto-width {
   width: auto;
 }
 
-/* line 272, ../sass/partials/_forms.scss */
+/* line 279, ../sass/partials/_forms.scss */
 *:focus {
   outline: 0;
 }
 
-/* line 278, ../sass/partials/_forms.scss */
+/* line 285, ../sass/partials/_forms.scss */
 .choose-file-wrapper {
   width: 16.2rem;
   height: 4rem;
@@ -11703,7 +11737,7 @@ select.auto-width {
   position: relative;
   cursor: pointer;
 }
-/* line 286, ../sass/partials/_forms.scss */
+/* line 293, ../sass/partials/_forms.scss */
 .choose-file-wrapper:before {
   position: relative;
   z-index: 10;
@@ -11713,7 +11747,7 @@ select.auto-width {
   font-size: 1.4rem;
   line-height: 3.8rem;
 }
-/* line 297, ../sass/partials/_forms.scss */
+/* line 304, ../sass/partials/_forms.scss */
 .choose-file-wrapper:after {
   content: "Upload file";
   position: absolute;
@@ -11725,14 +11759,14 @@ select.auto-width {
   padding-right: 4.4rem;
   line-height: 1.6rem;
 }
-/* line 315, ../sass/partials/_forms.scss */
+/* line 322, ../sass/partials/_forms.scss */
 .choose-file-wrapper.disabled:after {
   cursor: default;
   background-color: #D4D3CC;
   color: #A19F91;
 }
 
-/* line 323, ../sass/partials/_forms.scss */
+/* line 330, ../sass/partials/_forms.scss */
 .choose-file {
   width: 200%;
   height: 100%;
@@ -11746,7 +11780,7 @@ select.auto-width {
   opacity: 0;
 }
 
-/* line 336, ../sass/partials/_forms.scss */
+/* line 343, ../sass/partials/_forms.scss */
 .form-field-ico {
   position: absolute;
   top: 0;
@@ -12045,13 +12079,15 @@ Event Page specific - move these out of here eventually
   background-position: center center;
   background-size: cover;
   height: 37.2rem;
+  position: relative;
+  behavior: url('/css/compiled/backgroundsize.min.htc');
 }
-/* line 103, ../sass/partials/_base.scss */
+/* line 106, ../sass/partials/_base.scss */
 .party-main-image.side {
   height: 18rem;
 }
 
-/* line 108, ../sass/partials/_base.scss */
+/* line 111, ../sass/partials/_base.scss */
 .party-image-default {
   position: absolute;
   text-align: center;
@@ -12063,13 +12099,13 @@ Event Page specific - move these out of here eventually
   padding-top: 9rem;
 }
 
-/* line 119, ../sass/partials/_base.scss */
+/* line 122, ../sass/partials/_base.scss */
 .no-party-image {
   background-color: #D4D3CC;
   min-height: 25rem;
 }
 
-/* line 124, ../sass/partials/_base.scss */
+/* line 127, ../sass/partials/_base.scss */
 .edit-trigger {
   position: absolute;
   top: 2rem;
@@ -12107,24 +12143,24 @@ Event Page specific - move these out of here eventually
   -webkit-border-bottom-left-radius: 3rem 3rem;
   border-bottom-left-radius: 3rem 3rem;
 }
-/* line 139, ../sass/partials/_base.scss */
+/* line 142, ../sass/partials/_base.scss */
 .edit-trigger .edit-label {
   display: none;
   margin-right: 1rem;
   text-transform: uppercase;
 }
-/* line 145, ../sass/partials/_base.scss */
+/* line 148, ../sass/partials/_base.scss */
 .edit-trigger:hover {
   padding: 0 15px;
   padding: 0 .95rem;
   width: auto;
 }
-/* line 149, ../sass/partials/_base.scss */
+/* line 152, ../sass/partials/_base.scss */
 .edit-trigger:hover .edit-label {
   display: inline;
 }
 
-/* line 155, ../sass/partials/_base.scss */
+/* line 158, ../sass/partials/_base.scss */
 .profile-image {
   width: 6rem;
   height: 6rem;
@@ -12137,17 +12173,18 @@ Event Page specific - move these out of here eventually
   position: relative;
   behavior: url('/css/compiled/backgroundsize.min.htc');
 }
-/* line 166, ../sass/partials/_base.scss */
+/* line 169, ../sass/partials/_base.scss */
 .profile-image.profile-image-notset {
-  background-image: url('/img/avatar.png?1413451250') !important;
+  background-image: url('/img/avatar.jpg?1414073758') !important;
 }
-/* line 170, ../sass/partials/_base.scss */
+/* line 173, ../sass/partials/_base.scss */
 .profile-image.small {
   width: 4.2rem;
   height: 4.2rem;
 }
 
-/* line 178, ../sass/partials/_base.scss */
+/* line 179, ../sass/partials/_base.scss */
+price
 .profile-image-remover {
   color: #E32333;
   font-size: 1.1rem;
@@ -12158,34 +12195,34 @@ Event Page specific - move these out of here eventually
   width: 6rem;
 }
 
-/* line 189, ../sass/partials/_base.scss */
+/* line 192, ../sass/partials/_base.scss */
 .image-shift-details, .party-details, .wall-details {
   margin-left: 7.2rem;
 }
-/* line 192, ../sass/partials/_base.scss */
+/* line 195, ../sass/partials/_base.scss */
 .image-shift-details.bigger, .bigger.party-details, .bigger.wall-details {
   margin-left: 12.2rem;
 }
 
-/* line 198, ../sass/partials/_base.scss */
+/* line 201, ../sass/partials/_base.scss */
 .anti-image-shift-details {
   margin-left: -7.2rem;
 }
-/* line 201, ../sass/partials/_base.scss */
+/* line 204, ../sass/partials/_base.scss */
 .anti-image-shift-details.bigger {
   margin-left: -12.2rem;
 }
 
-/* line 206, ../sass/partials/_base.scss */
+/* line 209, ../sass/partials/_base.scss */
 .party-details {
   color: #7B7A6D;
 }
-/* line 210, ../sass/partials/_base.scss */
+/* line 213, ../sass/partials/_base.scss */
 .party-details [class^="icon-"], .party-details [class*=" icon-"] {
   color: #D4D3CC;
 }
 
-/* line 215, ../sass/partials/_base.scss */
+/* line 218, ../sass/partials/_base.scss */
 .badge {
   width: 100%;
   height: 7.8rem;
@@ -12197,34 +12234,34 @@ Event Page specific - move these out of here eventually
   position: relative;
   behavior: url('/css/compiled/backgroundsize.min.htc');
 }
-/* line 225, ../sass/partials/_base.scss */
+/* line 228, ../sass/partials/_base.scss */
 .badge.badge.collected {
   background-position: top center;
 }
 
-/* line 233, ../sass/partials/_base.scss */
+/* line 236, ../sass/partials/_base.scss */
 .icon-only span {
   display: block;
   text-indent: -999rem;
 }
 
 /*******************************/
-/* line 240, ../sass/partials/_base.scss */
+/* line 243, ../sass/partials/_base.scss */
 .party-image-container {
   float: left;
   cursor: pointer;
 }
-/* line 246, ../sass/partials/_base.scss */
+/* line 249, ../sass/partials/_base.scss */
 .party-image-container input[type="radio"] {
   display: none;
 }
-/* line 250, ../sass/partials/_base.scss */
+/* line 253, ../sass/partials/_base.scss */
 .party-image-container .warner {
   width: 16rem;
   text-align: center;
   display: none;
 }
-/* line 259, ../sass/partials/_base.scss */
+/* line 262, ../sass/partials/_base.scss */
 .party-image-container.selected .party-image-selecter:after {
   content: "\e61f";
   font-family: "icomoon";
@@ -12236,18 +12273,18 @@ Event Page specific - move these out of here eventually
   line-height: 8rem;
   opacity: .8;
 }
-/* line 271, ../sass/partials/_base.scss */
+/* line 274, ../sass/partials/_base.scss */
 .party-image-container.selected .party-image-selecter:before {
   content: "";
   margin-left: 0;
 }
-/* line 276, ../sass/partials/_base.scss */
+/* line 279, ../sass/partials/_base.scss */
 .party-image-container.selected .warner {
   display: block;
   cursor: pointer;
 }
 
-/* line 283, ../sass/partials/_base.scss */
+/* line 286, ../sass/partials/_base.scss */
 .party-image-selecter {
   width: 16rem;
   height: 7.5rem;
@@ -12258,23 +12295,23 @@ Event Page specific - move these out of here eventually
   overflow: hidden;
   behavior: url('/css/compiled/backgroundsize.min.htc');
 }
-/* line 295, ../sass/partials/_base.scss */
+/* line 298, ../sass/partials/_base.scss */
 .party-image-selecter:before {
   color: white;
   font-size: 4.7rem;
   line-height: 7.5rem;
   margin-left: 6.8rem;
 }
-/* line 302, ../sass/partials/_base.scss */
+/* line 305, ../sass/partials/_base.scss */
 .party-image-selecter.image-unset {
   cursor: default;
 }
-/* line 306, ../sass/partials/_base.scss */
+/* line 309, ../sass/partials/_base.scss */
 .party-image-selecter.image-set:before {
   content: "";
 }
 
-/* line 311, ../sass/partials/_base.scss */
+/* line 314, ../sass/partials/_base.scss */
 .reference-image {
   width: 100%;
   height: 9rem;
@@ -12282,63 +12319,63 @@ Event Page specific - move these out of here eventually
   background-position: center;
 }
 
-/* line 322, ../sass/partials/_base.scss */
+/* line 325, ../sass/partials/_base.scss */
 .date-details-shifter {
   padding-right: 1.2rem;
 }
 
 /*******************************/
-/* line 328, ../sass/partials/_base.scss */
+/* line 331, ../sass/partials/_base.scss */
 .wall-details {
   color: #A19F91;
   min-height: 6rem;
 }
 
-/* line 334, ../sass/partials/_base.scss */
+/* line 337, ../sass/partials/_base.scss */
 .wall-name, .wall-type {
   font-weight: bold;
   color: #474740;
 }
 
-/* line 339, ../sass/partials/_base.scss */
+/* line 342, ../sass/partials/_base.scss */
 .wall-type {
   display: inline-block;
   text-transform: uppercase;
 }
-/* line 343, ../sass/partials/_base.scss */
+/* line 346, ../sass/partials/_base.scss */
 .wall-type.donation {
   color: #007eac;
 }
-/* line 347, ../sass/partials/_base.scss */
+/* line 350, ../sass/partials/_base.scss */
 .wall-type.party-host {
   color: orange;
 }
 
-/* line 352, ../sass/partials/_base.scss */
+/* line 355, ../sass/partials/_base.scss */
 .wall-time {
   display: inline-block;
   color: #7B7A6D;
 }
 
-/* line 357, ../sass/partials/_base.scss */
+/* line 360, ../sass/partials/_base.scss */
 .wall-remove {
   position: absolute;
   top: 0;
   right: 0;
   margin: 0;
 }
-/* line 363, ../sass/partials/_base.scss */
+/* line 366, ../sass/partials/_base.scss */
 .wall-remove.loader {
   margin-top: -3rem;
 }
 
-/* line 368, ../sass/partials/_base.scss */
+/* line 371, ../sass/partials/_base.scss */
 .donation-copy {
   color: #007eac;
   font-size: 2.3rem;
 }
 
-/* line 373, ../sass/partials/_base.scss */
+/* line 376, ../sass/partials/_base.scss */
 .wall-textarea {
   font: "Futura BT W01 Book";
   font-size: 1.8rem;
@@ -12353,15 +12390,13 @@ Event Page specific - move these out of here eventually
   border-bottom-right-radius: 0;
 }
 
-/* line 382, ../sass/partials/_base.scss */
+/* line 385, ../sass/partials/_base.scss */
 .wall-image-preview {
-  border: 1px solid #D4D3CC;
   border: 0.1rem solid #D4D3CC;
-  margin-top: 0;
   padding-top: 0;
   border-top: none !important;
   background-color: white;
-  margin-top: -0.6rem;
+  margin-top: -.6rem;
   width: 100%;
   -moz-border-radius-topleft: 0;
   -webkit-border-top-left-radius: 0;
@@ -12370,9 +12405,8 @@ Event Page specific - move these out of here eventually
   -webkit-border-top-right-radius: 0;
   border-top-right-radius: 0;
 }
-/* line 395, ../sass/partials/_base.scss */
+/* line 396, ../sass/partials/_base.scss */
 .wall-image-preview.error {
-  border: 1px solid #E32333;
   border: 0.1rem solid #E32333;
 }
 
@@ -12419,28 +12453,37 @@ Event Page specific - move these out of here eventually
   text-align: center;
   line-height: 7.3rem;
 }
-/* line 448, ../sass/partials/_base.scss */
+/* line 436, ../sass/partials/_base.scss */
+.ticket .stub .price s
+span {
+  color: #025b45 !important;
+}
+/* line 452, ../sass/partials/_base.scss */
 .ticket.selected .stub {
   background-color: #025b45;
 }
-/* line 451, ../sass/partials/_base.scss */
+/* line 455, ../sass/partials/_base.scss */
 .ticket.selected .stub .price {
   color: white !important;
   border: 1px solid #4e8f82;
   border: 0.1rem solid #4e8f82;
 }
 /* line 460, ../sass/partials/_base.scss */
+.ticket.selected .stub .price span {
+  color: white !important;
+}
+/* line 468, ../sass/partials/_base.scss */
 .ticket input[type="radio"] {
   display: none;
 }
 
-/* line 467, ../sass/partials/_base.scss */
+/* line 475, ../sass/partials/_base.scss */
 label .ticket span {
   color: inherit;
 }
 
 /*******************************/
-/* line 475, ../sass/partials/_base.scss */
+/* line 483, ../sass/partials/_base.scss */
 .totaliser {
   -moz-border-radius: 9.6px;
   -webkit-border-radius: 9.6px;
@@ -12450,7 +12493,7 @@ label .ticket span {
   border-radius: 0.6rem;
   background-color: #D4D3CC;
 }
-/* line 481, ../sass/partials/_base.scss */
+/* line 489, ../sass/partials/_base.scss */
 .totaliser .current-total {
   -moz-border-radius: 9.6px;
   -webkit-border-radius: 9.6px;
@@ -12486,24 +12529,24 @@ label .ticket span {
 /* =============================================================================
 One-off uses
 ========================================================================== */
-/* line 503, ../sass/partials/_base.scss */
+/* line 511, ../sass/partials/_base.scss */
 #twitter-widget-0 {
   width: 100% !important;
 }
 
-/* line 507, ../sass/partials/_base.scss */
+/* line 515, ../sass/partials/_base.scss */
 .home-twitter-boxx {
   height: 35.6rem;
 }
 
-/* line 511, ../sass/partials/_base.scss */
+/* line 519, ../sass/partials/_base.scss */
 .piggy-donater:after {
   content: "\e61c";
   font-family: "icomoon";
   color: white;
 }
 
-/* line 518, ../sass/partials/_base.scss */
+/* line 526, ../sass/partials/_base.scss */
 .join-party-ico:after {
   content: "\e601";
   font-family: "icomoon";
@@ -12511,7 +12554,7 @@ One-off uses
 }
 
 /*******************************/
-/* line 528, ../sass/partials/_base.scss */
+/* line 536, ../sass/partials/_base.scss */
 .hero {
   height: 45rem;
   background-image: url('/img/hero-ph.jpg?1412505524');
@@ -12525,27 +12568,27 @@ One-off uses
   behavior: url('/css/compiled/backgroundsize.min.htc');
 }
 
-/* line 544, ../sass/partials/_base.scss */
+/* line 552, ../sass/partials/_base.scss */
 .planking {
-  background: url('/img/wood_texture.jpg?1412768263') repeat top center;
+  background: url('/img/wood_texture.jpg?1414068120') repeat top center;
 }
 
-/* line 548, ../sass/partials/_base.scss */
+/* line 556, ../sass/partials/_base.scss */
 .home-content-adjust {
   margin-top: -8rem;
 }
 
-/* line 552, ../sass/partials/_base.scss */
+/* line 560, ../sass/partials/_base.scss */
 .hero-explain {
   margin-right: 35rem;
   text-align: left;
 }
-/* line 556, ../sass/partials/_base.scss */
+/* line 564, ../sass/partials/_base.scss */
 .hero-explain.full-width {
   margin-right: 0;
 }
 
-/* line 561, ../sass/partials/_base.scss */
+/* line 569, ../sass/partials/_base.scss */
 .money-raised {
   position: absolute;
   top: 2.4rem;
@@ -12555,7 +12598,7 @@ One-off uses
   background: url('/img/amount-raised-ph.png?1411035906') no-repeat center right transparent;
 }
 
-/* line 570, ../sass/partials/_base.scss */
+/* line 578, ../sass/partials/_base.scss */
 .raised-amount {
   color: white;
   width: 27.5rem;
@@ -12563,7 +12606,7 @@ One-off uses
   line-height: 4.7rem;
 }
 
-/* line 577, ../sass/partials/_base.scss */
+/* line 585, ../sass/partials/_base.scss */
 .home-tile {
   background-color: white;
   position: relative;
@@ -12573,7 +12616,7 @@ One-off uses
   box-shadow: 0px 14px 30px 0px rgba(0, 0, 0, 0.6);
 }
 
-/* line 586, ../sass/partials/_base.scss */
+/* line 594, ../sass/partials/_base.scss */
 .home-tile-image {
   -moz-border-radius: 11.2px;
   -webkit-border-radius: 11.2px;
@@ -12588,7 +12631,7 @@ One-off uses
   behavior: url('/css/compiled/backgroundsize.min.htc');
 }
 
-/* line 597, ../sass/partials/_base.scss */
+/* line 605, ../sass/partials/_base.scss */
 .home-tile-label {
   position: absolute;
   bottom: 0;
@@ -12597,32 +12640,32 @@ One-off uses
 }
 
 /*******************************/
-/* line 607, ../sass/partials/_base.scss */
+/* line 615, ../sass/partials/_base.scss */
 .spotify-holder {
   margin-top: -7rem;
   text-align: center;
 }
 
-/* line 612, ../sass/partials/_base.scss */
+/* line 620, ../sass/partials/_base.scss */
 .spotify-info-holder {
   position: absolute;
   left: 0;
   color: white;
   text-align: center;
 }
-/* line 619, ../sass/partials/_base.scss */
+/* line 627, ../sass/partials/_base.scss */
 .spotify-info-holder h1 {
   color: white;
 }
 
 /*******************************/
-/* line 627, ../sass/partials/_base.scss */
+/* line 635, ../sass/partials/_base.scss */
 .scoreboard-place {
   float: left;
   width: 5rem;
 }
 
-/* line 632, ../sass/partials/_base.scss */
+/* line 640, ../sass/partials/_base.scss */
 .scoreboard-value {
   position: absolute;
   top: 0;
@@ -12631,22 +12674,22 @@ One-off uses
 }
 
 /*******************************/
-/* line 642, ../sass/partials/_base.scss */
+/* line 650, ../sass/partials/_base.scss */
 .idea-sizer {
   width: 25%;
 }
 
-/* line 646, ../sass/partials/_base.scss */
+/* line 654, ../sass/partials/_base.scss */
 .idea-tile {
   width: 25%;
   padding: 1.2rem;
 }
-/* line 651, ../sass/partials/_base.scss */
+/* line 659, ../sass/partials/_base.scss */
 .idea-tile.wide {
   width: 50%;
 }
 
-/* line 656, ../sass/partials/_base.scss */
+/* line 664, ../sass/partials/_base.scss */
 .idea {
   position: relative;
   padding: 1.2rem;
@@ -12658,42 +12701,42 @@ One-off uses
   box-shadow: 0px 14px 30px 0px rgba(0, 0, 0, 0.6);
 }
 
-/* line 665, ../sass/partials/_base.scss */
+/* line 673, ../sass/partials/_base.scss */
 .idea-details {
   width: 100%;
   top: 11%;
   left: 0;
   padding: 0 1.2rem;
 }
-/* line 671, ../sass/partials/_base.scss */
+/* line 679, ../sass/partials/_base.scss */
 .idea-details.over-the-top {
   position: absolute;
   color: white;
 }
-/* line 675, ../sass/partials/_base.scss */
+/* line 683, ../sass/partials/_base.scss */
 .idea-details.over-the-top h1 {
   color: white;
 }
-/* line 680, ../sass/partials/_base.scss */
+/* line 688, ../sass/partials/_base.scss */
 .idea-details.wide {
   top: 23%;
 }
 
-/* line 685, ../sass/partials/_base.scss */
+/* line 693, ../sass/partials/_base.scss */
 .idea-polaroid {
   -moz-border-radius: 0.7rem;
   -webkit-border-radius: 0.7rem;
   border-radius: 0.7rem;
 }
 
-/* line 689, ../sass/partials/_base.scss */
+/* line 697, ../sass/partials/_base.scss */
 .pinterest-ico:before {
   content: "\e623";
   font-family: "icomoon";
   color: #E32333;
 }
 
-/* line 695, ../sass/partials/_base.scss */
+/* line 703, ../sass/partials/_base.scss */
 .spotify-logo {
   width: 8rem;
   height: 2.4rem;
@@ -12708,7 +12751,7 @@ One-off uses
   behavior: url('/css/compiled/backgroundsize.min.htc');
 }
 
-/* line 710, ../sass/partials/_base.scss */
+/* line 718, ../sass/partials/_base.scss */
 .idea-link {
   position: absolute;
   top: 0;
@@ -12718,12 +12761,12 @@ One-off uses
   z-index: 5;
   text-indent: -999rem;
 }
-/* line 721, ../sass/partials/_base.scss */
+/* line 729, ../sass/partials/_base.scss */
 .idea-link span.label {
   display: none;
 }
 
-/* line 726, ../sass/partials/_base.scss */
+/* line 734, ../sass/partials/_base.scss */
 .share-title {
   width: 27.8rem;
   height: 11.6rem;
@@ -12734,7 +12777,7 @@ One-off uses
   behavior: url('/css/compiled/backgroundsize.min.htc');
 }
 
-/* line 737, ../sass/partials/_base.scss */
+/* line 745, ../sass/partials/_base.scss */
 .share-facebook, .share-twitter, .share-email {
   background-color: #3c5898;
   font-family: "macmillan";
@@ -12743,33 +12786,33 @@ One-off uses
   line-height: 5.5rem;
   color: white;
 }
-/* line 745, ../sass/partials/_base.scss */
+/* line 753, ../sass/partials/_base.scss */
 .share-facebook:before, .share-twitter:before, .share-email:before {
   font-family: "icomoon";
   content: "\e619";
   margin-right: 1.2rem;
 }
 
-/* line 752, ../sass/partials/_base.scss */
+/* line 760, ../sass/partials/_base.scss */
 .share-twitter {
   background-color: #17abed;
 }
-/* line 754, ../sass/partials/_base.scss */
+/* line 762, ../sass/partials/_base.scss */
 .share-twitter:before {
   content: "\e61a";
 }
 
-/* line 759, ../sass/partials/_base.scss */
+/* line 767, ../sass/partials/_base.scss */
 .share-email {
   background-color: #007eac;
 }
-/* line 761, ../sass/partials/_base.scss */
+/* line 769, ../sass/partials/_base.scss */
 .share-email:before {
   content: "\e618";
   margin-right: 0;
 }
 
-/* line 768, ../sass/partials/_base.scss */
+/* line 776, ../sass/partials/_base.scss */
 .centered-share-holder .share-title {
   display: block;
   float: none;
@@ -12779,51 +12822,53 @@ One-off uses
 }
 
 /*******************************/
-/* line 780, ../sass/partials/_base.scss */
+/* line 788, ../sass/partials/_base.scss */
 .color-facebook {
   color: #3c5898 !important;
 }
 
-/* line 784, ../sass/partials/_base.scss */
+/* line 792, ../sass/partials/_base.scss */
 .color-twitter {
   color: #17abed !important;
 }
 
-/* line 788, ../sass/partials/_base.scss */
+/* line 796, ../sass/partials/_base.scss */
 .color-pinterest {
   color: #cc2127 !important;
 }
 
 /*******************************/
-/* line 795, ../sass/partials/_base.scss */
+/* line 803, ../sass/partials/_base.scss */
 .giftaid-logo {
   width: 10rem;
   height: 3.5rem;
   overflow: hidden;
   background-image: url('/img/giftaid-logo.jpg?1412541557');
   background-repeat: no-repeat;
-  background-size: 160px 56px;
   background-size: 10rem 3.5rem;
   position: absolute;
   right: 0;
   top: 0;
+  zoom: 1;
+  behavior: url('/css/compiled/backgroundsize.min.htc');
 }
 
-/* line 809, ../sass/partials/_base.scss */
+/* line 819, ../sass/partials/_base.scss */
 .fsb-logo {
   width: 8rem;
   height: 8rem;
   overflow: hidden;
   background-image: url('/img/fsb.jpg?1412541620');
   background-repeat: no-repeat;
-  background-size: 128px 128px;
   background-size: 8rem 8rem;
   position: absolute;
   right: 0;
   top: 0;
+  zoom: 1;
+  behavior: url('/css/compiled/backgroundsize.min.htc');
 }
 
-/* line 823, ../sass/partials/_base.scss */
+/* line 834, ../sass/partials/_base.scss */
 .ticket-label {
   line-height: 2rem;
 }

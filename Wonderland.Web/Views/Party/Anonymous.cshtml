@@ -57,7 +57,7 @@
             <div class="wgrid-full parent">
                 <div class="boxx" m-radius-picker>
 
-                    <div m-totaliser m-raised="{{ '@Model.PartyHost.AmountRaised' }}" m-total="{{ '@Model.PartyHost.FundraisingTarget' }}"></div>
+                    <div m-totaliser m-raised="@Model.PartyHost.AmountRaised" m-total="@Model.PartyHost.FundraisingTarget"></div>
 
                 </div>
             </div>
@@ -171,7 +171,7 @@
                             <span class="wall-time" ng-bind="feedItem.timeFormatted"></span>
                         </div>
                         <div class="color-grey-really-dark" ng-class="{'donation-copy': feedItem.isDonation}" ng-bind="feedItem.text"></div>
-                        <img class="margin-top-small margin-bottom-small pad-small" ng-src="{{ feedItem.imageUrl }}" />
+                        <img class="margin-top-small margin-bottom-small pad-small" ng-src="{{ feedItem.imageUrl }}" ng-show="feedItem.imageUrl" />
                     </div>
                     <hr ng-show="!$last"/>
                 </div>

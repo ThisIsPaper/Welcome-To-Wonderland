@@ -148,13 +148,12 @@ $btnPaddingLarge: $btnPaddingMedium*2;
 .loader {
     position: absolute;
     background-image: image-url('loading-icon.svg');
-	/**/// TODO: have a background-image fallback
     background-repeat: no-repeat;
     background-position: center;
     background-size: 100%;
-	@include rem-fallback(width, 8rem);
-	@include rem-fallback(height, 8rem);
-	@include rem-fallback(margin-top, -2rem);
+	width: 8rem;
+	height: 8rem;
+	margin-top: -2rem;
 
     &.pos-static {
         position: static;
@@ -174,10 +173,14 @@ $btnPaddingLarge: $btnPaddingMedium*2;
 
 .modal-close {
     position: absolute;
-	@include rem-fallback(top, 2rem);
-	@include rem-fallback(right, 2rem);
+	top: 2rem;
+	right: 2rem;
     overflow: hidden;
     cursor: pointer;
+
+	span {
+		display: none;
+	}
 
     &:before {
         content: "\e617";
@@ -200,6 +203,10 @@ label {
         text-transform: none;
         color: $greyMedium;
     }
+
+	span.radio {
+		color: $greyReallyDark;
+	}
 
 
     &.radio-form {

@@ -33,60 +33,6 @@
 			e.stopPropagation();
 		});
 
-		var parseMaxTime = function parseMaxTime(str) {
-			var total = 0, values = angular.isString(str) ? str.split(/\s*,\s*/) : [];
-			angular.forEach(values, function(value) {
-				total = Math.max(parseFloat(value) || 0, total);
-			});
-			return total;
-		}
-
-		var getAnimDuration = function getDuration($element) {
-			var duration = 0;
-			if(($sniffer.transitions || $sniffer.animations)) {
-				//one day all browsers will have these properties
-				var w3cAnimationProp = 'animation';
-				var w3cTransitionProp = 'transition';
-
-				//but some still use vendor-prefixed styles
-				var vendorAnimationProp = $sniffer.vendorPrefix + 'Animation';
-				var vendorTransitionProp = $sniffer.vendorPrefix + 'Transition';
-
-				var durationKey = 'Duration',
-					delayKey = 'Delay',
-					animationIterationCountKey = 'IterationCount';
-
-				//we want all the styles defined before and after
-				var ELEMENT_NODE = 1;
-				angular.forEach($element, function(element) {
-					if(element.nodeType == ELEMENT_NODE) {
-						var elementStyles = window.getComputedStyle(element) || {};
-
-						var transitionDelay = Math.max(parseMaxTime(elementStyles[w3cTransitionProp + delayKey]),
-							parseMaxTime(elementStyles[vendorTransitionProp + delayKey]));
-
-						var animationDelay = Math.max(parseMaxTime(elementStyles[w3cAnimationProp + delayKey]),
-							parseMaxTime(elementStyles[vendorAnimationProp + delayKey]));
-
-						var transitionDuration = Math.max(parseMaxTime(elementStyles[w3cTransitionProp + durationKey]),
-							parseMaxTime(elementStyles[vendorTransitionProp + durationKey]));
-
-						var animationDuration = Math.max(parseMaxTime(elementStyles[w3cAnimationProp + durationKey]),
-							parseMaxTime(elementStyles[vendorAnimationProp + durationKey]));
-
-						if(animationDuration > 0) {
-							animationDuration *= Math.max(parseInt(elementStyles[w3cAnimationProp + animationIterationCountKey]) || 0,
-								parseInt(elementStyles[vendorAnimationProp + animationIterationCountKey]) || 0, 1);
-						}
-
-						duration = Math.max(animationDelay + animationDuration, transitionDelay + transitionDuration, duration);
-					}
-				});
-			}
-
-			return duration * 1000;
-		}
-
 		angular.element(document).on('keyup', function(e) {
 			if (e.keyCode == 27 && openedModals.length > 0) {
 				e.stopPropagation();
@@ -172,13 +118,13 @@
 				}
 
 				var off = modal.$scope.$on('$includeContentLoaded', function(event) { // on view load
-					if(modal.params.init && !modal.params.isolate) {
-						angular.extend(event.targetScope, modal.params.init, true);
-					}
-					if(typeof modal.params.controller === 'string') {
-						$controller(modal.params.controller, {$scope: event.targetScope, $init: modal.params.init, $ocModalParams: modal.params}); // inject controller
-					}
-					off();
+                    if(modal.params.init && !modal.params.isolate) {
+                        angular.extend(event.targetScope, modal.params.init, true);
+                    }
+                    if(typeof modal.params.controller === 'string') {
+                        $controller(modal.params.controller, {$scope: event.targetScope, $init: modal.params.init, $ocModalParams: modal.params}); // inject controller
+                    }
+                    off();
 				});
 
 				if(modal.params.template) {
@@ -214,7 +160,6 @@
 				}
 				var modal = modals[id || openedModals[openedModals.length -1]];
 				if(modal && modal.$scope.modalShow === true) { // if the modal is opened
-					//var animDuration = getAnimDuration(angular.element(modal.$element[0].querySelector('.modal-content')));
 					$timeout(function() {
 						modal.$scope.modalShow = false;
 
@@ -239,7 +184,7 @@
 							}
 
 							deferred.resolve();
-						}, 0);
+						});
 					});
 				} else {
 					deferred.resolve();
@@ -259,8 +204,8 @@
 			template:
 			'<div class="modal-dialog">' +
 				'<div class="modal-backdrop"></div>' +
-				'<div class="modal-content {{customClass}}" ng-class="{opened: modalShow}" ng-if="modalTemplate"></div>' +
-				'<div class="modal-content {{customClass}}" ng-class="{opened: modalShow}" ng-include="modalUrl"></div>' +
+				'<div class="modal-content {{ customClass }}" ng-class="{opened: modalShow}" ng-if="modalTemplate"></div>' +
+				'<div class="modal-content {{ customClass }}" ng-class="{opened: modalShow}" ng-include="modalUrl"></div>' +
 			'</div>',
 
 			link: function link($scope, $element, $attrs) {
@@ -288,8 +233,8 @@
 						if(!$templateWrapper) {
 							$templateWrapper = angular.element($element.children()[1]);
 						}
-						$templateWrapper.append($compile(newVal)($scope));
-						$scope.$emit('$includeContentLoaded');
+                        $templateWrapper.append($compile(newVal)($scope));
+                        $scope.$emit('$includeContentLoaded');
 					}
 				});
 			}

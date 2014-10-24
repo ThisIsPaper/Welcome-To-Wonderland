@@ -15,7 +15,7 @@ wonderlandApp.factory('fileUpload', ['$document', '$q', 'uniqueId',
             // it. This allows us to do something that looks like an ajax
             // form submit, but able to upload files in older browsers.
             var formTarget = 'frame_form_target_' + uniqueId();
-            var targetIframe = $('<iframe/>', {name: formTarget, id: formTarget}).appendTo($document.find('body'));
+            var targetIframe = $('<iframe name="' + formTarget + '"></iframe>', {id: formTarget}).appendTo($document.find('body'));
             form.attr('target', formTarget);
 
             form.submit();

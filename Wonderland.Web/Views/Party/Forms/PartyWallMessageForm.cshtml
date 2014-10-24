@@ -6,7 +6,7 @@
     {
         @Html.AntiForgeryToken()
 
-        <input id="PartyWallImage" name="PartyWallImage" type="hidden" ng-value="wall.formModel.PartyWallImage|forceBlankString">
+        <input id="PartyWallImage" name="PartyWallImage" type="hidden" ng-value="wall.formModel.PartyWallImage|forceNull">
 
         <div class="image-shift-details margin-bottom-small">
             <textarea name="Message" ng-model="wall.formModel.Message" m-radius-picker="small" class="wall-textarea" ng-class="{'error': wall.formModel.Message.length>600}"></textarea>
@@ -23,7 +23,7 @@
 
             <div class="form-info" ng-show="wall.formModel.Message.length<=maxCharLength">
                 <span ng-bind="maxCharLength-wall.formModel.Message.length"></span>
-                <div ng-pluralize count="maxCharLength-wall.formModel.Message.length" when="{'one': 'character', 'other': 'characters'}"></div>
+                <span ng-pluralize count="maxCharLength-wall.formModel.Message.length" when="{'one': 'character', 'other': 'characters'}"></span>
                 <span> remaining</span>
             </div>
 
@@ -32,7 +32,7 @@
                 <span class="icon-icon_alert"></span>
                 <span>You have exceeded the maximum length by </span>
                 <span ng-bind="wall.formModel.Message.length-maxCharLength"></span>
-                <div ng-pluralize count="wall.formModel.Message.length-maxCharLength" when="{'one': 'character', 'other': 'characters'}"></div>
+                <span ng-pluralize count="wall.formModel.Message.length-maxCharLength" when="{'one': 'character', 'other': 'characters'}"></span>
             </div>
 
 

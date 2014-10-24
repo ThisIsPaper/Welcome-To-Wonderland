@@ -2,8 +2,7 @@
 
 @foreach (PromotionTile promotionTile in Model)
 {
-
-    <div class="grid-4 grid-tablet-6 grid-mobile-12" m-rotate m-rotate-hover>
+    <div class="grid-4 grid-tablet-6 grid-mobile-12 grid-ie7-4" m-rotate m-rotate-hover>
         <div class="home-tile" m-height-match-width>
             <a class="idea-link" href="@promotionTile.Link" target="{{ isExternalLink('@promotionTile.Link') ? '_blank' : '_self' }}">
                 <div class="home-tile-image" ng-style="{'background-image': 'url(@promotionTile.Image.GetResponsiveCropUrl("Square"))'}"></div>
@@ -13,5 +12,4 @@
         </div>
 
     </div>
-
 }

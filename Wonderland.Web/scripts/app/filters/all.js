@@ -5,9 +5,7 @@ wonderlandApp.filter('datePreviewFormat', [function () {
         var newFormattedDate = "";
 
         if (dateString) {
-
             newFormattedDate = moment(dateString).format('dddd D MMM, YYYY') + " at " + moment(dateString).format('HH.mm');
-
         }
 
         return newFormattedDate;
@@ -142,7 +140,11 @@ wonderlandApp.filter('formatAmountComplete', [function () {
 wonderlandApp.filter('mLimitTo', ['$filter', function ($filter) {
 
     return function (str, limit, suffix) {
-        return $filter('limitTo')(str, limit) + (str.length>limit && suffix ? suffix : '');
+        var newStr = "";
+        if (str) {
+            newStr = $filter('limitTo')(str, limit) + (str.length>limit && suffix ? suffix : '');
+        }
+        return newStr;
     };
 
 }]);
@@ -183,6 +185,14 @@ wonderlandApp.filter('forceBlankString', [function () {
 
     return function (str) {
         return str || '';
+    };
+
+}]);
+
+wonderlandApp.filter('forceNull', [function () {
+
+    return function (str) {
+        return str || null;
     };
 
 }]);

@@ -72,16 +72,16 @@ console.log('SAVE DATA', originalData, sendData);
 
                     var target = 'form_target_iframe_' + uniqueId();
 
-                    var $targetIframe = $('<iframe/>', { name: target, id: target, frameborder: '0' }).insertAfter(element).css({ width: 0, height: 0 }).load(function () {
+                    var $targetIframe = $('<iframe name="' + target + '"></iframe>', { id: target, frameborder: '0' }).insertAfter(element).css({ width: 0, height: 0 }).load(function () {
                         $timeout(function () {
-                            var response = $targetIframe.contents().find("body").html(),
+                            var response = $targetIframe.contents().find("body").html().replace(/<\/?[^>]+>/gi, ''),
                                 parsedJson = null;
-
                             try {
                                 parsedJson = JSON.parse(response);
                             } catch (er) {
                             }
 
+console.log('response', response, parsedJson);
                             handleResponse(parsedJson, originalData);
                         });
                     });
@@ -107,10 +107,7 @@ console.log('SAVE DATA', originalData, sendData);
                     dataVar.assign(scope.$parent, response.data);
                 }
 
-                if (response && response.success === false) {
-                    emitError();
-                    setProgressState('ready');
-                } else {
+                if (response && response.Success === true) {
                     setProgressState('saved');
                     savedConfirmTimer = $timeout(function () {
                         setProgressState('ready');
@@ -120,6 +117,9 @@ console.log('SAVE DATA', originalData, sendData);
                     if (onSuccessEvent) {
                         $rootScope.$emit(onSuccessEvent, response, angular.copy(originalData));
                     }
+                } else {
+                    emitError();
+                    setProgressState('ready');
                 }
 
             }

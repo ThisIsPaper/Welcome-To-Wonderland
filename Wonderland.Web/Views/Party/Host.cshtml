@@ -3,7 +3,6 @@
     Layout = "~/Views/SitePage.cshtml";
 }
 
-
 <div class="page-bg">
 
     <div class="container gutter" ng-controller="PartyCtrl" ng-init="profileImageUrlInit('@Model.PartyHost.ProfileImageUrl')">
@@ -17,17 +16,17 @@
                 <p class="margin-bottom-large">These 3 simple steps will get your party set up and ready to raise funds for Macmillan.</p>
 
                 <div class="grid-4 grid-tablet-12 margin-bottom-medium pad-0"
-                     ng-click="openPageModal(fundraisingTargetData.FundraisingTarget > 0 ? null : 'partials/fundraisingTargetForm.html', 'suggestedDonationModal', {'fundraisingTargetData': fundraisingTargetDataForForm, 'feedback': fundraisingTargetDataFeedback})">
-                    <div class="btn-primary" ng-class="{'disabled': fundraisingTargetData.FundraisingTarget>0}" m-radius-picker="small">1. Fundariasing target <span class="icon-icon_edit_circle margin-left-small"></span></div>
+                     ng-click="openPageModal(fundraisingTargetData.FundraisingTarget > 0 ? null : 'fundraisingTargetPartial', 'fundraisingTargetModal', {'fundraisingTargetData': fundraisingTargetDataForForm, 'hardcodedFundraisingTargets': hardcoded.fundraisingTargets, 'feedback': fundraisingTargetDataFeedback}, 'FundraisingTargetCtrl')">
+                    <div class="btn-primary" ng-class="{'disabled': fundraisingTargetData.FundraisingTarget>0}" m-radius-picker="small">1. Fundraising target <span class="icon-icon_edit_circle margin-left-small"></span></div>
                 </div>
 
                 <div class="grid-4 grid-tablet-12 margin-bottom-medium pad-tablet-0"
-                     ng-click="openPageModal(suggestedDonationData.SuggestedDonation > 0 ? null : 'partials/suggestedDonationForm.html', 'suggestedDonationModal', {'suggestedDonationData': suggestedDonationDataForForm, 'feedback': suggestedDonationDataFeedback})">
+                     ng-click="openPageModal(suggestedDonationData.SuggestedDonation > 0 ? null : 'suggestedDonationPartial', 'suggestedDonationModal', 'PartyCtrl', {'suggestedDonationData': suggestedDonationDataForForm, 'hardcoded': hardcoded, 'feedback': suggestedDonationDataFeedback})">
                     <div class="btn-primary" ng-class="{'disabled': suggestedDonationData.SuggestedDonation>0}" m-radius-picker="small">2. Ticket price <span class="icon-icon_edit_circle margin-left-small"></span></div>
                 </div>
 
                 <div class="grid-4 grid-tablet-12 margin-bottom-medium pad-0"
-                     ng-click="openPageModal(partyDetailsData.PartyHeading ? null : 'partials/partyDetailsForm.html', 'partyDetailsModal', {'partyDetailsData': partyDetailsDataForForm, 'feedback': partyDetailsDataFeedback})">
+                     ng-click="openPageModal(partyDetailsData.PartyHeading ? null : 'partyDetailsPartial', 'partyDetailsModal', {'partyDetailsData': partyDetailsDataForForm, 'feedback': partyDetailsDataFeedback}, 'PartyDetailsFormCtrl')">
                     <div class="btn-primary" ng-class="{'disabled': partyDetailsData.PartyHeading}" m-radius-picker="small">3. Party details <span class="icon-icon_edit_circle margin-left-small"></span></div>
                 </div>
 
@@ -39,7 +38,7 @@
         <div class="wgrid-main wgrid-no-bottom-margin">
 
             <div class="wgrid-full parent">
-                <div class="boxx collapse" m-radius-picker="large">                    
+                <div class="boxx collapse" m-radius-picker="large">
 
                     <div class="wgrid-full wgrid-no-bottom-margin parent" ng-init="hardCodedCurrentPartyImageUrlInit('@Html.Raw(JsonConvert.SerializeObject(Model.PartyHost.PartyImage))')">
 
@@ -54,12 +53,12 @@
 
                         <div class="boxx-twerk"></div>
 
-                        <div class="edit-trigger" ng-click="openPageModal('partials/partyImageForm.html', 'partyImageModal', {'partyImageData': partyImageDataForForm, 'partyImageDefaultData': partyImageDefaultData, 'customImage': partyCustomImage, 'feedback': partyImageDataFeedback})"><span class="edit-label">Edit</span><span class="icon-icon_edit"></span></div>
+                        <div class="edit-trigger" ng-click="openPageModal('partyImagePartial', 'partyImageModal', {'partyImageData': partyImageDataForForm, 'partyImageDefaultData': partyImageDefaultData, 'customImage': partyCustomImage, 'feedback': partyImageDataFeedback})"><span class="edit-label">Edit</span><span class="icon-icon_edit"></span></div>
 
                     </div>
 
                     <div class="wgrid-full pad-large pad-bottom-0">
-                        <div m-profile-image="{{ pageProfile.image.url }}" class="clickable" m-radius-picker="small" ng-click="openPageModal('partials/profileImageForm.html', 'profileImageModal', {'pageProfile': pageProfile, 'pageFeedback': pageFeedback})"></div>
+                        <div m-profile-image="{{ pageProfile.image.url }}" class="clickable" m-radius-picker="small" ng-click="openPageModal('profileImagePartial', 'profileImageModal', {'pageProfile': pageProfile, 'pageFeedback': pageFeedback})"></div>
                         <div class="party-details">
                             <h3 class="pad-right-3 margin-top-0 margin-bottom-small" ng-bind="partyDetailsData.PartyHeading"></h3>
                             <div class="body-medium float-left margin-right-medium">
@@ -71,9 +70,8 @@
                                 <span ng-bind="partyDetailsFormattedAddress"></span>
                             </div>
                         </div>
-                        <div class="edit-trigger" ng-click="openPageModal('partials/partyDetailsForm.html', 'partyDetailsModal', {'partyDetailsData': partyDetailsDataForForm, 'feedback': partyDetailsDataFeedback})"><span class="edit-label">Edit</span><span class="icon-icon_edit"></span></div>
+                        <div class="edit-trigger" ng-click="openPageModal('partyDetailsPartial', 'partyDetailsModal', {'partyDetailsData': partyDetailsDataForForm, 'feedback': partyDetailsDataFeedback}, 'PartyDetailsFormCtrl')"><span class="edit-label">Edit</span><span class="icon-icon_edit"></span></div>
                     </div>
-
                     <div class="wgrid-full pad-large">
                         <div class="boxx internal highlight" m-radius-picker="small">
                             <div class="grid-12 text-align-center margin-bottom-small">
@@ -94,30 +92,22 @@
                 <div class="boxx" m-radius-picker="medium large">
                     <h1 class="pad-right-3 pad-left-3">Join the Apr&egrave;s-Ski party</h1>
                     <pre class="body-medium font-futura" ng-bind-html="partyCopyData.CopyHtmlSafe">@this.Model.Copy</pre>
-                    <div class="edit-trigger" ng-click="openPageModal('partials/partyCopyForm.html', 'partyCopyModal', {'partyCopyData': partyCopyDataForForm, 'feedback': partyCopyDataFeedback})"><span class="edit-label">Edit</span><span class="icon-icon_edit"></span></div>
+                    <div class="edit-trigger" ng-click="openPageModal('partyCopyPartial', 'partyCopyModal', {'partyCopyData': partyCopyDataForForm, 'feedback': partyCopyDataFeedback})"><span class="edit-label">Edit</span><span class="icon-icon_edit"></span></div>
                 </div>
             </div>
 
         </div>
 
-
         <div class="wgrid-side wgrid-no-bottom-margin parent">
-
-
-
 
             <div class="wgrid-full parent">
                 <div class="boxx" m-radius-picker ng-init="amountRaised=@Model.PartyHost.AmountRaised">
-
                     <h4 class="top margin-right-3">Set your fundraising target</h4>
-
-                    <div m-totaliser m-raised="{{ amountRaised }}" m-total="{{ fundraisingTargetData.FundraisingTarget }}"></div>
-
-                    <div class="edit-trigger" ng-click="openPageModal('partials/fundraisingTargetForm.html', 'suggestedDonationModal', {'fundraisingTargetData': fundraisingTargetDataForForm, 'feedback': fundraisingTargetDataFeedback})"><span class="edit-label">Edit</span><span class="icon-icon_edit"></span></div>
+                    <div m-totaliser m-raised="amountRaised" m-total="{{ fundraisingTargetData.FundraisingTarget }}"></div>
+                    <div class="edit-trigger" ng-click="openPageModal('fundraisingTargetPartial', 'suggestedDonationModal', {'fundraisingTargetData': fundraisingTargetDataForForm, 'hardcodedFundraisingTargets': hardcoded.fundraisingTargets, 'feedback': fundraisingTargetDataFeedback}, 'FundraisingTargetCtrl')"><span class="edit-label">Edit</span><span class="icon-icon_edit"></span></div>
 
                 </div>
             </div>
-
 
 
             <div class="wgrid-full parent">
@@ -132,7 +122,7 @@
                         </div>
                     </div>
 
-                    <div class="edit-trigger" ng-click="openPageModal('partials/suggestedDonationForm.html', 'suggestedDonationModal', {'suggestedDonationData': suggestedDonationDataForForm, 'feedback': suggestedDonationDataFeedback})"><span class="edit-label">Edit</span><span class="icon-icon_edit"></span></div>
+                    <div class="edit-trigger" ng-click="openPageModal('suggestedDonationPartial', 'suggestedDonationModal', {'suggestedDonationData': suggestedDonationDataForForm, 'hardcoded': hardcoded, 'feedback': suggestedDonationDataFeedback})"><span class="edit-label">Edit</span><span class="icon-icon_edit"></span></div>
                 </div>
             </div>
 
@@ -221,7 +211,7 @@
                             <span class="wall-time" ng-bind="feedItem.timeFormatted"></span>
                         </div>
                         <div class="color-grey-really-dark" ng-class="{'donation-copy': feedItem.isDonation}" ng-bind="feedItem.text"></div>
-                        <img class="margin-top-small margin-bottom-small pad-small" ng-src="{{ feedItem.imageUrl }}" />
+                        <img class="margin-top-small margin-bottom-small pad-small" ng-src="{{ feedItem.imageUrl }}" ng-show="feedItem.imageUrl" />
                     </div>
                     <div ng-hide="feedItem.isDonation">
                         <div class="warning wall-remove clickable"ng-hide="wall.feedback.removeProcessingId==feedItem.id" ng-click="deleteFeedItem(feedItem.id)">Remove <span class="icon-icon_x"></span></div>
@@ -239,6 +229,8 @@
                 </div>
 
             </div>
+
+
         </div>
 
         @(Html.Action<PartySurfaceController>("RenderPartyImageForm"))

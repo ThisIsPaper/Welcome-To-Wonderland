@@ -28,7 +28,13 @@
 
                 <hr class="margin-top-large margin-bottom-large"/>
 
-                <a href="@Model.PartyHost.PartyUrl" class="btn-primary float-right" m-radius-picker="small medium">Go to the party page ></a>
+                <div class="clearfix">
+                    @if (!this.Members.IsLoggedInPartier())
+                    {
+                    <a class="btn-secondary float-left width-mobile-100p" m-radius-picker="small" href="mailto:email@email.com?subject=Wonderland%20payment%20confirmation&body=Hi%2C%20here%20are%20your%20payment%20details%20from%20your%20Wonderland%20donation%20to%20Macmillan.%20Order%23%3A%20@Model.DonationRow.VendorTxCode%20for%20the%20amount%20of%20%C2%A3@Model.DonationRow.Amount.%20%0A%0AMany%20thanks%20your%20Wonderland%20Party%20Crew." target="_blank"><span class="margin-left-small">Email payment confirmation</span></a>
+                    }
+                    <a href="@Model.PartyHost.PartyUrl" class="btn-primary float-right width-mobile-100p" m-radius-picker="small medium">Go to the party page ></a>
+                </div>
 
             </div>
 
@@ -60,5 +66,17 @@
         </div>
 
     </div>
+
+
+    <!-- Google Tag Manager OVERRIDE Variables -->
+    <script>
+        dataLayer = [{
+            'paymentNumber': @Model.DonationRow.VendorTxCode, // Payment#,
+            'paymentAmount': @Model.DonationRow.Amount, // Total amount,
+            'partyID': '@Model.PartyHost.PartyGuid' /// partyID
+        }];
+    </script>
+    <!-- End Google Tag Manager OVERRIDE Variables -->
+
 
 </div>

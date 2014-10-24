@@ -3,9 +3,7 @@
 <div ng-init="fundraisingTargetDataInit(@Html.Raw(Json.Encode(Model)))"></div>
 
 
-<script type="text/ng-template" id="partials/fundraisingTargetForm.html">
-
-
+<script type="text/template" m-template-creator="fundraisingTargetPartial">
 
     <div class="clearfix">
         @using (Html.BeginUmbracoForm<PartySurfaceController>("HandleFundraisingTargetForm", FormMethod.Post, new { m_serialized="", m_post_on_submit="fundraisingTargetData", m_on_success_event="fundraisingTargetDataUpdated", m_on_error_event="fundraisingTargetDataError", @name="targetForm", ng_submit="feedback.processing=true" }))
@@ -18,9 +16,11 @@
                 <p class="form-info">Set your target to let your guests know how much you are trying to raise for Macmillan.</p>
 
                 <h4>Choose your target</h4>
-                <label class="dis-inline-block margin-right-small"><input class="margin-right-small" type="radio" name="selectar" ng-click="showChoose=false" ng-model="fundraisingTargetData.FundraisingTarget" value="180" ng-readonly="feedback.processing" />£180</label>
-                <label class="dis-inline-block margin-right-small"><input class="margin-right-small" type="radio" name="selectar" ng-click="showChoose=false" ng-model="fundraisingTargetData.FundraisingTarget" value="250" ng-readonly="feedback.processing" />£250</label>
-                <label class="dis-inline-block margin-right-small"><input class="margin-right-small" type="radio" name="selectar" ng-click="showChoose=false" ng-model="fundraisingTargetData.FundraisingTarget" value="400" ng-readonly="feedback.processing" />£400</label>
+                <label class="dis-inline-block margin-right-small" ng-repeat="x in fixedTargets">
+                    <input class="margin-right-small" type="radio" name="selectar" ng-model="fundraisingTargetData.FundraisingTarget" ng-value="x" ng-readonly="feedback.processing" />
+                    <span class="radio">£</span>
+                    <span class="radio" ng-bind="x"></span>
+                </label>
                 <label class="dis-inline-block "><input type="checkbox" name="chooser" ng-model="showChoose" ng-readonly="feedback.processing" />I'll choose</label>
 
                 <div class="pos-relative width-50p margin-top-medium" ng-show="showChoose">
@@ -50,7 +50,7 @@
                     <div class="errorred" ng-show="feedback.showNetworkError" ng-cloak>Sorry, your connection timed out. <br/>Please login again.</div>
                     <button type="submit" class="btn-primary float-right width-mobile-100p" ng-disabled="!fundraisingTargetData.FundraisingTarget || feedback.processing" m-radius-picker="small medium">Save changes</button>
                     <span ng-click="closePageModal()" class="cancel margin-right-1 float-right">Cancel</span>
-                    <div ng-click="closePageModal()" class="modal-close"></div>
+                    <div ng-click="closePageModal()" class="modal-close"><span>Close</span></div>
                     <div class="loader pos-mobile-static float-mobile-left" ng-show="feedback.processing"></div>
                 </div>
 

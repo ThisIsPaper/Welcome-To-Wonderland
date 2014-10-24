@@ -40,14 +40,13 @@
 
                 <hr/>
 
-                @ViewData["errorMessage"]
-
-
-                <hr/>
+                <div class="margin-top-large margin-bottom-large">
+                    @ViewData["errorMessage"]
+                </div>
 
                 @* TODO: need guid to go back to the donation page *@
                 @*@Html.ActionLink("Pay in money", "NavigateToDonateUrl", "DonateSurface", new { partyGuid = Model.PartyHost.PartyGuid }, new { @class = "btn-primary btn-large piggy-donater dis-block", @m_radius_picker="small medium" })*@
-                <span class="cancel margin-right-1 float-right">Go back</span>
+                @*<a href="@Model.PartyHost.PartyUrl" class="cancel margin-right-1 float-right">Go back to the party page</a>*@
 
             </div>
 

@@ -11,20 +11,17 @@ wonderlandApp.directive('mTotaliser', ['$filter', function ($filter) {
 
     return {
 
-        restrict: 'AE',
+        restrict: 'A',
 
         scope: {
-            raised: '@mRaised',
-            total: '@mTotal',
-            rank: '@mRank',
-            rankTotal: '@mRankTotal'
+            'total': '@mTotal'
         },
 
         template:   '<div>' +
                         '<span class="body-mega color-brand margin-right-tiny" ng-bind="raised|mCurrency:\'£\'"></span>' +
                         '<span class="dis-inline-block"><span> raised of the </span>' +
                         '<span class="body-highlight color-brand" ng-bind="total|mCurrency:\'£\'"></span>' +
-                        '<span> target</span></span>' +
+                        '<span>&nbsp;target</span></span>' +
                     '</div>' +
 
                     '<div class="totaliser">' +
@@ -33,18 +30,25 @@ wonderlandApp.directive('mTotaliser', ['$filter', function ($filter) {
 
                     '<div class="form-info">' +
                         '<span class="float-left" ng-show="total>0" ng-cloak><span ng-bind="currentPercentage"></span>%</span>' +
-                        '<span class="float-right" ng-show="rank">Ranked #<span ng-bind="rank"></span><span ng-show="rankTotal"> of <span ng-bind="rankTotal"></span>&nbsp;<div ng-pluralize count="rankTotal" when="{\'1\': \'party\', \'other\': \'parties\'}"></div></span></span>' +
                     '</div>',
 
-        link: function (scope) {
+        link: function (scope, element, attrs) {
 
-            scope.$watch('raised + total', function () {
+            var updatePercentage = function () {
 
                 var cp = $filter('percentageRounder')(scope.raised, scope.total, false);
                 scope.currentPercentage = cp;
                 var cpc = cp > 100 ? 100 : cp;
                 scope.cappedCurrentPercentage = cpc;
+
+            };
+
+            attrs.$observe('mRaised', function (raised) {
+                scope.raised = scope.$parent.$eval(raised);
+                updatePercentage();
             });
+
+            scope.$watch('total', updatePercentage);
 
         }
 

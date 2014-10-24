@@ -2,13 +2,12 @@
 
 <div ng-init="partyCopyDataInit(@Html.Raw(Json.Encode(Model)))"></div>
 
-<script type="text/ng-template" id="partials/partyCopyForm.html">
-
-    <div class="clearfix" ng-init="maxCharLength=600">
+<script type="text/template" m-template-creator="partyCopyPartial">
+    <div class="form-holder clearfix" ng-init="maxCharLength=600">
         @using (Html.BeginUmbracoForm<PartySurfaceController>("HandlePartyCopyForm", FormMethod.Post, new { m_serialized="", m_post_on_submit="partyCopyData", m_on_success_event="partyCopyDataUpdated", m_on_error_event="partyCopyDataErrored", ng_submit="feedback.processing=true" }))
         {
             @Html.AntiForgeryToken()
-            <div class="form-holder margin-bottom-3">
+            <div class="margin-bottom-3">
                 <h4>Party description</h4>
 
                 <label for="Copy">Description <span>(Max. <span ng-bind="maxCharLength"></span> characters)</span></label>
@@ -16,7 +15,7 @@
 
                 <div class="form-info" ng-show="partyCopyData.Copy.length<=maxCharLength">
                     <span ng-bind="maxCharLength-partyCopyData.Copy.length"></span>
-                    <div ng-pluralize count="maxCharLength-partyCopyData.Copy.length" when="{'one': 'character', 'other': 'characters'}"></div>
+                    <span ng-pluralize count="maxCharLength-partyCopyData.Copy.length" when="{'one': 'character', 'other': 'characters'}"></span>
                     <span> remaining</span>
                 </div>
 
@@ -24,7 +23,7 @@
                     <span class="icon-icon_alert"></span>
                     <span>You have exceeded the maximum length by </span>
                     <span ng-bind="partyCopyData.Copy.length-maxCharLength"></span>
-                    <div ng-pluralize count="partyCopyData.Copy.length-maxCharLength" when="{'one': 'character', 'other': 'characters'}"></div>
+                    <span ng-pluralize count="partyCopyData.Copy.length-maxCharLength" when="{'one': 'character', 'other': 'characters'}"></span>
                 </div>
             </div>
 
@@ -32,7 +31,7 @@
 
             <button type="submit" class="btn-primary float-right width-mobile-100p" ng-disabled="partyCopyData.Copy.length>maxCharLength || feedback.processing" m-radius-picker="small medium">Save changes</button>
             <span ng-click="closePageModal()" class="cancel margin-right-1 float-right">Cancel</span>
-            <div ng-click="closePageModal()" class="modal-close"></div>
+            <div ng-click="closePageModal()" class="modal-close"><span>Close</span></div>
             <div class="loader pos-mobile-static float-mobile-left" ng-show="feedback.processing"></div>
         }
     </div>

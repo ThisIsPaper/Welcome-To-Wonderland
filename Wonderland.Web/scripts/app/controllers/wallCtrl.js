@@ -125,6 +125,7 @@ wonderlandApp.controller('WallCtrl', ['mHttp', '$filter', '$scope', '$timeout', 
 
         $timeout(function () {
             $scope.wall.formModel = angular.copy(formModel);
+            $scope.wall.formModel.PartyWallImage = null; // Just force this here, it was doing some weird things on IE7
 
             $scope.wall.previewImageUrl = null;
             $scope.wall.feedback.imageProcessing = false;
