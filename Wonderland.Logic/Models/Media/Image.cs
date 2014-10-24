@@ -5,6 +5,7 @@ namespace Wonderland.Logic.Models.Media
     using Umbraco.Core.Models;
     using Umbraco.Web;
     using Wonderland.Logic.Interfaces;
+    using AST.S3.Helper;
 
     public class Image : SerializablePublishedContentModel, IPartyImage
     {
@@ -25,6 +26,18 @@ namespace Wonderland.Logic.Models.Media
             get
             {
                 return this.GetPropertyValue<string>(Image.AltTextAlias);
+            }
+        }
+
+        public override string Url
+        {
+            get
+            {
+                //UmbracoHelper umbracoHelper = new UmbracoHelper(UmbracoContext.Current);
+
+                //return MediaHelper.ParseMedia(this.Id.ToString(), umbracoHelper).Url;
+
+                return base.Url;
             }
         }
     }
