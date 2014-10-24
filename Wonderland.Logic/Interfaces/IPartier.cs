@@ -12,10 +12,7 @@ namespace Wonderland.Logic.Interfaces
     /// </summary>
     public interface IPartier
     {
-        /// <summary>
-        /// used for comparrison checks
-        /// </summary>
-        int Id { get; }
+        int Id { get; } // used for comparrison checks
 
         string FirstName { get; set;  }
 
@@ -23,35 +20,16 @@ namespace Wonderland.Logic.Interfaces
 
         ProfileImage ProfileImage { get; set; }
 
-        /// <summary>
-        /// url to their profile image
-        /// </summary>
-        string ProfileImageUrl { get; }
+        string ProfileImageUrl { get; } // Helper, could be replaced with ProfileImage.Url
 
-        /// <summary>
-        /// gets the custom url associated with the host or guest
-        /// </summary>
-        /// <returns></returns>
-        string PartyUrl { get; }
+        string PartyUrl { get; } // the custom url associated with the host or guest (host and guest method differ)
 
-        /// <summary>
-        /// 
-        /// </summary>
         Guid PartyGuid { get; }
 
-        /// <summary>
-        /// 
-        /// </summary>
         Address BillingAddress { get; set; }
 
-        /// <summary>
-        /// common property in BaseMemberType
-        /// </summary>
-        string Email { get; }
+        string Email { get; } // common property in BaseMemberType
 
-        /// <summary>
-        /// 
-        /// </summary>
         Guid ForgottenPasswordGuid { get; set; }
 
         int DotMailerId { get; set; }

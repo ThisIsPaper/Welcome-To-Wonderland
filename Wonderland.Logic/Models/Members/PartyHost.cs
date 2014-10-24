@@ -4,16 +4,14 @@ namespace Wonderland.Logic.Models.Members
     using System;
     using System.Linq;
     using System.Web.Security;
-    using Umbraco.Core;
     using Umbraco.Core.Models;
     using Umbraco.Web;
     using Umbraco.Web.Security;
+    using Wonderland.Logic.Extensions;
     using Wonderland.Logic.Interfaces;
     using Wonderland.Logic.Models.Content;
     using Wonderland.Logic.Models.Entities;
-    using Wonderland.Logic.Extensions;
     using Wonderland.Logic.Models.Media;
-    using Umbraco.Core.Services;
 
     public class PartyHost : Partier, IPartier
     {
@@ -23,11 +21,6 @@ namespace Wonderland.Logic.Models.Members
         public const string Alias = "PartyHost";
 
         // Properties
-        public const string PartyGuidAlias = "partyGuid";
-        public const string FirstNameAlias = "firstName";
-        public const string LastNameAlias = "lastName";
-        public const string BillingAddressAlias = "billingAddress";
-        //public const string ProfileImageAlias = "profileImage";
         public const string BlockedAlias = "blocked";
         public const string MarketingSourceAlias = "marketingSource";
         public const string PartyKitAddressAlias = "partyKitAddress";
@@ -41,17 +34,9 @@ namespace Wonderland.Logic.Models.Members
         public const string PartyCopyAlias = "partyCopy";
         public const string SuggestedDonationAlias = "suggestedDonation";
         public const string FundraisingTargetAlias = "fundraisingTarget";
-        public const string ForgottenPasswordGuidAlias = "forgottenPasswordGuid";
-        public const string DotMailerIdAlias = "dotMailerId";
-        public const string DotMailerRegistrationCompleteAlias = "dotMailerRegistrationComplete";
         public const string DotMailerPartyPageCompleteAlias = "dotMailerPartyPageComplete";
-        public const string FacebookRegistrationAlias = "facebookRegistration";
 
-        // local cache variables (avoids waiting for round trip to update umbraco cache values)
-        private Guid? partyGuid = null;
-        private string firstName = null;
-        private string lastName = null;
-        private Address billingAddress = null;
+        // Local Cache
         private Address partyAddress = null;
         private DateTime? partyDateTime = null;
         private string partyUrlIdentifier = null;
@@ -63,81 +48,6 @@ namespace Wonderland.Logic.Models.Members
         public PartyHost(IPublishedContent content)
             : base(content)
         {
-        }
-
-        /// <summary>
-        /// once created, never changes - this guid identifies a specific party
-        /// </summary>
-        public Guid PartyGuid
-        {
-            get
-            {
-                if (this.partyGuid.HasValue)
-                {
-                    return this.partyGuid.Value;
-                }
-
-                return this.GetPropertyValue<Guid>(PartyHost.PartyGuidAlias);
-            }
-            set
-            {
-                this.partyGuid = value;
-                this.SetPropertyValue(PartyHost.PartyGuidAlias, value.ToString());
-            }
-        }
-
-        public string FirstName
-        {
-            get
-            {
-                if (this.firstName != null)
-                {
-                    return this.firstName;
-                }
-
-                return this.GetPropertyValue<string>(PartyHost.FirstNameAlias);
-            }
-            set
-            {
-                this.firstName = value;
-                this.SetPropertyValue(PartyHost.FirstNameAlias, value);
-            }
-        }
-
-        public string LastName
-        {
-            get
-            {
-                if (this.lastName != null)
-                {
-                    return this.lastName;
-                }
-
-                return this.GetPropertyValue<string>(PartyHost.LastNameAlias);
-            }
-            set
-            {
-                this.lastName = value;
-                this.SetPropertyValue(PartyHost.LastNameAlias, value);
-            }
-        }
-
-        public Address BillingAddress
-        {
-            get
-            {
-                if (this.billingAddress != null)
-                {
-                    return this.billingAddress;
-                }
-
-                return new Address(this.GetPropertyValue<string>(PartyHost.BillingAddressAlias));
-            }
-            set
-            {
-                this.billingAddress = value;
-                this.SetPropertyValue(PartyHost.BillingAddressAlias, value.ToString());
-            }
         }
 
         public bool Blocked
@@ -356,42 +266,6 @@ namespace Wonderland.Logic.Models.Members
                 this.SetPropertyValue(PartyHost.FundraisingTargetAlias, value.ToString());
             }
         }
-
-        public Guid ForgottenPasswordGuid
-        {
-            get
-            {
-                return this.GetPropertyValue<Guid>(PartyHost.ForgottenPasswordGuidAlias);
-            }
-            set
-            {
-                this.SetPropertyValue(PartyHost.ForgottenPasswordGuidAlias, value.ToString("D").ToLower());
-            }
-        }
-
-        public int DotMailerId
-        {
-            get
-            {
-                return this.GetPropertyValue<int>(PartyHost.DotMailerIdAlias);
-            }
-            set
-            {
-                this.SetPropertyValue(PartyHost.DotMailerIdAlias, value);
-            }
-        }
-
-        public bool DotMailerRegistrationComplete
-        {
-            get
-            {
-                return this.GetPropertyValue<bool>(PartyHost.DotMailerRegistrationCompleteAlias);
-            }
-            set
-            {
-                this.SetPropertyValue(PartyHost.DotMailerRegistrationCompleteAlias, value);
-            }
-        }
         
         public bool DotMailerPartyPageComplete
         {
@@ -408,32 +282,6 @@ namespace Wonderland.Logic.Models.Members
             {
                 this.dotMailerPartyPageComplete = value;
                 this.SetPropertyValue(PartyHost.DotMailerPartyPageCompleteAlias, value);
-            }
-        }
-
-        public bool FacebookRegistration
-        {
-            get
-            {
-                return this.GetPropertyValue<bool>(PartyHost.FacebookRegistrationAlias);
-            }
-            set
-            {
-                this.SetPropertyValue(PartyHost.FacebookRegistrationAlias, value);
-            }
-        }
-
-        // left in so as to avoid lots of view changes - ideally this would be removed
-        public string ProfileImageUrl
-        {
-            get
-            {
-                if (this.ProfileImage != null)
-                {
-                    return this.ProfileImage.Url; //TODO:S3URL
-                }
-
-                return null;
             }
         }
 
