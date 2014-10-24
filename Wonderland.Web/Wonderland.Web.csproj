@@ -353,6 +353,7 @@
     <Content Include="img\wonderland-logo.png" />
     <Content Include="img\wonderland-logo.svg" />
     <Content Include="img\wood_texture.jpg" />
+    <Content Include="robots.txt" />
     <Content Include="scripts\all.min.js" />
     <Content Include="scripts\app\app.js" />
     <Content Include="scripts\app\controllers\faqsCtrl.js" />
