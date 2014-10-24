@@ -3,4 +3,4 @@
     Layout = "SitePage.cshtml";
 }
 
-@Html.Partial("PartyIdeaTiles", Model.GetPartyIdeaTiles())
+@Html.CachedPartial("PartyIdeaTiles", Model.GetPartyIdeaTiles(), SitePage.CacheDuration)
