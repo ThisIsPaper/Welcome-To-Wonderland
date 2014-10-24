@@ -68,6 +68,12 @@
     <CreateItem Include="views\**\*.*">
       <Output ItemName="Content" TaskParameter="Include" />
     </CreateItem>
+		<CreateItem Include="img\**\*.*">
+			<Output ItemName="Content" TaskParameter="Include" />
+		</CreateItem>
+		<CreateItem Include="fonts\**\*.*">
+			<Output ItemName="Content" TaskParameter="Include" />
+		</CreateItem>
     <!-- 
       SUMMARY :: Umbraco Application (v4.11+)
     -->
