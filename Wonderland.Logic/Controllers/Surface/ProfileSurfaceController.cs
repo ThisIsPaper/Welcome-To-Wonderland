@@ -126,17 +126,32 @@ namespace Wonderland.Logic.Controllers.Surface
 
                 if (profileImageForm.ProfileImage != null && profileImageForm.ProfileImage.ContentLength > 0 && profileImageForm.ProfileImage.InputStream.IsImage())
                 {
-                    int id = ProfileImages.CreateProfileImage(profileImageForm.ProfileImage);
+                    ProfileImage profileImage = partier.ProfileImage;
 
-                    partier.ProfileImage = (ProfileImage)this.Umbraco.TypedMedia(id);
+                    string url = string.Empty;
 
-                    string url = this.Umbraco.TypedMedia(id).GetProperty("umbracoFile").Value.ToString();
+                    if (profileImage == null)
+                    {
+                        // create new profile image
+                        profileImage = ProfileImages.CreateProfileImage(profileImageForm.ProfileImage);
 
-                    formResponse.Message = JsonConvert.SerializeObject(this.Umbraco.TypedMedia(id)); //TODO:S3URL
-                    //formResponse.Message = JsonConvert.SerializeObject(new { id = id, url = this.Umbraco.TypedMedia(id).GetProperty("umbracoFile").Value.ToString() }); //TODO:S3URL;
+                        // get the new url
+                        url = profileImage.Url;
+
+                        // update pointer on partier
+                        partier.ProfileImage = profileImage;
+                    }
+                    else
+                    {
+                        // update existing profile image
+                        url = profileImage.UploadImage(profileImageForm.ProfileImage);
+                    }
+
+                    formResponse.Message = JsonConvert.SerializeObject(new { id = profileImage.Id, url = url }); //TODO:S3URL
                 }
                 else // remove reference to image
                 {
+                    // this will cause the file deletion
                     partier.ProfileImage = null;
                 }            
             }

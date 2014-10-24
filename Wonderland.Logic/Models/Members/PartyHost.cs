@@ -15,7 +15,7 @@ namespace Wonderland.Logic.Models.Members
     using Wonderland.Logic.Models.Media;
     using Umbraco.Core.Services;
 
-    public class PartyHost : BaseMemberType, IPartier
+    public class PartyHost : Partier, IPartier
     {
         public static DateTime DefaultPartyDate = new DateTime(2014, 12, 5, 20, 0, 0);
 
@@ -27,7 +27,7 @@ namespace Wonderland.Logic.Models.Members
         public const string FirstNameAlias = "firstName";
         public const string LastNameAlias = "lastName";
         public const string BillingAddressAlias = "billingAddress";
-        public const string ProfileImageAlias = "profileImage";
+        //public const string ProfileImageAlias = "profileImage";
         public const string BlockedAlias = "blocked";
         public const string MarketingSourceAlias = "marketingSource";
         public const string PartyKitAddressAlias = "partyKitAddress";
@@ -58,6 +58,7 @@ namespace Wonderland.Logic.Models.Members
         private bool? dotMailerPartyPageComplete = null;
         private decimal? amountRaised = null;
         private int? totalGuests = null;
+        private IPartyImage partyImage = null;
 
         public PartyHost(IPublishedContent content)
             : base(content)
@@ -136,34 +137,6 @@ namespace Wonderland.Logic.Models.Members
             {
                 this.billingAddress = value;
                 this.SetPropertyValue(PartyHost.BillingAddressAlias, value.ToString());
-            }
-        }
-
-        public ProfileImage ProfileImage
-        {
-            get
-            {
-                int? imageId = (int?)this.GetPropertyValue(PartyHost.ProfileImageAlias);
-
-                if (imageId.HasValue && imageId > 0)
-                {
-                    return (ProfileImage)this.Umbraco.TypedMedia(imageId);
-                }
-
-                return null;
-            }
-            set
-            {
-                if (value != null)
-                {
-                    this.SetPropertyValue(PartyHost.ProfileImageAlias, value.Id);
-                }
-                else
-                {
-                    // TODO: remove any existing profile image
-
-                    this.SetPropertyValue(PartyHost.ProfileImageAlias, null);
-                }                
             }
         }
 
@@ -279,11 +252,16 @@ namespace Wonderland.Logic.Models.Members
                 this.SetPropertyValue(PartyHost.PartyUrlIdentifierAlias, value);
             }
         }
-
+        
         public IPartyImage PartyImage
         {
             get
             {
+                if (this.partyImage != null)
+                {
+                    return this.partyImage;
+                }
+
                 int? imageId = (int?)this.GetPropertyValue(PartyHost.PartyImageAlias);
 
                 if (imageId.HasValue && imageId > 0)
@@ -293,27 +271,26 @@ namespace Wonderland.Logic.Models.Members
 
                 return null;
             }
-            set // value will never be null
+            set 
             {
-                if (this.PartyImage != null) // ie. it's been set once
+                this.partyImage = value;
+
+                if (value == null)
                 {
-                    // potentially overwriting an image
-                    if (this.PartyImage.Id != value.Id)
+                    // if there is a custom uploaded party image (rather than a chosen default)
+                    if (this.PartyImage is PartyImage)
                     {
-                        // if the old party image is custom upload, then delete it
-                        if (this.PartyImage is PartyImage)
-                        {
-                            IMediaService mediaService = ApplicationContext.Current.Services.MediaService;
-
-                            IMedia media = mediaService.GetById(this.PartyImage.Id);
-                            mediaService.Delete(media);
-                        }
-
-                        this.SetPropertyValue(PartyHost.PartyImageAlias, value.Id);
+                        // delete image                   
+                        IMedia media = this.MediaService.GetById(this.PartyImage.Id);
+                        this.MediaService.Delete(media);
                     }
+
+                    // remove reference
+                    this.SetPropertyValue(PartyHost.PartyImageAlias, null);
                 }
                 else
                 {
+                    // update reference
                     this.SetPropertyValue(PartyHost.PartyImageAlias, value.Id);
                 }
             }
@@ -446,7 +423,7 @@ namespace Wonderland.Logic.Models.Members
             }
         }
 
-        // left in so as to avoid lots of view changes - ideally this woudl be removed
+        // left in so as to avoid lots of view changes - ideally this would be removed
         public string ProfileImageUrl
         {
             get

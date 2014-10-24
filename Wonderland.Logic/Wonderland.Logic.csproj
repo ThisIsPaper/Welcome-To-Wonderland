@@ -248,6 +248,7 @@
     <Compile Include="Enums\PartyIdeaTileSize.cs" />
     <Compile Include="Enums\PartyWallItemType.cs" />
     <Compile Include="Enums\PaymentJourney.cs" />
+    <Compile Include="Events\DeleteMemberCleanUp.cs" />
     <Compile Include="Events\InvalidatePartyIdeaTilesCache.cs" />
     <Compile Include="Events\InvalidateSiteSettingsCache.cs" />
     <Compile Include="Events\SetPageNotFoundContentFinder.cs" />
@@ -296,12 +297,14 @@
     <Compile Include="Models\Database\MessageRow.cs" />
     <Compile Include="Models\Database\PartyRow.cs" />
     <Compile Include="Models\Entities\Address.cs" />
+    <Compile Include="Models\Media\BaseMediaType.cs" />
     <Compile Include="Models\Media\PartyImage.cs" />
     <Compile Include="Models\Media\PartyImages.cs" />
     <Compile Include="Models\Media\PartyWallImage.cs" />
     <Compile Include="Models\Media\PartyWallImages.cs" />
     <Compile Include="Models\Media\ProfileImage.cs" />
     <Compile Include="Models\Media\ProfileImages.cs" />
+    <Compile Include="Models\Members\Partier.cs" />
     <Compile Include="Models\Messages\FacebookCredentials.cs" />
     <Compile Include="Models\Messages\PartyWallItem.cs">
       <SubType>Code</SubType>

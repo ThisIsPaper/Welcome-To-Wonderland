@@ -1,25 +1,18 @@
 ﻿
-namespace Wonderland.Logic.Models.Members
+namespace Wonderland.Logic.Models.Media
 {
     using Umbraco.Core;
     using Umbraco.Core.Models;
-    using Umbraco.Core.Models.PublishedContent;
     using Umbraco.Core.Services;
     using Umbraco.Web;
     using Umbraco.Web.Security;
+    using Wonderland.Logic.Models;
 
-    public abstract class BaseMemberType : PublishedContentModel
+    public abstract class BaseMediaType : NonSerializablePublishedContentModel
     {
         private UmbracoHelper umbracoHelper = null;
-
         private MembershipHelper membershipHelper = null;
-        
-        private IMember member = null;
-
-        public BaseMemberType(IPublishedContent content)
-            : base(content)
-        {
-        }
+        private IMedia media = null;
 
         protected UmbracoHelper Umbraco
         {
@@ -42,9 +35,6 @@ namespace Wonderland.Logic.Models.Members
             }
         }
 
-        /// <summary>
-        /// to match the .Members property found in the SurfaceControllers and the Views
-        /// </summary>
         protected MembershipHelper Members
         {
             get
@@ -58,9 +48,6 @@ namespace Wonderland.Logic.Models.Members
             }
         }
 
-        /// <summary>
-        /// helper to get at the MemberService
-        /// </summary>
         internal IMemberService MemberService
         {
             get
@@ -77,42 +64,28 @@ namespace Wonderland.Logic.Models.Members
             }
         }
 
-        /// <summary>
-        /// lazy load the member obj used to set properties to the db
-        /// </summary>
-        internal IMember Member
+        internal IMedia Media
         {
             get
             {
-                if (this.member == null)
+                if (this.media == null)
                 {
-                    this.member = this.MemberService.GetById(this.Id);
+                    this.media = this.MediaService.GetById(this.Id);
                 }
 
-                return this.member;
+                return this.media;
             }
         }
 
-        public string Username
+        public BaseMediaType(IPublishedContent content)
+            : base(content)
         {
-            get
-            {
-                return this.Member.Username;
-            }
-        }
-
-        public string Email
-        {
-            get
-            {
-                return this.Member.Email;
-            }
         }
 
         protected void SetPropertyValue(string propertyAlias, object propertyValue)
         {
-            this.Member.SetValue(propertyAlias, propertyValue);
-            this.MemberService.Save(this.member, true); // NOTE: true indicates that any Umbraco events watching will be fired
+            this.Media.SetValue(propertyAlias, propertyValue);
+            this.MediaService.Save(this.Media, 0, true);
         }
     }
 }
