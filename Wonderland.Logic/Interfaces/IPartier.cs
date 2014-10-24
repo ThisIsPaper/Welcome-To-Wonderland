@@ -34,14 +34,8 @@ namespace Wonderland.Logic.Interfaces
         /// <returns></returns>
         string PartyUrl { get; }
 
-        /// <summary>
-        /// 
-        /// </summary>
         Guid PartyGuid { get; }
 
-        /// <summary>
-        /// 
-        /// </summary>
         Address BillingAddress { get; set; }
 
         /// <summary>
@@ -49,9 +43,6 @@ namespace Wonderland.Logic.Interfaces
         /// </summary>
         string Email { get; }
 
-        /// <summary>
-        /// 
-        /// </summary>
         Guid ForgottenPasswordGuid { get; set; }
 
         int DotMailerId { get; set; }

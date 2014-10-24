@@ -20,18 +20,14 @@ namespace Wonderland.Logic.Models.Members
 
         // Properties
         public const string PartyGuidAlias = "partyGuid";
-        public const string FirstNameAlias = "firstName";
-        public const string LastNameAlias = "lastName";
         public const string BillingAddressAlias = "billingAddress";
-        //public const string ProfileImageAlias = "profileImage";
         public const string ForgottenPasswordGuidAlias = "forgottenPasswordGuid";
         public const string DotMailerIdAlias = "dotMailerId";
         public const string DotMailerRegistrationCompleteAlias = "dotMailerRegistrationComplete";
         public const string FacebookRegistrationAlias = "facebookRegistration";
 
+        // Local Cache
         private Guid? partyGuid = null; // used as a local cache, as the setter / getter normally requires a full round trip
-        private string firstName = null;
-        private string lastName = null;
 
         public PartyGuest(IPublishedContent content)
             : base(content)
@@ -56,42 +52,6 @@ namespace Wonderland.Logic.Models.Members
             {
                 this.partyGuid = value;
                 this.SetPropertyValue(PartyHost.PartyGuidAlias, value.ToString());
-            }
-        }
-
-        public string FirstName
-        {
-            get
-            {
-                if (this.firstName != null)
-                {
-                    return this.firstName;
-                }
-
-                return this.GetPropertyValue<string>(PartyHost.FirstNameAlias);
-            }
-            set
-            {
-                this.firstName = value;
-                this.SetPropertyValue(PartyHost.FirstNameAlias, value);
-            }
-        }
-
-        public string LastName
-        {
-            get
-            {
-                if (this.lastName != null)
-                {
-                    return this.lastName;
-                }
-
-                return this.GetPropertyValue<string>(PartyHost.LastNameAlias);
-            }
-            set
-            {
-                this.lastName = value;
-                this.SetPropertyValue(PartyHost.LastNameAlias, value);
             }
         }
 

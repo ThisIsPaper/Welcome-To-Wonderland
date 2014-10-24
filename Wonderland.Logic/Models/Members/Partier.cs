@@ -16,14 +16,54 @@ namespace Wonderland.Logic.Models.Members
     public abstract class Partier : BaseMemberType
     {
         // Properties
-        public const string ProfileImageAlias = "profileImage";
+        private const string FirstNameAlias = "firstName";
+        private const string LastNameAlias = "lastName";
+        private const string ProfileImageAlias = "profileImage";
 
         // local cache
+        private string firstName = null;
+        private string lastName = null;
         private ProfileImage profileImage = null;
 
         public Partier(IPublishedContent content)
             : base(content)
         {
+        }
+
+        public string FirstName
+        {
+            get
+            {
+                if (this.firstName != null)
+                {
+                    return this.firstName;
+                }
+
+                return this.GetPropertyValue<string>(Partier.FirstNameAlias) ?? String.Empty;
+            }
+            set
+            {
+                this.firstName = value;
+                this.SetPropertyValue(Partier.FirstNameAlias, value);
+            }
+        }
+
+        public string LastName
+        {
+            get
+            {
+                if (this.lastName != null)
+                {
+                    return this.lastName;
+                }
+
+                return this.GetPropertyValue<string>(Partier.LastNameAlias) ?? String.Empty;
+            }
+            set
+            {
+                this.lastName = value;
+                this.SetPropertyValue(Partier.LastNameAlias, value);
+            }
         }
 
         public ProfileImage ProfileImage

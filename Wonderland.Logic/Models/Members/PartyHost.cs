@@ -24,10 +24,7 @@ namespace Wonderland.Logic.Models.Members
 
         // Properties
         public const string PartyGuidAlias = "partyGuid";
-        public const string FirstNameAlias = "firstName";
-        public const string LastNameAlias = "lastName";
         public const string BillingAddressAlias = "billingAddress";
-        //public const string ProfileImageAlias = "profileImage";
         public const string BlockedAlias = "blocked";
         public const string MarketingSourceAlias = "marketingSource";
         public const string PartyKitAddressAlias = "partyKitAddress";
@@ -49,8 +46,6 @@ namespace Wonderland.Logic.Models.Members
 
         // local cache variables (avoids waiting for round trip to update umbraco cache values)
         private Guid? partyGuid = null;
-        private string firstName = null;
-        private string lastName = null;
         private Address billingAddress = null;
         private Address partyAddress = null;
         private DateTime? partyDateTime = null;
@@ -83,42 +78,6 @@ namespace Wonderland.Logic.Models.Members
             {
                 this.partyGuid = value;
                 this.SetPropertyValue(PartyHost.PartyGuidAlias, value.ToString());
-            }
-        }
-
-        public string FirstName
-        {
-            get
-            {
-                if (this.firstName != null)
-                {
-                    return this.firstName;
-                }
-
-                return this.GetPropertyValue<string>(PartyHost.FirstNameAlias);
-            }
-            set
-            {
-                this.firstName = value;
-                this.SetPropertyValue(PartyHost.FirstNameAlias, value);
-            }
-        }
-
-        public string LastName
-        {
-            get
-            {
-                if (this.lastName != null)
-                {
-                    return this.lastName;
-                }
-
-                return this.GetPropertyValue<string>(PartyHost.LastNameAlias);
-            }
-            set
-            {
-                this.lastName = value;
-                this.SetPropertyValue(PartyHost.LastNameAlias, value);
             }
         }
 
