@@ -353,7 +353,7 @@
     <Content Include="img\wonderland-logo.png" />
     <Content Include="img\wonderland-logo.svg" />
     <Content Include="img\wood_texture.jpg" />
-    <Content Include="robots.txt" />
+    <Content Include="robots.txt" Condition=" '$(Configuration)' == 'Debug' " />
     <Content Include="scripts\all.min.js" />
     <Content Include="scripts\app\app.js" />
     <Content Include="scripts\app\controllers\faqsCtrl.js" />
@@ -2604,7 +2604,7 @@
     <Content Include="Views\ResetPassword\Complete.cshtml" />
     <Content Include="Views\ResetPassword\Forms\ResetPasswordForm.cshtml" />
     <Content Include="Views\WhoIsItFor.cshtml" />
-    <Content Include="Views\Web.config" />
+    <None Include="Views\Web.config" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>
