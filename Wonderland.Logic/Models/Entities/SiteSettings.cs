@@ -5,6 +5,7 @@ namespace Wonderland.Logic.Models.Entities
     using System.Collections.Generic;
     using Wonderland.Logic.Models.Content;
     using Wonderland.Logic.Models.Media;
+    using System.Web.Configuration;
 
     public class SiteSettings
     {
@@ -64,6 +65,18 @@ namespace Wonderland.Logic.Models.Entities
 
         public string FooterCopy { get; private set; }
 
-        public static int CacheMinutes { get { return 5; } }
+        public static int CacheMinutes 
+        { 
+            get 
+            {
+                int cacheMinutes;
+                if(int.TryParse(WebConfigurationManager.AppSettings["Wonderland:CacheMinutes"], out cacheMinutes))
+                {
+                    return cacheMinutes;
+                }
+
+                return 0; 
+            } 
+        }
     }
 }
