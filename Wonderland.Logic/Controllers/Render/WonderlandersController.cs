@@ -31,14 +31,14 @@ namespace Wonderland.Logic.Controllers.Render
                 {
                     topFundraisers = this.Members.GetTopPartyHosts(LeaderboardType.TopFundraisers, model.TopFundraisersCount);
 
-                    cache.Insert("TopFundraisers", topFundraisers, null, DateTime.UtcNow.AddSeconds(60 + random.Next(60)), Cache.NoSlidingExpiration);
+                    cache.Insert("TopFundraisers", topFundraisers, null, DateTime.UtcNow.AddMinutes(5 + random.Next(1)), Cache.NoSlidingExpiration);
                 }
 
                 if (topPartyHosts == null)
                 {
                     topPartyHosts = this.Members.GetTopPartyHosts(LeaderboardType.MostGuests, model.MostGuestsCount);
 
-                    cache.Insert("TopPartyHosts", topPartyHosts, null, DateTime.UtcNow.AddSeconds(60 + random.Next(60)), Cache.NoSlidingExpiration);
+                    cache.Insert("TopPartyHosts", topPartyHosts, null, DateTime.UtcNow.AddSeconds(5 + random.Next(1)), Cache.NoSlidingExpiration);
                 }
             }
 
