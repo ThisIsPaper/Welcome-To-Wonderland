@@ -6,7 +6,7 @@
                                                 Model.Select(x =>
                                                     new
                                                     {
-                                                        imageUrl =  x.TileSize == PartyIdeaTileSize.Wide ? x.TileImage.GetResponsiveCropUrl("Letterbox") : x.TileImage.GetResponsiveCropUrl("Square"),
+                                                        imageUrl = x.TileSize == PartyIdeaTileSize.Wide ? "/remote.axd?" + Image.CdnDomain + x.TileImage.GetResponsiveCropUrl("Letterbox") : "/remote.axd?" + Image.CdnDomain + x.TileImage.GetResponsiveCropUrl("Square"),
                                                         tileType = x.TileType, // decoration, fashion, playlist, recipe, fundraising
                                                         tileHeading = x.TileHeading,
                                                         tileCopy= x.TileCopy,

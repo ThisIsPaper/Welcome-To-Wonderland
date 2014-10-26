@@ -1,6 +1,7 @@
 ﻿
 namespace Wonderland.Logic.Models.Media
 {
+    using AST.S3.Helper;
     using System.Web;
     using Umbraco.Core.Models;
     using Umbraco.Core.Models.PublishedContent;
@@ -19,6 +20,16 @@ namespace Wonderland.Logic.Models.Media
             : base(content)
         {
         }
+
+        public string S3Url
+        {
+            get
+            {
+                UmbracoHelper umbracoHelper = new UmbracoHelper(UmbracoContext.Current);
+
+                return MediaHelper.ParseMedia(this.Id.ToString(), umbracoHelper).Url;
+            }
+        }   
 
         /// <summary>
         /// 

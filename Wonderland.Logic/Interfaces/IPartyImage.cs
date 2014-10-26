@@ -7,5 +7,7 @@ namespace Wonderland.Logic.Interfaces
         int Id { get; }
 
         string Url { get; }
+
+        string S3Url { get; }
     }
 }
