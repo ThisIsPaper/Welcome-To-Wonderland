@@ -2025,6 +2025,7 @@
     <Content Include="fonts\macmillan_headline_02_12-webfont.eot" />
     <Content Include="fonts\macmillan_headline_02_12-webfont.ttf" />
     <Content Include="fonts\macmillan_headline_02_12-webfont.woff" />
+    <Content Include="config\imageprocessor\security.config" />
     <None Include="Properties\PublishProfiles\AWS Macmillan.pubxml" />
     <Content Include="Views\Profile\Forms\ProfileTShirtSizeForm.cshtml" />
     <Content Include="Views\Donate\Cancelled.cshtml" />

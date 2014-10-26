@@ -29,15 +29,21 @@ namespace Wonderland.Logic.Models.Media
             }
         }
 
-        public override string Url
+        public string S3Url
         {
             get
             {
-                //UmbracoHelper umbracoHelper = new UmbracoHelper(UmbracoContext.Current);
+                UmbracoHelper umbracoHelper = new UmbracoHelper(UmbracoContext.Current);
 
-                //return MediaHelper.ParseMedia(this.Id.ToString(), umbracoHelper).Url;
-
-                return base.Url;
+                return MediaHelper.ParseMedia(this.Id.ToString(), umbracoHelper).Url;
+            }
+        }       
+ 
+        public static string CdnDomain
+        {
+            get
+            {
+                return GlobalHelper.GetCdnDomain();
             }
         }
     }
