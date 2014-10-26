@@ -13,7 +13,7 @@
                 <div class="boxx collapse margin-small" m-radius-picker="medium">
 
                     <div class="pos-relative">
-                        <img width="100%" ng-src="{{ '@reward.Image.GetResponsiveCropUrl("Letterbox")'|mQuality:50|mWidth:350 }}"/>
+                        <img width="100%" ng-src="{{ '/remote.axd?@(Image.CdnDomain + reward.Image.GetResponsiveCropUrl("Letterbox"))'|mQuality:50|mWidth:350 }}"/>
                         <div class="boxx-twerk"></div>
                     </div>
 

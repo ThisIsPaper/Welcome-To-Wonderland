@@ -22,7 +22,7 @@
             <div class="boxx collapse" m-radius-picker="large">
 
                 <div class="wgrid-full wgrid-no-bottom-margin parent">
-                    <div class="grid-12 party-main-image" style="background-image: url(@Model.TileImage.Url)"></div>
+                    <div class="grid-12 party-main-image" style="background-image: url(@Model.TileImage.S3Url)"></div>
 
                     <div class="wgrid-full spotify-info-holder" m-vertical-align="true">
                         <h1>@Model.TileHeading</h1>
@@ -55,7 +55,7 @@
 
         <div class="wgrid-main centered parent text-align-center centered-share-holder">
 
-            @Html.Partial("Share")
+            @Html.CachedPartial("Share", null, SitePage.CacheDuration)
 
         </div>
 

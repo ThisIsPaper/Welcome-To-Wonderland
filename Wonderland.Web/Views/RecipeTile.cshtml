@@ -22,7 +22,7 @@
                 <div class="boxx collapse" m-radius-picker="large">
 
                     <div class="wgrid-full parent wgrid-no-bottom-margin">
-                        <img ng-src="{{ '@Model.TileImage.GetResponsiveCropUrl("Letterbox")'|mQuality:50 }}" width="100%" alt=""/>
+                        <img ng-src="{{ '/remote.axd?@(Image.CdnDomain + Model.TileImage.GetResponsiveCropUrl("Letterbox"))'|mQuality:50 }}" width="100%" alt=""/>
                         <div class="boxx-twerk"></div>
                     </div>
 
