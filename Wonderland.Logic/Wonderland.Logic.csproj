@@ -9,8 +9,9 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Wonderland.Logic</RootNamespace>
     <AssemblyName>Wonderland.Logic</AssemblyName>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -30,6 +31,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AgeBase.ExtendedDistributedCalling">
+      <HintPath>..\Wonderland.Web\bin\AgeBase.ExtendedDistributedCalling.dll</HintPath>
+    </Reference>
     <Reference Include="Archetype">
       <HintPath>..\Wonderland.Web\bin\Archetype.dll</HintPath>
     </Reference>
@@ -256,6 +260,7 @@
     <Compile Include="Events\DeleteMemberCleanUp.cs" />
     <Compile Include="Events\InvalidatePartyIdeaTilesCache.cs" />
     <Compile Include="Events\InvalidateSiteSettingsCache.cs" />
+    <Compile Include="Events\RefreshExamineOnMemberSave.cs" />
     <Compile Include="Events\SetPageNotFoundContentFinder.cs" />
     <Compile Include="Events\SetPartyContentFinder.cs" />
     <Compile Include="Events\SetPublishedContentModelFactory.cs" />
