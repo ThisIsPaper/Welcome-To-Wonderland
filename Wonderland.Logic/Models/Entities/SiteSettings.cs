@@ -63,5 +63,7 @@ namespace Wonderland.Logic.Models.Entities
         public string GooglePlusUrl { get; private set; }
 
         public string FooterCopy { get; private set; }
+
+        public static int CacheMinutes { get { return 5; } }
     }
 }

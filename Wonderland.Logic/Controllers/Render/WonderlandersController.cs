@@ -9,6 +9,7 @@ namespace Wonderland.Logic.Controllers.Render
     using Wonderland.Logic.Enums;
     using Wonderland.Logic.Extensions;
     using Wonderland.Logic.Models.Content;
+    using Wonderland.Logic.Models.Entities;
     using Wonderland.Logic.Models.Members;
 
     public class WonderlandersController : BaseRenderMvcController
@@ -31,14 +32,14 @@ namespace Wonderland.Logic.Controllers.Render
                 {
                     topFundraisers = this.Members.GetTopPartyHosts(LeaderboardType.TopFundraisers, model.TopFundraisersCount);
 
-                    cache.Insert("TopFundraisers", topFundraisers, null, DateTime.UtcNow.AddMinutes(5 + random.Next(1)), Cache.NoSlidingExpiration);
+                    cache.Insert("TopFundraisers", topFundraisers, null, DateTime.UtcNow.AddMinutes(SiteSettings.CacheMinutes + random.Next(1)), Cache.NoSlidingExpiration);
                 }
 
                 if (topPartyHosts == null)
                 {
                     topPartyHosts = this.Members.GetTopPartyHosts(LeaderboardType.MostGuests, model.MostGuestsCount);
 
-                    cache.Insert("TopPartyHosts", topPartyHosts, null, DateTime.UtcNow.AddSeconds(5 + random.Next(1)), Cache.NoSlidingExpiration);
+                    cache.Insert("TopPartyHosts", topPartyHosts, null, DateTime.UtcNow.AddSeconds(SiteSettings.CacheMinutes + random.Next(1)), Cache.NoSlidingExpiration);
                 }
             }
 

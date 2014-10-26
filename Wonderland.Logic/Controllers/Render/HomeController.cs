@@ -5,6 +5,7 @@ namespace Wonderland.Logic.Controllers.Render
     using System.Web.Caching;
     using System.Web.Mvc;
     using Wonderland.Logic.Models.Content;
+    using Wonderland.Logic.Models.Entities;
 
     public class HomeController : BaseRenderMvcController
     {
@@ -32,7 +33,7 @@ namespace Wonderland.Logic.Controllers.Render
                     totalAmountRaised = 0;
                 }
 
-                cache.Insert("TotalAmountRaised", totalAmountRaised, null, DateTime.UtcNow.AddMinutes(5), Cache.NoSlidingExpiration);
+                cache.Insert("TotalAmountRaised", totalAmountRaised, null, DateTime.UtcNow.AddMinutes(SiteSettings.CacheMinutes), Cache.NoSlidingExpiration);
             }
 
             model.TotalAmountRaised = totalAmountRaised.Value;
