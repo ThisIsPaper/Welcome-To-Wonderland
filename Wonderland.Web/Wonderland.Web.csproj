@@ -353,7 +353,7 @@
     <Content Include="img\wonderland-logo.png" />
     <Content Include="img\wonderland-logo.svg" />
     <Content Include="img\wood_texture.jpg" />
-    <Content Include="robots.txt" />
+    <Content Include="robots.txt" Condition=" '$(Configuration)' == 'Debug' "/>
     <Content Include="scripts\all.min.js" />
     <Content Include="scripts\app\app.js" />
     <Content Include="scripts\app\controllers\faqsCtrl.js" />
@@ -2641,11 +2641,11 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>False</UseIIS>
+          <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>56407</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:60000/</IISUrl>
+          <IISUrl>http://localhost:61315/</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
