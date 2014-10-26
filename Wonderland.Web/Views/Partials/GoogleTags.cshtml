@@ -1,0 +1,11 @@
+﻿@inherits UmbracoViewPage<DonationRow>
+
+<!-- Google Tag Manager Variables -->
+<script>
+        dataLayer = [{
+            'paymentNumber': '@Model.VendorTxCode', // Payment#,
+            'paymentAmount': '@Model.Amount', // Total amount,
+            'partyID': '@Model.PartyGuid' /// partyID
+        }];
+</script>
+<!-- End Google Tag Manager Variables -->

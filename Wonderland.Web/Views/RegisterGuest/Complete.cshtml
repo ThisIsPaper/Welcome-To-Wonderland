@@ -28,6 +28,8 @@
                     <tr><td>Total amount:</td><td ng-bind="@Model.DonationRow.Amount|mCurrency:'£'"></td></tr>
                 </table>
 
+                @Html.Partial("GoogleTags", Model.DonationRow)
+
                 <hr class="margin-top-large margin-bottom-large"/>
 
                 <a href="@Model.PartyHost.PartyUrl" class="btn-primary float-right" m-radius-picker="small medium">Go to the party page <span class="icon-icon_chevron_right"></span></a>
