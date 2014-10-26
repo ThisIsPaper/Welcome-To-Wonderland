@@ -83,17 +83,16 @@ namespace Wonderland.Logic.Controllers.Surface
             {
                 IPartier partier = this.Members.GetCurrentPartier();
 
-
-                // IMPORTANT ! TODO: check existing password
-
-
                 IMember member = this.Services.MemberService.GetById(partier.Id);
                 if (member != null)
                 {
-                    this.Services.MemberService.SavePassword(member, profileChangePasswordForm.Password);
-                }
+                    if (this.Members.Login(partier.Email, profileChangePasswordForm.CurrentPassword))
+                    {
+                        this.Services.MemberService.SavePassword(member, profileChangePasswordForm.Password);
 
-                formResponse.Success = true;
+                        formResponse.Success = true;
+                    }
+                }
             }
             else
             {
