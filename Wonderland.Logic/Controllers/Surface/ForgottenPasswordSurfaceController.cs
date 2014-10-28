@@ -43,7 +43,9 @@ namespace Wonderland.Logic.Controllers.Surface
                 mailMessage.Subject = forgottenPassword.EmailSubject;
                 mailMessage.IsBodyHtml = true;
 
-                mailMessage.Body = forgottenPassword.EmailBody.Replace("[%RESET_PASSWORD_LINK%]", this.Request.Url.Scheme + "://" + this.Request.Url.Host.ToLower() + this.Umbraco.TypedContentSingleAtXPath("//" + ResetPassword.Alias).Url + "?forgottenPasswordGuid=" + forgottenPasswordGuid.ToString("D"));
+                string urlScheme = Request.IsSecureConnection ? "https" : "http";
+
+                mailMessage.Body = forgottenPassword.EmailBody.Replace("[%RESET_PASSWORD_LINK%]", urlScheme + "://" + this.Request.Url.Host.ToLower() + this.Umbraco.TypedContentSingleAtXPath("//" + ResetPassword.Alias).Url + "?forgottenPasswordGuid=" + forgottenPasswordGuid.ToString("D"));
 
                 using (SmtpClient smtpClient = new SmtpClient())
                 {
