@@ -92,11 +92,16 @@ namespace Wonderland.Logic.Controllers.Surface
 
                         formResponse.Success = true;
                     }
+                    else
+                    {
+                        formResponse.Message = "Current Password Invalid";
+                    }
                 }
             }
             else
             {
-                formResponse.Errors = this.ModelState.GetErrors();
+                //formResponse.Errors = this.ModelState.GetErrors();
+                formResponse.Message = "Error";
             }
 
             return Json(formResponse, "text/plain");
