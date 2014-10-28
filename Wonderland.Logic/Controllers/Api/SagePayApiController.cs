@@ -172,7 +172,7 @@ namespace Wonderland.Logic.Controllers.Api
                                         .Replace("[%PARTY_HOST%]", partyhost.FirstName + " " + partyhost.LastName)
                                         .Replace("[%EMAIL%]", partier.Email) 
                                         .Replace("[%AMOUNT%]", "£" + donationRow.Amount.ToString("F"))
-                                        .Replace("[%DONATION_TIMESTAMP%]", donationRow.Timestamp.ToShortDateString())
+                                        .Replace("[%DONATION_TIMESTAMP%]", donationRow.Timestamp.ToString("dd/MM/yyyy"))
                                         .Replace("[%VENDOR_TX_CODE%]", donationRow.VendorTxCode.ToString());
 
                 // Fire and forget
