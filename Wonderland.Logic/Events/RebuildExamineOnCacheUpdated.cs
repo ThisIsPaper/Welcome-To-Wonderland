@@ -3,6 +3,7 @@
     using Examine;
     using System.Linq;
     using Umbraco.Core;
+    using Umbraco.Core.Logging;
     using Umbraco.Web.Cache;
 
     /// <summary>
@@ -17,6 +18,8 @@
 
         private void PageCacheRefresher_CacheUpdated(PageCacheRefresher sender, Umbraco.Core.Cache.CacheRefresherEventArgs e)
         {
+            LogHelper.Debug<RebuildExamineOnCacheUpdated>("PageCacheRefresher_CacheUpdated");
+
             ExamineManager.Instance.IndexProviderCollection.ToList().ForEach(index => index.RebuildIndex());
         }
     }
