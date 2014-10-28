@@ -252,7 +252,7 @@
     <Compile Include="Enums\PartyIdeaTileSize.cs" />
     <Compile Include="Enums\PartyWallItemType.cs" />
     <Compile Include="Enums\PaymentJourney.cs" />
-    <Compile Include="Events\RebuildExamineOnPublish.cs" />
+    <Compile Include="Events\RebuildExamineOnCacheUpdated.cs" />
     <Compile Include="Events\RebuildExamineOnStartUp.cs" />
     <Compile Include="Events\DeleteMemberCleanUp.cs" />
     <Compile Include="Events\InvalidatePartyIdeaTilesCache.cs" />
