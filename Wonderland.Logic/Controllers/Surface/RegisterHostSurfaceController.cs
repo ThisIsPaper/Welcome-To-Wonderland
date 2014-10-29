@@ -109,7 +109,8 @@ namespace Wonderland.Logic.Controllers.Surface
             FormsAuthentication.SetAuthCookie(partyHost.Username, true);
 
             // cause redirect, so that the login takes effect
-            return this.RedirectToCurrentUmbracoPage();
+            //return this.RedirectToCurrentUmbracoPage();
+            return this.Redirect(this.CurrentPage.Url + "party-kit/");
         }
 
         [ChildActionOnly]

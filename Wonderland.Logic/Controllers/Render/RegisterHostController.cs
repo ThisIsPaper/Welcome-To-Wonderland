@@ -39,7 +39,6 @@ namespace Wonderland.Logic.Controllers.Render
                 }
             }
            
-            //return View("RegisterHost", model);
             return View("RegisterHost/RegisterHost", model); 
         }
     }

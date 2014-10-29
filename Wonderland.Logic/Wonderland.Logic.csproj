@@ -252,7 +252,6 @@
     <Compile Include="Enums\PartyIdeaTileSize.cs" />
     <Compile Include="Enums\PartyWallItemType.cs" />
     <Compile Include="Enums\PaymentJourney.cs" />
-    <Compile Include="Events\RebuildExamineOnCacheUpdated.cs" />
     <Compile Include="Events\RebuildExamineOnStartUp.cs" />
     <Compile Include="Events\DeleteMemberCleanUp.cs" />
     <Compile Include="Events\InvalidatePartyIdeaTilesCache.cs" />
@@ -260,6 +259,8 @@
     <Compile Include="Events\SetPageNotFoundContentFinder.cs" />
     <Compile Include="Events\SetPartyContentFinder.cs" />
     <Compile Include="Events\SetPublishedContentModelFactory.cs" />
+    <Compile Include="Events\SetRegisterGuestContentFinder.cs" />
+    <Compile Include="Events\SetRegisterHostContentFinder.cs" />
     <Compile Include="Events\SetSagePayResultContentFinder.cs" />
     <Compile Include="Extensions\HtmlHelperExtensions.cs" />
     <Compile Include="Extensions\MembershipHelperExtensions.cs" />

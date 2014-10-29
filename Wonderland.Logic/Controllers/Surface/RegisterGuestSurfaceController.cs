@@ -88,7 +88,7 @@ namespace Wonderland.Logic.Controllers.Surface
             FormsAuthentication.SetAuthCookie(partyGuest.Username, true);
 
             //return this.NavigateToRegisterGuestUrl(registerGuestForm.PartyGuid);
-            return this.Redirect(this.Umbraco.TypedContentSingleAtXPath("//" + RegisterGuest.Alias).Url + "?partyGuid=" + registerGuestForm.PartyGuid.ToString());
+            return this.Redirect(this.Umbraco.TypedContentSingleAtXPath("//" + RegisterGuest.Alias).Url + "billing/?partyGuid=" + registerGuestForm.PartyGuid.ToString());
         }
 
         [MemberAuthorize(AllowType=PartyGuest.Alias)]
