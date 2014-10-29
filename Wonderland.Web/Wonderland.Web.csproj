@@ -245,13 +245,6 @@
     <Compile Include="Dashboards\BaseUserControl.cs">
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Dashboards\DeleteDonation.ascx.cs">
-      <DependentUpon>DeleteDonation.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Dashboards\DeleteDonation.ascx.designer.cs">
-      <DependentUpon>DeleteDonation.ascx</DependentUpon>
-    </Compile>
     <Compile Include="Dashboards\ExportFinancials.ascx.cs">
       <DependentUpon>ExportFinancials.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -265,6 +258,13 @@
     </Compile>
     <Compile Include="Dashboards\ExportRegistrations.ascx.designer.cs">
       <DependentUpon>ExportRegistrations.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboards\RefundDonation.ascx.cs">
+      <DependentUpon>RefundDonation.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboards\RefundDonation.ascx.designer.cs">
+      <DependentUpon>RefundDonation.ascx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Content Include="App_Plugins\Archetype\css\archetype.css" />
@@ -297,9 +297,9 @@
     <Content Include="css\compiled\PIE.htc" />
     <Content Include="css\ie7.min.css" />
     <Content Include="Dashboards\AddDonation.ascx" />
-    <Content Include="Dashboards\DeleteDonation.ascx" />
     <Content Include="Dashboards\ExportFinancials.ascx" />
     <Content Include="Dashboards\ExportRegistrations.ascx" />
+    <Content Include="Dashboards\RefundDonation.ascx" />
     <Content Include="default.aspx" />
     <Content Include="Error.html" />
     <Content Include="fonts\71710047-b807-47eb-9874-7db8f4904492.svg" />

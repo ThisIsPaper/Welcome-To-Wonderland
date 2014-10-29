@@ -70,6 +70,12 @@ namespace Wonderland.Logic.Models.Database
         [Column("Cancelled")]
         public bool Cancelled { get; set; }
 
+        /// <summary>
+        /// when true, indicates the the donation was refunded manually via the cms
+        /// </summary>
+        [Column("Refunded")]
+        public bool Refunded { get; set; }
+
         public static explicit operator DonationRow(Donation_Message donation_Message)
         {
             return new DonationRow()
