@@ -7552,7 +7552,7 @@ Colours
 /* line 148, ../sass/partials/_forms.scss */
 .loader {
   position: absolute;
-  background-image: url('/img/loading-icon.svg?1412505524');
+  background-image: url('/img/loading-icon.svg?1413540300');
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100%;
@@ -7812,7 +7812,7 @@ Colours
   height: 153px;
   background-size: 109px 153px;
   zoom: 1;
-  background: url('/img/wonderland-crest.svg?1414068120') no-repeat center;
+  background: url('/img/wonderland-crest.svg?1413540300') no-repeat center;
   -moz-transition: top 0.3s 0;
   -o-transition: top 0.3s 0;
   -webkit-transition: top 0.3s 0;
@@ -7830,7 +7830,7 @@ Colours
   overflow: hidden;
   background-size: 192px 39px;
   zoom: 1;
-  background: url('/img/wonderland-logo.svg?1414068120') no-repeat center;
+  background: url('/img/wonderland-logo.svg?1413540301') no-repeat center;
   -moz-transition: top 0.3s 0;
   -o-transition: top 0.3s 0;
   -webkit-transition: top 0.3s 0;
@@ -7914,7 +7914,7 @@ Colours
 /* line 137, ../sass/partials/_nav.scss */
 .snow-brush-overlay {
   width: 100%;
-  background: url('/img/header_texture.png?1412505524') repeat center;
+  background: url('/img/header_texture.png?1414590871') repeat center;
   padding-top: 12px;
 }
 
@@ -8114,7 +8114,7 @@ footer [class*="grid-"] {
 .footer-menu li a {
   text-transform: uppercase;
   font-size: 14px;
-  font-weight: bold;
+  font-weight: normal;
   color: #007eac;
   cursor: pointer;
 }
@@ -8149,7 +8149,7 @@ footer [class*="grid-"] {
 
 /* line 349, ../sass/partials/_nav.scss */
 .footer-snow-brush-overlay {
-  background: url('/img/footer_texture.png?1411035906') repeat-x center;
+  background: url('/img/footer_texture.png?1413540300') repeat-x center;
   padding-top: 12px;
   height: 40px;
   margin-top: -40px;
@@ -11602,7 +11602,7 @@ Colours
 /* line 148, ../sass/partials/_forms.scss */
 .loader {
   position: absolute;
-  background-image: url('/img/loading-icon.svg?1412505524');
+  background-image: url('/img/loading-icon.svg?1413540300');
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100%;
@@ -12064,7 +12064,7 @@ main {
 /* line 86, ../sass/partials/_base.scss */
 .page-bg {
   background-color: #ECECEC;
-  background-image: url('/img/bg_simple.png?1412505523');
+  background-image: url('/img/bg_simple.png?1413540300');
   background-repeat: repeat-x;
   background-position: top center;
   padding: 130px 0 60px;
@@ -12175,7 +12175,7 @@ Event Page specific - move these out of here eventually
 }
 /* line 169, ../sass/partials/_base.scss */
 .profile-image.profile-image-notset {
-  background-image: url('/img/avatar.jpg?1414073758') !important;
+  background-image: url('/img/avatar.jpg?1414590870') !important;
 }
 /* line 173, ../sass/partials/_base.scss */
 .profile-image.small {
@@ -12427,7 +12427,7 @@ price
   top: -1px;
   width: 12px;
   height: 101%;
-  background-image: url('/img/raffle.svg?1412505524');
+  background-image: url('/img/raffle.svg?1413540300');
   /* TODO: background image fallback */
   background-repeat: no-repeat;
 }
@@ -12435,7 +12435,7 @@ price
 .ticket .stub .holes-right {
   left: auto;
   right: -1px;
-  background-image: url('/img/raffle_r.svg?1412505524');
+  background-image: url('/img/raffle_r.svg?1413540300');
   /* TODO: background image fallback */
 }
 /* line 430, ../sass/partials/_base.scss */
@@ -12502,7 +12502,7 @@ label .ticket span {
   -webkit-border-radius: 6px;
   border-radius: 6px;
   background-color: #025b45;
-  background-image: url('/img/frost.png?1412505524');
+  background-image: url('/img/frost.png?1413540300');
   background-repeat: repeat-x;
   background-position: top left;
   width: 0;
@@ -12557,7 +12557,7 @@ One-off uses
 /* line 536, ../sass/partials/_base.scss */
 .hero {
   height: 450px;
-  background-image: url('/img/hero-ph.jpg?1412505524');
+  background-image: url('/img/hero-ph.jpg?1413540300');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -12570,7 +12570,7 @@ One-off uses
 
 /* line 552, ../sass/partials/_base.scss */
 .planking {
-  background: url('/img/wood_texture.jpg?1414068120') repeat top center;
+  background: url('/img/wood_texture.jpg?1413540301') repeat top center;
 }
 
 /* line 556, ../sass/partials/_base.scss */
@@ -12595,7 +12595,7 @@ One-off uses
   right: 24px;
   height: 150px;
   width: 340px;
-  background: url('/img/amount-raised-ph.png?1411035906') no-repeat center right transparent;
+  background: url('/img/amount-raised-ph.png?1413540300') no-repeat center right transparent;
 }
 
 /* line 578, ../sass/partials/_base.scss */
@@ -12740,7 +12740,7 @@ One-off uses
 .spotify-logo {
   width: 80px;
   height: 24px;
-  background-image: url('/img/spotify_logo@2x.png?1412505524');
+  background-image: url('/img/spotify_logo@2x.png?1413540300');
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
@@ -12770,7 +12770,7 @@ One-off uses
 .share-title {
   width: 278px;
   height: 116px;
-  background-image: url('/img/share-title@2x.png?1412505524');
+  background-image: url('/img/share-title@2x.png?1413540300');
   background-repeat: no-repeat;
   background-size: 278px 116px;
   position: relative;
@@ -12843,7 +12843,7 @@ One-off uses
   width: 100px;
   height: 35px;
   overflow: hidden;
-  background-image: url('/img/giftaid-logo.jpg?1412541557');
+  background-image: url('/img/giftaid-logo.jpg?1413540300');
   background-repeat: no-repeat;
   background-size: 100px 35px;
   position: absolute;
@@ -12858,7 +12858,7 @@ One-off uses
   width: 80px;
   height: 80px;
   overflow: hidden;
-  background-image: url('/img/fsb.jpg?1412541620');
+  background-image: url('/img/fsb.jpg?1413540300');
   background-repeat: no-repeat;
   background-size: 80px 80px;
   position: absolute;
