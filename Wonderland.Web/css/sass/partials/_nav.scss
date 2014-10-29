@@ -318,7 +318,7 @@ footer [class*="grid-"] {
 .footer-menu li a {
 	text-transform: uppercase;
 	@include rem-fallback(font-size, $FontSizeSmall);
-	font-weight: bold;
+	font-weight: normal;
 	color: #007eac;
 	cursor: pointer;
 }
