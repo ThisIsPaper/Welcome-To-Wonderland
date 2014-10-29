@@ -22,7 +22,7 @@ namespace Wonderland.Web.Dashboards
             StringBuilder stringBuilder = new StringBuilder();
 
             // headings
-            stringBuilder.AppendLine("Member Id, Member Type, Email, First Name, Last Name, Heard About Us, Registration Date, Address 1, Address 2, Town, Postcode, T-Shirt Size, Party Guid, Party Title, Party DateTime, Party Address 1, Party Address 2, Party Town, Party Postcode, Join Wonderland Story, Party Background Image, Profile Photo, Fundraising Target, Suggested Donation, Guest Count, Amount Raised, Party Blocked, DotMailer Id, DotMailer Registration Complete, DotMailer Party Page Copmlete");          
+            stringBuilder.AppendLine("Member Id, Member Type, Email, First Name, Last Name, Heard About Us, Registration Date, Address 1, Address 2, Town, Postcode, T-Shirt Size, Party Guid, Party Title, Party DateTime, Party Address 1, Party Address 2, Party Town, Party Postcode, Join Wonderland Story, Party Background Image, Profile Photo, Fundraising Target, Suggested Donation, Guest Count, Amount Raised, Party Blocked, DotMailer Id, DotMailer Registration Complete, DotMailer Party Page Copmlete, Facebook Registration");          
 
             foreach(IPartier partier in this.Members.GetAllPartiers())
             {
@@ -63,7 +63,8 @@ namespace Wonderland.Web.Dashboards
                                 partyHost.Blocked ? "Y" : "N",                                                                  // 27. Party Blocked
                                 partier.DotMailerId,                                                                            // 28. DotMailer Id
                                 partier.DotMailerRegistrationComplete ? "Y" : "N",                                              // 29. DotMailer Registration Complete
-                                partyHost.DotMailerPartyPageComplete ? "Y" : "N"                                                // 30. DotMailer Party Page Complete
+                                partyHost.DotMailerPartyPageComplete ? "Y" : "N",                                               // 30. DotMailer Party Page Complete
+                                partier.FacebookRegistration ? "Y" : "N"                                                        // 31. Facebook Registration
                             }
                         )
                     );
@@ -105,7 +106,8 @@ namespace Wonderland.Web.Dashboards
                                 string.Empty,                                                                           // 27. Party Blocked
                                 partier.DotMailerId,                                                                    // 28. DotMailer Id
                                 partier.DotMailerRegistrationComplete ? "Y" : "N",                                      // 29. DotMailer Registration Complete
-                                string.Empty                                                                            // 30. DotMailer Party Page Complete
+                                string.Empty,                                                                           // 30. DotMailer Party Page Complete
+                                partier.FacebookRegistration ? "Y" : "N"                                                // 31. Facebook Registration
                             }
                         )
                     );
