@@ -43,7 +43,7 @@ namespace Wonderland.Logic.Controllers.Surface
                 mailMessage.Subject = forgottenPassword.EmailSubject;
                 mailMessage.IsBodyHtml = true;
 
-                string urlScheme = Request.IsSecureConnection ? "https" : "http";
+                const string urlScheme = "https"; // Bug fix: server rewrites http to https, and query string is not processed.
 
                 mailMessage.Body = forgottenPassword.EmailBody.Replace("[%RESET_PASSWORD_LINK%]", urlScheme + "://" + this.Request.Url.Host.ToLower() + this.Umbraco.TypedContentSingleAtXPath("//" + ResetPassword.Alias).Url + "?forgottenPasswordGuid=" + forgottenPasswordGuid.ToString("D"));
 
