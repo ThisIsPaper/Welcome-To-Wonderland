@@ -33,7 +33,7 @@ namespace Wonderland.Logic.Controllers.Api
         {
             List<PartyWallItem> partyWallItems = new List<PartyWallItem>();
 
-            string sql;
+            string sql = null;
 
             if (this.Members.IsLoggedInPartier() && ((IPartier)this.Members.GetCurrentMember()).PartyGuid == partyGuid)
             {
@@ -90,21 +90,29 @@ namespace Wonderland.Logic.Controllers.Api
                         ORDER BY    [Timestamp] DESC
                     ";
             }
-            
-            // get a collection of all raw data, for all wall items for a party - as sorted by sql
-            foreach (Donation_Message donation_Message in this.DatabaseContext.Database.Fetch<Donation_Message>(sql, partyGuid, beforeDateTime.ToUniversalTime()))
+
+            if (!string.IsNullOrWhiteSpace(sql))
             {
-                switch (donation_Message.PartyWallItemType)
+                PartyHost partyHost = this.Members.GetPartyHost(partyGuid);
+
+                if (partyHost != null && !partyHost.Blocked)
                 {
-                    case PartyWallItemType.Donation:
+                    // get a collection of all raw data, for all wall items for a party - as sorted by sql
+                    foreach (Donation_Message donation_Message in this.DatabaseContext.Database.Fetch<Donation_Message>(sql, partyGuid, beforeDateTime.ToUniversalTime()))
+                    {
+                        switch (donation_Message.PartyWallItemType)
+                        {
+                            case PartyWallItemType.Donation:
 
-                        partyWallItems.Add(new PartyWallItem((DonationRow)donation_Message));
-                        break;
+                                partyWallItems.Add(new PartyWallItem((DonationRow)donation_Message));
+                                break;
 
-                    case PartyWallItemType.Message:
+                            case PartyWallItemType.Message:
 
-                        partyWallItems.Add(new PartyWallItem((MessageRow)donation_Message));                        
-                        break;
+                                partyWallItems.Add(new PartyWallItem((MessageRow)donation_Message));
+                                break;
+                        }
+                    }
                 }
             }
 
