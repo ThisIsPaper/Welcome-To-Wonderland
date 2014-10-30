@@ -57,3 +57,6 @@ because they need to be *16 not *10 that the default 62.5% inflicts
 	border: 3px solid #007eac;
 }
 
+.share-title { 
+	behavior: url('/css/compiled/backgroundsize.min.htc');
+}
