@@ -52,7 +52,7 @@
 
 	@include transition(top .3s linear 0);
 
-	behavior: stylesheet-url('backgroundsize.min.htc');
+	
 }
 
 .banner {
@@ -70,7 +70,6 @@
 
 	@include transition(top .3s linear 0);
 
-	behavior: stylesheet-url('backgroundsize.min.htc');
 }
 
 .menu li a {
