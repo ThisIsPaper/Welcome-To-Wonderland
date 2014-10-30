@@ -12774,7 +12774,6 @@ One-off uses
   background-repeat: no-repeat;
   background-size: 27.8rem 11.6rem;
   position: relative;
-  behavior: url('/css/compiled/backgroundsize.min.htc');
 }
 
 /* line 745, ../sass/partials/_base.scss */
