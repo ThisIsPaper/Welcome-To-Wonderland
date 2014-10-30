@@ -91,7 +91,7 @@ namespace Wonderland.Logic.Controllers.Api
 
             formResponse.Success = true;
 
-            formResponse.Message = this.Umbraco.TypedContentSingleAtXPath("//" + Wonderland.Logic.Models.Content.RegisterHost.Alias).Url;
+            formResponse.Message = this.Umbraco.TypedContentSingleAtXPath("//" + Wonderland.Logic.Models.Content.RegisterHost.Alias).Url + "party-kit/";
 
             return formResponse;
         }
@@ -159,7 +159,7 @@ namespace Wonderland.Logic.Controllers.Api
 
             formResponse.Success = true;
 
-            formResponse.Message = this.Umbraco.TypedContentSingleAtXPath("//" + Wonderland.Logic.Models.Content.RegisterGuest.Alias).Url;
+            formResponse.Message = this.Umbraco.TypedContentSingleAtXPath("//" + Wonderland.Logic.Models.Content.RegisterGuest.Alias).Url  + "billing/?partyGuid=" + partyGuid.ToString();
 
             return formResponse;
         }
