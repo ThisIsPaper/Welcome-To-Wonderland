@@ -60,3 +60,11 @@ because they need to be *16 not *10 that the default 62.5% inflicts
 .share-title { 
 	behavior: url('/css/compiled/backgroundsize.min.htc');
 }
+
+.crest { 
+	behavior: url('/css/compiled/backgroundsize.min.htc');
+}
+
+.banner { 
+	behavior: url('/css/compiled/backgroundsize.min.htc');
+}

@@ -7817,7 +7817,6 @@ Colours
   -o-transition: top 0.3s 0;
   -webkit-transition: top 0.3s 0;
   transition: top 0.3s 0;
-  behavior: url('/css/compiled/backgroundsize.min.htc');
 }
 
 /* line 58, ../sass/partials/_nav.scss */
@@ -7835,10 +7834,9 @@ Colours
   -o-transition: top 0.3s 0;
   -webkit-transition: top 0.3s 0;
   transition: top 0.3s 0;
-  behavior: url('/css/compiled/backgroundsize.min.htc');
 }
 
-/* line 76, ../sass/partials/_nav.scss */
+/* line 75, ../sass/partials/_nav.scss */
 .menu li a {
   text-transform: uppercase;
   font-size: 1.4rem;
@@ -7852,49 +7850,49 @@ Colours
   -webkit-transition: line-height 0.3s 0;
   transition: line-height 0.3s 0;
 }
-/* line 85, ../sass/partials/_nav.scss */
+/* line 84, ../sass/partials/_nav.scss */
 .menu li a.selected {
   background-color: #e3f3f8;
   padding: 1.2rem;
 }
 
-/* line 94, ../sass/partials/_nav.scss */
+/* line 93, ../sass/partials/_nav.scss */
 .menu li a:hover {
   color: #006593;
   text-decoration: underline;
 }
 
-/* line 99, ../sass/partials/_nav.scss */
+/* line 98, ../sass/partials/_nav.scss */
 .menu li span[class^="icon-"]:before, .menu li span[class*=" icon-"]:before {
   display: none;
 }
 
-/* line 103, ../sass/partials/_nav.scss */
+/* line 102, ../sass/partials/_nav.scss */
 .menu {
   width: 50%;
 }
-/* line 106, ../sass/partials/_nav.scss */
+/* line 105, ../sass/partials/_nav.scss */
 .menu .side-only {
   display: none;
 }
 
-/* line 112, ../sass/partials/_nav.scss */
+/* line 111, ../sass/partials/_nav.scss */
 .right-side {
   float: right;
 }
 
-/* line 116, ../sass/partials/_nav.scss */
+/* line 115, ../sass/partials/_nav.scss */
 .left-side ul {
   float: right;
   margin-right: 6.65rem;
 }
 
-/* line 121, ../sass/partials/_nav.scss */
+/* line 120, ../sass/partials/_nav.scss */
 .right-side ul {
   margin-left: 6.65rem;
 }
 
-/* line 125, ../sass/partials/_nav.scss */
+/* line 124, ../sass/partials/_nav.scss */
 .logo-ribbon, .menu ul {
   -moz-transition: margin 0.3s 0;
   -o-transition: margin 0.3s 0;
@@ -7902,7 +7900,7 @@ Colours
   transition: margin 0.3s 0;
 }
 
-/* line 129, ../sass/partials/_nav.scss */
+/* line 128, ../sass/partials/_nav.scss */
 .menu li {
   margin-top: 0;
   margin-bottom: 0;
@@ -7911,14 +7909,14 @@ Colours
   padding: 0;
 }
 
-/* line 137, ../sass/partials/_nav.scss */
+/* line 136, ../sass/partials/_nav.scss */
 .snow-brush-overlay {
   width: 100%;
   background: url('/img/header_texture.png?1414590871') repeat center;
   padding-top: 1.2rem;
 }
 
-/* line 143, ../sass/partials/_nav.scss */
+/* line 142, ../sass/partials/_nav.scss */
 .nav-end-block {
   position: absolute;
   top: 2.5rem;
@@ -7930,19 +7928,19 @@ Colours
   transition: top 0.3s 0;
 }
 
-/* line 152, ../sass/partials/_nav.scss */
+/* line 151, ../sass/partials/_nav.scss */
 .nav-end-block.end-block-right {
   left: auto;
   right: 2rem;
 }
 
-/* line 157, ../sass/partials/_nav.scss */
+/* line 156, ../sass/partials/_nav.scss */
 .nav-burger, .nav-account {
   display: none;
   cursor: pointer;
 }
 
-/* line 162, ../sass/partials/_nav.scss */
+/* line 161, ../sass/partials/_nav.scss */
 .account-menu-holder {
   position: absolute;
   right: 0.8rem;
@@ -7954,7 +7952,7 @@ Colours
   transition: top 0.3s 0;
 }
 
-/* line 170, ../sass/partials/_nav.scss */
+/* line 169, ../sass/partials/_nav.scss */
 .account-menu {
   display: none;
   position: absolute;
@@ -7969,16 +7967,16 @@ Colours
   -webkit-border-radius: 0.7rem;
   border-radius: 0.7rem;
 }
-/* line 180, ../sass/partials/_nav.scss */
+/* line 179, ../sass/partials/_nav.scss */
 .account-menu ul {
   padding: 0;
   margin: 0;
 }
-/* line 185, ../sass/partials/_nav.scss */
+/* line 184, ../sass/partials/_nav.scss */
 .account-menu li {
   list-style: none;
 }
-/* line 188, ../sass/partials/_nav.scss */
+/* line 187, ../sass/partials/_nav.scss */
 .account-menu li span[class^="icon-"]:before, .account-menu li span[class*=" icon-"]:before {
   color: #A19F91;
   width: 3.5rem;
@@ -7987,7 +7985,7 @@ Colours
   font-size: 2.3rem;
   text-align: center;
 }
-/* line 198, ../sass/partials/_nav.scss */
+/* line 197, ../sass/partials/_nav.scss */
 .account-menu li a {
   color: #ECECEC;
   letter-spacing: 0.1rem;
@@ -8003,20 +8001,20 @@ Colours
   float: left;
   border-bottom: 1px solid #7B7A6D;
 }
-/* line 213, ../sass/partials/_nav.scss */
+/* line 212, ../sass/partials/_nav.scss */
 .account-menu li a.last {
   border-bottom: none;
 }
-/* line 217, ../sass/partials/_nav.scss */
+/* line 216, ../sass/partials/_nav.scss */
 .account-menu li a:hover {
   color: white;
 }
-/* line 223, ../sass/partials/_nav.scss */
+/* line 222, ../sass/partials/_nav.scss */
 .account-menu.opened {
   display: block;
 }
 
-/* line 228, ../sass/partials/_nav.scss */
+/* line 227, ../sass/partials/_nav.scss */
 .arrow-up {
   position: absolute;
   top: -1rem;
@@ -8031,7 +8029,7 @@ Colours
   border-bottom: 1rem solid #474740;
 }
 
-/* line 244, ../sass/partials/_nav.scss */
+/* line 243, ../sass/partials/_nav.scss */
 .account-name {
   float: left;
   line-height: 4.2rem;
@@ -8043,7 +8041,7 @@ Colours
   cursor: pointer;
   color: #007eac;
 }
-/* line 255, ../sass/partials/_nav.scss */
+/* line 254, ../sass/partials/_nav.scss */
 .account-name span[class^="icon-"]:before, .account-name span[class*=" icon-"]:before {
   font-size: 0.7rem;
   color: #D4D3CC;
@@ -8052,65 +8050,65 @@ Colours
 /********************/
 /* COMPRESSED VIEW  */
 /********************/
-/* line 264, ../sass/partials/_nav.scss */
+/* line 263, ../sass/partials/_nav.scss */
 .site-header.compress .crest {
   top: -16rem;
 }
 
-/* line 268, ../sass/partials/_nav.scss */
+/* line 267, ../sass/partials/_nav.scss */
 .site-header.compress .banner {
   top: 1.5rem;
 }
 
-/* line 272, ../sass/partials/_nav.scss */
+/* line 271, ../sass/partials/_nav.scss */
 .site-header.compress .left-side ul {
   margin-right: 10.8rem;
 }
 
-/* line 276, ../sass/partials/_nav.scss */
+/* line 275, ../sass/partials/_nav.scss */
 .site-header.compress .right-side ul {
   margin-left: 10.8rem;
 }
 
-/* line 280, ../sass/partials/_nav.scss */
+/* line 279, ../sass/partials/_nav.scss */
 .site-header.compress .menu li a {
   line-height: 6.6rem;
 }
 
-/* line 284, ../sass/partials/_nav.scss */
+/* line 283, ../sass/partials/_nav.scss */
 .site-header.compress .nav-end-block {
   top: 1.6rem;
 }
 
-/* line 288, ../sass/partials/_nav.scss */
+/* line 287, ../sass/partials/_nav.scss */
 .site-header.compress .account-menu-holder {
   top: 1.3rem;
 }
 
-/* line 292, ../sass/partials/_nav.scss */
+/* line 291, ../sass/partials/_nav.scss */
 footer {
   z-index: 998;
   color: #666666;
 }
 
-/* line 297, ../sass/partials/_nav.scss */
+/* line 296, ../sass/partials/_nav.scss */
 footer [class*="grid-"] {
   margin-bottom: 2rem;
   margin-bottom: 4rem;
 }
 
-/* line 308, ../sass/partials/_nav.scss */
+/* line 307, ../sass/partials/_nav.scss */
 .footer-menu ul {
   list-style-type: none;
   padding: 0;
   margin: 0;
 }
-/* line 313, ../sass/partials/_nav.scss */
+/* line 312, ../sass/partials/_nav.scss */
 .footer-menu ul:after {
   clear: both;
 }
 
-/* line 318, ../sass/partials/_nav.scss */
+/* line 317, ../sass/partials/_nav.scss */
 .footer-menu li a {
   text-transform: uppercase;
   font-size: 1.4rem;
@@ -8119,35 +8117,35 @@ footer [class*="grid-"] {
   cursor: pointer;
 }
 
-/* line 326, ../sass/partials/_nav.scss */
+/* line 325, ../sass/partials/_nav.scss */
 .footer-menu li a:hover {
   color: #006593;
   text-decoration: underline;
 }
 
-/* line 331, ../sass/partials/_nav.scss */
+/* line 330, ../sass/partials/_nav.scss */
 .footer-menu.single-line li {
   float: left;
   margin-right: 1rem;
 }
 
-/* line 336, ../sass/partials/_nav.scss */
+/* line 335, ../sass/partials/_nav.scss */
 .footer-menu.single-line li a {
   font-size: 1.1rem;
 }
 
-/* line 340, ../sass/partials/_nav.scss */
+/* line 339, ../sass/partials/_nav.scss */
 .footer-menu.single-line.icon-list li a {
   font-size: 4.7rem;
   text-decoration: none;
 }
 
-/* line 345, ../sass/partials/_nav.scss */
+/* line 344, ../sass/partials/_nav.scss */
 .footer-menu.single-line.icon-list li a span {
   display: none;
 }
 
-/* line 349, ../sass/partials/_nav.scss */
+/* line 348, ../sass/partials/_nav.scss */
 .footer-snow-brush-overlay {
   background: url('/img/footer_texture.png?1413540300') repeat-x center;
   padding-top: 1.2rem;
