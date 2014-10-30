@@ -16,6 +16,8 @@ body {
 	@extend %padding-none;
 }
 
+main {display: block;} /* Should other HTML5 elements not be set block too? */
+
 nav, nav li, .toolbar, .toolbar li, .btn-group {
 	@extend %inline;
 	ul {
