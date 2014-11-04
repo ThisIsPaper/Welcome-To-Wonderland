@@ -12236,7 +12236,6 @@ price
   background-repeat: no-repeat;
   background-position: bottom center;
   position: relative;
-  behavior: url('/css/compiled/backgroundsize.min.htc');
 }
 /* line 230, ../sass/partials/_base.scss */
 .badge.badge.collected {
